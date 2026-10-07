@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-02T05:09:35.103Z",
+  "previousEvidence": "offline-preview-worker-resumed-macos-r12.json",
+  "boundary": "实际诊断确认测试代理CSP拒绝SDK的new Function；增加仅允许内部求值的unsafe-eval，外网来源仍阻断。重载R13生产页面后复验Worker。",
+  "assertions": {
+    "actualBrowserWorkerProducesNonemptyFont": true,
+    "noUncaughtPageError": true
+  },
+  "worker": {
+    "workerUrl": "http://127.0.0.1:50785/assets/excalidraw-subset-worker-CpagXd24.js",
+    "outputBytes": 476,
+    "events": [
+      {
+        "type": "ready"
+      },
+      {
+        "type": "object",
+        "bytes": 476
+      }
+    ]
+  },
+  "errors": [],
+  "status": "passed"
+}

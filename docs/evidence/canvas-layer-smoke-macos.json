@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-01T21:50:23.674Z",
+  "diagnostic": {
+    "projectionElementCount": "23",
+    "projectionPersistedCount": "23",
+    "apiReady": "true",
+    "sceneElementCount": "23",
+    "sceneBounds": "{\"minX\":64,\"minY\":64,\"maxX\":2221,\"maxY\":270}",
+    "canvasSize": "2036x970"
+  },
+  "interactiveBackground": "rgba(0, 0, 0, 0)",
+  "width": 1018,
+  "height": 485,
+  "darkSamples": 1357,
+  "sceneRendered": true,
+  "interactionLayerTransparent": true
+}

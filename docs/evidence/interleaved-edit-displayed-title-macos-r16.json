@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-02T06:32:55.782Z",
+  "status": "failed",
+  "related": "interleaved-edit-resumed-macos-r16.json",
+  "beforeRevision": 40,
+  "afterRevision": 40,
+  "expectedTitle": "交错验收 · Agent 保留标题 · 39",
+  "displayedTitle": "交错验收 · 用户标题 unrelated · 37",
+  "samples": [
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40
+  ],
+  "assertions": {
+    "nativeEditorDisplaysAgentTitle": false,
+    "noNewRevision": true,
+    "snapshotUnchanged": true
+  }
+}

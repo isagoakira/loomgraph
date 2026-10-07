@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-10-02T04:33:52.086Z",
+  "previousEvidence": "multigraph-parent-summary-macos-r11b.json",
+  "boundary": "原探针在完成A图摘要与像素后，截图CDP超时；本次仅继续尚未完成的B图像素与无副作用检查",
+  "assertions": {
+    "overviewDoesNotDoubleCountRepresentations": true,
+    "parentCountsUniqueEffectiveLeaves": true,
+    "parentOwnStateIsSeparate": true,
+    "failedLeafDoesNotCountAsCompletion": true,
+    "updateKeepsCamera": true,
+    "sameStateAcrossGraphsAndDuplicateRepresentations": true,
+    "navigationDoesNotWriteContent": true
+  },
+  "samples": [
+    {
+      "phase": "done-A",
+      "pixels": [
+        {
+          "id": "r9-shared-a",
+          "pixel": [
+            220,
+            235,
+            226,
+            255
+          ]
+        },
+        {
+          "id": "r9-shared-a-second",
+          "pixel": [
+            220,
+            235,
+            226,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "failed-A",
+      "pixels": [
+        {
+          "id": "r9-shared-a",
+          "pixel": [
+            245,
+            216,
+            212,
+            255
+          ]
+        },
+        {
+          "id": "r9-shared-a-second",
+          "pixel": [
+            245,
+            216,
+            212,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "failed-B",
+      "pixels": [
+        {
+          "id": "r9-shared-b",
+          "pixel": [
+            245,
+            216,
+            212,
+            255
+          ]
+        }
+      ]
+    }
+  ],
+  "finalRevision": 14,
+  "status": "passed"
+}

@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-02T05:42:04.418Z",
+  "continues": "deleted-targets-ui-macos-r14.json",
+  "correction": "先前探针使用了不支持的复合文本 locator；保留已完成的 R28–R30 事务，此处只通过公开 DOM 确定每条批注行再查看历史。",
+  "observedRevision": 28,
+  "assertions": {
+    "allThreeHistoryEntrypointsWork": true,
+    "originalEntityAndRelationTextVisible": false,
+    "originalFreeShapeVisible": true,
+    "viewsReadOnly": true,
+    "liveGraphAndCameraPreserved": true,
+    "liveContentExactlyUnchanged": true,
+    "annotationsUnchanged": true
+  },
+  "views": [
+    {
+      "annotationId": "r14-deleted-entity-annotation",
+      "revision": 28,
+      "alt": "目标修订：共同子图 B只读预览",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 128\" width=\"240\" height=\"128\" role=\"img\" data-preview-mode=\"overview\" aria-label=\"共同子图 B\"><defs><marker id=\"thumbnail-arrow\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0L6 3L0 6Z\" fill=\"#9aa6a6\" /></marker></defs><rect width=\"100%\" height=\"100%\" fill=\"#f4f0e8\" /><line x1=\"128.0\" y1=\"66.7\" x2=\"83.5\" y2=\"19.4\" stroke=\"#9aa6a6\" stroke-width=\"1\" stroke-dasharray=\"3 3\" /><ellipse cx=\"121.7\" cy=\"86.3\" rx=\"8.3\" ry=\"5.6\" fill=\"transparent\" data-free-element=\"r14-historical-free\" stroke=\"#25312c\" stroke-width=\"0.5\" /><g><rect x=\"67.5\" y=\"14.0\" width=\"32.0\" height=\"10.8\" rx=\"3\" fill=\"#dbe8e5\" stroke=\"#52606a\" stroke-width=\"1\" /><text x=\"71.5\" y=\"21.8\" fill=\"#24343c\" font-family=\"sans-serif\" font-size=\"6.0\">子图入口 · Structure / Flow</text></g><g><rect x=\"67.5\" y=\"39.0\" width=\"32.0\" height=\"10.8\" rx=\"3\" fill=\"#dbe8e5\" stroke=\"#52606a\" stroke-width=\"1\" /><text x=\"71.5\" y=\"46.9\" fill=\"#24343c\" font-family=\"sans-serif\" font-size=\"6.0\">共享叶任务 · Agent 在输入中更新</text></g><g><rect x=\"113.4\" y=\"61.3\" width=\"29.2\" height=\"10.8\" rx=\"3\" fill=\"#dbe8e5\" stroke=\"#52606a\" stroke-width=\"1\" /><text x=\"117.4\" y=\"69.1\" fill=\"#24343c\" font-family=\"sans-serif\" font-size=\"6.0\">历史验收对象 · 原文保留</text></g></svg>",
+      "restoreVisible": false,
+      "graph": "r9-graph-c",
+      "camera": "{\"offsetLeft\":72,\"offsetTop\":182,\"width\":1018,\"height\":718,\"scrollX\":-61.05263157894737,\"scrollY\":-34.526315789473685,\"zoom\":3.8}"
+    },
+    {
+      "annotationId": "r14-deleted-free-annotation",
+      "revision": 28,
+      "alt": "目标修订：共同子图 B只读预览",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 128\" width=\"240\" height=\"128\" role=\"img\" data-preview-mode=\"overview\" aria-label=\"共同子图 B\"><defs><marker id=\"thumbnail-arrow\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0L6 3L0 6Z\" fill=\"#9aa6a6\" /></marker></defs><rect width=\"100%\" height=\"100%\" fill=\"#f4f0e8\" /><line x1=\"128.0\" y1=\"66.7\" x2=\"83.5\" y2=\"19.4\" stroke=\"#9aa6a6\" stroke-width=\"1\" stroke-dasharray=\"3 3\" /><ellipse cx=\"121.7\" cy=\"86.3\" rx=\"8.3\" ry=\"5.6\" fill=\"transparent\" data-free-element=\"r14-historical-free\" stroke=\"#25312c\" stroke-width=\"0.5\" /><g><rect x=\"67.5\" y=\"14.0\" width=\"32.0\" height=\"10.8\" rx=\"3\" fill=\"#dbe8e5\" stroke=\"#52606a\" stroke-width=\"1\" /><text x=\"71.5\" y=\"21.8\" fill=\"#24343c\" font-family=\"sans-serif\" font-size=\"6.0\">子图入口 · Structure / Flow</text></g><g><rect x=\"67.5\" y=\"39.0\" width=\"32.0\" height=\"10.8\" rx=\"3\" fill=\"#dbe8e5\" stroke=\"#52606a\" stroke-width=\"1\" /><text x=\"71.5\" y=\"46.9\" fill=\"#24343c\" font-family=\"sans-serif\" font-size=\"6.0\">共享叶任务 · Agent 在输入中更新</text></g><g><rect x=\"113.4\" y=\"61.3\" width=\"29.2\" height=\"10.8\" rx=\"3\" fill=\"#dbe8e5\" stroke=\"#52606a\" stroke-width=\"1\" /><text x=\"117.4\" y=\"69.1\" fill=\"#24343c\" font-family=\"sans-serif\" font-size=\"6.0\">历史验收对象 · 原文保留</text></g></svg>",
+      "restoreVisible": false,
+      "graph": "r9-graph-c",
+      "camera": "{\"offsetLeft\":72,\"offsetTop\":182,\"width\":1018,\"height\":718,\"scrollX\":-61.05263157894737,\"scrollY\":-34.526315789473685,\"zoom\":3.8}"
+    },
+    {
+      "annotationId": "r14-deleted-relation-annotation",
+      "revision": 28,
+      "alt": "目标修订：共同子图 B只读预览",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 240 128\" width=\"240\" height=\"128\" role=\"img\" data-preview-mode=\"overview\" aria-label=\"共同子图 B\"><defs><marker id=\"thumbnail-arrow\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\"><path d=\"M0 0L6 3L0 6Z\" fill=\"#9aa6a6\" /></marker></defs><rect width=\"100%\" height=\"100%\" fill=\"#f4f0e8\" /><line x1=\"128.0\" y1=\"66.7\" x2=\"83.5\" y2=\"19.4\" stroke=\"#9aa6a6\" stroke-width=\"1\" stroke-dasharray=\"3 3\" /><ellipse cx=\"121.7\" cy=\"86.3\" rx=\"8.3\" ry=\"5.6\" fill=\"transparent\" data-free-element=\"r14-historical-free\" stroke=\"#25312c\" stroke-width=\"0.5\" /><g><rect x=\"67.5\" y=\"14.0\" width=\"32.0\" height=\"10.8\" rx=\"3\" fill=\"#dbe8e5\" stroke=\"#52606a\" stroke-width=\"1\" /><text x=\"71.5\" y=\"21.8\" fill=\"#24343c\" font-family=\"sans-serif\" font-size=\"6.0\">子图入口 · Structure / Flow</text></g><g><rect x=\"67.5\" y=\"39.0\" width=\"32.0\" height=\"10.8\" rx=\"3\" fill=\"#dbe8e5\" stroke=\"#52606a\" stroke-width=\"1\" /><text x=\"71.5\" y=\"46.9\" fill=\"#24343c\" font-family=\"sans-serif\" font-size=\"6.0\">共享叶任务 · Agent 在输入中更新</text></g><g><rect x=\"113.4\" y=\"61.3\" width=\"29.2\" height=\"10.8\" rx=\"3\" fill=\"#dbe8e5\" stroke=\"#52606a\" stroke-width=\"1\" /><text x=\"117.4\" y=\"69.1\" fill=\"#24343c\" font-family=\"sans-serif\" font-size=\"6.0\">历史验收对象 · 原文保留</text></g></svg>",
+      "restoreVisible": false,
+      "graph": "r9-graph-c",
+      "camera": "{\"offsetLeft\":72,\"offsetTop\":182,\"width\":1018,\"height\":718,\"scrollX\":-61.05263157894737,\"scrollY\":-34.526315789473685,\"zoom\":3.8}"
+    }
+  ],
+  "beforeRevision": 30,
+  "finalRevision": 30,
+  "status": "failed"
+}

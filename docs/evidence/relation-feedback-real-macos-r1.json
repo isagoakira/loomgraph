@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-01T23:47:03.282Z",
+  "beforeRevision": 33,
+  "afterRevision": 34,
+  "visibleTarget": "本条目标使用当前选择关系 · relation",
+  "annotation": {
+    "id": "annotation-fb8b9279-e57b-444a-bece-bcb65fe04bfc",
+    "text": "连线验收：这一条顺序关系保留身份，说明与执行依赖分开。",
+    "targets": [
+      {
+        "type": "relation",
+        "graphId": "fixture-graph-1",
+        "relationId": "fixture-relation-1-0"
+      }
+    ],
+    "observedRevision": 33,
+    "graphPath": [
+      "fixture-graph-1"
+    ],
+    "status": "draft",
+    "createdAt": "2026-10-01T23:47:03.146Z",
+    "updatedAt": "2026-10-01T23:47:03.146Z",
+    "responses": []
+  },
+  "assertions": {
+    "singleRelation": true,
+    "exactRelationIdentity": true,
+    "graphCorrect": true,
+    "originalAnnotationsPreserved": true,
+    "observedRevision": true
+  }
+}

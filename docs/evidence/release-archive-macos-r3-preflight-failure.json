@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-02T06:15:17.272697+00:00",
+  "status": "failed",
+  "archive": {
+    "path": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/release-candidate-r3/agent-visual-canvas-0.1.0.zip",
+    "sha256": "8b17932b89cac075ef056f7750f41dd0dafd88046feebde9a9a73c7675fb3ac2"
+  },
+  "failedAssertion": "licenseInventoryGenerationMatches",
+  "buildGeneratedAt": "2026-10-02T06:00:50.409Z",
+  "documentedGeneratedAt": "2026-10-02T02:20:24.655Z",
+  "otherArchiveAssertionsPassed": true,
+  "extractionAttempted": false,
+  "cause": "collector retained complete license files but did not update the documented build timestamp",
+  "correction": "collector advances the stamp only after matching every documented package, version and module count; retain the rejected archive and regenerate r3"
+}

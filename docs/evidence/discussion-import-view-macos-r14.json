@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-02T05:55:29.175Z",
+  "scope": "正式项目包导入副本内实际查看图相关讨论",
+  "assertions": {
+    "importedProjectIdentityPreserved": true,
+    "independentWorkingCopyIdentity": true,
+    "allDiscussionRecordsExactlyPreserved": true,
+    "annotationSourcesExactlyPreserved": true,
+    "allThreeScopesVisibleAsExpected": true,
+    "viewingDoesNotWrite": true
+  },
+  "views": [
+    {
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "texts": [
+        "范围验收 · 所有图共有的项目讨论",
+        "范围验收 · 仅在 A 图的批注追问"
+      ]
+    },
+    {
+      "graphId": "r9-graph-b",
+      "texts": [
+        "范围验收 · 所有图共有的项目讨论",
+        "范围验收 · 仅在 B 图查看的讨论"
+      ]
+    },
+    {
+      "graphId": "r9-graph-c",
+      "texts": [
+        "范围验收 · 所有图共有的项目讨论"
+      ]
+    }
+  ],
+  "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+  "workCopyId": "4a92a34a-5648-4a60-9a39-9a5cc1a13402",
+  "importedCopyPath": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/图形审计 r9-7KxyhO/v1-import-5047f429-c800-44ec-b38b-727cbc5ccb05",
+  "beforeRevision": 30,
+  "finalRevision": 30,
+  "packageSha256": "03d9237d2cd4576b2a248abe85397e7bc814edc2a0981f4e35ee207d26a88937",
+  "packageHashCorrection": "此值对原始 avcanvas 字节计算；前一 transfer 探针的同名字段对 Buffer JSON 计算，不能作为包校验和。",
+  "status": "passed"
+}

@@ -1,0 +1,732 @@
+{
+  "date": "2026-10-03",
+  "spaceId": 3,
+  "passed": 24,
+  "total": 24,
+  "cases": [
+    {
+      "name": "Nine real connected card diagrams render",
+      "pass": true,
+      "details": [
+        {
+          "id": "overview",
+          "cards": 7,
+          "edges": 7,
+          "width": 1046,
+          "height": 1154
+        },
+        {
+          "id": "map-probability",
+          "cards": 4,
+          "edges": 3,
+          "width": 1047,
+          "height": 730
+        },
+        {
+          "id": "map-signal-confidence",
+          "cards": 5,
+          "edges": 4,
+          "width": 1047,
+          "height": 780
+        },
+        {
+          "id": "map-memory-problem",
+          "cards": 5,
+          "edges": 4,
+          "width": 1047,
+          "height": 807
+        },
+        {
+          "id": "map-two-memories",
+          "cards": 6,
+          "edges": 5,
+          "width": 1047,
+          "height": 807
+        },
+        {
+          "id": "map-inference",
+          "cards": 7,
+          "edges": 7,
+          "width": 1047,
+          "height": 979
+        },
+        {
+          "id": "map-update",
+          "cards": 7,
+          "edges": 7,
+          "width": 1047,
+          "height": 1004
+        },
+        {
+          "id": "map-evidence",
+          "cards": 7,
+          "edges": 6,
+          "width": 1047,
+          "height": 1029
+        },
+        {
+          "id": "map-reproduction",
+          "cards": 6,
+          "edges": 6,
+          "width": 1047,
+          "height": 979
+        }
+      ]
+    },
+    {
+      "name": "Desktop labels and paths avoid cards",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "Card definitions remain readable and document fits",
+      "pass": true,
+      "details": {
+        "width": 1440,
+        "overflow": false,
+        "errors": [],
+        "issues": [],
+        "maps": [
+          {
+            "id": "overview",
+            "cards": 7,
+            "edges": 7,
+            "width": 1046,
+            "height": 1154
+          },
+          {
+            "id": "map-probability",
+            "cards": 4,
+            "edges": 3,
+            "width": 1047,
+            "height": 730
+          },
+          {
+            "id": "map-signal-confidence",
+            "cards": 5,
+            "edges": 4,
+            "width": 1047,
+            "height": 780
+          },
+          {
+            "id": "map-memory-problem",
+            "cards": 5,
+            "edges": 4,
+            "width": 1047,
+            "height": 807
+          },
+          {
+            "id": "map-two-memories",
+            "cards": 6,
+            "edges": 5,
+            "width": 1047,
+            "height": 807
+          },
+          {
+            "id": "map-inference",
+            "cards": 7,
+            "edges": 7,
+            "width": 1047,
+            "height": 979
+          },
+          {
+            "id": "map-update",
+            "cards": 7,
+            "edges": 7,
+            "width": 1047,
+            "height": 1004
+          },
+          {
+            "id": "map-evidence",
+            "cards": 7,
+            "edges": 6,
+            "width": 1047,
+            "height": 1029
+          },
+          {
+            "id": "map-reproduction",
+            "cards": 6,
+            "edges": 6,
+            "width": 1047,
+            "height": 979
+          }
+        ],
+        "minDefinitionFont": 14,
+        "modals": 0
+      }
+    },
+    {
+      "name": "No popup or runtime error",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "Context recaps and conceptual groups accompany all eight steps",
+      "pass": true
+    },
+    {
+      "name": "Hover does not activate or open details",
+      "pass": true
+    },
+    {
+      "name": "Click expands full details inside the card",
+      "pass": true
+    },
+    {
+      "name": "Expansion keeps other columns at their reading locations",
+      "pass": true,
+      "details": {
+        "before": [
+          {
+            "id": "foco",
+            "x": 22,
+            "y": 36,
+            "w": 251,
+            "h": 218,
+            "col": 0
+          },
+          {
+            "id": "taxonomy",
+            "x": 22,
+            "y": 312,
+            "w": 251,
+            "h": 166,
+            "col": 0
+          },
+          {
+            "id": "subcategory",
+            "x": 377,
+            "y": 36,
+            "w": 251,
+            "h": 166,
+            "col": 1
+          },
+          {
+            "id": "memory",
+            "x": 377,
+            "y": 260,
+            "w": 251,
+            "h": 166,
+            "col": 1
+          },
+          {
+            "id": "factor",
+            "x": 732,
+            "y": 36,
+            "w": 251,
+            "h": 166,
+            "col": 2
+          },
+          {
+            "id": "reasoning",
+            "x": 732,
+            "y": 260,
+            "w": 251,
+            "h": 166,
+            "col": 2
+          }
+        ],
+        "after": [
+          {
+            "id": "foco",
+            "x": 22,
+            "y": 36,
+            "w": 251,
+            "h": 218,
+            "col": 0
+          },
+          {
+            "id": "taxonomy",
+            "x": 22,
+            "y": 312,
+            "w": 251,
+            "h": 166,
+            "col": 0
+          },
+          {
+            "id": "subcategory",
+            "x": 377,
+            "y": 36,
+            "w": 251,
+            "h": 166,
+            "col": 1
+          },
+          {
+            "id": "memory",
+            "x": 377,
+            "y": 260,
+            "w": 251,
+            "h": 166,
+            "col": 1
+          },
+          {
+            "id": "factor",
+            "x": 732,
+            "y": 36,
+            "w": 251,
+            "h": 556,
+            "col": 2
+          },
+          {
+            "id": "reasoning",
+            "x": 732,
+            "y": 650,
+            "w": 251,
+            "h": 166,
+            "col": 2
+          }
+        ]
+      }
+    },
+    {
+      "name": "Expanded card has clear labels and relationships",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "Two cards can remain independently expanded",
+      "pass": true
+    },
+    {
+      "name": "Neighborhood extends along semantic relations",
+      "pass": true,
+      "details": {
+        "nodes": [
+          "factor",
+          "memory",
+          "signal",
+          "trajectory",
+          "revision",
+          "ablation"
+        ],
+        "visible": true
+      }
+    },
+    {
+      "name": "Return restores the local map and its prior disclosure",
+      "pass": true
+    },
+    {
+      "name": "Lecture location offers an explicit return",
+      "pass": true
+    },
+    {
+      "name": "Return restores the prior reading position",
+      "pass": true,
+      "details": {
+        "readingPosition": 6662,
+        "restored": 6662
+      }
+    },
+    {
+      "name": "Clickable arrow explains why its endpoints connect",
+      "pass": true
+    },
+    {
+      "name": "Keyboard can inspect the relationship",
+      "pass": true
+    },
+    {
+      "name": "Canonical main result remains available",
+      "pass": true
+    },
+    {
+      "name": "Week four contrary result remains visible",
+      "pass": true
+    },
+    {
+      "name": "Readable card layout without page overflow at 900",
+      "pass": true,
+      "details": {
+        "width": 900,
+        "overflow": false,
+        "errors": [],
+        "issues": [],
+        "maps": [
+          {
+            "id": "overview",
+            "cards": 7,
+            "edges": 7,
+            "width": 607,
+            "height": 1830
+          },
+          {
+            "id": "map-probability",
+            "cards": 4,
+            "edges": 3,
+            "width": 614,
+            "height": 1185
+          },
+          {
+            "id": "map-signal-confidence",
+            "cards": 5,
+            "edges": 4,
+            "width": 614,
+            "height": 1366
+          },
+          {
+            "id": "map-memory-problem",
+            "cards": 5,
+            "edges": 4,
+            "width": 614,
+            "height": 1397
+          },
+          {
+            "id": "map-two-memories",
+            "cards": 6,
+            "edges": 5,
+            "width": 614,
+            "height": 1651
+          },
+          {
+            "id": "map-inference",
+            "cards": 7,
+            "edges": 7,
+            "width": 614,
+            "height": 1854
+          },
+          {
+            "id": "map-update",
+            "cards": 7,
+            "edges": 7,
+            "width": 614,
+            "height": 1899
+          },
+          {
+            "id": "map-evidence",
+            "cards": 7,
+            "edges": 6,
+            "width": 614,
+            "height": 1872
+          },
+          {
+            "id": "map-reproduction",
+            "cards": 6,
+            "edges": 6,
+            "width": 614,
+            "height": 1675
+          }
+        ],
+        "minDefinitionFont": 14,
+        "modals": 0
+      }
+    },
+    {
+      "name": "No clipped or overlapping diagram objects at 900",
+      "pass": true,
+      "details": {
+        "issues": [],
+        "errors": []
+      }
+    },
+    {
+      "name": "Navigation follows the current local problem at 900",
+      "pass": true
+    },
+    {
+      "name": "Readable card layout without page overflow at 390",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "overflow": false,
+        "errors": [],
+        "issues": [],
+        "maps": [
+          {
+            "id": "map-probability",
+            "cards": 4,
+            "edges": 3,
+            "width": 323,
+            "height": 1408
+          },
+          {
+            "id": "map-signal-confidence",
+            "cards": 5,
+            "edges": 4,
+            "width": 323,
+            "height": 1640
+          },
+          {
+            "id": "map-memory-problem",
+            "cards": 5,
+            "edges": 4,
+            "width": 323,
+            "height": 1671
+          },
+          {
+            "id": "map-two-memories",
+            "cards": 6,
+            "edges": 5,
+            "width": 323,
+            "height": 1949
+          },
+          {
+            "id": "map-inference",
+            "cards": 7,
+            "edges": 7,
+            "width": 323,
+            "height": 2152
+          },
+          {
+            "id": "map-update",
+            "cards": 7,
+            "edges": 7,
+            "width": 323,
+            "height": 2121
+          },
+          {
+            "id": "map-evidence",
+            "cards": 7,
+            "edges": 6,
+            "width": 323,
+            "height": 2265
+          },
+          {
+            "id": "map-reproduction",
+            "cards": 6,
+            "edges": 6,
+            "width": 323,
+            "height": 1905
+          }
+        ],
+        "minDefinitionFont": 14,
+        "modals": 0
+      }
+    },
+    {
+      "name": "No clipped or overlapping diagram objects at 390",
+      "pass": true,
+      "details": {
+        "issues": [],
+        "errors": []
+      }
+    },
+    {
+      "name": "Navigation follows the current local problem at 390",
+      "pass": true
+    }
+  ],
+  "measurements": [
+    {
+      "view": "desktop",
+      "width": 1440,
+      "overflow": false,
+      "errors": [],
+      "issues": [],
+      "maps": [
+        {
+          "id": "overview",
+          "cards": 7,
+          "edges": 7,
+          "width": 1046,
+          "height": 1154
+        },
+        {
+          "id": "map-probability",
+          "cards": 4,
+          "edges": 3,
+          "width": 1047,
+          "height": 730
+        },
+        {
+          "id": "map-signal-confidence",
+          "cards": 5,
+          "edges": 4,
+          "width": 1047,
+          "height": 780
+        },
+        {
+          "id": "map-memory-problem",
+          "cards": 5,
+          "edges": 4,
+          "width": 1047,
+          "height": 807
+        },
+        {
+          "id": "map-two-memories",
+          "cards": 6,
+          "edges": 5,
+          "width": 1047,
+          "height": 807
+        },
+        {
+          "id": "map-inference",
+          "cards": 7,
+          "edges": 7,
+          "width": 1047,
+          "height": 979
+        },
+        {
+          "id": "map-update",
+          "cards": 7,
+          "edges": 7,
+          "width": 1047,
+          "height": 1004
+        },
+        {
+          "id": "map-evidence",
+          "cards": 7,
+          "edges": 6,
+          "width": 1047,
+          "height": 1029
+        },
+        {
+          "id": "map-reproduction",
+          "cards": 6,
+          "edges": 6,
+          "width": 1047,
+          "height": 979
+        }
+      ],
+      "minDefinitionFont": 14,
+      "modals": 0
+    },
+    {
+      "view": "width-900",
+      "width": 900,
+      "overflow": false,
+      "errors": [],
+      "issues": [],
+      "maps": [
+        {
+          "id": "overview",
+          "cards": 7,
+          "edges": 7,
+          "width": 607,
+          "height": 1830
+        },
+        {
+          "id": "map-probability",
+          "cards": 4,
+          "edges": 3,
+          "width": 614,
+          "height": 1185
+        },
+        {
+          "id": "map-signal-confidence",
+          "cards": 5,
+          "edges": 4,
+          "width": 614,
+          "height": 1366
+        },
+        {
+          "id": "map-memory-problem",
+          "cards": 5,
+          "edges": 4,
+          "width": 614,
+          "height": 1397
+        },
+        {
+          "id": "map-two-memories",
+          "cards": 6,
+          "edges": 5,
+          "width": 614,
+          "height": 1651
+        },
+        {
+          "id": "map-inference",
+          "cards": 7,
+          "edges": 7,
+          "width": 614,
+          "height": 1854
+        },
+        {
+          "id": "map-update",
+          "cards": 7,
+          "edges": 7,
+          "width": 614,
+          "height": 1899
+        },
+        {
+          "id": "map-evidence",
+          "cards": 7,
+          "edges": 6,
+          "width": 614,
+          "height": 1872
+        },
+        {
+          "id": "map-reproduction",
+          "cards": 6,
+          "edges": 6,
+          "width": 614,
+          "height": 1675
+        }
+      ],
+      "minDefinitionFont": 14,
+      "modals": 0
+    },
+    {
+      "view": "width-390",
+      "width": 390,
+      "overflow": false,
+      "errors": [],
+      "issues": [],
+      "maps": [
+        {
+          "id": "map-probability",
+          "cards": 4,
+          "edges": 3,
+          "width": 323,
+          "height": 1408
+        },
+        {
+          "id": "map-signal-confidence",
+          "cards": 5,
+          "edges": 4,
+          "width": 323,
+          "height": 1640
+        },
+        {
+          "id": "map-memory-problem",
+          "cards": 5,
+          "edges": 4,
+          "width": 323,
+          "height": 1671
+        },
+        {
+          "id": "map-two-memories",
+          "cards": 6,
+          "edges": 5,
+          "width": 323,
+          "height": 1949
+        },
+        {
+          "id": "map-inference",
+          "cards": 7,
+          "edges": 7,
+          "width": 323,
+          "height": 2152
+        },
+        {
+          "id": "map-update",
+          "cards": 7,
+          "edges": 7,
+          "width": 323,
+          "height": 2121
+        },
+        {
+          "id": "map-evidence",
+          "cards": 7,
+          "edges": 6,
+          "width": 323,
+          "height": 2265
+        },
+        {
+          "id": "map-reproduction",
+          "cards": 6,
+          "edges": 6,
+          "width": 323,
+          "height": 1905
+        }
+      ],
+      "minDefinitionFont": 14,
+      "modals": 0
+    }
+  ],
+  "limitations": [
+    "实际浏览器的布局与交互验证，不证明真人理解。",
+    "保留已核验的论文表格，未复现模型实验。",
+    "自由画布通用布局与已安装阅读器未由此升级。",
+    "三个局部图有7个节点，分组及原位回顾是其必要阅读上下文。"
+  ]
+}

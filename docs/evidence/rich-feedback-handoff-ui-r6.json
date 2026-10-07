@@ -1,0 +1,14 @@
+{
+  "revision": "66",
+  "reference": "Agent Visual Canvas 批次 batch-adf9b806-b9bd-4d6d-9099-04f5f6b6f32f\n读取上下文：/api/feedback/batch-adf9b806-b9bd-4d6d-9099-04f5f6b6f32f/context\n批注数：2\n状态：已在本机保存，等待宿主交接。",
+  "queued": [
+    {
+      "text": "【元控件验收】请确认这是针对独立文本框的意见，并保留它的字号和排版。",
+      "state": "待交接 · REV 56"
+    },
+    {
+      "text": "【元控件验收】请按模块的机制、输入输出、证据和局限分别反馈，保留全部分节。",
+      "state": "待交接 · REV 65"
+    }
+  ]
+}

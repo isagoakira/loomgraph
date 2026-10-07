@@ -1,0 +1,83 @@
+{
+  "kind": "declared-prerequisite-check",
+  "date": "2026-10-03",
+  "errors": [],
+  "checks": [
+    {
+      "severity": "info",
+      "code": "STEP_AUDIT",
+      "step": "probability",
+      "index": 1,
+      "newConcepts": 1,
+      "coreCharacters": 127,
+      "role": "background"
+    },
+    {
+      "severity": "info",
+      "code": "STEP_AUDIT",
+      "step": "signal-confidence",
+      "index": 2,
+      "newConcepts": 2,
+      "coreCharacters": 124,
+      "role": "contrast"
+    },
+    {
+      "severity": "info",
+      "code": "STEP_AUDIT",
+      "step": "memory-problem",
+      "index": 3,
+      "newConcepts": 1,
+      "coreCharacters": 156,
+      "role": "problem"
+    },
+    {
+      "severity": "info",
+      "code": "STEP_AUDIT",
+      "step": "two-memories",
+      "index": 4,
+      "newConcepts": 4,
+      "coreCharacters": 129,
+      "role": "structure"
+    },
+    {
+      "severity": "info",
+      "code": "STEP_AUDIT",
+      "step": "inference",
+      "index": 5,
+      "newConcepts": 1,
+      "coreCharacters": 137,
+      "role": "flow"
+    },
+    {
+      "severity": "info",
+      "code": "STEP_AUDIT",
+      "step": "update",
+      "index": 6,
+      "newConcepts": 1,
+      "coreCharacters": 173,
+      "role": "timeline"
+    },
+    {
+      "severity": "info",
+      "code": "STEP_AUDIT",
+      "step": "evidence",
+      "index": 7,
+      "newConcepts": 3,
+      "coreCharacters": 214,
+      "role": "comparison"
+    },
+    {
+      "severity": "info",
+      "code": "STEP_AUDIT",
+      "step": "reproduction",
+      "index": 8,
+      "newConcepts": 0,
+      "coreCharacters": 143,
+      "role": "synthesis"
+    }
+  ],
+  "limitations": [
+    "仅检查声明的概念；不能自动发现未声明术语或证明真实读者理解。",
+    "核心概念步骤一次引入四个关联名称，需要实读检查是否过密。"
+  ]
+}

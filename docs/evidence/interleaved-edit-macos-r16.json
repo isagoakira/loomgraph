@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-02T06:27:02.892Z",
+  "path": "真实原生标题编辑产生的HTTP请求暂停，Agent提交不同 / 相同字段后放行旧基线请求",
+  "assertions": {
+    "noBrowserErrors": true
+  },
+  "cases": [],
+  "browserErrors": [],
+  "stage": "different field",
+  "failure": "Error: Opened a different native title",
+  "status": "failed"
+}

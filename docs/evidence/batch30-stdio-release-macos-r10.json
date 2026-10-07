@@ -1,0 +1,451 @@
+{
+  "kind": "real_release_thirty_item_feedback_stdio",
+  "status": "passed",
+  "startedAt": "2026-10-02T03:21:37.269Z",
+  "finishedAt": "2026-10-02T03:21:38.172Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "probeNode": "v26.8.1",
+    "serviceNode": "24.21.0"
+  },
+  "service": {
+    "pluginRoot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas",
+    "launcher": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/scripts/start-canvas.mjs",
+    "serverSha256": "4c6fd043d0f591425a90a40f208432e7e5d778670a836b9c70414073192b6f21"
+  },
+  "dataRoot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/batch30-acceptance-r10-hlN1WW",
+  "batchId": "r10-cross-graph-batch-30",
+  "contextTimingMs": 10.930667000000028,
+  "frozenHash": "af1ac47244ce08bc3bfe490beeb62a4aea9c17317f95bfd079de35085a15504b",
+  "pages": [
+    {
+      "label": "queued",
+      "index": 0,
+      "cursor": "0",
+      "nextCursor": "7",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-00",
+        "r10-annotation-01",
+        "r10-annotation-02",
+        "r10-annotation-03",
+        "r10-annotation-04",
+        "r10-annotation-05",
+        "r10-annotation-06"
+      ]
+    },
+    {
+      "label": "queued",
+      "index": 1,
+      "cursor": "7",
+      "nextCursor": "14",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-07",
+        "r10-annotation-08",
+        "r10-annotation-09",
+        "r10-annotation-10",
+        "r10-annotation-11",
+        "r10-annotation-12",
+        "r10-annotation-13"
+      ]
+    },
+    {
+      "label": "queued",
+      "index": 2,
+      "cursor": "14",
+      "nextCursor": "21",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-14",
+        "r10-annotation-15",
+        "r10-annotation-16",
+        "r10-annotation-17",
+        "r10-annotation-18",
+        "r10-annotation-19",
+        "r10-annotation-20"
+      ]
+    },
+    {
+      "label": "queued",
+      "index": 3,
+      "cursor": "21",
+      "nextCursor": "28",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-21",
+        "r10-annotation-22",
+        "r10-annotation-23",
+        "r10-annotation-24",
+        "r10-annotation-25",
+        "r10-annotation-26",
+        "r10-annotation-27"
+      ]
+    },
+    {
+      "label": "queued",
+      "index": 4,
+      "cursor": "28",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-28",
+        "r10-annotation-29"
+      ]
+    },
+    {
+      "label": "reopened",
+      "index": 0,
+      "cursor": "0",
+      "nextCursor": "7",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-00",
+        "r10-annotation-01",
+        "r10-annotation-02",
+        "r10-annotation-03",
+        "r10-annotation-04",
+        "r10-annotation-05",
+        "r10-annotation-06"
+      ]
+    },
+    {
+      "label": "reopened",
+      "index": 1,
+      "cursor": "7",
+      "nextCursor": "14",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-07",
+        "r10-annotation-08",
+        "r10-annotation-09",
+        "r10-annotation-10",
+        "r10-annotation-11",
+        "r10-annotation-12",
+        "r10-annotation-13"
+      ]
+    },
+    {
+      "label": "reopened",
+      "index": 2,
+      "cursor": "14",
+      "nextCursor": "21",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-14",
+        "r10-annotation-15",
+        "r10-annotation-16",
+        "r10-annotation-17",
+        "r10-annotation-18",
+        "r10-annotation-19",
+        "r10-annotation-20"
+      ]
+    },
+    {
+      "label": "reopened",
+      "index": 3,
+      "cursor": "21",
+      "nextCursor": "28",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-21",
+        "r10-annotation-22",
+        "r10-annotation-23",
+        "r10-annotation-24",
+        "r10-annotation-25",
+        "r10-annotation-26",
+        "r10-annotation-27"
+      ]
+    },
+    {
+      "label": "reopened",
+      "index": 4,
+      "cursor": "28",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-28",
+        "r10-annotation-29"
+      ]
+    },
+    {
+      "label": "final",
+      "index": 0,
+      "cursor": "0",
+      "nextCursor": "7",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-00",
+        "r10-annotation-01",
+        "r10-annotation-02",
+        "r10-annotation-03",
+        "r10-annotation-04",
+        "r10-annotation-05",
+        "r10-annotation-06"
+      ]
+    },
+    {
+      "label": "final",
+      "index": 1,
+      "cursor": "7",
+      "nextCursor": "14",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-07",
+        "r10-annotation-08",
+        "r10-annotation-09",
+        "r10-annotation-10",
+        "r10-annotation-11",
+        "r10-annotation-12",
+        "r10-annotation-13"
+      ]
+    },
+    {
+      "label": "final",
+      "index": 2,
+      "cursor": "14",
+      "nextCursor": "21",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-14",
+        "r10-annotation-15",
+        "r10-annotation-16",
+        "r10-annotation-17",
+        "r10-annotation-18",
+        "r10-annotation-19",
+        "r10-annotation-20"
+      ]
+    },
+    {
+      "label": "final",
+      "index": 3,
+      "cursor": "21",
+      "nextCursor": "28",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-21",
+        "r10-annotation-22",
+        "r10-annotation-23",
+        "r10-annotation-24",
+        "r10-annotation-25",
+        "r10-annotation-26",
+        "r10-annotation-27"
+      ]
+    },
+    {
+      "label": "final",
+      "index": 4,
+      "cursor": "28",
+      "totalAnnotations": 30,
+      "ids": [
+        "r10-annotation-28",
+        "r10-annotation-29"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "stdio_session_connected",
+      "at": "2026-10-02T03:21:37.564Z",
+      "pid": 10310
+    },
+    {
+      "name": "stdio_session_closed",
+      "at": "2026-10-02T03:21:37.823Z",
+      "elapsedMs": 9.336708999999928,
+      "pidGone": true,
+      "lockReleased": true
+    },
+    {
+      "name": "stdio_session_connected",
+      "at": "2026-10-02T03:21:37.941Z",
+      "pid": 10313
+    },
+    {
+      "name": "thirty_item_batch_completed",
+      "at": "2026-10-02T03:21:38.164Z",
+      "revision": 67,
+      "responded": 28,
+      "failed": 1,
+      "needsClarification": 1,
+      "frozenHash": "af1ac47244ce08bc3bfe490beeb62a4aea9c17317f95bfd079de35085a15504b"
+    },
+    {
+      "name": "stdio_session_closed",
+      "at": "2026-10-02T03:21:38.172Z",
+      "elapsedMs": 7.19337500000006,
+      "pidGone": true,
+      "lockReleased": true
+    }
+  ],
+  "assertions": {
+    "frozen_manifest_kept_all_thirty": true,
+    "frozen_context_kept_three_target_graphs": true,
+    "frozen_context_kept_dependency_relationships": true,
+    "frozen_context_preserved_original_words_and_versions": true,
+    "deleted_target_retained_historical_title_and_removal": true,
+    "changed_target_retained_historical_title_and_changed_fields": true,
+    "queued_page_0_bounded_and_total": true,
+    "queued_page_1_bounded_and_total": true,
+    "queued_page_2_bounded_and_total": true,
+    "queued_page_3_bounded_and_total": true,
+    "queued_page_4_bounded_and_total": true,
+    "queued_all_thirty_no_missing_or_duplicate": true,
+    "generic_protocol_received_batch": true,
+    "clarification_and_failure_did_not_block_other_items": true,
+    "midpoint_frozen_context_bytes_unchanged": true,
+    "midpoint_eof_released_service_and_lock": true,
+    "midpoint_restart_restored_exact_processing_state": true,
+    "reopened_page_0_bounded_and_total": true,
+    "reopened_page_1_bounded_and_total": true,
+    "reopened_page_2_bounded_and_total": true,
+    "reopened_page_3_bounded_and_total": true,
+    "reopened_page_4_bounded_and_total": true,
+    "reopened_all_thirty_no_missing_or_duplicate": true,
+    "response_retry_after_restart_deduplicated": true,
+    "changed_response_with_same_operation_id_rejected": true,
+    "changed_response_retry_did_not_change_revision": true,
+    "final_page_0_bounded_and_total": true,
+    "final_page_1_bounded_and_total": true,
+    "final_page_2_bounded_and_total": true,
+    "final_page_3_bounded_and_total": true,
+    "final_page_4_bounded_and_total": true,
+    "final_all_thirty_no_missing_or_duplicate": true,
+    "all_thirty_have_one_independent_response": true,
+    "final_result_kept_partial_clarification_and_failure": true,
+    "final_frozen_context_bytes_unchanged": true,
+    "independent_response_linked_to_real_content_change": true,
+    "final_eof_released_service_and_lock": true
+  },
+  "finalSummary": {
+    "batchId": "r10-cross-graph-batch-30",
+    "state": "partial",
+    "total": 30,
+    "completed": 29,
+    "pending": 0,
+    "needsClarification": 1,
+    "annotationStatuses": [
+      {
+        "annotationId": "r10-annotation-00",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-01",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-02",
+        "status": "needs_clarification"
+      },
+      {
+        "annotationId": "r10-annotation-03",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-04",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-05",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-06",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-07",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-08",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-09",
+        "status": "failed"
+      },
+      {
+        "annotationId": "r10-annotation-10",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-11",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-12",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-13",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-14",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-15",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-16",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-17",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-18",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-19",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-20",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-21",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-22",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-23",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-24",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-25",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-26",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-27",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-28",
+        "status": "responded"
+      },
+      {
+        "annotationId": "r10-annotation-29",
+        "status": "responded"
+      }
+    ]
+  },
+  "boundary": "真实当前生产构建入口和MCP stdio：30条独立意见跨三图（最后5条只由batch.annotationIds关联，未带反向batchId）、两个观察版本，包含已删除/已变更目标及执行依赖关系；7条分页、逐条回应/澄清/失败、真实内容修改关联及EOF中途重启。一次上下文计时仅作原始样本，不证明三轮p95预算。此为通用MCP客户端验收，不代表既有Codex/Claude模型对话或原生Windows已通过。"
+}

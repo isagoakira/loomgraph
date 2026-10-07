@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-10-02T02:23:38.851Z",
+  "path": "真实原生输入并Escape后立即切图，不等待存储；旧图修改须保存、新图场景不受旧回调影响",
+  "stage": "complete",
+  "original": "模块 2 · 本地连接（最终原地编辑验收）\n第二行 · 用户主动换行",
+  "beforeRevision": 75,
+  "afterRevision": 76,
+  "graph": "fixture-graph-2",
+  "history": [
+    {
+      "id": "6494e1f6-875d-40b8-9356-be32e20387a4",
+      "parentChangeId": "391d0fb4-39a9-4ac6-aee6-ee4fb38c155e",
+      "operationId": "operation-23cead42-e457-45c1-acec-3cb0d83444c4",
+      "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+      "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+      "baseRevision": 75,
+      "revision": 76,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T02:23:38.249Z",
+      "operations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · 本地连接（最终快速切图保存验收）"
+          }
+        }
+      ],
+      "affectedIds": [
+        "fixture-entity-5"
+      ],
+      "appliedOperations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · 本地连接（最终快速切图保存验收）",
+            "updatedAt": "2026-10-02T02:23:38.249Z"
+          }
+        }
+      ]
+    }
+  ],
+  "assertions": {
+    "titleSavedToOriginalEntity": true,
+    "oneUserCommit": true,
+    "exactTitleOperation": true,
+    "newGraphVisible": true,
+    "geometryUnchanged": true,
+    "freeElementsUnchanged": true,
+    "annotationsUnchanged": true
+  }
+}

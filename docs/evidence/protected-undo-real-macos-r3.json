@@ -1,0 +1,171 @@
+{
+  "checkedAt": "2026-10-02T00:59:53.256Z",
+  "path": "真实原生输入（Escape结束）、Agent本机API同字段更新、工作区撤销冲突、用户主动回到旧内容",
+  "stage": "native first edit",
+  "failure": "Error: page.waitForFunction timed out after 10000ms on page p1; last URL was \"http://127.0.0.1:4317/\"; last title was \"Agent Visual Canvas · 本地工作台\".",
+  "before": {
+    "revision": 53,
+    "title": "模块 2 · 本地连接（Agent 后续更新）",
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 140.57145036969868,
+      "zoom": 0.7
+    }
+  },
+  "user": null,
+  "rejected": null,
+  "returned": null,
+  "after": {
+    "revision": 54,
+    "title": "模块 2 · 本地连接（Agent 后续更新）",
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 94.33333333333337,
+      "scrollY": 40.166666666666686,
+      "zoom": 0.6
+    }
+  },
+  "history": [
+    {
+      "id": "1f850f35-3227-4535-a39d-b7a2b86b71ea",
+      "parentChangeId": "28459d50-8ddc-455b-b834-0d9fb054c8ae",
+      "operationId": "operation-11407fa2-3ad2-4b1b-8741-cccda6283fb3",
+      "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+      "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+      "baseRevision": 53,
+      "revision": 54,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T00:59:42.660Z",
+      "operations": [
+        {
+          "type": "free.put",
+          "freeElement": {
+            "id": "dtoZ5qT5l2dSz-Bcy13Nv",
+            "graphId": "fixture-graph-1",
+            "element": {
+              "id": "dtoZ5qT5l2dSz-Bcy13Nv",
+              "type": "text",
+              "x": 355.66666666666663,
+              "y": 403.1666666666667,
+              "width": 8,
+              "height": 25,
+              "angle": 0,
+              "strokeColor": "#1e1e1e",
+              "backgroundColor": "transparent",
+              "fillStyle": "solid",
+              "strokeWidth": 2,
+              "strokeStyle": "solid",
+              "roughness": 1,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "index": "aQ",
+              "roundness": null,
+              "seed": 1503048396,
+              "version": 2,
+              "versionNonce": 914075636,
+              "isDeleted": false,
+              "boundElements": null,
+              "updated": 1790902782615,
+              "link": null,
+              "locked": false,
+              "customData": {
+                "agentCanvas": {
+                  "freeElementId": "dtoZ5qT5l2dSz-Bcy13Nv",
+                  "role": "free"
+                }
+              },
+              "text": "",
+              "fontSize": 20,
+              "fontFamily": 5,
+              "textAlign": "left",
+              "verticalAlign": "top",
+              "containerId": null,
+              "originalText": "",
+              "autoResize": true,
+              "lineHeight": 1.25
+            }
+          }
+        }
+      ],
+      "affectedIds": [
+        "dtoZ5qT5l2dSz-Bcy13Nv",
+        "fixture-graph-1"
+      ],
+      "appliedOperations": [
+        {
+          "type": "free.put",
+          "freeElement": {
+            "id": "dtoZ5qT5l2dSz-Bcy13Nv",
+            "graphId": "fixture-graph-1",
+            "element": {
+              "id": "dtoZ5qT5l2dSz-Bcy13Nv",
+              "type": "text",
+              "x": 355.66666666666663,
+              "y": 403.1666666666667,
+              "width": 8,
+              "height": 25,
+              "angle": 0,
+              "strokeColor": "#1e1e1e",
+              "backgroundColor": "transparent",
+              "fillStyle": "solid",
+              "strokeWidth": 2,
+              "strokeStyle": "solid",
+              "roughness": 1,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "index": "aQ",
+              "roundness": null,
+              "seed": 1503048396,
+              "version": 2,
+              "versionNonce": 914075636,
+              "isDeleted": false,
+              "boundElements": null,
+              "updated": 1790902782615,
+              "link": null,
+              "locked": false,
+              "customData": {
+                "agentCanvas": {
+                  "freeElementId": "dtoZ5qT5l2dSz-Bcy13Nv",
+                  "role": "free"
+                }
+              },
+              "text": "",
+              "fontSize": 20,
+              "fontFamily": 5,
+              "textAlign": "left",
+              "verticalAlign": "top",
+              "containerId": null,
+              "originalText": "",
+              "autoResize": true,
+              "lineHeight": 1.25
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "assertions": {
+    "originalTextExact": false,
+    "oneUserCommit": false,
+    "agentTitlePreserved": false,
+    "noUndoOrEchoRevision": true,
+    "intentionalUserReturnAccepted": false,
+    "annotationsUnchanged": true,
+    "freeElementsUnchanged": false,
+    "cameraPreserved": false
+  }
+}

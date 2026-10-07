@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "agent_visual_canvas": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["scripts/start-canvas.mjs"]
+    }
+  }
+}

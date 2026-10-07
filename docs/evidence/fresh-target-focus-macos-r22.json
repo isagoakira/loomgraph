@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-10-02T10:19:16.170Z",
+  "path": "Agent 在当前图新增远端表示后立即发 focus，目标 scene 尚未绘制时仍能定位",
+  "assertions": {
+    "targetInitiallyOutsideViewport": true,
+    "newlyCreatedTargetActuallyFocused": true,
+    "presentationDoesNotAddRevision": true,
+    "focusPreservesZoom": true,
+    "currentGraphRemainsCorrect": true,
+    "newTargetNotMisreportedMissing": true
+  },
+  "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+  "representationId": "r22-fresh-focus-ed363b94-4097-4717-a270-a7ff477cb050",
+  "beforeCamera": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 718,
+    "scrollX": 217.5,
+    "scrollY": 363.5,
+    "zoom": 0.4
+  },
+  "createdPosition": {
+    "x": 3328,
+    "y": 2032
+  },
+  "beforeRevision": 66,
+  "createdRevision": 67,
+  "publicView": {
+    "renderedGraphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "renderedRevision": "67",
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 718,
+      "scrollX": -2170.5,
+      "scrollY": -1173.5,
+      "zoom": 0.4
+    },
+    "targetPoint": {
+      "representationId": "r22-fresh-focus-ed363b94-4097-4717-a270-a7ff477cb050",
+      "entityId": "r9-shared",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "lowerLeftInterior": {
+        "sceneX": 3340,
+        "sceneY": 2098,
+        "viewportX": 539.8,
+        "viewportY": 551.8
+      }
+    },
+    "prompt": "Agent 请求查看：表示「r22-fresh-focus-ed363b94-4097-4717-a270-a7ff477cb050」 · 回路总览 A查看",
+    "feedbackText": "r21 跟随验收草稿 · 保留对象、原话、观察版本和路径 66"
+  },
+  "afterRevision": 67,
+  "screenshot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/docs/evidence/101-fresh-focus-r22.png",
+  "status": "passed"
+}

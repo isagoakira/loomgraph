@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-02T03:43:43.905Z",
+  "path": "正式历史UI上传损坏资源checksum包；按UI重试同一文件及操作ID",
+  "beforeRevision": 8,
+  "afterRevision": 8,
+  "initialProbe": "原等待精确错误文案未匹配，在15秒后超时；已重新观察页面并按可见重试操作收集真实错误文案，不能将此前超时标为UI通过",
+  "visible": {
+    "body": "\n    AVCAgent Visual CanvasLOCAL WORKBENCH / 01当前项目V1 正确性 · 隔离图形审计REV 008 本机服务SERVICE▦总览⊙对象↗批注···讨论↺历史i规则项目/回路总览 A↶ 撤销▱ 区域＋ 反馈当前图回路总览 A共同子图 B回路细节 C5 对象·1 关系·7 表示整理布局←⌘＋MIXED拖动节点只改变当前图上的表示 · 状态跟随同一对象VIEW 0.60×要移动画布，请按住鼠标滚轮或空格键同时拖拽鼠标，或使用抓手工具。形状1234567890素材库画布动作60% 退出禅模式绘制 Canvas项目包导入失败：400 Bad RequestREVISION LOG项目历史05读取最近 50 条内容修订，比较历史快照，并在确认影响后生成一条新的恢复修订。历史记录08008输入批注期间模拟真实 Agent 内容更新未知来源 · 2026/10/2 11:40 · 1 项操作007用户编辑画布本地用户 · 2026/10/2 11:23 · 5 项操作006创建隔离多入口回路与反馈审计样例未知来源 · 2026/10/2 11:21 · 26 项操作005upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作004upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作003upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作002upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作001upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作读取指定修订READ ONLY历史修订号读取修订项目包MIGRATION导出当前项目包导入 .avcanvas 独立副本重试导入 corrupt-package-r10-resource-hash.avcanvas\n  \n\n",
+    "sidebar": "REVISION LOG项目历史05读取最近 50 条内容修订，比较历史快照，并在确认影响后生成一条新的恢复修订。历史记录08008输入批注期间模拟真实 Agent 内容更新未知来源 · 2026/10/2 11:40 · 1 项操作007用户编辑画布本地用户 · 2026/10/2 11:23 · 5 项操作006创建隔离多入口回路与反馈审计样例未知来源 · 2026/10/2 11:21 · 26 项操作005upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作004upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作003upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作002upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作001upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作读取指定修订READ ONLY历史修订号读取修订项目包MIGRATION导出当前项目包导入 .avcanvas 独立副本重试导入 corrupt-package-r10-resource-hash.avcanvas"
+  },
+  "assertions": {
+    "visibleImportFailure": true,
+    "noImportedSuccess": true,
+    "exactProjectUnchanged": true,
+    "retryAvailable": true
+  }
+}

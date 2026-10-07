@@ -1,0 +1,425 @@
+{
+  "result": {
+    "firstRevision": 10048,
+    "finalRevision": 10081,
+    "expectedRevisions": 33,
+    "extraRevisions": 0,
+    "samplePoint": {
+      "x": 806,
+      "y": 109
+    },
+    "representationId": "fixture-rep-0-1",
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 1011.6666666666667,
+      "scrollY": 51.33333333333337,
+      "zoom": 0.3
+    },
+    "exactPoint": {
+      "sceneX": 332,
+      "sceneY": 130,
+      "viewportX": 475.1,
+      "viewportY": 236.4
+    },
+    "viewport": {
+      "scrollX": 1011.6666666666667,
+      "scrollY": 51.33333333333337,
+      "zoom": 0.3
+    },
+    "finalViewport": {
+      "scrollX": 1011.6666666666667,
+      "scrollY": 51.33333333333337,
+      "zoom": 0.3
+    },
+    "samples": [
+      {
+        "index": 0,
+        "revision": 10050,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 909,
+        "requestToVisibleMs": 1025.2999999523163
+      },
+      {
+        "index": 1,
+        "revision": 10051,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 951.7000000476837,
+        "requestToVisibleMs": 1086.6000000238419
+      },
+      {
+        "index": 2,
+        "revision": 10052,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 921,
+        "requestToVisibleMs": 1066.2000000476837
+      },
+      {
+        "index": 3,
+        "revision": 10053,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 941,
+        "requestToVisibleMs": 1068.5999999046326
+      },
+      {
+        "index": 4,
+        "revision": 10054,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 889.2999999523163,
+        "requestToVisibleMs": 1001.5
+      },
+      {
+        "index": 5,
+        "revision": 10055,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 942.1000000238419,
+        "requestToVisibleMs": 1081.2999999523163
+      },
+      {
+        "index": 6,
+        "revision": 10056,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 901.5,
+        "requestToVisibleMs": 1003.6000000238419
+      },
+      {
+        "index": 7,
+        "revision": 10057,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 977.3000000715256,
+        "requestToVisibleMs": 1116.5
+      },
+      {
+        "index": 8,
+        "revision": 10058,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 939.5,
+        "requestToVisibleMs": 1085.7000000476837
+      },
+      {
+        "index": 9,
+        "revision": 10059,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 928.5,
+        "requestToVisibleMs": 1061.8000000715256
+      },
+      {
+        "index": 10,
+        "revision": 10060,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 812,
+        "requestToVisibleMs": 998
+      },
+      {
+        "index": 11,
+        "revision": 10061,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 35.10000002384186,
+        "requestToVisibleMs": 157.80000007152557
+      },
+      {
+        "index": 12,
+        "revision": 10062,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 899.1000000238419,
+        "requestToVisibleMs": 977.8999999761581
+      },
+      {
+        "index": 13,
+        "revision": 10063,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 965.2000000476837,
+        "requestToVisibleMs": 1100.2000000476837
+      },
+      {
+        "index": 14,
+        "revision": 10064,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 912.9000000953674,
+        "requestToVisibleMs": 1064.1000000238419
+      },
+      {
+        "index": 15,
+        "revision": 10065,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 962.6000000238419,
+        "requestToVisibleMs": 1090.4000000953674
+      },
+      {
+        "index": 16,
+        "revision": 10066,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 949,
+        "requestToVisibleMs": 1074.8000000715256
+      },
+      {
+        "index": 17,
+        "revision": 10067,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 917.1000000238419,
+        "requestToVisibleMs": 1041.9000000953674
+      },
+      {
+        "index": 18,
+        "revision": 10068,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 969.2999999523163,
+        "requestToVisibleMs": 1115.7000000476837
+      },
+      {
+        "index": 19,
+        "revision": 10069,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 951.5,
+        "requestToVisibleMs": 1061.6000000238419
+      },
+      {
+        "index": 20,
+        "revision": 10070,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 886.2000000476837,
+        "requestToVisibleMs": 1007.3000000715256
+      },
+      {
+        "index": 21,
+        "revision": 10071,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 950.6000000238419,
+        "requestToVisibleMs": 1091.5
+      },
+      {
+        "index": 22,
+        "revision": 10072,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 946.8999999761581,
+        "requestToVisibleMs": 1089.1000000238419
+      },
+      {
+        "index": 23,
+        "revision": 10073,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 925.3999999761581,
+        "requestToVisibleMs": 1046.3999999761581
+      },
+      {
+        "index": 24,
+        "revision": 10074,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 792.8999999761581,
+        "requestToVisibleMs": 998.2999999523163
+      },
+      {
+        "index": 25,
+        "revision": 10075,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 21.699999928474426,
+        "requestToVisibleMs": 133.69999992847443
+      },
+      {
+        "index": 26,
+        "revision": 10076,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 859.7000000476837,
+        "requestToVisibleMs": 949
+      },
+      {
+        "index": 27,
+        "revision": 10077,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 973.3000000715256,
+        "requestToVisibleMs": 1100
+      },
+      {
+        "index": 28,
+        "revision": 10078,
+        "status": "doing",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 918,
+        "requestToVisibleMs": 1051.9000000953674
+      },
+      {
+        "index": 29,
+        "revision": 10079,
+        "status": "done",
+        "samplePoint": {
+          "x": 806,
+          "y": 109
+        },
+        "matched": true,
+        "acknowledgementToVisibleMs": 884,
+        "requestToVisibleMs": 1018.7000000476837
+      }
+    ],
+    "updateRateHz": 5,
+    "durationMs": 29770,
+    "batch": {
+      "itemCount": 100,
+      "matched": true,
+      "acknowledgementToVisibleMs": 902.5999999046326,
+      "requestToVisibleMs": 1067.2999999523163
+    },
+    "zoom": "30%",
+    "fixture": {
+      "entities": 500,
+      "graphs": 20,
+      "representations": 1000,
+      "relations": 1200,
+      "freeElements": 80,
+      "resources": 2,
+      "annotations": 30
+    }
+  },
+  "p95Ms": 973.3000000715256,
+  "coldOpenMs": 2568.6615830000956,
+  "assertions": {
+    "visibleP95Within300ms": false,
+    "batch100Within300ms": false
+  },
+  "boundary": "完整探针完成，但元数据 Browser.getVersion 不被工具支持而未保存原报告；从同一页面保留的 probe result 恢复可见更新原始采样。空闲阶段的数据没有恢复。"
+}

@@ -1,0 +1,347 @@
+{
+  "date": "2026-10-01T21:43:31.138Z",
+  "environment": {
+    "node": "v26.8.1",
+    "platform": "darwin",
+    "release": "25.6.0",
+    "arch": "arm64",
+    "cpu": "Apple M1",
+    "logicalCores": 8
+  },
+  "fixture": {
+    "entities": 500,
+    "graphs": 20,
+    "representations": 1000,
+    "relations": 1200,
+    "freeElements": 80,
+    "resources": 2,
+    "annotations": 30,
+    "revision": 10000
+  },
+  "preparation": {
+    "coldRssMiB": 67.75,
+    "warmContextHttpMs": [
+      50.531667000000006,
+      38.39454099999999,
+      39.172458000000006
+    ]
+  },
+  "results": {
+    "wallSeconds": 60.28973225,
+    "cpuSeconds": 0,
+    "cpuPercentOfOneCore": 0,
+    "startRssMiB": 123.765625,
+    "endRssMiB": 21.796875,
+    "maxRssMiB": 123.765625,
+    "idleCpuBudgetPass": true,
+    "idleMemoryBudgetPass": true
+  },
+  "samples": [
+    {
+      "elapsedSeconds": 0,
+      "cpuSeconds": 0,
+      "rssMiB": 123.765625
+    },
+    {
+      "elapsedSeconds": 1.00484325,
+      "cpuSeconds": 0,
+      "rssMiB": 107.515625
+    },
+    {
+      "elapsedSeconds": 2.009428208,
+      "cpuSeconds": 0,
+      "rssMiB": 106.71875
+    },
+    {
+      "elapsedSeconds": 3.013636625,
+      "cpuSeconds": 0,
+      "rssMiB": 106.59375
+    },
+    {
+      "elapsedSeconds": 4.018178833,
+      "cpuSeconds": 0,
+      "rssMiB": 83.703125
+    },
+    {
+      "elapsedSeconds": 5.023696333,
+      "cpuSeconds": 0,
+      "rssMiB": 83.703125
+    },
+    {
+      "elapsedSeconds": 6.028753416,
+      "cpuSeconds": 0,
+      "rssMiB": 83.734375
+    },
+    {
+      "elapsedSeconds": 7.033118375,
+      "cpuSeconds": 0,
+      "rssMiB": 83.734375
+    },
+    {
+      "elapsedSeconds": 8.037643541,
+      "cpuSeconds": 0,
+      "rssMiB": 83.71875
+    },
+    {
+      "elapsedSeconds": 9.042165583,
+      "cpuSeconds": 0,
+      "rssMiB": 83.71875
+    },
+    {
+      "elapsedSeconds": 10.046413916,
+      "cpuSeconds": 0,
+      "rssMiB": 83.71875
+    },
+    {
+      "elapsedSeconds": 11.050863958,
+      "cpuSeconds": 0,
+      "rssMiB": 83.765625
+    },
+    {
+      "elapsedSeconds": 12.055834208,
+      "cpuSeconds": 0,
+      "rssMiB": 83.765625
+    },
+    {
+      "elapsedSeconds": 13.060448000000001,
+      "cpuSeconds": 0,
+      "rssMiB": 77.734375
+    },
+    {
+      "elapsedSeconds": 14.064798541,
+      "cpuSeconds": 0,
+      "rssMiB": 55.515625
+    },
+    {
+      "elapsedSeconds": 15.069719458000002,
+      "cpuSeconds": 0,
+      "rssMiB": 43.640625
+    },
+    {
+      "elapsedSeconds": 16.074206083,
+      "cpuSeconds": 0,
+      "rssMiB": 40.078125
+    },
+    {
+      "elapsedSeconds": 17.079711125,
+      "cpuSeconds": 0,
+      "rssMiB": 40.078125
+    },
+    {
+      "elapsedSeconds": 18.084606625,
+      "cpuSeconds": 0,
+      "rssMiB": 40.078125
+    },
+    {
+      "elapsedSeconds": 19.089011582999998,
+      "cpuSeconds": 0,
+      "rssMiB": 40.078125
+    },
+    {
+      "elapsedSeconds": 20.092658625,
+      "cpuSeconds": 0,
+      "rssMiB": 40.09375
+    },
+    {
+      "elapsedSeconds": 21.096831415999997,
+      "cpuSeconds": 0,
+      "rssMiB": 40.09375
+    },
+    {
+      "elapsedSeconds": 22.101526875,
+      "cpuSeconds": 0,
+      "rssMiB": 40.03125
+    },
+    {
+      "elapsedSeconds": 23.106393333,
+      "cpuSeconds": 0,
+      "rssMiB": 40.03125
+    },
+    {
+      "elapsedSeconds": 24.111383999999997,
+      "cpuSeconds": 0,
+      "rssMiB": 38.78125
+    },
+    {
+      "elapsedSeconds": 25.115821249999996,
+      "cpuSeconds": 0,
+      "rssMiB": 38.78125
+    },
+    {
+      "elapsedSeconds": 26.120309540999997,
+      "cpuSeconds": 0,
+      "rssMiB": 38.78125
+    },
+    {
+      "elapsedSeconds": 27.12479425,
+      "cpuSeconds": 0,
+      "rssMiB": 38.765625
+    },
+    {
+      "elapsedSeconds": 28.129463082999997,
+      "cpuSeconds": 0,
+      "rssMiB": 38.8125
+    },
+    {
+      "elapsedSeconds": 29.133698083,
+      "cpuSeconds": 0,
+      "rssMiB": 38.8125
+    },
+    {
+      "elapsedSeconds": 30.140923541,
+      "cpuSeconds": 0,
+      "rssMiB": 38.8125
+    },
+    {
+      "elapsedSeconds": 31.145559416,
+      "cpuSeconds": 0,
+      "rssMiB": 38.8125
+    },
+    {
+      "elapsedSeconds": 32.15324975,
+      "cpuSeconds": 0,
+      "rssMiB": 37.8125
+    },
+    {
+      "elapsedSeconds": 33.157798916,
+      "cpuSeconds": 0,
+      "rssMiB": 37.8125
+    },
+    {
+      "elapsedSeconds": 34.162774916000004,
+      "cpuSeconds": 0,
+      "rssMiB": 37.8125
+    },
+    {
+      "elapsedSeconds": 35.167324583,
+      "cpuSeconds": 0,
+      "rssMiB": 37.8125
+    },
+    {
+      "elapsedSeconds": 36.173185125,
+      "cpuSeconds": 0,
+      "rssMiB": 38.8125
+    },
+    {
+      "elapsedSeconds": 37.177608416000005,
+      "cpuSeconds": 0,
+      "rssMiB": 38.8125
+    },
+    {
+      "elapsedSeconds": 38.18196283300001,
+      "cpuSeconds": 0,
+      "rssMiB": 38.8125
+    },
+    {
+      "elapsedSeconds": 39.186435833000004,
+      "cpuSeconds": 0,
+      "rssMiB": 38.8125
+    },
+    {
+      "elapsedSeconds": 40.189916000000004,
+      "cpuSeconds": 0,
+      "rssMiB": 38.8125
+    },
+    {
+      "elapsedSeconds": 41.19676675,
+      "cpuSeconds": 0,
+      "rssMiB": 38.765625
+    },
+    {
+      "elapsedSeconds": 42.199884958000005,
+      "cpuSeconds": 0,
+      "rssMiB": 41.328125
+    },
+    {
+      "elapsedSeconds": 43.20447625,
+      "cpuSeconds": 0,
+      "rssMiB": 41.328125
+    },
+    {
+      "elapsedSeconds": 44.208864,
+      "cpuSeconds": 0,
+      "rssMiB": 41.328125
+    },
+    {
+      "elapsedSeconds": 45.212859875,
+      "cpuSeconds": 0,
+      "rssMiB": 41.34375
+    },
+    {
+      "elapsedSeconds": 46.216775916,
+      "cpuSeconds": 0,
+      "rssMiB": 41.34375
+    },
+    {
+      "elapsedSeconds": 47.221243083000005,
+      "cpuSeconds": 0,
+      "rssMiB": 41.34375
+    },
+    {
+      "elapsedSeconds": 48.226182458000004,
+      "cpuSeconds": 0,
+      "rssMiB": 41.328125
+    },
+    {
+      "elapsedSeconds": 49.230869916,
+      "cpuSeconds": 0,
+      "rssMiB": 39.640625
+    },
+    {
+      "elapsedSeconds": 50.235313083,
+      "cpuSeconds": 0,
+      "rssMiB": 39.40625
+    },
+    {
+      "elapsedSeconds": 51.23973312500001,
+      "cpuSeconds": 0,
+      "rssMiB": 39.421875
+    },
+    {
+      "elapsedSeconds": 52.242976000000006,
+      "cpuSeconds": 0,
+      "rssMiB": 36.875
+    },
+    {
+      "elapsedSeconds": 53.247226375000004,
+      "cpuSeconds": 0,
+      "rssMiB": 37.90625
+    },
+    {
+      "elapsedSeconds": 54.251241416000006,
+      "cpuSeconds": 0,
+      "rssMiB": 37.90625
+    },
+    {
+      "elapsedSeconds": 55.25582575000001,
+      "cpuSeconds": 0,
+      "rssMiB": 37.90625
+    },
+    {
+      "elapsedSeconds": 56.260337458,
+      "cpuSeconds": 0,
+      "rssMiB": 37.90625
+    },
+    {
+      "elapsedSeconds": 57.263268041,
+      "cpuSeconds": 0,
+      "rssMiB": 37.90625
+    },
+    {
+      "elapsedSeconds": 58.270844125,
+      "cpuSeconds": 0,
+      "rssMiB": 37.90625
+    },
+    {
+      "elapsedSeconds": 59.283857833,
+      "cpuSeconds": 0,
+      "rssMiB": 37.890625
+    },
+    {
+      "elapsedSeconds": 60.28973225,
+      "cpuSeconds": 0,
+      "rssMiB": 21.796875
+    }
+  ],
+  "boundary": "Owned HTTP service with full fixed project, no page connected and no writes during the sampled window. This is idle service accounting, not browser, export peak, Windows, or LLM-host execution acceptance."
+}

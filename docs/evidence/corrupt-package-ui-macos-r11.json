@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-02T04:30:08.776Z",
+  "path": "正式项目历史上传入口，实际损坏资源包和相同上传重试",
+  "assertions": {
+    "specificChecksumReasonVisible": true,
+    "originalSnapshotUnchanged": true,
+    "retryAvailable": true,
+    "retryKeepsOriginalSnapshot": true,
+    "noImportedSuccess": true
+  },
+  "firstNotice": "项目包导入失败：资源 SHA-256 校验失败",
+  "finalRevision": 13,
+  "status": "passed"
+}

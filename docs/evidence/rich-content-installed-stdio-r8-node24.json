@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-02T15:06:29.831Z",
+  "version": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261002-r8",
+  "node": "v24.21.0",
+  "serverSha256": "49bfa4ac6e52d53fced957697354de3856f1e591405c854ff955534ded4a0bb7",
+  "assertions": {
+    "nine-real-stdio-tools": true,
+    "one-transaction": true,
+    "reopen-same-revision": true,
+    "reopen-rich-sections": true,
+    "reopen-rich-text": true,
+    "independent-workcopy": true,
+    "package-preserves-rich-content": true,
+    "package-preserves-reading-order": true
+  },
+  "checksPassed": 8,
+  "packageBytes": 3477,
+  "scope": "同机隔离项目的正式安装 stdio、关闭重开及项目包迁移；不证明 Windows/Claude 宿主"
+}

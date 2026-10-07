@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-10-01T23:41:31.944Z",
+  "points": [
+    {
+      "representationId": "fixture-rep-0-2",
+      "entityId": "fixture-entity-2",
+      "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+      "lowerLeftInterior": {
+        "sceneX": 588,
+        "sceneY": 130,
+        "viewportX": 513.1,
+        "viewportY": 359.4
+      }
+    },
+    {
+      "representationId": "fixture-rep-0-3",
+      "entityId": "fixture-entity-3",
+      "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+      "lowerLeftInterior": {
+        "sceneX": 844,
+        "sceneY": 130,
+        "viewportX": 692.3000000000001,
+        "viewportY": 359.4
+      }
+    }
+  ],
+  "beforeRevision": 30,
+  "afterRevision": 31,
+  "annotation": {
+    "id": "annotation-591f6e3c-7960-40c7-b8a6-0ca82022e55d",
+    "text": "多选验收：这两个任务的完成条件分别保留，共同调整显示间距。",
+    "targets": [
+      {
+        "type": "representation",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "representationId": "fixture-rep-0-2"
+      },
+      {
+        "type": "representation",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "representationId": "fixture-rep-0-3"
+      }
+    ],
+    "observedRevision": 30,
+    "graphPath": [
+      "ec622545-9f75-462e-8bae-06827a13681a"
+    ],
+    "status": "draft",
+    "createdAt": "2026-10-01T23:41:31.818Z",
+    "updatedAt": "2026-10-01T23:41:31.818Z",
+    "responses": []
+  },
+  "assertions": {
+    "twoRepresentationTargets": true,
+    "correctIds": true,
+    "independentId": true,
+    "observationCorrect": true,
+    "priorAnnotationsUnchanged": true
+  }
+}

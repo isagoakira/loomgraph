@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-02T04:58:51.919Z",
+  "path": "外网阻断下按需完整SVG/PNG缩略图及真实浏览器字体Worker执行",
+  "assertions": {
+    "allGraphsHaveDecodedCompleteSvg": true,
+    "richSvgContainsActualTextAndImages": true,
+    "actualPngPreviewsDecoded": true
+  },
+  "previousEvidence": "offline-preview-worker-macos-r12.json",
+  "svgPreviews": [
+    {
+      "status": "complete",
+      "width": 320,
+      "height": 180,
+      "type": "data:image/svg+xml;charset=utf-8,%3",
+      "textCount": 20,
+      "images": 3
+    },
+    {
+      "status": "complete",
+      "width": 320,
+      "height": 180,
+      "type": "data:image/svg+xml;charset=utf-8,%3",
+      "textCount": 4,
+      "images": 0
+    },
+    {
+      "status": "complete",
+      "width": 320,
+      "height": 180,
+      "type": "data:image/svg+xml;charset=utf-8,%3",
+      "textCount": 2,
+      "images": 0
+    }
+  ],
+  "failure": "Error: JavaScript evaluation failed at line 0, column 0: Error: browser font Worker timeout\n    at <anonymous>:9:33; expression: async({workerName,fontName})=>{\\n  const workerUrl=new URL(\"/assets/\"+workerName,location.href).href;\\n  const code=`const ns=await import(${JSON.stringify(w...",
+  "status": "failed"
+}

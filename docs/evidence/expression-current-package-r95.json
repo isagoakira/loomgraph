@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-02T17:20:37.655Z",
+  "node": "v24.19.0",
+  "packagePath": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/docs/examples/forecastcompass/forecastcompass-expression-r95.avcanvas",
+  "packageBytes": 716763,
+  "packageSha256": "ef74271e376a85c3e92e4afaa8539dbd91186ee4d16483c639e128496b87d7ab",
+  "assertions": {
+    "original-project-new-work-copy": true,
+    "exact-R95-revision": true,
+    "exact-content-expressions-and-metadata": true,
+    "exact-original-geometry-and-free-text": true,
+    "exact-all-feedback-and-batches": true,
+    "exact-real-figure-resource": true,
+    "frozen-source-work-copy-preserved": true,
+    "old-quote-observations-preserved": true
+  },
+  "checksPassed": 8,
+  "scope": "实际当前会话r1导出的R95完整原生包，在正式安装r9真实stdio中同机隔离导入与读取；未改变当前项目或宿主，不能替代Windows往返。"
+}

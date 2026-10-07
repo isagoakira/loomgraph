@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-10-01T23:56:04.050Z",
+  "status": "failed",
+  "kind": "native-image-placement",
+  "boundary": "实际图像在画布已完成放置并显示160×96，旧构建十秒后仍持久化0×0；尚未纳入新的生命周期修正。原生HTML文件选择器路径，浏览器File System Access暂时禁用后已恢复。",
+  "state": {
+    "revision": 38,
+    "images": [
+      {
+        "id": "eHPFa6ApjfiNoZSgScKby",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "eHPFa6ApjfiNoZSgScKby",
+          "type": "image",
+          "x": 685,
+          "y": 245.14285714285717,
+          "width": 0,
+          "height": 0,
+          "angle": 0,
+          "strokeColor": "transparent",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aP",
+          "roundness": null,
+          "seed": 805569504,
+          "version": 3,
+          "versionNonce": 1560045088,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790898681210,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "resourceId": "canvas-resource-61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+              "role": "free",
+              "freeElementId": "eHPFa6ApjfiNoZSgScKby"
+            }
+          },
+          "status": "pending",
+          "fileId": "61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+          "scale": [
+            1,
+            1
+          ],
+          "crop": null
+        }
+      }
+    ],
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 101.28571428571428,
+      "zoom": 0.7
+    }
+  },
+  "screenshot": ".runtime/evidence/29-image-attempt.png"
+}

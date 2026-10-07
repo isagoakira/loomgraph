@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-02T04:26:26.055Z",
+  "path": "恢复此前真实输入的R7草稿；刷新和导航返回后保存；删除其当前表示并从正式UI打开原观察版本",
+  "assertions": {
+    "reloadShowsOriginalComposer": true,
+    "navigationResumesWithoutClearing": true,
+    "recoveryDoesNotWriteContent": true,
+    "savedOriginalWords": true,
+    "savedObservedRevisionIsOriginalR7": true,
+    "savedOriginalGraphPath": true,
+    "savedOriginalRepresentation": true,
+    "singleAnnotationCommit": true,
+    "historicalGraphIsOriginalC": true,
+    "historicalRevisionIsOriginalR7": true,
+    "historyIsReadOnly": true,
+    "historyKeepsLiveGraphAndCamera": true,
+    "historyDoesNotWriteContent": true,
+    "returnResumesOriginalAnnotation": true
+  },
+  "beforeRevision": 10,
+  "annotation": {
+    "id": "annotation-aaa92a83-00d9-4149-b056-2415a22aac00",
+    "text": "观察版本冻结验收：请保留我在 C 图中看到的原文与 A → B → C 路径。",
+    "targets": [
+      {
+        "type": "representation",
+        "graphId": "r9-graph-c",
+        "representationId": "r9-shared-c"
+      }
+    ],
+    "observedRevision": 7,
+    "graphPath": [
+      "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "r9-graph-b",
+      "r9-graph-c"
+    ],
+    "status": "draft",
+    "createdAt": "2026-10-02T04:26:29.754Z",
+    "updatedAt": "2026-10-02T04:26:29.754Z",
+    "responses": []
+  },
+  "deletion": {
+    "revision": 12,
+    "changeId": "2cc676d7-0652-4fbb-b0ed-49aa512259aa",
+    "operationId": "r11-history-delete-shared-c",
+    "affectedIds": [
+      "r9-shared-c",
+      "r9-shared",
+      "r9-graph-c"
+    ],
+    "replayed": false
+  },
+  "historyView": {
+    "sidebar": "REVISION LOG项目历史05只读查看某条批注形成时的观察版本；当前画布和项目修订保持不变。批注观察版本REV 7 · READ ONLY批注 annotation-aaa92a83-00d9-4149-b056-2415a22aac00原目标：当前画布未找到目标，身份保留：表示 · 对象已删除，身份保留 · 回路细节 C · 表示 ID：r9-shared-c · 图 ID：r9-graph-c原目标图：r9-graph-c正在读取原观察版本；当前画布保持不变，也不会生成新的项目修订。已加载原观察版本；下方目标修订预览定位到原目标图。返回批注历史记录12012验证批注目标删除后的只读观察版本未知来源 · 2026/10/2 12:26 · 1 项操作011用户暂存批注本地用户 · 2026/10/2 12:26 · 1 项操作010用户编辑画布本地用户 · 2026/10/2 11:50 · 1 项操作009用户编辑画布本地用户 · 2026/10/2 11:46 · 1 项操作008输入批注期间模拟真实 Agent 内容更新未知来源 · 2026/10/2 11:40 · 1 项操作007用户编辑画布本地用户 · 2026/10/2 11:23 · 5 项操作006创建隔离多入口回路与反馈审计样例未知来源 · 2026/10/2 11:21 · 26 项操作005upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作004upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作003upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作002upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作001upload local image resourceLocal canvas service · 2026/10/2 11:21 · 1 项操作读取指定修订READ ONLY历史修订号读取修订只读预览REV 7当前内容回路细节 C · REV 12目标修订回路细节 C · REV 7预览只读，不会改变当前画布。内容差异CURRENT → TARGET从当前 REV 12 到目标 REV 7：新增/恢复 1，移除 2，修改 1。对象修改 1≠共享叶任务 · 中文 Agent task图上表示新增/恢复 1 · 移除 2＋r9-shared-c；－representation-dfc46405-33c4-461b-8f86-542ab332d5f4；－representation-428c1309-83dd-43f2-9c58-22f4d8d19e97反馈与讨论记录：与目标快照的差异（恢复时保留当前记录）批注移除 1－观察版本冻结验收：请保留我在 C 图中看到的原文与 A → B → C 路径。项目包MIGRATION导出当前项目包导入 .avcanvas 独立副本",
+    "requestedRevision": "7",
+    "graph": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "camera": "{\"offsetLeft\":72,\"offsetTop\":182,\"width\":1006,\"height\":507,\"scrollX\":98.21428571428578,\"scrollY\":-36.85714285714283,\"zoom\":0.7}",
+    "targetAlt": "目标修订：回路细节 C只读预览",
+    "targetSrc": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20240%20128%22%20width%3D%22240%22%20height%3D%22128%22%20role%3D%22img%22%20data-preview-mode%3D%22overview%22%20aria-label%3D%22%E5%9B%9E%E8%B7%AF%E7%BB%86%E8%8A%82%20C%22%3E%3Cdefs%3E%3Cmarker%20id%3D%22thumbnail-arrow%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20refX%3D%225%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%200L6%203L0%206Z%22%20fill%3D%22%239aa6a6%22%20%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f4f0e8%22%20%2F%3E%3Cg%3E%3Crect%20x%3D%2275.4%22%20y%3D%2214.0%22%20width%3D%2289.1%22%20height%3D%2230.2%22%20rx%3D%223%22%20fill%3D%22%23dbe8e5%22%20stroke%3D%22%2352606a%22%20stroke-width%3D%221%22%20%2F%3E%3Ctext%20x%3D%2279.4%22%20y%3D%2227.0%22%20fill%3D%22%2324343c%22%20font-family%3D%22sans-serif%22%20font-size%3D%229.7%22%3E%E5%AD%90%E5%9B%BE%E5%85%A5%E5%8F%A3%20%C2%B7%20Structure%20%2F%20Flow%3C%2Ftext%3E%3C%2Fg%3E%3Cg%3E%3Crect%20x%3D%2275.4%22%20y%3D%2283.8%22%20width%3D%2289.1%22%20height%3D%2230.2%22%20rx%3D%223%22%20fill%3D%22%23dcebe2%22%20stroke%3D%22%2352606a%22%20stroke-width%3D%221%22%20%2F%3E%3Ctext%20x%3D%2279.4%22%20y%3D%2296.8%22%20fill%3D%22%2324343c%22%20font-family%3D%22sans-serif%22%20font-size%3D%229.7%22%3E%E5%85%B1%E4%BA%AB%E5%8F%B6%E4%BB%BB%E5%8A%A1%20%C2%B7%20%E4%B8%AD%E6%96%87%20Agent%20task%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+  },
+  "finalRevision": 12,
+  "stage": "complete",
+  "status": "passed"
+}

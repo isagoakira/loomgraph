@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-02T02:44:59.819Z",
+  "taskSpaceId": 14,
+  "lifecycle": {
+    "supported": true,
+    "result": {}
+  },
+  "frame": {
+    "intervalsMs": [
+      709,
+      1000.9000000000233,
+      1016.5,
+      1015.5999999999767
+    ],
+    "visibility": "visible",
+    "focused": true,
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36",
+    "url": "http://127.0.0.1:4317/",
+    "renderedGraphId": "ec622545-9f75-462e-8bae-06827a13681a",
+    "renderedRevision": "76"
+  },
+  "boundary": "只检查当前本机真实页面的刷新环境；未施加更新负载。若空闲rAF仍约一秒，后续可见延迟和手势帧预算保持待验，不用本探针判定产品性能。"
+}

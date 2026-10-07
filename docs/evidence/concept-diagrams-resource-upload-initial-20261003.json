@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-03",
+  "beforeRevision": 105,
+  "afterUploadRevision": 113,
+  "receipts": [
+    {
+      "figureId": "figure-probability",
+      "stepId": "probability",
+      "resourceId": "pilot-concept-probability-315c4783dbf4aab3",
+      "sha256": "315c4783dbf4aab343a74c0c7488a999ab971b8d738058325db44bf3b7e0d3c6",
+      "bytes": 6282,
+      "replayed": false
+    },
+    {
+      "figureId": "figure-signal-confidence",
+      "stepId": "signal-confidence",
+      "resourceId": "pilot-concept-signal-confidence-e4084c6a3915ba56",
+      "sha256": "e4084c6a3915ba560ce4326eb73ac99b71d815769adbb56a0f5ae7b9ed126fe4",
+      "bytes": 7026,
+      "replayed": false
+    },
+    {
+      "figureId": "figure-memory-problem",
+      "stepId": "memory-problem",
+      "resourceId": "pilot-concept-memory-problem-f7b00095e18fbecb",
+      "sha256": "f7b00095e18fbecb615888e76268140b903ec14d47944a968a42dc685d95370f",
+      "bytes": 10583,
+      "replayed": false
+    },
+    {
+      "figureId": "figure-two-memories",
+      "stepId": "two-memories",
+      "resourceId": "pilot-concept-two-memories-5f69493c41245aa0",
+      "sha256": "5f69493c41245aa0d58f0082ac33c439157400369eccc6eee1616534dab8e8b9",
+      "bytes": 13115,
+      "replayed": false
+    },
+    {
+      "figureId": "figure-inference",
+      "stepId": "inference",
+      "resourceId": "pilot-concept-inference-68ce84caa6bbcabf",
+      "sha256": "68ce84caa6bbcabf2c1b448c05993ab95f1e65e5e62fdaaee0e268679aeb5dff",
+      "bytes": 10307,
+      "replayed": false
+    },
+    {
+      "figureId": "figure-update",
+      "stepId": "update",
+      "resourceId": "pilot-concept-update-7cfde2e39231a769",
+      "sha256": "7cfde2e39231a76955bb7dec4dcfadc9108b5f1b51faeb94a8b8ef904eb0a09a",
+      "bytes": 10897,
+      "replayed": false
+    },
+    {
+      "figureId": "figure-evidence",
+      "stepId": "evidence",
+      "resourceId": "pilot-concept-evidence-c051100614dae4a2",
+      "sha256": "c051100614dae4a2e2f1bcff20d660091278048557047ed27cbdaafa94e8997b",
+      "bytes": 18546,
+      "replayed": false
+    },
+    {
+      "figureId": "figure-reproduction",
+      "stepId": "reproduction",
+      "resourceId": "pilot-concept-reproduction-168328f3c277f701",
+      "sha256": "168328f3c277f701076812845febdd38d1d17f606b1dc2ee6daa0e7f66f216ae",
+      "bytes": 10007,
+      "replayed": false
+    }
+  ]
+}

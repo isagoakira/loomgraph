@@ -1,0 +1,2187 @@
+{
+  "operationId": "forecastcompass-source-example-20261002-r1",
+  "projectId": "cb904f16-a9ec-4a38-831c-d84d9a08df80",
+  "workCopyId": "bdc90254-57fe-4968-97a4-96473ca9868f",
+  "baseRevision": 28,
+  "actor": {
+    "id": "codex-current-session-demo",
+    "kind": "agent",
+    "label": "当前 Codex 对话"
+  },
+  "reason": "用户要求以 ForecastCompass 论文架构演示有关系、子图、闭环和图片的实际可视化",
+  "operations": [
+    {
+      "type": "graph.put",
+      "graph": {
+        "id": "forecastcompass-architecture",
+        "title": "ForecastCompass · 架构与原图",
+        "kind": "mixed",
+        "description": "论文主线重绘：新问题→分类→检索→预测，结果揭晓后对照修订；论文模块是结构示意，不表示已运行预测实验。",
+        "metadata": {
+          "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+          "demo": "source-based visual example"
+        },
+        "sceneOrder": [
+          "fc-title",
+          "fc-subtitle",
+          "fc-band-inference",
+          "fc-band-update",
+          "fc-band-title",
+          "fc-update-title",
+          "fc-source-caption",
+          "fc-semantics",
+          "fc-no-run",
+          "relation-fc-flow-0",
+          "relation-fc-flow-1",
+          "relation-fc-flow-2",
+          "relation-fc-flow-3",
+          "relation-fc-memory-guides",
+          "relation-fc-after-resolution",
+          "relation-fc-retro-to-revision",
+          "relation-fc-update-memory",
+          "rep-fc-main-0-body",
+          "rep-fc-main-0-label",
+          "rep-fc-main-1-body",
+          "rep-fc-main-1-label",
+          "rep-fc-main-2-body",
+          "rep-fc-main-2-label",
+          "rep-fc-main-3-body",
+          "rep-fc-main-3-label",
+          "rep-fc-main-4-body",
+          "rep-fc-main-4-label",
+          "rep-fc-main-memory-body",
+          "rep-fc-main-memory-label",
+          "rep-fc-main-revision-body",
+          "rep-fc-main-revision-label",
+          "rep-fc-main-resolved-body",
+          "rep-fc-main-resolved-label",
+          "rep-fc-main-source-body",
+          "rep-fc-main-source-label",
+          "relation-label-fc-flow-0",
+          "relation-label-fc-flow-1",
+          "relation-label-fc-flow-2",
+          "relation-label-fc-flow-3",
+          "relation-label-fc-memory-guides",
+          "relation-label-fc-after-resolution",
+          "relation-label-fc-retro-to-revision",
+          "relation-label-fc-update-memory",
+          "fc-source-thumbnail"
+        ]
+      }
+    },
+    {
+      "type": "graph.put",
+      "graph": {
+        "id": "forecastcompass-memory",
+        "title": "层级记忆 · 因子与推理",
+        "kind": "structure",
+        "description": "方法3.1，分类法索引子类别级别的 F_s 与 R_s，预测因子和校准原则分工明确。",
+        "metadata": {
+          "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+          "demo": "source-based visual example"
+        },
+        "sceneOrder": [
+          "fc-memory-title",
+          "fc-factor-detail",
+          "fc-reason-detail",
+          "fc-memory-foot",
+          "relation-fc-taxonomy-index",
+          "relation-fc-sub-factor",
+          "relation-fc-sub-reason",
+          "relation-fc-sub-retrieval",
+          "rep-fc-mem-taxonomy-body",
+          "rep-fc-mem-taxonomy-label",
+          "rep-fc-mem-subcategory-body",
+          "rep-fc-mem-subcategory-label",
+          "rep-fc-mem-factor-body",
+          "rep-fc-mem-factor-label",
+          "rep-fc-mem-reasoning-body",
+          "rep-fc-mem-reasoning-label",
+          "rep-fc-mem-retrieve-body",
+          "rep-fc-mem-retrieve-label",
+          "relation-label-fc-taxonomy-index",
+          "relation-label-fc-sub-factor",
+          "relation-label-fc-sub-reason",
+          "relation-label-fc-sub-retrieval"
+        ]
+      }
+    },
+    {
+      "type": "graph.put",
+      "graph": {
+        "id": "forecastcompass-revision",
+        "title": "记忆修订 · 诊断—聚合—更新",
+        "kind": "flow",
+        "description": "方法3.3，仅使用已揭晓问题的复盘信号，筛选可复用规律，局部更新受影响记忆。",
+        "metadata": {
+          "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+          "demo": "source-based visual example"
+        },
+        "sceneOrder": [
+          "fc-revision-title",
+          "fc-update-note",
+          "fc-update-foot",
+          "relation-fc-old-to-contrast",
+          "relation-fc-retro-to-contrast",
+          "relation-fc-contrast-diagnose",
+          "relation-fc-diagnose-aggregate",
+          "relation-fc-aggregate-revise",
+          "relation-fc-revised-memory",
+          "rep-fc-update-original-body",
+          "rep-fc-update-original-label",
+          "rep-fc-update-retro-body",
+          "rep-fc-update-retro-label",
+          "rep-fc-update-contrast-body",
+          "rep-fc-update-contrast-label",
+          "rep-fc-update-diagnose-body",
+          "rep-fc-update-diagnose-label",
+          "rep-fc-update-aggregate-body",
+          "rep-fc-update-aggregate-label",
+          "rep-fc-update-revise-body",
+          "rep-fc-update-revise-label",
+          "rep-fc-update-memory-body",
+          "rep-fc-update-memory-label",
+          "relation-label-fc-old-to-contrast",
+          "relation-label-fc-retro-to-contrast",
+          "relation-label-fc-contrast-diagnose",
+          "relation-label-fc-diagnose-aggregate",
+          "relation-label-fc-aggregate-revise",
+          "relation-label-fc-revised-memory"
+        ]
+      }
+    },
+    {
+      "type": "graph.put",
+      "graph": {
+        "id": "forecastcompass-original",
+        "title": "Figure 2 · 论文原图",
+        "kind": "reference",
+        "description": "PDF第3页 Figure 2，原始图片提取，保留作者原图；可对图片区域独立标注。",
+        "metadata": {
+          "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+          "demo": "source-based visual example"
+        },
+        "sceneOrder": [
+          "fc-original-title",
+          "fc-original-caption",
+          "fc-source-full"
+        ]
+      }
+    },
+    {
+      "type": "graph.put",
+      "graph": {
+        "id": "forecastcompass-demo-progress",
+        "title": "论文演示 · 实际完成状态",
+        "kind": "flow",
+        "description": "这里仅记录当前 Codex 维护此可视化案例的实际工作，不代表论文模型运行。",
+        "metadata": {
+          "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+          "demo": "source-based visual example"
+        },
+        "sceneOrder": [
+          "fc-checks-title",
+          "fc-checks-caption",
+          "rep-fc-check-0-body",
+          "rep-fc-check-0-label",
+          "rep-fc-check-1-body",
+          "rep-fc-check-1-label",
+          "rep-fc-check-2-body",
+          "rep-fc-check-2-label",
+          "rep-fc-check-3-body",
+          "rep-fc-check-3-label",
+          "rep-fc-check-4-body",
+          "rep-fc-check-4-label",
+          "rep-fc-check-5-body",
+          "rep-fc-check-5-label"
+        ]
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-question",
+        "kind": "module",
+        "title": "新问题 q",
+        "description": "尚未揭晓的预测问题。Figure 2 B；预测时只能使用时间有效的证据。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-classify",
+        "kind": "module",
+        "title": "子类别归类 s",
+        "description": "依据当前分类法归入 (category, subcategory)，如美国总统选举。方法3.2。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-retrieve",
+        "kind": "module",
+        "title": "检索记忆 Mₛ",
+        "description": "M_s = (F_s, R_s)。检索相应子类别的因子记忆与推理记忆，方法3.1–3.2。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-agent",
+        "kind": "module",
+        "title": "Agent + 在线证据",
+        "description": "因子记忆指导证据搜索与因子选择，推理记忆指导概率估计、矛盾证据和不确定性处理。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-forecast",
+        "kind": "module",
+        "title": "概率预测 p",
+        "description": "输出概率分布 p 与原始预测轨迹 z。这里是论文架构示意，没有产生一次实际预测运行。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-memory",
+        "kind": "module",
+        "title": "层级记忆 Mₛ\n展开因子与推理 ↗",
+        "description": "各子类别维护两种互补记忆：因子条目与概率校准原则。点击进入子图。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-resolved",
+        "kind": "module",
+        "title": "已揭晓结果 + 复盘",
+        "description": "只能在结果揭晓后使用事后证据 E_retro 产生复盘轨迹；它是学习信号，不是部署预测。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-revision",
+        "kind": "module",
+        "title": "局部记忆修订\n展开诊断流程 ↗",
+        "description": "Contrast 原预测与复盘；诊断→聚合→修订，迭代 N 轮。仅更新受影响因子和被激活的子类别。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-source",
+        "kind": "reference",
+        "title": "Figure 2 原图 · 放大对照 ↗",
+        "description": "来自用户提供的 ForecastCompass PDF，第3页 Figure2；点击进入完整原图子图。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-taxonomy",
+        "kind": "module",
+        "title": "预测任务分类法 T",
+        "description": "领域类别与细粒度子类别。新问题优先归入现有类别，未匹配的已揭晓问题用于扩展分类法。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-subcategory",
+        "kind": "module",
+        "title": "子类别 s\n例：美国总统选举",
+        "description": "每个子类别对应一份记忆，避免把单一事件结果直接写成普遍规律。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-factor",
+        "kind": "module",
+        "title": "因子记忆 Fₛ",
+        "description": "可复用预测因子：因子名称、证据检查、常见失误，以及对预测概率的典型影响。例如经济增长、失业率。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-reasoning",
+        "kind": "module",
+        "title": "推理记忆 Rₛ",
+        "description": "概率更新与校准原则：证据强度、不确定性、矛盾信号、信息缺失、过度自信和不足自信。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-diagnose",
+        "kind": "module",
+        "title": "诊断差异 Δ",
+        "description": "对照原预测轨迹 z 与复盘轨迹 z_retro，分离因子层面的缺失/误用和推理层面的校准问题。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-aggregate",
+        "kind": "module",
+        "title": "聚合可复用规律",
+        "description": "保留重复出现的模式，过滤一次性结果、事后视角与暂时相关，降低噪声学习信号影响。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-revise",
+        "kind": "module",
+        "title": "修订 Fₛ 与 Rₛ",
+        "description": "仅修订被差异信号影响的因子子集和相关推理原则。结果写入 M_w,s，为后续未揭晓预测提供指导。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-contrast",
+        "kind": "module",
+        "title": "原预测 ↔ 复盘",
+        "description": "Contrast(z_i, z_i_retro) 得到 Δ_i=(Δ_i^F, Δ_i^R)，见公式8–9。",
+        "source": "user-provided-paper:Figure2:sec3"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-demo-extract",
+        "kind": "task",
+        "title": "提取论文图文",
+        "description": "已读取 PDF 第3–5页方法和Figure2，并提取原图PNG。",
+        "source": "current-codex-session:paper-demo",
+        "status": "done"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-demo-structure",
+        "kind": "task",
+        "title": "架构与子图",
+        "description": "构建论文主图、记忆和修订子图，等待实际页面核验。",
+        "source": "current-codex-session:paper-demo",
+        "status": "doing"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-demo-image",
+        "kind": "task",
+        "title": "图片持久化",
+        "description": "原图已写入本地资源，等待渲染与刷新核验。",
+        "source": "current-codex-session:paper-demo",
+        "status": "doing"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-demo-feedback",
+        "kind": "task",
+        "title": "独立批注闭环",
+        "description": "等待用实际页面创建两条独立批注，再由当前 MCP 逐条回应。",
+        "source": "current-codex-session:paper-demo",
+        "status": "todo"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-demo-ui",
+        "kind": "task",
+        "title": "交互修订核验",
+        "description": "右侧统一入口、可移动工具栏、直接批注，类型检查与137测试已通过，等待浏览器核验。",
+        "source": "current-codex-session:paper-demo",
+        "status": "doing"
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-demo-layout",
+        "kind": "task",
+        "title": "排版与高亮",
+        "description": "等待实际页面展示预览、保护固定位置与临时高亮。",
+        "source": "current-codex-session:paper-demo",
+        "status": "todo"
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-main-0",
+        "entityId": "fc-question",
+        "graphId": "forecastcompass-architecture",
+        "x": 40,
+        "y": 160,
+        "width": 215,
+        "height": 76,
+        "pinned": true,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#547892",
+          "backgroundColor": "#f5f8fd",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-main-1",
+        "entityId": "fc-classify",
+        "graphId": "forecastcompass-architecture",
+        "x": 305,
+        "y": 160,
+        "width": 215,
+        "height": 76,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#547892",
+          "backgroundColor": "#f5f8fd",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-main-2",
+        "entityId": "fc-retrieve",
+        "graphId": "forecastcompass-architecture",
+        "x": 570,
+        "y": 160,
+        "width": 215,
+        "height": 76,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#547892",
+          "backgroundColor": "#f5f8fd",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-main-3",
+        "entityId": "fc-agent",
+        "graphId": "forecastcompass-architecture",
+        "x": 835,
+        "y": 160,
+        "width": 215,
+        "height": 76,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#297b67",
+          "backgroundColor": "#e4f1e9",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-main-4",
+        "entityId": "fc-forecast",
+        "graphId": "forecastcompass-architecture",
+        "x": 1100,
+        "y": 160,
+        "width": 215,
+        "height": 76,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#a57133",
+          "backgroundColor": "#fff1d9",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-main-memory",
+        "entityId": "fc-memory",
+        "graphId": "forecastcompass-architecture",
+        "x": 420,
+        "y": 345,
+        "width": 270,
+        "height": 84,
+        "pinned": true,
+        "subgraphIds": [
+          "forecastcompass-memory"
+        ],
+        "style": {
+          "strokeColor": "#244d68",
+          "backgroundColor": "#e5edf9",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-main-revision",
+        "entityId": "fc-revision",
+        "graphId": "forecastcompass-architecture",
+        "x": 785,
+        "y": 345,
+        "width": 270,
+        "height": 84,
+        "pinned": false,
+        "subgraphIds": [
+          "forecastcompass-revision"
+        ],
+        "style": {
+          "strokeColor": "#72539a",
+          "backgroundColor": "#eee8f6",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-main-resolved",
+        "entityId": "fc-resolved",
+        "graphId": "forecastcompass-architecture",
+        "x": 1100,
+        "y": 345,
+        "width": 215,
+        "height": 84,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#72539a",
+          "backgroundColor": "#eee8f6",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-main-source",
+        "entityId": "fc-source",
+        "graphId": "forecastcompass-architecture",
+        "x": 40,
+        "y": 318,
+        "width": 315,
+        "height": 44,
+        "pinned": false,
+        "subgraphIds": [
+          "forecastcompass-original"
+        ],
+        "style": {
+          "strokeColor": "#63717b",
+          "backgroundColor": "#ffffff",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-mem-taxonomy",
+        "entityId": "fc-taxonomy",
+        "graphId": "forecastcompass-memory",
+        "x": 55,
+        "y": 185,
+        "width": 230,
+        "height": 90,
+        "pinned": true,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#244d68",
+          "backgroundColor": "#e5edf9",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-mem-subcategory",
+        "entityId": "fc-subcategory",
+        "graphId": "forecastcompass-memory",
+        "x": 390,
+        "y": 185,
+        "width": 245,
+        "height": 90,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#244d68",
+          "backgroundColor": "#e5edf9",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-mem-factor",
+        "entityId": "fc-factor",
+        "graphId": "forecastcompass-memory",
+        "x": 770,
+        "y": 95,
+        "width": 245,
+        "height": 80,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#244d68",
+          "backgroundColor": "#e5edf9",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-mem-reasoning",
+        "entityId": "fc-reasoning",
+        "graphId": "forecastcompass-memory",
+        "x": 770,
+        "y": 335,
+        "width": 245,
+        "height": 80,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#72539a",
+          "backgroundColor": "#eee8f6",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-mem-retrieve",
+        "entityId": "fc-retrieve",
+        "graphId": "forecastcompass-memory",
+        "x": 390,
+        "y": 470,
+        "width": 245,
+        "height": 75,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#297b67",
+          "backgroundColor": "#e4f1e9",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-update-original",
+        "entityId": "fc-forecast",
+        "graphId": "forecastcompass-revision",
+        "x": 50,
+        "y": 100,
+        "width": 220,
+        "height": 70,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#a57133",
+          "backgroundColor": "#fff1d9",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-update-retro",
+        "entityId": "fc-resolved",
+        "graphId": "forecastcompass-revision",
+        "x": 365,
+        "y": 100,
+        "width": 245,
+        "height": 70,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#72539a",
+          "backgroundColor": "#eee8f6",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-update-contrast",
+        "entityId": "fc-contrast",
+        "graphId": "forecastcompass-revision",
+        "x": 50,
+        "y": 275,
+        "width": 220,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#72539a",
+          "backgroundColor": "#eee8f6",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-update-diagnose",
+        "entityId": "fc-diagnose",
+        "graphId": "forecastcompass-revision",
+        "x": 360,
+        "y": 275,
+        "width": 220,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#72539a",
+          "backgroundColor": "#eee8f6",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-update-aggregate",
+        "entityId": "fc-aggregate",
+        "graphId": "forecastcompass-revision",
+        "x": 665,
+        "y": 275,
+        "width": 245,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#72539a",
+          "backgroundColor": "#eee8f6",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-update-revise",
+        "entityId": "fc-revise",
+        "graphId": "forecastcompass-revision",
+        "x": 1000,
+        "y": 275,
+        "width": 220,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#72539a",
+          "backgroundColor": "#eee8f6",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-update-memory",
+        "entityId": "fc-memory",
+        "graphId": "forecastcompass-revision",
+        "x": 1000,
+        "y": 480,
+        "width": 220,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "forecastcompass-memory"
+        ],
+        "style": {
+          "strokeColor": "#244d68",
+          "backgroundColor": "#e5edf9",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-check-0",
+        "entityId": "fc-demo-extract",
+        "graphId": "forecastcompass-demo-progress",
+        "x": 50,
+        "y": 125,
+        "width": 260,
+        "height": 90,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#547892",
+          "backgroundColor": "#f5f8fd",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-check-1",
+        "entityId": "fc-demo-structure",
+        "graphId": "forecastcompass-demo-progress",
+        "x": 375,
+        "y": 125,
+        "width": 260,
+        "height": 90,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#547892",
+          "backgroundColor": "#f5f8fd",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-check-2",
+        "entityId": "fc-demo-image",
+        "graphId": "forecastcompass-demo-progress",
+        "x": 700,
+        "y": 125,
+        "width": 260,
+        "height": 90,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#547892",
+          "backgroundColor": "#f5f8fd",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-check-3",
+        "entityId": "fc-demo-feedback",
+        "graphId": "forecastcompass-demo-progress",
+        "x": 50,
+        "y": 325,
+        "width": 260,
+        "height": 90,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#547892",
+          "backgroundColor": "#f5f8fd",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-check-4",
+        "entityId": "fc-demo-ui",
+        "graphId": "forecastcompass-demo-progress",
+        "x": 375,
+        "y": 325,
+        "width": 260,
+        "height": 90,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#72539a",
+          "backgroundColor": "#eee8f6",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-check-5",
+        "entityId": "fc-demo-layout",
+        "graphId": "forecastcompass-demo-progress",
+        "x": 700,
+        "y": 325,
+        "width": 260,
+        "height": 90,
+        "pinned": false,
+        "subgraphIds": [],
+        "style": {
+          "strokeColor": "#72539a",
+          "backgroundColor": "#eee8f6",
+          "roughness": 0,
+          "strokeWidth": 1.5
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-flow-0",
+        "kind": "data_flow",
+        "from": "fc-question",
+        "to": "fc-classify",
+        "label": "归类",
+        "metadata": {
+          "graphId": "forecastcompass-architecture",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-flow-1",
+        "kind": "data_flow",
+        "from": "fc-classify",
+        "to": "fc-retrieve",
+        "label": "按类别",
+        "metadata": {
+          "graphId": "forecastcompass-architecture",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-flow-2",
+        "kind": "data_flow",
+        "from": "fc-retrieve",
+        "to": "fc-agent",
+        "label": "记忆引导",
+        "metadata": {
+          "graphId": "forecastcompass-architecture",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-flow-3",
+        "kind": "data_flow",
+        "from": "fc-agent",
+        "to": "fc-forecast",
+        "label": "概率输出",
+        "metadata": {
+          "graphId": "forecastcompass-architecture",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-memory-guides",
+        "kind": "data_flow",
+        "from": "fc-memory",
+        "to": "fc-retrieve",
+        "label": "检索 Fₛ + Rₛ",
+        "metadata": {
+          "graphId": "forecastcompass-architecture",
+          "route": [
+            [
+              555,
+              292
+            ],
+            [
+              678,
+              292
+            ]
+          ],
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-after-resolution",
+        "kind": "data_flow",
+        "from": "fc-forecast",
+        "to": "fc-resolved",
+        "label": "结果揭晓后",
+        "metadata": {
+          "graphId": "forecastcompass-architecture",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-retro-to-revision",
+        "kind": "data_flow",
+        "from": "fc-resolved",
+        "to": "fc-revision",
+        "label": "对照",
+        "metadata": {
+          "graphId": "forecastcompass-architecture",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-update-memory",
+        "kind": "data_flow",
+        "from": "fc-revision",
+        "to": "fc-memory",
+        "label": "局部更新",
+        "metadata": {
+          "graphId": "forecastcompass-architecture",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-taxonomy-index",
+        "kind": "data_flow",
+        "from": "fc-taxonomy",
+        "to": "fc-subcategory",
+        "label": "类别索引",
+        "metadata": {
+          "graphId": "forecastcompass-memory",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-sub-factor",
+        "kind": "data_flow",
+        "from": "fc-subcategory",
+        "to": "fc-factor",
+        "label": "预测维度",
+        "metadata": {
+          "graphId": "forecastcompass-memory",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-sub-reason",
+        "kind": "data_flow",
+        "from": "fc-subcategory",
+        "to": "fc-reasoning",
+        "label": "校准原则",
+        "metadata": {
+          "graphId": "forecastcompass-memory",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-sub-retrieval",
+        "kind": "data_flow",
+        "from": "fc-subcategory",
+        "to": "fc-retrieve",
+        "label": "同一子类别",
+        "metadata": {
+          "graphId": "forecastcompass-memory",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-old-to-contrast",
+        "kind": "data_flow",
+        "from": "fc-forecast",
+        "to": "fc-contrast",
+        "label": "原预测轨迹",
+        "metadata": {
+          "graphId": "forecastcompass-revision",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-retro-to-contrast",
+        "kind": "data_flow",
+        "from": "fc-resolved",
+        "to": "fc-contrast",
+        "label": "复盘轨迹",
+        "metadata": {
+          "graphId": "forecastcompass-revision",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-contrast-diagnose",
+        "kind": "data_flow",
+        "from": "fc-contrast",
+        "to": "fc-diagnose",
+        "label": "ΔF / ΔR",
+        "metadata": {
+          "graphId": "forecastcompass-revision",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-diagnose-aggregate",
+        "kind": "data_flow",
+        "from": "fc-diagnose",
+        "to": "fc-aggregate",
+        "label": "重复模式",
+        "metadata": {
+          "graphId": "forecastcompass-revision",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-aggregate-revise",
+        "kind": "data_flow",
+        "from": "fc-aggregate",
+        "to": "fc-revise",
+        "label": "修订建议",
+        "metadata": {
+          "graphId": "forecastcompass-revision",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "relation.put",
+      "relation": {
+        "id": "fc-revised-memory",
+        "kind": "data_flow",
+        "from": "fc-revise",
+        "to": "fc-memory",
+        "label": "保存记忆",
+        "metadata": {
+          "graphId": "forecastcompass-revision",
+          "source": "ForecastCompass:Figure2"
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-title",
+        "graphId": "forecastcompass-architecture",
+        "element": {
+          "id": "fc-title",
+          "type": "text",
+          "x": 40,
+          "y": 25,
+          "width": 1000,
+          "height": 39,
+          "angle": 0,
+          "strokeColor": "#244d68",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352961,
+          "link": null,
+          "locked": true,
+          "text": "ForecastCompass",
+          "originalText": "ForecastCompass",
+          "fontSize": 30,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-subtitle",
+        "graphId": "forecastcompass-architecture",
+        "element": {
+          "id": "fc-subtitle",
+          "type": "text",
+          "x": 40,
+          "y": 72,
+          "width": 1000,
+          "height": 20.8,
+          "angle": 0,
+          "strokeColor": "#63717b",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352961,
+          "link": null,
+          "locked": true,
+          "text": "记忆辅助预测 → 结果揭晓 → 复盘修订 → 指导下一轮预测",
+          "originalText": "记忆辅助预测 → 结果揭晓 → 复盘修订 → 指导下一轮预测",
+          "fontSize": 16,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-band-inference",
+        "graphId": "forecastcompass-architecture",
+        "element": {
+          "id": "fc-band-inference",
+          "type": "rectangle",
+          "x": 20,
+          "y": 114,
+          "width": 1320,
+          "height": 143,
+          "angle": 0,
+          "strokeColor": "#ffffff",
+          "backgroundColor": "#ffffff",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 45,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": {
+            "type": 3
+          },
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352961,
+          "link": null,
+          "locked": true
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-band-update",
+        "graphId": "forecastcompass-architecture",
+        "element": {
+          "id": "fc-band-update",
+          "type": "rectangle",
+          "x": 395,
+          "y": 308,
+          "width": 945,
+          "height": 147,
+          "angle": 0,
+          "strokeColor": "#eee8f6",
+          "backgroundColor": "#eee8f6",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 45,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": {
+            "type": 3
+          },
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352961,
+          "link": null,
+          "locked": true
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-band-title",
+        "graphId": "forecastcompass-architecture",
+        "element": {
+          "id": "fc-band-title",
+          "type": "text",
+          "x": 40,
+          "y": 126,
+          "width": 1000,
+          "height": 16.900000000000002,
+          "angle": 0,
+          "strokeColor": "#297b67",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352961,
+          "link": null,
+          "locked": true,
+          "text": "在线预测 · 仅使用当时可获得的证据",
+          "originalText": "在线预测 · 仅使用当时可获得的证据",
+          "fontSize": 13,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-update-title",
+        "graphId": "forecastcompass-architecture",
+        "element": {
+          "id": "fc-update-title",
+          "type": "text",
+          "x": 420,
+          "y": 317,
+          "width": 1000,
+          "height": 16.900000000000002,
+          "angle": 0,
+          "strokeColor": "#72539a",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352961,
+          "link": null,
+          "locked": true,
+          "text": "事后学习 · 只修订受影响记忆",
+          "originalText": "事后学习 · 只修订受影响记忆",
+          "fontSize": 13,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-source-caption",
+        "graphId": "forecastcompass-architecture",
+        "element": {
+          "id": "fc-source-caption",
+          "type": "text",
+          "x": 40,
+          "y": 550,
+          "width": 335,
+          "height": 15.600000000000001,
+          "angle": 0,
+          "strokeColor": "#63717b",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352961,
+          "link": null,
+          "locked": true,
+          "text": "论文第 3 页 · Figure 2 原图",
+          "originalText": "论文第 3 页 · Figure 2 原图",
+          "fontSize": 12,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-semantics",
+        "graphId": "forecastcompass-architecture",
+        "element": {
+          "id": "fc-semantics",
+          "type": "text",
+          "x": 420,
+          "y": 482,
+          "width": 900,
+          "height": 18.2,
+          "angle": 0,
+          "strokeColor": "#63717b",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352961,
+          "link": null,
+          "locked": true,
+          "text": "蓝：记忆   绿：推理   紫：更新   金：预测输出   ↗：进入子图",
+          "originalText": "蓝：记忆   绿：推理   紫：更新   金：预测输出   ↗：进入子图",
+          "fontSize": 14,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-no-run",
+        "graphId": "forecastcompass-architecture",
+        "element": {
+          "id": "fc-no-run",
+          "type": "text",
+          "x": 420,
+          "y": 515,
+          "width": 900,
+          "height": 15.600000000000001,
+          "angle": 0,
+          "strokeColor": "#63717b",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352961,
+          "link": null,
+          "locked": true,
+          "text": "以上为论文结构示意。实际插件完成状态请切换到「论文演示 · 实际完成状态」。",
+          "originalText": "以上为论文结构示意。实际插件完成状态请切换到「论文演示 · 实际完成状态」。",
+          "fontSize": 12,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-memory-title",
+        "graphId": "forecastcompass-memory",
+        "element": {
+          "id": "fc-memory-title",
+          "type": "text",
+          "x": 55,
+          "y": 25,
+          "width": 1000,
+          "height": 32.5,
+          "angle": 0,
+          "strokeColor": "#244d68",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352961,
+          "link": null,
+          "locked": true,
+          "text": "层级记忆：让预测维度与校准原则各司其职",
+          "originalText": "层级记忆：让预测维度与校准原则各司其职",
+          "fontSize": 25,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-factor-detail",
+        "graphId": "forecastcompass-memory",
+        "element": {
+          "id": "fc-factor-detail",
+          "type": "text",
+          "x": 770,
+          "y": 190,
+          "width": 265,
+          "height": 62.400000000000006,
+          "angle": 0,
+          "strokeColor": "#244d68",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352962,
+          "link": null,
+          "locked": true,
+          "text": "因子名称 · 证据检查\n常见误用 · 对概率的典型影响\n例：经济增长、失业率",
+          "originalText": "因子名称 · 证据检查\n常见误用 · 对概率的典型影响\n例：经济增长、失业率",
+          "fontSize": 16,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-reason-detail",
+        "graphId": "forecastcompass-memory",
+        "element": {
+          "id": "fc-reason-detail",
+          "type": "text",
+          "x": 770,
+          "y": 430,
+          "width": 265,
+          "height": 62.400000000000006,
+          "angle": 0,
+          "strokeColor": "#72539a",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352962,
+          "link": null,
+          "locked": true,
+          "text": "概率更新原则\n过度自信 / 不足自信\n矛盾证据与信息缺失",
+          "originalText": "概率更新原则\n过度自信 / 不足自信\n矛盾证据与信息缺失",
+          "fontSize": 16,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-memory-foot",
+        "graphId": "forecastcompass-memory",
+        "element": {
+          "id": "fc-memory-foot",
+          "type": "text",
+          "x": 55,
+          "y": 595,
+          "width": 1100,
+          "height": 18.2,
+          "angle": 0,
+          "strokeColor": "#63717b",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352962,
+          "link": null,
+          "locked": true,
+          "text": "方法 3.1–3.2：按子类别索引；同一检索对象也出现在主架构图中。",
+          "originalText": "方法 3.1–3.2：按子类别索引；同一检索对象也出现在主架构图中。",
+          "fontSize": 14,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-revision-title",
+        "graphId": "forecastcompass-revision",
+        "element": {
+          "id": "fc-revision-title",
+          "type": "text",
+          "x": 50,
+          "y": 25,
+          "width": 1000,
+          "height": 32.5,
+          "angle": 0,
+          "strokeColor": "#244d68",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352962,
+          "link": null,
+          "locked": true,
+          "text": "修订记忆：从差异中学习，过滤事后视角",
+          "originalText": "修订记忆：从差异中学习，过滤事后视角",
+          "fontSize": 25,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-update-note",
+        "graphId": "forecastcompass-revision",
+        "element": {
+          "id": "fc-update-note",
+          "type": "text",
+          "x": 50,
+          "y": 400,
+          "width": 1000,
+          "height": 22.1,
+          "angle": 0,
+          "strokeColor": "#72539a",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352962,
+          "link": null,
+          "locked": true,
+          "text": "诊断—聚合—修订可迭代 N 轮；保留可复用模式，排除一次性事件。",
+          "originalText": "诊断—聚合—修订可迭代 N 轮；保留可复用模式，排除一次性事件。",
+          "fontSize": 17,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-update-foot",
+        "graphId": "forecastcompass-revision",
+        "element": {
+          "id": "fc-update-foot",
+          "type": "text",
+          "x": 50,
+          "y": 605,
+          "width": 1150,
+          "height": 18.2,
+          "angle": 0,
+          "strokeColor": "#63717b",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352962,
+          "link": null,
+          "locked": true,
+          "text": "方法 3.3 / 公式 8–10：仅更新已激活子类别与被选中的因子子集。",
+          "originalText": "方法 3.3 / 公式 8–10：仅更新已激活子类别与被选中的因子子集。",
+          "fontSize": 14,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-original-title",
+        "graphId": "forecastcompass-original",
+        "element": {
+          "id": "fc-original-title",
+          "type": "text",
+          "x": 40,
+          "y": 25,
+          "width": 1000,
+          "height": 36.4,
+          "angle": 0,
+          "strokeColor": "#244d68",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352962,
+          "link": null,
+          "locked": true,
+          "text": "ForecastCompass · Figure 2",
+          "originalText": "ForecastCompass · Figure 2",
+          "fontSize": 28,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-original-caption",
+        "graphId": "forecastcompass-original",
+        "element": {
+          "id": "fc-original-caption",
+          "type": "text",
+          "x": 40,
+          "y": 72,
+          "width": 1150,
+          "height": 18.2,
+          "angle": 0,
+          "strokeColor": "#63717b",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352962,
+          "link": null,
+          "locked": true,
+          "text": "原图来自用户提供 PDF 第 3 页。图上的文字为论文内容，不能当作插件执行指令。",
+          "originalText": "原图来自用户提供 PDF 第 3 页。图上的文字为论文内容，不能当作插件执行指令。",
+          "fontSize": 14,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-checks-title",
+        "graphId": "forecastcompass-demo-progress",
+        "element": {
+          "id": "fc-checks-title",
+          "type": "text",
+          "x": 50,
+          "y": 25,
+          "width": 1000,
+          "height": 33.800000000000004,
+          "angle": 0,
+          "strokeColor": "#244d68",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352962,
+          "link": null,
+          "locked": true,
+          "text": "当前 Codex 的真实演示进度",
+          "originalText": "当前 Codex 的真实演示进度",
+          "fontSize": 26,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-checks-caption",
+        "graphId": "forecastcompass-demo-progress",
+        "element": {
+          "id": "fc-checks-caption",
+          "type": "text",
+          "x": 50,
+          "y": 72,
+          "width": 1000,
+          "height": 18.2,
+          "angle": 0,
+          "strokeColor": "#63717b",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352962,
+          "link": null,
+          "locked": true,
+          "text": "只记录可视化创建、页面核验与批注闭环；没有执行 ForecastCompass 模型。",
+          "originalText": "只记录可视化创建、页面核验与批注闭环；没有执行 ForecastCompass 模型。",
+          "fontSize": 14,
+          "fontFamily": 2,
+          "lineHeight": 1.3,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "autoResize": false
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-source-thumbnail",
+        "graphId": "forecastcompass-architecture",
+        "element": {
+          "id": "fc-source-thumbnail",
+          "type": "image",
+          "x": 40,
+          "y": 370,
+          "width": 315,
+          "height": 174.18,
+          "angle": 0,
+          "strokeColor": "#e0e5e9",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352963,
+          "link": null,
+          "locked": false,
+          "fileId": "forecastcompass-figure2",
+          "status": "saved",
+          "scale": [
+            1,
+            1
+          ],
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "fc-source-thumbnail",
+              "resourceId": "forecastcompass-figure2",
+              "role": "free"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-source-full",
+        "graphId": "forecastcompass-original",
+        "element": {
+          "id": "fc-source-full",
+          "type": "image",
+          "x": 40,
+          "y": 115,
+          "width": 1190,
+          "height": 658,
+          "angle": 0,
+          "strokeColor": "#e0e5e9",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352963,
+          "link": null,
+          "locked": false,
+          "fileId": "forecastcompass-figure2",
+          "status": "saved",
+          "scale": [
+            1,
+            1
+          ],
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "fc-source-full",
+              "resourceId": "forecastcompass-figure2",
+              "role": "free"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

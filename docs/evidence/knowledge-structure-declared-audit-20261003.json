@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-03",
+  "errors": [],
+  "warnings": [],
+  "atomCount": 29,
+  "edgeCount": 55,
+  "localMapCount": 8,
+  "localViews": [
+    {
+      "stepId": "probability",
+      "diagramNodes": 4,
+      "actualIntroducedCount": 4,
+      "conceptGroups": 2,
+      "requiredRecaps": 0
+    },
+    {
+      "stepId": "signal-confidence",
+      "diagramNodes": 5,
+      "actualIntroducedCount": 3,
+      "conceptGroups": 3,
+      "requiredRecaps": 2
+    },
+    {
+      "stepId": "memory-problem",
+      "diagramNodes": 5,
+      "actualIntroducedCount": 2,
+      "conceptGroups": 2,
+      "requiredRecaps": 3
+    },
+    {
+      "stepId": "two-memories",
+      "diagramNodes": 6,
+      "actualIntroducedCount": 4,
+      "conceptGroups": 2,
+      "requiredRecaps": 3
+    },
+    {
+      "stepId": "inference",
+      "diagramNodes": 7,
+      "actualIntroducedCount": 2,
+      "conceptGroups": 2,
+      "requiredRecaps": 3
+    },
+    {
+      "stepId": "update",
+      "diagramNodes": 7,
+      "actualIntroducedCount": 5,
+      "conceptGroups": 3,
+      "requiredRecaps": 3
+    },
+    {
+      "stepId": "evidence",
+      "diagramNodes": 7,
+      "actualIntroducedCount": 8,
+      "conceptGroups": 3,
+      "requiredRecaps": 3
+    },
+    {
+      "stepId": "reproduction",
+      "diagramNodes": 6,
+      "actualIntroducedCount": 1,
+      "conceptGroups": 1,
+      "requiredRecaps": 3
+    }
+  ],
+  "limitations": [
+    "只检查声明的概念、关系与原位回顾；不能自动发现所有陌生术语，也不证明真人理解。",
+    "局部图有三个7节点视图；分组与回顾作为同一局部阅读上下文，不能声称严格4–6节点。",
+    "局部规模阈值是可调整的编排启发式。"
+  ]
+}

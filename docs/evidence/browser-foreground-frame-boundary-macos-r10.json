@@ -1,0 +1,6 @@
+{
+  "checkedAt": "2026-10-02T04:06:41.494Z",
+  "path": "公开Browser.getWindowForTarget窗口检查失败；后续Page.bringToFront和空闲rAF采样未执行",
+  "error": "No web contents in the target",
+  "boundary": "仅宿主CDP窗口能力检查，不是产品性能测量；没有新负载或新浏览器"
+}

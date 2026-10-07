@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-02T10:01:06.069Z",
+  "path": "Agent 在当前图新增远端表示后立即发 focus，目标 scene 尚未绘制时仍能定位",
+  "assertions": {
+    "newlyCreatedTargetActuallyFocused": false,
+    "presentationDoesNotAddRevision": true,
+    "currentGraphRemainsCorrect": true,
+    "newTargetNotMisreportedMissing": true
+  },
+  "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+  "representationId": "r21-fresh-focus-0e8ccdcf-b695-4b2c-bc0b-3fa57b0ef9ba",
+  "beforeRevision": 64,
+  "createdRevision": 65,
+  "focusFailure": "Error: page.waitForFunction timed out after 12000ms on page p1; last URL was \"http://127.0.0.1:64581/\"; last title was \"Agent Visual Canvas · 本地工作台\".",
+  "publicView": {
+    "renderedGraphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "renderedRevision": "65",
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 718,
+      "scrollX": 5.89285714285711,
+      "scrollY": 49.75,
+      "zoom": 0.8
+    },
+    "targetPoint": {
+      "representationId": "r21-fresh-focus-0e8ccdcf-b695-4b2c-bc0b-3fa57b0ef9ba",
+      "entityId": "r9-shared",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "lowerLeftInterior": {
+        "sceneX": 1812,
+        "sceneY": 966,
+        "viewportX": 1526.3142857142857,
+        "viewportY": 994.6
+      }
+    },
+    "prompt": "Agent 请求的表示「r21-fresh-focus-0e8ccdcf-b695-4b2c-bc0b-3fa57b0ef9ba」不存在或已删除",
+    "feedbackText": "r21 跟随验收草稿 · 保留对象、原话、观察版本和路径 63"
+  },
+  "afterRevision": 65,
+  "screenshot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/docs/evidence/94-fresh-focus-r21.png",
+  "status": "failed"
+}

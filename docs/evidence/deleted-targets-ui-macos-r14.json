@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-02T05:39:23.129Z",
+  "scope": "已删除实体、自由图形、连线的正式批注历史入口",
+  "assertions": {},
+  "views": [],
+  "beforeRevision": 27,
+  "observedRevision": 28,
+  "liveRevision": 30,
+  "failure": "ElementResolutionError: Invalid locator: loc=css:.annotation-row:has-text(\"删除目标验收 · 实体\") button:has-text(\"查看观察版本\"). Expected loc=role:<role>[name=\"<exact name>\"], loc=role:<role>[name*=\"<name part>\"], loc=css:<selector>, loc=href:<substring>, text=..., css=..., a terminal :has-text(...) or :text-is(...), or a terminal >> nth=N",
+  "status": "failed"
+}

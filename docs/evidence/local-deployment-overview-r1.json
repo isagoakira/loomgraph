@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-02T11:38:20.583Z",
+  "status": "passed",
+  "assertions": {
+    "configurationShownDone": true,
+    "hostStillPending": true,
+    "batchNotClaimed": true,
+    "overviewRendered": true
+  },
+  "projectId": "cb904f16-a9ec-4a38-831c-d84d9a08df80",
+  "workCopyId": "bdc90254-57fe-4968-97a4-96473ca9868f",
+  "revision": 5,
+  "screenshot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/docs/evidence/local-deployment-overview-r1.png"
+}

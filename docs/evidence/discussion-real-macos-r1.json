@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-01T23:42:25.173Z",
+  "beforeRevision": 31,
+  "afterUserRevision": 32,
+  "finalRevision": 33,
+  "userMessage": {
+    "id": "discussion-3f67efc4-0cf9-4341-a27b-b65a60821124",
+    "scope": {
+      "type": "annotation",
+      "annotationId": "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144"
+    },
+    "role": "user",
+    "text": "追问验收：先处理 C 的说明连线，执行依赖保留；请给出逐条回应。",
+    "createdAt": "2026-10-01T23:42:24.965Z",
+    "actor": {
+      "id": "local-user",
+      "kind": "user",
+      "label": "本地用户"
+    }
+  },
+  "reply": {
+    "id": "discussion-eb9b7594-215d-4851-8aa2-1d5445aa6a96",
+    "scope": {
+      "type": "annotation",
+      "annotationId": "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144"
+    },
+    "role": "agent",
+    "parentId": "discussion-3f67efc4-0cf9-4341-a27b-b65a60821124",
+    "text": "追问回应验收：已保留原批注及观察版本。这里记录明确的说明连线范围，执行依赖保持原样。",
+    "createdAt": "2026-10-01T23:42:25.098Z",
+    "actor": {
+      "id": "root-real-ui-acceptance",
+      "kind": "agent"
+    }
+  },
+  "visibleText": "YOU10/02 07:42追问验收：先处理 C 的说明连线，执行依赖保留；请给出逐条回应。定位批注 →AGENT10/02 07:42追问回应验收：已保留原批注及观察版本。这里记录明确的说明连线范围，执行依赖保持原样。定位批注 →",
+  "assertions": {
+    "correctAnnotationScope": true,
+    "replyLinksParent": true,
+    "replySameScope": true,
+    "originalAnnotationsUntouched": true,
+    "bothVisible": true
+  }
+}

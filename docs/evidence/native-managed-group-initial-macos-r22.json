@@ -1,0 +1,134 @@
+{
+  "checkedAt": "2026-10-02T10:23:38.818Z",
+  "beforeRevision": 68,
+  "afterRevision": 69,
+  "graphId": "r21-native-org",
+  "points": [
+    {
+      "id": "r21-org-a",
+      "x": 338,
+      "y": 569
+    },
+    {
+      "id": "r21-org-b",
+      "x": 628,
+      "y": 569
+    }
+  ],
+  "representations": [
+    {
+      "id": "r21-org-a",
+      "entityId": "r9-shared",
+      "graphId": "r21-native-org",
+      "x": 40,
+      "y": 40,
+      "width": 220,
+      "height": 80,
+      "pinned": false,
+      "canvas": {
+        "groupIds": [
+          "F-q9EyzKT9FJGleqmuQzi"
+        ],
+        "frameId": null
+      }
+    },
+    {
+      "id": "r21-org-b",
+      "entityId": "r9-shared",
+      "graphId": "r21-native-org",
+      "x": 330,
+      "y": 40,
+      "width": 220,
+      "height": 80,
+      "pinned": false,
+      "canvas": {
+        "groupIds": [
+          "F-q9EyzKT9FJGleqmuQzi"
+        ],
+        "frameId": null
+      }
+    }
+  ],
+  "history": [
+    {
+      "id": "92c70dcf-db5f-4537-bf9d-758c9da98041",
+      "parentChangeId": "1fb6d4cf-bc19-4a5f-b8cb-85d07b62b631",
+      "operationId": "operation-0bb00a75-8ffe-4256-97c3-a075f04d7482",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 68,
+      "revision": 69,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T10:23:38.656Z",
+      "operations": [
+        {
+          "type": "representation.patch",
+          "id": "r21-org-a",
+          "patch": {
+            "canvas": {
+              "groupIds": [
+                "F-q9EyzKT9FJGleqmuQzi"
+              ],
+              "frameId": null
+            }
+          }
+        },
+        {
+          "type": "representation.patch",
+          "id": "r21-org-b",
+          "patch": {
+            "canvas": {
+              "groupIds": [
+                "F-q9EyzKT9FJGleqmuQzi"
+              ],
+              "frameId": null
+            }
+          }
+        }
+      ],
+      "affectedIds": [
+        "r21-org-a",
+        "r9-shared",
+        "r21-native-org",
+        "r21-org-b"
+      ],
+      "appliedOperations": [
+        {
+          "type": "representation.patch",
+          "id": "r21-org-a",
+          "patch": {
+            "canvas": {
+              "groupIds": [
+                "F-q9EyzKT9FJGleqmuQzi"
+              ],
+              "frameId": null
+            }
+          }
+        },
+        {
+          "type": "representation.patch",
+          "id": "r21-org-b",
+          "patch": {
+            "canvas": {
+              "groupIds": [
+                "F-q9EyzKT9FJGleqmuQzi"
+              ],
+              "frameId": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "assertions": {
+    "oneGroupCommit": true,
+    "managedGroupShared": true,
+    "entitiesUnchanged": true,
+    "freeElementsUnchanged": true
+  }
+}

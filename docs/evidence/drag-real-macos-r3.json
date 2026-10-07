@@ -1,0 +1,87 @@
+{
+  "checkedAt": "2026-10-01T23:36:15.783Z",
+  "before": {
+    "revision": 25,
+    "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+    "rep": {
+      "id": "fixture-rep-0-1",
+      "entityId": "fixture-entity-1",
+      "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+      "x": 545.7142857142858,
+      "y": 304.00000000000006,
+      "width": 218,
+      "height": 78,
+      "pinned": true,
+      "subgraphIds": [],
+      "rotation": 0,
+      "style": {
+        "strokeColor": "#39705e",
+        "backgroundColor": "#dcebe2",
+        "fillStyle": "solid",
+        "strokeWidth": 1.5,
+        "strokeStyle": "solid",
+        "roughness": 0,
+        "opacity": 100
+      }
+    },
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 123.42857142857142,
+      "zoom": 0.7
+    }
+  },
+  "after": {
+    "revision": 26,
+    "rep": {
+      "id": "fixture-rep-0-1",
+      "entityId": "fixture-entity-1",
+      "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+      "x": 605.714329310826,
+      "y": 269.7142421177455,
+      "width": 218,
+      "height": 78,
+      "pinned": true,
+      "subgraphIds": [],
+      "rotation": 0,
+      "style": {
+        "strokeColor": "#39705e",
+        "backgroundColor": "#dcebe2",
+        "fillStyle": "solid",
+        "strokeWidth": 1.5,
+        "strokeStyle": "solid",
+        "roughness": 0,
+        "opacity": 100
+      }
+    },
+    "entity": {
+      "id": "fixture-entity-1",
+      "kind": "task",
+      "title": "任务 2 · 验证视口",
+      "parentId": "fixture-entity-0",
+      "status": "done",
+      "source": "root-visible-acceptance",
+      "updatedAt": "2026-10-01T21:49:19.281Z",
+      "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+    },
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 123.42857142857142,
+      "zoom": 0.7
+    }
+  },
+  "assertions": {
+    "oneRevision": true,
+    "moved": true,
+    "pinned": true,
+    "stylePreserved": true,
+    "cameraPreserved": true
+  }
+}

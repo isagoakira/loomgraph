@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-02T01:31:50.145Z",
+  "stage": "complete",
+  "browserErrors": [],
+  "title": "模块 2 · Local canvas collaboration / 本地连接与跨图增量更新：WWW MMM 中文排版、视口保护、独立批注与冻结上下文，需要保留完整原文并在节点内显示可读的省略版本。\n第二段：维护原始身份、版本与真实来源；讨论和反馈跨图保持关联。\n第三段：这段完整输入必须仍可原地读取，不能把视觉折行或省略号写回业务标题。",
+  "original": "模块 2 · Local canvas collaboration / 本地连接与跨图增量更新：WWW MMM 中文排版、视口保护、独立批注与冻结上下文，需要保留完整原文并在节点内显示可读的省略版本。\n第二段：维护原始身份、版本与真实来源；讨论和反馈跨图保持关联。\n第三段：这段完整输入必须仍可原地读取，不能把视觉折行或省略号写回业务标题。",
+  "beforeRevision": 61,
+  "afterRevision": 61,
+  "cameraBefore": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 485,
+    "scrollX": 94.33333333333337,
+    "scrollY": 40.166666666666686,
+    "zoom": 0.6
+  },
+  "cameraAfter": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 485,
+    "scrollX": 94.33333333333337,
+    "scrollY": 40.166666666666686,
+    "zoom": 0.6
+  },
+  "history": [],
+  "svgBytes": 63844,
+  "pngBytes": 10797,
+  "assertions": {
+    "fullLongOriginalInput": true,
+    "storedTitleExact": true,
+    "noEditorOrPreviewRevision": true,
+    "geometryUnchanged": true,
+    "freeElementsUnchanged": true,
+    "annotationsUnchanged": true,
+    "cameraUnchanged": true,
+    "hoverFocusDoNotNavigate": true,
+    "svgHasEllipsis": true,
+    "svgHasFreeText": true,
+    "svgHasEmbeddedImage": true,
+    "svgHasPaths": true,
+    "pngGenerated": true
+  },
+  "boundary": "真实原生编辑器打开/关闭，无文本修改；SVG/PNG按需预览包含自由素材。截图与PNG另行查看。"
+}

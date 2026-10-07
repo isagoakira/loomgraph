@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-02T06:15:50.986Z",
+  "archive": {
+    "path": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/release-candidate-r3/agent-visual-canvas-0.1.0.zip",
+    "sha256": "5f133158a42a9357f6cf209da5fe72a27d386c039ac7c0107c97abf863af70f7",
+    "bytes": 20590621,
+    "entries": 672,
+    "contentFilesVerified": 671
+  },
+  "extractedRoot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/发行包验收 路径 r3/agent-visual-canvas-0.1.0",
+  "inventory": {
+    "generatedAt": "2026-10-02T06:00:50.409Z",
+    "packages": 138
+  },
+  "implementationPlanVersion": "p1.0",
+  "hashMismatches": [],
+  "unexpected": [],
+  "brokenDocumentLinks": [],
+  "assertions": {
+    "allManifestHashesMatch": true,
+    "noUnexpectedEntries": true,
+    "archiveSidecarHashMatches": true,
+    "requiredArtifactsPresent": true,
+    "bundledFonts": true,
+    "licenseInventoryExact": true,
+    "licenseInventoryGenerationMatches": true,
+    "implementationPlanVersionRecorded": true,
+    "canonicalDocumentSnapshotsMatch": true,
+    "documentLinksResolve": true,
+    "noRuntimeData": true
+  },
+  "boundary": "逐项校验发行ZIP及所有RELEASE文件SHA-256，计划审计与原文仅便携链接不同；提取至中文空格路径。实际运行与客户端加载分别核对。"
+}

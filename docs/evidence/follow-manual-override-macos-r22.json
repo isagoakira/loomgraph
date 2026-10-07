@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-02T10:21:57.966Z",
+  "path": "公开浏览器帧门延迟 B 的实际投影，用户切到 C，再回到 B；旧 focus 不应重放",
+  "assertions": {
+    "fixtureKeepsCamera": true,
+    "focusPendingBeforeManualSwitch": true,
+    "manualChoiceWins": true,
+    "returnRestoresCamera": true,
+    "oldPendingTargetRemainsOutsideViewport": true,
+    "composerExact": true,
+    "presentationNeverCommits": true
+  },
+  "targetId": "r22-override-f5572d77-63c7-4184-a1ff-e461792ab147",
+  "beforeRevision": 67,
+  "originalCameraB": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 718,
+    "scrollX": 17.083333333333343,
+    "scrollY": -69.41666666666666,
+    "zoom": 2.4
+  },
+  "createdRevision": 68,
+  "fixtureCameraB": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 718,
+    "scrollX": 17.083333333333343,
+    "scrollY": -69.41666666666666,
+    "zoom": 2.4
+  },
+  "returnCameraB": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 718,
+    "scrollX": 17.083333333333343,
+    "scrollY": -69.41666666666666,
+    "zoom": 2.4
+  },
+  "afterRevision": 68,
+  "screenshot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/docs/evidence/102-follow-manual-override-r22.png",
+  "status": "passed"
+}

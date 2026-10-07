@@ -1,0 +1,180 @@
+{
+  "checkedAt": "2026-10-02T03:39:09.586Z",
+  "endpoint": "http://127.0.0.1:64581",
+  "path": "真实画布选择、子图多入口回路、输入中的 Agent 更新及刷新恢复",
+  "events": [
+    {
+      "name": "enter",
+      "via": "r9-entry-b",
+      "graphId": "r9-graph-c",
+      "revision": 7,
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 485,
+        "scrollX": 123.125,
+        "scrollY": -67.4375,
+        "zoom": 1.6
+      },
+      "path": "项目/回路总览 A/共同子图 B/回路细节 C",
+      "pathButtons": [
+        "项目",
+        "回路总览 A",
+        "共同子图 B"
+      ]
+    },
+    {
+      "name": "enter",
+      "via": "r9-entry-c",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "revision": 7,
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 485,
+        "scrollX": 123.125,
+        "scrollY": -67.4375,
+        "zoom": 1.6
+      },
+      "path": "项目/回路总览 A/共同子图 B/回路细节 C/回路总览 A",
+      "pathButtons": [
+        "项目",
+        "回路总览 A",
+        "共同子图 B",
+        "回路细节 C"
+      ]
+    },
+    {
+      "name": "enter",
+      "via": "r9-entry-a-right",
+      "graphId": "r9-graph-b",
+      "revision": 7,
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 485,
+        "scrollX": 123.125,
+        "scrollY": -67.4375,
+        "zoom": 1.6
+      },
+      "path": "项目/回路总览 A/共同子图 B",
+      "pathButtons": [
+        "项目",
+        "回路总览 A"
+      ]
+    },
+    {
+      "name": "enter",
+      "via": "r9-entry-a-left",
+      "graphId": "r9-graph-b",
+      "revision": 7,
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 485,
+        "scrollX": 123.125,
+        "scrollY": -67.4375,
+        "zoom": 1.6
+      },
+      "path": "项目/回路总览 A/共同子图 B",
+      "pathButtons": [
+        "项目",
+        "回路总览 A"
+      ]
+    },
+    {
+      "name": "enter",
+      "via": "r9-entry-b",
+      "graphId": "r9-graph-c",
+      "revision": 7,
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 485,
+        "scrollX": 123.125,
+        "scrollY": -67.4375,
+        "zoom": 1.6
+      },
+      "path": "项目/回路总览 A/共同子图 B/回路细节 C",
+      "pathButtons": [
+        "项目",
+        "回路总览 A",
+        "共同子图 B"
+      ]
+    }
+  ],
+  "assertions": {
+    "cyclePathKeepsRepeatedGraph": true,
+    "cycleBackRestoresC": true,
+    "cycleBackRestoresB": true,
+    "secondEntryUsesSameSubgraph": true,
+    "secondEntryBackRestoresA": true,
+    "navigationDoesNotWriteContent": true,
+    "agentUpdateKeepsTypedText": true,
+    "graphSwitchKeepsTypedText": true,
+    "reloadMakesOriginalComposerAccessible": false
+  },
+  "beforeRevision": 7,
+  "observedRevision": 7,
+  "composerBeforeUpdate": {
+    "graphId": "r9-graph-c",
+    "revision": 7,
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 123.125,
+      "scrollY": -67.4375,
+      "zoom": 1.6
+    },
+    "path": "项目/回路总览 A/共同子图 B/回路细节 C",
+    "pathButtons": [
+      "项目",
+      "回路总览 A",
+      "共同子图 B"
+    ],
+    "feedbackText": "观察版本冻结验收：请保留我在 C 图中看到的原文与 A → B → C 路径。"
+  },
+  "agentResult": {
+    "revision": 8,
+    "changeId": "d772a63f-3fd1-4705-9763-9d1c54a04dd9",
+    "operationId": "ui-r10-agent-during-composer",
+    "affectedIds": [
+      "r9-shared"
+    ],
+    "replayed": false
+  },
+  "composerStorageBeforeReload": {
+    "agent-visual-canvas.feedback-composer.v1:d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0": "{\"text\":\"观察版本冻结验收：请保留我在 C 图中看到的原文与 A → B → C 路径。\",\"targets\":[{\"type\":\"representation\",\"graphId\":\"r9-graph-c\",\"representationId\":\"r9-shared-c\"}],\"observedRevision\":7,\"graphPath\":[\"fa292dc4-258e-46f9-ba2a-561a2223c394\",\"r9-graph-b\",\"r9-graph-c\"]}"
+  },
+  "afterReload": {
+    "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "revision": 8,
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 0,
+      "scrollY": 0,
+      "zoom": 1
+    },
+    "path": "项目/回路总览 A",
+    "pathButtons": [
+      "项目"
+    ]
+  },
+  "composerStorageAfterReload": {
+    "agent-visual-canvas.feedback-composer.v1:d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0": "{\"text\":\"观察版本冻结验收：请保留我在 C 图中看到的原文与 A → B → C 路径。\",\"targets\":[{\"type\":\"representation\",\"graphId\":\"r9-graph-c\",\"representationId\":\"r9-shared-c\"}],\"observedRevision\":7,\"graphPath\":[\"fa292dc4-258e-46f9-ba2a-561a2223c394\",\"r9-graph-b\",\"r9-graph-c\"]}"
+  },
+  "stage": "reload composer",
+  "failure": "Error: Persisted in-progress composer is inaccessible after reload",
+  "finalRevision": 8,
+  "status": "failed"
+}

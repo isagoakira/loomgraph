@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-10-02T05:27:54.532Z",
+  "scope": "正式临时高亮随 Agent 实际移动表示更新",
+  "assertions": {},
+  "beforeRevision": 22,
+  "beforePixels": {
+    "copperPixels": 2670,
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 718,
+      "scrollX": 10.89285714285711,
+      "scrollY": 49.75,
+      "zoom": 0.8
+    }
+  },
+  "targetBefore": {
+    "id": "r9-shared-a",
+    "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "entityId": "r9-shared",
+    "x": 80,
+    "y": 270,
+    "width": 230,
+    "height": 78,
+    "pinned": false
+  },
+  "targetAfter": {
+    "id": "r9-shared-a",
+    "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "entityId": "r9-shared",
+    "x": 700,
+    "y": 200,
+    "width": 230,
+    "height": 78,
+    "pinned": false
+  },
+  "commit": {
+    "revision": 23,
+    "changeId": "33b43507-e34c-4194-9cd0-1518fe354430",
+    "operationId": "r14-highlight-object-move",
+    "affectedIds": [
+      "r9-shared-a",
+      "r9-shared",
+      "fa292dc4-258e-46f9-ba2a-561a2223c394"
+    ],
+    "replayed": false
+  },
+  "afterPixels": {
+    "copperPixels": 2653,
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 718,
+      "scrollX": 10.89285714285711,
+      "scrollY": 49.75,
+      "zoom": 0.8
+    }
+  },
+  "oldLocationPixels": {
+    "copperPixels": 0,
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 718,
+      "scrollX": 10.89285714285711,
+      "scrollY": 49.75,
+      "zoom": 0.8
+    }
+  },
+  "failure": "Error: JavaScript evaluation failed at line 0, column 0: Error: {\"error\":{\"code\":\"INVALID_PARAMS\",\"message\":\"Request parameters failed validation\",\"details\":[{\"origin\":\"array\",\"code\":\"too_small\",\"minimum\":1,\"inclusive\":true,\"path\":[\"targets\"],\"message\":\"Too small: expected array to have >=1 items\"}]}}\n    at <anonymous>:2:296\n    at async __egoPageEvaluate (<anonymous>:2:16); expression: async({targets,ttlMs})=>{const{token}=await(await fetch(\"/api/connection\")).json();const r=await fetch(\"/api/present\",{method:\"POST\",headers:{\"content-type\":...",
+  "status": "failed"
+}

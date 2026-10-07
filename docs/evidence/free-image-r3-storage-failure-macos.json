@@ -1,0 +1,238 @@
+{
+  "checkedAt": "2026-10-02T01:45:51.433Z",
+  "revision": 67,
+  "newImage": {
+    "id": "8RoVCLxZzWANY_AD-TcO_",
+    "graphId": "fixture-graph-1",
+    "element": {
+      "id": "8RoVCLxZzWANY_AD-TcO_",
+      "type": "image",
+      "x": 754,
+      "y": 364,
+      "width": 0,
+      "height": 0,
+      "angle": 0,
+      "strokeColor": "transparent",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aQ",
+      "roundness": null,
+      "seed": 1503847547,
+      "version": 3,
+      "versionNonce": 1320261141,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1790905434963,
+      "link": null,
+      "locked": false,
+      "customData": {
+        "agentCanvas": {
+          "resourceId": "canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b",
+          "role": "free",
+          "freeElementId": "8RoVCLxZzWANY_AD-TcO_"
+        }
+      },
+      "status": "pending",
+      "fileId": "53060bbb18d14c7a3078b66520effe5af071bc8b",
+      "scale": [
+        1,
+        1
+      ],
+      "crop": null
+    }
+  },
+  "resource": {
+    "id": "canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b",
+    "name": "53060bbb18d14c7a3078b66520effe5af071bc8b.svg+xml",
+    "mimeType": "image/svg+xml",
+    "relativePath": "assets/canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b",
+    "sha256": "4f73ff7bdfce4992b10f720f6b176828d13c8bd1639b712b53d2216e4274f6e6",
+    "bytes": 352
+  },
+  "history": [
+    {
+      "id": "99e11a75-9421-4588-9250-b7bbbedb6bb6",
+      "parentChangeId": "1691ba3b-d273-40c3-ac84-ad40ea08386d",
+      "operationId": "canvas-resource-upload:canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b",
+      "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+      "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+      "baseRevision": 65,
+      "revision": 66,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户插入画布图片资源",
+      "timestamp": "2026-10-02T01:43:54.997Z",
+      "operations": [
+        {
+          "type": "resource.put",
+          "resource": {
+            "id": "canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b",
+            "name": "53060bbb18d14c7a3078b66520effe5af071bc8b.svg+xml",
+            "mimeType": "image/svg+xml",
+            "relativePath": "assets/canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b",
+            "sha256": "4f73ff7bdfce4992b10f720f6b176828d13c8bd1639b712b53d2216e4274f6e6",
+            "bytes": 352
+          }
+        }
+      ],
+      "affectedIds": [
+        "canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b"
+      ],
+      "appliedOperations": [
+        {
+          "type": "resource.put",
+          "resource": {
+            "id": "canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b",
+            "name": "53060bbb18d14c7a3078b66520effe5af071bc8b.svg+xml",
+            "mimeType": "image/svg+xml",
+            "relativePath": "assets/canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b",
+            "sha256": "4f73ff7bdfce4992b10f720f6b176828d13c8bd1639b712b53d2216e4274f6e6",
+            "bytes": 352
+          }
+        }
+      ]
+    },
+    {
+      "id": "faf9ae90-3445-4130-8729-d965946ba25d",
+      "parentChangeId": "99e11a75-9421-4588-9250-b7bbbedb6bb6",
+      "operationId": "operation-84168271-56c9-4b7c-a36b-1a4239aa18d4",
+      "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+      "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+      "baseRevision": 66,
+      "revision": 67,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T01:43:55.368Z",
+      "operations": [
+        {
+          "type": "free.put",
+          "freeElement": {
+            "id": "8RoVCLxZzWANY_AD-TcO_",
+            "graphId": "fixture-graph-1",
+            "element": {
+              "id": "8RoVCLxZzWANY_AD-TcO_",
+              "type": "image",
+              "x": 754,
+              "y": 364,
+              "width": 0,
+              "height": 0,
+              "angle": 0,
+              "strokeColor": "transparent",
+              "backgroundColor": "transparent",
+              "fillStyle": "solid",
+              "strokeWidth": 2,
+              "strokeStyle": "solid",
+              "roughness": 1,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "index": "aQ",
+              "roundness": null,
+              "seed": 1503847547,
+              "version": 3,
+              "versionNonce": 1320261141,
+              "isDeleted": false,
+              "boundElements": null,
+              "updated": 1790905434963,
+              "link": null,
+              "locked": false,
+              "customData": {
+                "agentCanvas": {
+                  "resourceId": "canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b",
+                  "role": "free",
+                  "freeElementId": "8RoVCLxZzWANY_AD-TcO_"
+                }
+              },
+              "status": "pending",
+              "fileId": "53060bbb18d14c7a3078b66520effe5af071bc8b",
+              "scale": [
+                1,
+                1
+              ],
+              "crop": null
+            }
+          }
+        }
+      ],
+      "affectedIds": [
+        "8RoVCLxZzWANY_AD-TcO_",
+        "fixture-graph-1"
+      ],
+      "appliedOperations": [
+        {
+          "type": "free.put",
+          "freeElement": {
+            "id": "8RoVCLxZzWANY_AD-TcO_",
+            "graphId": "fixture-graph-1",
+            "element": {
+              "id": "8RoVCLxZzWANY_AD-TcO_",
+              "type": "image",
+              "x": 754,
+              "y": 364,
+              "width": 0,
+              "height": 0,
+              "angle": 0,
+              "strokeColor": "transparent",
+              "backgroundColor": "transparent",
+              "fillStyle": "solid",
+              "strokeWidth": 2,
+              "strokeStyle": "solid",
+              "roughness": 1,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "index": "aQ",
+              "roundness": null,
+              "seed": 1503847547,
+              "version": 3,
+              "versionNonce": 1320261141,
+              "isDeleted": false,
+              "boundElements": null,
+              "updated": 1790905434963,
+              "link": null,
+              "locked": false,
+              "customData": {
+                "agentCanvas": {
+                  "resourceId": "canvas-resource-53060bbb18d14c7a3078b66520effe5af071bc8b",
+                  "role": "free",
+                  "freeElementId": "8RoVCLxZzWANY_AD-TcO_"
+                }
+              },
+              "status": "pending",
+              "fileId": "53060bbb18d14c7a3078b66520effe5af071bc8b",
+              "scale": [
+                1,
+                1
+              ],
+              "crop": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "camera": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 485,
+    "scrollX": 94.33333333333337,
+    "scrollY": 40.166666666666686,
+    "zoom": 0.6
+  },
+  "browserErrors": [],
+  "boundary": "新原生HTML chooser上传与放置；15秒后存储新图片为0x0，UI截图显示。原生专用选择器未测。"
+}

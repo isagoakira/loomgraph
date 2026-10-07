@@ -1,0 +1,135 @@
+{
+  "kind": "real_release_thirty_item_feedback_stdio",
+  "status": "failed",
+  "startedAt": "2026-10-02T02:48:49.217Z",
+  "finishedAt": "2026-10-02T02:48:50.015Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "probeNode": "v26.8.1",
+    "serviceNode": "24.21.0"
+  },
+  "service": {
+    "pluginRoot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/发行包验收 路径 r2/agent-visual-canvas-0.1.0",
+    "launcher": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/发行包验收 路径 r2/agent-visual-canvas-0.1.0/scripts/start-canvas.mjs",
+    "serverSha256": "85497a1ceed4d60c97bdfeef37e65ecb2a26b5530d6241144705c344dc8c4144"
+  },
+  "dataRoot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/batch30-acceptance-r9-VT0Eq8",
+  "batchId": "r9-cross-graph-batch-30",
+  "contextTimingMs": 10.60241700000006,
+  "frozenHash": "0d8b535dc3ad1c38ef7289e9f33ef317a73a185a60272ae44de92e617b743d36",
+  "pages": [
+    {
+      "label": "queued",
+      "index": 0,
+      "cursor": "0",
+      "nextCursor": "7",
+      "totalAnnotations": 30,
+      "ids": [
+        "r9-annotation-00",
+        "r9-annotation-01",
+        "r9-annotation-02",
+        "r9-annotation-03",
+        "r9-annotation-04",
+        "r9-annotation-05",
+        "r9-annotation-06"
+      ]
+    },
+    {
+      "label": "queued",
+      "index": 1,
+      "cursor": "7",
+      "nextCursor": "14",
+      "totalAnnotations": 30,
+      "ids": [
+        "r9-annotation-07",
+        "r9-annotation-08",
+        "r9-annotation-09",
+        "r9-annotation-10",
+        "r9-annotation-11",
+        "r9-annotation-12",
+        "r9-annotation-13"
+      ]
+    },
+    {
+      "label": "queued",
+      "index": 2,
+      "cursor": "14",
+      "nextCursor": "21",
+      "totalAnnotations": 30,
+      "ids": [
+        "r9-annotation-14",
+        "r9-annotation-15",
+        "r9-annotation-16",
+        "r9-annotation-17",
+        "r9-annotation-18",
+        "r9-annotation-19",
+        "r9-annotation-20"
+      ]
+    },
+    {
+      "label": "queued",
+      "index": 3,
+      "cursor": "21",
+      "nextCursor": "28",
+      "totalAnnotations": 30,
+      "ids": [
+        "r9-annotation-21",
+        "r9-annotation-22",
+        "r9-annotation-23",
+        "r9-annotation-24",
+        "r9-annotation-25",
+        "r9-annotation-26",
+        "r9-annotation-27"
+      ]
+    },
+    {
+      "label": "queued",
+      "index": 4,
+      "cursor": "28",
+      "totalAnnotations": 30,
+      "ids": [
+        "r9-annotation-28",
+        "r9-annotation-29"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "stdio_session_connected",
+      "at": "2026-10-02T02:48:49.530Z",
+      "pid": 1819
+    },
+    {
+      "name": "stdio_session_closed",
+      "at": "2026-10-02T02:48:50.015Z",
+      "elapsedMs": 10.748207999999977,
+      "pidGone": true,
+      "lockReleased": true
+    }
+  ],
+  "assertions": {
+    "frozen_manifest_kept_all_thirty": true,
+    "frozen_context_kept_three_target_graphs": true,
+    "frozen_context_kept_dependency_relationships": true,
+    "frozen_context_preserved_original_words_and_versions": true,
+    "deleted_target_retained_historical_title_and_removal": true,
+    "changed_target_retained_historical_title_and_changed_fields": true,
+    "queued_page_0_bounded_and_total": true,
+    "queued_page_1_bounded_and_total": true,
+    "queued_page_2_bounded_and_total": true,
+    "queued_page_3_bounded_and_total": true,
+    "queued_page_4_bounded_and_total": true,
+    "queued_all_thirty_no_missing_or_duplicate": true,
+    "generic_protocol_received_batch": true,
+    "clarification_and_failure_did_not_block_other_items": true,
+    "midpoint_frozen_context_bytes_unchanged": false
+  },
+  "failure": {
+    "name": "Error",
+    "message": "midpoint_frozen_context_bytes_unchanged",
+    "stack": "Error: midpoint_frozen_context_bytes_unchanged\n    at check (file:///Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/batch30-release-r9.mjs:25:96)\n    at file:///Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/batch30-release-r9.mjs:128:3\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+  },
+  "boundary": "真实r2发行入口和MCP stdio：30条独立意见跨三图、两个观察版本，包含已删除/已变更目标及执行依赖关系；7条分页、逐条回应/澄清/失败、真实内容修改关联及EOF中途重启。一次上下文计时仅作原始样本，不证明三轮p95预算。此为通用MCP客户端验收，不代表既有Codex/Claude模型对话或原生Windows已通过。"
+}

@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-03",
+  "revision": 102,
+  "before": {
+    "blockCount": 8,
+    "keys": [
+      "representation:pilot-fc-rep-probability",
+      "representation:pilot-fc-rep-signal-confidence",
+      "representation:pilot-fc-rep-memory-problem",
+      "representation:pilot-fc-rep-two-memories",
+      "representation:pilot-fc-rep-inference",
+      "representation:pilot-fc-rep-update",
+      "representation:pilot-fc-rep-evidence",
+      "representation:pilot-fc-rep-reproduction"
+    ],
+    "height": 939.078125,
+    "nextTop": 1222.0703125,
+    "expanded": "false",
+    "dialogCount": 0,
+    "scrollTop": 3052.5
+  },
+  "after": {
+    "blockCount": 8,
+    "keys": [
+      "representation:pilot-fc-rep-probability",
+      "representation:pilot-fc-rep-signal-confidence",
+      "representation:pilot-fc-rep-memory-problem",
+      "representation:pilot-fc-rep-two-memories",
+      "representation:pilot-fc-rep-inference",
+      "representation:pilot-fc-rep-update",
+      "representation:pilot-fc-rep-evidence",
+      "representation:pilot-fc-rep-reproduction"
+    ],
+    "height": 1470.71875,
+    "nextTop": 1753.7109375,
+    "expanded": "true",
+    "dialogCount": 0,
+    "scrollTop": 3052.5
+  },
+  "subgraph": {
+    "graph": "forecastcompass-memory",
+    "breadcrumb": true
+  },
+  "returned": {
+    "graph": "forecastcompass-learning-pilot",
+    "mode": "reading",
+    "scrollTop": 0,
+    "expanded": "true"
+  },
+  "collapsed": {
+    "height": 939.078125,
+    "dialogCount": 0
+  },
+  "findings": [
+    "八个步骤按稳定身份载入",
+    "原位展开增高并推开下一步骤，未打开模态弹窗",
+    "关联记忆子图可进入并通过面包屑返回",
+    "正式阅读器仍重复摘要/要点/正文/关系，核心文字有截断",
+    "返回主干保留展开状态，但阅读滚动位置回到开头，尚不符合返回锚点要求"
+  ]
+}

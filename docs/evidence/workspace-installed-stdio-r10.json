@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-03T05:32:17.267Z",
+  "version": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261003-r10",
+  "node": "v24.19.0",
+  "serverSha256": "8ff41b187e58ab3b9b47f421f4569501741de4648b43e63050069ede944e3f0b",
+  "assertions": {
+    "nine-real-tools": true,
+    "prompt-preflight-discoverable": true,
+    "mainline-and-terms": true,
+    "actual-local-neighborhood": true,
+    "anchored-view-context": true,
+    "utf8-budget": true,
+    "real-prompt-assembly": true,
+    "real-preflight-rejects-pinned-move": true,
+    "pure-read-no-revision": true,
+    "two-independent-anchors": true,
+    "old-observation-preserved": true,
+    "expression-feedback-provider": true,
+    "reopen-expressions-exact": true,
+    "reopen-rich-text-exact": true,
+    "reopen-frozen-context-exact": true,
+    "independent-copy-with-original-project": true,
+    "package-expressions-anchors-geometry": true,
+    "package-original-frozen-source": true
+  },
+  "checksPassed": 18,
+  "scope": "正式安装程序在同机隔离目录中使用真实Node24 stdio；不代替当前旧进程新模式、Windows或Claude宿主验收。"
+}

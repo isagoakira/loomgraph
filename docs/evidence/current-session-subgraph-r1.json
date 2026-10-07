@@ -1,0 +1,12 @@
+{
+  "entered": "demo-history",
+  "before": {
+    "graph": "demo-structure",
+    "camera": "{\"offsetLeft\":72,\"offsetTop\":182,\"width\":1006,\"height\":507,\"scrollX\":318,\"scrollY\":-25.5,\"zoom\":1}"
+  },
+  "after": {
+    "graph": "demo-structure",
+    "camera": "{\"offsetLeft\":72,\"offsetTop\":182,\"width\":1006,\"height\":507,\"scrollX\":318,\"scrollY\":-25.5,\"zoom\":1}"
+  },
+  "returnCameraPreserved": true
+}

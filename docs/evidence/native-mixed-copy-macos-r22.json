@@ -1,0 +1,8 @@
+{
+  "checkedAt": "2026-10-02T10:27:34.644Z",
+  "path": "原生绘制自由矩形→混合分组→复制→重载后独立解除复制组",
+  "assertions": {},
+  "beforeRevision": 71,
+  "failure": "ElementResolutionError: page.click timed out after 3000ms: Selector input[aria-label=\"矩形\"] matched 1 elements, but none can receive input; <path> intercepts pointer events",
+  "status": "failed"
+}

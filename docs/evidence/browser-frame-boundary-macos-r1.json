@@ -1,0 +1,13 @@
+{
+  "frame": {
+    "intervalsMs": [
+      685,
+      1000.1000000238419,
+      1015.2999999523163
+    ],
+    "visibility": "visible",
+    "focused": true,
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+  },
+  "boundary": "当前自动化页面无交互时 requestAnimationFrame 约每秒一次；Page.bringToFront 未恢复正常刷新。973ms可见延迟含此调度限制，无法用于通过或判定本机交互性能预算。"
+}

@@ -1,0 +1,81 @@
+{
+  "steps": [
+    {
+      "id": "probability",
+      "height": 702,
+      "width": 913
+    },
+    {
+      "id": "signal-confidence",
+      "height": 664,
+      "width": 913
+    },
+    {
+      "id": "memory-problem",
+      "height": 710,
+      "width": 913
+    },
+    {
+      "id": "two-memories",
+      "height": 846,
+      "width": 913
+    },
+    {
+      "id": "inference",
+      "height": 671,
+      "width": 913
+    },
+    {
+      "id": "update",
+      "height": 748,
+      "width": 913
+    },
+    {
+      "id": "evidence",
+      "height": 842,
+      "width": 913
+    },
+    {
+      "id": "reproduction",
+      "height": 680,
+      "width": 913
+    }
+  ],
+  "research": [
+    {
+      "id": "research-probability",
+      "open": false
+    },
+    {
+      "id": "research-signal-confidence",
+      "open": false
+    },
+    {
+      "id": "research-memory-problem",
+      "open": false
+    },
+    {
+      "id": "research-two-memories",
+      "open": false
+    },
+    {
+      "id": "research-inference",
+      "open": false
+    },
+    {
+      "id": "research-update",
+      "open": false
+    },
+    {
+      "id": "research-evidence",
+      "open": false
+    },
+    {
+      "id": "research-reproduction",
+      "open": false
+    }
+  ],
+  "horizontalOverflow": false,
+  "bodyOverflow": "visible",
+  "canonical": "forecastcompass-learning-pilot"
+}

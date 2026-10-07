@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-10-02T03:45:59.764Z",
+  "path": "实际原生 Cmd+D 复制业务表示与自由图形",
+  "assertions": {
+    "newRepresentationSameEntity": true,
+    "subgraphMetadataPreserved": true,
+    "originalRepresentationUnchanged": true,
+    "noImplicitEntityClone": true,
+    "representationCopyOneCommit": true
+  },
+  "beforeRevision": 8,
+  "duplicatedRepresentation": {
+    "id": "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+    "entityId": "r9-entry",
+    "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "x": 90,
+    "y": 100,
+    "width": 230,
+    "height": 78,
+    "pinned": false,
+    "rotation": 0,
+    "subgraphIds": [
+      "r9-graph-b"
+    ]
+  },
+  "representationHistory": [
+    {
+      "id": "5653a73e-eb55-4a9f-97ef-ae594dbb41b9",
+      "parentChangeId": "d772a63f-3fd1-4705-9763-9d1c54a04dd9",
+      "operationId": "operation-e21cf512-3563-42cd-b237-4938067db0c0",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 8,
+      "revision": 9,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T03:46:00.549Z",
+      "operations": [
+        {
+          "type": "representation.put",
+          "representation": {
+            "id": "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+            "entityId": "r9-entry",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "x": 90,
+            "y": 100,
+            "width": 230,
+            "height": 78,
+            "pinned": false,
+            "rotation": 0,
+            "subgraphIds": [
+              "r9-graph-b"
+            ]
+          }
+        }
+      ],
+      "affectedIds": [
+        "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+        "r9-entry",
+        "fa292dc4-258e-46f9-ba2a-561a2223c394"
+      ],
+      "appliedOperations": [
+        {
+          "type": "representation.put",
+          "representation": {
+            "id": "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+            "entityId": "r9-entry",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "x": 90,
+            "y": 100,
+            "width": 230,
+            "height": 78,
+            "pinned": false,
+            "rotation": 0,
+            "subgraphIds": [
+              "r9-graph-b"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "stage": "free element",
+  "failure": "Error: JavaScript evaluation failed at line 0, column 0: TypeError: Cannot read properties of null (reading 'getAttribute')\n    at <anonymous>:2:96\n    at __egoPageEvaluate (<anonymous>:2:223)\n    at <anonymous>:3:9; expression: e=>{const a=JSON.parse(document.querySelector(\"[data-rendered-graph-id]\").getAttribute(\"data-camera\"));return{x:a.offsetLeft+(e.x+e.width/2+a.scrollX)*a.zoom...",
+  "status": "failed"
+}

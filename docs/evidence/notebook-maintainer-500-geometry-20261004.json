@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "benchmark": "notebook-maintainer-500-geometry",
+  "date": "2026-10-03T20:10:40.317Z",
+  "command": [
+    "./node_modules/.bin/esbuild scripts/notebook-maintainer-500-bench.ts --bundle --platform=node --format=esm --outfile=/tmp/notebook-maintainer-500-bench.mjs",
+    "node /tmp/notebook-maintainer-500-bench.mjs docs/evidence/notebook-maintainer-500-geometry-20261004.json 15 3"
+  ],
+  "environment": {
+    "node": "v26.8.1",
+    "platform": "darwin",
+    "release": "25.6.0",
+    "arch": "arm64",
+    "cpu": "Apple M1",
+    "logicalCores": 8
+  },
+  "fixture": {
+    "geometryCount": 500,
+    "visibleGeometryCount": 500,
+    "pinnedCount": 6,
+    "measuredGrowthCount": 27,
+    "leafGroupCount": 20,
+    "parentGroupCount": 5,
+    "organizationGroupCount": 25,
+    "sourceVisibleCollisionCount": 0,
+    "measurementEpoch": 1,
+    "scope": "local"
+  },
+  "method": {
+    "timing": "Each sample measures one synchronous maintainNotebook(input) call with performance.now(); warmups are excluded from timing statistics.",
+    "pinnedDisplacement": "A pinned object is a violation when the Euclidean displacement of its result x/y from source x/y exceeds 1e-9; size changes from measurements are not displacement.",
+    "visibleCollision": "Count each pair of visible result geometries whose conservative angle-aware AABBs have strict positive-area intersection; edge touching and hidden geometry are excluded."
+  },
+  "runs": {
+    "warmupCount": 3,
+    "sampleCount": 15,
+    "localMaintenanceMs": {
+      "minMs": 9.328,
+      "medianMs": 10.601,
+      "p95Ms": 12.451,
+      "maxMs": 12.451
+    },
+    "pinned": {
+      "movedViolationMin": 0,
+      "movedViolationMedian": 0,
+      "movedViolationP95": 0,
+      "movedViolationMax": 0,
+      "maxDisplacement": 0
+    },
+    "visibleCollisions": {
+      "min": 0,
+      "median": 0,
+      "p95": 0,
+      "max": 0
+    },
+    "output": {
+      "geometrySignatureCount": 1,
+      "geometrySignature": "269f23d68fffebfc",
+      "movedKeysMedian": 319,
+      "warningsMedian": 0,
+      "canApplyAll": true,
+      "persistenceValues": [
+        "transient"
+      ]
+    },
+    "samples": [
+      {
+        "elapsedMs": 11.445,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 11.503,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 10.182,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 12.128,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 10.655,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 10.601,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 10.17,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 11.458,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 9.92,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 9.328,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 9.849,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 9.361,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 9.561,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 12.245,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      },
+      {
+        "elapsedMs": 12.451,
+        "movedKeys": 319,
+        "pinnedMoved": 0,
+        "pinnedMaxDisplacement": 0,
+        "visibleCollisionCount": 0,
+        "warnings": 0,
+        "canApply": true,
+        "persistence": "transient"
+      }
+    ]
+  },
+  "checks": {
+    "deterministicGeometryAcrossSamples": true,
+    "pinnedObjectsStationary": true,
+    "visibleGeometryCollisionFree": true
+  },
+  "warningExamples": [],
+  "boundary": "Pure maintainNotebook geometry pass only; no source writes, build, service startup, live data, DOM measurement, or browser rendering."
+}

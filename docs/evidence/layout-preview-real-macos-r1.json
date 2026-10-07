@@ -1,0 +1,133 @@
+{
+  "checkedAt": "2026-10-02T00:24:47.301Z",
+  "path": "真实整理布局、只读候选、Agent提交使旧候选禁用、取消并重算、实际应用",
+  "before": {
+    "revision": 49,
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": -19.444444444444457,
+      "scrollY": -22.5793650793651,
+      "zoom": 0.9
+    },
+    "previewNote": "候选 REV 49 · 固定节点保留 · 固定位置已保护；候选只修改可移动对象。",
+    "applyDisabled": false,
+    "projectedCount": 32,
+    "persistedCount": 26
+  },
+  "agent": {
+    "status": 200,
+    "result": {
+      "revision": 50,
+      "changeId": "d55bbf6f-8585-4a0d-952d-b9d7ad7ba287",
+      "operationId": "layout-stale-agent-a988bcd0-51f5-44f1-9902-23dc2e0e8db0",
+      "affectedIds": [
+        "fixture-entity-8"
+      ],
+      "replayed": false
+    }
+  },
+  "stale": {
+    "revision": 50,
+    "applyDisabled": true
+  },
+  "fresh": {
+    "note": "候选 REV 50 · 固定节点保留 · 固定位置已保护；候选只修改可移动对象。",
+    "projected": 32,
+    "persisted": 26
+  },
+  "after": {
+    "revision": 51,
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": -19.444444444444457,
+      "scrollY": -22.5793650793651,
+      "zoom": 0.9
+    },
+    "changedRepresentations": [
+      {
+        "id": "fixture-rep-1-1",
+        "entityId": "fixture-entity-5",
+        "graphId": "fixture-graph-1",
+        "x": 332,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-2",
+        "entityId": "fixture-entity-6",
+        "graphId": "fixture-graph-1",
+        "x": 630,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-3",
+        "entityId": "fixture-entity-7",
+        "graphId": "fixture-graph-1",
+        "x": 928,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-4",
+        "entityId": "fixture-entity-8",
+        "graphId": "fixture-graph-1",
+        "x": 1226,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-6",
+        "entityId": "fixture-entity-10",
+        "graphId": "fixture-graph-1",
+        "x": 332,
+        "y": 280,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-7",
+        "entityId": "fixture-entity-11",
+        "graphId": "fixture-graph-1",
+        "x": 630,
+        "y": 586,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      }
+    ]
+  },
+  "assertions": {
+    "previewNoCommit": true,
+    "ghostsSeparated": true,
+    "staleDisabled": true,
+    "staleLayoutPreserved": true,
+    "freshAppliedOnce": true,
+    "onlyMovableCurrentGraph": true,
+    "pinsPreserved": true,
+    "freeElementsPreserved": true,
+    "avoidsFixedAndFree": true,
+    "cameraPreserved": true
+  }
+}

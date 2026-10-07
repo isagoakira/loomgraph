@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "name": "window resize preserves scene center",
+      "passed": true,
+      "details": {
+        "before": {
+          "offsetLeft": 0,
+          "offsetTop": 180,
+          "width": 959,
+          "height": 487,
+          "scrollX": 84.5,
+          "scrollY": 43.5,
+          "zoom": 1
+        },
+        "after": {
+          "offsetLeft": 0,
+          "offsetTop": 180,
+          "width": 959,
+          "height": 720,
+          "scrollX": 84.5,
+          "scrollY": 160,
+          "zoom": 1
+        }
+      }
+    },
+    {
+      "name": "sidebar double click restores default width",
+      "passed": true
+    },
+    {
+      "name": "separator keyboard adjusts top height",
+      "passed": true
+    },
+    {
+      "name": "multiple cards expand independently without dialog",
+      "passed": true
+    },
+    {
+      "name": "keyboard collapse keeps the other card expanded",
+      "passed": true
+    },
+    {
+      "name": "compact node opens non-modal inline details",
+      "passed": true
+    }
+  ],
+  "camera": {
+    "offsetLeft": 0,
+    "offsetTop": 180,
+    "width": 1090,
+    "height": 720,
+    "scrollX": 1386.8893672407403,
+    "scrollY": 977.0278389113146,
+    "zoom": 0.3058551277198167
+  }
+}

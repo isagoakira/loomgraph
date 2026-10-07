@@ -1,0 +1,106 @@
+{
+  "kind": "real_release_transport_loss_and_crash_recovery",
+  "status": "passed",
+  "startedAt": "2026-10-02T02:43:31.477Z",
+  "finishedAt": "2026-10-02T02:43:32.091Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "probeNode": "v26.8.1",
+    "serviceNode": "24.21.0"
+  },
+  "service": {
+    "pluginRoot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/发行包验收 路径 r2/agent-visual-canvas-0.1.0",
+    "launcher": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/发行包验收 路径 r2/agent-visual-canvas-0.1.0/scripts/start-canvas.mjs",
+    "serverSha256": "85497a1ceed4d60c97bdfeef37e65ecb2a26b5530d6241144705c344dc8c4144"
+  },
+  "dataRoot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/fault-acceptance-r9-fi1mnM",
+  "events": [
+    {
+      "name": "upstream_commit_receipt_withheld",
+      "at": "2026-10-02T02:43:31.829Z",
+      "revision": 1,
+      "operationId": "r9-postcommit-lost-response",
+      "status": 200
+    },
+    {
+      "name": "client_connection_failed",
+      "at": "2026-10-02T02:43:31.833Z",
+      "mode": "after_commit",
+      "error": "TypeError"
+    },
+    {
+      "name": "postcommit_retry_verified",
+      "at": "2026-10-02T02:43:31.841Z",
+      "revision": 1,
+      "replayed": true,
+      "changeId": "4db4078a-7817-47b0-bc0f-e5f8257c142d"
+    },
+    {
+      "name": "downstream_disconnected_before_forward",
+      "at": "2026-10-02T02:43:31.842Z"
+    },
+    {
+      "name": "client_connection_failed",
+      "at": "2026-10-02T02:43:31.842Z",
+      "mode": "before_forward",
+      "error": "TypeError"
+    },
+    {
+      "name": "second_writer_rejected",
+      "at": "2026-10-02T02:43:31.963Z",
+      "pid": 498,
+      "ownerPid": 462,
+      "exitCode": 153,
+      "code": "PROJECT_IN_USE",
+      "entrypoint": "http://127.0.0.1:61457/"
+    },
+    {
+      "name": "owned_service_crashed",
+      "at": "2026-10-02T02:43:31.966Z",
+      "pid": 462,
+      "signal": "SIGKILL",
+      "revision": 2
+    },
+    {
+      "name": "recovered_service_closed",
+      "at": "2026-10-02T02:43:32.091Z",
+      "pid": 499,
+      "exitCode": 0,
+      "signal": null,
+      "elapsedMs": 4.668083000000024,
+      "revision": 2
+    }
+  ],
+  "assertions": {
+    "postcommit_client_received_no_response": true,
+    "upstream_committed_before_client_disconnect": true,
+    "proxy_sent_zero_response_bytes": true,
+    "postcommit_content_persisted": true,
+    "postcommit_retry_replayed_original_result": true,
+    "postcommit_exactly_one_history_change": true,
+    "precommit_client_connection_failed": true,
+    "precommit_request_never_reached_service": true,
+    "precommit_content_and_revision_unchanged": true,
+    "precommit_retry_committed_once": true,
+    "same_operation_id_different_payload_rejected": true,
+    "same_id_conflict_preserved_content": true,
+    "second_writer_rejected_with_project_in_use": true,
+    "second_writer_reports_original_owner": true,
+    "second_writer_never_bound_http": true,
+    "second_writer_did_not_replace_lock": true,
+    "first_writer_unchanged_and_available": true,
+    "owned_service_actually_killed": true,
+    "crash_left_original_lock_for_recovery": true,
+    "crash_recovery_exact_project_snapshot": true,
+    "crash_recovery_archived_stale_lock": true,
+    "crash_recovery_new_live_owner": true,
+    "crash_recovery_rotated_access_token": true,
+    "postcommit_retry_after_crash_still_deduplicated": true,
+    "recovery_preserved_exactly_two_history_changes": true,
+    "normal_close_released_current_lock": true,
+    "all_http_only_stdout_empty": true
+  },
+  "boundary": "真实提取的r2发行入口、本机HTTP和SQLite；自有代理在上游收到提交回执后保持客户端零响应并断开，模拟提交后客户端丢失回执。SIGKILL只施加于本探针启动的隔离服务。未修改实际用户配置或演示数据；不证明宿主模型对话、Windows或浏览器性能。"
+}

@@ -1,0 +1,24 @@
+{
+  "previousAttempt": "interleaved-edit-macos-r18.json",
+  "checkedAt": "2026-10-02T07:00:02.485Z",
+  "path": "真实原生标题编辑产生的HTTP请求暂停，Agent提交不同 / 相同字段后放行旧基线请求",
+  "assertions": {
+    "noBrowserErrors": true
+  },
+  "cases": [],
+  "targetFailure": {
+    "expected": "交错验收 · 用户标题 unrelated · 44",
+    "actual": "",
+    "point": {
+      "sceneX": 712,
+      "sceneY": 266,
+      "viewportX": 784,
+      "viewportY": 448
+    },
+    "revision": 46
+  },
+  "browserErrors": [],
+  "stage": "different field",
+  "failure": "Error: Opened a different native title",
+  "status": "failed"
+}

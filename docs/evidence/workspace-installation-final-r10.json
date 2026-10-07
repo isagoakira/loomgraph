@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-03T05:33:50.143Z",
+  "version": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261003-r10",
+  "plan": "p1.3",
+  "previous": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261003-r9",
+  "filesVerified": 826,
+  "originalSourceDistUnchanged": true,
+  "protectedDistFiles": 370,
+  "sourceTests": 179,
+  "testFiles": 19,
+  "actualUIAssertions": 31,
+  "runningStdio": "r1 unchanged",
+  "liveUI": "r10",
+  "serverSha256": "8ff41b187e58ab3b9b47f421f4569501741de4648b43e63050069ede944e3f0b",
+  "installedStdioChecks": 18,
+  "projectRevision": 101,
+  "projectContentUnchanged": true,
+  "actualServedEntry": "/assets/index-tvmp1fZD.js",
+  "actualUIEntryVerified": true,
+  "scope": "macOS p1.3 UI increment; existing MCP lifecycle and project data preserved"
+}

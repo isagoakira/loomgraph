@@ -1,0 +1,193 @@
+{
+  "checkedAt": "2026-10-02T01:42:13.207Z",
+  "path": "真实原生键盘输入、Agent同字段更新、工作区撤销冲突、用户主动回到旧内容；先核对实际填充像素及原生编辑目标",
+  "stage": "complete",
+  "inputs": [
+    {
+      "expected": "模块 2 · 本地连接（快速切图保存验收）",
+      "original": "模块 2 · 本地连接（快速切图保存验收）"
+    },
+    {
+      "expected": "模块 2 · 本地连接（Agent 后续更新）",
+      "original": "模块 2 · 本地连接（Agent 后续更新）"
+    }
+  ],
+  "before": {
+    "revision": 62,
+    "title": "模块 2 · 本地连接（快速切图保存验收）",
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 44.571428571428655,
+      "scrollY": 3.8571428571428754,
+      "zoom": 0.7
+    }
+  },
+  "user": {
+    "revision": 63,
+    "title": "模块 2 · 本地连接（原地编辑验收）\n第二行 · 用户主动换行"
+  },
+  "agent": {
+    "status": 200,
+    "result": {
+      "revision": 64,
+      "changeId": "781cf62d-a3c0-4383-b59c-a21d5c7e97ff",
+      "operationId": "protected-undo-agent-92bcb128-96c5-44d2-9a75-ceaa30406ab1",
+      "affectedIds": [
+        "fixture-entity-5"
+      ],
+      "replayed": false
+    }
+  },
+  "rejected": {
+    "revision": 64,
+    "title": "模块 2 · 本地连接（Agent 后续更新）"
+  },
+  "returned": {
+    "revision": 65,
+    "title": "模块 2 · 本地连接（原地编辑验收）\n第二行 · 用户主动换行"
+  },
+  "after": {
+    "revision": 65,
+    "title": "模块 2 · 本地连接（原地编辑验收）\n第二行 · 用户主动换行",
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 44.571428571428655,
+      "scrollY": 3.8571428571428754,
+      "zoom": 0.7
+    }
+  },
+  "history": [
+    {
+      "id": "ec7b77c5-d2ae-43a5-9b29-560a7da202f6",
+      "parentChangeId": "b55370b3-de40-4143-8844-b426627521a5",
+      "operationId": "operation-30701201-6de2-4681-9050-d22d7bfcb5a0",
+      "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+      "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+      "baseRevision": 62,
+      "revision": 63,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T01:42:09.913Z",
+      "operations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · 本地连接（原地编辑验收）\n第二行 · 用户主动换行"
+          }
+        }
+      ],
+      "affectedIds": [
+        "fixture-entity-5"
+      ],
+      "appliedOperations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · 本地连接（原地编辑验收）\n第二行 · 用户主动换行",
+            "updatedAt": "2026-10-02T01:42:09.913Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "781cf62d-a3c0-4383-b59c-a21d5c7e97ff",
+      "parentChangeId": "ec7b77c5-d2ae-43a5-9b29-560a7da202f6",
+      "operationId": "protected-undo-agent-92bcb128-96c5-44d2-9a75-ceaa30406ab1",
+      "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+      "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+      "baseRevision": 63,
+      "revision": 64,
+      "actor": {
+        "id": "acceptance-agent",
+        "kind": "agent",
+        "label": "验收 Agent"
+      },
+      "reason": "受保护撤销复验：Agent 后续同字段更新",
+      "timestamp": "2026-10-02T01:42:10.049Z",
+      "operations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · 本地连接（Agent 后续更新）"
+          }
+        }
+      ],
+      "affectedIds": [
+        "fixture-entity-5"
+      ],
+      "appliedOperations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · 本地连接（Agent 后续更新）",
+            "updatedAt": "2026-10-02T01:42:10.049Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "1691ba3b-d273-40c3-ac84-ad40ea08386d",
+      "parentChangeId": "781cf62d-a3c0-4383-b59c-a21d5c7e97ff",
+      "operationId": "operation-9031094a-60c5-4a43-8128-270d59f7e8bc",
+      "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+      "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+      "baseRevision": 64,
+      "revision": 65,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T01:42:13.073Z",
+      "operations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · 本地连接（原地编辑验收）\n第二行 · 用户主动换行"
+          }
+        }
+      ],
+      "affectedIds": [
+        "fixture-entity-5"
+      ],
+      "appliedOperations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · 本地连接（原地编辑验收）\n第二行 · 用户主动换行",
+            "updatedAt": "2026-10-02T01:42:13.073Z"
+          }
+        }
+      ]
+    }
+  ],
+  "assertions": {
+    "geometryUnchanged": true,
+    "noBrowserErrors": true,
+    "originalTextExact": true,
+    "oneUserCommit": true,
+    "agentTitlePreserved": true,
+    "noUndoOrEchoRevision": true,
+    "intentionalUserReturnAccepted": true,
+    "annotationsUnchanged": true,
+    "freeElementsUnchanged": true,
+    "cameraPreserved": true
+  }
+}

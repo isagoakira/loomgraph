@@ -1,0 +1,50 @@
+{
+  "revision": 22,
+  "annotations": [
+    {
+      "id": "annotation-46506fa7-39d7-4e60-8b34-36236545370a",
+      "text": "重连验收：保留本条观察版本、原话与待提交状态。",
+      "targets": [
+        {
+          "type": "graph",
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      ],
+      "observedRevision": 20,
+      "graphPath": [
+        "ec622545-9f75-462e-8bae-06827a13681a"
+      ],
+      "status": "draft",
+      "createdAt": "2026-10-01T23:05:06.204Z",
+      "updatedAt": "2026-10-01T23:05:06.204Z",
+      "responses": []
+    }
+  ],
+  "entity": {
+    "id": "fixture-entity-1",
+    "kind": "task",
+    "title": "任务 2 · 验证视口",
+    "parentId": "fixture-entity-0",
+    "status": "blocked",
+    "source": "root-visible-acceptance",
+    "updatedAt": "2026-10-01T23:05:46.060Z",
+    "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+  },
+  "pending": [],
+  "body": "AV\nC\nAgent Visual Canvas\nLOCAL WORKBENCH / 01\n当前项目\nAgent Visual Canvas · 协作演示\nREV 022\n本机服务\nSERVICE\n▦\n总览\n⊙\n对象\n↗\n批注\n1\n···\n讨论\n↺\n历史\ni\n规则\n项目\n/\n项目总览\n↶ 撤销\n▱ 区域\n＋ 反馈\n当前图\n项目总览\n结构与模块\n实施流程\n反馈与验收\n子系统细节\n运行与交接\n8 对象\n·\n7 关系\n·\n",
+  "beforeRevision": 21,
+  "ack": {
+    "revision": 22,
+    "changeId": "75ce3c1e-9900-4cb0-9bb3-73d525fda8e1",
+    "operationId": "reconnect-agent-5de4f6b1-2537-407a-9104-266c784a0399",
+    "affectedIds": [
+      "fixture-entity-1"
+    ],
+    "replayed": false
+  },
+  "assertions": {
+    "annotationCommittedOnce": true,
+    "newerAgentStatePreserved": true,
+    "pendingQueueCleared": true
+  }
+}

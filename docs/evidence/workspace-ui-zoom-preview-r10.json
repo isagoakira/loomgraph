@@ -1,0 +1,102 @@
+{
+  "checks": [
+    {
+      "name": "zoom plus preserves center",
+      "passed": true,
+      "details": {
+        "before": {
+          "offsetLeft": 0,
+          "offsetTop": 180,
+          "width": 959,
+          "height": 487,
+          "scrollX": -755.5,
+          "scrollY": -476.5,
+          "zoom": 1
+        },
+        "after": {
+          "offsetLeft": 0,
+          "offsetTop": 180,
+          "width": 959,
+          "height": 487,
+          "scrollX": -851.4,
+          "scrollY": -525.2,
+          "zoom": 1.25
+        }
+      }
+    },
+    {
+      "name": "zoom minus preserves center",
+      "passed": true
+    },
+    {
+      "name": "real slider drag changes zoom and preserves center",
+      "passed": true,
+      "details": {
+        "before": 1,
+        "after": 0.6420096101930728
+      }
+    },
+    {
+      "name": "100 percent reset preserves center",
+      "passed": true
+    },
+    {
+      "name": "preview scroll without activating or expanding",
+      "passed": true,
+      "details": {
+        "before": 0,
+        "after": 120,
+        "active": ""
+      }
+    },
+    {
+      "name": "preview boundary does not chain to canvas",
+      "passed": true
+    },
+    {
+      "name": "title expands inline, without dialog or camera change",
+      "passed": true,
+      "details": {
+        "dialogs": 0,
+        "geometry": {
+          "x": 94.5,
+          "y": 253.5,
+          "width": 770,
+          "height": 340,
+          "top": 253.5,
+          "right": 864.5,
+          "bottom": 593.5,
+          "left": 94.5
+        },
+        "details": {
+          "x": 111.5,
+          "y": 298.546875,
+          "width": 736,
+          "height": 681.6640625,
+          "top": 298.546875,
+          "right": 847.5,
+          "bottom": 980.2109375,
+          "left": 111.5
+        },
+        "active": "representation:fc-read-memory"
+      }
+    },
+    {
+      "name": "collapse restores previous preview position",
+      "passed": true,
+      "details": {
+        "preview": 469,
+        "collapsed": 469
+      }
+    }
+  ],
+  "camera": {
+    "offsetLeft": 0,
+    "offsetTop": 180,
+    "width": 959,
+    "height": 487,
+    "scrollX": -755.5,
+    "scrollY": -476.50000000000006,
+    "zoom": 1
+  }
+}

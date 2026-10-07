@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-10-02T10:12:45.128Z",
+  "path": "真实生产页面的提示 / 查看 / 跟随开关与跨图定位",
+  "assertions": {
+    "defaultFollowOff": true,
+    "originalTargetRecorded": true,
+    "originalObservedRevisionRecorded": true,
+    "offFocusPromptVisible": true,
+    "offFocusKeepsGraph": true,
+    "offFocusKeepsCamera": true,
+    "offFocusKeepsComposer": true,
+    "manualViewOpensActualGraph": true,
+    "manualTargetActuallyVisible": true,
+    "manualViewKeepsComposer": true,
+    "returnRestoresOriginalCamera": true,
+    "followToggleEnabled": true,
+    "followOpensActualTargetGraph": true,
+    "followTargetActuallyVisible": true,
+    "followKeepsComposer": true,
+    "highlightDoesNotNavigate": true,
+    "highlightKeepsCamera": true,
+    "foreignHighlightOffersView": true,
+    "followToggleDisabled": true,
+    "disabledFocusKeepsGraph": true,
+    "disabledFocusKeepsCamera": true,
+    "invalidTargetShowsSpecificMessage": true,
+    "invalidTargetDoesNotNavigate": true,
+    "invalidTargetHasNoViewButton": true,
+    "reloadFollowOff": true,
+    "reloadComposerExact": true,
+    "presentationNeverCommits": true,
+    "noBrowserErrors": true
+  },
+  "screenshots": [
+    "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/docs/evidence/95-follow-off-r21b.png",
+    "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/docs/evidence/96-follow-manual-r21b.png",
+    "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/docs/evidence/97-follow-enabled-r21b.png"
+  ],
+  "beforeRevision": 66,
+  "beforeSha256": "3d66dc9210e3908147568cead009bada77a1dcddde313b304d8e9b4e2575430e",
+  "originalComposer": {
+    "text": "r21 跟随验收草稿 · 保留对象、原话、观察版本和路径 66",
+    "targets": [
+      {
+        "type": "representation",
+        "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+        "representationId": "r9-shared-a"
+      }
+    ],
+    "observedRevision": 66,
+    "graphPath": [
+      "fa292dc4-258e-46f9-ba2a-561a2223c394"
+    ]
+  },
+  "originalCamera": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 718,
+    "scrollX": 217.5,
+    "scrollY": 363.5,
+    "zoom": 0.4
+  },
+  "manualTargetPixels": {
+    "visible": true,
+    "color": [
+      245,
+      215,
+      208,
+      255
+    ],
+    "highlightPixels": 558,
+    "renderedGraphId": "r9-graph-b"
+  },
+  "followTargetPixels": {
+    "visible": true,
+    "color": [
+      245,
+      215,
+      208,
+      255
+    ],
+    "highlightPixels": 560,
+    "renderedGraphId": "r9-graph-b"
+  },
+  "afterRevision": 66,
+  "afterSha256": "3d66dc9210e3908147568cead009bada77a1dcddde313b304d8e9b4e2575430e",
+  "browserErrors": [],
+  "stage": "complete",
+  "status": "passed"
+}

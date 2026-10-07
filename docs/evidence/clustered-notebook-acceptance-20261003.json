@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "workStartedOn": "2026-10-03",
+  "completedOn": "2026-10-04",
+  "installedVersion": "r19",
+  "projectId": "cb904f16-a9ec-4a38-831c-d84d9a08df80",
+  "workCopyId": "bdc90254-57fe-4968-97a4-96473ca9868f",
+  "finalRevision": 158,
+  "entrypoint": "http://127.0.0.1:58363/?graph=forecastcompass-spatial-notebook",
+  "ui": {
+    "viewport": {
+      "width": 626,
+      "height": 692
+    },
+    "mouseShiftBodySelection": "passed in r19",
+    "keyboardShiftEnterSelection": "passed",
+    "numericTransform": {
+      "revision": 150,
+      "viewPositionPreserved": true
+    },
+    "drag": {
+      "revision": 151,
+      "xDelta": 30,
+      "yDelta": 30
+    },
+    "resize": {
+      "revision": 153,
+      "width": 495.9375,
+      "height": 346.5625,
+      "positionPreserved": true
+    },
+    "inlineChineseMultilineSave": {
+      "revision": 146,
+      "passed": true
+    },
+    "batchDelete": {
+      "revision": 154,
+      "passed": true,
+      "sharedEntityRetained": true
+    },
+    "undo": {
+      "revision": 155,
+      "membershipRestored": true
+    },
+    "keyboardDelete": {
+      "revision": 156,
+      "passed": true
+    },
+    "keyboardDeleteUndo": {
+      "revision": 157,
+      "passed": true
+    },
+    "temporaryObjectsCleanup": {
+      "revision": 158,
+      "removedRepresentation": true,
+      "removedTextBox": true
+    },
+    "refresh": {
+      "revision": 158,
+      "deletedBlocks": 0,
+      "layerScroll": [
+        0,
+        0
+      ]
+    },
+    "watchOnlyNoNewRevisionAfter": 158
+  },
+  "originalData": {
+    "baselineEvidence": "spatial-notebook-preservation-20261003.json",
+    "baselineR128ObjectsUnchanged": 409,
+    "comparisonFromR135": {
+      "entities": {
+        "checked": 95,
+        "changedIds": []
+      },
+      "relations": {
+        "checked": 187,
+        "changedIds": []
+      },
+      "representations": {
+        "checked": 170,
+        "changedIds": []
+      },
+      "freeElements": {
+        "checked": 64,
+        "changedIds": []
+      },
+      "resources": {
+        "checked": 10,
+        "changedIds": []
+      },
+      "annotations": {
+        "checked": 10,
+        "changedIds": []
+      },
+      "batches": {
+        "checked": 4,
+        "changedIds": []
+      }
+    },
+    "userOriginalTextAndModuleRetained": true
+  },
+  "automatedChecks": {
+    "testFiles": 28,
+    "testsPassed": 238,
+    "typecheck": "passed",
+    "productionBuild": "passed including real Excalidraw subset Worker",
+    "stdioHandshake": "passed on r18, r19 server SHA identical"
+  },
+  "deployment": {
+    "activeServerPid": 22479,
+    "activeServerVersion": "r10",
+    "installedUiVersion": "r19",
+    "newServerHarnessRequiresHostReconnect": true,
+    "priorVersionsAndAssetsRetained": true
+  },
+  "screenshots": [
+    "clustered-notebook-multiselect-r19-20261003.png",
+    "clustered-notebook-final-r19-20261003.png"
+  ],
+  "limits": [
+    "Verified on current macOS Codex local window only; Windows/Claude host acceptance not repeated.",
+    "Viewing state and disclosures are transient, distinct from source geometry and project revisions."
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "previousAttempt": "interleaved-edit-macos-r20diag.json",
+  "checkedAt": "2026-10-02T07:42:55.551Z",
+  "path": "真实原生标题编辑产生的HTTP请求暂停，Agent提交不同 / 相同字段后放行旧基线请求",
+  "assertions": {
+    "same_oldNativeBaseCaptured": true,
+    "same_nativeCommitHeld": true,
+    "same_agentCommittedFirst": true,
+    "same_geometryUnchanged": true,
+    "same_annotationsUnchanged": true,
+    "same_freeElementsUnchanged": true,
+    "same_cameraPreserved": true,
+    "same_sameFieldConflict": true,
+    "same_noConflictingCommit": true,
+    "same_agentTitleRetained": true,
+    "same_noDelayedCommit": true,
+    "same_nativeEditorDisplaysFinalTitle": true,
+    "same_nativeTitleReadDoesNotCommit": true,
+    "noBrowserErrors": true
+  },
+  "cases": [
+    {
+      "kind": "same",
+      "entityId": "r9-shared",
+      "originalInput": "交错验收 · 用户标题 same · 55",
+      "beforeRevision": 57,
+      "whileHeldRevision": 57,
+      "agentRevision": 58,
+      "afterRevision": 58,
+      "captured": {
+        "baseRevision": 57,
+        "operationId": "operation-f713ff7e-a44a-4792-b5a9-d375aea97a91",
+        "operations": [
+          {
+            "type": "entity.patch",
+            "id": "r9-shared",
+            "patch": {
+              "title": "交错验收 · 用户标题 same · 57"
+            }
+          }
+        ]
+      },
+      "response": {
+        "status": 409,
+        "body": {
+          "error": {
+            "code": "VERSION_CONFLICT",
+            "message": "基线之后的修改与本次请求写入同一字段",
+            "details": {
+              "conflicts": [
+                {
+                  "revision": 58,
+                  "changeId": "7918712c-34cc-481f-9802-a94240b07df2",
+                  "fields": [
+                    "entity.r9-shared.title"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "finalEntity": {
+        "id": "r9-shared",
+        "kind": "task",
+        "title": "交错验收 · Agent 保留标题 · 57",
+        "status": "doing",
+        "parentId": "r9-parent",
+        "updatedAt": "2026-10-02T07:43:00.197Z"
+      },
+      "history": [
+        {
+          "id": "7918712c-34cc-481f-9802-a94240b07df2",
+          "parentChangeId": "bd9095d1-e86d-4ca1-8565-e5a6e41af6eb",
+          "operationId": "r20minimal-interleave-agent-040dabf9-0496-4f6d-b586-a6615031eaf9",
+          "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+          "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+          "baseRevision": 57,
+          "revision": 58,
+          "actor": {
+            "id": "r20minimal-interleave-agent",
+            "kind": "agent",
+            "label": "交错编辑验收"
+          },
+          "reason": "Isolated native UI interleaving acceptance",
+          "timestamp": "2026-10-02T07:43:00.197Z",
+          "operations": [
+            {
+              "type": "entity.patch",
+              "id": "r9-shared",
+              "patch": {
+                "title": "交错验收 · Agent 保留标题 · 57"
+              }
+            }
+          ],
+          "affectedIds": [
+            "r9-shared"
+          ],
+          "appliedOperations": [
+            {
+              "type": "entity.patch",
+              "id": "r9-shared",
+              "patch": {
+                "title": "交错验收 · Agent 保留标题 · 57",
+                "updatedAt": "2026-10-02T07:43:00.197Z"
+              }
+            }
+          ]
+        }
+      ],
+      "samples": [
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58
+      ],
+      "cameraBeforeNative": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 718,
+        "scrollX": 5.89285714285711,
+        "scrollY": 49.75,
+        "zoom": 0.8
+      },
+      "cameraBeforeAgent": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 718,
+        "scrollX": 5.89285714285711,
+        "scrollY": 49.75,
+        "zoom": 0.8
+      },
+      "cameraAfter": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 718,
+        "scrollX": 5.89285714285711,
+        "scrollY": 49.75,
+        "zoom": 0.8
+      },
+      "assertions": {
+        "oldNativeBaseCaptured": true,
+        "nativeCommitHeld": true,
+        "agentCommittedFirst": true,
+        "geometryUnchanged": true,
+        "annotationsUnchanged": true,
+        "freeElementsUnchanged": true,
+        "cameraPreserved": true,
+        "sameFieldConflict": true,
+        "noConflictingCommit": true,
+        "agentTitleRetained": true,
+        "noDelayedCommit": true,
+        "nativeEditorDisplaysFinalTitle": true,
+        "nativeTitleReadDoesNotCommit": true
+      }
+    }
+  ],
+  "displayChecks": [
+    {
+      "kind": "same",
+      "expectedTitle": "交错验收 · Agent 保留标题 · 57",
+      "displayedFinalTitle": "交错验收 · Agent 保留标题 · 57",
+      "samples": [
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58,
+        58
+      ]
+    }
+  ],
+  "browserErrors": [],
+  "stage": "complete",
+  "status": "passed"
+}

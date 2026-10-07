@@ -1,0 +1,1094 @@
+{
+  "context": {
+    "schemaVersion": 1,
+    "projectId": "cb904f16-a9ec-4a38-831c-d84d9a08df80",
+    "workCopyId": "bdc90254-57fe-4968-97a4-96473ca9868f",
+    "batchId": "batch-adf9b806-b9bd-4d6d-9099-04f5f6b6f32f",
+    "contextRef": "/api/feedback/batch-adf9b806-b9bd-4d6d-9099-04f5f6b6f32f/context",
+    "submittedRevision": 66,
+    "manifest": [
+      {
+        "id": "annotation-f9e482f3-b34f-4b3d-85a2-32a0e8c5de44",
+        "status": "draft",
+        "graphPath": [
+          "rich-controls-verification"
+        ]
+      },
+      {
+        "id": "annotation-4ec93979-4958-4ccf-bad3-89e8492424d8",
+        "status": "draft",
+        "graphPath": [
+          "rich-controls-verification"
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "id": "annotation-f9e482f3-b34f-4b3d-85a2-32a0e8c5de44",
+        "text": "【元控件验收】请确认这是针对独立文本框的意见，并保留它的字号和排版。",
+        "targets": [
+          {
+            "type": "element",
+            "graphId": "rich-controls-verification",
+            "elementId": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71"
+          }
+        ],
+        "observedRevision": 56,
+        "graphPath": [
+          "rich-controls-verification"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-02T13:56:50.682Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-4ec93979-4958-4ccf-bad3-89e8492424d8",
+        "text": "【元控件验收】请按模块的机制、输入输出、证据和局限分别反馈，保留全部分节。",
+        "targets": [
+          {
+            "type": "representation",
+            "graphId": "rich-controls-verification",
+            "representationId": "rich-controls-memory"
+          }
+        ],
+        "observedRevision": 65,
+        "graphPath": [
+          "rich-controls-verification"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-02T14:24:35.703Z",
+        "responses": []
+      }
+    ],
+    "entities": [
+      {
+        "id": "rich-controls-module",
+        "kind": "module",
+        "title": "内容一致性 · 验收模块",
+        "source": "真实元控件操作验收",
+        "metadata": {
+          "acceptanceFixture": true,
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "FoCo 的核心是子类别级的两份可修订手册：因子记忆告诉 Agent 看什么，推理记忆告诉它该有多确信。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>每个子类别 s 保存 M₍w,s₎=(F₍w,s₎,R₍w,s₎)。F 保存可复用的预测信号及误用方式，R 保存不确定性与校准原则。层级分类法负责索引；记忆条目负责解释。</p><p>区别在于经验的抽象层级：不止记“上一场选举输了”，而是记“在这一类事件中，哪些证据需要检查，什么情况下不能大幅调高概率”。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>过去已揭晓的问题 → 原预测与复盘差异 → 可复用的因子与校准经验 → 下一批尚未揭晓问题的检索指导。</p>"
+              },
+              {
+                "id": "evidence",
+                "title": "证据",
+                "html": "<p>Table 3 的两类记忆移除实验支持它们互补。Table 1 的静态记忆对照还显示：只保留初始手册已有收益，继续修订能带来额外改善。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>可复用性需要筛选。单次事件的偶然因素不能直接变成普遍规律；长期领域变化也会使原有因子失效。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.1，式 (2)–(3)",
+                "kind": "source",
+                "note": ""
+              },
+              {
+                "label": "Table 1、3",
+                "kind": "result",
+                "note": ""
+              }
+            ]
+          }
+        },
+        "updatedAt": "2026-10-02T14:23:45.390Z"
+      }
+    ],
+    "representations": [
+      {
+        "id": "rich-controls-memory",
+        "graphId": "rich-controls-verification",
+        "entityId": "rich-controls-module",
+        "x": 650,
+        "y": 100,
+        "width": 480,
+        "height": 440,
+        "pinned": true,
+        "style": {
+          "contentView": "card"
+        }
+      }
+    ],
+    "relations": [],
+    "graphs": [
+      {
+        "id": "rich-controls-verification",
+        "title": "元控件 · 操作验收",
+        "kind": "mixed",
+        "description": "用于文本格式、排版、视角和版本保护的真实操作验收；不是论文实验。",
+        "metadata": {
+          "acceptanceFixture": true,
+          "contentWorkspace": {
+            "schemaVersion": 1,
+            "defaultView": "reading",
+            "order": [
+              {
+                "type": "element",
+                "id": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71"
+              },
+              {
+                "type": "representation",
+                "id": "rich-controls-memory"
+              },
+              {
+                "type": "element",
+                "id": "text-box-2b4570c2-e8b2-4cbc-978d-216f210ff6af"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "background": {
+      "title": "Agent Visual Canvas · 本机接入演示",
+      "goal": "在当前 Codex 对话中展示实时更新、结构与流程子图、独立批注、高亮和修改历史。"
+    },
+    "freeElements": [
+      {
+        "id": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71",
+        "graphId": "rich-controls-verification",
+        "element": {
+          "id": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71",
+          "type": "rectangle",
+          "x": 1087.7777777777778,
+          "y": 240,
+          "width": 600,
+          "height": 290,
+          "angle": 0,
+          "strokeColor": "#d8d2c6",
+          "backgroundColor": "#fffdf8",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "boundElements": null,
+          "link": null,
+          "locked": false,
+          "version": 1,
+          "versionNonce": 1,
+          "seed": 1,
+          "isDeleted": false,
+          "updated": 1790948718481,
+          "customData": {
+            "richTextBox": {
+              "schemaVersion": 1,
+              "title": "图文混排 · 实际编辑样例",
+              "role": "text",
+              "html": "<p style=\"text-align:center\"><b><span style=\"font-size:24px\">这是一段可以原位编辑的正文。</span></b></p><p style=\"text-align:center\"><b><span style=\"font-size:24px\">它与模块、图片和箭头共同排版，并能独立批注。</span></b></p><p>原位编辑已保存并通过刷新复验。</p>",
+              "fontSize": 18,
+              "fontFamily": "Iowan Old Style, Songti SC, serif",
+              "color": "#22323a",
+              "fill": "#fffdf8",
+              "border": "#d8d2c6"
+            },
+            "agentCanvas": {
+              "freeElementId": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71",
+              "role": "free"
+            }
+          }
+        }
+      }
+    ],
+    "resources": [],
+    "observations": [
+      {
+        "annotationId": "annotation-f9e482f3-b34f-4b3d-85a2-32a0e8c5de44",
+        "revision": 56,
+        "targets": [
+          {
+            "type": "element",
+            "graphId": "rich-controls-verification",
+            "elementId": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71"
+          }
+        ],
+        "entities": [
+          {
+            "id": "fc-retrieve",
+            "kind": "module",
+            "title": "检索记忆 Mₛ",
+            "description": "M_s = (F_s, R_s)。检索相应子类别的因子记忆与推理记忆，方法3.1–3.2。",
+            "source": "user-provided-paper:Figure2:sec3",
+            "metadata": {
+              "semanticContent": {
+                "schemaVersion": 1,
+                "summary": "按子类别取出因子记忆和推理记忆，提供“看什么”和“如何调概率”两种指导。",
+                "sections": [
+                  {
+                    "id": "mechanism",
+                    "title": "机制",
+                    "html": "<p>FoCo 的主要检索单位是子类别级别的结构化语言记忆，不是把相似历史事件的完整推理轨迹直接塞进上下文。相关经验经过修订后成为提示中的指导。</p>"
+                  },
+                  {
+                    "id": "io",
+                    "title": "输入输出",
+                    "html": "<p>输入：子类别 s 与当前记忆库。输出：Mₛ=(Fₛ,Rₛ)。Fₛ 指导证据搜索与因子选择，Rₛ 指导不确定性和概率调整。</p>"
+                  },
+                  {
+                    "id": "limits",
+                    "title": "局限",
+                    "html": "<p>历史经验不替代当前证据；过时的经验需要修订。记忆命中与否本身不能证明当前预测正确。</p>"
+                  }
+                ],
+                "sources": [
+                  {
+                    "label": "§3.2，式 (4)",
+                    "kind": "source"
+                  }
+                ]
+              }
+            },
+            "updatedAt": "2026-10-02T13:41:59.991Z"
+          },
+          {
+            "id": "fc-memory",
+            "kind": "module",
+            "title": "层级记忆 Mₛ\n展开因子与推理 ↗",
+            "description": "每个子类别维护 Mₛ=(Fₛ,Rₛ)。因子记忆 Fₛ 指导证据搜索与因子选择；推理记忆 Rₛ 指导概率估计与校准，包括矛盾证据和不确定性的处理。展开子图查看分工。来源：ForecastCompass，Figure 2，PDF 第 3 页，§3.1–3.2。",
+            "source": "user-provided-paper:Figure2:sec3",
+            "updatedAt": "2026-10-02T13:53:59.362Z",
+            "metadata": {
+              "semanticContent": {
+                "schemaVersion": 1,
+                "summary": "FoCo 的核心是子类别级的两份可修订手册：因子记忆告诉 Agent 看什么，推理记忆告诉它该有多确信。",
+                "sections": [
+                  {
+                    "id": "mechanism",
+                    "title": "机制",
+                    "html": "<p>每个子类别 s 保存 M₍w,s₎=(F₍w,s₎,R₍w,s₎)。F 保存可复用的预测信号及误用方式，R 保存不确定性与校准原则。层级分类法负责索引；记忆条目负责解释。</p><p>区别在于经验的抽象层级：不止记“上一场选举输了”，而是记“在这一类事件中，哪些证据需要检查，什么情况下不能大幅调高概率”。</p>"
+                  },
+                  {
+                    "id": "io",
+                    "title": "输入输出",
+                    "html": "<p>过去已揭晓的问题 → 原预测与复盘差异 → 可复用的因子与校准经验 → 下一批尚未揭晓问题的检索指导。</p>"
+                  },
+                  {
+                    "id": "evidence",
+                    "title": "证据",
+                    "html": "<p>Table 3 的两类记忆移除实验支持它们互补。Table 1 的静态记忆对照还显示：只保留初始手册已有收益，继续修订能带来额外改善。</p>"
+                  },
+                  {
+                    "id": "limits",
+                    "title": "局限",
+                    "html": "<p>可复用性需要筛选。单次事件的偶然因素不能直接变成普遍规律；长期领域变化也会使原有因子失效。</p>"
+                  },
+                  {
+                    "id": "section-6f548573-a1bf-46a1-8458-9fd06876dd8a",
+                    "title": "验收视角",
+                    "html": "<p>该分节通过真实页面添加，验证自定义分析视角可以独立保存。</p>"
+                  }
+                ],
+                "sources": [
+                  {
+                    "label": "§3.1，式 (2)–(3)",
+                    "kind": "source",
+                    "note": ""
+                  },
+                  {
+                    "label": "Table 1、3",
+                    "kind": "result",
+                    "note": ""
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "fc-revision",
+            "kind": "module",
+            "title": "局部记忆修订\n展开诊断流程 ↗",
+            "description": "Contrast 原预测与复盘；诊断→聚合→修订，迭代 N 轮。仅更新受影响因子和被激活的子类别。",
+            "source": "user-provided-paper:Figure2:sec3",
+            "metadata": {
+              "semanticContent": {
+                "schemaVersion": 1,
+                "summary": "更新不是记录一个正确答案，而是用原预测与复盘的差异，改写下一次能用的预测原则。",
+                "sections": [
+                  {
+                    "id": "mechanism",
+                    "title": "机制",
+                    "html": "<ol><li>收集本轮已揭晓问题，归类并激活有关子类别。</li><li>生成复盘轨迹，与当时的原预测轨迹对照。</li><li>把差异分成因子层与推理/校准层。</li><li>诊断 → 聚合 → 局部修订，重复 N 次。</li><li>保存新记忆，等待之后的问题检验它。</li></ol>"
+                  },
+                  {
+                    "id": "io",
+                    "title": "输入输出",
+                    "html": "<p>输入：已揭晓结果、原轨迹、复盘轨迹及旧记忆。输出：可复用的因子检查项与校准指导。信息只沿时间向前进入新的预测。</p>"
+                  },
+                  {
+                    "id": "evidence",
+                    "title": "证据",
+                    "html": "<p>Table 1 中完整方法持续优于静态记忆对照，支持持续修订的收益；本演示采用 GPT-5-mini / FutureX 的 0.203 → 0.187 Brier 作为一个具体对照。</p>"
+                  },
+                  {
+                    "id": "limits",
+                    "title": "局限",
+                    "html": "<p>应防止结果后的新事实直接成为当前问题的预测输入。论文描述了过滤事后特例的机制，但不能由流程图推断这种过滤永远可靠。</p>"
+                  }
+                ],
+                "sources": [
+                  {
+                    "label": "§3.3",
+                    "kind": "source"
+                  },
+                  {
+                    "label": "Table 1",
+                    "kind": "result"
+                  }
+                ]
+              }
+            },
+            "updatedAt": "2026-10-02T13:41:59.991Z"
+          },
+          {
+            "id": "fc-revise",
+            "kind": "module",
+            "title": "修订 Fₛ 与 Rₛ",
+            "description": "仅修订被差异信号影响的因子子集和相关推理原则。结果写入 M_w,s，为后续未揭晓预测提供指导。",
+            "source": "user-provided-paper:Figure2:sec3",
+            "metadata": {
+              "semanticContent": {
+                "schemaVersion": 1,
+                "summary": "局部修订被激活子类别的相关因子与推理原则，循环 N 次后保存下一版记忆。",
+                "sections": [
+                  {
+                    "id": "mechanism",
+                    "title": "机制",
+                    "html": "<p>对因子记忆，先识别受差异影响的子集 F̃，再更新它；不会全量重写整个因子库。推理记忆则据校准差异修订相应指导。诊断—聚合—修订重复 N 次。</p>"
+                  },
+                  {
+                    "id": "io",
+                    "title": "输入输出",
+                    "html": "<p>输入：旧 Mₛ、已揭晓问题和聚合后的修订建议。输出：新 Mₛ，供后续未揭晓问题使用；未激活子类别保持原样。</p>"
+                  },
+                  {
+                    "id": "limits",
+                    "title": "局限",
+                    "html": "<p>局部修订意在减少噪声和无关改动，但 N、更新频度和模型调用成本仍是工程权衡。Table 3 不是对这三个内部阶段逐项消融。</p>"
+                  }
+                ],
+                "sources": [
+                  {
+                    "label": "§3.3，式 (10)",
+                    "kind": "source"
+                  }
+                ]
+              }
+            },
+            "updatedAt": "2026-10-02T13:41:59.991Z"
+          }
+        ],
+        "representations": [
+          {
+            "id": "fc-main-2",
+            "entityId": "fc-retrieve",
+            "graphId": "forecastcompass-architecture",
+            "x": 570,
+            "y": 160,
+            "width": 215,
+            "height": 76,
+            "pinned": false,
+            "subgraphIds": [],
+            "style": {
+              "strokeColor": "#547892",
+              "backgroundColor": "#f5f8fd",
+              "roughness": 0,
+              "strokeWidth": 1.5
+            }
+          },
+          {
+            "id": "fc-main-memory",
+            "entityId": "fc-memory",
+            "graphId": "forecastcompass-architecture",
+            "x": 420,
+            "y": 345,
+            "width": 270,
+            "height": 84,
+            "pinned": true,
+            "subgraphIds": [
+              "forecastcompass-memory"
+            ],
+            "style": {
+              "strokeColor": "#244d68",
+              "backgroundColor": "#e5edf9",
+              "roughness": 0,
+              "strokeWidth": 1.5
+            }
+          },
+          {
+            "id": "fc-main-revision",
+            "entityId": "fc-revision",
+            "graphId": "forecastcompass-architecture",
+            "x": 785,
+            "y": 345,
+            "width": 270,
+            "height": 84,
+            "pinned": false,
+            "subgraphIds": [
+              "forecastcompass-revision"
+            ],
+            "style": {
+              "strokeColor": "#72539a",
+              "backgroundColor": "#eee8f6",
+              "roughness": 0,
+              "strokeWidth": 1.5
+            }
+          },
+          {
+            "id": "fc-mem-retrieve",
+            "entityId": "fc-retrieve",
+            "graphId": "forecastcompass-memory",
+            "x": 390,
+            "y": 470,
+            "width": 245,
+            "height": 75,
+            "pinned": false,
+            "subgraphIds": [],
+            "style": {
+              "strokeColor": "#297b67",
+              "backgroundColor": "#e4f1e9",
+              "roughness": 0,
+              "strokeWidth": 1.5
+            }
+          },
+          {
+            "id": "fc-update-revise",
+            "entityId": "fc-revise",
+            "graphId": "forecastcompass-revision",
+            "x": 1000,
+            "y": 275,
+            "width": 220,
+            "height": 78,
+            "pinned": false,
+            "subgraphIds": [],
+            "style": {
+              "strokeColor": "#72539a",
+              "backgroundColor": "#eee8f6",
+              "roughness": 0,
+              "strokeWidth": 1.5
+            }
+          },
+          {
+            "id": "fc-update-memory",
+            "entityId": "fc-memory",
+            "graphId": "forecastcompass-revision",
+            "x": 1000,
+            "y": 480,
+            "width": 220,
+            "height": 78,
+            "pinned": true,
+            "subgraphIds": [
+              "forecastcompass-memory"
+            ],
+            "style": {
+              "strokeColor": "#244d68",
+              "backgroundColor": "#e5edf9",
+              "roughness": 0,
+              "strokeWidth": 1.5
+            }
+          },
+          {
+            "id": "fc-read-memory",
+            "entityId": "fc-memory",
+            "graphId": "forecastcompass-reading",
+            "x": 850,
+            "y": 550,
+            "width": 770,
+            "height": 340,
+            "pinned": true,
+            "subgraphIds": [
+              "forecastcompass-memory"
+            ],
+            "style": {
+              "contentView": "card",
+              "backgroundColor": "#fffdf8",
+              "strokeColor": "#7b9b87"
+            }
+          },
+          {
+            "id": "fc-read-revision",
+            "entityId": "fc-revision",
+            "graphId": "forecastcompass-reading",
+            "x": 0,
+            "y": 2390,
+            "width": 790,
+            "height": 360,
+            "pinned": true,
+            "subgraphIds": [
+              "forecastcompass-revision"
+            ],
+            "style": {
+              "contentView": "card",
+              "backgroundColor": "#fffdf8",
+              "strokeColor": "#7b9b87"
+            }
+          },
+          {
+            "id": "rich-controls-memory",
+            "graphId": "rich-controls-verification",
+            "entityId": "fc-memory",
+            "x": 650,
+            "y": 100,
+            "width": 480,
+            "height": 440,
+            "pinned": true,
+            "style": {
+              "contentView": "card"
+            }
+          }
+        ],
+        "relations": [
+          {
+            "id": "fc-memory-guides",
+            "kind": "data_flow",
+            "from": "fc-memory",
+            "to": "fc-retrieve",
+            "label": "检索 Fₛ + Rₛ",
+            "metadata": {
+              "graphId": "forecastcompass-architecture",
+              "route": [
+                [
+                  555,
+                  292
+                ],
+                [
+                  678,
+                  292
+                ]
+              ],
+              "source": "ForecastCompass:Figure2"
+            }
+          },
+          {
+            "id": "fc-update-memory",
+            "kind": "data_flow",
+            "from": "fc-revision",
+            "to": "fc-memory",
+            "label": "局部更新",
+            "metadata": {
+              "graphId": "forecastcompass-architecture",
+              "source": "ForecastCompass:Figure2"
+            }
+          },
+          {
+            "id": "fc-revised-memory",
+            "kind": "data_flow",
+            "from": "fc-revise",
+            "to": "fc-memory",
+            "label": "保存记忆",
+            "metadata": {
+              "graphId": "forecastcompass-revision",
+              "source": "ForecastCompass:Figure2"
+            }
+          }
+        ],
+        "graphs": [
+          {
+            "id": "forecastcompass-architecture",
+            "title": "ForecastCompass · 架构与原图",
+            "kind": "mixed",
+            "description": "论文主线重绘：新问题→分类→检索→预测，结果揭晓后对照修订；论文模块是结构示意，不表示已运行预测实验。",
+            "metadata": {
+              "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+              "demo": "source-based visual example",
+              "contentWorkspace": {
+                "schemaVersion": 1,
+                "defaultView": "layout",
+                "order": []
+              }
+            },
+            "sceneOrder": [
+              "fc-title",
+              "fc-subtitle",
+              "fc-band-inference",
+              "fc-band-update",
+              "fc-band-title",
+              "fc-update-title",
+              "fc-source-caption",
+              "fc-semantics",
+              "fc-no-run",
+              "relation-fc-flow-0",
+              "relation-fc-flow-1",
+              "relation-fc-flow-2",
+              "relation-fc-flow-3",
+              "relation-fc-memory-guides",
+              "relation-fc-after-resolution",
+              "relation-fc-retro-to-revision",
+              "relation-fc-update-memory",
+              "rep-fc-main-0-body",
+              "rep-fc-main-0-label",
+              "rep-fc-main-1-body",
+              "rep-fc-main-1-label",
+              "rep-fc-main-2-body",
+              "rep-fc-main-2-label",
+              "rep-fc-main-3-body",
+              "rep-fc-main-3-label",
+              "rep-fc-main-4-body",
+              "rep-fc-main-4-label",
+              "rep-fc-main-memory-body",
+              "rep-fc-main-memory-label",
+              "rep-fc-main-revision-body",
+              "rep-fc-main-revision-label",
+              "rep-fc-main-resolved-body",
+              "rep-fc-main-resolved-label",
+              "rep-fc-main-source-body",
+              "rep-fc-main-source-label",
+              "relation-label-fc-flow-0",
+              "relation-label-fc-flow-1",
+              "relation-label-fc-flow-2",
+              "relation-label-fc-flow-3",
+              "relation-label-fc-memory-guides",
+              "relation-label-fc-after-resolution",
+              "relation-label-fc-retro-to-revision",
+              "relation-label-fc-update-memory",
+              "fc-source-thumbnail"
+            ]
+          },
+          {
+            "id": "forecastcompass-memory",
+            "title": "层级记忆 · 因子与推理",
+            "kind": "structure",
+            "description": "方法3.1，分类法索引子类别级别的 F_s 与 R_s，预测因子和校准原则分工明确。",
+            "metadata": {
+              "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+              "demo": "source-based visual example",
+              "contentWorkspace": {
+                "schemaVersion": 1,
+                "defaultView": "layout",
+                "order": []
+              }
+            },
+            "sceneOrder": [
+              "fc-memory-title",
+              "fc-factor-detail",
+              "fc-reason-detail",
+              "fc-memory-foot",
+              "relation-fc-taxonomy-index",
+              "relation-fc-sub-factor",
+              "relation-fc-sub-reason",
+              "relation-fc-sub-retrieval",
+              "rep-fc-mem-taxonomy-body",
+              "rep-fc-mem-taxonomy-label",
+              "rep-fc-mem-subcategory-body",
+              "rep-fc-mem-subcategory-label",
+              "rep-fc-mem-factor-body",
+              "rep-fc-mem-factor-label",
+              "rep-fc-mem-reasoning-body",
+              "rep-fc-mem-reasoning-label",
+              "rep-fc-mem-retrieve-body",
+              "rep-fc-mem-retrieve-label",
+              "relation-label-fc-taxonomy-index",
+              "relation-label-fc-sub-factor",
+              "relation-label-fc-sub-reason",
+              "relation-label-fc-sub-retrieval"
+            ]
+          },
+          {
+            "id": "forecastcompass-revision",
+            "title": "记忆修订 · 诊断—聚合—更新",
+            "kind": "flow",
+            "description": "方法3.3，仅使用已揭晓问题的复盘信号，筛选可复用规律，局部更新受影响记忆。",
+            "metadata": {
+              "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+              "demo": "source-based visual example",
+              "contentWorkspace": {
+                "schemaVersion": 1,
+                "defaultView": "layout",
+                "order": []
+              }
+            },
+            "sceneOrder": [
+              "fc-revision-title",
+              "fc-update-note",
+              "fc-update-foot",
+              "relation-fc-old-to-contrast",
+              "relation-fc-retro-to-contrast",
+              "relation-fc-contrast-diagnose",
+              "relation-fc-diagnose-aggregate",
+              "relation-fc-aggregate-revise",
+              "relation-fc-revised-memory",
+              "rep-fc-update-original-body",
+              "rep-fc-update-original-label",
+              "rep-fc-update-retro-body",
+              "rep-fc-update-retro-label",
+              "rep-fc-update-contrast-body",
+              "rep-fc-update-contrast-label",
+              "rep-fc-update-diagnose-body",
+              "rep-fc-update-diagnose-label",
+              "rep-fc-update-aggregate-body",
+              "rep-fc-update-aggregate-label",
+              "rep-fc-update-revise-body",
+              "rep-fc-update-revise-label",
+              "rep-fc-update-memory-body",
+              "rep-fc-update-memory-label",
+              "relation-label-fc-old-to-contrast",
+              "relation-label-fc-retro-to-contrast",
+              "relation-label-fc-contrast-diagnose",
+              "relation-label-fc-diagnose-aggregate",
+              "relation-label-fc-aggregate-revise",
+              "relation-label-fc-revised-memory"
+            ]
+          },
+          {
+            "id": "forecastcompass-reading",
+            "title": "ForecastCompass · 从问题到证据的完整讲解",
+            "kind": "mixed",
+            "description": "文本主导的论文阅读页；原图、机制分节、讲解案例、实验与消融共享同一份可编辑内容。可切换自由排版，进入结构/修订子图。",
+            "metadata": {
+              "source": "用户提供的 ForecastCompass PDF，§2–4，Figure 2，Table 1/3",
+              "contentWorkspace": {
+                "schemaVersion": 1,
+                "defaultView": "reading",
+                "order": [
+                  {
+                    "type": "element",
+                    "id": "fc-read-problem"
+                  },
+                  {
+                    "type": "element",
+                    "id": "fc-read-figure-guide"
+                  },
+                  {
+                    "type": "element",
+                    "id": "fc-read-figure2"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "fc-read-memory"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "fc-read-factor"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "fc-read-reasoning"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "fc-read-agent"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "fc-read-revision"
+                  },
+                  {
+                    "type": "element",
+                    "id": "fc-read-example"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "fc-read-evaluation"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "fc-read-ablation"
+                  },
+                  {
+                    "type": "element",
+                    "id": "fc-read-implication"
+                  },
+                  {
+                    "type": "element",
+                    "id": "fc-read-next"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "fc-read-source-entry"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "rich-controls-verification",
+            "title": "元控件 · 操作验收",
+            "kind": "mixed",
+            "description": "用于文本格式、排版、视角和版本保护的真实操作验收；不是论文实验。",
+            "metadata": {
+              "acceptanceFixture": true,
+              "contentWorkspace": {
+                "schemaVersion": 1,
+                "defaultView": "reading",
+                "order": [
+                  {
+                    "type": "element",
+                    "id": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "rich-controls-memory"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "freeElements": [
+          {
+            "id": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71",
+            "graphId": "rich-controls-verification",
+            "element": {
+              "id": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71",
+              "type": "rectangle",
+              "x": 1087.7777777777778,
+              "y": 240,
+              "width": 600,
+              "height": 290,
+              "angle": 0,
+              "strokeColor": "#d8d2c6",
+              "backgroundColor": "#fffdf8",
+              "fillStyle": "solid",
+              "strokeWidth": 1,
+              "strokeStyle": "solid",
+              "roughness": 0,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "roundness": null,
+              "boundElements": null,
+              "link": null,
+              "locked": false,
+              "version": 1,
+              "versionNonce": 1,
+              "seed": 1,
+              "isDeleted": false,
+              "updated": 1790948718481,
+              "customData": {
+                "richTextBox": {
+                  "schemaVersion": 1,
+                  "title": "图文混排 · 实际编辑样例",
+                  "role": "text",
+                  "html": "<p style=\"text-align:center\"><b><span style=\"font-size:24px\">这是一段可以原位编辑的正文。</span></b></p><p style=\"text-align:center\"><b><span style=\"font-size:24px\">它与模块、图片和箭头共同排版，并能独立批注。</span></b></p>",
+                  "fontSize": 18,
+                  "fontFamily": "Iowan Old Style, Songti SC, serif",
+                  "color": "#22323a",
+                  "fill": "#fffdf8",
+                  "border": "#d8d2c6"
+                },
+                "agentCanvas": {
+                  "freeElementId": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71",
+                  "role": "free"
+                }
+              }
+            }
+          }
+        ],
+        "changedSinceObservation": [
+          {
+            "id": "fc-memory",
+            "fields": [
+              "updatedAt",
+              "metadata"
+            ]
+          },
+          {
+            "id": "rich-controls-memory",
+            "fields": [
+              "entityId"
+            ]
+          },
+          {
+            "id": "rich-controls-verification",
+            "fields": [
+              "metadata"
+            ]
+          },
+          {
+            "id": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71",
+            "fields": [
+              "element"
+            ]
+          }
+        ]
+      },
+      {
+        "annotationId": "annotation-4ec93979-4958-4ccf-bad3-89e8492424d8",
+        "revision": 65,
+        "targets": [
+          {
+            "type": "representation",
+            "graphId": "rich-controls-verification",
+            "representationId": "rich-controls-memory"
+          }
+        ],
+        "entities": [
+          {
+            "id": "rich-controls-module",
+            "kind": "module",
+            "title": "内容一致性 · 验收模块",
+            "source": "真实元控件操作验收",
+            "metadata": {
+              "acceptanceFixture": true,
+              "semanticContent": {
+                "schemaVersion": 1,
+                "summary": "FoCo 的核心是子类别级的两份可修订手册：因子记忆告诉 Agent 看什么，推理记忆告诉它该有多确信。",
+                "sections": [
+                  {
+                    "id": "mechanism",
+                    "title": "机制",
+                    "html": "<p>每个子类别 s 保存 M₍w,s₎=(F₍w,s₎,R₍w,s₎)。F 保存可复用的预测信号及误用方式，R 保存不确定性与校准原则。层级分类法负责索引；记忆条目负责解释。</p><p>区别在于经验的抽象层级：不止记“上一场选举输了”，而是记“在这一类事件中，哪些证据需要检查，什么情况下不能大幅调高概率”。</p>"
+                  },
+                  {
+                    "id": "io",
+                    "title": "输入输出",
+                    "html": "<p>过去已揭晓的问题 → 原预测与复盘差异 → 可复用的因子与校准经验 → 下一批尚未揭晓问题的检索指导。</p>"
+                  },
+                  {
+                    "id": "evidence",
+                    "title": "证据",
+                    "html": "<p>Table 3 的两类记忆移除实验支持它们互补。Table 1 的静态记忆对照还显示：只保留初始手册已有收益，继续修订能带来额外改善。</p>"
+                  },
+                  {
+                    "id": "limits",
+                    "title": "局限",
+                    "html": "<p>可复用性需要筛选。单次事件的偶然因素不能直接变成普遍规律；长期领域变化也会使原有因子失效。</p>"
+                  }
+                ],
+                "sources": [
+                  {
+                    "label": "§3.1，式 (2)–(3)",
+                    "kind": "source",
+                    "note": ""
+                  },
+                  {
+                    "label": "Table 1、3",
+                    "kind": "result",
+                    "note": ""
+                  }
+                ]
+              }
+            },
+            "updatedAt": "2026-10-02T14:23:45.390Z"
+          }
+        ],
+        "representations": [
+          {
+            "id": "rich-controls-memory",
+            "graphId": "rich-controls-verification",
+            "entityId": "rich-controls-module",
+            "x": 650,
+            "y": 100,
+            "width": 480,
+            "height": 440,
+            "pinned": true,
+            "style": {
+              "contentView": "card"
+            }
+          }
+        ],
+        "relations": [],
+        "graphs": [
+          {
+            "id": "rich-controls-verification",
+            "title": "元控件 · 操作验收",
+            "kind": "mixed",
+            "description": "用于文本格式、排版、视角和版本保护的真实操作验收；不是论文实验。",
+            "metadata": {
+              "acceptanceFixture": true,
+              "contentWorkspace": {
+                "schemaVersion": 1,
+                "defaultView": "reading",
+                "order": [
+                  {
+                    "type": "element",
+                    "id": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "rich-controls-memory"
+                  },
+                  {
+                    "type": "element",
+                    "id": "text-box-2b4570c2-e8b2-4cbc-978d-216f210ff6af"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "freeElements": [],
+        "changedSinceObservation": []
+      }
+    ],
+    "extensionContext": [
+      {
+        "providerId": "core-task-summary",
+        "source": "bundled:core",
+        "data": {
+          "summary": {
+            "total": 18,
+            "completed": 18,
+            "canceled": 0,
+            "blocked": 0,
+            "failed": 0,
+            "byStatus": {
+              "todo": 0,
+              "doing": 0,
+              "blocked": 0,
+              "review": 0,
+              "done": 18,
+              "failed": 0,
+              "canceled": 0
+            },
+            "latestActivity": "2026-10-02T12:48:19.070Z"
+          },
+          "objects": [
+            {
+              "id": "rich-controls-module",
+              "kind": "module",
+              "title": "内容一致性 · 验收模块",
+              "source": "真实元控件操作验收"
+            }
+          ]
+        }
+      }
+    ],
+    "rules": [
+      "稳定身份优先于标题、位置和元素外观。",
+      "只修改批注目标及其必要直接邻接，保留固定位置。",
+      "外部执行状态只能依据真实回执更新。"
+    ],
+    "currentRevision": 67,
+    "liveProgress": {
+      "batchId": "batch-adf9b806-b9bd-4d6d-9099-04f5f6b6f32f",
+      "state": "awaiting_host",
+      "total": 2,
+      "completed": 0,
+      "pending": 2,
+      "needsClarification": 0,
+      "annotationStatuses": [
+        {
+          "annotationId": "annotation-f9e482f3-b34f-4b3d-85a2-32a0e8c5de44",
+          "status": "queued"
+        },
+        {
+          "annotationId": "annotation-4ec93979-4958-4ccf-bad3-89e8492424d8",
+          "status": "queued"
+        }
+      ]
+    }
+  },
+  "hint": {
+    "next": "canvas_feedback",
+    "contextAction": "context"
+  }
+}

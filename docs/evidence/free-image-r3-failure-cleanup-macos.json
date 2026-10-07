@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-02T02:01:06.075Z",
+  "status": 200,
+  "result": {
+    "revision": 68,
+    "changeId": "449fb3b6-d06b-469a-9660-bd660303c3b1",
+    "operationId": "remove-failed-native-image-53a0e887-a53f-4626-9796-c94c31274632",
+    "affectedIds": [
+      "8RoVCLxZzWANY_AD-TcO_"
+    ],
+    "replayed": false
+  },
+  "beforeRevision": 67,
+  "afterRevision": 68,
+  "removedId": "8RoVCLxZzWANY_AD-TcO_",
+  "assertions": {
+    "failedFixtureRemoved": true,
+    "otherFreeElementsUnchanged": true,
+    "resourcesPreserved": true,
+    "annotationsPreserved": true
+  }
+}

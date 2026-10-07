@@ -1,0 +1,3450 @@
+{
+  "schemaVersion": 1,
+  "kind": "review-only-forecastcompass-organization-upgrade",
+  "projectId": "cb904f16-a9ec-4a38-831c-d84d9a08df80",
+  "workCopyId": "861853ec-6305-4877-9427-017a130c2184",
+  "baseRevision": 160,
+  "graphId": "forecastcompass-spatial-notebook",
+  "source": "offline JSON snapshot supplied by canvas_open/canvas_read",
+  "operations": [
+    {
+      "type": "graph.patch",
+      "id": "forecastcompass-spatial-notebook",
+      "patch": {
+        "metadata": {
+          "notebook": {
+            "schemaVersion": 1,
+            "mode": "spatial-note",
+            "root": {
+              "type": "representation",
+              "id": "notebook-root-rep"
+            },
+            "branches": [
+              {
+                "id": "probability",
+                "title": "概率与时间",
+                "side": "left",
+                "order": 0,
+                "accent": "#647b69",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-probability-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-forecast-question"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-agent"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-probability"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-protocol"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-probability"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-probability"
+                  }
+                ]
+              },
+              {
+                "id": "signal-confidence",
+                "title": "信号与信心",
+                "side": "left",
+                "order": 1,
+                "accent": "#647b69",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-signal-confidence-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-signal"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-confidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-calibration"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-signal-confidence"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-signal-confidence"
+                  }
+                ]
+              },
+              {
+                "id": "memory-problem",
+                "title": "经验要能复用",
+                "side": "left",
+                "order": 2,
+                "accent": "#b07851",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-memory-problem-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-lesson"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-foco"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-memory-problem"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-memory-problem"
+                  }
+                ]
+              },
+              {
+                "id": "two-memories",
+                "title": "双记忆分工",
+                "side": "left",
+                "order": 3,
+                "accent": "#b07851",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-two-memories-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-taxonomy"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-subcategory"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-factor"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-reasoning"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-two-memories"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-two-memories"
+                  }
+                ]
+              },
+              {
+                "id": "inference",
+                "title": "一次新预测",
+                "side": "right",
+                "order": 4,
+                "accent": "#557c88",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-inference-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-memory"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-trajectory"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-inference"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-inference"
+                  }
+                ]
+              },
+              {
+                "id": "update",
+                "title": "结果后修订",
+                "side": "right",
+                "order": 5,
+                "accent": "#557c88",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-update-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-outcome"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-retrospective"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-diagnosis"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-aggregation"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-revision"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-update"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-update"
+                  }
+                ]
+              },
+              {
+                "id": "evidence",
+                "title": "怎样评价证据",
+                "side": "right",
+                "order": 6,
+                "accent": "#83735b",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-evidence-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-brier"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-ece"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-comparison"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-base"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-static"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-ablation"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-table1-result"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-table3-ablation"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-evidence"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-evidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "representation-750688ce-e527-4bd5-8bb9-3658d2c26a40"
+                  }
+                ]
+              },
+              {
+                "id": "reproduction",
+                "title": "怎样统一复现",
+                "side": "right",
+                "order": 7,
+                "accent": "#83735b",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-reproduction-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-config"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-reproduction"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-reproduction"
+                  }
+                ]
+              }
+            ],
+            "focusStops": [
+              {
+                "id": "probability",
+                "title": "概率与时间",
+                "refs": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-probability-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-probability"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-probability"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-forecast-question"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-agent"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-probability"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-protocol"
+                  }
+                ]
+              },
+              {
+                "id": "signal-confidence",
+                "title": "信号与信心",
+                "refs": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-signal-confidence-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-signal-confidence"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-signal-confidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-signal"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-confidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-calibration"
+                  }
+                ]
+              },
+              {
+                "id": "memory-problem",
+                "title": "经验要能复用",
+                "refs": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-memory-problem-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-memory-problem"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-memory-problem"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-lesson"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-foco"
+                  }
+                ]
+              },
+              {
+                "id": "two-memories",
+                "title": "双记忆分工",
+                "refs": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-two-memories-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-two-memories"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-two-memories"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-taxonomy"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-subcategory"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-factor"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-reasoning"
+                  }
+                ]
+              },
+              {
+                "id": "inference",
+                "title": "一次新预测",
+                "refs": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-inference-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-inference"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-inference"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-memory"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-trajectory"
+                  }
+                ]
+              },
+              {
+                "id": "update",
+                "title": "结果后修订",
+                "refs": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-update-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-update"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-update"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-outcome"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-retrospective"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-diagnosis"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-aggregation"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-revision"
+                  }
+                ]
+              },
+              {
+                "id": "evidence",
+                "title": "怎样评价证据",
+                "refs": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-evidence-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-evidence"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-evidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-brier"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-ece"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-comparison"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-base"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-static"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-ablation"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-table1-result"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-table3-ablation"
+                  }
+                ]
+              },
+              {
+                "id": "reproduction",
+                "title": "怎样统一复现",
+                "refs": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-reproduction-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-reproduction"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-reproduction"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-config"
+                  }
+                ]
+              }
+            ]
+          },
+          "contentWorkspace": {
+            "schemaVersion": 1,
+            "defaultView": "layout",
+            "order": [
+              {
+                "type": "representation",
+                "id": "notebook-root-rep"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-forecast-question"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-agent"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-probability"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-protocol"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-probability"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-probability"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-signal"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-confidence"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-calibration"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-signal-confidence"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-signal-confidence"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-lesson"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-foco"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-memory-problem"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-memory-problem"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-taxonomy"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-subcategory"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-factor"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-reasoning"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-two-memories"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-two-memories"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-memory"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-trajectory"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-inference"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-inference"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-outcome"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-retrospective"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-diagnosis"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-aggregation"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-revision"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-update"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-update"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-brier"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-ece"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-comparison"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-base"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-static"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-ablation"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-table1-result"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-table3-ablation"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-evidence"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-evidence"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-config"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-reproduction"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-reproduction"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-step-probability-rep"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-step-signal-confidence-rep"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-step-memory-problem-rep"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-step-two-memories-rep"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-step-inference-rep"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-step-update-rep"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-step-evidence-rep"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-step-reproduction-rep"
+              },
+              {
+                "type": "representation",
+                "id": "representation-750688ce-e527-4bd5-8bb9-3658d2c26a40"
+              }
+            ]
+          },
+          "content": {
+            "readingOrder": [
+              {
+                "type": "representation",
+                "id": "notebook-root-rep"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-forecast-question"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-agent"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-probability"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-protocol"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-probability"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-probability"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-signal"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-confidence"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-calibration"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-signal-confidence"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-signal-confidence"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-lesson"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-foco"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-memory-problem"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-memory-problem"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-taxonomy"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-subcategory"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-factor"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-reasoning"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-two-memories"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-two-memories"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-memory"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-trajectory"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-inference"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-inference"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-outcome"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-retrospective"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-diagnosis"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-aggregation"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-revision"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-update"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-update"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-brier"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-ece"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-comparison"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-base"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-static"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-ablation"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-table1-result"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-table3-ablation"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-evidence"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-evidence"
+              },
+              {
+                "type": "representation",
+                "id": "notebook-concept-config"
+              },
+              {
+                "type": "element",
+                "id": "notebook-diagram-reproduction"
+              },
+              {
+                "type": "element",
+                "id": "notebook-prose-reproduction"
+              }
+            ]
+          },
+          "expression": {
+            "schemaVersion": 1,
+            "scenario": "paper",
+            "audience": "首次接触领域的读者和需要研究细节的科研工作者",
+            "objective": "图文穿插、二维展开，必要概念在使用处可以找回。",
+            "thesis": "双记忆把经验分成搜证指导和概率推理指导，再从结果后复盘修订未来记忆。",
+            "glossary": [
+              {
+                "id": "forecast-question",
+                "term": "待预测问题",
+                "definition": "一个尚未揭晓、候选结果集合明确、需要在结果出现前给出概率分布的问题。",
+                "source": "ForecastCompass PDF §2"
+              },
+              {
+                "id": "agent",
+                "term": "Agent（预测代理）",
+                "definition": "在给定问题、当时可用证据和已检索记忆后，主动搜证、组织推理并输出概率预测的语言模型代理。",
+                "source": "ForecastCompass PDF §2、§3.2"
+              },
+              {
+                "id": "probability",
+                "term": "概率预测",
+                "definition": "给每个候选结果分配一个非负概率，所有候选结果的概率之和为 1。",
+                "source": "ForecastCompass PDF §2，式 (1)"
+              },
+              {
+                "id": "protocol",
+                "term": "时间有效的实验协议",
+                "definition": "规定预测只能使用结果揭晓前可获得的信息，并让已揭晓问题的经验按时间顺序服务后续问题的比较协议。",
+                "source": "ForecastCompass PDF §2、§4.1、附录 A.3"
+              },
+              {
+                "id": "signal",
+                "term": "预测信号",
+                "definition": "当前证据中可能改变未来结果判断、且需要被检查其适用范围的证据维度。",
+                "source": "ForecastCompass PDF §3.1"
+              },
+              {
+                "id": "confidence",
+                "term": "预测信心",
+                "definition": "对一个预测有多确定的数值；在本文 ECE 口径中取预测分布的最大概率。",
+                "source": "ForecastCompass PDF 附录 A.2"
+              },
+              {
+                "id": "calibration",
+                "term": "校准",
+                "definition": "一组预测的信心与实际正确频率相匹配的程度；约 70% 信心的一组预测，长期正确率应接近 70%。",
+                "source": "ForecastCompass PDF §4.1、附录 A.2"
+              },
+              {
+                "id": "lesson",
+                "term": "可复用原则",
+                "definition": "从已揭晓预测记录中抽象出来、可用于检查新问题的证据与判断规则，而不是某个事件的答案。",
+                "source": "ForecastCompass PDF §1、§3.1；讲解例为分析展开"
+              },
+              {
+                "id": "foco",
+                "term": "ForecastCompass（FoCo）",
+                "definition": "一套按预测任务分类、以因子记忆和推理记忆指导预测，并按时间顺序从复盘中修订记忆的预测专用方法。",
+                "source": "ForecastCompass PDF 摘要、§3"
+              },
+              {
+                "id": "taxonomy",
+                "term": "层级预测分类法",
+                "definition": "把预测经验组织成类别与更细的子类别，并用子类别作为检索相关记忆的索引。",
+                "source": "ForecastCompass PDF §3.1，式 (2)"
+              },
+              {
+                "id": "subcategory",
+                "term": "预测子类别",
+                "definition": "分类法中的一个可复用任务分组；每个预测问题被路由到一个子类别，并从那里找到对应记忆状态。",
+                "source": "ForecastCompass PDF §3.1"
+              },
+              {
+                "id": "factor",
+                "term": "因子记忆 F",
+                "definition": "某一预测子类别的因子手册，保存要检查的预测信号、证据核对、常见误用和该因子的典型概率影响。",
+                "source": "ForecastCompass PDF §3.1，式 (3)–(4)"
+              },
+              {
+                "id": "reasoning",
+                "term": "推理记忆 R",
+                "definition": "某一预测子类别的推理与校准手册，说明证据强弱、不确定性、冲突和缺失应怎样转成概率信心。",
+                "source": "ForecastCompass PDF §3.1，式 (2)–(4)"
+              },
+              {
+                "id": "memory",
+                "term": "子类别双记忆状态",
+                "definition": "挂在一个预测子类别和更新轮次上的记忆状态，由因子记忆 F 与推理记忆 R 组成。",
+                "source": "ForecastCompass PDF §3.1，式 (2)"
+              },
+              {
+                "id": "trajectory",
+                "term": "预测轨迹",
+                "definition": "预测阶段留下的过程记录，包含当时搜到的证据、如何解释证据以及如何形成概率的路径。",
+                "source": "ForecastCompass PDF §2、§3.2，式 (1)、(4)"
+              },
+              {
+                "id": "outcome",
+                "term": "结果揭晓",
+                "definition": "预测事件进入可确认状态，真实结果和结果后的证据因此可以用于复盘与未来记忆更新。",
+                "source": "ForecastCompass PDF §2、§3.3"
+              },
+              {
+                "id": "retrospective",
+                "term": "复盘轨迹",
+                "definition": "结果揭晓后使用结果后证据生成的解释轨迹，用来揭示原预测遗漏了什么或怎样更新不当；它不可直接部署。",
+                "source": "ForecastCompass PDF §2、§3.3，式 (7)"
+              },
+              {
+                "id": "diagnosis",
+                "term": "差异诊断",
+                "definition": "把预测轨迹与复盘轨迹对照后得到的差异，区分因子层面问题与推理、校准层面问题。",
+                "source": "ForecastCompass PDF §3.3，式 (8)–(9)"
+              },
+              {
+                "id": "aggregation",
+                "term": "差异聚合",
+                "definition": "把多条已诊断差异归并为跨记录可复用的模式，并过滤只对一次事件成立的偶然解释。",
+                "source": "ForecastCompass PDF §3.3，式 (10) 前后说明"
+              },
+              {
+                "id": "revision",
+                "term": "局部记忆修订",
+                "definition": "依据聚合后的差异，只修订受影响子类别中的相关因子条目和推理原则，并按需要迭代执行。",
+                "source": "ForecastCompass PDF §3.3，式 (10) 及其说明"
+              },
+              {
+                "id": "brier",
+                "term": "Brier 概率准确性",
+                "definition": "把每个候选的预测概率与真实结果比较：真实结果对应候选记为 1，其他候选记为 0，再求多类平方误差和；数值越低表示概率分布更接近已实现结果。",
+                "source": "ForecastCompass PDF 附录 A.2"
+              },
+              {
+                "id": "ece",
+                "term": "ECE 校准误差",
+                "definition": "先以每次预测的最大概率作为信心，再按信心分箱比较经验正确率与平均信心并加权汇总；数值越低表示越校准。",
+                "source": "ForecastCompass PDF 附录 A.2"
+              },
+              {
+                "id": "comparison",
+                "term": "同条件比较设计",
+                "definition": "在固定模型、数据、时间协议和指标口径下，把完整 FoCo 与无记忆、静态记忆和去组件版本进行可核查的性能对照。",
+                "source": "ForecastCompass PDF §4.1–§4.4、Table 1/Table 3；reading-flow-source-review-20261003.md"
+              },
+              {
+                "id": "base",
+                "term": "BASE 无外部记忆",
+                "definition": "不使用外部预测记忆的部署基线，用来提供没有 FoCo 记忆指导时的比较参照。",
+                "source": "ForecastCompass PDF §4.1、附录 A.3"
+              },
+              {
+                "id": "static",
+                "term": "FoCo (Static) 静态记忆",
+                "definition": "保留初始化的因子与推理记忆、取消每周记忆更新的 FoCo 对照，用来隔离迭代修订的作用。",
+                "source": "ForecastCompass PDF §4.1–§4.2、附录 A.3"
+              },
+              {
+                "id": "ablation",
+                "term": "F/R 组件消融",
+                "definition": "在同一 FutureX 与 GPT-5-mini 条件下分别移除因子记忆 F 或推理/校准记忆 R，再与完整 FoCo 比较。",
+                "source": "ForecastCompass PDF §4.4、Table 3；reading-flow-source-review-20261003.md"
+              },
+              {
+                "id": "table1-result",
+                "term": "Table 1 主结果",
+                "definition": "四种模型—数据集设置下跨评估周的平均 Brier 与 ECE 结果，用于比较总体概率准确性和校准表现。",
+                "source": "ForecastCompass PDF §4.2 / Table 1"
+              },
+              {
+                "id": "table3-ablation",
+                "term": "Table 3 F/R 消融证据",
+                "definition": "FutureX 与 GPT-5-mini 固定条件下，BASE、去 F、去 R 和完整 FoCo 的逐周及平均 Brier/ECE 对照。",
+                "source": "ForecastCompass PDF §4.4 / Table 3"
+              },
+              {
+                "id": "config",
+                "term": "复现配置卡",
+                "definition": "把模型、数据集、时间窗口、记忆修订轮数、评价口径和待核实执行条件放在同一处，保证结果比较有明确解释范围。",
+                "source": "ForecastCompass PDF 附录 B.1、B.8、A.2；reading-flow-source-review-20261003.md"
+              }
+            ],
+            "routes": [
+              {
+                "id": "probability",
+                "title": "概率与时间",
+                "steps": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-probability-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-probability"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-probability"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-forecast-question"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-agent"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-probability"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-protocol"
+                  }
+                ]
+              },
+              {
+                "id": "signal-confidence",
+                "title": "信号与信心",
+                "steps": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-signal-confidence-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-signal-confidence"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-signal-confidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-signal"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-confidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-calibration"
+                  }
+                ]
+              },
+              {
+                "id": "memory-problem",
+                "title": "经验要能复用",
+                "steps": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-memory-problem-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-memory-problem"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-memory-problem"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-lesson"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-foco"
+                  }
+                ]
+              },
+              {
+                "id": "two-memories",
+                "title": "双记忆分工",
+                "steps": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-two-memories-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-two-memories"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-two-memories"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-taxonomy"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-subcategory"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-factor"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-reasoning"
+                  }
+                ]
+              },
+              {
+                "id": "inference",
+                "title": "一次新预测",
+                "steps": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-inference-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-inference"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-inference"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-memory"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-trajectory"
+                  }
+                ]
+              },
+              {
+                "id": "update",
+                "title": "结果后修订",
+                "steps": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-update-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-update"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-update"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-outcome"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-retrospective"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-diagnosis"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-aggregation"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-revision"
+                  }
+                ]
+              },
+              {
+                "id": "evidence",
+                "title": "怎样评价证据",
+                "steps": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-evidence-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-evidence"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-evidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-brier"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-ece"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-comparison"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-base"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-static"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-ablation"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-table1-result"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-table3-ablation"
+                  }
+                ]
+              },
+              {
+                "id": "reproduction",
+                "title": "怎样统一复现",
+                "steps": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-reproduction-rep"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-reproduction"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-reproduction"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-config"
+                  }
+                ]
+              }
+            ],
+            "knowledgeGraph": {
+              "schemaVersion": 1,
+              "atoms": [
+                {
+                  "id": "forecast-question",
+                  "entityId": "pilot-ks-atom-forecast-question",
+                  "title": "待预测问题",
+                  "introducedAt": "probability"
+                },
+                {
+                  "id": "agent",
+                  "entityId": "pilot-ks-atom-agent",
+                  "title": "Agent（预测代理）",
+                  "introducedAt": "probability"
+                },
+                {
+                  "id": "probability",
+                  "entityId": "pilot-ks-atom-probability",
+                  "title": "概率预测",
+                  "introducedAt": "probability"
+                },
+                {
+                  "id": "protocol",
+                  "entityId": "pilot-ks-atom-protocol",
+                  "title": "时间有效的实验协议",
+                  "introducedAt": "probability"
+                },
+                {
+                  "id": "signal",
+                  "entityId": "pilot-ks-atom-signal",
+                  "title": "预测信号",
+                  "introducedAt": "signal-confidence"
+                },
+                {
+                  "id": "confidence",
+                  "entityId": "pilot-ks-atom-confidence",
+                  "title": "预测信心",
+                  "introducedAt": "signal-confidence"
+                },
+                {
+                  "id": "calibration",
+                  "entityId": "pilot-ks-atom-calibration",
+                  "title": "校准",
+                  "introducedAt": "signal-confidence"
+                },
+                {
+                  "id": "lesson",
+                  "entityId": "pilot-ks-atom-lesson",
+                  "title": "可复用原则",
+                  "introducedAt": "memory-problem"
+                },
+                {
+                  "id": "foco",
+                  "entityId": "pilot-ks-atom-foco",
+                  "title": "ForecastCompass（FoCo）",
+                  "introducedAt": "memory-problem"
+                },
+                {
+                  "id": "taxonomy",
+                  "entityId": "pilot-ks-atom-taxonomy",
+                  "title": "层级预测分类法",
+                  "introducedAt": "two-memories"
+                },
+                {
+                  "id": "subcategory",
+                  "entityId": "pilot-ks-atom-subcategory",
+                  "title": "预测子类别",
+                  "introducedAt": "two-memories"
+                },
+                {
+                  "id": "factor",
+                  "entityId": "pilot-ks-atom-factor",
+                  "title": "因子记忆 F",
+                  "introducedAt": "two-memories"
+                },
+                {
+                  "id": "reasoning",
+                  "entityId": "pilot-ks-atom-reasoning",
+                  "title": "推理记忆 R",
+                  "introducedAt": "two-memories"
+                },
+                {
+                  "id": "memory",
+                  "entityId": "pilot-ks-atom-memory",
+                  "title": "子类别双记忆状态",
+                  "introducedAt": "inference"
+                },
+                {
+                  "id": "trajectory",
+                  "entityId": "pilot-ks-atom-trajectory",
+                  "title": "预测轨迹",
+                  "introducedAt": "inference"
+                },
+                {
+                  "id": "outcome",
+                  "entityId": "pilot-ks-atom-outcome",
+                  "title": "结果揭晓",
+                  "introducedAt": "update"
+                },
+                {
+                  "id": "retrospective",
+                  "entityId": "pilot-ks-atom-retrospective",
+                  "title": "复盘轨迹",
+                  "introducedAt": "update"
+                },
+                {
+                  "id": "diagnosis",
+                  "entityId": "pilot-ks-atom-diagnosis",
+                  "title": "差异诊断",
+                  "introducedAt": "update"
+                },
+                {
+                  "id": "aggregation",
+                  "entityId": "pilot-ks-atom-aggregation",
+                  "title": "差异聚合",
+                  "introducedAt": "update"
+                },
+                {
+                  "id": "revision",
+                  "entityId": "pilot-ks-atom-revision",
+                  "title": "局部记忆修订",
+                  "introducedAt": "update"
+                },
+                {
+                  "id": "brier",
+                  "entityId": "pilot-ks-atom-brier",
+                  "title": "Brier 概率准确性",
+                  "introducedAt": "evidence"
+                },
+                {
+                  "id": "ece",
+                  "entityId": "pilot-ks-atom-ece",
+                  "title": "ECE 校准误差",
+                  "introducedAt": "evidence"
+                },
+                {
+                  "id": "comparison",
+                  "entityId": "pilot-ks-atom-comparison",
+                  "title": "同条件比较设计",
+                  "introducedAt": "evidence"
+                },
+                {
+                  "id": "base",
+                  "entityId": "pilot-ks-atom-base",
+                  "title": "BASE 无外部记忆",
+                  "introducedAt": "evidence"
+                },
+                {
+                  "id": "static",
+                  "entityId": "pilot-ks-atom-static",
+                  "title": "FoCo (Static) 静态记忆",
+                  "introducedAt": "evidence"
+                },
+                {
+                  "id": "ablation",
+                  "entityId": "pilot-ks-atom-ablation",
+                  "title": "F/R 组件消融",
+                  "introducedAt": "evidence"
+                },
+                {
+                  "id": "table1-result",
+                  "entityId": "pilot-ks-atom-table1-result",
+                  "title": "Table 1 主结果",
+                  "introducedAt": "evidence"
+                },
+                {
+                  "id": "table3-ablation",
+                  "entityId": "pilot-ks-atom-table3-ablation",
+                  "title": "Table 3 F/R 消融证据",
+                  "introducedAt": "evidence"
+                },
+                {
+                  "id": "config",
+                  "entityId": "pilot-ks-atom-config",
+                  "title": "复现配置卡",
+                  "introducedAt": "reproduction"
+                }
+              ],
+              "edges": [
+                {
+                  "id": "e-question-agent",
+                  "from": "forecast-question",
+                  "to": "agent",
+                  "label": "提供待解问题",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-protocol-question",
+                  "from": "protocol",
+                  "to": "forecast-question",
+                  "label": "限定信息时点",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-agent-probability",
+                  "from": "agent",
+                  "to": "probability",
+                  "label": "输出概率分布",
+                  "semanticType": "output"
+                },
+                {
+                  "id": "e-probability-confidence",
+                  "from": "probability",
+                  "to": "confidence",
+                  "label": "提取最大信心",
+                  "semanticType": "output"
+                },
+                {
+                  "id": "e-protocol-signal",
+                  "from": "protocol",
+                  "to": "signal",
+                  "label": "限定当前证据",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-signal-calibration",
+                  "from": "signal",
+                  "to": "calibration",
+                  "label": "提供校准依据",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-confidence-calibration",
+                  "from": "confidence",
+                  "to": "calibration",
+                  "label": "进入校准判断",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-signal-lesson",
+                  "from": "signal",
+                  "to": "lesson",
+                  "label": "沉淀检查原则",
+                  "semanticType": "evidence"
+                },
+                {
+                  "id": "e-calibration-lesson",
+                  "from": "calibration",
+                  "to": "lesson",
+                  "label": "沉淀信心原则",
+                  "semanticType": "evidence"
+                },
+                {
+                  "id": "e-protocol-lesson",
+                  "from": "protocol",
+                  "to": "lesson",
+                  "label": "守住时序边界",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-foco-taxonomy",
+                  "from": "foco",
+                  "to": "taxonomy",
+                  "label": "组织分类索引",
+                  "semanticType": "index"
+                },
+                {
+                  "id": "e-lesson-foco",
+                  "from": "lesson",
+                  "to": "foco",
+                  "label": "形成方法输入",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-foco-memory",
+                  "from": "foco",
+                  "to": "memory",
+                  "label": "管理双记忆",
+                  "semanticType": "contains"
+                },
+                {
+                  "id": "e-taxonomy-subcategory",
+                  "from": "taxonomy",
+                  "to": "subcategory",
+                  "label": "细分预测任务",
+                  "semanticType": "contains"
+                },
+                {
+                  "id": "e-subcategory-memory",
+                  "from": "subcategory",
+                  "to": "memory",
+                  "label": "索引双记忆",
+                  "semanticType": "index"
+                },
+                {
+                  "id": "e-taxonomy-memory",
+                  "from": "taxonomy",
+                  "to": "memory",
+                  "label": "定位子类记忆",
+                  "semanticType": "index"
+                },
+                {
+                  "id": "e-memory-factor",
+                  "from": "memory",
+                  "to": "factor",
+                  "label": "包含因子手册",
+                  "semanticType": "contains"
+                },
+                {
+                  "id": "e-memory-reasoning",
+                  "from": "memory",
+                  "to": "reasoning",
+                  "label": "包含推理手册",
+                  "semanticType": "contains"
+                },
+                {
+                  "id": "e-memory-agent",
+                  "from": "memory",
+                  "to": "agent",
+                  "label": "指导预测代理",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-factor-signal",
+                  "from": "factor",
+                  "to": "signal",
+                  "label": "提示搜查信号",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-factor-trajectory",
+                  "from": "factor",
+                  "to": "trajectory",
+                  "label": "引导轨迹搜证",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-reasoning-probability",
+                  "from": "reasoning",
+                  "to": "probability",
+                  "label": "调节概率更新",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-reasoning-calibration",
+                  "from": "reasoning",
+                  "to": "calibration",
+                  "label": "约束预测信心",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-agent-trajectory",
+                  "from": "agent",
+                  "to": "trajectory",
+                  "label": "保留预测轨迹",
+                  "semanticType": "output"
+                },
+                {
+                  "id": "e-trajectory-probability",
+                  "from": "trajectory",
+                  "to": "probability",
+                  "label": "形成预测分布",
+                  "semanticType": "output"
+                },
+                {
+                  "id": "e-protocol-trajectory",
+                  "from": "protocol",
+                  "to": "trajectory",
+                  "label": "限定轨迹信息",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-question-trajectory",
+                  "from": "forecast-question",
+                  "to": "trajectory",
+                  "label": "定义推理目标",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-outcome-retrospective",
+                  "from": "outcome",
+                  "to": "retrospective",
+                  "label": "触发结果后复盘",
+                  "semanticType": "trigger"
+                },
+                {
+                  "id": "e-trajectory-retrospective",
+                  "from": "retrospective",
+                  "to": "trajectory",
+                  "label": "对照原预测",
+                  "semanticType": "compare"
+                },
+                {
+                  "id": "e-trajectory-diagnosis",
+                  "from": "trajectory",
+                  "to": "diagnosis",
+                  "label": "提供原预测基线",
+                  "semanticType": "evidence"
+                },
+                {
+                  "id": "e-retrospective-diagnosis",
+                  "from": "retrospective",
+                  "to": "diagnosis",
+                  "label": "提供结果后对照",
+                  "semanticType": "evidence"
+                },
+                {
+                  "id": "e-diagnosis-aggregation",
+                  "from": "diagnosis",
+                  "to": "aggregation",
+                  "label": "汇总差异模式",
+                  "semanticType": "output"
+                },
+                {
+                  "id": "e-aggregation-revision",
+                  "from": "aggregation",
+                  "to": "revision",
+                  "label": "形成修订建议",
+                  "semanticType": "output"
+                },
+                {
+                  "id": "e-retrospective-revision",
+                  "from": "retrospective",
+                  "to": "revision",
+                  "label": "驱动记忆修订",
+                  "semanticType": "trigger"
+                },
+                {
+                  "id": "e-revision-memory",
+                  "from": "revision",
+                  "to": "memory",
+                  "label": "更新未来记忆",
+                  "semanticType": "update"
+                },
+                {
+                  "id": "e-revision-factor",
+                  "from": "revision",
+                  "to": "factor",
+                  "label": "修订受影响因子",
+                  "semanticType": "update"
+                },
+                {
+                  "id": "e-revision-reasoning",
+                  "from": "revision",
+                  "to": "reasoning",
+                  "label": "修订推理原则",
+                  "semanticType": "update"
+                },
+                {
+                  "id": "e-protocol-revision",
+                  "from": "protocol",
+                  "to": "revision",
+                  "label": "约束更新时序",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-brier-probability",
+                  "from": "brier",
+                  "to": "probability",
+                  "label": "评价概率距离",
+                  "semanticType": "evaluate"
+                },
+                {
+                  "id": "e-ece-confidence",
+                  "from": "ece",
+                  "to": "confidence",
+                  "label": "评价信心匹配",
+                  "semanticType": "evaluate"
+                },
+                {
+                  "id": "e-ece-calibration",
+                  "from": "ece",
+                  "to": "calibration",
+                  "label": "量化校准误差",
+                  "semanticType": "evaluate"
+                },
+                {
+                  "id": "e-brier-comparison",
+                  "from": "brier",
+                  "to": "comparison",
+                  "label": "提供准确性口径",
+                  "semanticType": "evidence"
+                },
+                {
+                  "id": "e-ece-comparison",
+                  "from": "ece",
+                  "to": "comparison",
+                  "label": "提供校准口径",
+                  "semanticType": "evidence"
+                },
+                {
+                  "id": "e-trajectory-comparison",
+                  "from": "trajectory",
+                  "to": "comparison",
+                  "label": "进入结果评价",
+                  "semanticType": "evaluate"
+                },
+                {
+                  "id": "e-comparison-foco",
+                  "from": "comparison",
+                  "to": "foco",
+                  "label": "检验完整方法",
+                  "semanticType": "evaluate"
+                },
+                {
+                  "id": "e-comparison-base",
+                  "from": "comparison",
+                  "to": "base",
+                  "label": "包含无记忆基线",
+                  "semanticType": "compare"
+                },
+                {
+                  "id": "e-comparison-static",
+                  "from": "comparison",
+                  "to": "static",
+                  "label": "包含静态对照",
+                  "semanticType": "compare"
+                },
+                {
+                  "id": "e-comparison-ablation",
+                  "from": "comparison",
+                  "to": "ablation",
+                  "label": "包含组件消融",
+                  "semanticType": "compare"
+                },
+                {
+                  "id": "e-comparison-table1",
+                  "from": "table1-result",
+                  "to": "comparison",
+                  "label": "支持总体比较",
+                  "semanticType": "evidence"
+                },
+                {
+                  "id": "e-comparison-table3",
+                  "from": "table3-ablation",
+                  "to": "comparison",
+                  "label": "支持消融比较",
+                  "semanticType": "evidence"
+                },
+                {
+                  "id": "e-static-base",
+                  "from": "static",
+                  "to": "base",
+                  "label": "比较是否周更",
+                  "semanticType": "compare"
+                },
+                {
+                  "id": "e-ablation-factor",
+                  "from": "ablation",
+                  "to": "factor",
+                  "label": "移除因子记忆",
+                  "semanticType": "compare"
+                },
+                {
+                  "id": "e-ablation-reasoning",
+                  "from": "ablation",
+                  "to": "reasoning",
+                  "label": "移除推理记忆",
+                  "semanticType": "compare"
+                },
+                {
+                  "id": "e-config-protocol",
+                  "from": "config",
+                  "to": "protocol",
+                  "label": "固定复现条件",
+                  "semanticType": "input"
+                },
+                {
+                  "id": "e-config-comparison",
+                  "from": "config",
+                  "to": "comparison",
+                  "label": "约束比较范围",
+                  "semanticType": "input"
+                }
+              ]
+            },
+            "readingContext": {
+              "schemaVersion": 1,
+              "mode": "spatial-note",
+              "branchContexts": [
+                {
+                  "stepId": "probability",
+                  "question": "预测未来，究竟在预测什么？",
+                  "previousConclusion": null,
+                  "requiredContext": [],
+                  "newConceptGroups": [
+                    {
+                      "id": "forecasting-frame",
+                      "title": "预测框架",
+                      "atomIds": [
+                        "forecast-question",
+                        "agent",
+                        "probability"
+                      ],
+                      "explanation": "问题、行动者和概率答案在第一段共同建立预测的基本对象。"
+                    },
+                    {
+                      "id": "time-boundary",
+                      "title": "时间边界",
+                      "atomIds": [
+                        "protocol"
+                      ],
+                      "explanation": "协议同时说明哪些证据可进入当前预测。"
+                    }
+                  ],
+                  "bridge": "先把概率答案和信息时点说清楚，下一步才能区分当前信号与预测信心。"
+                },
+                {
+                  "stepId": "signal-confidence",
+                  "question": "查到了新闻，为什么还是会判断差？",
+                  "previousConclusion": "预测给每个可能结果分配概率，让不确定性也成为答案的一部分。",
+                  "requiredContext": [
+                    {
+                      "atomId": "probability",
+                      "recap": "概率预测是对候选结果的完整分布；这里用它的最大值表示一次预测的信心。",
+                      "neededFor": "把信号证据转成可评价的信心。"
+                    },
+                    {
+                      "atomId": "protocol",
+                      "recap": "当前信号必须是结果揭晓前已经可获得的证据。",
+                      "neededFor": "避免把结果后信息误当作当时的搜证。"
+                    }
+                  ],
+                  "newConceptGroups": [
+                    {
+                      "id": "evidence-signal",
+                      "title": "证据信号",
+                      "atomIds": [
+                        "signal"
+                      ],
+                      "explanation": "信号是需要检查适用范围的当前证据维度。"
+                    },
+                    {
+                      "id": "confidence",
+                      "title": "预测信心",
+                      "atomIds": [
+                        "confidence"
+                      ],
+                      "explanation": "信心是概率分布的最大候选概率。"
+                    },
+                    {
+                      "id": "calibration",
+                      "title": "校准准则",
+                      "atomIds": [
+                        "calibration"
+                      ],
+                      "explanation": "校准检查一组预测的信心与实际正确率是否匹配。"
+                    }
+                  ],
+                  "bridge": "既然错误可能来自看错信号或推得过于自信，下一步把一次结果变成可复用原则。"
+                },
+                {
+                  "stepId": "memory-problem",
+                  "question": "把旧预测存下来，还缺什么？",
+                  "previousConclusion": "预测既需要找到有用的信号，也需要把证据转成适当的信心。",
+                  "requiredContext": [
+                    {
+                      "atomId": "signal",
+                      "recap": "信号是需要检查适用范围的当前证据维度，不是自动等于答案。",
+                      "neededFor": "说明旧记录应沉淀哪些搜证检查。"
+                    },
+                    {
+                      "atomId": "calibration",
+                      "recap": "校准要求一组预测的信心与实际正确频率匹配。",
+                      "neededFor": "说明旧记录还应沉淀哪些信心控制原则。"
+                    },
+                    {
+                      "atomId": "confidence",
+                      "recap": "信心是这次概率分布的最大候选概率。",
+                      "neededFor": "连接到后续推理记忆的信心更新。"
+                    }
+                  ],
+                  "newConceptGroups": [
+                    {
+                      "id": "reusable-lesson",
+                      "title": "可复用经验",
+                      "atomIds": [
+                        "lesson"
+                      ],
+                      "explanation": "把一次记录抽象成未来可检查的原则。"
+                    },
+                    {
+                      "id": "foco-method",
+                      "title": "方法入口",
+                      "atomIds": [
+                        "foco"
+                      ],
+                      "explanation": "FoCo 负责组织和修订预测专用记忆。"
+                    }
+                  ],
+                  "bridge": "有了可复用原则，FoCo 还要决定哪些同类问题共享这些原则，以及 F/R 各自负责什么。"
+                },
+                {
+                  "stepId": "two-memories",
+                  "question": "两份手册分别存什么？",
+                  "previousConclusion": "下一次需要的是可复用的检查原则，而不只是上一次的事件答案。",
+                  "requiredContext": [
+                    {
+                      "atomId": "lesson",
+                      "recap": "可复用原则来自已揭晓记录，但要服务未来问题而不是复述一个旧答案。",
+                      "neededFor": "解释为什么经验要按任务类型组织。"
+                    },
+                    {
+                      "atomId": "signal",
+                      "recap": "信号是 F 要提醒 Agent 检查的证据维度。",
+                      "neededFor": "理解因子记忆的搜证职责。"
+                    },
+                    {
+                      "atomId": "calibration",
+                      "recap": "校准关心信心与实际正确率是否匹配。",
+                      "neededFor": "理解推理记忆的概率与校准职责。"
+                    }
+                  ],
+                  "newConceptGroups": [
+                    {
+                      "id": "taxonomy-routing",
+                      "title": "分类索引",
+                      "atomIds": [
+                        "taxonomy",
+                        "subcategory"
+                      ],
+                      "explanation": "分类法把问题路由到共享经验的子类别。"
+                    },
+                    {
+                      "id": "dual-guidance",
+                      "title": "双手册分工",
+                      "atomIds": [
+                        "factor",
+                        "reasoning"
+                      ],
+                      "explanation": "F 指导搜证，R 指导证据到信心的概率推理。"
+                    }
+                  ],
+                  "bridge": "分清索引、F 和 R 后，下一步跟着一个新问题看这份记忆如何被取回和使用。"
+                },
+                {
+                  "stepId": "inference",
+                  "question": "新问题来了，手册怎样进入预测？",
+                  "previousConclusion": "同类问题共享两份手册：因子记忆 F 指导看什么，推理记忆 R 指导信多少。",
+                  "requiredContext": [
+                    {
+                      "atomId": "factor",
+                      "recap": "F 仍表示“该检查哪些信号、如何避免误用”的因子手册。",
+                      "neededFor": "说明当前搜证由哪部分记忆引导。"
+                    },
+                    {
+                      "atomId": "reasoning",
+                      "recap": "R 仍表示“证据强弱、冲突和缺失如何改变信心”的推理手册。",
+                      "neededFor": "说明当前概率由哪部分记忆校准。"
+                    },
+                    {
+                      "atomId": "probability",
+                      "recap": "概率预测是对当前候选结果的完整分布，必须受预测时点的信息约束。",
+                      "neededFor": "连接 Agent 输出与预测轨迹。"
+                    }
+                  ],
+                  "newConceptGroups": [
+                    {
+                      "id": "memory-state",
+                      "title": "可检索记忆",
+                      "atomIds": [
+                        "memory"
+                      ],
+                      "explanation": "子类别索引一份由 F/R 组成的双记忆状态。"
+                    },
+                    {
+                      "id": "forecast-record",
+                      "title": "预测过程记录",
+                      "atomIds": [
+                        "trajectory"
+                      ],
+                      "explanation": "预测轨迹保留搜证、解释和概率形成过程。"
+                    }
+                  ],
+                  "bridge": "预测轨迹保留了当时的判断过程；等真实结果揭晓后，才能把它与结果后复盘对照。"
+                },
+                {
+                  "stepId": "update",
+                  "question": "结果揭晓后，怎样把错误变成新经验？",
+                  "previousConclusion": "先定位同类经验，再结合当前证据输出概率，并保留当时的预测轨迹。",
+                  "requiredContext": [
+                    {
+                      "atomId": "trajectory",
+                      "recap": "预测轨迹记录揭晓前搜到什么、怎样解释以及怎样形成概率。",
+                      "neededFor": "作为结果后差异诊断的原预测基线。"
+                    },
+                    {
+                      "atomId": "factor",
+                      "recap": "F 负责信号选择与因子误用提醒；更新时只触及被差异指向的条目。",
+                      "neededFor": "理解局部因子修订。"
+                    },
+                    {
+                      "atomId": "reasoning",
+                      "recap": "R 负责证据到信心的校准原则；更新时修订对应的概率推理规则。",
+                      "neededFor": "理解推理层面的局部修订。"
+                    }
+                  ],
+                  "newConceptGroups": [
+                    {
+                      "id": "post-outcome",
+                      "title": "结果后阶段",
+                      "atomIds": [
+                        "outcome",
+                        "retrospective"
+                      ],
+                      "explanation": "结果揭晓后生成只服务未来记忆的复盘轨迹。"
+                    },
+                    {
+                      "id": "diagnose-aggregate",
+                      "title": "差异处理",
+                      "atomIds": [
+                        "diagnosis",
+                        "aggregation"
+                      ],
+                      "explanation": "对照两条轨迹，分层诊断并聚合可复用模式。"
+                    },
+                    {
+                      "id": "memory-revision",
+                      "title": "局部写回",
+                      "atomIds": [
+                        "revision"
+                      ],
+                      "explanation": "把聚合建议写回受影响的未来记忆内容。"
+                    }
+                  ],
+                  "bridge": "闭环形成后，还要用统一指标和比较条件判断这条记忆机制在实验中表现如何。"
+                },
+                {
+                  "stepId": "evidence",
+                  "question": "实验分别支持哪些结论？",
+                  "previousConclusion": "对照当时预测与结果后复盘，归纳可复用的错误模式，局部修订给未来使用。",
+                  "requiredContext": [
+                    {
+                      "atomId": "probability",
+                      "recap": "概率准确性看完整分布离真实结果有多远；真实结果对应候选记为 1，其他候选记为 0。",
+                      "neededFor": "理解 Brier 的评价对象。"
+                    },
+                    {
+                      "atomId": "confidence",
+                      "recap": "信心取每次预测分布的最大概率。",
+                      "neededFor": "理解 ECE 的分箱输入。"
+                    },
+                    {
+                      "atomId": "calibration",
+                      "recap": "校准要求信心与一组预测的实际正确率匹配。",
+                      "neededFor": "理解 ECE 的含义。"
+                    }
+                  ],
+                  "newConceptGroups": [
+                    {
+                      "id": "metrics",
+                      "title": "评价指标",
+                      "atomIds": [
+                        "brier",
+                        "ece"
+                      ],
+                      "explanation": "Brier 看概率距离，ECE 看信心与正确率的匹配。"
+                    },
+                    {
+                      "id": "comparison-design",
+                      "title": "比较版本",
+                      "atomIds": [
+                        "comparison",
+                        "base",
+                        "static",
+                        "ablation"
+                      ],
+                      "explanation": "主方法、无记忆、静态记忆和 F/R 消融在固定条件下对照。"
+                    },
+                    {
+                      "id": "evidence-claims",
+                      "title": "表格证据",
+                      "atomIds": [
+                        "table1-result",
+                        "table3-ablation"
+                      ],
+                      "explanation": "Table 1 支持总体均值，Table 3 支持固定条件下的组件对照。"
+                    }
+                  ],
+                  "bridge": "指标和表格回答了比较是否成立；最后把模型、数据、时间和待核实项收回一张配置卡。"
+                },
+                {
+                  "stepId": "reproduction",
+                  "question": "研究者现在能据此复现什么？",
+                  "previousConclusion": "主结果看整体效果，静态对照看持续修订，去 F/R 对照看同条件性能差异。",
+                  "requiredContext": [
+                    {
+                      "atomId": "protocol",
+                      "recap": "共同时间协议要求记忆只由已揭晓问题更新，并服务未来未揭晓问题。",
+                      "neededFor": "固定复现时的信息边界。"
+                    },
+                    {
+                      "atomId": "brier",
+                      "recap": "Brier 是多类概率分布与真实结果之间的平方误差和，越低越好。",
+                      "neededFor": "保持结果表的准确性口径。"
+                    },
+                    {
+                      "atomId": "ece",
+                      "recap": "ECE 按最大概率信心分箱比较正确率与信心，越低越好。",
+                      "neededFor": "保持结果表的校准口径。"
+                    }
+                  ],
+                  "newConceptGroups": [
+                    {
+                      "id": "reproduction-config",
+                      "title": "复现配置",
+                      "atomIds": [
+                        "config"
+                      ],
+                      "explanation": "把协议、模型、数据、指标和待核实项放在同一入口。"
+                    }
+                  ],
+                  "bridge": "配置缺项补齐后，才能把这套闭环迁移到新项目并重新检验，而不能把原表数字当成迁移保证。"
+                }
+              ]
+            },
+            "visualContext": {
+              "schemaVersion": 1,
+              "notebook": {
+                "root": {
+                  "type": "representation",
+                  "id": "notebook-root-rep"
+                },
+                "branches": [
+                  {
+                    "id": "probability",
+                    "title": "概率与时间",
+                    "side": "left",
+                    "anchor": {
+                      "type": "representation",
+                      "id": "notebook-step-probability-rep"
+                    }
+                  },
+                  {
+                    "id": "signal-confidence",
+                    "title": "信号与信心",
+                    "side": "left",
+                    "anchor": {
+                      "type": "representation",
+                      "id": "notebook-step-signal-confidence-rep"
+                    }
+                  },
+                  {
+                    "id": "memory-problem",
+                    "title": "经验要能复用",
+                    "side": "left",
+                    "anchor": {
+                      "type": "representation",
+                      "id": "notebook-step-memory-problem-rep"
+                    }
+                  },
+                  {
+                    "id": "two-memories",
+                    "title": "双记忆分工",
+                    "side": "left",
+                    "anchor": {
+                      "type": "representation",
+                      "id": "notebook-step-two-memories-rep"
+                    }
+                  },
+                  {
+                    "id": "inference",
+                    "title": "一次新预测",
+                    "side": "right",
+                    "anchor": {
+                      "type": "representation",
+                      "id": "notebook-step-inference-rep"
+                    }
+                  },
+                  {
+                    "id": "update",
+                    "title": "结果后修订",
+                    "side": "right",
+                    "anchor": {
+                      "type": "representation",
+                      "id": "notebook-step-update-rep"
+                    }
+                  },
+                  {
+                    "id": "evidence",
+                    "title": "怎样评价证据",
+                    "side": "right",
+                    "anchor": {
+                      "type": "representation",
+                      "id": "notebook-step-evidence-rep"
+                    }
+                  },
+                  {
+                    "id": "reproduction",
+                    "title": "怎样统一复现",
+                    "side": "right",
+                    "anchor": {
+                      "type": "representation",
+                      "id": "notebook-step-reproduction-rep"
+                    }
+                  }
+                ]
+              },
+              "figures": [
+                {
+                  "id": "figure-probability",
+                  "stepId": "probability",
+                  "title": "从待预测问题到概率分配",
+                  "diagramKind": "时间边界与概率分配示意",
+                  "sourceKind": "source_reported",
+                  "annotation": "讲解示意，不是论文界面或本机预测结果。",
+                  "resourceId": "pilot-concept-probability-315c4783dbf4aab3",
+                  "elementId": "notebook-diagram-probability",
+                  "partCount": 4
+                },
+                {
+                  "id": "figure-signal-confidence",
+                  "stepId": "signal-confidence",
+                  "title": "信号、信心与校准",
+                  "diagramKind": "证据信号到校准判断示意",
+                  "sourceKind": "source_reported",
+                  "annotation": "信号不自动等于答案；所有信号都受时间协议约束。",
+                  "resourceId": "pilot-concept-signal-confidence-e4084c6a3915ba56",
+                  "elementId": "notebook-diagram-signal-confidence",
+                  "partCount": 4
+                },
+                {
+                  "id": "figure-memory-problem",
+                  "stepId": "memory-problem",
+                  "title": "从一次结果记录到可复用原则",
+                  "diagramKind": "经验抽象为两类原则示意",
+                  "sourceKind": "mixed",
+                  "annotation": "两类原则是教学分工；不表示论文把它们做成可独立相加的因果模块。",
+                  "resourceId": "pilot-concept-memory-problem-f7b00095e18fbecb",
+                  "elementId": "notebook-diagram-memory-problem",
+                  "partCount": 6
+                },
+                {
+                  "id": "figure-two-memories",
+                  "stepId": "two-memories",
+                  "title": "类别文件夹如何分出双记忆",
+                  "diagramKind": "分类索引与双记忆分枝示意",
+                  "sourceKind": "source_reported",
+                  "annotation": "讲解例：文件夹类比；不是论文 UI 截图或新增论文实体。",
+                  "resourceId": "pilot-concept-two-memories-5f69493c41245aa0",
+                  "elementId": "notebook-diagram-two-memories",
+                  "partCount": 6
+                },
+                {
+                  "id": "figure-inference",
+                  "stepId": "inference",
+                  "title": "双记忆进入一次新预测",
+                  "diagramKind": "F/R 两路进入搜证与概率示意",
+                  "sourceKind": "source_reported",
+                  "annotation": "图中箭头是方法输入/输出关系，不是把 F/R 声称成独立可加模块。",
+                  "resourceId": "pilot-concept-inference-68ce84caa6bbcabf",
+                  "elementId": "notebook-diagram-inference",
+                  "partCount": 8
+                },
+                {
+                  "id": "figure-update",
+                  "stepId": "update",
+                  "title": "结果前后双轨如何形成记忆修订",
+                  "diagramKind": "预测轨迹与复盘轨迹对照、诊断聚合、记忆修订示意",
+                  "sourceKind": "source_reported",
+                  "annotation": "结果后信息只作为学习信号，不能倒灌成原预测输入。",
+                  "resourceId": "pilot-concept-update-7cfde2e39231a769",
+                  "elementId": "notebook-diagram-update",
+                  "partCount": 8
+                },
+                {
+                  "id": "figure-evidence",
+                  "stepId": "evidence",
+                  "title": "Brier/ECE 两个评价视角与证据分层",
+                  "diagramKind": "指标、主结果与消融证据示意",
+                  "sourceKind": "mixed",
+                  "annotation": "Brier 看概率距离；ECE 看信心匹配；主结果与组件消融回答不同问题。",
+                  "resourceId": "pilot-concept-evidence-91beaade28b371b2",
+                  "elementId": "notebook-diagram-evidence",
+                  "partCount": 11
+                },
+                {
+                  "id": "figure-reproduction",
+                  "stepId": "reproduction",
+                  "title": "固定配置后分出独立实验臂",
+                  "diagramKind": "复现约束与比较版本示意",
+                  "sourceKind": "mixed",
+                  "annotation": "实验臂表示比较设计，不表示本图已经执行复现。",
+                  "resourceId": "pilot-concept-reproduction-168328f3c277f701",
+                  "elementId": "notebook-diagram-reproduction",
+                  "partCount": 6
+                }
+              ],
+              "omissions": [
+                "图解部件映射保存在对应自由元素 customData.conceptFigure.parts，请按 elementId 扩读。"
+              ],
+              "relationPlacementIsNotExecution": true
+            }
+          },
+          "organization": {
+            "schemaVersion": 1,
+            "defaultIntent": "understand",
+            "defaultClusterId": "two-memories",
+            "clusters": [
+              {
+                "id": "probability",
+                "title": "概率与时间",
+                "question": "预测未来，究竟在预测什么？",
+                "purpose": "建立预测问题、概率答案和时间边界。",
+                "notation": "mindmap",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-probability-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-forecast-question"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-agent"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-probability"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-protocol"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-probability"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-probability"
+                  }
+                ],
+                "essential": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-forecast-question"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-probability"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-probability"
+                  }
+                ],
+                "entry": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-forecast-question"
+                  }
+                ],
+                "exit": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-probability"
+                  }
+                ],
+                "parentId": null,
+                "order": 0
+              },
+              {
+                "id": "signal-confidence",
+                "title": "信号与信心",
+                "question": "查到了新闻，为什么还是会判断差？",
+                "purpose": "把当前证据、预测信心和校准分开。",
+                "notation": "flow",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-signal-confidence-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-signal"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-confidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-calibration"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-signal-confidence"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-signal-confidence"
+                  }
+                ],
+                "essential": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-signal"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-confidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-calibration"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-signal-confidence"
+                  }
+                ],
+                "entry": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-signal"
+                  }
+                ],
+                "exit": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-calibration"
+                  }
+                ],
+                "parentId": null,
+                "order": 1
+              },
+              {
+                "id": "memory-problem",
+                "title": "经验要能复用",
+                "question": "把旧预测存下来，还缺什么？",
+                "purpose": "说明为什么需要可复用的预测原则，而不是事件答案。",
+                "notation": "mindmap",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-memory-problem-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-lesson"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-foco"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-memory-problem"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-memory-problem"
+                  }
+                ],
+                "essential": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-lesson"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-foco"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-memory-problem"
+                  }
+                ],
+                "entry": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-lesson"
+                  }
+                ],
+                "exit": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-foco"
+                  }
+                ],
+                "parentId": null,
+                "order": 2
+              },
+              {
+                "id": "two-memories",
+                "title": "双记忆分工",
+                "question": "两份手册分别存什么？",
+                "purpose": "说明分类索引、因子记忆和推理记忆的职责分工。",
+                "notation": "mindmap",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-two-memories-rep"
+                },
+                "members": [
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-two-memories"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-two-memories"
+                  }
+                ],
+                "essential": [
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-two-memories"
+                  }
+                ],
+                "entry": [],
+                "exit": [],
+                "parentId": null,
+                "order": 3
+              },
+              {
+                "id": "two-memories-index",
+                "title": "先找到共同类别",
+                "notation": "mindmap",
+                "parentId": "two-memories",
+                "order": 0,
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-concept-taxonomy"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-subcategory"
+                  }
+                ]
+              },
+              {
+                "id": "two-memories-factor",
+                "title": "F：看什么信号",
+                "notation": "mindmap",
+                "parentId": "two-memories",
+                "order": 1,
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-concept-factor"
+                },
+                "members": []
+              },
+              {
+                "id": "two-memories-reasoning",
+                "title": "R：信多少",
+                "notation": "mindmap",
+                "parentId": "two-memories",
+                "order": 2,
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-concept-reasoning"
+                },
+                "members": []
+              },
+              {
+                "id": "inference",
+                "title": "一次新预测",
+                "question": "新问题来了，手册怎样进入预测？",
+                "purpose": "展示记忆如何进入一次新预测并留下轨迹。",
+                "notation": "flow",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-inference-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-memory"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-trajectory"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-inference"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-inference"
+                  }
+                ],
+                "essential": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-memory"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-trajectory"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-inference"
+                  }
+                ],
+                "entry": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-memory"
+                  }
+                ],
+                "exit": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-trajectory"
+                  }
+                ],
+                "parentId": null,
+                "order": 4
+              },
+              {
+                "id": "update",
+                "title": "结果后修订",
+                "question": "结果揭晓后，怎样把错误变成新经验？",
+                "purpose": "展示结果揭晓后的复盘、诊断、聚合和局部修订。",
+                "notation": "mixed",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-update-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-outcome"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-retrospective"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-diagnosis"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-aggregation"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-revision"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-update"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-update"
+                  }
+                ],
+                "essential": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-diagnosis"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-aggregation"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-revision"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-update"
+                  }
+                ],
+                "entry": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-outcome"
+                  }
+                ],
+                "exit": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-revision"
+                  }
+                ],
+                "parentId": null,
+                "order": 5
+              },
+              {
+                "id": "evidence",
+                "title": "怎样评价证据",
+                "question": "实验分别支持哪些结论？",
+                "purpose": "把主结果、持续更新和 F/R 消融放在同一比较范围内。",
+                "notation": "mixed",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-evidence-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-brier"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-ece"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-comparison"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-base"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-static"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-ablation"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-table1-result"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-table3-ablation"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-evidence"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-evidence"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "representation-750688ce-e527-4bd5-8bb9-3658d2c26a40"
+                  }
+                ],
+                "essential": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-brier"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-ece"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-comparison"
+                  },
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-table1-result"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-evidence"
+                  }
+                ],
+                "entry": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-comparison"
+                  }
+                ],
+                "exit": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-table1-result"
+                  }
+                ],
+                "parentId": null,
+                "order": 6
+              },
+              {
+                "id": "reproduction",
+                "title": "怎样统一复现",
+                "question": "研究者现在能据此复现什么？",
+                "purpose": "集中配置、时间协议、指标和待核实复现入口。",
+                "notation": "flow",
+                "anchor": {
+                  "type": "representation",
+                  "id": "notebook-step-reproduction-rep"
+                },
+                "members": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-config"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-reproduction"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-prose-reproduction"
+                  }
+                ],
+                "essential": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-config"
+                  },
+                  {
+                    "type": "element",
+                    "id": "notebook-diagram-reproduction"
+                  }
+                ],
+                "entry": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-concept-config"
+                  }
+                ],
+                "exit": [
+                  {
+                    "type": "representation",
+                    "id": "notebook-step-reproduction-rep"
+                  }
+                ],
+                "parentId": null,
+                "order": 7
+              }
+            ],
+            "links": [
+              {
+                "id": "organization-probability-signal-confidence",
+                "from": "probability",
+                "to": "signal-confidence",
+                "label": "跨簇知识门户：概率与时间 → 信号与信心",
+                "relationIds": [
+                  "knowledge-e-probability-confidence",
+                  "knowledge-e-protocol-signal"
+                ]
+              },
+              {
+                "id": "organization-signal-confidence-memory-problem",
+                "from": "signal-confidence",
+                "to": "memory-problem",
+                "label": "跨簇知识门户：信号与信心 → 经验要能复用",
+                "relationIds": [
+                  "knowledge-e-signal-lesson",
+                  "knowledge-e-calibration-lesson"
+                ]
+              },
+              {
+                "id": "organization-probability-memory-problem",
+                "from": "probability",
+                "to": "memory-problem",
+                "label": "跨簇知识门户：概率与时间 → 经验要能复用",
+                "relationIds": [
+                  "knowledge-e-protocol-lesson"
+                ]
+              },
+              {
+                "id": "organization-memory-problem-two-memories",
+                "from": "memory-problem",
+                "to": "two-memories",
+                "label": "跨簇知识门户：经验要能复用 → 双记忆分工",
+                "relationIds": [
+                  "knowledge-e-foco-taxonomy"
+                ]
+              },
+              {
+                "id": "organization-memory-problem-inference",
+                "from": "memory-problem",
+                "to": "inference",
+                "label": "跨簇知识门户：经验要能复用 → 一次新预测",
+                "relationIds": [
+                  "knowledge-e-foco-memory"
+                ]
+              },
+              {
+                "id": "organization-two-memories-inference",
+                "from": "two-memories",
+                "to": "inference",
+                "label": "跨簇知识门户：双记忆分工 → 一次新预测",
+                "relationIds": [
+                  "knowledge-e-subcategory-memory",
+                  "knowledge-e-taxonomy-memory",
+                  "knowledge-e-factor-trajectory"
+                ]
+              },
+              {
+                "id": "organization-inference-two-memories",
+                "from": "inference",
+                "to": "two-memories",
+                "label": "跨簇知识门户：一次新预测 → 双记忆分工",
+                "relationIds": [
+                  "knowledge-e-memory-factor",
+                  "knowledge-e-memory-reasoning"
+                ]
+              },
+              {
+                "id": "organization-inference-probability",
+                "from": "inference",
+                "to": "probability",
+                "label": "跨簇知识门户：一次新预测 → 概率与时间",
+                "relationIds": [
+                  "knowledge-e-memory-agent",
+                  "knowledge-e-trajectory-probability"
+                ]
+              },
+              {
+                "id": "organization-two-memories-signal-confidence",
+                "from": "two-memories",
+                "to": "signal-confidence",
+                "label": "跨簇知识门户：双记忆分工 → 信号与信心",
+                "relationIds": [
+                  "knowledge-e-factor-signal",
+                  "knowledge-e-reasoning-calibration"
+                ]
+              },
+              {
+                "id": "organization-two-memories-probability",
+                "from": "two-memories",
+                "to": "probability",
+                "label": "跨簇知识门户：双记忆分工 → 概率与时间",
+                "relationIds": [
+                  "knowledge-e-reasoning-probability"
+                ]
+              },
+              {
+                "id": "organization-probability-inference",
+                "from": "probability",
+                "to": "inference",
+                "label": "跨簇知识门户：概率与时间 → 一次新预测",
+                "relationIds": [
+                  "knowledge-e-agent-trajectory",
+                  "knowledge-e-protocol-trajectory",
+                  "knowledge-e-question-trajectory"
+                ]
+              },
+              {
+                "id": "organization-update-inference",
+                "from": "update",
+                "to": "inference",
+                "label": "跨簇知识门户：结果后修订 → 一次新预测",
+                "relationIds": [
+                  "knowledge-e-trajectory-retrospective",
+                  "knowledge-e-revision-memory"
+                ]
+              },
+              {
+                "id": "organization-inference-update",
+                "from": "inference",
+                "to": "update",
+                "label": "跨簇知识门户：一次新预测 → 结果后修订",
+                "relationIds": [
+                  "knowledge-e-trajectory-diagnosis"
+                ]
+              },
+              {
+                "id": "organization-update-two-memories",
+                "from": "update",
+                "to": "two-memories",
+                "label": "跨簇知识门户：结果后修订 → 双记忆分工",
+                "relationIds": [
+                  "knowledge-e-revision-factor",
+                  "knowledge-e-revision-reasoning"
+                ]
+              },
+              {
+                "id": "organization-probability-update",
+                "from": "probability",
+                "to": "update",
+                "label": "跨簇知识门户：概率与时间 → 结果后修订",
+                "relationIds": [
+                  "knowledge-e-protocol-revision"
+                ]
+              },
+              {
+                "id": "organization-evidence-probability",
+                "from": "evidence",
+                "to": "probability",
+                "label": "跨簇知识门户：怎样评价证据 → 概率与时间",
+                "relationIds": [
+                  "knowledge-e-brier-probability"
+                ]
+              },
+              {
+                "id": "organization-evidence-signal-confidence",
+                "from": "evidence",
+                "to": "signal-confidence",
+                "label": "跨簇知识门户：怎样评价证据 → 信号与信心",
+                "relationIds": [
+                  "knowledge-e-ece-confidence",
+                  "knowledge-e-ece-calibration"
+                ]
+              },
+              {
+                "id": "organization-inference-evidence",
+                "from": "inference",
+                "to": "evidence",
+                "label": "跨簇知识门户：一次新预测 → 怎样评价证据",
+                "relationIds": [
+                  "knowledge-e-trajectory-comparison"
+                ]
+              },
+              {
+                "id": "organization-evidence-memory-problem",
+                "from": "evidence",
+                "to": "memory-problem",
+                "label": "跨簇知识门户：怎样评价证据 → 经验要能复用",
+                "relationIds": [
+                  "knowledge-e-comparison-foco"
+                ]
+              },
+              {
+                "id": "organization-evidence-two-memories",
+                "from": "evidence",
+                "to": "two-memories",
+                "label": "跨簇知识门户：怎样评价证据 → 双记忆分工",
+                "relationIds": [
+                  "knowledge-e-ablation-factor",
+                  "knowledge-e-ablation-reasoning"
+                ]
+              },
+              {
+                "id": "organization-reproduction-probability",
+                "from": "reproduction",
+                "to": "probability",
+                "label": "跨簇知识门户：怎样统一复现 → 概率与时间",
+                "relationIds": [
+                  "knowledge-e-config-protocol"
+                ]
+              },
+              {
+                "id": "organization-reproduction-evidence",
+                "from": "reproduction",
+                "to": "evidence",
+                "label": "跨簇知识门户：怎样统一复现 → 怎样评价证据",
+                "relationIds": [
+                  "knowledge-e-config-comparison"
+                ]
+              },
+              {
+                "id": "organization-update-evidence",
+                "from": "update",
+                "to": "evidence",
+                "label": "从修订闭环进入实验评价"
+              },
+              {
+                "id": "organization-evidence-reproduction",
+                "from": "evidence",
+                "to": "reproduction",
+                "label": "从比较证据回到复现配置"
+              }
+            ],
+            "source": "spatial-notebook-r133-read-only-enrichment",
+            "layoutOwnerByRef": {
+              "representation:notebook-step-probability-rep": "probability",
+              "representation:notebook-concept-forecast-question": "probability",
+              "representation:notebook-concept-agent": "probability",
+              "representation:notebook-concept-probability": "probability",
+              "representation:notebook-concept-protocol": "probability",
+              "element:notebook-diagram-probability": "probability",
+              "element:notebook-prose-probability": "probability",
+              "representation:notebook-step-signal-confidence-rep": "signal-confidence",
+              "representation:notebook-concept-signal": "signal-confidence",
+              "representation:notebook-concept-confidence": "signal-confidence",
+              "representation:notebook-concept-calibration": "signal-confidence",
+              "element:notebook-diagram-signal-confidence": "signal-confidence",
+              "element:notebook-prose-signal-confidence": "signal-confidence",
+              "representation:notebook-step-memory-problem-rep": "memory-problem",
+              "representation:notebook-concept-lesson": "memory-problem",
+              "representation:notebook-concept-foco": "memory-problem",
+              "element:notebook-diagram-memory-problem": "memory-problem",
+              "element:notebook-prose-memory-problem": "memory-problem",
+              "representation:notebook-step-two-memories-rep": "two-memories",
+              "element:notebook-diagram-two-memories": "two-memories",
+              "element:notebook-prose-two-memories": "two-memories",
+              "representation:notebook-concept-taxonomy": "two-memories-index",
+              "representation:notebook-concept-subcategory": "two-memories-index",
+              "representation:notebook-concept-factor": "two-memories-factor",
+              "representation:notebook-concept-reasoning": "two-memories-reasoning",
+              "representation:notebook-step-inference-rep": "inference",
+              "representation:notebook-concept-memory": "inference",
+              "representation:notebook-concept-trajectory": "inference",
+              "element:notebook-diagram-inference": "inference",
+              "element:notebook-prose-inference": "inference",
+              "representation:notebook-step-update-rep": "update",
+              "representation:notebook-concept-outcome": "update",
+              "representation:notebook-concept-retrospective": "update",
+              "representation:notebook-concept-diagnosis": "update",
+              "representation:notebook-concept-aggregation": "update",
+              "representation:notebook-concept-revision": "update",
+              "element:notebook-diagram-update": "update",
+              "element:notebook-prose-update": "update",
+              "representation:notebook-step-evidence-rep": "evidence",
+              "representation:notebook-concept-brier": "evidence",
+              "representation:notebook-concept-ece": "evidence",
+              "representation:notebook-concept-comparison": "evidence",
+              "representation:notebook-concept-base": "evidence",
+              "representation:notebook-concept-static": "evidence",
+              "representation:notebook-concept-ablation": "evidence",
+              "representation:notebook-concept-table1-result": "evidence",
+              "representation:notebook-concept-table3-ablation": "evidence",
+              "element:notebook-diagram-evidence": "evidence",
+              "element:notebook-prose-evidence": "evidence",
+              "representation:representation-750688ce-e527-4bd5-8bb9-3658d2c26a40": "evidence",
+              "representation:notebook-step-reproduction-rep": "reproduction",
+              "representation:notebook-concept-config": "reproduction",
+              "element:notebook-diagram-reproduction": "reproduction",
+              "element:notebook-prose-reproduction": "reproduction"
+            },
+            "upgrade": {
+              "source": "canonical-organization",
+              "ownerPolicy": "first-stable-membership-unless-explicit-owner",
+              "candidateOnly": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "source": "canonical-organization",
+    "clusters": 11,
+    "links": 24,
+    "ownerMappings": 54,
+    "sharedMemberships": 0,
+    "nestedHierarchy": {
+      "parentId": "two-memories",
+      "parentTitle": "双记忆分工",
+      "parentAnchor": {
+        "type": "representation",
+        "id": "notebook-step-two-memories-rep"
+      },
+      "retainedParentMembers": [
+        {
+          "type": "element",
+          "id": "notebook-diagram-two-memories"
+        },
+        {
+          "type": "element",
+          "id": "notebook-prose-two-memories"
+        }
+      ],
+      "removedFromParent": [
+        {
+          "type": "representation",
+          "id": "notebook-concept-taxonomy"
+        },
+        {
+          "type": "representation",
+          "id": "notebook-concept-subcategory"
+        },
+        {
+          "type": "representation",
+          "id": "notebook-concept-factor"
+        },
+        {
+          "type": "representation",
+          "id": "notebook-concept-reasoning"
+        }
+      ],
+      "addedChildren": [
+        {
+          "id": "two-memories-index",
+          "title": "先找到共同类别",
+          "parentId": "two-memories",
+          "anchor": {
+            "type": "representation",
+            "id": "notebook-concept-taxonomy"
+          },
+          "members": [
+            {
+              "type": "representation",
+              "id": "notebook-concept-subcategory"
+            }
+          ],
+          "notation": "mindmap",
+          "order": 0
+        },
+        {
+          "id": "two-memories-factor",
+          "title": "F：看什么信号",
+          "parentId": "two-memories",
+          "anchor": {
+            "type": "representation",
+            "id": "notebook-concept-factor"
+          },
+          "members": [],
+          "notation": "mindmap",
+          "order": 1
+        },
+        {
+          "id": "two-memories-reasoning",
+          "title": "R：信多少",
+          "parentId": "two-memories",
+          "anchor": {
+            "type": "representation",
+            "id": "notebook-concept-reasoning"
+          },
+          "members": [],
+          "notation": "mindmap",
+          "order": 2
+        }
+      ],
+      "parallelSiblings": [
+        "two-memories-factor",
+        "two-memories-reasoning"
+      ],
+      "addedLinks": 0
+    },
+    "preservedNonOrganizationMetadata": true,
+    "geometryOperations": 0,
+    "relationOperations": 0,
+    "entityOperations": 0,
+    "freeElementOperations": 0,
+    "liveWritePerformed": false
+  },
+  "reviewGates": [
+    "Immediately re-read the current graph and reject this candidate when baseRevision is stale.",
+    "Run expression_validate with an explicit graph target and action=organize or mixed before any apply.",
+    "Confirm graph.metadata.notebook, text boxes, diagrams, source image/resource references, and historical fields are unchanged.",
+    "Confirm every layoutOwnerByRef value points to a cluster containing that stable placement; shared membership remains reference-rendered outside its owner.",
+    "Keep this output as a root-owned candidate/preflight record; this generator never calls a live service."
+  ]
+}

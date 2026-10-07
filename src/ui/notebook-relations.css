@@ -1,0 +1,263 @@
+.notebook-relations-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+  user-select: none;
+}
+
+.notebook-relations-layer.is-interactive {
+  pointer-events: auto;
+}
+
+.notebook-relations-world,
+.notebook-relation {
+  pointer-events: none;
+}
+
+.notebook-relations-layer.is-interactive .notebook-relation-hit {
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+.notebook-relation-path {
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  transition: stroke-opacity 120ms ease, stroke-width 120ms ease, filter 120ms ease;
+}
+
+.notebook-relation-hit {
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.notebook-relation-endpoints {
+  pointer-events: none;
+}
+
+.notebook-relation-endpoint {
+  vector-effect: non-scaling-stroke;
+  fill: #fffdf7;
+  stroke: currentColor;
+  stroke-width: 1.5px;
+}
+
+.notebook-relation-label-box {
+  pointer-events: none;
+}
+
+.notebook-relations-layer.is-interactive .notebook-relation-label-background {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.notebook-relation-label-background {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1px;
+}
+
+.notebook-relation-label {
+  pointer-events: none;
+  font-family: "Avenir Next", "PingFang SC", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  user-select: none;
+}
+
+.notebook-relation-feedback .notebook-relation-path {
+  stroke-dasharray: 8 6;
+}
+
+.notebook-relation-reference .notebook-relation-path {
+  stroke-dasharray: 3 6;
+}
+
+.notebook-relation-branch .notebook-relation-path {
+  stroke-linecap: round;
+}
+
+.notebook-relation.is-selected .notebook-relation-path {
+  stroke-width: 3.8px;
+  stroke-opacity: 1;
+  filter: drop-shadow(0 0 2px rgba(35, 58, 65, .25));
+}
+
+.notebook-relation.is-selected .notebook-relation-label {
+  font-weight: 700;
+}
+
+.notebook-relation.is-adjacent .notebook-relation-path {
+  stroke-width: 3.1px;
+  stroke-opacity: 1;
+}
+
+.notebook-relation.is-highlighted .notebook-relation-path {
+  stroke-width: 3.4px;
+  stroke-opacity: 1;
+  filter: drop-shadow(0 0 2px rgba(196, 119, 63, .34));
+}
+
+.notebook-relation.is-highlighted .notebook-relation-label-background {
+  stroke-width: 1.75px;
+}
+
+.notebook-relation.is-muted {
+  opacity: .24;
+}
+
+.notebook-relation.is-muted .notebook-relation-label-box {
+  opacity: .68;
+}
+
+.notebook-relations-layer.has-focus .notebook-relation.is-selected,
+.notebook-relations-layer.has-focus .notebook-relation.is-adjacent,
+.notebook-relations-layer.has-focus .notebook-relation.is-highlighted {
+  opacity: 1;
+}
+
+.notebook-relation:focus,
+.notebook-relation:focus-visible {
+  /* Browsers draw a large rectangle around the focused SVG <g>. The path,
+   * endpoint, and label cues below carry the semantic focus affordance. */
+  outline: none;
+}
+
+.notebook-relation:focus-visible .notebook-relation-path {
+  stroke-width: 3.6px;
+  stroke-opacity: 1;
+  filter: drop-shadow(0 0 2px rgba(28, 78, 102, .42));
+}
+
+.notebook-relation:focus-visible .notebook-relation-endpoints {
+  opacity: 1;
+}
+
+.notebook-relation:focus-visible .notebook-relation-endpoint {
+  stroke-width: 2.25px;
+  filter: drop-shadow(0 0 2px rgba(28, 78, 102, .34));
+}
+
+.notebook-relation:focus-visible .notebook-relation-label-background {
+  stroke-width: 2px;
+  stroke: #1c4e66;
+}
+
+.notebook-relations-layer:not(.is-interactive) .notebook-relation-hit {
+  pointer-events: none;
+}
+
+/* A selected relation gets a readable, screen-space explanation above the
+ * bottom interaction and selection toolbars. Only this bounded panel owns
+ * pointer events; the rest of the canvas remains available for panning. */
+.notebook-relation-detail-panel {
+  position: absolute;
+  left: 16px;
+  bottom: 112px;
+  /* Above the HTML content layer (3), below the fixed canvas controls. */
+  z-index: 6;
+  box-sizing: border-box;
+  width: min(360px, calc(100% - 32px));
+  max-width: calc(100% - 32px);
+  max-height: min(38vh, 320px);
+  overflow: auto;
+  padding: 10px 13px 11px;
+  border: 1px solid rgba(74, 108, 96, .38);
+  border-left: 3px solid #5d806a;
+  border-radius: 8px;
+  color: #29453a;
+  background: rgba(255, 253, 247, .94);
+  box-shadow: 0 5px 18px rgba(44, 62, 50, .14);
+  font: 13px/1.5 "Avenir Next", "PingFang SC", "Helvetica Neue", sans-serif;
+  user-select: text;
+  pointer-events: auto;
+}
+
+.notebook-relation-detail-kicker,
+.notebook-relation-detail-caption {
+  color: #719078;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.relation-route-editor-controls { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:8px 0; padding:7px 0; border-top:1px solid #cfdbcc; border-bottom:1px solid #cfdbcc; }
+.relation-route-editor-controls button { border:1px solid #a5bdad; border-radius:5px; padding:5px 9px; color:#294d3b; background:#f3f7ee; font:inherit; cursor:pointer; }
+.relation-route-editor-controls button:disabled { opacity:.45; cursor:default; }
+.relation-route-editor-controls span { width:100%; font-size:11px; color:#607465; }
+.relation-route-editor-controls .route-editor-warning { color:#a44032; }
+.relation-route-editor-overlay { position:absolute; inset:0; z-index:5; pointer-events:none; overflow:visible; }
+.relation-route-segment-handle { pointer-events:all; touch-action:none; fill:#fffdf7; stroke:#347493; stroke-width:2px; vector-effect:non-scaling-stroke; }
+.relation-route-segment-handle.axis-x { cursor:ew-resize; }
+.relation-route-segment-handle.axis-y { cursor:ns-resize; }
+.relation-route-segment-handle:focus-visible { outline:none; fill:#d9eff1; stroke-width:3px; }
+
+.notebook-relation-detail-label {
+  display: block;
+  margin-top: 1px;
+  color: #234b38;
+  font-size: 14px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.notebook-relation-detail-endpoints {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin-top: 5px;
+  color: #426657;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.notebook-relation-detail-arrow {
+  flex: 0 0 auto;
+  color: #a96b43;
+  font-size: 15px;
+}
+
+.notebook-relation-detail-section {
+  margin-top: 7px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(91, 124, 105, .18);
+}
+
+.notebook-relation-detail-section p {
+  margin: 2px 0 0;
+  color: #40594d;
+  overflow-wrap: anywhere;
+}
+
+.notebook-relation-detail-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 12px;
+  margin: 2px 0 0;
+  padding-left: 16px;
+  color: #40594d;
+}
+
+@media (max-width: 560px) {
+  .notebook-relation-detail-panel {
+    left: 10px;
+    right: 10px;
+    bottom: 124px;
+    width: auto;
+    max-width: calc(100% - 20px);
+    max-height: min(38vh, 280px);
+  }
+}
+
+.notebook-relation-bus-path, .notebook-relation-bus-hit { vector-effect:non-scaling-stroke; stroke-linecap:round; stroke-linejoin:round; pointer-events:none; }
+.notebook-relation-junction { pointer-events:none; }
+.notebook-relations-layer.is-interactive .notebook-relation-bus-hit { pointer-events:stroke; cursor:pointer; }
+.notebook-relation-bus.is-active .notebook-relation-bus-path, .notebook-relation.is-bus-selected .notebook-relation-path { stroke-opacity:1; stroke-width:3.4px; }
+.notebook-relation-bus-hit:focus-visible { outline:none; stroke:rgba(52,116,147,.16); }
+.notebook-relations-layer.has-focus .notebook-relation.is-bus-selected { opacity:1; }
+.relation-bus-member-list { display:flex; flex-wrap:wrap; gap:6px; }
+.relation-bus-member-list button { font:inherit; border:1px solid #b9caba; border-radius:5px; padding:4px 8px; color:#294d3b; background:#f5f8f1; cursor:pointer; }

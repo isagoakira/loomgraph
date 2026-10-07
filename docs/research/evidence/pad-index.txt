@@ -1,0 +1,168 @@
+Pad++ Papers
+Papers we have written
+Application Papers
+System Papers
+1998
+Graphical Multiscale Web Histories:
+A Study of PadPrints
+Hightower, R.R., Ring, L.T., Helfman, J.I., Bederson, B.B., and Hollan, J.D.
+ACM Conference on Hypertext
+1998
+HTML
+,
+Postscript
+(5,130K),
+PDF
+(116K)
+Implementing a Zooming User Interface:
+Experience Building Pad++
+Bederson, B., Meyer, J.
+Software: Practice and Experience
+,
+1998 (in press).
+Postscript
+(865K),
+PDF
+(297K)
+A Zooming Web Browser
+- (This one describes the Pad++ Web browser with a user study comparing
+it to Netscape)
+Bederson, B.B., Hollan, J.D., Stewart, J., Rogers, D., Vick, D.,
+Ring, L.T., Grose, E., Forsythe, C.
+Human Factors in Web Development
+,
+Eds. Ratner, Grose, and Forsythe, Lawrence Erlbaum Assoc., pp 255-266, 1998.
+HTML
+When Two Hands Are Better Than One:
+Enhancing Collaboration Using Single Display Groupware
+Stewart, J., Raybourn, E.M., Bederson, B.B., Druin, A.
+ACM CHI 98 Summary
+, 1998.
+HTML
+,
+Postscript
+(46K),
+PDF
+(12K)
+1997
+KidPad: A Design Collaboration Between Children,
+Technologists, and Educators
+Druin, A., Stewart, J., Proft, D., Bederson, B.B., Hollan, J.D.
+ACM CHI 97
+, pp 463-470, 1997.
+HTML
+A Multiscale Narrative: Gray Matters
+Wardrip-Fruin, N., Meyer, J., Perlin, J., Bederson, B.B., Hollan, J.D.
+ACM SIGGRAPH 97 Visual Proceedings
+, p 141, 1997.
+PDF
+(221K)
+1996
+A Zooming Web Browser
+- (This one desribes the Pad++ Web browser along with several extensions
+we made to HTML to allow zooming within the document.)
+Bederson, B.B., Hollan, J.D., Stewart, J., 
+Rogers, D., Druin, A., and Vick, D.
+SPIE Multimedia Computing and Networking
+,
+Volume 2667, pp 260-271, 1996.
+Postscript (369K)
+,
+PDF (126K)
+An Agnostic Approach to Scripting Languages
+Bederson, B.B., Hollan, J.D., Stewart, J.
+Unpublished
+, 1996
+HTML
+,
+Postscript
+(21K),
+PDF
+(10K)
+Local Tools:
+An Alternative to Tool Palettes
+Bederson, B.B., Hollan, J.D., Druin, A., Stewart, J., Rogers, D., Proft, D.
+ACM UIST '96
+, pp 169-170, 1996.
+HTML
+,
+Postscript (43K)
+,
+PDF (17K)
+Pad++: A Zoomable Graphical Sketchpad for 
+Exploring Alternate Interface Physics
+Bederson, B., Hollan, J., Perlin, K., Meyer, J., Bacon, D., and Furnas, G.
+Journal of Visual Languages and Computing
+, 7, 3-31, 1996.
+HTML
+,
+Postscript without pictures
+(74K),
+PDF without pictures
+(77K)
+1995
+Two Document Visualization Techniques for Zoomable Interfaces
+Meyer, J., Perlin, K., Bederson, B., Hollan, J.,
+Unpublished
+, 1995
+HTML
+,
+Postscript
+(55K),
+PDF
+(55K)
+Space-Scale Diagrams:
+Understanding Multiscale Interfaces
+Furnas, G., Bederson, B.,
+ACM SIGCHI '95
+.
+Postscript
+(50K),
+PDF
+(70K)
+Advances in the Pad++ Zoomable Graphics Widget
+Bederson, B., Hollan, J.,
+USENIX Tcl/Tk'95 Workshop
+.
+Postscript
+(50K),
+PDF
+(35K)
+1994
+Pad++: Advances in Multiscale Interfaces
+Bederson, B.B., Stead, L., Hollan, J.D.,
+ACM SIGCHI '94
+(short paper), 1994
+HTML
+,
+Postscript
+(75K),
+PDF
+(25K)
+Pad++: A Zooming Graphical Interface for Exploring
+Alternate Interface Physics
+Bederson, B.B., Hollan, J.D.,
+ACM UIST '94
+, 1994
+Postscript
+(252K),
+PDF
+(146K)
+1993
+Pad - An Alternative Approach to the Computer Interface
+Perlin, K., Fox, D.,
+ACM SIGGRAPH '93
+.
+HTML
+,
+Postscript
+(163K),
+PDF
+(280K)
+1991
+A Multiscale Approach to Interactive Display Organization
+Perlin, K.,
+Coordination Theory and Collaboration Technology Workshop
+,
+National Science Foundation, June 1991.
+Web Accessibility

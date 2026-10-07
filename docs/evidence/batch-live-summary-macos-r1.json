@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-01T23:38:08.818Z",
+  "batchId": "batch-00e6f183-0519-4e69-bd82-a591b3411750",
+  "state": "partial",
+  "visibleSummary": "目标仍对应观察版本当前处理：部分完成已完成 2已响应 2需澄清 1待处理 0",
+  "assertions": {
+    "twoCompleted": true,
+    "twoResponded": true,
+    "oneClarification": true,
+    "partial": true
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-02T00:52:37.802Z",
+  "path": "真实原生输入（Escape结束）、Agent本机API同字段更新、工作区撤销冲突、用户主动回到旧内容",
+  "stage": "native first edit",
+  "failure": "Error: JavaScript evaluation failed at line 0, column 0: TypeError: Cannot read properties of undefined (reading 'lowerLeftInterior')\n    at <anonymous>:2:179\n    at __egoPageEvaluate (<anonymous>:2:198)\n    at <anonymous>:3:9; expression: () => JSON.parse(document.querySelector('[data-representation-points]').getAttribute('data-representation-points')).find(p=>p.entityId==='fixture-entity-5')....",
+  "before": {
+    "revision": 52,
+    "title": "模块 2 · 本地连接（Agent 后续更新）",
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 140.57145036969868,
+      "zoom": 0.7
+    }
+  },
+  "user": null,
+  "rejected": null,
+  "returned": null,
+  "after": {
+    "revision": 52,
+    "title": "模块 2 · 本地连接（Agent 后续更新）",
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 140.57145036969868,
+      "zoom": 0.7
+    }
+  },
+  "history": [],
+  "assertions": {
+    "originalTextExact": false,
+    "oneUserCommit": false,
+    "agentTitlePreserved": false,
+    "noUndoOrEchoRevision": true,
+    "intentionalUserReturnAccepted": false,
+    "annotationsUnchanged": true,
+    "freeElementsUnchanged": true,
+    "cameraPreserved": true
+  }
+}

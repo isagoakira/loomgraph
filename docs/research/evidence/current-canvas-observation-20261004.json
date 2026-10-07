@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-04",
+  "source": "CUA read-only AX state and screenshot of the existing user canvas",
+  "url": "http://127.0.0.1:58363/?graph=forecastcompass-spatial-notebook",
+  "screenshot": "current-canvas-20261004.png",
+  "reportedCanvasZoomPercent": 50,
+  "topPanelVisible": false,
+  "rightPanelVisible": false,
+  "axObservedCard": {
+    "title": "04 · 双记忆分工",
+    "takeaway": "同类问题共享两份手册：因子记忆 F 指导看什么，推理记忆 R 指导信多少。",
+    "keyPoint": "同类问题共享两份手册：因子记忆 F 指导看什么，推理记忆 R 指导信多少。"
+  },
+  "screenshotObservations": [
+    "A concept figure is visible on the left with explanatory prose below it.",
+    "The concept-card column on the right extends beyond the viewport edge.",
+    "The wide bottom toolbar obscures some prose in the current view."
+  ],
+  "limits": [
+    "AX text can include offscreen content; duplicate AX strings alone do not prove both were simultaneously visible in the screenshot.",
+    "This observation does not measure collision behavior after an expand or collapse action.",
+    "No reload, layout change, text edit, canvas_apply, or live project write was performed."
+  ]
+}

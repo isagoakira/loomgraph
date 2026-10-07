@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-02T02:28:23.767Z",
+  "archive": {
+    "path": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/release-candidate-r2/agent-visual-canvas-0.1.0.zip",
+    "sha256": "a04f7e6f361f3ae52bab7461497b7f919b4e98f692e6aae93447e25db091c0c4",
+    "bytes": 17974188,
+    "entries": 606,
+    "contentFilesVerified": 605
+  },
+  "extractedRoot": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/发行包验收 路径 r2/agent-visual-canvas-0.1.0",
+  "inventory": {
+    "generatedAt": "2026-10-02T02:20:24.655Z",
+    "packages": 138
+  },
+  "hashMismatches": [],
+  "unexpected": [],
+  "assertions": {
+    "allManifestHashesMatch": true,
+    "noUnexpectedEntries": true,
+    "archiveSidecarHashMatches": true,
+    "requiredArtifactsPresent": true,
+    "bundledFonts": true,
+    "licenseInventoryExact": true,
+    "licenseInventoryGenerationMatches": true,
+    "noRuntimeData": true
+  },
+  "boundary": "逐项校验发行ZIP及所有RELEASE文件SHA-256；提取至中文空格路径。实际运行与客户端加载分别核对。"
+}

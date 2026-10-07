@@ -1,0 +1,19 @@
+node_modules/
+dist/
+release/
+.runtime/
+test-results/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Local machine state and credentials
+.DS_Store
+.env
+.env.*
+!.env.example
+.agent-canvas/
+coverage/
+*.log
+*.pem
+*.key

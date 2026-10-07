@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-03",
+  "verifiedAt": "2026-10-03T15:29:06Z",
+  "projectId": "cb904f16-a9ec-4a38-831c-d84d9a08df80",
+  "workCopyId": "bdc90254-57fe-4968-97a4-96473ca9868f",
+  "identityMatchesBaseline": true,
+  "baseline": {
+    "file": "plugins/agent-visual-canvas/docs/evidence/spatial-notebook-baseline-20261003.json",
+    "revision": 128,
+    "objectCounts": {
+      "entities": 85,
+      "relations": 95,
+      "graphs": 26,
+      "representations": 131,
+      "freeElements": 48,
+      "annotations": 10,
+      "batches": 4,
+      "resources": 10
+    },
+    "totalObjects": 409,
+    "evaluationSha256": "a8e49a665d8d184768de411e6c19bedfac264ffcf4b7b32def75142465b95bcc"
+  },
+  "current": {
+    "source": "/Users/Zhuanz1/.local/share/agent-visual-canvas/projects/codex-session-demo/.agent-canvas/project.sqlite",
+    "table": "project_state",
+    "rowId": 1,
+    "revision": 152,
+    "manifestRevision": 152,
+    "manifestCurrentRevision": 152,
+    "objectCounts": {
+      "entities": 96,
+      "relations": 187,
+      "graphs": 27,
+      "representations": 171,
+      "freeElements": 65,
+      "annotations": 10,
+      "batches": 4,
+      "resources": 10
+    },
+    "totalObjects": 570
+  },
+  "evaluationSha256": {
+    "value": "a8e49a665d8d184768de411e6c19bedfac264ffcf4b7b32def75142465b95bcc",
+    "preserved": true,
+    "meaning": "保留 baseline evaluationSha256 原值；本次 snapshot 没有重算或覆盖该基线评价摘要。"
+  },
+  "originalObjectHashComparison": {
+    "total": 409,
+    "changed": 0,
+    "missing": 0,
+    "added": 161,
+    "allBaselineObjectsPresentAndUnchanged": true,
+    "byCategory": {
+      "entities": {
+        "baseline": 85,
+        "current": 96,
+        "changed": 0,
+        "changedIds": [],
+        "missing": 0,
+        "missingIds": [],
+        "added": 11
+      },
+      "relations": {
+        "baseline": 95,
+        "current": 187,
+        "changed": 0,
+        "changedIds": [],
+        "missing": 0,
+        "missingIds": [],
+        "added": 92
+      },
+      "graphs": {
+        "baseline": 26,
+        "current": 27,
+        "changed": 0,
+        "changedIds": [],
+        "missing": 0,
+        "missingIds": [],
+        "added": 1
+      },
+      "representations": {
+        "baseline": 131,
+        "current": 171,
+        "changed": 0,
+        "changedIds": [],
+        "missing": 0,
+        "missingIds": [],
+        "added": 40
+      },
+      "freeElements": {
+        "baseline": 48,
+        "current": 65,
+        "changed": 0,
+        "changedIds": [],
+        "missing": 0,
+        "missingIds": [],
+        "added": 17
+      },
+      "annotations": {
+        "baseline": 10,
+        "current": 10,
+        "changed": 0,
+        "changedIds": [],
+        "missing": 0,
+        "missingIds": [],
+        "added": 0
+      },
+      "batches": {
+        "baseline": 4,
+        "current": 4,
+        "changed": 0,
+        "changedIds": [],
+        "missing": 0,
+        "missingIds": [],
+        "added": 0
+      },
+      "resources": {
+        "baseline": 10,
+        "current": 10,
+        "changed": 0,
+        "changedIds": [],
+        "missing": 0,
+        "missingIds": [],
+        "added": 0
+      }
+    }
+  },
+  "additions": {
+    "entities": [
+      "entity-324bb34e-8856-41ba-bc57-62f8771f5404",
+      "entity-e47a5c84-42dc-4414-85ba-8b5421212822",
+      "notebook-foco-root",
+      "notebook-step-evidence",
+      "notebook-step-inference",
+      "notebook-step-memory-problem",
+      "notebook-step-probability",
+      "notebook-step-reproduction",
+      "notebook-step-signal-confidence",
+      "notebook-step-two-memories",
+      "notebook-step-update"
+    ],
+    "relations": [
+      "knowledge-e-ablation-factor",
+      "knowledge-e-ablation-reasoning",
+      "knowledge-e-agent-probability",
+      "knowledge-e-agent-trajectory",
+      "knowledge-e-aggregation-revision",
+      "knowledge-e-brier-comparison",
+      "knowledge-e-brier-probability",
+      "knowledge-e-calibration-lesson",
+      "knowledge-e-comparison-ablation",
+      "knowledge-e-comparison-base",
+      "knowledge-e-comparison-foco",
+      "knowledge-e-comparison-static",
+      "knowledge-e-comparison-table1",
+      "knowledge-e-comparison-table3",
+      "knowledge-e-confidence-calibration",
+      "knowledge-e-config-comparison",
+      "knowledge-e-config-protocol",
+      "knowledge-e-diagnosis-aggregation",
+      "knowledge-e-ece-calibration",
+      "knowledge-e-ece-comparison",
+      "knowledge-e-ece-confidence",
+      "knowledge-e-factor-signal",
+      "knowledge-e-factor-trajectory",
+      "knowledge-e-foco-memory",
+      "knowledge-e-foco-taxonomy",
+      "knowledge-e-lesson-foco",
+      "knowledge-e-memory-agent",
+      "knowledge-e-memory-factor",
+      "knowledge-e-memory-reasoning",
+      "knowledge-e-outcome-retrospective",
+      "knowledge-e-probability-confidence",
+      "knowledge-e-protocol-lesson",
+      "knowledge-e-protocol-question",
+      "knowledge-e-protocol-revision",
+      "knowledge-e-protocol-signal",
+      "knowledge-e-protocol-trajectory",
+      "knowledge-e-question-agent",
+      "knowledge-e-question-trajectory",
+      "knowledge-e-reasoning-calibration",
+      "knowledge-e-reasoning-probability",
+      "knowledge-e-retrospective-diagnosis",
+      "knowledge-e-retrospective-revision",
+      "knowledge-e-revision-factor",
+      "knowledge-e-revision-memory",
+      "knowledge-e-revision-reasoning",
+      "knowledge-e-signal-calibration",
+      "knowledge-e-signal-lesson",
+      "knowledge-e-static-base",
+      "knowledge-e-subcategory-memory",
+      "knowledge-e-taxonomy-memory",
+      "knowledge-e-taxonomy-subcategory",
+      "knowledge-e-trajectory-comparison",
+      "knowledge-e-trajectory-diagnosis",
+      "knowledge-e-trajectory-probability",
+      "knowledge-e-trajectory-retrospective",
+      "notebook-introduces-ablation",
+      "notebook-introduces-agent",
+      "notebook-introduces-aggregation",
+      "notebook-introduces-base",
+      "notebook-introduces-brier",
+      "notebook-introduces-calibration",
+      "notebook-introduces-comparison",
+      "notebook-introduces-confidence",
+      "notebook-introduces-config",
+      "notebook-introduces-diagnosis",
+      "notebook-introduces-ece",
+      "notebook-introduces-factor",
+      "notebook-introduces-foco",
+      "notebook-introduces-forecast-question",
+      "notebook-introduces-lesson",
+      "notebook-introduces-memory",
+      "notebook-introduces-outcome",
+      "notebook-introduces-probability",
+      "notebook-introduces-protocol",
+      "notebook-introduces-reasoning",
+      "notebook-introduces-retrospective",
+      "notebook-introduces-revision",
+      "notebook-introduces-signal",
+      "notebook-introduces-static",
+      "notebook-introduces-subcategory",
+      "notebook-introduces-table1-result",
+      "notebook-introduces-table3-ablation",
+      "notebook-introduces-taxonomy",
+      "notebook-introduces-trajectory",
+      "notebook-root-evidence",
+      "notebook-root-inference",
+      "notebook-root-memory-problem",
+      "notebook-root-probability",
+      "notebook-root-reproduction",
+      "notebook-root-signal-confidence",
+      "notebook-root-two-memories",
+      "notebook-root-update"
+    ],
+    "graphs": [
+      "forecastcompass-spatial-notebook"
+    ],
+    "representations": [
+      "notebook-concept-ablation",
+      "notebook-concept-agent",
+      "notebook-concept-aggregation",
+      "notebook-concept-base",
+      "notebook-concept-brier",
+      "notebook-concept-calibration",
+      "notebook-concept-comparison",
+      "notebook-concept-confidence",
+      "notebook-concept-config",
+      "notebook-concept-diagnosis",
+      "notebook-concept-ece",
+      "notebook-concept-factor",
+      "notebook-concept-foco",
+      "notebook-concept-forecast-question",
+      "notebook-concept-lesson",
+      "notebook-concept-memory",
+      "notebook-concept-outcome",
+      "notebook-concept-probability",
+      "notebook-concept-protocol",
+      "notebook-concept-reasoning",
+      "notebook-concept-retrospective",
+      "notebook-concept-revision",
+      "notebook-concept-signal",
+      "notebook-concept-static",
+      "notebook-concept-subcategory",
+      "notebook-concept-table1-result",
+      "notebook-concept-table3-ablation",
+      "notebook-concept-taxonomy",
+      "notebook-concept-trajectory",
+      "notebook-root-rep",
+      "notebook-step-evidence-rep",
+      "notebook-step-inference-rep",
+      "notebook-step-memory-problem-rep",
+      "notebook-step-probability-rep",
+      "notebook-step-reproduction-rep",
+      "notebook-step-signal-confidence-rep",
+      "notebook-step-two-memories-rep",
+      "notebook-step-update-rep",
+      "representation-4ed8e680-4095-4209-ac1c-663f5a2aa999",
+      "representation-750688ce-e527-4bd5-8bb9-3658d2c26a40"
+    ],
+    "freeElements": [
+      "notebook-diagram-evidence",
+      "notebook-diagram-inference",
+      "notebook-diagram-memory-problem",
+      "notebook-diagram-probability",
+      "notebook-diagram-reproduction",
+      "notebook-diagram-signal-confidence",
+      "notebook-diagram-two-memories",
+      "notebook-diagram-update",
+      "notebook-prose-evidence",
+      "notebook-prose-inference",
+      "notebook-prose-memory-problem",
+      "notebook-prose-probability",
+      "notebook-prose-reproduction",
+      "notebook-prose-signal-confidence",
+      "notebook-prose-two-memories",
+      "notebook-prose-update",
+      "text-box-b8887a51-eaf9-465d-b8b6-6efb21ccaa5e"
+    ],
+    "annotations": [],
+    "batches": [],
+    "resources": []
+  },
+  "userTextRetention": {
+    "query": "我觉得不对",
+    "baselineMatchCount": 0,
+    "currentMatchCount": 1,
+    "retainedInCurrentSnapshot": true,
+    "location": {
+      "category": "freeElements",
+      "id": "text-box-137f0acd-055c-4dbf-a8f0-53ccfcdac979",
+      "graphId": "forecastcompass-knowledge-structure-pilot",
+      "path": "freeElements/47/element/customData/richTextBox/html"
+    },
+    "geometry": {
+      "x": 1832.2920090869366,
+      "y": 1182.116717399173,
+      "width": 540,
+      "height": 260,
+      "angle": 6.274167151100303,
+      "locked": false
+    },
+    "richTextBox": {
+      "schemaVersion": 1,
+      "title": "新文本框",
+      "role": "text",
+      "html": "<p data-content-id=\"rich-text-9wb9lb\">我觉得不对</p>",
+      "fontSize": 18,
+      "fontFamily": "Avenir Next, PingFang SC, sans-serif",
+      "color": "#22323a",
+      "fill": "#fffdf8",
+      "border": "#d8d2c6"
+    },
+    "interpretation": "当前 snapshot 保留了该用户文字；baseline 中没有该字符串，因此它属于 baseline 之后的用户内容保留核验。"
+  },
+  "newLocalUiModuleRetention": [
+    {
+      "role": "userAddedModule",
+      "entityId": "entity-324bb34e-8856-41ba-bc57-62f8771f5404",
+      "entityPresent": true,
+      "entity": {
+        "id": "entity-324bb34e-8856-41ba-bc57-62f8771f5404",
+        "kind": "module",
+        "title": "新模块",
+        "source": "local-ui",
+        "updatedAt": "2026-10-03T13:25:21.350Z",
+        "metadata": {
+          "createdBy": "local-ui",
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "用一两句话说明这个模块的作用。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>补充工作方式、输入输出和例子。</p>"
+              }
+            ],
+            "sources": []
+          }
+        }
+      },
+      "representationsPresent": 1,
+      "representations": [
+        {
+          "id": "representation-750688ce-e527-4bd5-8bb9-3658d2c26a40",
+          "entityId": "entity-324bb34e-8856-41ba-bc57-62f8771f5404",
+          "graphId": "forecastcompass-spatial-notebook",
+          "x": 996,
+          "y": 1784.5,
+          "width": 380,
+          "height": 333,
+          "pinned": true,
+          "subgraphIds": [],
+          "style": {
+            "contentView": "card",
+            "notebook": {
+              "schemaVersion": 1,
+              "bodyMode": "complete",
+              "column": 0,
+              "branchId": "evidence",
+              "order": 10,
+              "side": "right",
+              "role": "concept"
+            },
+            "backgroundColor": "#f4f0e8",
+            "strokeColor": "transparent",
+            "strokeWidth": 0
+          },
+          "rotation": 0
+        }
+      ],
+      "retainedSourceFields": [
+        "id",
+        "kind",
+        "title",
+        "description",
+        "source",
+        "updatedAt",
+        "metadata"
+      ],
+      "retainedProjectionFields": [
+        "graphId",
+        "x",
+        "y",
+        "width",
+        "height",
+        "rotation",
+        "pinned",
+        "style.notebook",
+        "style.backgroundColor",
+        "style.strokeColor",
+        "style.strokeWidth"
+      ]
+    },
+    {
+      "role": "temporaryControlAcceptanceModule",
+      "entityId": "entity-e47a5c84-42dc-4414-85ba-8b5421212822",
+      "entityPresent": true,
+      "entity": {
+        "id": "entity-e47a5c84-42dc-4414-85ba-8b5421212822",
+        "kind": "module",
+        "title": "控件验收模块（临时）",
+        "source": "local-ui",
+        "updatedAt": "2026-10-03T14:39:57.210Z",
+        "metadata": {
+          "createdBy": "local-ui",
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "用一两句话说明这个模块的作用。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>补充工作方式、输入输出和例子。</p>"
+              }
+            ],
+            "sources": []
+          }
+        }
+      },
+      "representationsPresent": 1,
+      "representations": [
+        {
+          "id": "representation-4ed8e680-4095-4209-ac1c-663f5a2aa999",
+          "entityId": "entity-e47a5c84-42dc-4414-85ba-8b5421212822",
+          "graphId": "forecastcompass-spatial-notebook",
+          "x": -936,
+          "y": 2830.5,
+          "width": 460,
+          "height": 320,
+          "pinned": true,
+          "subgraphIds": [],
+          "style": {
+            "contentView": "card",
+            "notebook": {
+              "schemaVersion": 1,
+              "bodyMode": "complete",
+              "column": 0,
+              "branchId": "two-memories",
+              "order": 7,
+              "side": "left",
+              "role": "concept"
+            },
+            "backgroundColor": "#f4f0e8",
+            "strokeColor": "transparent",
+            "strokeWidth": 0
+          },
+          "rotation": 0.17453292519943295
+        }
+      ],
+      "retainedSourceFields": [
+        "id",
+        "kind",
+        "title",
+        "description",
+        "source",
+        "updatedAt",
+        "metadata"
+      ],
+      "retainedProjectionFields": [
+        "graphId",
+        "x",
+        "y",
+        "width",
+        "height",
+        "rotation",
+        "pinned",
+        "style.notebook",
+        "style.backgroundColor",
+        "style.strokeColor",
+        "style.strokeWidth"
+      ]
+    }
+  ],
+  "allowedChangeScope": {
+    "organizationGraphMetadata": true,
+    "relationMetadataEntries": 37,
+    "observedBaselineGraphHashChanges": 0,
+    "observedBaselineRelationHashChanges": 0,
+    "interpretation": "允许的 organization graph metadata 与 37 条 relation metadata 变化在本次 baseline 对象 hash 比对中均未形成差异；新增 notebook graph/relations 使用新增 ID 单独列出。"
+  },
+  "method": {
+    "baselineObjectDigest": "sha256(JSON.stringify(object))，Node JSON.stringify 等价序列化；按 category/id 对齐。",
+    "snapshotRead": "只读 SQLite project_state.snapshot_json；manifest 仅作 revision 交叉核对。",
+    "textSearch": "递归搜索字符串“我觉得不对”。",
+    "scope": "本次核验只写入本 evidence 文件，未修改源码、live project 数据或其他 evidence 文件。"
+  },
+  "conclusion": "baseline 的 409 个原对象全部保留且 hash 未变化；当前 revision 151 另有 161 个新增对象，主要构成 ForecastCompass spatial notebook 及两个 local-ui 模块投影。"
+}

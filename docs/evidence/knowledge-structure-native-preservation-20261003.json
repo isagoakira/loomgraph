@@ -1,0 +1,95 @@
+{
+  "beforeRevision": 102,
+  "afterRevision": 105,
+  "preservation": {
+    "graphs": {
+      "before": 17,
+      "after": 26,
+      "missing": [],
+      "modified": []
+    },
+    "entities": {
+      "before": 56,
+      "after": 85,
+      "missing": [],
+      "modified": []
+    },
+    "relations": {
+      "before": 46,
+      "after": 95,
+      "missing": [],
+      "modified": []
+    },
+    "representations": {
+      "before": 77,
+      "after": 131,
+      "missing": [],
+      "modified": []
+    },
+    "freeElements": {
+      "before": 39,
+      "after": 39,
+      "missing": [],
+      "modified": []
+    },
+    "annotations": {
+      "before": 10,
+      "after": 10,
+      "missing": [],
+      "modified": []
+    },
+    "batches": {
+      "before": 4,
+      "after": 4,
+      "missing": [],
+      "modified": []
+    },
+    "resources": {
+      "before": 1,
+      "after": 1,
+      "missing": [],
+      "modified": []
+    },
+    "runs": {
+      "before": 0,
+      "after": 0,
+      "missing": [],
+      "modified": []
+    },
+    "executors": {
+      "before": 0,
+      "after": 0,
+      "missing": [],
+      "modified": []
+    },
+    "requests": {
+      "before": 0,
+      "after": 0,
+      "missing": [],
+      "modified": []
+    },
+    "discussions": {
+      "before": 0,
+      "after": 0,
+      "missing": [],
+      "modified": []
+    }
+  },
+  "changes": [
+    {
+      "revision": 103,
+      "changeId": "1b83c6b5-f0fd-4c57-9aaf-2ab2c0ee031f",
+      "operationId": "forecastcompass-knowledge-structure-20261003-pilot-r102"
+    },
+    {
+      "revision": 104,
+      "changeId": "cf10a433-b5e1-4fdc-997a-160880f29523",
+      "operationId": "forecastcompass-knowledge-context-20261003-r103"
+    },
+    {
+      "revision": 105,
+      "changeId": "de4965a3-5683-4056-bac7-3aea702e376f",
+      "operationId": "forecastcompass-local-context-budget-20261003-r104"
+    }
+  ]
+}

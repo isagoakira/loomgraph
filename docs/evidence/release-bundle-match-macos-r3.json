@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-02T06:42:43.397Z",
+  "status": "passed",
+  "archiveSha256": "5f133158a42a9357f6cf209da5fe72a27d386c039ac7c0107c97abf863af70f7",
+  "sourceRound": "r16",
+  "verifiedFiles": 370,
+  "assertions": {
+    "sourceBuildAndExtractedDistMatch": true,
+    "archiveBytesUnchanged": true
+  },
+  "boundary": "只比对生产dist资产与归档清单；源文档包含提取后结果，不据此改写已验证ZIP。"
+}

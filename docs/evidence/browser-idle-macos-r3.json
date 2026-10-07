@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-01T22:31:06.317Z",
+  "round": 3,
+  "elapsedMs": 60014.34687500005,
+  "before": {
+    "Timestamp": 616152.01492,
+    "Documents": 27,
+    "Nodes": 6883,
+    "ProcessTime": 196.127893,
+    "JSHeapUsedSize": 21748016,
+    "JSHeapTotalSize": 23134208
+  },
+  "after": {
+    "Timestamp": 616212.091858,
+    "Documents": 27,
+    "Nodes": 6883,
+    "ProcessTime": 196.234022,
+    "JSHeapUsedSize": 21751684,
+    "JSHeapTotalSize": 23134208
+  },
+  "blank": {
+    "rssMiB": 725.859375,
+    "processCount": 20
+  },
+  "rssBefore": {
+    "rssMiB": 607,
+    "processCount": 20
+  },
+  "rssAfter": {
+    "rssMiB": 523.609375,
+    "processCount": 20
+  },
+  "cpuPercent": 0.17683938179158903,
+  "browserIncrementMiB": -118.859375,
+  "assertions": {
+    "rendererIdleCpuWithinOnePercent": true,
+    "browserAggregateIncrementWithin300MiB": null
+  },
+  "method": "CDP renderer ProcessTime over 60 seconds; OS RSS aggregate of same Ego browser and all helpers, compared with its blank page. Other pages stay open; not isolated renderer/GPU accounting.",
+  "environment": {
+    "platform": "darwin",
+    "release": "25.6.0",
+    "arch": "arm64",
+    "cpu": "Apple M1",
+    "logicalCores": 8
+  },
+  "memoryInterpretation": "The aggregate delta is noisy and becomes negative as unrelated browser memory is released; it cannot alone establish the page-specific memory budget. A separate CDP/OS CPU-time matching attribution is now available."
+}

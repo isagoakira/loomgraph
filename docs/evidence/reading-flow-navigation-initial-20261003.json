@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-03",
+  "pass": false,
+  "failure": {
+    "requested": "update",
+    "actual": "inference",
+    "position": "当前位置 5 / 8",
+    "requestedStepTop": 187.0078125,
+    "viewportHeight": 667
+  },
+  "reason": "目录高亮依赖进入/离开回调中的局部 entries，长分支与跳转时可能残留上一项。"
+}

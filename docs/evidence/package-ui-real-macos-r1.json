@@ -1,0 +1,19 @@
+{
+  "revision": 25,
+  "copyPath": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/ui-acceptance/agent-visual-canvas-import-3002f725-da70-4e4a-95c0-8050494bd659",
+  "body": "02\n真实可见状态更新验收\n未知来源 · 2026/10/2 05:49 · 1 项操作\n001\n建立隔离浏览器验收样例\n未知来源 · 2026/10/2 04:48 · 115 项操作\n读取指定修订\nREAD ONLY\n历史修订号\n读取修订\n只读预览\nREV 20\n当前内容项目总览 · REV 25\n目标修订项目总览 · REV 20\n\n预览只读，不会改变当前画布。\n\n内容差异\nCURRENT → TARGET\n\n从当前 REV 25 到目标 REV 20：新增/恢复 0，移除 0，修改 0。\n\n当前内容与目标修订一致。\n\n反馈与讨论记录\n批注\n移除 2\n－重连验收：保留本条观察版本、原话与待提交状态。；－重连顺序验收：Agent 新状态先提交，旧基线批注后重试。\n恢复影响\nRUNTIME PRESERVED\n恢复会生成新的内容修订\n\n恢复将把图、对象、表示、自由元素和资源调整为目标修订；当前运行事实会继续保留。\n\n运行记录\n当前 0 · 目标快照 0 · 运行事实 · 记录一致\n当前运行态在恢复时保留；内容恢复不会让 运行记录 倒退。\n执行器\n当前 0 · 目标快照 0 · 连接与能力事实 · 记录一致\n当前运行态在恢复时保留；内容恢复不会让 执行器 倒退。\n控制请求\n当前 0 · 目标快照 0 · 请求事实 · 记录一致\n当前运行态在恢复时保留；内容恢复不会让 控制请求 倒退。\n\nruns、executors、requests 以及当前批注、讨论状态不会因内容恢复倒退。\n\n恢复到 REV 20（生成新修订）\n项目包\nMIGRATION\n导出当前项目包\n导入 .avcanvas 独立副本\n独立导入副本已创建\n\n/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/ui-acceptance/agent-visual-canvas-import-3002f725-da70-4e4a-95c0-8050494bd659\n\n当前原工作副本仍保留，导入结果不会覆盖当前项目。",
+  "assertions": {
+    "originalAttachmentPreserved": true,
+    "projectIdentityPreserved": true,
+    "independentWorkCopy": true,
+    "entitiesPreserved": true,
+    "annotationsPreserved": true,
+    "discussionsPreserved": true
+  },
+  "imported": {
+    "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+    "workCopyId": "ef718ad3-445f-422e-a5b9-3bfef66bcf32",
+    "revision": 25
+  },
+  "boundary": "实际界面恢复、原生浏览器下载和文件上传；同一macOS本机独立副本，原服务仍附着原副本。当前样例无活动运行；真实运行保留和防重发由专用测试另测，Windows迁移仍未验收。"
+}

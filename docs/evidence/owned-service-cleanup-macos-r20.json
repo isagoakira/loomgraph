@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-02T09:05:03.642Z",
+  "status": "passed",
+  "results": [
+    {
+      "pid": 34822,
+      "port": 50785,
+      "beforeCommand": "node --input-type=module",
+      "portClosed": true,
+      "lockReleased": true
+    },
+    {
+      "pid": 43043,
+      "port": 61730,
+      "beforeCommand": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/node24-validation/node-v24.21.0-darwin-arm64/bin/node /Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/scripts/start-canvas.mjs --http-only --port 0 --data-root /Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/图形审计 r9-7KxyhO/v1-import-5047f429-c800-44ec-b38b-727cbc5ccb05",
+      "beforeLockExists": true,
+      "portClosed": true,
+      "lockReleased": true
+    },
+    {
+      "pid": 25692,
+      "port": 64581,
+      "beforeCommand": ".runtime/node24-validation/node-v24.21.0-darwin-arm64/bin/node scripts/start-canvas.mjs --http-only --port 64581 --data-root .runtime/图形审计 r9-7KxyhO",
+      "beforeLockExists": true,
+      "portClosed": true,
+      "lockReleased": true
+    }
+  ],
+  "protectedOriginal": {
+    "pid": 82445,
+    "port": 4317,
+    "revision": 76,
+    "sha256": "17a1938c28e6f675689b994991f5b1544ac6d4f66234a56d707808b9b88ba14b"
+  },
+  "assertions": {
+    "onlyVerifiedOwnedServicesTerminated": true,
+    "ownedPortsClosed": true,
+    "ownedProjectLocksReleased": true,
+    "protectedOriginalStillListening": true,
+    "protectedOriginalIdentityUnchanged": true,
+    "protectedOriginalRevisionUnchanged": true,
+    "protectedOriginalSnapshotUnchanged": true
+  },
+  "boundary": "仅按端口与命令同时复核后终止本轮三个已拥有的隔离服务；未读取或输出lock token，未删除项目/证据/发行包，未触碰原演示进程、用户配置或持久浏览器状态。"
+}

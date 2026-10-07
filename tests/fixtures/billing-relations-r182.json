@@ -1,0 +1,2617 @@
+{
+  "schemaVersion": 1,
+  "projectId": "routing-acceptance",
+  "workCopyId": "r182-fixture",
+  "revision": 182,
+  "title": "Billing relation layout fixture",
+  "goal": "",
+  "createdAt": "2026-10-02T11:30:10.065Z",
+  "updatedAt": "2026-10-06T09:47:30.891Z",
+  "entities": [
+    {
+      "id": "cloud-billing-20261006-request",
+      "kind": "源码规则",
+      "title": "一次太忆云图谱请求"
+    },
+    {
+      "id": "cloud-billing-20261006-route",
+      "kind": "源码规则",
+      "title": "判断：这次做什么？"
+    },
+    {
+      "id": "cloud-billing-20261006-ingest-entry",
+      "kind": "源码规则",
+      "title": "A · 文档 / L3 / 表入图"
+    },
+    {
+      "id": "cloud-billing-20261006-query-entry",
+      "kind": "源码规则",
+      "title": "B · 检索 / 问答"
+    },
+    {
+      "id": "cloud-billing-20261006-browse",
+      "kind": "源码规则",
+      "title": "C · 浏览 / 邻域 / 撤回"
+    },
+    {
+      "id": "cloud-billing-20261006-dry-result",
+      "kind": "源码规则",
+      "title": "默认入图：只记应扣"
+    },
+    {
+      "id": "cloud-billing-20261006-query-result",
+      "kind": "源码规则",
+      "title": "查询：先用额度，再用钱包"
+    },
+    {
+      "id": "cloud-billing-20261006-capacity-result",
+      "kind": "候选定价",
+      "title": "托管成本仍要有人承担"
+    },
+    {
+      "id": "cloud-billing-20261006-reference",
+      "kind": "候选定价",
+      "title": "01 · 把模型用量换成参考成本 C"
+    },
+    {
+      "id": "cloud-billing-20261006-pressure",
+      "kind": "候选定价",
+      "title": "02 · 加入不能转嫁的消耗 γ"
+    },
+    {
+      "id": "cloud-billing-20261006-target",
+      "kind": "候选定价",
+      "title": "03 · 定毛利目标 g=55%"
+    },
+    {
+      "id": "cloud-billing-20261006-multiplier",
+      "kind": "算术案例",
+      "title": "推导：k ≥ γ / (1−g)"
+    },
+    {
+      "id": "cloud-billing-20261006-token-price",
+      "kind": "候选定价",
+      "title": "入图候选：成功实际Token×4"
+    },
+    {
+      "id": "cloud-billing-20261006-qa-price",
+      "kind": "候选定价",
+      "title": "查询候选：检索 / QA各1分"
+    },
+    {
+      "id": "cloud-billing-20261006-base-price",
+      "kind": "候选定价",
+      "title": "容量候选：按 F/N 与权益反推"
+    },
+    {
+      "id": "cloud-billing-20261006-candidate-bill",
+      "kind": "候选定价",
+      "title": "候选账单：容量＋计算＋查询"
+    },
+    {
+      "id": "cloud-billing-20261006-shadow",
+      "kind": "候选定价",
+      "title": "① 先运行模拟账本"
+    },
+    {
+      "id": "cloud-billing-20261006-route-check",
+      "kind": "待闭合条件",
+      "title": "② 路由与成本报告一致？"
+    },
+    {
+      "id": "cloud-billing-20261006-budget-check",
+      "kind": "待闭合条件",
+      "title": "③ 成本与容量护栏可执行？"
+    },
+    {
+      "id": "cloud-billing-20261006-ledger-check",
+      "kind": "待闭合条件",
+      "title": "④ 客户与厂商账本对得上？"
+    },
+    {
+      "id": "cloud-billing-20261006-margin-check",
+      "kind": "待闭合条件",
+      "title": "⑤ 完整周期总毛利达标？"
+    },
+    {
+      "id": "cloud-billing-20261006-decision",
+      "kind": "待闭合条件",
+      "title": "通过才可进入正式收费评审"
+    },
+    {
+      "id": "cloud-billing-20261006-write",
+      "kind": "源码规则",
+      "title": "01 · 先处理并写入图谱"
+    },
+    {
+      "id": "cloud-billing-20261006-status",
+      "kind": "源码规则",
+      "title": "02 · 任务状态可计费？"
+    },
+    {
+      "id": "cloud-billing-20261006-skip",
+      "kind": "源码规则",
+      "title": "当前任务不走入图扣款"
+    },
+    {
+      "id": "cloud-billing-20261006-switch",
+      "kind": "源码规则",
+      "title": "03 · 真实计费开关打开？"
+    },
+    {
+      "id": "cloud-billing-20261006-shadow-record",
+      "kind": "源码规则",
+      "title": "关闭：保存 would_charge"
+    },
+    {
+      "id": "cloud-billing-20261006-legacy-price",
+      "kind": "源码规则",
+      "title": "打开：读取现有写入配置"
+    },
+    {
+      "id": "cloud-billing-20261006-dedup",
+      "kind": "源码规则",
+      "title": "04 · 同一任务已认领扣款？"
+    },
+    {
+      "id": "cloud-billing-20261006-repeat",
+      "kind": "源码规则",
+      "title": "重复：在有效键内跳过扣费"
+    },
+    {
+      "id": "cloud-billing-20261006-debit",
+      "kind": "源码规则",
+      "title": "新任务：提交财务扣减"
+    },
+    {
+      "id": "cloud-billing-20261006-usage-stats",
+      "kind": "源码规则",
+      "title": "05 · 财务提交后：写用量统计"
+    },
+    {
+      "id": "cloud-billing-20261006-usage-failure",
+      "kind": "源码规则",
+      "title": "统计失败：释放 Redis 认领键"
+    },
+    {
+      "id": "cloud-billing-20261006-retry-risk",
+      "kind": "源码规则",
+      "title": "重试：可能再次扣款"
+    },
+    {
+      "id": "cloud-billing-20261006-external-query",
+      "kind": "源码规则",
+      "title": "01 · 一次外部 search 或 QA"
+    },
+    {
+      "id": "cloud-billing-20261006-precheck",
+      "kind": "源码规则",
+      "title": "02 · 额度＋钱包够用？"
+    },
+    {
+      "id": "cloud-billing-20261006-execute",
+      "kind": "源码规则",
+      "title": "03 · 执行查询 / QA"
+    },
+    {
+      "id": "cloud-billing-20261006-postcheck",
+      "kind": "源码规则",
+      "title": "04 · 成功后再核验可扣？"
+    },
+    {
+      "id": "cloud-billing-20261006-quota-use",
+      "kind": "源码规则",
+      "title": "01 · 先抵扣对应资源额度"
+    },
+    {
+      "id": "cloud-billing-20261006-wallet-use",
+      "kind": "源码规则",
+      "title": "02 · 额度缺口：赠金 → 现金"
+    },
+    {
+      "id": "cloud-billing-20261006-receipt",
+      "kind": "源码规则",
+      "title": "03 · 账单与统计分别记录"
+    },
+    {
+      "id": "cloud-billing-20261006-no-balance",
+      "kind": "源码规则",
+      "title": "初始预检不足：拒绝本次服务"
+    },
+    {
+      "id": "cloud-billing-20261006-service-failure",
+      "kind": "源码规则",
+      "title": "业务异常：不走成功扣费"
+    },
+    {
+      "id": "cloud-billing-20261006-post-shortage",
+      "kind": "源码规则",
+      "title": "后置核验不足：成功后无法结算"
+    },
+    {
+      "id": "cloud-billing-20261006-settlement-entry",
+      "kind": "源码规则",
+      "title": "05 · 进入资源额度与钱包结算"
+    },
+    {
+      "id": "cloud-billing-20261006-finance-shortage",
+      "kind": "源码规则",
+      "title": "钱包不足：失败账单与402"
+    }
+  ],
+  "graphs": [
+    {
+      "id": "timem-cloud-billing-flow",
+      "title": "太忆云 · 当前计费总流程",
+      "kind": "flow"
+    },
+    {
+      "id": "timem-cloud-billing-pricing",
+      "title": "太忆云 · 从成本到报价",
+      "kind": "flow"
+    },
+    {
+      "id": "timem-cloud-billing-gates",
+      "title": "太忆云 · 上线验证闭环",
+      "kind": "flow"
+    },
+    {
+      "id": "timem-cloud-billing-ingest",
+      "title": "太忆云 · 入图模拟与真实扣费",
+      "kind": "flow"
+    },
+    {
+      "id": "timem-cloud-billing-query",
+      "title": "太忆云 · 查询与结算入口",
+      "kind": "flow"
+    },
+    {
+      "id": "timem-cloud-billing-finance",
+      "title": "太忆云 · 资源额度与钱包",
+      "kind": "flow"
+    }
+  ],
+  "representations": [
+    {
+      "id": "cloud-billing-20261006-request-rep",
+      "entityId": "cloud-billing-20261006-request",
+      "graphId": "timem-cloud-billing-flow",
+      "x": 0,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 0,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-route-rep",
+      "entityId": "cloud-billing-20261006-route",
+      "graphId": "timem-cloud-billing-flow",
+      "x": 480,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 1,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-ingest-entry-rep",
+      "entityId": "cloud-billing-20261006-ingest-entry",
+      "graphId": "timem-cloud-billing-flow",
+      "x": 960,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 2,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      },
+      "subgraphIds": [
+        "timem-cloud-billing-ingest"
+      ]
+    },
+    {
+      "id": "cloud-billing-20261006-query-entry-rep",
+      "entityId": "cloud-billing-20261006-query-entry",
+      "graphId": "timem-cloud-billing-flow",
+      "x": 960,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 3,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      },
+      "subgraphIds": [
+        "timem-cloud-billing-query"
+      ]
+    },
+    {
+      "id": "cloud-billing-20261006-browse-rep",
+      "entityId": "cloud-billing-20261006-browse",
+      "graphId": "timem-cloud-billing-flow",
+      "x": 960,
+      "y": 780,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 4,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-dry-result-rep",
+      "entityId": "cloud-billing-20261006-dry-result",
+      "graphId": "timem-cloud-billing-flow",
+      "x": 1440,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 5,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      },
+      "subgraphIds": [
+        "timem-cloud-billing-ingest"
+      ]
+    },
+    {
+      "id": "cloud-billing-20261006-query-result-rep",
+      "entityId": "cloud-billing-20261006-query-result",
+      "graphId": "timem-cloud-billing-flow",
+      "x": 1440,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 6,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      },
+      "subgraphIds": [
+        "timem-cloud-billing-query"
+      ]
+    },
+    {
+      "id": "cloud-billing-20261006-capacity-result-rep",
+      "entityId": "cloud-billing-20261006-capacity-result",
+      "graphId": "timem-cloud-billing-flow",
+      "x": 1440,
+      "y": 780,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#aa743b",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 7,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      },
+      "subgraphIds": [
+        "timem-cloud-billing-pricing"
+      ]
+    },
+    {
+      "id": "cloud-billing-20261006-reference-rep",
+      "entityId": "cloud-billing-20261006-reference",
+      "graphId": "timem-cloud-billing-pricing",
+      "x": 0,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#aa743b",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 8,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-pressure-rep",
+      "entityId": "cloud-billing-20261006-pressure",
+      "graphId": "timem-cloud-billing-pricing",
+      "x": 0,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#aa743b",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 9,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-target-rep",
+      "entityId": "cloud-billing-20261006-target",
+      "graphId": "timem-cloud-billing-pricing",
+      "x": 0,
+      "y": 780,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#aa743b",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 10,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-multiplier-rep",
+      "entityId": "cloud-billing-20261006-multiplier",
+      "graphId": "timem-cloud-billing-pricing",
+      "x": 480,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#4f6795",
+        "backgroundColor": "#f2f5fb",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 11,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-token-price-rep",
+      "entityId": "cloud-billing-20261006-token-price",
+      "graphId": "timem-cloud-billing-pricing",
+      "x": 960,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#aa743b",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 12,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-qa-price-rep",
+      "entityId": "cloud-billing-20261006-qa-price",
+      "graphId": "timem-cloud-billing-pricing",
+      "x": 960,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#aa743b",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 13,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-base-price-rep",
+      "entityId": "cloud-billing-20261006-base-price",
+      "graphId": "timem-cloud-billing-pricing",
+      "x": 960,
+      "y": 780,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#aa743b",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 14,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-candidate-bill-rep",
+      "entityId": "cloud-billing-20261006-candidate-bill",
+      "graphId": "timem-cloud-billing-pricing",
+      "x": 1440,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#aa743b",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 15,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      },
+      "subgraphIds": [
+        "timem-cloud-billing-gates"
+      ]
+    },
+    {
+      "id": "cloud-billing-20261006-shadow-rep",
+      "entityId": "cloud-billing-20261006-shadow",
+      "graphId": "timem-cloud-billing-gates",
+      "x": 0,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#aa743b",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 16,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-route-check-rep",
+      "entityId": "cloud-billing-20261006-route-check",
+      "graphId": "timem-cloud-billing-gates",
+      "x": 480,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#a85648",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 17,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-budget-check-rep",
+      "entityId": "cloud-billing-20261006-budget-check",
+      "graphId": "timem-cloud-billing-gates",
+      "x": 960,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#a85648",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 18,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-ledger-check-rep",
+      "entityId": "cloud-billing-20261006-ledger-check",
+      "graphId": "timem-cloud-billing-gates",
+      "x": 960,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#a85648",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 19,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-margin-check-rep",
+      "entityId": "cloud-billing-20261006-margin-check",
+      "graphId": "timem-cloud-billing-gates",
+      "x": 480,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#a85648",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 20,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-decision-rep",
+      "entityId": "cloud-billing-20261006-decision",
+      "graphId": "timem-cloud-billing-gates",
+      "x": 0,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#a85648",
+        "backgroundColor": "#fff7ed",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 21,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-write-rep",
+      "entityId": "cloud-billing-20261006-write",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 0,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 22,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-status-rep",
+      "entityId": "cloud-billing-20261006-status",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 480,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 23,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-skip-rep",
+      "entityId": "cloud-billing-20261006-skip",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 480,
+      "y": 780,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 24,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-switch-rep",
+      "entityId": "cloud-billing-20261006-switch",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 960,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 25,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-shadow-record-rep",
+      "entityId": "cloud-billing-20261006-shadow-record",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 960,
+      "y": 780,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 26,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-legacy-price-rep",
+      "entityId": "cloud-billing-20261006-legacy-price",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 1440,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 27,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-dedup-rep",
+      "entityId": "cloud-billing-20261006-dedup",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 1440,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 28,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-repeat-rep",
+      "entityId": "cloud-billing-20261006-repeat",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 1920,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 29,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-debit-rep",
+      "entityId": "cloud-billing-20261006-debit",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 1920,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 30,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      },
+      "subgraphIds": [
+        "timem-cloud-billing-finance"
+      ]
+    },
+    {
+      "id": "cloud-billing-20261006-usage-stats-rep",
+      "entityId": "cloud-billing-20261006-usage-stats",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 2400,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 31,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-usage-failure-rep",
+      "entityId": "cloud-billing-20261006-usage-failure",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 2400,
+      "y": 780,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 32,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-retry-risk-rep",
+      "entityId": "cloud-billing-20261006-retry-risk",
+      "graphId": "timem-cloud-billing-ingest",
+      "x": 1920,
+      "y": 780,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 33,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-external-query-rep",
+      "entityId": "cloud-billing-20261006-external-query",
+      "graphId": "timem-cloud-billing-query",
+      "x": 0,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 34,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-precheck-rep",
+      "entityId": "cloud-billing-20261006-precheck",
+      "graphId": "timem-cloud-billing-query",
+      "x": 480,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 35,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-execute-rep",
+      "entityId": "cloud-billing-20261006-execute",
+      "graphId": "timem-cloud-billing-query",
+      "x": 960,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 36,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-postcheck-rep",
+      "entityId": "cloud-billing-20261006-postcheck",
+      "graphId": "timem-cloud-billing-query",
+      "x": 1440,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 37,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-quota-use-rep",
+      "entityId": "cloud-billing-20261006-quota-use",
+      "graphId": "timem-cloud-billing-finance",
+      "x": 0,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 42,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-wallet-use-rep",
+      "entityId": "cloud-billing-20261006-wallet-use",
+      "graphId": "timem-cloud-billing-finance",
+      "x": 480,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 43,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-receipt-rep",
+      "entityId": "cloud-billing-20261006-receipt",
+      "graphId": "timem-cloud-billing-finance",
+      "x": 960,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 44,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-no-balance-rep",
+      "entityId": "cloud-billing-20261006-no-balance",
+      "graphId": "timem-cloud-billing-query",
+      "x": 480,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 38,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-service-failure-rep",
+      "entityId": "cloud-billing-20261006-service-failure",
+      "graphId": "timem-cloud-billing-query",
+      "x": 1011.1125707604133,
+      "y": 723.7475211209623,
+      "width": 380,
+      "height": 230,
+      "pinned": true,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 42,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-post-shortage-rep",
+      "entityId": "cloud-billing-20261006-post-shortage",
+      "graphId": "timem-cloud-billing-query",
+      "x": 1440,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 40,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-settlement-entry-rep",
+      "entityId": "cloud-billing-20261006-settlement-entry",
+      "graphId": "timem-cloud-billing-query",
+      "x": 1920,
+      "y": 0,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 41,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      },
+      "subgraphIds": [
+        "timem-cloud-billing-finance"
+      ]
+    },
+    {
+      "id": "cloud-billing-20261006-finance-shortage-rep",
+      "entityId": "cloud-billing-20261006-finance-shortage",
+      "graphId": "timem-cloud-billing-finance",
+      "x": 480,
+      "y": 390,
+      "width": 380,
+      "height": 230,
+      "pinned": false,
+      "style": {
+        "contentView": "card",
+        "strokeColor": "#426c64",
+        "backgroundColor": "#f4f8f5",
+        "strokeWidth": 1,
+        "roughness": 0,
+        "notebook": {
+          "schemaVersion": 1,
+          "role": "concept",
+          "branchId": "billing-flow",
+          "side": "right",
+          "order": 45,
+          "notation": "process",
+          "bodyMode": "complete"
+        }
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-flow-request-route",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-request",
+      "to": "cloud-billing-20261006-route",
+      "label": "识别服务",
+      "metadata": {
+        "graphId": "timem-cloud-billing-flow",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-request-rep",
+          "toRepresentationId": "cloud-billing-20261006-route-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": []
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-flow-route-ingest-entry",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-route",
+      "to": "cloud-billing-20261006-ingest-entry",
+      "label": "入图",
+      "metadata": {
+        "graphId": "timem-cloud-billing-flow",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-route-rep",
+          "toRepresentationId": "cloud-billing-20261006-ingest-entry-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "文档 / L3 / 表"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-flow-route-query-entry",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-route",
+      "to": "cloud-billing-20261006-query-entry",
+      "label": "查询",
+      "metadata": {
+        "graphId": "timem-cloud-billing-flow",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-route-rep",
+          "toRepresentationId": "cloud-billing-20261006-query-entry-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "search / qa"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-flow-route-browse",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-route",
+      "to": "cloud-billing-20261006-browse",
+      "label": "管理",
+      "metadata": {
+        "graphId": "timem-cloud-billing-flow",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-route-rep",
+          "toRepresentationId": "cloud-billing-20261006-browse-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "浏览 / 邻域 / 撤回"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-flow-ingest-entry-dry-result",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-ingest-entry",
+      "to": "cloud-billing-20261006-dry-result",
+      "label": "开关默认关闭",
+      "metadata": {
+        "graphId": "timem-cloud-billing-flow",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-ingest-entry-rep",
+          "toRepresentationId": "cloud-billing-20261006-dry-result-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": []
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-flow-query-entry-query-result",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-query-entry",
+      "to": "cloud-billing-20261006-query-result",
+      "label": "现有通道",
+      "metadata": {
+        "graphId": "timem-cloud-billing-flow",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-query-entry-rep",
+          "toRepresentationId": "cloud-billing-20261006-query-result-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": []
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-flow-browse-capacity-result",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-browse",
+      "to": "cloud-billing-20261006-capacity-result",
+      "label": "成本归属",
+      "metadata": {
+        "graphId": "timem-cloud-billing-flow",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-browse-rep",
+          "toRepresentationId": "cloud-billing-20261006-capacity-result-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "候选容量方案"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-pricing-pressure-multiplier",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-pressure",
+      "to": "cloud-billing-20261006-multiplier",
+      "label": "γ",
+      "metadata": {
+        "graphId": "timem-cloud-billing-pricing",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-pressure-rep",
+          "toRepresentationId": "cloud-billing-20261006-multiplier-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "压力假设"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-pricing-target-multiplier",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-target",
+      "to": "cloud-billing-20261006-multiplier",
+      "label": "目标55%",
+      "metadata": {
+        "graphId": "timem-cloud-billing-pricing",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-target-rep",
+          "toRepresentationId": "cloud-billing-20261006-multiplier-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "设计目标"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-pricing-reference-token-price",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-reference",
+      "to": "cloud-billing-20261006-token-price",
+      "label": "成功必要Token",
+      "metadata": {
+        "graphId": "timem-cloud-billing-pricing",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-reference-rep",
+          "toRepresentationId": "cloud-billing-20261006-token-price-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "非缓存 / 缓存 / 输出 / 向量"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-pricing-multiplier-token-price",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-multiplier",
+      "to": "cloud-billing-20261006-token-price",
+      "label": "取4倍",
+      "metadata": {
+        "graphId": "timem-cloud-billing-pricing",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-multiplier-rep",
+          "toRepresentationId": "cloud-billing-20261006-token-price-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "非现价"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-pricing-token-price-candidate-bill",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-token-price",
+      "to": "cloud-billing-20261006-candidate-bill",
+      "label": "计算费",
+      "metadata": {
+        "graphId": "timem-cloud-billing-pricing",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-token-price-rep",
+          "toRepresentationId": "cloud-billing-20261006-candidate-bill-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "成功提交部分"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-pricing-qa-price-candidate-bill",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-qa-price",
+      "to": "cloud-billing-20261006-candidate-bill",
+      "label": "请求费",
+      "metadata": {
+        "graphId": "timem-cloud-billing-pricing",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-qa-price-rep",
+          "toRepresentationId": "cloud-billing-20261006-candidate-bill-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "查询服务成功"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-pricing-base-price-candidate-bill",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-base-price",
+      "to": "cloud-billing-20261006-candidate-bill",
+      "label": "容量费",
+      "metadata": {
+        "graphId": "timem-cloud-billing-pricing",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-base-price-rep",
+          "toRepresentationId": "cloud-billing-20261006-candidate-bill-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "容量档已标定"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-gates-shadow-route-check",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-shadow",
+      "to": "cloud-billing-20261006-route-check",
+      "label": "形成回执",
+      "metadata": {
+        "graphId": "timem-cloud-billing-gates",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-shadow-rep",
+          "toRepresentationId": "cloud-billing-20261006-route-check-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "模拟运行"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-gates-route-check-budget-check",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-route-check",
+      "to": "cloud-billing-20261006-budget-check",
+      "label": "路由吻合",
+      "metadata": {
+        "graphId": "timem-cloud-billing-gates",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-route-check-rep",
+          "toRepresentationId": "cloud-billing-20261006-budget-check-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "通过"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-gates-budget-check-ledger-check",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-budget-check",
+      "to": "cloud-billing-20261006-ledger-check",
+      "label": "护栏可执行",
+      "metadata": {
+        "graphId": "timem-cloud-billing-gates",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-budget-check-rep",
+          "toRepresentationId": "cloud-billing-20261006-ledger-check-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "通过"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-gates-ledger-check-margin-check",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-ledger-check",
+      "to": "cloud-billing-20261006-margin-check",
+      "label": "两本账闭合",
+      "metadata": {
+        "graphId": "timem-cloud-billing-gates",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-ledger-check-rep",
+          "toRepresentationId": "cloud-billing-20261006-margin-check-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "通过"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-gates-margin-check-decision",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-margin-check",
+      "to": "cloud-billing-20261006-decision",
+      "label": "满足目标与底线",
+      "metadata": {
+        "graphId": "timem-cloud-billing-gates",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-margin-check-rep",
+          "toRepresentationId": "cloud-billing-20261006-decision-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "通过"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-gates-route-check-shadow",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-route-check",
+      "to": "cloud-billing-20261006-shadow",
+      "label": "路由不符",
+      "metadata": {
+        "graphId": "timem-cloud-billing-gates",
+        "presentation": {
+          "notation": "feedback",
+          "fromRepresentationId": "cloud-billing-20261006-route-check-rep",
+          "toRepresentationId": "cloud-billing-20261006-shadow-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "路由证据不足"
+          ]
+        },
+        "route": [
+          [
+            450,
+            285
+          ],
+          [
+            410,
+            285
+          ],
+          [
+            410,
+            115
+          ]
+        ]
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-gates-budget-check-shadow",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-budget-check",
+      "to": "cloud-billing-20261006-shadow",
+      "label": "预算未落实",
+      "metadata": {
+        "graphId": "timem-cloud-billing-gates",
+        "route": [
+          [
+            900,
+            -38
+          ],
+          [
+            410,
+            -38
+          ],
+          [
+            410,
+            115
+          ]
+        ],
+        "presentation": {
+          "notation": "feedback",
+          "fromRepresentationId": "cloud-billing-20261006-budget-check-rep",
+          "toRepresentationId": "cloud-billing-20261006-shadow-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "预算证据不足"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-gates-ledger-check-shadow",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-ledger-check",
+      "to": "cloud-billing-20261006-shadow",
+      "label": "账本未闭合",
+      "metadata": {
+        "graphId": "timem-cloud-billing-gates",
+        "route": [
+          [
+            900,
+            690
+          ],
+          [
+            410,
+            690
+          ],
+          [
+            410,
+            115
+          ]
+        ],
+        "presentation": {
+          "notation": "feedback",
+          "fromRepresentationId": "cloud-billing-20261006-ledger-check-rep",
+          "toRepresentationId": "cloud-billing-20261006-shadow-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "账本证据不足"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-gates-margin-check-shadow",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-margin-check",
+      "to": "cloud-billing-20261006-shadow",
+      "label": "毛利不足：重算",
+      "metadata": {
+        "graphId": "timem-cloud-billing-gates",
+        "presentation": {
+          "notation": "feedback",
+          "fromRepresentationId": "cloud-billing-20261006-margin-check-rep",
+          "toRepresentationId": "cloud-billing-20261006-shadow-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "毛利不足"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-write-status",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-write",
+      "to": "cloud-billing-20261006-status",
+      "label": "更新任务状态",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-write-rep",
+          "toRepresentationId": "cloud-billing-20261006-status-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": []
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-status-switch",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-status",
+      "to": "cloud-billing-20261006-switch",
+      "label": "合资格",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-status-rep",
+          "toRepresentationId": "cloud-billing-20261006-switch-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "eligible=true"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-status-skip",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-status",
+      "to": "cloud-billing-20261006-skip",
+      "label": "未完成 / 失败",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-status-rep",
+          "toRepresentationId": "cloud-billing-20261006-skip-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "eligible=false"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-switch-shadow-record",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-switch",
+      "to": "cloud-billing-20261006-shadow-record",
+      "label": "false（默认）",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-switch-rep",
+          "toRepresentationId": "cloud-billing-20261006-shadow-record-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "GRAPH_INGEST_BILLING_ENABLED=false"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-switch-legacy-price",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-switch",
+      "to": "cloud-billing-20261006-legacy-price",
+      "label": "true",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-switch-rep",
+          "toRepresentationId": "cloud-billing-20261006-legacy-price-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "实际部署启用"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-legacy-price-dedup",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-legacy-price",
+      "to": "cloud-billing-20261006-dedup",
+      "label": "amount>0",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-legacy-price-rep",
+          "toRepresentationId": "cloud-billing-20261006-dedup-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "配置可收费"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-dedup-repeat",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-dedup",
+      "to": "cloud-billing-20261006-repeat",
+      "label": "已认领且键有效",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-dedup-rep",
+          "toRepresentationId": "cloud-billing-20261006-repeat-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "有效幂等键"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-dedup-debit",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-dedup",
+      "to": "cloud-billing-20261006-debit",
+      "label": "首次认领",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-dedup-rep",
+          "toRepresentationId": "cloud-billing-20261006-debit-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "认领成功，键未被占用"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-debit-usage-stats",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-debit",
+      "to": "cloud-billing-20261006-usage-stats",
+      "label": "财务扣款已提交",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-debit-rep",
+          "toRepresentationId": "cloud-billing-20261006-usage-stats-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "finance commit accepted"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-usage-stats-usage-failure",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-usage-stats",
+      "to": "cloud-billing-20261006-usage-failure",
+      "label": "统计失败",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-usage-stats-rep",
+          "toRepresentationId": "cloud-billing-20261006-usage-failure-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "usage statistics error"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-usage-failure-retry-risk",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-usage-failure",
+      "to": "cloud-billing-20261006-retry-risk",
+      "label": "认领键已释放",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-usage-failure-rep",
+          "toRepresentationId": "cloud-billing-20261006-retry-risk-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "post-commit stats failure"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-ingest-retry-risk-debit",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-retry-risk",
+      "to": "cloud-billing-20261006-debit",
+      "label": "重新认领",
+      "metadata": {
+        "graphId": "timem-cloud-billing-ingest",
+        "presentation": {
+          "notation": "feedback",
+          "fromRepresentationId": "cloud-billing-20261006-retry-risk-rep",
+          "toRepresentationId": "cloud-billing-20261006-debit-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "retry after release"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-query-external-query-precheck",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-external-query",
+      "to": "cloud-billing-20261006-precheck",
+      "label": "计费账户",
+      "metadata": {
+        "graphId": "timem-cloud-billing-query",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-external-query-rep",
+          "toRepresentationId": "cloud-billing-20261006-precheck-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": []
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-query-precheck-execute",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-precheck",
+      "to": "cloud-billing-20261006-execute",
+      "label": "够用",
+      "metadata": {
+        "graphId": "timem-cloud-billing-query",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-precheck-rep",
+          "toRepresentationId": "cloud-billing-20261006-execute-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "额度和钱包覆盖"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-query-precheck-no-balance",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-precheck",
+      "to": "cloud-billing-20261006-no-balance",
+      "label": "不足",
+      "metadata": {
+        "graphId": "timem-cloud-billing-query",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-precheck-rep",
+          "toRepresentationId": "cloud-billing-20261006-no-balance-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "首次预检不足"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-query-execute-postcheck",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-execute",
+      "to": "cloud-billing-20261006-postcheck",
+      "label": "成功返回",
+      "metadata": {
+        "graphId": "timem-cloud-billing-query",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-execute-rep",
+          "toRepresentationId": "cloud-billing-20261006-postcheck-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "业务成功"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-query-execute-service-failure",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-execute",
+      "to": "cloud-billing-20261006-service-failure",
+      "label": "异常",
+      "metadata": {
+        "graphId": "timem-cloud-billing-query",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-execute-rep",
+          "toRepresentationId": "cloud-billing-20261006-service-failure-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "HTTPException / 服务异常"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-query-postcheck-post-shortage",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-postcheck",
+      "to": "cloud-billing-20261006-post-shortage",
+      "label": "已不足",
+      "metadata": {
+        "graphId": "timem-cloud-billing-query",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-postcheck-rep",
+          "toRepresentationId": "cloud-billing-20261006-post-shortage-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "后置检查不足"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-query-postcheck-settlement-entry",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-postcheck",
+      "to": "cloud-billing-20261006-settlement-entry",
+      "label": "仍够用",
+      "metadata": {
+        "graphId": "timem-cloud-billing-query",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-postcheck-rep",
+          "toRepresentationId": "cloud-billing-20261006-settlement-entry-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "后置预检通过"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-finance-quota-use-receipt",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-quota-use",
+      "to": "cloud-billing-20261006-receipt",
+      "label": "额度全覆盖",
+      "metadata": {
+        "graphId": "timem-cloud-billing-finance",
+        "route": [
+          [
+            410,
+            -38
+          ],
+          [
+            910,
+            -38
+          ],
+          [
+            910,
+            115
+          ]
+        ],
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-quota-use-rep",
+          "toRepresentationId": "cloud-billing-20261006-receipt-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "balance_usage=0"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-finance-quota-use-wallet-use",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-quota-use",
+      "to": "cloud-billing-20261006-wallet-use",
+      "label": "有缺口",
+      "metadata": {
+        "graphId": "timem-cloud-billing-finance",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-quota-use-rep",
+          "toRepresentationId": "cloud-billing-20261006-wallet-use-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "balance_usage>0"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-finance-wallet-use-receipt",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-wallet-use",
+      "to": "cloud-billing-20261006-receipt",
+      "label": "扣款通过",
+      "metadata": {
+        "graphId": "timem-cloud-billing-finance",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-wallet-use-rep",
+          "toRepresentationId": "cloud-billing-20261006-receipt-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "钱包检查足够"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-timem-cloud-billing-finance-wallet-use-finance-shortage",
+      "kind": "sequence",
+      "from": "cloud-billing-20261006-wallet-use",
+      "to": "cloud-billing-20261006-finance-shortage",
+      "label": "钱包不足",
+      "metadata": {
+        "graphId": "timem-cloud-billing-finance",
+        "presentation": {
+          "notation": "flow",
+          "fromRepresentationId": "cloud-billing-20261006-wallet-use-rep",
+          "toRepresentationId": "cloud-billing-20261006-finance-shortage-rep"
+        },
+        "expression": {
+          "schemaVersion": 1,
+          "conditions": [
+            "财务余额不足"
+          ]
+        }
+      }
+    }
+  ],
+  "freeElements": [
+    {
+      "id": "cloud-billing-20261006-overview-header",
+      "graphId": "timem-cloud-billing-flow",
+      "element": {
+        "id": "cloud-billing-20261006-overview-header",
+        "type": "rectangle",
+        "x": 0,
+        "y": -260,
+        "width": 1820,
+        "height": 180,
+        "angle": 0,
+        "isDeleted": false
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-pricing-header",
+      "graphId": "timem-cloud-billing-pricing",
+      "element": {
+        "id": "cloud-billing-20261006-pricing-header",
+        "type": "rectangle",
+        "x": 0,
+        "y": -240,
+        "width": 1820,
+        "height": 170,
+        "angle": 0,
+        "isDeleted": false
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-gates-header",
+      "graphId": "timem-cloud-billing-gates",
+      "element": {
+        "id": "cloud-billing-20261006-gates-header",
+        "type": "rectangle",
+        "x": 0,
+        "y": -240,
+        "width": 1340,
+        "height": 170,
+        "angle": 0,
+        "isDeleted": false
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-ingest-header",
+      "graphId": "timem-cloud-billing-ingest",
+      "element": {
+        "id": "cloud-billing-20261006-ingest-header",
+        "type": "rectangle",
+        "x": 0,
+        "y": -240,
+        "width": 2300,
+        "height": 180,
+        "angle": 0,
+        "isDeleted": false
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-ingest-limit",
+      "graphId": "timem-cloud-billing-ingest",
+      "element": {
+        "id": "cloud-billing-20261006-ingest-limit",
+        "type": "rectangle",
+        "x": 1440,
+        "y": 1080,
+        "width": 860,
+        "height": 210,
+        "angle": 0,
+        "isDeleted": false
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-query-header",
+      "graphId": "timem-cloud-billing-query",
+      "element": {
+        "id": "cloud-billing-20261006-query-header",
+        "type": "rectangle",
+        "x": 0,
+        "y": -240,
+        "width": 2300,
+        "height": 180,
+        "angle": 0,
+        "isDeleted": false
+      }
+    },
+    {
+      "id": "cloud-billing-20261006-finance-header",
+      "graphId": "timem-cloud-billing-finance",
+      "element": {
+        "id": "cloud-billing-20261006-finance-header",
+        "type": "rectangle",
+        "x": 0,
+        "y": -240,
+        "width": 1340,
+        "height": 180,
+        "angle": 0,
+        "isDeleted": false
+      }
+    }
+  ],
+  "annotations": [],
+  "batches": [],
+  "discussions": [],
+  "runs": [],
+  "executors": [],
+  "requests": [],
+  "resources": []
+}

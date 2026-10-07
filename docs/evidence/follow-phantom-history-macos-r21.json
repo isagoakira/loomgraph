@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-02T10:00:19.904Z",
+  "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+  "revision": 64,
+  "history": [
+    {
+      "id": "b2606f61-ad77-41f8-bec8-73385a10758c",
+      "parentChangeId": "27e0cb16-2e95-4907-8a33-3a063cc69015",
+      "operationId": "operation-259cc477-7086-4a07-8ffc-09b745bb14f0",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 63,
+      "revision": 64,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T09:59:41.551Z",
+      "operations": [
+        {
+          "type": "free.remove",
+          "id": "8gqp1lj0noqIDNWEXRiBE"
+        }
+      ],
+      "affectedIds": [
+        "8gqp1lj0noqIDNWEXRiBE"
+      ],
+      "appliedOperations": [
+        {
+          "type": "free.remove",
+          "id": "8gqp1lj0noqIDNWEXRiBE"
+        }
+      ]
+    }
+  ]
+}

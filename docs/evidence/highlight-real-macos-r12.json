@@ -1,0 +1,99 @@
+{
+  "checkedAt": "2026-10-02T04:45:44.592Z",
+  "path": "正式呈现API、图限定、真实高亮像素、缩放平移与TTL",
+  "assertions": {
+    "offGraphDoesNotDraw": true,
+    "highlightDoesNotNavigate": true,
+    "highlightHasActualPixels": true,
+    "highlightFollowsZoom": true,
+    "highlightFollowsPan": true,
+    "freeElementAndRelationBothRenderTemporaryTargets": true,
+    "ttlRemovesHighlights": true,
+    "allPresentationLeavesSnapshotExactlyUnchanged": true
+  },
+  "samples": [
+    {
+      "phase": "initial",
+      "copperPixels": 1560,
+      "visible": true,
+      "origin": {
+        "x": 647,
+        "y": 794
+      },
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 718,
+        "scrollX": 467.9761904761905,
+        "scrollY": 401,
+        "zoom": 0.6
+      }
+    },
+    {
+      "phase": "zoom",
+      "copperPixels": 2063,
+      "visible": true,
+      "origin": {
+        "x": 585,
+        "y": 807
+      },
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 718,
+        "scrollX": 346.78571428571433,
+        "scrollY": 315.5238095238095,
+        "zoom": 0.7
+      }
+    },
+    {
+      "phase": "pan",
+      "copperPixels": 2063,
+      "visible": true,
+      "origin": {
+        "x": 525,
+        "y": 847
+      },
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 718,
+        "scrollX": 303.92857142857144,
+        "scrollY": 344.0952380952381,
+        "zoom": 0.7
+      }
+    }
+  ],
+  "beforeRevision": 18,
+  "initial": {
+    "graph": "r9-graph-b",
+    "sceneCount": 4,
+    "persistedCount": 4,
+    "projectionCount": 4,
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 718,
+      "scrollX": 467.9761904761905,
+      "scrollY": 401,
+      "zoom": 0.6
+    }
+  },
+  "presentHint": {
+    "persisted": false,
+    "contentRevisionChanged": false,
+    "userViewportPreserved": true,
+    "next": "canvas_read"
+  },
+  "freeTarget": {
+    "type": "element",
+    "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "elementId": "dA8N2CANJf9tCDi01mgRI"
+  },
+  "finalRevision": 18,
+  "status": "passed"
+}

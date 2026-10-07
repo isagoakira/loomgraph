@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-02T02:19:26.523Z",
+  "resourceId": "canvas-resource-724dc7df9675439d8a84f0ac2f30b04319357a9a",
+  "naturalWidth": 160,
+  "naturalHeight": 96,
+  "rgb": [
+    49,
+    90,
+    125,
+    255
+  ],
+  "assertions": {
+    "validDecodedDimensions": true,
+    "actualBlueResourcePixels": true
+  },
+  "boundary": "资源在同一浏览器独立Image decode及临时Canvas绘制成功；此项不证明Excalidraw原生画布的渲染。"
+}

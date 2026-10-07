@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-02T03:50:41.039Z",
+  "path": "冷重载R9后选择右入口，实际Cmd+D复验并用公开window error listener捕获",
+  "beforeRevision": 9,
+  "afterRevision": 9,
+  "errors": [
+    {
+      "kind": "error",
+      "message": "Uncaught ReferenceError: document is not defined"
+    },
+    {
+      "kind": "error",
+      "message": "Uncaught ReferenceError: document is not defined"
+    },
+    {
+      "kind": "error",
+      "message": "Uncaught ReferenceError: document is not defined"
+    },
+    {
+      "kind": "error",
+      "message": "Uncaught ReferenceError: document is not defined"
+    },
+    {
+      "kind": "error",
+      "message": "Uncaught ReferenceError: document is not defined"
+    },
+    {
+      "kind": "error",
+      "message": "Uncaught ReferenceError: document is not defined"
+    },
+    {
+      "kind": "error",
+      "message": "Uncaught ReferenceError: document is not defined"
+    }
+  ],
+  "rootEmpty": false,
+  "canvasPresent": true,
+  "representationCount": 12
+}

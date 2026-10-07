@@ -1,0 +1,354 @@
+{
+  "checkedAt": "2026-10-02T05:02:51.773Z",
+  "previousEvidence": "native-free-copy-resumed-macos-r12.json",
+  "changedFieldsForR17": [
+    "index",
+    "version",
+    "versionNonce",
+    "updated"
+  ],
+  "history": [
+    {
+      "id": "9eefd450-e821-4d70-a5f7-c88ba5824656",
+      "parentChangeId": "7fe0dcdc-5478-438c-88a2-ead6db5ca39a",
+      "operationId": "operation-45dc6f2d-9e21-4630-8461-8af47f459a6b",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 15,
+      "revision": 16,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T04:42:52.762Z",
+      "operations": [
+        {
+          "type": "free.put",
+          "freeElement": {
+            "id": "free-NBa-vBGIsriHoM0vkrh9B",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "element": {
+              "id": "NBa-vBGIsriHoM0vkrh9B",
+              "type": "ellipse",
+              "x": 907.8571428571429,
+              "y": 356.28571428571433,
+              "width": 262.8571428571429,
+              "height": 80,
+              "angle": 0,
+              "strokeColor": "#1e1e1e",
+              "backgroundColor": "transparent",
+              "fillStyle": "solid",
+              "strokeWidth": 2,
+              "strokeStyle": "solid",
+              "roughness": 1,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "index": "aNV",
+              "roundness": {
+                "type": 2
+              },
+              "seed": 796229009,
+              "version": 5,
+              "versionNonce": 1255645183,
+              "isDeleted": false,
+              "boundElements": null,
+              "updated": 1790916172413,
+              "link": null,
+              "locked": false,
+              "customData": {
+                "agentCanvas": {
+                  "freeElementId": "free-NBa-vBGIsriHoM0vkrh9B",
+                  "role": "free",
+                  "copiedFromFreeElementId": "dA8N2CANJf9tCDi01mgRI"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "affectedIds": [
+        "free-NBa-vBGIsriHoM0vkrh9B",
+        "fa292dc4-258e-46f9-ba2a-561a2223c394"
+      ],
+      "appliedOperations": [
+        {
+          "type": "free.put",
+          "freeElement": {
+            "id": "free-NBa-vBGIsriHoM0vkrh9B",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "element": {
+              "id": "NBa-vBGIsriHoM0vkrh9B",
+              "type": "ellipse",
+              "x": 907.8571428571429,
+              "y": 356.28571428571433,
+              "width": 262.8571428571429,
+              "height": 80,
+              "angle": 0,
+              "strokeColor": "#1e1e1e",
+              "backgroundColor": "transparent",
+              "fillStyle": "solid",
+              "strokeWidth": 2,
+              "strokeStyle": "solid",
+              "roughness": 1,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "index": "aNV",
+              "roundness": {
+                "type": 2
+              },
+              "seed": 796229009,
+              "version": 5,
+              "versionNonce": 1255645183,
+              "isDeleted": false,
+              "boundElements": null,
+              "updated": 1790916172413,
+              "link": null,
+              "locked": false,
+              "customData": {
+                "agentCanvas": {
+                  "freeElementId": "free-NBa-vBGIsriHoM0vkrh9B",
+                  "role": "free",
+                  "copiedFromFreeElementId": "dA8N2CANJf9tCDi01mgRI"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1c2631e3-24aa-4270-8bce-7831c3683291",
+      "parentChangeId": "9eefd450-e821-4d70-a5f7-c88ba5824656",
+      "operationId": "operation-9195e804-9635-4e4b-87c1-70d032bf47da",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 16,
+      "revision": 17,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T04:42:53.686Z",
+      "operations": [
+        {
+          "type": "free.put",
+          "freeElement": {
+            "id": "free-NBa-vBGIsriHoM0vkrh9B",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "element": {
+              "id": "NBa-vBGIsriHoM0vkrh9B",
+              "type": "ellipse",
+              "x": 907.8571428571429,
+              "y": 356.28571428571433,
+              "width": 262.8571428571429,
+              "height": 80,
+              "angle": 0,
+              "strokeColor": "#1e1e1e",
+              "backgroundColor": "transparent",
+              "fillStyle": "solid",
+              "strokeWidth": 2,
+              "strokeStyle": "solid",
+              "roughness": 1,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "index": "aS",
+              "roundness": {
+                "type": 2
+              },
+              "seed": 796229009,
+              "version": 6,
+              "versionNonce": 659460785,
+              "isDeleted": false,
+              "boundElements": null,
+              "updated": 1790916173322,
+              "link": null,
+              "locked": false,
+              "customData": {
+                "agentCanvas": {
+                  "freeElementId": "free-NBa-vBGIsriHoM0vkrh9B",
+                  "role": "free",
+                  "copiedFromFreeElementId": "dA8N2CANJf9tCDi01mgRI"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "affectedIds": [
+        "free-NBa-vBGIsriHoM0vkrh9B",
+        "fa292dc4-258e-46f9-ba2a-561a2223c394"
+      ],
+      "appliedOperations": [
+        {
+          "type": "free.put",
+          "freeElement": {
+            "id": "free-NBa-vBGIsriHoM0vkrh9B",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "element": {
+              "id": "NBa-vBGIsriHoM0vkrh9B",
+              "type": "ellipse",
+              "x": 907.8571428571429,
+              "y": 356.28571428571433,
+              "width": 262.8571428571429,
+              "height": 80,
+              "angle": 0,
+              "strokeColor": "#1e1e1e",
+              "backgroundColor": "transparent",
+              "fillStyle": "solid",
+              "strokeWidth": 2,
+              "strokeStyle": "solid",
+              "roughness": 1,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "index": "aS",
+              "roundness": {
+                "type": 2
+              },
+              "seed": 796229009,
+              "version": 6,
+              "versionNonce": 659460785,
+              "isDeleted": false,
+              "boundElements": null,
+              "updated": 1790916173322,
+              "link": null,
+              "locked": false,
+              "customData": {
+                "agentCanvas": {
+                  "freeElementId": "free-NBa-vBGIsriHoM0vkrh9B",
+                  "role": "free",
+                  "copiedFromFreeElementId": "dA8N2CANJf9tCDi01mgRI"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "4dbfa1e8-6bb9-4171-b345-f56207380dd5",
+      "parentChangeId": "1c2631e3-24aa-4270-8bce-7831c3683291",
+      "operationId": "operation-d796bc4e-3583-4cbe-ae8a-d0befa524a66",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 17,
+      "revision": 18,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T04:44:50.825Z",
+      "operations": [
+        {
+          "type": "free.put",
+          "freeElement": {
+            "id": "free-NBa-vBGIsriHoM0vkrh9B",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "element": {
+              "id": "NBa-vBGIsriHoM0vkrh9B",
+              "type": "ellipse",
+              "x": 906.8571428571429,
+              "y": 356.28571428571433,
+              "width": 262.8571428571429,
+              "height": 80,
+              "angle": 0,
+              "strokeColor": "#1e1e1e",
+              "backgroundColor": "transparent",
+              "fillStyle": "solid",
+              "strokeWidth": 2,
+              "strokeStyle": "solid",
+              "roughness": 1,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "index": "aS",
+              "roundness": {
+                "type": 2
+              },
+              "seed": 796229009,
+              "version": 7,
+              "versionNonce": 630679007,
+              "isDeleted": false,
+              "boundElements": null,
+              "updated": 1790916290427,
+              "link": null,
+              "locked": false,
+              "customData": {
+                "agentCanvas": {
+                  "freeElementId": "free-NBa-vBGIsriHoM0vkrh9B",
+                  "role": "free",
+                  "copiedFromFreeElementId": "dA8N2CANJf9tCDi01mgRI"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "affectedIds": [
+        "free-NBa-vBGIsriHoM0vkrh9B",
+        "fa292dc4-258e-46f9-ba2a-561a2223c394"
+      ],
+      "appliedOperations": [
+        {
+          "type": "free.put",
+          "freeElement": {
+            "id": "free-NBa-vBGIsriHoM0vkrh9B",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "element": {
+              "id": "NBa-vBGIsriHoM0vkrh9B",
+              "type": "ellipse",
+              "x": 906.8571428571429,
+              "y": 356.28571428571433,
+              "width": 262.8571428571429,
+              "height": 80,
+              "angle": 0,
+              "strokeColor": "#1e1e1e",
+              "backgroundColor": "transparent",
+              "fillStyle": "solid",
+              "strokeWidth": 2,
+              "strokeStyle": "solid",
+              "roughness": 1,
+              "opacity": 100,
+              "groupIds": [],
+              "frameId": null,
+              "index": "aS",
+              "roundness": {
+                "type": 2
+              },
+              "seed": 796229009,
+              "version": 7,
+              "versionNonce": 630679007,
+              "isDeleted": false,
+              "boundElements": null,
+              "updated": 1790916290427,
+              "link": null,
+              "locked": false,
+              "customData": {
+                "agentCanvas": {
+                  "freeElementId": "free-NBa-vBGIsriHoM0vkrh9B",
+                  "role": "free",
+                  "copiedFromFreeElementId": "dA8N2CANJf9tCDi01mgRI"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "assertions": {
+    "geometryAndUserContentUnchangedAtR17": true,
+    "singleCopyRevisionAfterSettle": false
+  },
+  "status": "failed",
+  "boundary": "复制即时身份和页面检查通过，但约1秒后内部index重编号额外提交R17。R18的x减1发生两分钟后，来源未确认，不纳入index回声归因。"
+}

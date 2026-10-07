@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-02T10:48:50.005Z",
+  "previousAttempt": "native-mixed-copy-timeout-macos-r22b.json",
+  "path": "固定 r23 构建，真实复制混合组→投影完成→重载后独立解除复制组",
+  "assertions": {},
+  "beforeRevision": 179,
+  "failure": "Error: page.waitForFunction timed out after 12000ms on page p3; last URL was \"http://127.0.0.1:64581/\"; last title was \"Agent Visual Canvas · 本地工作台\".",
+  "stage": "start",
+  "status": "failed"
+}

@@ -1,0 +1,23 @@
+{
+  "resourceId": "forecastcompass-figure2",
+  "id": "forecastcompass-figure2",
+  "name": "ForecastCompass-Figure-2-original.png",
+  "mimeType": "image/png",
+  "relativePath": "assets/forecastcompass-figure2",
+  "sha256": "f8b536f2aebf3c376d158cbfabb8996c8313d1ed0691e8baf1869af39e60c4c5",
+  "bytes": 350192,
+  "result": {
+    "revision": 28,
+    "changeId": "c94196fd-4b86-47ed-b487-0102835b7993",
+    "operationId": "forecastcompass-figure2-upload-20261002-r1",
+    "affectedIds": [
+      "forecastcompass-figure2"
+    ],
+    "replayed": false
+  },
+  "replayed": false,
+  "hint": {
+    "bounded": true,
+    "persisted": true
+  }
+}

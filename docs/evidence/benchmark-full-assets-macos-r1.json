@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-01T21:35:13.143Z",
+  "environment": {
+    "node": "v26.8.1",
+    "platform": "darwin",
+    "release": "25.6.0",
+    "arch": "arm64",
+    "cpu": "Apple M1",
+    "logicalCores": 8
+  },
+  "fixture": {
+    "entities": 500,
+    "graphs": 20,
+    "representations": 1000,
+    "relations": 1200,
+    "annotations": 30,
+    "freeElements": 80,
+    "resources": 2,
+    "resourceBytes": 542,
+    "revision": 10000
+  },
+  "results": {
+    "elapsedSeconds": 149.52199420800002,
+    "writeP95Ms": 17.13329199999862,
+    "historyReadP95Ms": 104.56816699999035,
+    "contextReadP95Ms": 24.470750000007683,
+    "rssMiB": 182.09375,
+    "sampledPeakRssMiB": 182.09375,
+    "databaseMiB": 94.35546875
+  },
+  "boundary": "Core storage and context measurements; does not measure visible updates, host handoff, Windows, or browser overhead."
+}

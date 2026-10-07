@@ -1,0 +1,12 @@
+{
+  "name": "agent-visual-canvas",
+  "version": "0.1.0",
+  "description": "Local Excalidraw workspace for agent-maintained progress, subgraphs, annotations and versioned changes.",
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json",
+  "interface": {
+    "displayName": "Agent Visual Canvas",
+    "shortDescription": "本地实时画布与批量批注",
+    "defaultPrompt": ["使用 Agent Visual Canvas 展示这项工作的结构和进度，并持续维护变化。"]
+  }
+}

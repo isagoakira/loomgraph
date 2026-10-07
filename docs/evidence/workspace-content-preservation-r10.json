@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-03",
+  "revisionBefore": 101,
+  "revisionAfter": 101,
+  "unchanged": {
+    "entities": true,
+    "graphs": true,
+    "representations": true,
+    "relations": true,
+    "freeElements": true,
+    "annotations": true,
+    "resources": true,
+    "batches": true,
+    "discussions": true,
+    "runs": true
+  }
+}

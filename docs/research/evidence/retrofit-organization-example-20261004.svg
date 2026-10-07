@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="850" viewBox="0 0 1380 850" role="img" aria-labelledby="title desc">
+  <title id="title">同一平面中的思维分支、流程与正文</title>
+  <desc id="desc">ForecastCompass 局部组织设计示意，非当前产品界面。方法组包含分类与双记忆分支、解释正文及新预测流程；研究细则为相邻分组。无箭头的分支表达归属，有箭头的流程表达操作顺序，虚线表达引用。这里不展示论文实验数值。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#3b766b"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;fill:#263b38}
+      .title{font-size:28px;font-weight:700}.heading{font-size:21px;font-weight:650}.body{font-size:17px}.small{font-size:15px;fill:#637771}.label{font-size:16px;font-weight:600}.branch{fill:none;stroke:#6d8d81;stroke-width:2.4}.flow{fill:none;stroke:#3b766b;stroke-width:2.4;marker-end:url(#arrow)}.reference{fill:none;stroke:#889a94;stroke-width:1.6;stroke-dasharray:5 5}
+    </style>
+  </defs>
+  <rect width="1380" height="850" fill="#fafaf6"/>
+  <text class="title" x="42" y="50">结构展开与连续阅读，发生在同一平面</text>
+  <text class="small" x="42" y="80">产品组织示意 · 非当前界面 / 非实施效果 · 边界表达归属，正文无需逐段套卡片</text>
+
+  <text class="heading" x="44" y="143">背景与问题</text>
+  <text class="body" x="44" y="184">旧记录保存了结果，</text>
+  <text class="body" x="44" y="213">却未必留下下一次</text>
+  <text class="body" x="44" y="242">能复用的检查原则。</text>
+  <text class="small" x="44" y="291">本组出口</text>
+  <text class="label" x="44" y="318">经验应怎样组织？</text>
+  <path class="reference" d="M202 314H263"/>
+
+  <rect x="274" y="115" width="782" height="632" rx="18" fill="#f0f5ef" stroke="#c1d1c5"/>
+  <text class="heading" x="299" y="150">方法组 · 可复用经验如何参与预测？</text>
+  <text class="small" x="299" y="176">两个局部结构与解释正文穿插；展开时维护父组的真实占位。</text>
+
+  <rect x="297" y="194" width="735" height="355" rx="13" fill="#fcfdf9" stroke="#d3ddd2"/>
+  <text class="heading" x="319" y="227">分类索引与双记忆</text>
+
+  <text class="label" x="320" y="281">分类法</text>
+  <text class="small" x="320" y="306">先找到同类问题</text>
+  <path class="branch" d="M408 288C438 288 433 345 463 345"/>
+  <text class="label" x="466" y="344">子类别</text>
+  <text class="small" x="466" y="371">共同索引两份手册</text>
+  <path class="branch" d="M616 345C648 345 639 287 675 287"/>
+  <path class="branch" d="M616 345C648 345 639 400 675 400"/>
+
+  <rect x="675" y="256" width="331" height="92" rx="9" fill="#e5f0e2" stroke="#bbd0b5"/>
+  <text class="label" x="692" y="284">F · 因子记忆：看什么</text>
+  <text class="body" x="692" y="312">检查哪些信号，避免哪些误用。</text>
+  <text class="small" x="957" y="336">细则 ›</text>
+  <rect x="675" y="371" width="331" height="92" rx="9" fill="#ede9f5" stroke="#ccc0dd"/>
+  <text class="label" x="692" y="399">R · 推理记忆：信多少</text>
+  <text class="body" x="692" y="427">据证据强弱、冲突与缺失更新信心。</text>
+  <text class="small" x="957" y="451">细则 ›</text>
+
+  <text class="label" x="319" y="482">为什么要分成两份手册？</text>
+  <text class="body" x="319" y="510">漏查信号与误判信心是两类问题。图上并列呈现分工，正文解释原因。</text>
+  <text class="small" x="319" y="535">例子或证据在 F / R 附近展开；不在侧边再复制一整张同义长卡。</text>
+
+  <text class="heading" x="319" y="585">一次新预测</text>
+  <text class="small" x="319" y="610">在使用处回顾：F 引导搜证，R 引导概率推理；它们不是两个串行记忆阶段。</text>
+  <rect x="319" y="630" width="125" height="51" rx="8" fill="#fff" stroke="#c2d2ca"/>
+  <text class="label" x="350" y="662">新问题</text>
+  <rect x="475" y="630" width="147" height="51" rx="8" fill="#fff" stroke="#c2d2ca"/>
+  <text class="label" x="494" y="662">检索同类记忆</text>
+  <rect x="653" y="630" width="206" height="51" rx="8" fill="#fff" stroke="#c2d2ca"/>
+  <text class="label" x="676" y="662">搜证与概率评估</text>
+  <rect x="890" y="630" width="119" height="51" rx="8" fill="#fff" stroke="#c2d2ca"/>
+  <text class="label" x="914" y="662">概率输出</text>
+  <path class="flow" d="M444 655H472"/><path class="flow" d="M622 655H650"/><path class="flow" d="M859 655H887"/>
+  <text class="body" x="319" y="715">这一步讲“如何使用”；结果后的记忆修订由相邻分组继续展开。</text>
+
+  <rect x="1080" y="195" width="262" height="238" rx="14" fill="#f5f1e6" stroke="#d9ceb3"/>
+  <text class="heading" x="1100" y="230">研究细则 ›</text>
+  <text class="body" x="1100" y="267">统一协议与环境</text>
+  <text class="body" x="1100" y="300">主结果及比较条件</text>
+  <text class="body" x="1100" y="333">静态记忆与 F / R 消融</text>
+  <text class="small" x="1100" y="374">可与方法组同时展开。</text>
+  <text class="small" x="1100" y="399">条件、数字、来源完整保留。</text>
+  <path class="reference" d="M1032 246H1080"/>
+  <text class="small" x="1085" y="481">跨组入口保留原关系身份。</text>
+  <text class="small" x="1085" y="508">详略与结构分开控制，</text>
+  <text class="small" x="1085" y="535">无需切到独立阅读页面。</text>
+
+  <line x1="42" y1="786" x2="1338" y2="786" stroke="#d9e0d8"/>
+  <path class="branch" d="M44 818H90"/><text class="small" x="101" y="823">分支：分工 / 归属</text>
+  <path class="flow" d="M342 818H388"/><text class="small" x="399" y="823">流程：先后 / 传递</text>
+  <path class="reference" d="M640 818H686"/><text class="small" x="697" y="823">引用：可定位的局部接口</text>
+  <text class="small" x="1041" y="823">展开 → 测量 → 避让 → 保持阅读位置</text>
+</svg>

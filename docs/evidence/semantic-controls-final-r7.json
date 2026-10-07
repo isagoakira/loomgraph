@@ -1,0 +1,98 @@
+{
+  "at": "2026-10-02T14:54:41.273Z",
+  "version": "0.1.0-local-20261002-r7",
+  "runningServer": "既有 r1 stdio 进程；新 UI r7；下次启动完整 r7",
+  "projectId": "cb904f16-a9ec-4a38-831c-d84d9a08df80",
+  "workCopyId": "bdc90254-57fe-4968-97a4-96473ca9868f",
+  "revision": 73,
+  "paper": {
+    "graphId": "forecastcompass-reading",
+    "blocks": 14,
+    "defaultView": "reading",
+    "sharedContentEntities": 19,
+    "image": {
+      "id": "forecastcompass-figure2",
+      "name": "ForecastCompass-Figure-2-original.png",
+      "mimeType": "image/png",
+      "relativePath": "assets/forecastcompass-figure2",
+      "sha256": "f8b536f2aebf3c376d158cbfabb8996c8313d1ed0691e8baf1869af39e60c4c5",
+      "bytes": 350192
+    },
+    "dataOnlyTitlesCleaned": true
+  },
+  "userPlacementsPreserved": {
+    "fc-main-1": {
+      "x": 303.388671875,
+      "y": 160.46875,
+      "width": 215,
+      "height": 76,
+      "rotation": 0,
+      "pinned": true
+    },
+    "fc-main-source": {
+      "x": 39.84909637813746,
+      "y": 318,
+      "width": 315,
+      "height": 44,
+      "rotation": 0,
+      "pinned": true
+    }
+  },
+  "textBox": {
+    "id": "text-box-cf8a3cf5-c7b9-40bb-930c-ac4fc4077d71",
+    "geometry": {
+      "x": 1087.7777777777778,
+      "y": 240,
+      "width": 600,
+      "height": 290
+    },
+    "content": {
+      "schemaVersion": 1,
+      "title": "图文混排 · 实际编辑样例",
+      "role": "text",
+      "html": "<p style=\"text-align:center\"><b><span style=\"font-size:24px\">这是一段可以原位编辑的正文。</span></b></p><p style=\"text-align:center\"><b><span style=\"font-size:24px\">它与模块、图片和箭头共同排版，并能独立批注。</span></b></p><p>原位编辑已保存并通过刷新复验。</p>",
+      "fontSize": 18,
+      "fontFamily": "Iowan Old Style, Songti SC, serif",
+      "color": "#22323a",
+      "fill": "#fffdf8",
+      "border": "#d8d2c6"
+    }
+  },
+  "conflicts": {
+    "text": {
+      "baseRevision": 62,
+      "agentRevision": 63,
+      "rejectedDraftRetained": true
+    },
+    "module": {
+      "baseRevision": 63,
+      "agentRevision": 64,
+      "rejectedDraftRetained": true
+    },
+    "ownFixtureCleanupRevision": 65
+  },
+  "feedback": {
+    "batchId": "batch-adf9b806-b9bd-4d6d-9099-04f5f6b6f32f",
+    "observedRevisions": [
+      56,
+      65
+    ],
+    "submittedRevision": 66,
+    "savedRevision": 67,
+    "actualHostReceivedRevision": 68,
+    "completedRevision": 72,
+    "independentResponses": 2,
+    "frozenContextUnchanged": true
+  },
+  "checks": {
+    "typecheck": true,
+    "sourceTestsPassed": 145,
+    "productionBuild": true,
+    "installedNode24StdioAndPackageChecks": 8
+  },
+  "limits": [
+    "富文本导出当前采用纯文本投影，字号跨度和表格排版不保证图像保真",
+    "WPS 式文本框常用编辑已实现，完整分页/文字环绕/印刷排版未实现",
+    "本轮原生 Windows、Claude 宿主与富文本场景性能预算尚未验收"
+  ]
+}

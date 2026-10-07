@@ -1,0 +1,13 @@
+.execution-badge { display:inline-flex; align-items:center; gap:5px; flex-shrink:0; width:max-content; max-width:100%; padding:3px 6px; border:1px solid #b8c8c4; border-radius:5px; background:#f4f7f5; color:#61766a; font:11px/1.4 system-ui,sans-serif; white-space:normal; }
+.execution-indicator { width:5px; height:5px; border-radius:50%; background:currentColor; flex-shrink:0; }
+.execution-running { color:#166c58; border-color:#86beaa; background:#eef9f2; }
+.execution-completed { color:#356b54; background:#eff7ef; }
+.execution-failed,.execution-blocked { color:#a35b33; border-color:#d1ad88; background:#fff7e9; }
+.execution-badge.is-live .execution-indicator { animation:execution-pulse 1.8s ease-in-out infinite; }
+.layout-content-block[data-execution-live="true"] { outline:2px solid #68af92; outline-offset:4px; animation:execution-outline 2.4s ease-in-out infinite; }
+.layout-content-block .execution-status-row { margin:0 14px 5px; min-height:0; flex:none; }
+.layout-content-block .execution-status-row:empty { display:none; }
+.notebook-relation.is-next-candidate .notebook-relation-path { stroke:#5b977d; stroke-opacity:.75; }
+@keyframes execution-pulse { 0%,100% { opacity:1; box-shadow:0 0 0 0 #438a6d30; } 50% { opacity:.65; box-shadow:0 0 0 4px #438a6d10; } }
+@keyframes execution-outline { 0%,100% { outline-color:#68af9290; } 50% { outline-color:#278166; } }
+@media (prefers-reduced-motion:reduce) { .execution-badge.is-live .execution-indicator,.layout-content-block[data-execution-live="true"] { animation:none; } }

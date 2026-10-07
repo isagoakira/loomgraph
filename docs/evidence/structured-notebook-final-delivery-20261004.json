@@ -1,0 +1,61 @@
+{
+  "acceptedScope": "structured notebook usable increment",
+  "fullV1Accepted": false,
+  "buildId": "structured-notebook-20261004-r21-final",
+  "sourceChecks": {
+    "typecheck": true,
+    "testFiles": 36,
+    "tests": 276,
+    "build": true
+  },
+  "installation": {
+    "verifiedContentFiles": 931,
+    "stdioAssertions": 30,
+    "activeMcpReloaded": false
+  },
+  "live": {
+    "projectId": "cb904f16-a9ec-4a38-831c-d84d9a08df80",
+    "workCopyId": "bdc90254-57fe-4968-97a4-96473ca9868f",
+    "fromRevision": 158,
+    "toRevision": 159,
+    "changedGraphIds": [
+      "forecastcompass-spatial-notebook"
+    ],
+    "sourceCollectionsUnchanged": {
+      "entities": true,
+      "relations": true,
+      "representations": true,
+      "freeElements": true,
+      "resources": true,
+      "annotations": true,
+      "batches": true,
+      "discussions": true,
+      "runs": true,
+      "executors": true,
+      "requests": true
+    },
+    "onlyOrganizationChanged": true
+  },
+  "uiEvidence": {
+    "screenshot": "../../.runtime/structured-retrofit-20261004/live-r21-narrow.jpg",
+    "pairedDOM": "../../.runtime/structured-retrofit-20261004/live-r21-ui-proof.json",
+    "defaultViewport": "626x692",
+    "zoomLabel": "44%",
+    "emptyBottomBarHidden": true,
+    "nativeDrawingControlsRestored": true
+  },
+  "remaining": {
+    "notImplemented": [
+      "group whole drag and width control",
+      "extreme annotation selected-ref fragment paging"
+    ],
+    "notFullyValidated": [
+      "all native rotated/frame/scene-order combinations",
+      "IME with concurrent Agent drafts in this round",
+      "long-running live task UI",
+      "full browser performance",
+      "reader comprehension",
+      "native Windows Codex and Claude Code"
+    ]
+  }
+}

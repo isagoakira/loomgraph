@@ -1,0 +1,1345 @@
+{
+  "operationId": "forecastcompass-semantic-reading-20261002-r3",
+  "projectId": "cb904f16-a9ec-4a38-831c-d84d9a08df80",
+  "workCopyId": "bdc90254-57fe-4968-97a4-96473ca9868f",
+  "baseRevision": 48,
+  "actor": {
+    "id": "codex-current-session-demo",
+    "kind": "agent",
+    "label": "当前 Codex 对话"
+  },
+  "reason": "按用户要求补齐摘要、分析视角、可编辑文本框及文本主导的论文讲解；保留 R48 用户固定排版",
+  "operations": [
+    {
+      "type": "graph.put",
+      "graph": {
+        "id": "forecastcompass-reading",
+        "title": "ForecastCompass · 从问题到证据的完整讲解",
+        "kind": "mixed",
+        "description": "文本主导的论文阅读页；原图、机制分节、讲解案例、实验与消融共享同一份可编辑内容。可切换自由排版，进入结构/修订子图。",
+        "metadata": {
+          "source": "用户提供的 ForecastCompass PDF，§2–4，Figure 2，Table 1/3",
+          "contentWorkspace": {
+            "schemaVersion": 1,
+            "defaultView": "reading",
+            "order": [
+              {
+                "type": "element",
+                "id": "fc-read-problem"
+              },
+              {
+                "type": "element",
+                "id": "fc-read-figure-guide"
+              },
+              {
+                "type": "element",
+                "id": "fc-read-figure2"
+              },
+              {
+                "type": "representation",
+                "id": "fc-read-memory"
+              },
+              {
+                "type": "representation",
+                "id": "fc-read-factor"
+              },
+              {
+                "type": "representation",
+                "id": "fc-read-reasoning"
+              },
+              {
+                "type": "representation",
+                "id": "fc-read-agent"
+              },
+              {
+                "type": "representation",
+                "id": "fc-read-revision"
+              },
+              {
+                "type": "element",
+                "id": "fc-read-example"
+              },
+              {
+                "type": "representation",
+                "id": "fc-read-evaluation"
+              },
+              {
+                "type": "representation",
+                "id": "fc-read-ablation"
+              },
+              {
+                "type": "element",
+                "id": "fc-read-implication"
+              },
+              {
+                "type": "element",
+                "id": "fc-read-next"
+              },
+              {
+                "type": "representation",
+                "id": "fc-read-source-entry"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-question",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "从尚未揭晓的事件问题开始，输出的是多个可能结果的概率，而不是确定答案。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>例如“候选人 X 是否会赢得大选？”问题必须注明预测时间和候选结果。Agent 在这一时刻只能使用当时可访问的证据。FoCo 接在现有预测 Agent 的推理输入上，为它提供可复用的经验。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>输入：问题 q、候选结果和预测时刻。后续会返回推理轨迹 z 与概率分布 p；二元事件的两个概率之和为 1。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>结果已经揭晓的问题只能用于更新和诊断，不能混入同一问题的可部署预测。时间截点是整个方法的关键约束。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§2，式 (1)",
+                "kind": "source"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-classify",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "把问题归到领域中的细分子类别，让预测经验以可复用场景为单位组织。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>先识别类别与子类别，如 Elections → U.S. Presidential Elections。子类别 s 是记忆状态 Mₛ 的检索键。归类保证有关经济、民调、校准的经验在相似问题中重复使用。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>输入：新问题 q 与当前分类法 T。输出：(类别 c，子类别 s)，供检索对应的 Fₛ 与 Rₛ。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>归类错误会把不合适的经验带入预测。分类太粗容易混合不同机制，太细又难以积累经验；这是我们提出的后续检查点。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.1–3.2",
+                "kind": "source"
+              },
+              {
+                "label": "路由与粒度",
+                "kind": "analysis"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-retrieve",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "按子类别取出因子记忆和推理记忆，提供“看什么”和“如何调概率”两种指导。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>FoCo 的主要检索单位是子类别级别的结构化语言记忆，不是把相似历史事件的完整推理轨迹直接塞进上下文。相关经验经过修订后成为提示中的指导。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>输入：子类别 s 与当前记忆库。输出：Mₛ=(Fₛ,Rₛ)。Fₛ 指导证据搜索与因子选择，Rₛ 指导不确定性和概率调整。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>历史经验不替代当前证据；过时的经验需要修订。记忆命中与否本身不能证明当前预测正确。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.2，式 (4)",
+                "kind": "source"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-agent",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "Agent 结合当前证据和两类记忆，形成可追踪的推理轨迹与概率分布。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>把 FoCo 想成预测员随身携带的检查手册：因子记忆提醒他应该搜什么证据；推理记忆提醒他证据强弱、矛盾和缺失应怎样影响信心。Agent 仍负责使用工具、检索实时信息并做概率估计。</p><p>方法写成 (z,p)=Aθ(q,E,Mₛ)。这里更新的是语言化记忆 Mₛ，不是重新训练 Aθ 的模型权重。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<ul><li>输入：未揭晓问题、当时可访问的证据 E、子类别记忆。</li><li>输出：轨迹 z（搜了什么、如何解释证据）和候选结果概率 p。</li><li>后续：保留原轨迹，等真实结果揭晓后做对照修订。</li></ul>"
+              },
+              {
+                "id": "evidence",
+                "title": "证据",
+                "html": "<p>论文用 GPT-5-mini 与 Gemini-2.5-Flash 作为预测 Agent，并在 Prophet Arena 和 FutureX 上比较可部署方法。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>优秀的记忆不能补救所有工具失败、证据缺失或搜索覆盖不足。需要将“没有取到信息”和“拿到信息但判断错误”分开诊断。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.2，式 (4)",
+                "kind": "source"
+              },
+              {
+                "label": "§4.1",
+                "kind": "source"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-forecast",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "概率输出同时接受准确性与校准评估，不能只看猜中了多少次。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>二元问题可返回“X 赢 0.72，X 输 0.28”。好的预测不仅常常选对结果，还应该让一批 70% 信心的事件大约有 70% 真正发生。错误的高信心比谨慎的错误受到更强惩罚。</p>"
+              },
+              {
+                "id": "evidence",
+                "title": "证据",
+                "html": "<p>Brier 评估概率与实际结果的距离，ECE 评估信心与经验正确率的偏差；两者都越低越好。本文中的 0.72 来自 Figure 2 的讲解场景，不是本地模型运行结果。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§2、§4.1",
+                "kind": "source"
+              },
+              {
+                "label": "Figure 2 的 0.72",
+                "kind": "example"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-memory",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "FoCo 的核心是子类别级的两份可修订手册：因子记忆告诉 Agent 看什么，推理记忆告诉它该有多确信。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>每个子类别 s 保存 M₍w,s₎=(F₍w,s₎,R₍w,s₎)。F 保存可复用的预测信号及误用方式，R 保存不确定性与校准原则。层级分类法负责索引；记忆条目负责解释。</p><p>区别在于经验的抽象层级：不止记“上一场选举输了”，而是记“在这一类事件中，哪些证据需要检查，什么情况下不能大幅调高概率”。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>过去已揭晓的问题 → 原预测与复盘差异 → 可复用的因子与校准经验 → 下一批尚未揭晓问题的检索指导。</p>"
+              },
+              {
+                "id": "evidence",
+                "title": "证据",
+                "html": "<p>Table 3 的两类记忆移除实验支持它们互补。Table 1 的静态记忆对照还显示：只保留初始手册已有收益，继续修订能带来额外改善。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>可复用性需要筛选。单次事件的偶然因素不能直接变成普遍规律；长期领域变化也会使原有因子失效。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.1，式 (2)–(3)",
+                "kind": "source"
+              },
+              {
+                "label": "Table 1、3",
+                "kind": "result"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-taxonomy",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "分类法把预测经验按领域和子类别分层，允许随着新型问题出现而扩展。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>分类法 T 是记忆目录。已揭晓的新问题优先归入已有类别；无法匹配的进入候选池。模型提出新类别或子类别，经核验、合并重叠提案后，只保留可复用模式。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>输入：旧分类法与新增已揭晓问题。输出：T₍w₎=T₍w−1₎∪ΔT₍w₎，新问题仍按更新后的目录检索记忆。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>目录扩展不等于直接为每个新事件建一个独立条目。子类别增长速度和粒度需要监测，以避免稀疏化或混淆。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.3，式 (5)–(6)",
+                "kind": "source"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-subcategory",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "子类别是 FoCo 经验复用的单位，处在宽泛领域和单个事件之间。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>“美国总统选举”比“政治”具体，又比“某次选举 X 是否胜出”普适。同类问题共享 Fₛ 与 Rₛ；不同问题仍需搜集各自当前的事实证据。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>只有被本轮已揭晓问题激活的子类别才修订，其他记忆保持。新的未揭晓问题不会因为自己尚不知道的结果而更新记忆。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.1、§3.3",
+                "kind": "source"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-factor",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "因子记忆是一组结构化检查项：信号是什么、应查什么证据、容易怎么误用、通常如何影响概率。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>每个因子条目包含四类信息：<b>因子名称</b>、<b>证据检查</b>、<b>常见失败方式</b>和<b>典型概率影响</b>。例如选举中的经济状态，不能只看一个增长数字，还要检查它是否与选民感知一致、是否有通胀或就业信号抵消。</p><p>对短期应用排名，静态品牌名气可能不足以预测变化；近期排名动量、平台推荐、投放突增和竞争对手变化更贴近预测时间范围。这是论文 Figure 1 所说明的区别。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>输入：一个子类别里归纳出的可复用因子。输出：当前预测的搜索清单、因子选择与证据解释，不是固定权重的数值打分器。</p>"
+              },
+              {
+                "id": "evidence",
+                "title": "证据",
+                "html": "<p>GPT-5-mini / FutureX：移除因子记忆时 Brier 0.207、ECE 0.209；完整模型为 0.187、0.195。移除后表现下降，但仍好于无记忆 BASE。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>条目描述“典型影响”，不承诺固定因果效应。多个因子可能相关，不能把它们当作完全独立的证据重复累加。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.1、Figure 1",
+                "kind": "source"
+              },
+              {
+                "label": "Table 3",
+                "kind": "result"
+              },
+              {
+                "label": "因子相关性",
+                "kind": "analysis"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-reasoning",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "推理记忆负责把证据强弱、冲突和缺失映射为适当信心，减少过度或不足的概率更新。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>即使选对因子，概率仍可能估得太极端。Rₛ 保存的是校准原则：弱证据不应触发大幅更新；显著新闻可能被过度加权；持续一致的证据也不能一律当噪声忽略。</p><p>它与 Fₛ 的分工可记成“看什么”与“信多少”：因子条目处理具体信号，推理条目处理信号如何转化为概率。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>输入：证据强度、不确定性、相互矛盾的信号、信息缺口。输出：概率更新原则、过度自信与过度保守的警告。</p>"
+              },
+              {
+                "id": "evidence",
+                "title": "证据",
+                "html": "<p>GPT-5-mini / FutureX：移除推理记忆时 Brier 0.205、ECE 0.220；完整模型为 0.187、0.195。校准也会恶化，支持推理记忆的作用。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>这些原则是语言提示，不是理论上保证校准的估计器。一次较低 ECE 也不保证所有子群、所有未来时期都保持校准。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.1–3.2",
+                "kind": "source"
+              },
+              {
+                "label": "Table 3",
+                "kind": "result"
+              },
+              {
+                "label": "校准外推边界",
+                "kind": "analysis"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-resolved",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "只有结果揭晓后才进入复盘，借助结果后的证据解释原预测错在哪里。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>结果后证据 Eʳᵉᵗʳᵒ 生成复盘轨迹 zʳᵉᵗʳᵒ，说明哪些信息和推理会支持已发生的结果。这个信息条件比真实预测更强，只服务于后续记忆修订。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>复盘不是可部署预测，也不是性能上界：知道结果仍可能诱发事后偏差和过度自信。论文把 Retro 单独列为诊断参考。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§2、§3.3，式 (7)",
+                "kind": "source"
+              },
+              {
+                "label": "§4.2",
+                "kind": "source"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-contrast",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "对照同一道问题的原预测轨迹与复盘轨迹，把差异拆成因子问题和推理问题。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>Contrast(z,zʳᵉᵗʳᵒ) 产生 Δ=(ΔF,ΔR)。ΔF 关注漏了哪些因子、误用了哪些信号、对因子影响方向判断是否正确；ΔR 关注概率校准、过度或不足自信以及错误更新。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>轨迹差异是候选学习信号，不是已经确认的规律。对照发现一个事后能解释结果的因素，还需要判断它是否在预测时可获得、是否跨事件复用。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.3，式 (8)–(9)",
+                "kind": "source"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-diagnose",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "先定位失误类型，避免把所有错误都写成一句笼统的“下次谨慎”。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>分别检查遗漏因子、过度依赖弱信号、影响方向误判，以及概率更新过大、过小或处理冲突失败。诊断对应 ΔF 与 ΔR，方便后面定位要改的记忆。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>输入：原轨迹、复盘轨迹和差异。输出：可解释的失误候选及对应因子/推理条目。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.3",
+                "kind": "source"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-aggregate",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "将候选差异聚合成重复出现的经验，过滤单次事件的事后解释。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>诊断得到的信号有噪声。聚合阶段寻找可复用模式，把重复的因子失误或校准问题提炼为修订建议，排除只对一个已发生事件有效的偶然细节。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>“可复用”仍由模型判断，需要后续预测检验。论文没有单独证明聚合的每一个提示词、筛选步骤都必要。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.3",
+                "kind": "source"
+              },
+              {
+                "label": "独立消融边界",
+                "kind": "analysis"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-revise",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "局部修订被激活子类别的相关因子与推理原则，循环 N 次后保存下一版记忆。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>对因子记忆，先识别受差异影响的子集 F̃，再更新它；不会全量重写整个因子库。推理记忆则据校准差异修订相应指导。诊断—聚合—修订重复 N 次。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>输入：旧 Mₛ、已揭晓问题和聚合后的修订建议。输出：新 Mₛ，供后续未揭晓问题使用；未激活子类别保持原样。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>局部修订意在减少噪声和无关改动，但 N、更新频度和模型调用成本仍是工程权衡。Table 3 不是对这三个内部阶段逐项消融。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.3，式 (10)",
+                "kind": "source"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-revision",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "更新不是记录一个正确答案，而是用原预测与复盘的差异，改写下一次能用的预测原则。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<ol><li>收集本轮已揭晓问题，归类并激活有关子类别。</li><li>生成复盘轨迹，与当时的原预测轨迹对照。</li><li>把差异分成因子层与推理/校准层。</li><li>诊断 → 聚合 → 局部修订，重复 N 次。</li><li>保存新记忆，等待之后的问题检验它。</li></ol>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>输入：已揭晓结果、原轨迹、复盘轨迹及旧记忆。输出：可复用的因子检查项与校准指导。信息只沿时间向前进入新的预测。</p>"
+              },
+              {
+                "id": "evidence",
+                "title": "证据",
+                "html": "<p>Table 1 中完整方法持续优于静态记忆对照，支持持续修订的收益；本演示采用 GPT-5-mini / FutureX 的 0.203 → 0.187 Brier 作为一个具体对照。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>应防止结果后的新事实直接成为当前问题的预测输入。论文描述了过滤事后特例的机制，但不能由流程图推断这种过滤永远可靠。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§3.3",
+                "kind": "source"
+              },
+              {
+                "label": "Table 1",
+                "kind": "result"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.patch",
+      "id": "fc-source",
+      "patch": {
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "作者 Figure 2 将层级记忆、增强预测和记忆更新并列展示，阅读时应按 A→B→C 再回到 A。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>A 是记忆的结构：分类法、因子记忆和推理记忆。B 是预测时的动作：新问题归类、取记忆、搜索证据、输出概率。C 是结果揭晓后的学习动作：对照原预测与复盘，修订有关记忆。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>原图里的箭头连接不同信息条件：B 只用预测时证据，C 才能使用结果后证据。这个分界比箭头形状更重要。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "PDF 第 3 页，Figure 2",
+                "kind": "source"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-read-problem",
+        "graphId": "forecastcompass-reading",
+        "element": {
+          "id": "fc-read-problem",
+          "type": "rectangle",
+          "x": 0,
+          "y": 0,
+          "width": 790,
+          "height": 400,
+          "angle": 0,
+          "strokeColor": "#d8d2c6",
+          "backgroundColor": "#fffdf8",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "boundElements": null,
+          "link": null,
+          "locked": false,
+          "version": 1,
+          "versionNonce": 1,
+          "seed": 1,
+          "isDeleted": false,
+          "updated": 1790948507012,
+          "customData": {
+            "richTextBox": {
+              "schemaVersion": 1,
+              "title": "01 · 为什么需要预测专用记忆",
+              "role": "text",
+              "html": "<h2>预测员需要一份能反复改进的检查手册</h2><p>语言模型 Agent 可以上网搜信息并预测未来事件，但通用记忆常常保存整段旧对话、一次事件的结论或笼统反思。这些记录回答了“过去发生过什么”，却未必能告诉下一次预测应该看哪些信号、如何处理弱证据、怎样避免概率过度自信。</p><p><b>ForecastCompass（FoCo）的切入点：</b>把旧预测的成败提炼成子类别级的因子清单和校准原则。新问题先取这份手册再搜证据；结果揭晓后，手册据原预测与复盘的差异修订。它改变的是语言记忆，不是模型权重。</p><p>一条主线记住全文：<b>已揭晓的经验 → 可复用的指导 → 新问题的概率预测 → 等结果揭晓再修订</b>。本页按原论文机制、讲解案例、实验依据和分析边界展开。</p>",
+              "fontSize": 17,
+              "fontFamily": "Avenir Next, PingFang SC, sans-serif",
+              "color": "#22323a",
+              "fill": "#fffdf8",
+              "border": "#d8d2c6"
+            },
+            "agentCanvas": {
+              "freeElementId": "fc-read-problem",
+              "role": "free"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-read-figure-guide",
+        "graphId": "forecastcompass-reading",
+        "element": {
+          "id": "fc-read-figure-guide",
+          "type": "rectangle",
+          "x": 830,
+          "y": 0,
+          "width": 790,
+          "height": 400,
+          "angle": 0,
+          "strokeColor": "#d8d2c6",
+          "backgroundColor": "#fffdf8",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "boundElements": null,
+          "link": null,
+          "locked": false,
+          "version": 1,
+          "versionNonce": 1,
+          "seed": 1,
+          "isDeleted": false,
+          "updated": 1790948507012,
+          "customData": {
+            "richTextBox": {
+              "schemaVersion": 1,
+              "title": "02 · 原图怎么读",
+              "role": "text",
+              "html": "<h2>先分清“存什么、如何用、怎么改”</h2><p>下方是 PDF 第 3 页真实提取的 Figure 2。<b>A</b> 展示记忆结构；<b>B</b> 展示新问题的预测链；<b>C</b> 展示结果后的修订链。C 的输出回到 A，下一次 B 才能用上它。</p><p>它们不是三次并行执行。最重要的时间分界是：<b>预测时只用当时证据；复盘时才使用结果后证据</b>。后者只能改进未来的问题。</p><p>下方对象都可以展开完整分节，也可切换“机制 / 输入输出 / 证据 / 局限”。右侧内容详情支持编辑；自由排版保留同一份正文和对象。</p>",
+              "fontSize": 17,
+              "fontFamily": "Avenir Next, PingFang SC, sans-serif",
+              "color": "#22323a",
+              "fill": "#fffdf8",
+              "border": "#d8d2c6"
+            },
+            "agentCanvas": {
+              "freeElementId": "fc-read-figure-guide",
+              "role": "free"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-read-example",
+        "graphId": "forecastcompass-reading",
+        "element": {
+          "id": "fc-read-example",
+          "type": "rectangle",
+          "x": 0,
+          "y": 1450,
+          "width": 790,
+          "height": 520,
+          "angle": 0,
+          "strokeColor": "#d8d2c6",
+          "backgroundColor": "#fffdf8",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "boundElements": null,
+          "link": null,
+          "locked": false,
+          "version": 1,
+          "versionNonce": 1,
+          "seed": 1,
+          "isDeleted": false,
+          "updated": 1790948507012,
+          "customData": {
+            "richTextBox": {
+              "schemaVersion": 1,
+              "title": "08 · 一次预测与修订的具体例子",
+              "role": "text",
+              "html": "<h2>为什么“因子”和“信心”要分开记</h2><p>沿用 Figure 2 的选举讲解：X 原先被预测为 72% 胜率，但最终 Y 获胜。复盘发现，原推理可能忽略了未决定选民的晚期变化，也可能把几条显著民调当成过强的证据。</p><ol><li><b>因子层：</b>增加检查未决定选民变化的要求；不要仅凭近期民调判断。</li><li><b>推理层：</b>当民调覆盖不均或信号矛盾时，避免把概率推得过于极端。</li><li><b>聚合层：</b>先检查这些错误是不是能在同类问题复用，不能把“Y 赢了”本身写成预测下一次结果的规则。</li><li><b>下一次：</b>遇到新的未揭晓选举，取更新后的 Fₛ、Rₛ，再搜当前证据；新的胜率仍由 Agent 判断。</li></ol><blockquote>这是对 Figure 2 的解释性展开，不是本机运行的预测，也不是论文对真实选举的实验测量。72% 不是手册更新后的固定参数。</blockquote>",
+              "fontSize": 17,
+              "fontFamily": "Avenir Next, PingFang SC, sans-serif",
+              "color": "#22323a",
+              "fill": "#fffdf8",
+              "border": "#d8d2c6"
+            },
+            "agentCanvas": {
+              "freeElementId": "fc-read-example",
+              "role": "free"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-read-implication",
+        "graphId": "forecastcompass-reading",
+        "element": {
+          "id": "fc-read-implication",
+          "type": "rectangle",
+          "x": 830,
+          "y": 1450,
+          "width": 790,
+          "height": 470,
+          "angle": 0,
+          "strokeColor": "#d8d2c6",
+          "backgroundColor": "#fffdf8",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "boundElements": null,
+          "link": null,
+          "locked": false,
+          "version": 1,
+          "versionNonce": 1,
+          "seed": 1,
+          "isDeleted": false,
+          "updated": 1790948507012,
+          "customData": {
+            "richTextBox": {
+              "schemaVersion": 1,
+              "title": "12 · 读完应该带走什么",
+              "role": "text",
+              "html": "<h2>可复用的东西是“如何预测”，不是某个旧答案</h2><p>论文最有价值的设计是把记忆组织、预测使用和结果后的修订连成一条可检查的链：子类别决定复用范围，因子条目约束证据搜索，推理条目约束概率更新，时间顺序约束信息泄漏。</p><p><b>需要继续验证的分析问题：</b>错误路由会造成多少损失？类别太细时是否缺少重复样本？事后诊断能否稳定过滤偶然因素？更新调用成本能否被未来预测收益抵消？跨领域迁移时，因子内容和校准原则是否需要分别处理？这些是我们的检查点，不能写成作者已经完成的消融。</p><p>本页的实验数值直接引用 Table 1 和 Table 3，未复现实验。原论文的方法、作者结果、讲解案例、我们的分析均保留不同来源标签。</p>",
+              "fontSize": 17,
+              "fontFamily": "Avenir Next, PingFang SC, sans-serif",
+              "color": "#22323a",
+              "fill": "#fffdf8",
+              "border": "#d8d2c6"
+            },
+            "agentCanvas": {
+              "freeElementId": "fc-read-implication",
+              "role": "free"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-read-next",
+        "graphId": "forecastcompass-reading",
+        "element": {
+          "id": "fc-read-next",
+          "type": "rectangle",
+          "x": 0,
+          "y": 2010,
+          "width": 790,
+          "height": 300,
+          "angle": 0,
+          "strokeColor": "#d8d2c6",
+          "backgroundColor": "#fffdf8",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "boundElements": null,
+          "link": null,
+          "locked": false,
+          "version": 1,
+          "versionNonce": 1,
+          "seed": 1,
+          "isDeleted": false,
+          "updated": 1790948507012,
+          "customData": {
+            "richTextBox": {
+              "schemaVersion": 1,
+              "title": "13 · 可检验的下一步",
+              "role": "text",
+              "html": "<h2>从图谱讲解走到可检验假设</h2><p>若将这个机制借鉴到 EvoFore，应先测试“子类别指导 + 校准原则”是否比通用轨迹检索更有效。在相同模型、工具、信息截点和调用预算下，比较无记忆、通用记忆、静态双记忆、可修订双记忆，再分别移除因子与推理记忆。</p><p>这是待验证的研究假设。复用的是记忆组织与修订机制，不应由论文结果直接宣称 EvoFore 已获提升。</p>",
+              "fontSize": 17,
+              "fontFamily": "Avenir Next, PingFang SC, sans-serif",
+              "color": "#22323a",
+              "fill": "#fffdf8",
+              "border": "#d8d2c6"
+            },
+            "agentCanvas": {
+              "freeElementId": "fc-read-next",
+              "role": "free"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-evaluation",
+        "kind": "module",
+        "title": "09 · 实验怎样检验这套机制",
+        "source": "ForecastCompass local PDF",
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "时间顺序、对照方法和两个指标共同决定实验结论，不能只看完整模型的一列最优值。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>在 Prophet Arena 与 FutureX 的最新五周问题上，按时间推进建立/更新记忆，并预测后续尚未揭晓的问题。论文使用 GPT-5-mini 和 Gemini-2.5-Flash 两种骨干。记忆只能从先前已经揭晓的问题获得经验。</p>"
+              },
+              {
+                "id": "io",
+                "title": "输入输出",
+                "html": "<p>评估输入是当时可获得的证据、当前记忆和待预测问题。评估输出是概率与后来实际结果的误差。Brier 越低表示概率预测更好；ECE 越低表示信心更贴近经验正确率。</p>"
+              },
+              {
+                "id": "evidence",
+                "title": "证据",
+                "html": "<p>以下只列 Table 1 的 <b>GPT-5-mini / FutureX</b> 设置，两个指标均越低越好。</p><table><thead><tr><th>方法</th><th>Brier ↓</th><th>ECE ↓</th><th>回答的比较问题</th></tr></thead><tbody><tr><td>BASE</td><td>0.241</td><td>0.263</td><td>没有外部记忆</td></tr><tr><td>FoCo Static</td><td>0.203</td><td>0.219</td><td>双记忆结构，不做周更新</td></tr><tr><td>完整 FoCo</td><td><b>0.187</b></td><td><b>0.195</b></td><td>结构与持续修订结合</td></tr></tbody></table><p>BASE → Static 支持初始化后的预测专用记忆有用；Static → Full 支持持续修订有额外收益。论文还比较 Mem0、Reflexion、A-Mem、Graphiti，并报告跨时间与跨模型测试。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>作者的跨时间/模型结果支持所测条件下的转移，不保证任意新领域或模型都有效。Retro 使用结果后信息，仅是诊断参考，不能与真实预测公平竞赛，也不是性能上界。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§4.1–4.3",
+                "kind": "source"
+              },
+              {
+                "label": "Table 1",
+                "kind": "result"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "entity.put",
+      "entity": {
+        "id": "fc-ablation",
+        "kind": "module",
+        "title": "10 · 消融究竟证明了什么",
+        "source": "ForecastCompass local PDF",
+        "metadata": {
+          "semanticContent": {
+            "schemaVersion": 1,
+            "summary": "移除任一类记忆都会降低完整方法的表现，支持“因子选择”和“概率校准”的互补分工。",
+            "sections": [
+              {
+                "id": "mechanism",
+                "title": "机制",
+                "html": "<p>Table 3 在 GPT-5-mini / FutureX 上分别移除因子记忆 F 或推理记忆 R。它直接比较两个记忆组件，而不是把诊断、聚合、局部更新和每个提示词全部单独检验。</p>"
+              },
+              {
+                "id": "evidence",
+                "title": "证据",
+                "html": "<table><thead><tr><th>方法</th><th>平均 Brier ↓</th><th>平均 ECE ↓</th></tr></thead><tbody><tr><td>BASE</td><td>0.241</td><td>0.263</td></tr><tr><td>FoCo w/o factor</td><td>0.207</td><td>0.209</td></tr><tr><td>FoCo w/o reasoning</td><td>0.205</td><td>0.220</td></tr><tr><td>完整 FoCo</td><td><b>0.187</b></td><td><b>0.195</b></td></tr></tbody></table><p>去掉 F：Brier 相对完整模型增加 0.020；去掉 R：增加 0.018。ECE 分别增加 0.014、0.025。这里是表中平均值的差值，未额外推断统计显著性。</p>"
+              },
+              {
+                "id": "limits",
+                "title": "局限",
+                "html": "<p>这组消融支持两类记忆结合优于只保留一种，不能据此断言因子层与推理层完全独立，也不能证明每个内部修订步骤都不可替代。迭代修订的证据还要结合 Static 对照，而不是把所有结论归给 Table 3。</p>"
+              }
+            ],
+            "sources": [
+              {
+                "label": "§4.4、Table 3",
+                "kind": "result"
+              },
+              {
+                "label": "差值与归因边界",
+                "kind": "analysis"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-read-memory",
+        "entityId": "fc-memory",
+        "graphId": "forecastcompass-reading",
+        "x": 850,
+        "y": 550,
+        "width": 770,
+        "height": 340,
+        "pinned": true,
+        "subgraphIds": [
+          "forecastcompass-memory"
+        ],
+        "style": {
+          "contentView": "card",
+          "backgroundColor": "#fffdf8",
+          "strokeColor": "#7b9b87"
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-read-factor",
+        "entityId": "fc-factor",
+        "graphId": "forecastcompass-reading",
+        "x": 0,
+        "y": 1050,
+        "width": 520,
+        "height": 350,
+        "pinned": true,
+        "subgraphIds": [],
+        "style": {
+          "contentView": "card",
+          "backgroundColor": "#fffdf8",
+          "strokeColor": "#7b9b87"
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-read-reasoning",
+        "entityId": "fc-reasoning",
+        "graphId": "forecastcompass-reading",
+        "x": 550,
+        "y": 1050,
+        "width": 520,
+        "height": 350,
+        "pinned": true,
+        "subgraphIds": [],
+        "style": {
+          "contentView": "card",
+          "backgroundColor": "#fffdf8",
+          "strokeColor": "#7b9b87"
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-read-agent",
+        "entityId": "fc-agent",
+        "graphId": "forecastcompass-reading",
+        "x": 1100,
+        "y": 1050,
+        "width": 520,
+        "height": 350,
+        "pinned": true,
+        "subgraphIds": [
+          "forecastcompass-architecture"
+        ],
+        "style": {
+          "contentView": "card",
+          "backgroundColor": "#fffdf8",
+          "strokeColor": "#7b9b87"
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-read-revision",
+        "entityId": "fc-revision",
+        "graphId": "forecastcompass-reading",
+        "x": 0,
+        "y": 2390,
+        "width": 790,
+        "height": 360,
+        "pinned": true,
+        "subgraphIds": [
+          "forecastcompass-revision"
+        ],
+        "style": {
+          "contentView": "card",
+          "backgroundColor": "#fffdf8",
+          "strokeColor": "#7b9b87"
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-read-evaluation",
+        "entityId": "fc-evaluation",
+        "graphId": "forecastcompass-reading",
+        "x": 830,
+        "y": 2010,
+        "width": 790,
+        "height": 420,
+        "pinned": true,
+        "subgraphIds": [],
+        "style": {
+          "contentView": "card",
+          "backgroundColor": "#fffdf8",
+          "strokeColor": "#7b9b87"
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-read-ablation",
+        "entityId": "fc-ablation",
+        "graphId": "forecastcompass-reading",
+        "x": 830,
+        "y": 2480,
+        "width": 790,
+        "height": 450,
+        "pinned": true,
+        "subgraphIds": [],
+        "style": {
+          "contentView": "card",
+          "backgroundColor": "#fffdf8",
+          "strokeColor": "#7b9b87"
+        }
+      }
+    },
+    {
+      "type": "representation.put",
+      "representation": {
+        "id": "fc-read-source-entry",
+        "entityId": "fc-source",
+        "graphId": "forecastcompass-reading",
+        "x": 0,
+        "y": 2810,
+        "width": 790,
+        "height": 320,
+        "pinned": true,
+        "subgraphIds": [
+          "forecastcompass-original"
+        ],
+        "style": {
+          "contentView": "card",
+          "backgroundColor": "#fffdf8",
+          "strokeColor": "#7b9b87"
+        }
+      }
+    },
+    {
+      "type": "free.put",
+      "freeElement": {
+        "id": "fc-read-figure2",
+        "graphId": "forecastcompass-reading",
+        "element": {
+          "id": "fc-read-figure2",
+          "type": "image",
+          "x": 0,
+          "y": 550,
+          "width": 790,
+          "height": 436.8235294117647,
+          "angle": 0,
+          "strokeColor": "#e0e5e9",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 1,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "roundness": null,
+          "seed": 31,
+          "version": 1,
+          "versionNonce": 31,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790943352963,
+          "link": null,
+          "locked": false,
+          "fileId": "forecastcompass-figure2",
+          "status": "saved",
+          "scale": [
+            1,
+            1
+          ],
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "fc-read-figure2",
+              "resourceId": "forecastcompass-figure2",
+              "role": "free"
+            },
+            "caption": "Figure 2 · 原论文第 3 页：A 层级记忆；B 预测；C 对照修订。点图可查看原始尺寸。"
+          },
+          "crop": null
+        }
+      }
+    },
+    {
+      "type": "graph.patch",
+      "id": "forecastcompass-architecture",
+      "patch": {
+        "metadata": {
+          "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+          "demo": "source-based visual example",
+          "contentWorkspace": {
+            "schemaVersion": 1,
+            "defaultView": "layout",
+            "order": []
+          }
+        }
+      }
+    },
+    {
+      "type": "graph.patch",
+      "id": "forecastcompass-memory",
+      "patch": {
+        "metadata": {
+          "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+          "demo": "source-based visual example",
+          "contentWorkspace": {
+            "schemaVersion": 1,
+            "defaultView": "layout",
+            "order": []
+          }
+        }
+      }
+    },
+    {
+      "type": "graph.patch",
+      "id": "forecastcompass-revision",
+      "patch": {
+        "metadata": {
+          "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+          "demo": "source-based visual example",
+          "contentWorkspace": {
+            "schemaVersion": 1,
+            "defaultView": "layout",
+            "order": []
+          }
+        }
+      }
+    },
+    {
+      "type": "graph.patch",
+      "id": "forecastcompass-original",
+      "patch": {
+        "metadata": {
+          "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+          "demo": "source-based visual example",
+          "contentWorkspace": {
+            "schemaVersion": 1,
+            "defaultView": "layout",
+            "order": []
+          }
+        }
+      }
+    },
+    {
+      "type": "graph.patch",
+      "id": "forecastcompass-demo-progress",
+      "patch": {
+        "metadata": {
+          "source": "ForecastCompass Figure 2 / sections 3.1-3.3",
+          "demo": "source-based visual example",
+          "contentWorkspace": {
+            "schemaVersion": 1,
+            "defaultView": "layout",
+            "order": []
+          }
+        }
+      }
+    }
+  ]
+}

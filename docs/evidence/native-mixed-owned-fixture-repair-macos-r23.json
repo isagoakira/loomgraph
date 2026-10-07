@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-02T10:46:56.231Z",
+  "beforeRevision": 74,
+  "afterRevision": 75,
+  "graphId": "r21-native-org",
+  "sceneOrder": [
+    "rep-r21-org-a-body",
+    "rep-r21-org-a-label",
+    "rep-r21-org-b-body",
+    "rep-r21-org-b-label",
+    "BSitH1vQZMwXwHzXTU_yV",
+    "rep-representation-4f575b7b-1bcd-432f-813e-deae5b7e250c-body",
+    "rep-representation-4f575b7b-1bcd-432f-813e-deae5b7e250c-label",
+    "rep-representation-f8b9ec22-19b7-41d3-8c35-263d0a4ab4ba-body",
+    "rep-representation-f8b9ec22-19b7-41d3-8c35-263d0a4ab4ba-label",
+    "l6NM8l-7UJ0IDUnXzo41Z"
+  ],
+  "assertions": {
+    "oneRevision": true,
+    "representationsPreserved": true,
+    "freeElementsPreserved": true,
+    "entitiesPreserved": true
+  },
+  "boundary": "Owned test fixture only; original failed R74 remains in history. This repair does not establish fresh native duplication correctness."
+}

@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-10-02T04:32:41.590Z",
+  "path": "同任务多图多表示、唯一叶子与取消摘要、真实状态像素",
+  "assertions": {
+    "overviewDoesNotDoubleCountRepresentations": true,
+    "parentCountsUniqueEffectiveLeaves": true,
+    "parentOwnStateIsSeparate": true,
+    "failedLeafDoesNotCountAsCompletion": true,
+    "updateKeepsCamera": true
+  },
+  "samples": [
+    {
+      "phase": "done-A",
+      "pixels": [
+        {
+          "id": "r9-shared-a",
+          "pixel": [
+            220,
+            235,
+            226,
+            255
+          ]
+        },
+        {
+          "id": "r9-shared-a-second",
+          "pixel": [
+            220,
+            235,
+            226,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "failed-A",
+      "pixels": [
+        {
+          "id": "r9-shared-a",
+          "pixel": [
+            245,
+            216,
+            212,
+            255
+          ]
+        },
+        {
+          "id": "r9-shared-a-second",
+          "pixel": [
+            245,
+            216,
+            212,
+            255
+          ]
+        }
+      ]
+    }
+  ],
+  "cameraBefore": "{\"offsetLeft\":72,\"offsetTop\":182,\"width\":1006,\"height\":507,\"scrollX\":523.5714285714287,\"scrollY\":-126.85714285714283,\"zoom\":0.7}",
+  "update": {
+    "revision": 14,
+    "changeId": "1b1ac753-f300-48a5-905c-cd68631cbe21",
+    "operationId": "r11-shared-state-summary-failed",
+    "affectedIds": [
+      "r9-shared"
+    ],
+    "replayed": false
+  },
+  "failure": "CdpRequestTimeoutError: CDP request timed out: Page.captureScreenshot",
+  "status": "failed"
+}

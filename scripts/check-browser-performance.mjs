@@ -1,0 +1,14 @@
+import { spawn } from "node:child_process";
+import { readFileSync } from "node:fs";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+const spaceId = Number(process.argv[2]);
+const url = process.argv[3];
+const report = process.argv[4];
+if (!Number.isSafeInteger(spaceId) || spaceId < 1 || !url?.startsWith("http://127.0.0.1:") || !report) throw new Error("Usage: node scripts/check-browser-performance.mjs <owned-space-id> <local-fixture-url> <report-path>");
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const input = `globalThis.canvasPerformanceOptions = ${JSON.stringify({ spaceId, url, root, report: resolve(report) })};\n` + readFileSync(join(root, "scripts/browser-performance.mjs"), "utf8");
+const child = spawn("ego-browser", ["nodejs"], { stdio: ["pipe", "inherit", "inherit"] });
+child.stdin.end(input);
+child.on("error", error => { process.stderr.write(`${error.message}\n`); process.exitCode = 1; });
+child.on("exit", code => { process.exitCode = code ?? 1; });

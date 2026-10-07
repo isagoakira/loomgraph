@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-10-02T05:31:15.926Z",
+  "continues": "highlight-move-macos-r14.json",
+  "correction": "原探针在像素核验之后使用了不支持的空 targets 清除请求；此处用有效目标的短 TTL，保留并核对已执行的唯一移动。",
+  "assertions": {
+    "actualHighlightBeforeMove": true,
+    "actualHighlightAtMovedLocation": true,
+    "oldLocationNoLongerHighlighted": true,
+    "onlyIntentionalMoveStored": true,
+    "oneMoveCommit": true,
+    "highlightExpiryDoesNotWrite": true
+  },
+  "shortTtlHint": {
+    "event": {
+      "id": "ee6bbb50-7db3-4144-a4e1-e29c17940ef9",
+      "type": "present",
+      "presentation": {
+        "action": "highlight",
+        "targets": [
+          {
+            "type": "representation",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "representationId": "r9-shared-a"
+          }
+        ],
+        "ttlMs": 1
+      }
+    },
+    "hint": {
+      "persisted": false,
+      "contentRevisionChanged": false,
+      "userViewportPreserved": true,
+      "next": "canvas_read"
+    }
+  },
+  "settleRevisions": [
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23
+  ],
+  "beforeRevision": 22,
+  "finalRevision": 23,
+  "pixels": {
+    "before": 2670,
+    "after": 2653,
+    "oldLocation": 0
+  },
+  "status": "passed"
+}

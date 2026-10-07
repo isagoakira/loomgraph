@@ -1,0 +1,99 @@
+{
+  "checkedAt": "2026-10-01T23:48:26.725Z",
+  "beforeRevision": 34,
+  "afterRevision": 36,
+  "freeElements": [
+    {
+      "id": "dA8N2CANJf9tCDi01mgRI",
+      "graphId": "fixture-graph-1",
+      "element": {
+        "id": "dA8N2CANJf9tCDi01mgRI",
+        "type": "ellipse",
+        "x": 897.8571428571429,
+        "y": 346.28571428571433,
+        "width": 262.8571428571429,
+        "height": 80,
+        "angle": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "strokeStyle": "solid",
+        "roughness": 1,
+        "opacity": 100,
+        "groupIds": [],
+        "frameId": null,
+        "index": "aN",
+        "roundness": {
+          "type": 2
+        },
+        "seed": 2033889331,
+        "version": 4,
+        "versionNonce": 1163689843,
+        "isDeleted": false,
+        "boundElements": null,
+        "updated": 1790898503932,
+        "link": null,
+        "locked": false,
+        "customData": {
+          "agentCanvas": {
+            "freeElementId": "dA8N2CANJf9tCDi01mgRI",
+            "role": "free"
+          }
+        }
+      }
+    },
+    {
+      "id": "65EdY7_2JK0xUSA6TuYqe",
+      "graphId": "fixture-graph-1",
+      "element": {
+        "id": "65EdY7_2JK0xUSA6TuYqe",
+        "type": "text",
+        "x": 860.7142857142857,
+        "y": 303.42857142857144,
+        "width": 280,
+        "height": 25,
+        "angle": 0,
+        "strokeColor": "#1e1e1e",
+        "backgroundColor": "transparent",
+        "fillStyle": "solid",
+        "strokeWidth": 2,
+        "strokeStyle": "solid",
+        "roughness": 1,
+        "opacity": 100,
+        "groupIds": [],
+        "frameId": null,
+        "index": "aO",
+        "roundness": null,
+        "seed": 2007854749,
+        "version": 3,
+        "versionNonce": 591561971,
+        "isDeleted": false,
+        "boundElements": null,
+        "updated": 1790898506276,
+        "link": null,
+        "locked": false,
+        "customData": {
+          "agentCanvas": {
+            "freeElementId": "65EdY7_2JK0xUSA6TuYqe",
+            "role": "free"
+          }
+        },
+        "text": "自由文字验收 · 与业务身份独立",
+        "fontSize": 20,
+        "fontFamily": 5,
+        "textAlign": "left",
+        "verticalAlign": "top",
+        "containerId": null,
+        "originalText": "自由文字验收 · 与业务身份独立",
+        "autoResize": true,
+        "lineHeight": 1.25
+      }
+    }
+  ],
+  "assertions": {
+    "shapeCreated": true,
+    "textCreated": true,
+    "businessEntitiesUntouched": true
+  }
+}

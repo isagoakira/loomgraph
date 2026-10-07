@@ -1,0 +1,687 @@
+{
+  "checkedAt": "2026-10-02T02:58:44.405Z",
+  "sourceReport": "batch30-stdio-release-macos-r9.json",
+  "observation": {
+    "annotationId": "r9-annotation-05",
+    "revision": 1,
+    "targets": [
+      {
+        "type": "entity",
+        "entityId": "r9-task-5",
+        "graphId": "r9-graph-2",
+        "representationId": "r9-rep-5"
+      }
+    ],
+    "entities": [
+      {
+        "id": "r9-task-1",
+        "kind": "task",
+        "title": "观察目标 2",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-2",
+        "kind": "task",
+        "title": "观察目标 3",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-3",
+        "kind": "task",
+        "title": "观察目标 4",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-4",
+        "kind": "task",
+        "title": "观察目标 5",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-5",
+        "kind": "task",
+        "title": "观察目标 6",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-6",
+        "kind": "task",
+        "title": "观察目标 7",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-7",
+        "kind": "task",
+        "title": "观察目标 8",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-8",
+        "kind": "task",
+        "title": "观察目标 9",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-9",
+        "kind": "task",
+        "title": "观察目标 10",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-10",
+        "kind": "task",
+        "title": "观察目标 11",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-11",
+        "kind": "task",
+        "title": "观察目标 12",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-12",
+        "kind": "task",
+        "title": "观察目标 13",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-13",
+        "kind": "task",
+        "title": "观察目标 14",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-14",
+        "kind": "task",
+        "title": "观察目标 15",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-15",
+        "kind": "task",
+        "title": "观察目标 16",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-16",
+        "kind": "task",
+        "title": "观察目标 17",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-17",
+        "kind": "task",
+        "title": "观察目标 18",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-18",
+        "kind": "task",
+        "title": "观察目标 19",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-19",
+        "kind": "task",
+        "title": "观察目标 20",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-20",
+        "kind": "task",
+        "title": "观察目标 21",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-21",
+        "kind": "task",
+        "title": "观察目标 22",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-22",
+        "kind": "task",
+        "title": "观察目标 23",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-23",
+        "kind": "task",
+        "title": "观察目标 24",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-24",
+        "kind": "task",
+        "title": "观察目标 25",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-25",
+        "kind": "task",
+        "title": "观察目标 26",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-26",
+        "kind": "task",
+        "title": "观察目标 27",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-27",
+        "kind": "task",
+        "title": "观察目标 28",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-28",
+        "kind": "task",
+        "title": "观察目标 29",
+        "status": "todo"
+      },
+      {
+        "id": "r9-task-29",
+        "kind": "task",
+        "title": "观察目标 30",
+        "status": "todo"
+      }
+    ],
+    "representations": [
+      {
+        "id": "r9-rep-1",
+        "entityId": "r9-task-1",
+        "graphId": "r9-graph-1",
+        "x": 180,
+        "y": 0,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-2",
+        "entityId": "r9-task-2",
+        "graphId": "r9-graph-2",
+        "x": 360,
+        "y": 0,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-3",
+        "entityId": "r9-task-3",
+        "graphId": "r9-graph-0",
+        "x": 540,
+        "y": 0,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-4",
+        "entityId": "r9-task-4",
+        "graphId": "r9-graph-1",
+        "x": 720,
+        "y": 0,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-5",
+        "entityId": "r9-task-5",
+        "graphId": "r9-graph-2",
+        "x": 0,
+        "y": 100,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-6",
+        "entityId": "r9-task-6",
+        "graphId": "r9-graph-0",
+        "x": 180,
+        "y": 100,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-7",
+        "entityId": "r9-task-7",
+        "graphId": "r9-graph-1",
+        "x": 360,
+        "y": 100,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-8",
+        "entityId": "r9-task-8",
+        "graphId": "r9-graph-2",
+        "x": 540,
+        "y": 100,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-9",
+        "entityId": "r9-task-9",
+        "graphId": "r9-graph-0",
+        "x": 720,
+        "y": 100,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-10",
+        "entityId": "r9-task-10",
+        "graphId": "r9-graph-1",
+        "x": 0,
+        "y": 200,
+        "width": 150,
+        "height": 60,
+        "pinned": true
+      },
+      {
+        "id": "r9-rep-11",
+        "entityId": "r9-task-11",
+        "graphId": "r9-graph-2",
+        "x": 180,
+        "y": 200,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-12",
+        "entityId": "r9-task-12",
+        "graphId": "r9-graph-0",
+        "x": 360,
+        "y": 200,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-13",
+        "entityId": "r9-task-13",
+        "graphId": "r9-graph-1",
+        "x": 540,
+        "y": 200,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-14",
+        "entityId": "r9-task-14",
+        "graphId": "r9-graph-2",
+        "x": 720,
+        "y": 200,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-15",
+        "entityId": "r9-task-15",
+        "graphId": "r9-graph-0",
+        "x": 0,
+        "y": 300,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-16",
+        "entityId": "r9-task-16",
+        "graphId": "r9-graph-1",
+        "x": 180,
+        "y": 300,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-17",
+        "entityId": "r9-task-17",
+        "graphId": "r9-graph-2",
+        "x": 360,
+        "y": 300,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-18",
+        "entityId": "r9-task-18",
+        "graphId": "r9-graph-0",
+        "x": 540,
+        "y": 300,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-19",
+        "entityId": "r9-task-19",
+        "graphId": "r9-graph-1",
+        "x": 720,
+        "y": 300,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-20",
+        "entityId": "r9-task-20",
+        "graphId": "r9-graph-2",
+        "x": 0,
+        "y": 400,
+        "width": 150,
+        "height": 60,
+        "pinned": true
+      },
+      {
+        "id": "r9-rep-21",
+        "entityId": "r9-task-21",
+        "graphId": "r9-graph-0",
+        "x": 180,
+        "y": 400,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-22",
+        "entityId": "r9-task-22",
+        "graphId": "r9-graph-1",
+        "x": 360,
+        "y": 400,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-23",
+        "entityId": "r9-task-23",
+        "graphId": "r9-graph-2",
+        "x": 540,
+        "y": 400,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-24",
+        "entityId": "r9-task-24",
+        "graphId": "r9-graph-0",
+        "x": 720,
+        "y": 400,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-25",
+        "entityId": "r9-task-25",
+        "graphId": "r9-graph-1",
+        "x": 0,
+        "y": 500,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-26",
+        "entityId": "r9-task-26",
+        "graphId": "r9-graph-2",
+        "x": 180,
+        "y": 500,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-27",
+        "entityId": "r9-task-27",
+        "graphId": "r9-graph-0",
+        "x": 360,
+        "y": 500,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-28",
+        "entityId": "r9-task-28",
+        "graphId": "r9-graph-1",
+        "x": 540,
+        "y": 500,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      },
+      {
+        "id": "r9-rep-29",
+        "entityId": "r9-task-29",
+        "graphId": "r9-graph-2",
+        "x": 720,
+        "y": 500,
+        "width": 150,
+        "height": 60,
+        "pinned": false
+      }
+    ],
+    "relations": [
+      {
+        "id": "r9-dependency-2",
+        "kind": "depends_on",
+        "from": "r9-task-2",
+        "to": "r9-task-1"
+      },
+      {
+        "id": "r9-dependency-3",
+        "kind": "depends_on",
+        "from": "r9-task-3",
+        "to": "r9-task-2"
+      },
+      {
+        "id": "r9-dependency-5",
+        "kind": "depends_on",
+        "from": "r9-task-5",
+        "to": "r9-task-4"
+      },
+      {
+        "id": "r9-dependency-6",
+        "kind": "depends_on",
+        "from": "r9-task-6",
+        "to": "r9-task-5"
+      },
+      {
+        "id": "r9-dependency-8",
+        "kind": "depends_on",
+        "from": "r9-task-8",
+        "to": "r9-task-7"
+      },
+      {
+        "id": "r9-dependency-9",
+        "kind": "depends_on",
+        "from": "r9-task-9",
+        "to": "r9-task-8"
+      },
+      {
+        "id": "r9-dependency-11",
+        "kind": "depends_on",
+        "from": "r9-task-11",
+        "to": "r9-task-10"
+      },
+      {
+        "id": "r9-dependency-12",
+        "kind": "depends_on",
+        "from": "r9-task-12",
+        "to": "r9-task-11"
+      },
+      {
+        "id": "r9-dependency-14",
+        "kind": "depends_on",
+        "from": "r9-task-14",
+        "to": "r9-task-13"
+      },
+      {
+        "id": "r9-dependency-15",
+        "kind": "depends_on",
+        "from": "r9-task-15",
+        "to": "r9-task-14"
+      },
+      {
+        "id": "r9-dependency-17",
+        "kind": "depends_on",
+        "from": "r9-task-17",
+        "to": "r9-task-16"
+      },
+      {
+        "id": "r9-dependency-18",
+        "kind": "depends_on",
+        "from": "r9-task-18",
+        "to": "r9-task-17"
+      },
+      {
+        "id": "r9-dependency-20",
+        "kind": "depends_on",
+        "from": "r9-task-20",
+        "to": "r9-task-19"
+      },
+      {
+        "id": "r9-dependency-21",
+        "kind": "depends_on",
+        "from": "r9-task-21",
+        "to": "r9-task-20"
+      },
+      {
+        "id": "r9-dependency-23",
+        "kind": "depends_on",
+        "from": "r9-task-23",
+        "to": "r9-task-22"
+      },
+      {
+        "id": "r9-dependency-24",
+        "kind": "depends_on",
+        "from": "r9-task-24",
+        "to": "r9-task-23"
+      },
+      {
+        "id": "r9-dependency-26",
+        "kind": "depends_on",
+        "from": "r9-task-26",
+        "to": "r9-task-25"
+      },
+      {
+        "id": "r9-dependency-27",
+        "kind": "depends_on",
+        "from": "r9-task-27",
+        "to": "r9-task-26"
+      },
+      {
+        "id": "r9-dependency-29",
+        "kind": "depends_on",
+        "from": "r9-task-29",
+        "to": "r9-task-28"
+      }
+    ],
+    "graphs": [
+      {
+        "id": "93476307-8ff1-4f99-bfa0-a61dd1efd84d",
+        "title": "Overview",
+        "kind": "overview"
+      },
+      {
+        "id": "r9-graph-0",
+        "kind": "structure",
+        "title": "批注子图 1"
+      },
+      {
+        "id": "r9-graph-1",
+        "kind": "flow",
+        "title": "批注子图 2"
+      },
+      {
+        "id": "r9-graph-2",
+        "kind": "mixed",
+        "title": "批注子图 3"
+      }
+    ],
+    "freeElements": [],
+    "changedSinceObservation": [
+      {
+        "id": "r9-task-3",
+        "removed": true,
+        "fields": [
+          "deletedAt",
+          "updatedAt"
+        ]
+      },
+      {
+        "id": "r9-task-5",
+        "fields": [
+          "title",
+          "status",
+          "updatedAt",
+          "description"
+        ]
+      }
+    ]
+  },
+  "linkedChange": {
+    "id": "74cdc1f2-ac0c-458d-b6f2-3da29fcd778b",
+    "parentChangeId": "fd92fe5b-e7c7-4718-9504-a40ab29d3687",
+    "operationId": "r9-feedback-linked-task-change",
+    "projectId": "41e66e6a-3c04-48cf-b8b8-e42b8ddecbda",
+    "workCopyId": "d45ef47c-7fe8-4d2a-9305-07b299cc9ce8",
+    "baseRevision": 17,
+    "revision": 18,
+    "actor": {
+      "id": "root-r9-feedback-agent",
+      "kind": "agent",
+      "label": "批注协议验收"
+    },
+    "reason": "Isolated thirty-item feedback acceptance",
+    "timestamp": "2026-10-02T02:48:49.767Z",
+    "operations": [
+      {
+        "type": "entity.patch",
+        "id": "r9-task-5",
+        "patch": {
+          "description": "根据独立批注记录的修改"
+        }
+      }
+    ],
+    "annotationIds": [
+      "r9-annotation-05"
+    ],
+    "affectedIds": [
+      "r9-task-5"
+    ],
+    "appliedOperations": [
+      {
+        "type": "entity.patch",
+        "id": "r9-task-5",
+        "patch": {
+          "updatedAt": "2026-10-02T02:48:49.767Z",
+          "description": "根据独立批注记录的修改"
+        }
+      }
+    ]
+  },
+  "assertions": {
+    "frozenObservationContainsLaterDescriptionChange": true
+  },
+  "boundary": "只读核对失败探针的SQLite：batch首次提交之后的description修改被写回原始观察的changedSinceObservation，证明为真实冻结回归。"
+}

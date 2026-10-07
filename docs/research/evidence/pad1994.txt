@@ -1,0 +1,429 @@
+                 Pad++: A Zooming Graphical Interface
+                for Exploring Alternate Interface Physics
+                Benjamin B. Bederson                                         James D. Hollan
+           Bell Communications Research                                 Computer Science Department
+           445 South Street - MRE 2D-336                                 University of New Mexico
+                Morristown, NJ 07960                                      Albuquerque, NM 87131
+                (bederson@bellcore.com)                                        (hollan@cs.unm.edu)
+
+
+KEYWORDS                                                       sists of viewing interface design as the development of a
+Interactive user interfaces, multiscale interfaces, author-    physics of appearance and behavior for collections of
+ing, information navigation, hypertext, information visu-      informational objects.
+alization, information physics.
+                                                               For example, an effective informational physics might
+                                                               arrange for useful representation to be a natural product of
+ABSTRACT                                                       normal activity. Consider how this is at times the case for
+We describe the current status of Pad++, an infinite reso-     the physics of the world. Some materials record their use
+lution sketchpad that we are exploring as an alternative to    and in doing so influence future use in positive ways.
+traditional window and icon-based approaches to inter-         Used books crack open at often referenced places. Fre-
+face design. We discuss the motivation for Pad++,              quently consulted papers are at the top of piles on our
+describe the implementation, and present prototype appli-      desks. Use dog-ears the corners and stains the surface of
+cations. In addition, we introduce an informational phys-      index cards and catalogs. All these provide representa-
+ics strategy for interface design and briefly compare it       tional cues as a natural product of doing but the physics of
+with metaphor-based design strategies.                         older media limit what can be recorded and the ways it
+                                                               can influence future use.
+INTRODUCTION
+If interface designers are to move beyond windows,             Following an informational physics strategy has lead us to
+icons, menus, and pointers to explore a larger space of        explore history-enriched digital objects [12][13]. Record-
+interface possibilities, additional ways of thinking about     ing on objects (e.g. reports, forms, source-code, manual
+interfaces that go beyond the desktop metaphor are             pages, email, spreadsheets) the interaction events that
+required. The exploration of virtual 3D worlds is one          comprise their use makes it possible on future occasions,
+alternative. It follows quite naturally from more tradi-       when the objects are used again, to display graphical
+tional direct manipulation approaches to interface design      abstractions of the accrued histories as parts of the objects
+and involves similar underlying metaphors, although they       themselves. For example, we depict on source code its
+are enriched by the greater representational possibilities     copy history so that a developer can see that a particular
+afforded by moving from the desktop to richer 3D worlds.       section of code has been copied and perhaps be led to cor-
+                                                               rect a bug not only in the piece of code being viewed but
+There are numerous benefits to metaphor-based                  also in the code from which it was derived.
+approaches, but they also lead designers to employ com-
+putation primarily to mimic mechanisms of older media.         This informational physics strategy has also lead us to
+While there are important cognitive, cultural, and engi-       explore new physics for interacting with graphical data. In
+neering reasons to exploit earlier successful representa-      collaboration with Ken Perlin, we have designed a succes-
+tions, this approach has the potential of underutilizing the   sor to Pad [18]. This system, Pad++, will be the basis for
+mechanisms of new media.                                       exploration of novel interfaces for information visualiza-
+                                                               tion and browsing in a number of complex information-
+For the last few years we have been exploring a different      intensive domains. The system is being designed to oper-
+strategy for interface design to help focus on novel mech-     ate on platforms ranging from high-end graphics worksta-
+anisms enabled by computation rather than on mimicking         tions to PDAs and Set-top boxes. Here we describe the
+mechanisms of older media. Informally the strategy con-        motivation behind the Pad++ development, report the sta-
+                                                               tus of the current implementation, and present some pro-
+Published in UIST ‘94                                          totype applications.
+MOTIVATION                                                      be used to layout the rated information in a way to make
+It is a truism of modern life that there is much more infor-    the most highly rated information largest and most obvi-
+mation available than we can readily and effectively            ous, while placing related but lower rated information
+access. The situation is further complicated by the fact        nearby and smaller.
+that we are on the threshold of a vast increase in the avail-
+ability of information because of new network and com-          DESCRIPTION
+putational technologies. It is somewhat paradoxical that        Pad++ is a general-purpose substrate for exploring visual-
+while we continuously process massive amounts of per-           izations of graphical data with a zooming interface. While
+ceptual data as we experience the world, we have percep-        Pad++ is not an application itself, it directly supports cre-
+tual access to very little of the information that resides      ation and manipulation of multiscale graphical objects,
+within our computing systems or that is reachable via net-      and navigation through the object space. It is imple-
+work connections. In addition, this information, unlike         mented as a widget for Tcl/Tk [17](described in a later
+the world around is, is rarely presented in ways that           section) which provides a simple mechanism for creating
+reflect either its rich structure or dynamic character.         zooming-based applications with an interpreted language.
+We envision a much richer world of dynamic persistent           The standard objects that Pad++ supports are colored text,
+informational entities that operate according to multiple       text files, hypertext, graphics, and images.
+physics specifically designed to provide cognitively facile     We have written a simple drawing application using
+access. The physics need to be designed to exploit seman-       Pad++ that supports interactive drawing and manipula-
+tic relationships explicit and implicit in information-         tion of objects as well loading of predefined or program-
+intensive tasks and in our interaction with these new           matically created objects. This application produced all
+kinds of computationally-based work materials.                  the figures depicted in this paper.
+One physics central to Pad++ supports viewing informa-          The basic user interface for Pad++ uses a three button
+tion at multiple scales and attempts to tap into our natural    mouse. The left button is mode dependent. For the draw-
+spatial ways of thinking. The information presentation          ing application shown in this paper, the left button might
+problem addressed is how to provide effective access to a       select and move objects, draw graphical objects, specify
+large structure of information on a much smaller display.       where to enter text, etc. The middle button zooms in and
+Furnas [10] explored degree of interest functions to deter-     the right button zooms out. For systems with two button
+mine the information visible at various distances from a        mice, we have experimented with various mechanisms
+central focal area. There is much to recommend the gen-         for mapping zooming in and out to a single button. Typi-
+eral approach of providing a central focus area of detail       cally, this involves having the first motion of the mouse
+surrounded by a periphery that places the detail in a larger    after the button press determine the direction of the zoom-
+context.                                                        ing.
+With Pad++ we have moved beyond the simple binary               Pad++ is a natural substrate for representing abstraction
+choice of presenting or eliding particular information. We      of objects using what we term semantic zooming. It is nat-
+can also determine the scale of the information and, per-       ural to see the details of an object when zoomed in and
+haps most importantly, the details of how it is rendered        viewing it up close. When zoomed out, however, instead
+can be based on various semantic and task considerations        of simply seeing a scaled down version of the object, it is
+that we describe below. This provides semantic task-            potentially more effective to see a different representation
+based filtering of information that is similar to the early     of it. Perlin [18] described a prototype zooming calendar
+work at MCC on HITS[14] and the recent work of move-            with this notion. There are two ways to describe this type
+able filters at Xerox [3][19].                                  of object. The first is to have different objects, each of
+The ability to make it easier and more intuitive to find        which is visible at different, non-overlapping, zooms.
+specific information in large dataspaces is one of the cen-     This method is supported with the -minsize and -maxsize
+tral motivations for Pad++. The traditional approach is to      options described in the Tcl/Tk Section. The second, and
+filter or recommend a subset of the data, hopefully pro-        preferred method, is to describe a procedural object that
+ducing a small enough dataset for the user to effectively       renders itself differently depending on its viewing size. It
+navigate. Two examples of work of this nature are latent        is possible to prototype procedural objects with Tcl as
+semantic indexing [6] and a video recommender service           described below.
+based on shared ratings with other viewers [11].
+                                                                RECENT ADVANCES
+Pad++ is complementary to these filtering approaches in
+                                                                Our focus in the current implementation has been to pro-
+that it is a useful substrate to structure information. In
+                                                                vide smooth zooming in a system that works with very
+concert with recommending mechanisms, Pad++ could
+                                   Figure 1: Sequence of snapshots (from left to
+                                   right and top to bottom) as the view is zoomed
+                                   in to a hand-drawn picture.
+
+large graphical datasets. The nature of the Pad++ inter-      All Pad++ features are accessible through Tcl making it
+face requires consistent high frame-rate interactions, even   unnecessary to write any new C code.
+as the dataspace becomes large and the scene gets compli-
+cated. In many applications, speed is important, but not      EFFICIENCY
+critical to functionality. In Pad++, however, the interface   In order to keep the animation frame-rate up as the
+paradigm is inherently based on interaction. The search-      dataspace size and complexity increases, we implemented
+ing strategy is to visually explore the dataspace, so it is   several standard efficiency methods, which taken together
+essential that interactive frame rates be maintained.         create a powerful system. We have successfully loaded
+                                                              over 600,000 objects and maintained interactive rates.
+IMPLEMENTATION
+We implemented Pad++ in C++. There are two versions:          Briefly, the implemented efficiency methods include:
+one uses Silicon Graphics computers graphics language          • Spatial Indexing: Create a hierarchy of objects based
+facilities (GL), and the other uses standard X. The X ver-       on bounding boxes to quickly index to visible objects.
+sion runs on SGI’s, Suns, PC’s running Linux, and should
+be trivially portable to other standard Unix system. Pad++     • Restructuring: Automatically restructure the hierar-
+is implemented as a widget for Tcl/Tk which allows               chy of objects to maintain a balanced tree which is
+applications to be written in the interpreted Tcl language.      necessary for the fastest indexing.
+ • Spatial Level-Of-Detail: Render only the detail             data object.
+   needed, do not spend time rendering what can not be
+                                                               The user interface for accessing hypertext in Pad++ is
+   seen.
+                                                               quite simple. The normal navigation techniques are avail-
+ • Clipping: Only render the portions of objects that are      able, and in addition, clicking on a hyperlink loads in the
+   actually visible.                                           associated data as described above, and shift-clicking
+                                                               anywhere on a hypertext object animates the view back to
+ • Refinement: Render fast with low resolution while           that object’s parent.
+   navigating and refine the image when still.
+                                                               Pad++ can read in hypertext files written in the Hypertext
+ • Adaptive Render Scheduling: Keep the zooming                Markup Language (HTML), the language used to
+   rate constant even as the frame rate changes.               describe the well-known hypertext system, MOSAIC
+                                                               (from the NCSA at the University of Illinois). While we
+One challenge in navigating through any large dataspace        do not yet follow links across the network, we can effec-
+is maintaining a sense of relationship between what you        tively use Pad++ as an alternative viewer to MOSAIC
+are looking at and where it is with respect to the rest of     within our file system. Figure 2 shows a snapshot with the
+the data. The rough animation or jumpy zooming as              MOSAIC home-page loaded and several links followed.
+implemented in the original Pad [18] can be disorienting
+and thus not provide the most effective support for the        INTERFACE TO TCL/TK
+cognitive and perceptual processing required for interac-      Pad++ is built as a new widget for Tk which provides for
+tive information visualization and navigation.                 simple access to all of its features through Tcl, an inter-
+                                                               preted scripting language. Tcl and Tk [17] are an increas-
+An important interactive interface issue when accessing
+                                                               ingly popular combination of scripting language and
+external information sources is how to give the user
+                                                               Motif-like library for creating graphical user interfaces
+access to them without incurring substantial start-up costs
+                                                               and applications without writing any C code. The Tcl
+while the database is parsed and loaded. In Pad++ this is
+                                                               interface to Pad++ is designed to be very similar to the
+accomplished with parallel lazy loading: only load the
+                                                               interface to the Tk Canvas widget - which provides a sur-
+portion of the database that is visible in the current view.
+                                                               face for drawing structured graphics.
+As the user navigates through the database and looks at
+new areas, those portions of the database are loaded. This     While Pad++ does not implement everything in the Tk
+lazy loading is accomplished in the background so the          Canvas yet, it adds many extra features - notably those
+user can continue to interact with Pad++. When the load-       supporting multiscale objects and zooming. In addition, it
+ing is complete, items appear in the appropriate place.        supports images, text files, and hypertext, as well as sev-
+                                                               eral navigation tools including content-based search. As
+An associated concept is that of ephemeral objects.
+                                                               with the Canvas, Pad++ supports many different types of
+Objects in Pad++ which are representations of data on
+                                                               structured graphics, and new graphical widgets can be
+disk can be labeled ephemeral. These objects are auto-
+                                                               added by writing C code. Significantly, all interactions
+matically deleted if they have not been viewed in several
+                                                               with Pad++ are available through Tcl.
+minutes, thus freeing system resources. When they are
+viewed again, they are loaded again in parallel as             Since Tcl is interpreted and thus slower than compiled
+described above.                                               code, it is important to understand what its role is in a
+                                                               real-time animation system such as Pad++. There are
+HYPERTEXT                                                      three classes of things that one can do with Pad++, and
+In traditional window-based systems, there is no graphi-       the importance of speed varies:
+cal depiction of the relationship among windows even
+when there is a strong semantic relationship. This prob-         • Create objects: Slow - Tcl is fine
+lem typically comes up with hypertext. In many hypertext         • Handle events: Medium - Small amount of Tcl is ok
+systems, clicking on a hyperlink brings up a new window
+with the linked text (or alternatively replaces the contents     • Render scene: Fast -    C++ only
+of the existing window). While there is an important rela-     Because all rendering is done in C++, and typically only a
+tionship between these windows (parent and child), this        few lines of Tcl are written to handle each event, Pad++
+relationship is not represented.                               maintains interactive rates despite its link to Tcl. Tcl is
+We have begun experimenting with multiscale layouts of         quite good, however, for reading and parsing input files,
+hypertext traversals where we graphically represent the        and creating and laying out graphical multiscale objects.
+parent-child relationships between links. When a hyper-        The Tcl interface to Pad++ is, as previously mentioned,
+link is selected, the linked data is loaded to the side and    quite similar to that of the Tk canvas, and is summarized
+made smaller, and the view is animated to center the new
+Figure 2: Hypertext. Links are followed and
+placed on the surface to the side, and made
+smaller.
+here to give a feel for what it is like to program Pad++.                 .pad set_color black
+Every object is assigned a unique integer id. In addition,                .pad set_linewidth 1
+                                                                          .pad draw_text “Jan Feb Mar” 0 0
+the user may associate an arbitrary list of text tags with            }
+each object. Every command can be directed to either a           }
+specific object id or to a tag, in which case it will apply to
+all objects that share that tag. This gives a simple method      proc calBB {} {
+                                                                    return “0 0 11 1”
+for grouping objects. Each Pad++ widget has its own              }
+name. All Pad++ commands start with the name of the
+widget, and in the examples that follow, the name of the
+widget is .pad.                                                  NAVIGATION
+Examples:                                                        Finding information on the Pad++ surface is obviously
+                                                                 very important as intuitive navigation through large
+  • A red rectangle with a black outline is created whose        dataspaces is one of its primary motivations. Pad++ sup-
+    corners are at the points (0, 0) and (2, 1):                 port visual searching with zooming in addition to tradi-
+      .pad create rectangle 0 0 2 1 -fill red                    tional mechanisms, such as content-based search.
+           -outline black
+                                                                 Some basic navigation and searching mechanisms are
+  • Put item number 5 at the location (3, 3), make the           provided at the Tcl interface for the application program-
+    object twice as big, and make the object anchored at         mer. A few basic ones are:
+    that point on its northwest corner:
+      .pad itemconfig 5 -anchor nw -place “3 3 2”
+
+  • Specify that item number 5 should only be visible                • Smoothly go to the location (1, 0) at zoom of 5, and
+    when its largest dimension is greater than 20 pixels               take 1000 milliseconds for the animation:
+    and less than 100 pixels.                                             .pad move_to 1 0 5 1000
+      .pad itemconfig 5 -minsize 20 -maxsize 100
+                                                                     • Smoothly go to the location such that object #37 is
+  • Make all items with tag foo turn blue when the left                centered, and fills three quarter’s of the screen, and
+    button of the mouse is pressed over any of those                   take 500 milliseconds for the animation:
+    objects:                                                              .pad center 37 500
+      .pad bind foo <ButtonPress>
+           {.pad itemconfig foo -fill blue}                          • Return the list of object ids that contain the text “foo”
+                                                                          .pad find withtext foo
+As mentioned previously, Pad++ is a natural environment
+to represent abstraction through semantic zooming.
+Objects can be represented differently depending on their
+size by defining procedural objects. A procedural object
+is one that is rendered as a result of a special procedure
+(as opposed to predefined static objects such as lines or
+text). Pad++ supports Tcl procedural objects which are
+very useful for prototyping, but too slow for continued
+use. Tcl procedural objects work by specifying two Tcl
+scripts. One returns the bounding box of the object (nec-
+essary for efficiency), and the other renders the object
+(drawing routines are provided). A trivial example is
+shown here which draws “1993” in red when it is small,
+and the text “Jan Feb Mar” in black when it is a little big-
+ger:
+proc makeCalendar {} {
+   .pad create tcl -script “cal” -bb “calBB”                                   Figure 3: Content based search
+}
+
+proc cal {} {                                                    Figure 3 shows a Tk interface based on these commands.
+   set view [.pad move_to]
+   set size [lindex $view 2]                                     Entering text in the top entry region returns a list of
+   if {$size < .1} {                                             objects that contain that text. Double clicking on any of
+      .pad set_color red                                         these objects smoothly animates the view to the specified
+      .pad set_linewidth 2
+      .pad draw_text “ 1993” 0 0                                 object.
+   } else {
+Figure 4: Directory browser snapshot
+The smooth animations interpolate in pan and zoom to
+bring the view to the specified location. If the end point,
+however, is more than one screen width away from the
+starting point, the animation zooms out to a point midway
+between the starting and ending points, far enough out so
+that both points are visible. The animation then smoothly
+zooms in to the destination. This both gives a sense of
+context to the viewer as well as speeding up the animation
+since most of the panning is performed when zoomed out
+which covers much more ground than panning while
+zoomed in.
+
+VISUALIZATIONS
+We built a Pad++ directory browser to explore how
+smooth zooming and the various efficiency mechanisms
+help in viewing a large hierarchical database, and to
+experiment with multi-scale layouts. The Pad++ directory
+browser provides a graphical interface for accessing the
+directory structure of a filesystem (see Figure 4). Each
+directory is represented by a square frame, and files are
+represented by solid squares colored by file type. Both
+directories and files show their filenames as labels when
+the user is sufficiently close to be able to read them. Each
+directory has all of its subdirectories and files organized
+alphabetically inside of it. Searching through the direc-
+tory structure can be done by zooming in and out of the
+directory tree, or by using the content based search mech-
+anisms described above. Zooming into a file automati-
+cally loads the text inside the colored square and it can
+then be edited and annotated.
+We are able to load in a directory tree with over 600,000
+objects, and maintain interactive animation rates of about
+10 frames per second. Spatial indexing allows us to
+explore very large databases while keeping the search
+time fast, since we render only the visible portion. While
+navigating with Pad++, very small objects are not drawn
+and larger ones are drawn with reduced resolution. The
+reduced resolution objects are refined when the user stops
+changing the view.
+Another dataset we looked at with Pad++ is a timeline of
+interesting products, events, and papers in computer tech-
+nology and user interfaces. History naturally lends itself
+to being looked back on at different scales. Figure 5
+shows a sequence of snapshots as the view is zoomed into
+the current year. This visualization was created by a Tcl
+script which reads in a file with a simple format specify-
+ing starting and ending dates along with text or images.
+                                                               Figure 5: Timeline. Sequence of snapshots
+                                                               (from top to bottom) as the view is zoomed
+                                                               in.
+Physics and Metaphor                                            organize greater and greater complexity by uniform appli-
+As we mentioned earlier, the exploration of Pad++ is part       cation of sets of simple laws. In contrast, the greater the
+of the development of a more general strategy for inter-        complexity of the metaphorical reference, the less likely it
+face design. Our goal is to move beyond mimicking the           is that any particular structural correspondence between
+mechanisms of earlier media and start to more fully             metaphorical target and reference will be useful.
+exploit the radical new mechanisms that computation
+provides. We think it provides an effective complement to       Fourth, it is clear that metaphors can be harmful as well
+the more traditional metaphor-based approaches. While           as helpful since they may well lead users to import
+an informational physics strategy for interface design          knowledge not supported by the interface. There are cer-
+may certainly involve metaphor, we think there is much          tainly metaphorical aspects associated with a physics-
+that is distinctive about a physics-based perspective. As       based strategy. Our point is not that metaphors are not
+an interface strategy, it can be distinguished from a meta-     useful but that they may restrict the range of interfaces we
+phor-based strategy in at least four ways.                      consider.
+
+First, metaphors necessarily pre-exist their use. Pre-          There are, of course, also costs associated in following a
+Copernicans could never have used the metaphor of the           physics-based design strategy. One cost is that designers
+solar system for describing the atom. In designing inter-       can no longer rely on users’ familiarity with the meta-
+faces, one is limited to the metaphorical resources at          phorical reference and this has learnability consequences.
+hand. In addition, the metaphorical reference must be           However, the power of metaphor comes early in usage
+familiar to work. An unfamiliar interface metaphor is           and is rapidly superceded by the power of actual experi-
+functionally no metaphor at all. One can never design           ence. Furthermore, since empirical knowability naturally
+metaphors the way one can design self-consistent physi-         follows from a physics perspective, we can begin to ques-
+cal descriptions of appearance and behavior. Thus, as an        tion and quantify how much experimentation will be nec-
+interface design strategy, physics offer designability and      essary to learn the designed-in principles, how many
+tailorability that metaphor does not.                           inductive steps will be required and of what kinds. Thus,
+                                                                one might want to focus on easily discoverable physics.
+Second, metaphors are temporary bridging concepts.              As is the case with metaphors, all physics are not created
+When they become ubiquitous, they die. In the same way          equally discoverable or equally fitted to the requirements
+that linguistic metaphors lose their metaphorical impact        of human cognition.
+(e.g., foot of the mountain or leg of table), successful met-
+aphors also wind up as dead metaphors (e.g. file, menu,         CONCLUSION
+window, desktop). The familiarity provided by the meta-         We implemented Pad++, a zooming graphical interface
+phor during earlier stages of use gives way to a familiarity    substrate, focusing on efficiency and expandability. By
+with the interface due to actual experience.                    implementing several efficiency mechanisms which act in
+                                                                concert, we are able to maintain high frame-rate interac-
+Thus, after awhile, even in the case of metaphor-based          tion with very large databases. This development is part
+interfaces, it is the actual details of appearance and behav-   of an exploration of an informational physics perspective
+ior (i.e. the physics) rather than any overarching metaphor     for interface design.
+that form much of the substantive knowledge of an expe-
+rienced user. Any restrictions that are imposed on the          We are currently, in collaboration with NYU, continuing
+behaviors of the entities of the interface to avoid viola-      development of the Pad++ substrate as well as starting
+tions of the initial metaphor are potential restrictions of     work in several application domains, such as history-
+functionality that may have been employed to better sup-        enriched digital objects.
+port the users’ tasks and allow the interface to continue to
+evolve along with the users increasing competency.              ACKNOWLEDGEMENTS
+                                                                We would like to thank Ken Perlin and his students,
+The pervasiveness of dead metaphors such as files,
+                                                                David Fox and Matthew Fuchs, at NYU for enjoyable
+menus, and windows may well restrict us from thinking
+                                                                discussions and for seeding out interest in multiscale
+about alternative organizations of computation. New con-
+                                                                interfaces. We especially appreciate the support we have
+ceptions of persistent objects and organizations of entities
+                                                                received from Craig Wier as part of ARPA’s new HCI Ini-
+into units less monolithic than that of unstructured files
+                                                                tiative. This will allow us to continue our Pad++ research
+are indeed in conflict with older metaphorical notions.
+                                                                collaboration with Bellcore and NYU. We also would like
+Third, since the sheer amount and complexity of informa-        to acknowledge other members of the Computer Graphics
+tion with which we need to interact continues to grow, we       and Interactive Media Research Group at Bellcore for
+require interface design strategies that scale. Metaphor is     many discussions shared during our continuing search for
+not such a scaling strategy. Physics is. Physics scales to      the best cheeseburger.
+REFERENCES                                                             puter Supported Cooperative Work (Becker, Ed.), 1993,
+[1] Ronald M. Baecker, Human Factors and Typography for                842-848.
+    More Readable Programs, ACM Press, 1990.
+                                                                   [16] George Lakoff and Mark Johnson, Metaphors We Live By.
+[2] Benjamin B. Bederson, Larry Stead, and James D. Hollan,             University of Chicago Press, 1980.
+    Pad++: Advances in Multiscale Interfaces, Proceedings
+    of 1994 ACM SIGCHI Conference.                                 [17] John K. Ousterhout, Tcl and the Tk Toolkit, Addison Wes-
+                                                                        ley, 1994.
+[3] Eric A. Bier, Maureen C. Stone, Ken Pier, William Bux-
+    ton, and Tony D. DeRose. Toolglass and Magic Lenses:           [18] Ken Perlin and David Fox. Pad: An Alternative Approach
+    The See-Through Interface, Proceedings of 1993 ACM                  to the Computer Interface, Proceedings of 1993 ACM
+    SIGGRAPH Conference, 73-80.                                         SIGGRAPH Conference, 57-64.
+
+[4] Stuart K. Card, George G. Robertson, and Jock D. Mack-         [19] Maureen C. Stone, Ken Fishkin, and Eric A. Bier. The
+    inlay. The Information Visualizer, an Information Work-             Movable Filter as a User Interface Tool, to appear in Pro-
+    space, Proceedings of ACM Human Factors in Computing                ceedings of ACM SIGCHI’94.
+    Systems Conference (CHI ‘91), 181-188.                         [20] Ivan E. Sutherland. Sketchpad: A man-machine graphical
+[5] Muriel Cooper, Personal Communication, 1994.                        communications systems, Proceedings of the Spring Joint
+                                                                        Computer Conference, 1963, 329-346, Baltimore, MD:
+[6] Steve Deerwester, Sue T. Dumais, George W. Furnas,                  Spartan Books.
+    Tom K. Landauer, and Ray Harshman. Indexing by Latent
+    Semantic Analysis. Journal of American Society of Infor-
+    mation Science, 41, 1990, pp.391-407.
+[7] William C. Donelson. Spatial Management of Informa-
+    tion, Proceedings of 1978 ACM SIGGRAPH Conference,
+    203-209.
+[8] Stephen G. Eick, Joseph L. Steffen, and Eric E. Sumner, Jr,
+    Seesoft - A Tool for Visualizing Line-Oriented Software
+    Statistics, IEEE Transactions on Software Engineering,
+    Vol. 18 (11), pp. 957-968, November, 1992.
+[9] Kim M. Fairchild, Steven E. Poltrock, and George W. Fur-
+    nas. SemNet: Three-Dimensional Graphic Representa-
+    tions of Large Knowledge Bases, in Cognitive Science and
+    its Applications for Human-Computer Interaction,
+    Lawrence Erlbaum Associates, 1988.
+[10] George W. Furnas, Generalized Fisheye Views, Proceed-
+     ings of 1986 ACM SIGCHI Conference, pp. 16-23.
+[11] William C. Hill, videos@bellcore.com: Recommending
+     and evaluating items on the basis of communal history-of-
+     use. Bellcore Technical Report #TM-ARH-023560, Mor-
+     ristown, NJ, 1994.
+[12] William C. Hill, James D. Hollan, David Wroblewski, and
+     Tim McCandless, Edit Wear and Read Wear, Proceedings
+     of ACM SIGCHI’92, pp. 3-9.
+[13] William C. Hill and James D. Hollan, History-Enriched
+     Digital Objects, in press.
+[14] James D. Hollan, Elaine Rich, William Hill, David Wrob-
+     lewski, Wayne Wilner, Kent Wittenburg, Jonathan Gru-
+     din, and Members of the Human Interface Laboratory. An
+     Introduction to HITS: Human Interface Tool Suite, in
+     Intelligent User Interfaces, (Sullivan & Tyler, Eds), 1991,
+     pp. 293-337.
+[15] James D. Hollan and Scott Stornetta, Beyond Being There,
+     Proceedings of ACM SIGCHI’92, pp. 119-125. (also
+     appeared as a chapter in Readings in Groupware and Com-
+

@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-10-02T05:35:24.153Z",
+  "scope": "项目、当前图及独立批注讨论的实际过滤",
+  "assertions": {
+    "projectDiscussionVisibleInAllGraphs": true,
+    "graphBDiscussionOnlyVisibleInB": true,
+    "annotationADiscussionOnlyVisibleInA": true,
+    "allNavigationReadOnly": true,
+    "originalDiscussionsUnchanged": true
+  },
+  "views": [
+    {
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "expected": [
+        "范围验收 · 所有图共有的项目讨论",
+        "范围验收 · 仅在 A 图的批注追问"
+      ],
+      "excluded": [
+        "范围验收 · 仅在 B 图查看的讨论"
+      ],
+      "visible": [
+        "范围验收 · 所有图共有的项目讨论",
+        "范围验收 · 仅在 A 图的批注追问"
+      ]
+    },
+    {
+      "graphId": "r9-graph-b",
+      "expected": [
+        "范围验收 · 所有图共有的项目讨论",
+        "范围验收 · 仅在 B 图查看的讨论"
+      ],
+      "excluded": [
+        "范围验收 · 仅在 A 图的批注追问"
+      ],
+      "visible": [
+        "范围验收 · 所有图共有的项目讨论",
+        "范围验收 · 仅在 B 图查看的讨论"
+      ]
+    },
+    {
+      "graphId": "r9-graph-c",
+      "expected": [
+        "范围验收 · 所有图共有的项目讨论"
+      ],
+      "excluded": [
+        "范围验收 · 仅在 B 图查看的讨论",
+        "范围验收 · 仅在 A 图的批注追问"
+      ],
+      "visible": [
+        "范围验收 · 所有图共有的项目讨论"
+      ]
+    }
+  ],
+  "beforeRevision": 26,
+  "commit": {
+    "revision": 27,
+    "changeId": "a869f046-1e4b-4b43-8278-e929b1d01e4b",
+    "operationId": "r14-discussion-scope-fixture",
+    "affectedIds": [
+      "r14-scope-annotation-a",
+      "representation",
+      "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "r9-shared-a",
+      "r14-project-discussion",
+      "r14-graph-b-discussion",
+      "r14-annotation-a-discussion"
+    ],
+    "replayed": false
+  },
+  "finalRevision": 27,
+  "annotationId": "r14-scope-annotation-a",
+  "markers": {
+    "project": "范围验收 · 所有图共有的项目讨论",
+    "graphB": "范围验收 · 仅在 B 图查看的讨论",
+    "annotationA": "范围验收 · 仅在 A 图的批注追问"
+  },
+  "status": "passed"
+}

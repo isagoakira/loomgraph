@@ -1,0 +1,517 @@
+                             The Eyes Have It:
+         A Task by Data Type Taxonomy for Information Visualizations
+
+                                          Ben Shneiderman
+                                  Department of Computer Science,
+                Human-Computer Interaction Laboratory, and Institute for Systems Research
+                                        University of Maryland
+                                 College Park, Maryland 20742 USA
+                                          ben @ cs.umd.edu
+                                                                      keys), are being pushed aside by newer notions of
+                        Abstract                                      information gathering, seeking, or visualization and data
+   A useful starting point for designing advanced graphical           mining, warehousing, or filtering. While distinctions are
+user interjaces is the Visual lnformation-Seeking Mantra:             subtle, the common goals reach from finding a narrow set
+overview first, zoom and filter, then details on demand.              of items in a large collection that satisfy a well-understood
+But this is only a starting point in trying to understand the         information need (known-item search) to developing an
+rich and varied set of information visualizations that have           understanding of unexpected patterns within the collection
+been proposed in recent years. This paper offers a task by            (browse) (Marchionini, 1995).
+data type taxonomy with seven data types (one-, two-,                     Exploring information collections becomes
+three-dimensional datu, temporal and multi-dimensional                increasingly difficult as the volume grows. A page of
+data, and tree and network data) and seven tasks (overview,           information is easy to explore, but when the information
+Zoom, filter, details-on-demand, relate, history, and                 becomes the size of a book, or library, or even larger, it
+extracts).                                                            may be difficult to locate known items or to browse to
+                                                                      gain an overview,
+                                                                          Designers are just discovering how to use the rapid and
+     Everything points to the conclusion that                         high resolution color displays to present large amounts of
+     the phrase 'the language of art' is more                         information in orderly and user-controlled ways. Perceptual
+     than a loose metaphor, that even to                              psychologists, statisticians, and graphic designers (Berlin,
+     describe the visible world in images we                           1983; Cleveland, 1993; Tufte, 1983, 1990) offer valuable
+     need a developed system of schemata.                             guidance about presenting static information, but the
+                                                                      opportunity for dynamic displays takes user interface
+E. H. Gombrich Art and Illusion, 1959 (p. 7 6 )                       designers well beyond current wisdom.
+ 1. Introduction                                                      2. Visual Information Seeking Mantra
+    Information exploration should be a joyous experience,                The success of direct-manipulation interfaces is
+but many commentators talk of information overload and                indicative of the power of using computers in a more
+anxiety (Wurman, 1989). However, there is promising                   visual or graphic manner. A picture is often cited to be
+evidence that the next generation of digital libraries for            worth a thousand words and, for some (but not all) tasks,
+structured databases, textual documents, and multimedia               it is clear that a visual presentation-such as a map or
+will enable convenient exploration of growing information             photograph-is dramatically easier to use than is a textual
+spaces by a wider range of users. Visual language                     description or a spoken report. As computer speed and
+researchers and user-interface designers are inventing                display resolution increase, information visualization and
+powerful information visualization methods, while                     graphical interfaces are likely to have an expanding role. If
+offering smoother integration of technology with task.                a map of the United States is displayed, then it should be
+   The terminology swirl in this domain is especially                 possible to point rapidly at one of 1000 cities to get
+colorful. The older terms of information retrieval (often             tourist information. Of course, a foreigner who knows a
+applied to bibliographic and textual document systems)                city's name (for example, New Orleans), but not its
+and database management (often applied to more structured             location, may do better with a scrolling alphabetical list.
+relational database systems with orderly attributes and sort
+
+
+
+                                                                336
+0-8186-7469-5/96 $05.00 0 1996 IEEE
+Visual displays become even more attractive to provide                  attributes. An example task would be finding all divisions
+orientation or context, to enable selection of regions, and             in an organization structure that have a budget greater than
+to provide dynamic feedback for identifying changes (for                $500,000.
+example, a weather map). Scientific visualization has the                   The data types are on the left side of the TTT
+power to make ,atomic, cosmic, and common three-                        characterize the task-domiain information objects and are
+dimensional phenomena (such as heat conduction in                       organized by the problems users are trying to solve. For
+engines, airflow aver wings, or ozone holes) visible and                example, in two-dimensilonal information such as maps,
+comprehensible. 14bstract information visualization has                 users are trying to grasp adjacency or navigate paths,
+the power to reveal patterns, clusters, gaps, or outliers in            whereas in tree-structurecl information users are trying to
+statistical data, stock-market trades, computer directories,            understand parent/child/sibling relationships. The tasks
+or document collections.                                                across the top of the TTT are task-domain information
+    Overall, the bandwidth of information presentation is               actions that users wish to perform.
+potentially higher in the visual domain than for media                      The seven tasks are at a high level of abstraction. More
+reaching any of the other senses. Humans have remarkable                tasks and refinements of these tasks would be natural next
+perceptual abilities,that are greatly under-utilized in current         steps in expanding this table. The seven tasks are:
+designs. Users can scan, recognize, and recall images
+rapidly, and can detect changes in size, color, shape,                    Overview: Gain an overview of the entire collection.
+movement, or texture. They can point to a single pixel,                   Zoom : Zoom in on items of interest
+even in a megapixel display, and can drag one object to                   Filter: filter out uninteresting items.
+another to perforrn an action. User interfaces have been                  Details-on-demand: Select an item or group and get
+largely text-oriented, so as visual approaches are explored,                details when needed.
+appealing new opportunities are emerging.                                 Relate: View relations hips among items.
+   There are many visual design guidelines but the basic                  History: Keep a history of actions to support undo,
+principle might be: summarized as the Visual Information                    replay, and progressive refinement.
+Seeking Mantra:                                                           Extract: Allow extraction of sub-collections and of the
+     Overview first, zoom and filter, then details-on-demand                query parameters.
+     Overview first, zoom and filter, then details-on-demand
+     Overview first, zoom and filter, then details-on-demand                Further discussion of the tasks follows the descriptions
+     Overview first, zoom and filter, then details-on-demand            of the seven data types:
+     Overview first, zoom and filter, then details-on-demand
+     Overview first, zoom and filter, then details-on-demand                1-dimensional: linear data types include textual
+     Overview first, zoom and filter, then details-on-demand            documents, program source code, and alphabetical lists of
+     Overview first, zoom and filter, then details-on-demand            names which are all organized in a sequential manner.
+     Overview first, zoom and filter, then details-on-demand            Each item in the collection is a line of text containing a
+     Overview first, zoom and filter, then details-on-demand            string of characters. Additional line attributes might be the
+                                                                        date of last update or authior name. Interface design issues
+   Each line represents one project in which I found                    include what fonts, color, size to use and what overview,
+m:yself rediscoveriing this principle and therefore wrote it            scrolling, or selection methods can be used. User problems
+down it as a reminder. It proved to be only a starting point            might be to find the number of items, see items having
+in trying to characterize the multiple information-                     certain attributes (show only lines of a document that are
+visualization innovations occurring at university,                      section titles, lines of a program that were changed from
+government, and industry research labs.                                 the previous version, or people in a list who are older than
+                                                                        21 years), or see an item with all its attributes.
+3. Task by Data Type Taxonomy                                               Examples: An early approach to dealing with large 1-
+                                                                        dimensional data sets was the bifocal display which
+    To sort out the prototypes and guide researchers to new
+                                                                        provided detailed information in the focus area and less
+opportunities, I propose a type by task taxonomy (TTT)
+                                                                        information in the surrounding context area (Spence and
+of information viisualizations. I assume that users are
+                                                                        Apperley, 1982). In their example, the selected issue of a
+viewing collections of items, where items have multiple
+                                                                        scientific journal had detiails about each article, the older
+attributes. In all seven data types (1-, 2-, 3-dimensional
+                                                                        and newer issues of the journal were to the left and right
+data, temporal and multi-dimensional data, and tree and
+                                                                        on the bookshelf with decreasing space. Another effort to
+network data) the items have attributes and a basic search
+                                                                        visualize 1-dimensional data showed the attribute values of
+task is to select all items that satisfy values of a set of
+                                                                        each thousands of item in a fixed-sized space using a
+
+
+
+                                                                  337
+scrollbar-like display called value bars (Chimera, 1992).            historical presentations to create a data type that is separate
+Even greater compressions were accomplished in compact               from 1-dimensional data. The distinction in temporal data
+displays of tens of thousands of lines of program source             is that items have a start and finish time and that items
+code (SeeSoft, Eick et al., 1992) or textual documents               may overlap. Frequent tasks include finding all events
+(Document Lens, Robertson and Mackinlay, 1993;                       before, after, or during some time period or moment, plus
+Information mural, Jerding and Stasko, 1995).                        the basic tasks.
+                                                                         Examples: Many project management tools exist, but
+    2 - d i m e n s i o n a l : planar or map data include           novel visualizations of time include the perspective wall
+geographic maps, floorplans, or newspaper layouts. Each              (Robertson et al., 1993) and LifeLines (Plaisant et al.,
+item in the collection covers some part of the total area            1996). LifeLines shows a youth history keyed to the needs
+and may be rectangular or not. Each item has task-domain             of the Maryland Department of Juvenile Justice, but is
+attributes such as name, owner, value, etc. and interface-           intended to present medical patient histories as a compact
+domain features such as size, color, opacity, etc. While             overview with selectable items to get details-on-demand.
+many systems adopt a multiple layer approach to dealing              Temporal data visualizations appear in systems for editing
+with map data, each layer is 2-dimensional. User problems            video data or composing animations such as Macromedia
+are to find adjacent items, containment of one item by               Director.
+another, paths between items, and the basic tasks of
+counting, filtering, and details-on-demand.                              Multi-dimensional: most relational and statistical
+    Examples: Geographic Information Systems are a large             databases are conveniently manipulated as multi-
+research and commercial domain (Laurini and Thompson,                dimensional data in which items with n attributes become
+1992; Egenhofer and Richards, 1993) with numerous                    points in a n-dimensional space. The interface
+systems available. Information visualization researchers             representation can be 2-dimensional scattergrams with each
+have used spatial displays of document collections                   additional dimension controlled by a slider (Ahlberg and
+(Korfhage, 1991; Hemmje et al., 1993; Wise et al., 1995)             Shneiderman, 1994). Buttons can used for attribute values
+organized proximally by term co-occurrences.                         when the cardinality is small, say less than ten. Tasks
+                                                                     include finding patterns, clusters, correlations among pairs
+   3 - d i m e n s i o n a l : real-world objects such as            of variables, gaps, and outliers. Multi-dimensional data
+molecules, the human body, and buildings have items                  can be represented by a 3-dimensional scattergram but
+with volume and some potentially complex relationship                disorientation (especially if the users point of view is
+with other items. Computer-assisted design systems for               inside the cluster of points) and occlusion (especially if
+architects, solid modelers, and mechanical engineers are             close points are represented as being larger) can be
+built to handle complex 3-dimensional relationships.                 problems. The technique of parallel coordinates is a clever
+Users' tasks deal with adjacency plus above/below and                innovation which makes some tasks easier, but takes
+inside/outside relationships, as well as the basic tasks. In         practice for users to comprehend (Inselberg, 1985).
+3-dimensional applications users must cope with                          Examples: The early HomeFinder developed dynamic
+understanding their position and orientation when viewing            queries and sliders for user-controlled visualization of
+the objects, plus the serious problems of occlusion.                 multi-dimensional data (Williamson and Shneiderman,
+Solutions to some of these problems are proposed in                  1992). The successor FilmFinder refined the techniques
+many prototypes with techniques such as overviews,                   (Ahlberg and Shneiderman, 1994) for starfield displays
+landmarks, perspective, stereo display, transparency, and            (zoomable, color coded, user-controlled scattergrams), and
+color coding.                                                        laid the basis for the commercial product Spotfire (Ahlberg
+   Examples: Three-dimensional computer graphics and                 and Wistrand, 1995). Extrapolations include the Aggregate
+computer-assisted design are large topics, but information           Manipulator (Goldstein and Roth, 1994), movable filters
+visualization efforts in three dimensions are still novel.           (Fishkin and Stone, 1995), and Selective Dynamic
+Navigating high resolution images of the human body is               Manipulation (Chuah et al., 1995). Related works include
+the challenge in the National Library of Medicine's Visible          VisDB for multidimensional database visualization (Keim
+Human project (North et al., 1996). Some applications                and Kreigal, 1994), the spreadsheet-like Table Lens (Rao
+have attempted to present 3-dimensional versions of trees            and Card, 1994) and the multiple linked histograms in the
+(Robertson et al., 1993), networks (Fairchild et al., 1988),         Influence Explorer (Tweedie et al., 1996).
+or elaborate desktops (Card et al., 1996).
+                                                                        Tree: hierarchies or tree structures are collections of
+   Temporal: time lines are widely used and vital                    items with each item having a link to one parent item
+enough for medical records, project management, or                   (except the root). Items and the links between parent and
+
+
+
+                                                               338
+child can have muKtiple attributes. The basic tasks can be            interest in this topic has been spawned by attempts to
+applied to items and links, and tasks related to structural           visualize the World Wide Web (Andrews, 1995; Hendley et
+properties become interesting, for example, how many                  al., 1995).
+levels in the tree? or how many children does an item
+have? While it is possible to have similar items at leaves               These seven data types reflect are an abstraction of the
+and internal nodes, it is also common to find different               reality. There are many variations on these themes (2 1/2
+items at each level in a tree. Fixed level trees with all             or 4-dimensional data, multitrees, ...) and many prototypes
+leaves equidistant from the root and fixed fanout trees with          use combinations of these data types. This taxonomy is
+the same number of children for every parent are easier to            useful only if it facilitates discussion and leads to useful
+deal with. High fanout (broad) and small fanout (deep)                discoveries. Some idea of missed opportunities emerges in
+trees are important special cases. Interface representations          looking at the tasks and data types in depth:
+of trees can use an outline style of indented labels used in
+tables of contents (Chimera and Shneiderman, 1993), a                     Overview: Gain an overview of the entire collection.
+node and link diagram, or a treemap, in which child items             Overview strategies include zoomed out views of each data
+are rectangles nested inside parent rectangles.                       type to see the entire collection plus an adjoining detail
+    Examples: Tree-structured data has long been displayed            view. The overview contam a movable field-of-view box
+with indented outlines (Egan et al., 1989) or with                    to control the contents of the detail view, allowing zoom
+connecting lines as in many computer-directory file                   factors of 3 to 30. Replication of this strategy with
+managers. Attempts to show large tree structures as node              intermediate views enables users to reach larger zoom
+anld link diagrams in compact forms include the 3-                    factors. Another popular approach is the fisheye strategy
+dimensional cone and cam trees (Robertson et al., 1993;               (Furnas, 1986) which haa been applied most commonly
+Carriere and Kazman, 1995), dynamic pruning in the                    for network browsing (Sarlcar and Brown, 1994; Bartram et
+TreeBrowser (Kumar et al., 1995), and the appealingly                 al., 1995). The fisheye distortion magnifies one or more
+animated hyperbolic trees (Lamping et al., 1995). A novel             areas of the display, but zoom factors in prototypes are
+space-filling mosaic approach shows an arbitrary sized tree           limited to about 5. Although query language facilities
+in a fixed rectangular space (Shneiderman, 1992; Johnson              made it difficult to gain an overview of a collection,
+and Shneiderman, 1991). The treemap approach was                      information visualization interfaces support some
+successfully applied to computer directories, sales data,             overview strategy, or should. Adequate overview strategies
+business decision-making (Asahi et al., 1995), and web                are a useful criteria to look for. Along with an overview
+browsing (Mitchell et al., 1995; Mukherjea et al., 1995),             plus detail (also called context plus focus) view there is a
+but users take 10-;!0 minutes to accommodate to complex               need for navigation tools to pan or scroll through the
+treemaps.                                                             collection.
+
+   Network: sometimes relationships among items                           Zoom: Zoom in on items of interest. Users typically
+cannot be convenie:ntly captured with a tree structure and it         have an interest in some portion of a collection, and they
+is useful to have items linked to an arbitrary number of              need tools to enable them to control the zoom focus and
+other items. While many special cases of networks exist               the zoom factor. Smooth zooming helps users preserve
+(acyclic, lattices, rooted vs. un-rooted, directed vs.                their sense of position and context. Zooming could be on
+undirected) it seemis convenient to consider them all as one          one dimension at a time by moving the zoombar controls
+data type. In addhion to the basic tasks applied to items             or by adjusting the size of the field-of -view box. A very
+and links, network users often want to know about                     satisfying way to zoom in is by pointing to a location and
+shortest or least isostly paths connecting two items or               issuing a zooming command, usually by clicking on a
+trawersing the entire network. Interface representations              mouse button for as long as the user wishes (Bederson and
+include a node and link diagram, and a square matrix of the           Hollan, 1993). Zooming in one dimension has proven
+items with the value of a link attribute in the row and               useful in starfield displays (Jog and Shneiderman, 1995).
+column representing a link.
+   Examples: Network visualization is an old but still                   Filter: filter out uninteresting items. Dynamic queries
+imperfect art because of the complexity of relationships              applied to the items in tlhe collection is one of the key
+and user tasks. Commercial packages can handle small                  ideas in information visualization (Ahlberg et al., 1992;
+networks or simple strategies such as Netmap's layout of              Williamson and Shneiderman, 1992). By allowing users to
+nodes on a circle with links criss-crossing the central area.         control the contents of the display, users can quickly focus
+An ambitious 3-dimensional approach was an impressive                 on their interests by elimiinating unwanted items. Sliders,
+early accomplishment (Fairchild et al., 1988), and new                buttons, or other control widgets coupled to rapid display
+
+
+
+                                                                339
+update (less than 100 milliseconds) is the goal, even when
+there are tens of thousands of displayed items.                           The attraction of visual displays, when compared to
+                                                                      textual displays, is that they make use of the remarkable
+   Details-on-demand: Select an item or group and get                 human perceptual ability for visual information. Within
+details when needed. Once a collection has been trimmed               visual displays, there are opportunities for showing
+to a few dozen items it should be easy to browse the                  relationships by proximity, by containment, by connected
+details about the group or individual items. The usual                lines, or by color coding. Highlighting techniques (for
+approach is to simply click on an item to get a pop-up                example, bold-face text or brightening, inverse video,
+window with values of each of the attributes. In Spotfire,            blinking, underscoring, or boxing) can be used to draw
+the details-on-demand window can contain HTML text                    attention to certain items in a field of thousands of items.
+with links to further information.                                    Pointing to a visual display can allow rapid selection, and
+                                                                      feedback is apparent. The eye, the hand, and the mind seem
+    Relate: View relationships among items. In the                    to work smoothly and rapidly as users perform actions on
+FilmFinder (Ahlberg and Shneiderman, 1994) users could                visual displays.
+select an attribute, such as the film's director, in the
+details-on-demand window and cause the director                       4. Advanced Filtering
+alphaslider to be reset to the director's name, thereby
+                                                                          Users have highly varied needs for filtering features.
+displaying only films by that director. Similarly, in SDM
+                                                                      The dynamic queries approach of adjusting numeric range
+(Chuah et al., 1995), users can select an item and then
+                                                                      sliders, alphasliders for names or categories, or buttons for
+highlight items with similar attributes or in LifeLines
+                                                                      small sets of categories is appealing to many users for
+(Plaisant et al., 1996) users can click on a medication and
+                                                                      many tasks (Shneiderman, 1994). Dynamic queries might
+see the related visit report, prescription, and lab test.
+                                                                      be called direct-manipulation queries, since they share the
+Designing user interface actions to specify which
+                                                                      same concepts of visual display of actions (the sliders or
+relationship is to be manifested is still a challenge. The
+                                                                      buttons) and objects (the query results in the task-domain
+Influence Explorer (Tweedie et al., 1996) emphasizes
+                                                                      display); the use of rapid, incremental, and reversible
+exploration of relationships among attributes. and the
+                                                                      actions; and the immediate display of feedback (less than
+Table Lens emphasizes finding correlations among pairs of
+                                                                      100 msec). Additional benefits are no error messages and
+numerical attributes (Rao and Card, 1994).
+                                                                      the encouragement of exploration.
+                                                                          Dynamic queries can reveal global properties as well as
+   History : Keep a history of actions to support undo,
+                                                                      assist users in answering specific questions. As the
+replay, and progressive refinement. It is rare that a single
+                                                                      database grows, it is more difficult to update the display
+user action produces the desired outcome. Information
+                                                                      fast enough, and specialized data structures or parallel
+exploration is inherently a process with many steps, so
+                                                                      computation are required.
+keeping the history of actions and allowing users to retrace
+                                                                          The dynamic-query approach to the chemical table of
+their steps is important. However, most prototypes fail to
+                                                                      elements was tested in an empirical comparison with a
+deal with this requirement. Maybe they are reflecting the
+                                                                      form-fill-in query interface. The counterbalanced-ordering
+current state of graphic user interfaces, but designers would
+                                                                      within-subjects design with 18 chemistry students showed
+be better to follow information retrieval systems which
+                                                                      strong advantages for the dynamic queries in terms of
+typically preserve the sequence of searches so that they can
+                                                                      faster performance and lower error rates (Ahlberg et al.,
+be combined or refined.
+                                                                      1991).
+                                                                          Dynamic queries usually permit OR combinations
+   Extract: Allow extraction of sub-collections and of
+                                                                      within an attribute with AND combination of attributes
+the query parameters. Once users have obtained the item or
+                                                                      across attributes (conjunct of disjuncts). This is adequate
+set of items they desire, it would be useful to be able to
+                                                                      for many situations since rapid multiple sequential queries
+extract that set and save it to a file in a format that would
+                                                                      allow users to satisfy their information needs. Commercial
+facilitate other uses such as sending by email, printing,
+                                                                      information-retrieval systems, such as DIALOG or
+graphing, or insertion into a statistical or presentation
+                                                                      Lexis/Nexis, permit complex Boolean expressions with
+package. An alternative to saving the set, they might want
+                                                                      parentheses, but widespread adoption has been inhibited by
+to save, send, or print the settings for the control widgets.
+                                                                      the difficulty of using them. Numerous proposals have
+Very few prototypes support this action, although Roth's
+                                                                      been put forward to reduce the burden of specifying
+recent work on Visage provides an elegant capability to
+                                                                      complex Boolean expressions (Reisner, 1988). Part of the
+extract sets of items and simply drag-and-drop them into
+                                                                      confusion stems from informal English usage where a
+the next application window.
+
+
+
+                                                                340
+query such as List all employees who live in New York
+anid Boston would result in an empty list because the “and”             5. Summary
+would be interpreted as an intersection; only employees
+                                                                            Novel graphical and direct-manipulation approaches to
+who live in both cities would qualify! In English, “and”
+                                                                        query formulation and information visualization are now
+usually expands the options; in Boolean expressions,
+                                                                        possible. While research prototypes have typically dealt
+AND is used to narrow a set to the intersection of two
+                                                                        with only one data type (1-, 2-, 3-dimensional data,
+others. Similarly., in the English “I’d like Russian or
+                                                                        temporal and multi-dimensional data, and tree and network
+Italian salad dressing,” the “or” is exclusive, indicating
+                                                                        data), successful commercial products will have to
+that you want one or the other but not both; in Boolean
+                                                                        accommodate several. These products will need to provide
+expressions, an OR is inclusive, and is used to expand a
+                                                                        smooth integration with existing software and support the
+set.
+                                                                        full task list: Overview, zoom, filter, details-on-demand,
+     The desire for full Boolean expressions, including
+                                                                        relate, history, and extract. These ideas are attractive
+nested parentheses and NOT operators, led us toward novel
+                                                                        because they present information rapidly and allow for
+metaphors for query specification. Venn diagrams
+                                                                        rapid user-controlled expiloration. If they are to be fully
+(Michard, 1982), decision tables (Greene et al., 1990), and
+                                                                        effective, some of these approaches require novel data
+thle innovative InfoCrystal (Spoen-i, 1993) have been used,
+                                                                        structures, high-resolution color displays, fast data
+but these both become confusing as query complexity
+                                                                        retrieval, specialized data structures, parallel computation,
+increases. We sought to support arbitrarily complex
+                                                                        and some user training.
+Boolean expressions with a graphical specification. Our
+                                                                            Although the computer contributes to the information
+approach was to apply the metaphor of water flowing from
+                                                                        explosion, it is potentially the magic lens for finding,
+left to right through a series of pipes and filters, where
+                                                                        sorting, filtering, and presenting the relevant items. Search
+each filter lets through only the appropriate documents,
+                                                                        in complex structured documents, graphics, images,
+and the pipe layout indicates relationships of AND or OR.
+                                                                        sound, or video presents grand opportunities for the design
+(Young and Shneiderman, 1993)
+                                                                        of user interfaces and search engines to find the needle in
+     In this filter-fllow model, ANDs are shown as a linear
+                                                                        the haystack. The novel-imformation exploration tools-
+selquence of filters, suggesting the successive application
+                                                                        such as dynamic queries, treemaps, fisheye views, parallel
+of required criteria[.As the flow passes through each filter,
+                                                                        coordinates, starfields, and perspective walls-are but a
+it is reduced, and the visual feedback shows a narrower
+                                                                        few of the inventions that will have to be tamed and
+bluish stream of water. ORs are shown two ways: within
+                                                                        validated.
+an attribute, multiple values can be selected in a single
+filter; and across multiple attributes, filters are arranged in         References
+parallel paths. When the parallel paths converge, the width
+of the flow reflects the size of the union of the document              Ahlberg, Christopher and Shneiderman, Ben, Visual
+sets.                                                                    information seeking: Tight coupling of dynamic query
+     Negation was handled by a NOT operator that, when                   filters with starfield {displays, Proc. ACM CHI94
+selected, inverts all currently selected items in a filter. For           Conference: Human Factors in Computing Systems,
+example, if California and Georgia were selected and then                (1994), 313-321 + color plates.
+the NOT operator was chosen, those two states would                     Ahlberg, Christopher and Shneiderman, Ben, Alphaslider:
+become deselected and all the other states would become                  A compact and rapid selector, Proc. ACM CHI94
+selected. Finally, c:lusters of filters and pipes can be made            Conference Human Factors in Computing Systems,
+into a single labeled filter. This facility ensures that the             (1994), 365-371.
+full1 query can be shown on the display at once, and allows             Ahlberg, Christopher, Williamson, Christopher, and
+clusters to be saved in a library for later reuse.                       Shneiderman, Ben, Dynamic queries for information
+     We believe that this approach can help novices and                  exploration: An implementation and evaluation, Proc.
+int.ermittent users to specify complex Boolean expressions               ACM CH1’92: Human Factors in Computing Systems,
+and to learn Boolean concepts. A usability study was                     (1992), 619-626.
+conducted with 20 subjects with little experience using                 Ahlberg, Christopher anid Wistrand, Erik, IVEE: An
+Boolean algebra. The prototype filter-flow interface                     information visualization & exploration environment,
+shlowed statistically significant improved performance                   Proc. IEEE Information Visualization ‘95, (1999, 66-
+against a textual interface for comprehension and                        73.
+composition tasks. The filter-flow interface was preferred              Andrew, Keith, Visuali,sing cyberspace: Information
+by all 20 subjects.                                                      visualisation in the Harmony internet browser, Proc.
+                                                                         IEEE Information Visualization ’9.5, (1995), 97- 104.
+
+
+
+                                                                  341
+Asahi, T., Turo, D., and Shneiderman, B., Using                      software statistics, IEEE Transactions on Software
+  treemaps to visualize the analytic hierarchy process,              Engineering 18, 11 (1992) 957-968.
+  Information Systems Research 6, 4 (December 1995),               Eick, Stephen G. and Wills, Graham J., Navigating Large
+  357-375.                                                           Networks with Hierarchies, Proc. IEEE Visualization
+Bartram, Lyn, Ho, Albert, Dill, John, and Henigman,                  ‘93 Conference, (1993), 204--210.
+  Frank, The continuous zoom: A constrained fisheye                Fairchild, Kim M., Poltrock, Steven E., and Furnas,
+  technique for viewing and navigating large information             George W., SemNet: Three-dimensional representations
+  spaces, Proc. ACM User Interface Software and                      of large knowledge bases, In Guindon, Raymonde
+  Technology ‘95,(1995), 207-215.                                    (Editor), Cognitive Science and its Applications for
+Becker, Richard A., Eick , Stephen G., and Wilks, Allan              Human-Computer Interaction, Lawrence Erlbaum,
+  R. Visualizing Network Data, IEEE Transactions on                  Hillsdale, NJ (1988), 201-233.
+  Visualization and Computer Graphics 1, 1 (March                  Fishkin, Ken and Stone, Maureen C., Enhanced dynamic
+  1995), 16-28.                                                      queries via movable filters, Proc. ACM CHI95
+Bederson, Ben B. and Hollan, James D., PAD++: A                      Conference: Human Factors in Computing Systems,
+  zooming graphical user interface for exploring alternate           (1995), 415-420.
+  interface physics, Proc. ACM User Interfaces SofhYare            Furnas, George W., Generalized fisheye views, Proc.
+  and Technology ‘94 (1994), 17-27.                                  ACM CHI86 Conference: Human Factors in
+Bertin, Jacques, Semiology of Graphics, University of                Computing Systems, (1986), 16-23.
+  Wisconsin Press, Madison, WI (1983)                              Goldstein, Jade and Roth, Steven F, Using aggregation
+Card, Stuart K., Robertson, George G., and York,                     and dynamic queries for exploring large data sets, Proc.
+  William, The WebBook and the WebForager: An                        ACM CHI95 Conference: Human Factors in
+  information workspace for the World-Wide Web, Proc.                Computing Systems, (1993, 23-29.
+  ACM CHI96 Conference: Human Factors in                           Greene, S. L., Devlin, S. J., Cannata, P. E., and Gomez,
+  Computing Systems, (1996), 111-117.                                L. M., No IFS, ANDs, or ORs: A study of database
+Carriere, Jeremy and Kazman, Rick, Interacting with huge             querying, International Journal of Man-Machine Studies
+  hierarchies: Beyond cone trees, Proc. IEEE Information             32 (March 1990), 303-326.
+  Visualization ‘95, (1999, 74-8 1.                                Hendley, R. J., Drew, N. S., Wood, A. S., Narcissus:
+Chimera, Richard, Value bars: An information                         Visualizing information, Proc. IEEE Information
+  visualization and navigation tool for multiattribute               Visualization ‘95,(1995), 90-96.
+  listings, Proc. ACM CHI92 Conference: Human                      Humphrey, Susanne M. and Melloni, Biagio John,
+  Factors in Computing Systems, (1992), 293-294.                     Databases: A Primer f o r Retrieving Information by
+Chimera, Richard and Shneiderman, Ben, Evaluating three              Computer, Prentice-Hall, Englewood Cliffs, NJ (1986).
+  user interfaces for browsing tables of contents, A CM            Inselberg, Alfred, The plane with parallel coordinates, The
+  Transactions on Information Systems 12, 4 (October                 Visual Computer I (1985), 69-91.
+  1994).                                                           Jerding, Dean F. and Stasko, John T., The information
+Chuah, Mei C., Roth, Steven F., Mattis, Joe, and                     mural: A technique for displaying and navigating large
+  Kolojejchcik, John, SDM: Malleable Information                     information spaces, Proc. IEEE Information
+  Graphics, Proc. IEEE Information Visualization ‘95,                Visualization ‘95,43-50.
+  (1995), 66-73.                                                   Jog, Ninad and Shneiderman, Ben, Information
+Cleveland, William, Visualizing Data, Hobart Press,                  visualization with smooth zooming on an starfield
+  Summit, NJ (1993).                                                 display, Proc. IFIP Con$ Visual Databases 3, Chapman
+Egan, Dennis E., Remde, Joel R., Gomez, Louis M.,                    and Hall, London (1995), 1-10.
+  Landauer, Thomas K., Eberhardt, Jennifer, and                    Johnson, Brian, and Shneiderman, Ben, Tree-maps: A
+  Lochbum, Carol C., Formative design-evaluation of                  space-filling approach to the visualization of
+  SuperBook, ACM Transactions on Information                         hierarchical information structures, Proc. IEEE
+  Systems 7, 1 (January 1989), 30-57.                                Visualization’91, (1991), 284-291.
+Egenhofer, Max and Richards, J., Exploratory access to             Keim, D. A . and Kriegal, H., VisDB: Database
+  geographic data based on the map-overlay metaphor,                 exploration using multidimensional visualization, IEEE
+  Journal of Visual Languages and Computing 4, 2                     Computer Graphics and Applications (September 1994),
+  (1993), 105-125.                                                   40-49.
+Eick, Stephen G. , Steffen, Jospeh L., and Sumner, Jr.,            Korfhage, Robert, To see or not to see -- Is that the
+  Eric E., SeeSoft- A tool for visualizing line-oriented             query?, Communications of the ACM 34 (1991), 134-
+                                                                     141.
+
+
+
+                                                             342
+Lamping, John, Rao, Ramana, and Pirolli, Peter, A focus               animation, Communicutions of the ACM 36, 4 (April
+  + context technique based on hyperbolic geometry for                 1993), 56-71.
+  visualizing large hierarchies, Proc. ACM CHI95                    Robertson George G. and Mackinlay, Jock D., The
+  Conference: Human Factors in Computing Systems,                     document lens, Proc. 1993 ACM User Interface
+  (1995), 401-408                                                     SofhYare and Technology, (1993), 101-108.
+Laurini, R. and Thompson, D., Fundamentals of Spatial               Sarkar, Manojit and Brown, Marc H., Graphical fisheye
+  Information Sy:i.tems,Academic Press, New York, NY                  views, Communications of the ACM 37, 12 (July
+  (1992).                                                             1994), 73-84.
+Marchionini, Gary, Information Seeking in Electronic                Shneiderman, Ben, Tree visualization with tree-maps: A
+  Environments, Cambridge University Press, UK                        2-d space-filling approach, ACM Transactions on
+  (1995).                                                             Graphics 11, 1 (January 1992), 92-99.
+Michard, A., A new database query language for non-                 Shneiderman, Ben, Dynamic queries for visual
+  professional users: Design principles and ergonomic                 information seeking, IEEE Software 11, 6 (1994), 70-
+  evaluation, Behavioral and Information Technology I , 3             77.
+  (July-September 1982), 279-288.                                   Spence, Robert and Apperley, Mark, Data base
+Mitchell, Richard, Day, David, and Hirschman, Lynette,                navigation: An office environment for the professional,
+  Fishing for information on the internet, Proc. IEEE                 Behaviour & Informati;on Technology 1, 1 (1982), 43-
+  Information Visualization '95, (199.9, 105-111.                     54.
+Mukherjea, Sougata, Foley, James D., and Hudson, Scott,             Spoerri, Anselm, Infocrystal: A visual tool for
+  Visualizing complex hypermedia networks through                     information retrieval & management, Proc. ACM Conf
+  multiple hierarchical views, Proc. ACM CHI95                        on Information and Knowledge Management (1993).
+  Conference: H,uman Factors in Computing Systems,                  Tufte, Edward, The Visual Display of Quantitative
+  (1995), 331-335' + color plate.                                     Information, Graphics 1%-ess,Cheshire, CT (1983).
+North, Chris, Shndderman, Ben, and Plaisant, Catherine,             Tufte, Edward, Envisioning Information, Graphics Press,
+  User controlled overviews of an image library: A case               Cheshire, CT (1990).
+  study of the Visible Human, Proc. 1st ACM                         Tweedie, Lisa, Spence, Robert, Dawkes, Huw, and Su,
+  International Conference on Digital Libraries (1996),               Hua, Externalising abstract mathematical models, Proc.
+  74-82.                                                             ACM CHI96 Conference: Human Factors in
+Pirolli, Peter, Schank, Patricia, Hearst, Marti, and Diehl,           Computing Systems, (I 996), 406-412.
+  Christine, Scatltedgather browsing communicates the               Williamson, Christopher, and Shneiderman, Ben, The
+  topic structure of a very large text collection, Proc.              Dynamic HomeFinder: Evaluating dynamic queries in a
+  ACM CHI96 Conference, (1996), 213-220.                              real-estate information exploration system, Proc. ACM
+Plaisant, Catherine, Rose, Anne, Milash, Brett, Widoff,               SIGIR'92 Conference, (1992), 338-346. Reprinted in
+  Seth, and Shneiderman, Ben, LifeLines: Visualizing                  Shneiderman, B. (Editor), Sparks of Innovation in
+  personal histories, Proc. ACM CHI96 Conference:                     Human- Computer Interaction, Ablex Publishers,
+  Human Factors in Computing Systems, (1996), 221-                    Norwood, NJ, (1993), ;!95-307.
+  227, 518.                                                         Wise, James A., Thomils, James, J., Pennock, Kelly,
+Rao, Ramana and Card, Stuart K., The Table Lens:                      Lantrip, David, Pottier, Marc, Schur, Anne, and Crow,
+  Merging graphical and symbolic representations in an                Vern, Visualizing the ]non-visual: Spatial analysis and
+  interactive focus + context visualization for tabular               interaction with information from text documents, Proc.
+  information, Proc. ACM CHI94 Conference: Human                      IEEE Information Visualization '95, (1995), 51-58.
+  Factors in Computing Systems, (1994), 3 18-322.                   Wurman, Richard Saul, Information Anxiety, Doubleday,
+Rleisner, Phyllis, Query languages. In Helander, Martin               New York (1989).
+  (Editor), Handbook of Human-Computer Interaction,                 Young, Degi and Shneiderman, Ben, A graphical
+  North-Holland, Amsterdam, The Netherlands (1988),                   filter/flow model for boolean queries: An
+  257-280.                                                            implementation and experiment, Journal of the
+Robertson, George G., Card, Stuart K., and Mackinlay,                American Society for ,Information Science 44, 6 (July
+ Jock D., Information visualization using 3-D interactive             1993), 327-339.
+
+
+
+
+                                                              343
+

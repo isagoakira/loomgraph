@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-02T00:54:39.002Z",
+  "fromRevision": 52,
+  "toRevision": 53,
+  "result": {
+    "revision": 53,
+    "changeId": "28459d50-8ddc-455b-b834-0d9fb054c8ae",
+    "operationId": "scope-failure-recover-5f584213-9cfa-48b0-aa59-fa219b7ab227",
+    "affectedIds": [
+      "fixture-rep-0-0",
+      "fixture-rep-0-2",
+      "fixture-rep-0-3",
+      "fixture-rep-0-4",
+      "fixture-rep-0-5",
+      "fixture-rep-0-6",
+      "fixture-rep-0-7",
+      "fixture-rep-1-0",
+      "fixture-rep-1-1",
+      "fixture-rep-1-2",
+      "fixture-rep-1-3",
+      "fixture-rep-1-4",
+      "fixture-rep-1-5",
+      "fixture-rep-1-6",
+      "fixture-rep-1-7",
+      "dA8N2CANJf9tCDi01mgRI",
+      "65EdY7_2JK0xUSA6TuYqe",
+      "GQKnPj-4TvTtVzB0U6N0A"
+    ],
+    "replayed": false
+  },
+  "assertions": {
+    "httpSuccess": true,
+    "restoredAsNewRevision": true,
+    "representationsRestored": true,
+    "freeElementsRestored": true,
+    "annotationsPreserved": true,
+    "discussionsPreserved": true
+  }
+}

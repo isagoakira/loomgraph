@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-10-02T06:45:57.560Z",
+  "revision": 44,
+  "entity": {
+    "id": "r9-shared",
+    "kind": "task",
+    "title": "交错验收 · 用户标题 same · 42",
+    "status": "blocked",
+    "parentId": "r9-parent",
+    "updatedAt": "2026-10-02T06:44:46.785Z"
+  },
+  "history": [
+    {
+      "id": "d3b5aaf5-5a60-464c-88da-c143dce9bfac",
+      "parentChangeId": "b6534eba-2957-4d92-8d4a-7917bcaad6fa",
+      "operationId": "r17-interleave-agent-1f9a4b43-3b90-4b42-b26f-3d19a079e8c2",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 42,
+      "revision": 43,
+      "actor": {
+        "id": "r17-interleave-agent",
+        "kind": "agent",
+        "label": "交错编辑验收"
+      },
+      "reason": "Isolated native UI interleaving acceptance",
+      "timestamp": "2026-10-02T06:44:46.281Z",
+      "operations": [
+        {
+          "type": "entity.patch",
+          "id": "r9-shared",
+          "patch": {
+            "title": "交错验收 · Agent 保留标题 · 42"
+          }
+        }
+      ],
+      "affectedIds": [
+        "r9-shared"
+      ],
+      "appliedOperations": [
+        {
+          "type": "entity.patch",
+          "id": "r9-shared",
+          "patch": {
+            "title": "交错验收 · Agent 保留标题 · 42",
+            "updatedAt": "2026-10-02T06:44:46.281Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "04916607-6230-4f58-b10c-5ab3c6c72fc0",
+      "parentChangeId": "d3b5aaf5-5a60-464c-88da-c143dce9bfac",
+      "operationId": "operation-35f27420-901f-4cc9-9a2c-9647afcd9229",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 43,
+      "revision": 44,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T06:44:46.785Z",
+      "operations": [
+        {
+          "type": "entity.patch",
+          "id": "r9-shared",
+          "patch": {
+            "title": "交错验收 · 用户标题 same · 42"
+          }
+        }
+      ],
+      "affectedIds": [
+        "r9-shared"
+      ],
+      "appliedOperations": [
+        {
+          "type": "entity.patch",
+          "id": "r9-shared",
+          "patch": {
+            "title": "交错验收 · 用户标题 same · 42",
+            "updatedAt": "2026-10-02T06:44:46.785Z"
+          }
+        }
+      ]
+    }
+  ],
+  "boundary": "r17 失败后的只读当前内容与真实历史，不重试原生编辑、不覆盖源报告"
+}

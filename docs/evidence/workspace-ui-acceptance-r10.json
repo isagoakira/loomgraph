@@ -1,0 +1,350 @@
+{
+  "at": "2026-10-03T05:28:48.776Z",
+  "plan": "p1.3",
+  "localRevision": "20261003-r10",
+  "sourceTypecheck": true,
+  "sourceTests": 179,
+  "testFiles": 19,
+  "productionBuild": true,
+  "subsetWorkerOutputBytes": 476,
+  "actualUIAssertions": 31,
+  "suites": [
+    {
+      "name": "ui-chrome",
+      "checks": [
+        {
+          "name": "top pointer resize",
+          "passed": true,
+          "details": {
+            "height": 180
+          }
+        },
+        {
+          "name": "top resize preserves center",
+          "passed": true,
+          "details": {
+            "before": {
+              "x": 810,
+              "y": 1565
+            },
+            "after": {
+              "x": 810,
+              "y": 1565
+            }
+          }
+        },
+        {
+          "name": "sidebar pointer resize",
+          "passed": true,
+          "details": {
+            "width": 481
+          }
+        },
+        {
+          "name": "sidebar resize preserves center",
+          "passed": true,
+          "details": {
+            "before": {
+              "x": 810,
+              "y": 1565
+            },
+            "after": {
+              "x": 810,
+              "y": 1565
+            }
+          }
+        },
+        {
+          "name": "independent top hide",
+          "passed": true
+        },
+        {
+          "name": "top hide preserves center",
+          "passed": true,
+          "details": {
+            "before": {
+              "x": 810,
+              "y": 1565
+            },
+            "after": {
+              "x": 810,
+              "y": 1565
+            }
+          }
+        },
+        {
+          "name": "both hidden, show controls reachable",
+          "passed": true
+        },
+        {
+          "name": "sidebar hide preserves center",
+          "passed": true,
+          "details": {
+            "before": {
+              "x": 810,
+              "y": 1565
+            },
+            "after": {
+              "x": 810,
+              "y": 1565
+            }
+          }
+        },
+        {
+          "name": "reload preserves independent visibility",
+          "passed": true
+        },
+        {
+          "name": "show restores remembered sizes",
+          "passed": true,
+          "details": {
+            "top": 180,
+            "sidebar": 481
+          }
+        }
+      ]
+    },
+    {
+      "name": "ui-zoom-preview",
+      "checks": [
+        {
+          "name": "zoom plus preserves center",
+          "passed": true,
+          "details": {
+            "before": {
+              "offsetLeft": 0,
+              "offsetTop": 180,
+              "width": 959,
+              "height": 487,
+              "scrollX": -755.5,
+              "scrollY": -476.5,
+              "zoom": 1
+            },
+            "after": {
+              "offsetLeft": 0,
+              "offsetTop": 180,
+              "width": 959,
+              "height": 487,
+              "scrollX": -851.4,
+              "scrollY": -525.2,
+              "zoom": 1.25
+            }
+          }
+        },
+        {
+          "name": "zoom minus preserves center",
+          "passed": true
+        },
+        {
+          "name": "real slider drag changes zoom and preserves center",
+          "passed": true,
+          "details": {
+            "before": 1,
+            "after": 0.6420096101930728
+          }
+        },
+        {
+          "name": "100 percent reset preserves center",
+          "passed": true
+        },
+        {
+          "name": "preview scroll without activating or expanding",
+          "passed": true,
+          "details": {
+            "before": 0,
+            "after": 120,
+            "active": ""
+          }
+        },
+        {
+          "name": "preview boundary does not chain to canvas",
+          "passed": true
+        },
+        {
+          "name": "title expands inline, without dialog or camera change",
+          "passed": true,
+          "details": {
+            "dialogs": 0,
+            "geometry": {
+              "x": 94.5,
+              "y": 253.5,
+              "width": 770,
+              "height": 340,
+              "top": 253.5,
+              "right": 864.5,
+              "bottom": 593.5,
+              "left": 94.5
+            },
+            "details": {
+              "x": 111.5,
+              "y": 298.546875,
+              "width": 736,
+              "height": 681.6640625,
+              "top": 298.546875,
+              "right": 847.5,
+              "bottom": 980.2109375,
+              "left": 111.5
+            },
+            "active": "representation:fc-read-memory"
+          }
+        },
+        {
+          "name": "collapse restores previous preview position",
+          "passed": true,
+          "details": {
+            "preview": 469,
+            "collapsed": 469
+          }
+        }
+      ]
+    },
+    {
+      "name": "ui-pan-drafts",
+      "checks": [
+        {
+          "name": "middle pan starts over a card and owns the gesture",
+          "passed": true,
+          "details": {
+            "before": {
+              "offsetLeft": 0,
+              "offsetTop": 180,
+              "width": 959,
+              "height": 487,
+              "scrollX": -755.5,
+              "scrollY": -476.5,
+              "zoom": 1
+            },
+            "after": {
+              "offsetLeft": 0,
+              "offsetTop": 180,
+              "width": 959,
+              "height": 487,
+              "scrollX": -695.5,
+              "scrollY": -451.5,
+              "zoom": 1
+            },
+            "mid": {
+              "owner": true,
+              "hit": "none"
+            }
+          }
+        },
+        {
+          "name": "space enables pan without editing",
+          "passed": true
+        },
+        {
+          "name": "space pan starts over a card and preserves content",
+          "passed": true,
+          "details": {
+            "before": {
+              "offsetLeft": 0,
+              "offsetTop": 180,
+              "width": 959,
+              "height": 487,
+              "scrollX": -695.5,
+              "scrollY": -451.5,
+              "zoom": 1
+            },
+            "after": {
+              "offsetLeft": 0,
+              "offsetTop": 180,
+              "width": 959,
+              "height": 487,
+              "scrollX": -620.5,
+              "scrollY": -471.5,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "name": "native hand pan crosses cards",
+          "passed": true,
+          "details": {
+            "before": {
+              "offsetLeft": 0,
+              "offsetTop": 180,
+              "width": 959,
+              "height": 487,
+              "scrollX": -620.5,
+              "scrollY": -471.5,
+              "zoom": 1
+            },
+            "after": {
+              "offsetLeft": 0,
+              "offsetTop": 180,
+              "width": 959,
+              "height": 487,
+              "scrollX": -570.5,
+              "scrollY": -451.5,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "name": "pointer release restores card interaction",
+          "passed": true
+        },
+        {
+          "name": "sidebar hide retains unsent draft and active panel",
+          "passed": true
+        },
+        {
+          "name": "reading mode retains native typography and omits canvas zoom",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "ui-additional",
+      "checks": [
+        {
+          "name": "window resize preserves scene center",
+          "passed": true,
+          "details": {
+            "before": {
+              "offsetLeft": 0,
+              "offsetTop": 180,
+              "width": 959,
+              "height": 487,
+              "scrollX": 84.5,
+              "scrollY": 43.5,
+              "zoom": 1
+            },
+            "after": {
+              "offsetLeft": 0,
+              "offsetTop": 180,
+              "width": 959,
+              "height": 720,
+              "scrollX": 84.5,
+              "scrollY": 160,
+              "zoom": 1
+            }
+          }
+        },
+        {
+          "name": "sidebar double click restores default width",
+          "passed": true
+        },
+        {
+          "name": "separator keyboard adjusts top height",
+          "passed": true
+        },
+        {
+          "name": "multiple cards expand independently without dialog",
+          "passed": true
+        },
+        {
+          "name": "keyboard collapse keeps the other card expanded",
+          "passed": true
+        },
+        {
+          "name": "compact node opens non-modal inline details",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "projectRevision": 101,
+  "scope": "当前macOS真实浏览器、本机Canvas项目；Windows、Claude宿主及完整V1性能另验。"
+}

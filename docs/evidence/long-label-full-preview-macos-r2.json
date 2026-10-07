@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-10-02T01:24:03.347Z",
+  "stage": "native full input",
+  "failure": "Error: page.waitForSelector timed out after 10000ms: textarea.excalidraw-wysiwyg",
+  "browserErrors": [
+    {
+      "message": "Uncaught ReferenceError: document is not defined"
+    },
+    {
+      "message": "Uncaught ReferenceError: document is not defined"
+    },
+    {
+      "message": "Uncaught ReferenceError: document is not defined"
+    },
+    {
+      "message": "Uncaught Error: Minified React error #185; visit https://react.dev/errors/185 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+      "stack": "Error: Minified React error #185; visit https://react.dev/errors/185 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at M0 (http://127.0.0.1:4317/assets/index-tabR7dkN.js:9:21305)\n    at Cd (http://127.0.0.1:4317/assets/index-tabR7dkN.js:9:20878)\n    at cv (http://127.0.0.1:4317/assets/index-tabR7dkN.js:9:38992)\n    at http://127.0.0.1:4317/assets/index-tabR7dkN.js:9:38873\n    at http://127.0.0.1:4317/assets/index-tabR7dkN.js:100:8560\n    at Set.forEach (<anonymous>)\n    at a (http://127.0.0.1:4317/assets/index-tabR7dkN.js:100:8549)\n    at http://127.0.0.1:4317/assets/index-tabR7dkN.js:100:12034\n    at Js (http://127.0.0.1:4317/assets/index-tabR7dkN.js:9:84482)\n    at Ey (http://127.0.0.1:4317/assets/index-tabR7dkN.js:9:92279)"
+    }
+  ],
+  "title": "模块 2 · Local canvas collaboration / 本地连接与跨图增量更新：WWW MMM 中文排版、视口保护、独立批注与冻结上下文，需要保留完整原文并在节点内显示可读的省略版本。\n第二段：维护原始身份、版本与真实来源；讨论和反馈跨图保持关联。\n第三段：这段完整输入必须仍可原地读取，不能把视觉折行或省略号写回业务标题。",
+  "beforeRevision": 61,
+  "afterRevision": 61,
+  "cameraBefore": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 485,
+    "scrollX": 94.33333333333337,
+    "scrollY": 40.166666666666686,
+    "zoom": 0.6
+  },
+  "cameraAfter": null,
+  "history": [],
+  "svgBytes": 63854,
+  "pngBytes": 0,
+  "assertions": {
+    "fullLongOriginalInput": false,
+    "storedTitleExact": true,
+    "noEditorOrPreviewRevision": true,
+    "geometryUnchanged": true,
+    "freeElementsUnchanged": true,
+    "annotationsUnchanged": true,
+    "cameraUnchanged": false,
+    "hoverFocusDoNotNavigate": false,
+    "svgHasEllipsis": true,
+    "svgHasFreeText": true,
+    "svgHasEmbeddedImage": true,
+    "svgHasPaths": true,
+    "pngGenerated": false
+  },
+  "boundary": "真实原生编辑器打开/关闭，无文本修改；SVG/PNG按需预览包含自由素材。截图与PNG另行查看。"
+}

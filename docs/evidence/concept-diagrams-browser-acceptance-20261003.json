@@ -1,0 +1,1375 @@
+{
+  "date": "2026-10-03",
+  "spaceId": 4,
+  "passed": 36,
+  "total": 36,
+  "cases": [
+    {
+      "name": "Nine real connected card diagrams render",
+      "pass": true,
+      "details": [
+        {
+          "id": "overview",
+          "cards": 7,
+          "edges": 7,
+          "width": 1046,
+          "height": 1014
+        },
+        {
+          "id": "map-probability",
+          "cards": 4,
+          "edges": 3,
+          "width": 1047,
+          "height": 1358
+        },
+        {
+          "id": "map-signal-confidence",
+          "cards": 5,
+          "edges": 4,
+          "width": 1047,
+          "height": 1389
+        },
+        {
+          "id": "map-memory-problem",
+          "cards": 5,
+          "edges": 4,
+          "width": 1047,
+          "height": 1436
+        },
+        {
+          "id": "map-two-memories",
+          "cards": 6,
+          "edges": 5,
+          "width": 1047,
+          "height": 1822
+        },
+        {
+          "id": "map-inference",
+          "cards": 7,
+          "edges": 7,
+          "width": 1047,
+          "height": 1784
+        },
+        {
+          "id": "map-update",
+          "cards": 7,
+          "edges": 7,
+          "width": 1047,
+          "height": 1771
+        },
+        {
+          "id": "map-evidence",
+          "cards": 7,
+          "edges": 6,
+          "width": 1047,
+          "height": 1798
+        },
+        {
+          "id": "map-reproduction",
+          "cards": 6,
+          "edges": 6,
+          "width": 1047,
+          "height": 1738
+        }
+      ]
+    },
+    {
+      "name": "Desktop labels and paths avoid cards",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "Card definitions remain readable and document fits",
+      "pass": true,
+      "details": {
+        "width": 1440,
+        "overflow": false,
+        "errors": [],
+        "issues": [],
+        "maps": [
+          {
+            "id": "overview",
+            "cards": 7,
+            "edges": 7,
+            "width": 1046,
+            "height": 1014
+          },
+          {
+            "id": "map-probability",
+            "cards": 4,
+            "edges": 3,
+            "width": 1047,
+            "height": 1358
+          },
+          {
+            "id": "map-signal-confidence",
+            "cards": 5,
+            "edges": 4,
+            "width": 1047,
+            "height": 1389
+          },
+          {
+            "id": "map-memory-problem",
+            "cards": 5,
+            "edges": 4,
+            "width": 1047,
+            "height": 1436
+          },
+          {
+            "id": "map-two-memories",
+            "cards": 6,
+            "edges": 5,
+            "width": 1047,
+            "height": 1822
+          },
+          {
+            "id": "map-inference",
+            "cards": 7,
+            "edges": 7,
+            "width": 1047,
+            "height": 1784
+          },
+          {
+            "id": "map-update",
+            "cards": 7,
+            "edges": 7,
+            "width": 1047,
+            "height": 1771
+          },
+          {
+            "id": "map-evidence",
+            "cards": 7,
+            "edges": 6,
+            "width": 1047,
+            "height": 1798
+          },
+          {
+            "id": "map-reproduction",
+            "cards": 6,
+            "edges": 6,
+            "width": 1047,
+            "height": 1738
+          }
+        ],
+        "figures": [
+          {
+            "id": "figure-probability",
+            "parts": 4,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-signal-confidence",
+            "parts": 4,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-memory-problem",
+            "parts": 6,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-two-memories",
+            "parts": 6,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-inference",
+            "parts": 8,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-update",
+            "parts": 8,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-evidence",
+            "parts": 11,
+            "scrollable": false,
+            "minFont": 16.683333333333334,
+            "accessible": true
+          },
+          {
+            "id": "figure-reproduction",
+            "parts": 6,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          }
+        ],
+        "figureIssues": [],
+        "minDefinitionFont": 14,
+        "modals": 0
+      }
+    },
+    {
+      "name": "No popup or runtime error",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "Context recaps and conceptual groups accompany all eight steps",
+      "pass": true
+    },
+    {
+      "name": "Eight concept figures have readable, non-overlapping text",
+      "pass": true,
+      "details": {
+        "figures": [
+          {
+            "id": "figure-probability",
+            "parts": 4,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-signal-confidence",
+            "parts": 4,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-memory-problem",
+            "parts": 6,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-two-memories",
+            "parts": 6,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-inference",
+            "parts": 8,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-update",
+            "parts": 8,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          },
+          {
+            "id": "figure-evidence",
+            "parts": 11,
+            "scrollable": false,
+            "minFont": 16.683333333333334,
+            "accessible": true
+          },
+          {
+            "id": "figure-reproduction",
+            "parts": 6,
+            "scrollable": false,
+            "minFont": 19.75657894736842,
+            "accessible": true
+          }
+        ],
+        "issues": []
+      }
+    },
+    {
+      "name": "Figure parts expose accessible click and keyboard controls",
+      "pass": true,
+      "details": [
+        {
+          "id": "figure-probability",
+          "parts": 4,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-signal-confidence",
+          "parts": 4,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-memory-problem",
+          "parts": 6,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-two-memories",
+          "parts": 6,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-inference",
+          "parts": 8,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-update",
+          "parts": 8,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-evidence",
+          "parts": 11,
+          "scrollable": false,
+          "minFont": 16.683333333333334,
+          "accessible": true
+        },
+        {
+          "id": "figure-reproduction",
+          "parts": 6,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        }
+      ]
+    },
+    {
+      "name": "Figure and part IDs remain unique in the document",
+      "pass": true
+    },
+    {
+      "name": "Semantic viewpoints have a centre with named side branches",
+      "pass": true
+    },
+    {
+      "name": "Hovering a drawn part does not activate it",
+      "pass": true
+    },
+    {
+      "name": "Clicking a figure part explains its definition in place and selects the card",
+      "pass": true
+    },
+    {
+      "name": "Keyboard changes the local figure explanation to the other branch",
+      "pass": true
+    },
+    {
+      "name": "A drawn part can open its existing knowledge card without a modal",
+      "pass": true
+    },
+    {
+      "name": "Hover does not activate or open details",
+      "pass": true
+    },
+    {
+      "name": "Click expands full details inside the card",
+      "pass": true
+    },
+    {
+      "name": "Expansion keeps other columns at their reading locations",
+      "pass": true,
+      "details": {
+        "before": [
+          {
+            "id": "foco",
+            "x": 22.5,
+            "y": 44,
+            "w": 266,
+            "h": 166,
+            "col": 0
+          },
+          {
+            "id": "taxonomy",
+            "x": 22.5,
+            "y": 286,
+            "w": 266,
+            "h": 166,
+            "col": 0
+          },
+          {
+            "id": "subcategory",
+            "x": 22.5,
+            "y": 528,
+            "w": 266,
+            "h": 166,
+            "col": 0
+          },
+          {
+            "id": "memory",
+            "x": 380.5,
+            "y": 286,
+            "w": 266,
+            "h": 168,
+            "col": 1
+          },
+          {
+            "id": "factor",
+            "x": 738.5,
+            "y": 44,
+            "w": 266,
+            "h": 166,
+            "col": 2
+          },
+          {
+            "id": "reasoning",
+            "x": 738.5,
+            "y": 286,
+            "w": 266,
+            "h": 166,
+            "col": 2
+          }
+        ],
+        "after": [
+          {
+            "id": "foco",
+            "x": 22.5,
+            "y": 44,
+            "w": 266,
+            "h": 166,
+            "col": 0
+          },
+          {
+            "id": "taxonomy",
+            "x": 22.5,
+            "y": 286,
+            "w": 266,
+            "h": 166,
+            "col": 0
+          },
+          {
+            "id": "subcategory",
+            "x": 22.5,
+            "y": 528,
+            "w": 266,
+            "h": 166,
+            "col": 0
+          },
+          {
+            "id": "memory",
+            "x": 380.5,
+            "y": 286,
+            "w": 266,
+            "h": 168,
+            "col": 1
+          },
+          {
+            "id": "factor",
+            "x": 738.5,
+            "y": 44,
+            "w": 266,
+            "h": 556,
+            "col": 2
+          },
+          {
+            "id": "reasoning",
+            "x": 738.5,
+            "y": 676,
+            "w": 266,
+            "h": 166,
+            "col": 2
+          }
+        ]
+      }
+    },
+    {
+      "name": "Expanded card has clear labels and relationships",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "Two cards can remain independently expanded",
+      "pass": true
+    },
+    {
+      "name": "Neighborhood extends along semantic relations",
+      "pass": true,
+      "details": {
+        "nodes": [
+          "factor",
+          "memory",
+          "signal",
+          "trajectory",
+          "revision",
+          "ablation"
+        ],
+        "visible": true
+      }
+    },
+    {
+      "name": "Return restores the local map and its prior disclosure",
+      "pass": true
+    },
+    {
+      "name": "Lecture location offers an explicit return",
+      "pass": true
+    },
+    {
+      "name": "Return restores the prior reading position",
+      "pass": true,
+      "details": {
+        "readingPosition": 9180,
+        "restored": 9180
+      }
+    },
+    {
+      "name": "Clickable arrow explains why its endpoints connect",
+      "pass": true
+    },
+    {
+      "name": "Keyboard can inspect the relationship",
+      "pass": true
+    },
+    {
+      "name": "Canonical main result remains available",
+      "pass": true
+    },
+    {
+      "name": "Week four contrary result remains visible",
+      "pass": true
+    },
+    {
+      "name": "Readable card layout without page overflow at 900",
+      "pass": true,
+      "details": {
+        "width": 900,
+        "overflow": false,
+        "errors": [],
+        "issues": [],
+        "maps": [
+          {
+            "id": "overview",
+            "cards": 7,
+            "edges": 7,
+            "width": 607,
+            "height": 1966
+          },
+          {
+            "id": "map-probability",
+            "cards": 4,
+            "edges": 3,
+            "width": 614,
+            "height": 1769
+          },
+          {
+            "id": "map-signal-confidence",
+            "cards": 5,
+            "edges": 4,
+            "width": 614,
+            "height": 1963
+          },
+          {
+            "id": "map-memory-problem",
+            "cards": 5,
+            "edges": 4,
+            "width": 614,
+            "height": 2050
+          },
+          {
+            "id": "map-two-memories",
+            "cards": 6,
+            "edges": 5,
+            "width": 614,
+            "height": 2397
+          },
+          {
+            "id": "map-inference",
+            "cards": 7,
+            "edges": 7,
+            "width": 614,
+            "height": 2634
+          },
+          {
+            "id": "map-update",
+            "cards": 7,
+            "edges": 7,
+            "width": 614,
+            "height": 2644
+          },
+          {
+            "id": "map-evidence",
+            "cards": 7,
+            "edges": 6,
+            "width": 614,
+            "height": 2749
+          },
+          {
+            "id": "map-reproduction",
+            "cards": 6,
+            "edges": 6,
+            "width": 614,
+            "height": 2408
+          }
+        ],
+        "figures": [
+          {
+            "id": "figure-probability",
+            "parts": 4,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-signal-confidence",
+            "parts": 4,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-memory-problem",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-two-memories",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-inference",
+            "parts": 8,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-update",
+            "parts": 8,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-evidence",
+            "parts": 11,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-reproduction",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          }
+        ],
+        "figureIssues": [],
+        "minDefinitionFont": 14,
+        "modals": 0
+      }
+    },
+    {
+      "name": "No clipped or overlapping diagram objects at 900",
+      "pass": true,
+      "details": {
+        "issues": [],
+        "errors": []
+      }
+    },
+    {
+      "name": "Concept text remains readable within its pan view at 900",
+      "pass": true,
+      "details": {
+        "figures": [
+          {
+            "id": "figure-probability",
+            "parts": 4,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-signal-confidence",
+            "parts": 4,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-memory-problem",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-two-memories",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-inference",
+            "parts": 8,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-update",
+            "parts": 8,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-evidence",
+            "parts": 11,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-reproduction",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          }
+        ],
+        "issues": []
+      }
+    },
+    {
+      "name": "Compact layout retains named concept branches at 900",
+      "pass": true
+    },
+    {
+      "name": "Navigation follows the current local problem at 900",
+      "pass": true
+    },
+    {
+      "name": "Readable card layout without page overflow at 390",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "overflow": false,
+        "errors": [],
+        "issues": [],
+        "maps": [
+          {
+            "id": "map-probability",
+            "cards": 4,
+            "edges": 3,
+            "width": 323,
+            "height": 2088
+          },
+          {
+            "id": "map-signal-confidence",
+            "cards": 5,
+            "edges": 4,
+            "width": 323,
+            "height": 2307
+          },
+          {
+            "id": "map-memory-problem",
+            "cards": 5,
+            "edges": 4,
+            "width": 323,
+            "height": 2419
+          },
+          {
+            "id": "map-two-memories",
+            "cards": 6,
+            "edges": 5,
+            "width": 323,
+            "height": 2815
+          },
+          {
+            "id": "map-inference",
+            "cards": 7,
+            "edges": 7,
+            "width": 323,
+            "height": 3023
+          },
+          {
+            "id": "map-update",
+            "cards": 7,
+            "edges": 7,
+            "width": 323,
+            "height": 3053
+          },
+          {
+            "id": "map-evidence",
+            "cards": 7,
+            "edges": 6,
+            "width": 323,
+            "height": 3300
+          },
+          {
+            "id": "map-reproduction",
+            "cards": 6,
+            "edges": 6,
+            "width": 323,
+            "height": 2801
+          }
+        ],
+        "figures": [
+          {
+            "id": "figure-probability",
+            "parts": 4,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-signal-confidence",
+            "parts": 4,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-memory-problem",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-two-memories",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-inference",
+            "parts": 8,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-update",
+            "parts": 8,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-evidence",
+            "parts": 11,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-reproduction",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          }
+        ],
+        "figureIssues": [],
+        "minDefinitionFont": 14,
+        "modals": 0
+      }
+    },
+    {
+      "name": "No clipped or overlapping diagram objects at 390",
+      "pass": true,
+      "details": {
+        "issues": [],
+        "errors": []
+      }
+    },
+    {
+      "name": "Concept text remains readable within its pan view at 390",
+      "pass": true,
+      "details": {
+        "figures": [
+          {
+            "id": "figure-probability",
+            "parts": 4,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-signal-confidence",
+            "parts": 4,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-memory-problem",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-two-memories",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-inference",
+            "parts": 8,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-update",
+            "parts": 8,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-evidence",
+            "parts": 11,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          },
+          {
+            "id": "figure-reproduction",
+            "parts": 6,
+            "scrollable": true,
+            "minFont": 15,
+            "accessible": true
+          }
+        ],
+        "issues": []
+      }
+    },
+    {
+      "name": "Compact layout retains named concept branches at 390",
+      "pass": true
+    },
+    {
+      "name": "Navigation follows the current local problem at 390",
+      "pass": true
+    }
+  ],
+  "measurements": [
+    {
+      "view": "desktop",
+      "width": 1440,
+      "overflow": false,
+      "errors": [],
+      "issues": [],
+      "maps": [
+        {
+          "id": "overview",
+          "cards": 7,
+          "edges": 7,
+          "width": 1046,
+          "height": 1014
+        },
+        {
+          "id": "map-probability",
+          "cards": 4,
+          "edges": 3,
+          "width": 1047,
+          "height": 1358
+        },
+        {
+          "id": "map-signal-confidence",
+          "cards": 5,
+          "edges": 4,
+          "width": 1047,
+          "height": 1389
+        },
+        {
+          "id": "map-memory-problem",
+          "cards": 5,
+          "edges": 4,
+          "width": 1047,
+          "height": 1436
+        },
+        {
+          "id": "map-two-memories",
+          "cards": 6,
+          "edges": 5,
+          "width": 1047,
+          "height": 1822
+        },
+        {
+          "id": "map-inference",
+          "cards": 7,
+          "edges": 7,
+          "width": 1047,
+          "height": 1784
+        },
+        {
+          "id": "map-update",
+          "cards": 7,
+          "edges": 7,
+          "width": 1047,
+          "height": 1771
+        },
+        {
+          "id": "map-evidence",
+          "cards": 7,
+          "edges": 6,
+          "width": 1047,
+          "height": 1798
+        },
+        {
+          "id": "map-reproduction",
+          "cards": 6,
+          "edges": 6,
+          "width": 1047,
+          "height": 1738
+        }
+      ],
+      "figures": [
+        {
+          "id": "figure-probability",
+          "parts": 4,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-signal-confidence",
+          "parts": 4,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-memory-problem",
+          "parts": 6,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-two-memories",
+          "parts": 6,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-inference",
+          "parts": 8,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-update",
+          "parts": 8,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        },
+        {
+          "id": "figure-evidence",
+          "parts": 11,
+          "scrollable": false,
+          "minFont": 16.683333333333334,
+          "accessible": true
+        },
+        {
+          "id": "figure-reproduction",
+          "parts": 6,
+          "scrollable": false,
+          "minFont": 19.75657894736842,
+          "accessible": true
+        }
+      ],
+      "figureIssues": [],
+      "minDefinitionFont": 14,
+      "modals": 0
+    },
+    {
+      "view": "width-900",
+      "width": 900,
+      "overflow": false,
+      "errors": [],
+      "issues": [],
+      "maps": [
+        {
+          "id": "overview",
+          "cards": 7,
+          "edges": 7,
+          "width": 607,
+          "height": 1966
+        },
+        {
+          "id": "map-probability",
+          "cards": 4,
+          "edges": 3,
+          "width": 614,
+          "height": 1769
+        },
+        {
+          "id": "map-signal-confidence",
+          "cards": 5,
+          "edges": 4,
+          "width": 614,
+          "height": 1963
+        },
+        {
+          "id": "map-memory-problem",
+          "cards": 5,
+          "edges": 4,
+          "width": 614,
+          "height": 2050
+        },
+        {
+          "id": "map-two-memories",
+          "cards": 6,
+          "edges": 5,
+          "width": 614,
+          "height": 2397
+        },
+        {
+          "id": "map-inference",
+          "cards": 7,
+          "edges": 7,
+          "width": 614,
+          "height": 2634
+        },
+        {
+          "id": "map-update",
+          "cards": 7,
+          "edges": 7,
+          "width": 614,
+          "height": 2644
+        },
+        {
+          "id": "map-evidence",
+          "cards": 7,
+          "edges": 6,
+          "width": 614,
+          "height": 2749
+        },
+        {
+          "id": "map-reproduction",
+          "cards": 6,
+          "edges": 6,
+          "width": 614,
+          "height": 2408
+        }
+      ],
+      "figures": [
+        {
+          "id": "figure-probability",
+          "parts": 4,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-signal-confidence",
+          "parts": 4,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-memory-problem",
+          "parts": 6,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-two-memories",
+          "parts": 6,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-inference",
+          "parts": 8,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-update",
+          "parts": 8,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-evidence",
+          "parts": 11,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-reproduction",
+          "parts": 6,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        }
+      ],
+      "figureIssues": [],
+      "minDefinitionFont": 14,
+      "modals": 0
+    },
+    {
+      "view": "width-390",
+      "width": 390,
+      "overflow": false,
+      "errors": [],
+      "issues": [],
+      "maps": [
+        {
+          "id": "map-probability",
+          "cards": 4,
+          "edges": 3,
+          "width": 323,
+          "height": 2088
+        },
+        {
+          "id": "map-signal-confidence",
+          "cards": 5,
+          "edges": 4,
+          "width": 323,
+          "height": 2307
+        },
+        {
+          "id": "map-memory-problem",
+          "cards": 5,
+          "edges": 4,
+          "width": 323,
+          "height": 2419
+        },
+        {
+          "id": "map-two-memories",
+          "cards": 6,
+          "edges": 5,
+          "width": 323,
+          "height": 2815
+        },
+        {
+          "id": "map-inference",
+          "cards": 7,
+          "edges": 7,
+          "width": 323,
+          "height": 3023
+        },
+        {
+          "id": "map-update",
+          "cards": 7,
+          "edges": 7,
+          "width": 323,
+          "height": 3053
+        },
+        {
+          "id": "map-evidence",
+          "cards": 7,
+          "edges": 6,
+          "width": 323,
+          "height": 3300
+        },
+        {
+          "id": "map-reproduction",
+          "cards": 6,
+          "edges": 6,
+          "width": 323,
+          "height": 2801
+        }
+      ],
+      "figures": [
+        {
+          "id": "figure-probability",
+          "parts": 4,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-signal-confidence",
+          "parts": 4,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-memory-problem",
+          "parts": 6,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-two-memories",
+          "parts": 6,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-inference",
+          "parts": 8,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-update",
+          "parts": 8,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-evidence",
+          "parts": 11,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        },
+        {
+          "id": "figure-reproduction",
+          "parts": 6,
+          "scrollable": true,
+          "minFont": 15,
+          "accessible": true
+        }
+      ],
+      "figureIssues": [],
+      "minDefinitionFont": 14,
+      "modals": 0
+    }
+  ],
+  "limitations": [
+    "实际浏览器的布局与交互验证，不证明真人理解。",
+    "保留已核验的论文表格，未复现模型实验。",
+    "自由画布通用布局与已安装阅读器未由此升级。",
+    "三个局部图有7个节点，分组及原位回顾是其必要阅读上下文。"
+  ]
+}

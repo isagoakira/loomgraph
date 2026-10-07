@@ -1,0 +1,105 @@
+{
+  "checkedAt": "2026-10-02T10:05:07.711Z",
+  "path": "只恢复已有空文字并重载，没有画布选中 / 输入 / presentation",
+  "beforeRevision": 65,
+  "addedRevision": 66,
+  "samples": [
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    },
+    {
+      "revision": 66,
+      "hasEmpty": true
+    }
+  ],
+  "history": [],
+  "status": "no-repro-on-load",
+  "free": {
+    "id": "8gqp1lj0noqIDNWEXRiBE",
+    "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "element": {
+      "id": "8gqp1lj0noqIDNWEXRiBE",
+      "type": "text",
+      "x": 884.1071428571429,
+      "y": 282.75,
+      "width": 8,
+      "height": 25,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "ac",
+      "roundness": null,
+      "seed": 594367826,
+      "version": 2,
+      "versionNonce": 347791566,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1790924405096,
+      "link": null,
+      "locked": false,
+      "customData": {
+        "agentCanvas": {
+          "freeElementId": "8gqp1lj0noqIDNWEXRiBE",
+          "role": "free"
+        }
+      },
+      "text": "",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  }
+}

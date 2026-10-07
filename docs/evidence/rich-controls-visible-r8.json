@@ -1,0 +1,59 @@
+{
+  "module": {
+    "block": {
+      "x": 121.5,
+      "y": 285.5,
+      "width": 847,
+      "height": 374,
+      "top": 285.5,
+      "right": 968.5,
+      "bottom": 659.5,
+      "left": 121.5
+    },
+    "viewport": {
+      "x": 0,
+      "y": 236,
+      "width": 1090,
+      "height": 431,
+      "top": 236,
+      "right": 1090,
+      "bottom": 667,
+      "left": 0
+    },
+    "camera": {
+      "offsetLeft": 0,
+      "offsetTop": 236,
+      "width": 1090,
+      "height": 431,
+      "scrollX": -739.5454545454545,
+      "scrollY": -505,
+      "zoom": 1.1
+    }
+  },
+  "editor": {
+    "block": {
+      "x": 305,
+      "y": 283.5,
+      "width": 480,
+      "height": 336,
+      "top": 283.5,
+      "right": 785,
+      "bottom": 619.5,
+      "left": 305
+    },
+    "viewport": {
+      "x": 0,
+      "y": 236,
+      "width": 1090,
+      "height": 431,
+      "top": 236,
+      "right": 1090,
+      "bottom": 667,
+      "left": 0
+    },
+    "scrollable": true,
+    "revision": "73"
+  },
+  "moduleControlsClicked": true,
+  "cancelReachable": true
+}

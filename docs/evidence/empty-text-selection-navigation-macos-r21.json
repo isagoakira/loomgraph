@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-10-02T10:11:47.405Z",
+  "stages": [
+    {
+      "stage": "before",
+      "revision": 66,
+      "hasEmpty": true,
+      "graph": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "editing": null
+    },
+    {
+      "stage": "selected",
+      "revision": 66,
+      "hasEmpty": true,
+      "graph": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "editing": null
+    },
+    {
+      "stage": "composer",
+      "revision": 66,
+      "hasEmpty": true,
+      "graph": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "editing": null
+    },
+    {
+      "stage": "focus off",
+      "revision": 66,
+      "hasEmpty": true,
+      "graph": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "editing": null
+    },
+    {
+      "stage": "manual view B",
+      "revision": 66,
+      "hasEmpty": true,
+      "graph": "r9-graph-b",
+      "editing": null
+    },
+    {
+      "stage": "return A",
+      "revision": 66,
+      "hasEmpty": true,
+      "graph": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "editing": null
+    }
+  ],
+  "afterRevision": 66,
+  "status": "no-repro"
+}

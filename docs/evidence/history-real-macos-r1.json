@@ -1,0 +1,17 @@
+{
+  "compare": {
+    "beforeRevision": 24,
+    "afterRevision": 25,
+    "annotationsBefore": 6,
+    "annotationsAfter": 6,
+    "oldStatus": "doing",
+    "newStatus": "done",
+    "assertions": {
+      "newRevision": true,
+      "restoredStatus": true,
+      "feedbackPreserved": true
+    }
+  },
+  "downloaded": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/evidence/ui-native-project.avcanvas",
+  "suggestedFilename": "f5e539d9-2ecf-4337-a96a-ab7a499242c2-25.avcanvas"
+}

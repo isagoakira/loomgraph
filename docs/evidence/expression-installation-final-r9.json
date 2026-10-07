@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-02T17:23:20.690Z",
+  "version": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261003-r9",
+  "implementationPlanVersion": "p1.2",
+  "currentPointer": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261003-r9",
+  "liveUI": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261003-r9/dist/ui",
+  "runningStdio": "r1 preserved; new modes load after host restart",
+  "serverSha256": "8ff41b187e58ab3b9b47f421f4569501741de4648b43e63050069ede944e3f0b",
+  "sourceTypecheck": true,
+  "sourceTests": 169,
+  "testFiles": 18,
+  "installedStdioChecks": 18,
+  "actualPackageChecks": 8,
+  "actualUIAssertions": 21,
+  "projectRevision": 95,
+  "protectedOriginalDistFiles": 370,
+  "originalSourceDistUnchanged": true,
+  "userPinnedY": 160.2869684943331,
+  "projectDataPreserved": true,
+  "globalSkillUpdated": true,
+  "filesVerified": 814
+}

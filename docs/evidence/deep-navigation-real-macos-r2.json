@@ -1,0 +1,130 @@
+{
+  "checkedAt": "2026-10-02T01:36:53.617Z",
+  "path": "真实选中入口、进入五层子图、项目面包屑一次返回总览",
+  "overview": {
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 140.57145036969868,
+      "zoom": 0.7
+    },
+    "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+    "revision": 62,
+    "breadcrumbs": "项目/项目总览"
+  },
+  "steps": [
+    {
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 485,
+        "scrollX": 44.571428571428655,
+        "scrollY": 3.8571428571428754,
+        "zoom": 0.7
+      },
+      "graphId": "fixture-graph-1",
+      "revision": 62,
+      "breadcrumbs": "项目/项目总览/结构与模块",
+      "depth": 1
+    },
+    {
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 485,
+        "scrollX": 42.142857142857224,
+        "scrollY": 179.42857142857144,
+        "zoom": 0.7
+      },
+      "graphId": "fixture-graph-2",
+      "revision": 62,
+      "breadcrumbs": "项目/项目总览/结构与模块/实施流程",
+      "depth": 2
+    },
+    {
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 485,
+        "scrollX": 42.142857142857224,
+        "scrollY": 179.42857142857144,
+        "zoom": 0.7
+      },
+      "graphId": "fixture-graph-3",
+      "revision": 62,
+      "breadcrumbs": "项目/项目总览/结构与模块/实施流程/反馈与验收",
+      "depth": 3
+    },
+    {
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 485,
+        "scrollX": 42.142857142857224,
+        "scrollY": 179.42857142857144,
+        "zoom": 0.7
+      },
+      "graphId": "fixture-graph-4",
+      "revision": 62,
+      "breadcrumbs": "项目/项目总览/结构与模块/实施流程/反馈与验收/子系统细节",
+      "depth": 4
+    },
+    {
+      "camera": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 485,
+        "scrollX": 42.142857142857224,
+        "scrollY": 179.42857142857144,
+        "zoom": 0.7
+      },
+      "graphId": "fixture-graph-5",
+      "revision": 62,
+      "breadcrumbs": "项目/项目总览/结构与模块/实施流程/反馈与验收/子系统细节/运行与交接",
+      "depth": 5
+    }
+  ],
+  "deepest": {
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 179.42857142857144,
+      "zoom": 0.7
+    },
+    "graphId": "fixture-graph-5",
+    "revision": 62,
+    "breadcrumbs": "项目/项目总览/结构与模块/实施流程/反馈与验收/子系统细节/运行与交接"
+  },
+  "returned": {
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 140.57145036969868,
+      "zoom": 0.7
+    },
+    "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+    "revision": 62,
+    "breadcrumbs": "项目/项目总览"
+  },
+  "assertions": {
+    "fiveLevels": true,
+    "correctGraphs": true,
+    "rootCameraRestored": true,
+    "noContentRevision": true,
+    "freeElementsUnchanged": true
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-01T22:27:02.484Z",
+  "revision": 10004,
+  "target": {
+    "id": "fixture-entity-1",
+    "kind": "task",
+    "title": "任务 2 · 验证视口",
+    "parentId": "fixture-entity-0",
+    "status": "doing",
+    "source": "benchmark-status-report",
+    "updatedAt": "2026-10-01T22:23:38.789Z",
+    "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+  },
+  "representation": {
+    "id": "fixture-rep-0-1",
+    "entityId": "fixture-entity-1",
+    "graphId": "4526c465-c013-4db6-959a-c4c01d18c601",
+    "x": 320,
+    "y": 64,
+    "width": 218,
+    "height": 78,
+    "pinned": false,
+    "subgraphIds": [],
+    "rotation": 0,
+    "style": {
+      "strokeColor": "#b45c2e",
+      "backgroundColor": "#f5dfc7",
+      "fillStyle": "solid",
+      "strokeWidth": 1.5,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100
+    }
+  },
+  "diagnostic": {
+    "projectionElementCount": "164",
+    "projectionPersistedCount": "164",
+    "apiReady": "true",
+    "sceneElementCount": "164",
+    "sceneBounds": "{\"minX\":64,\"minY\":64,\"maxX\":2221,\"maxY\":1450}",
+    "canvasSize": "2036x970"
+  },
+  "boundary": "5Hz probe stopped after first visible pixel mismatch; UI added representation.style revisions during Agent-only updates; full browser benchmark not passed."
+}

@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-02T05:49:17.451Z",
+  "copyPath": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/图形审计 r9-7KxyhO/v1-import-5047f429-c800-44ec-b38b-727cbc5ccb05",
+  "packagePath": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/discussion-roundtrip-r14.avcanvas",
+  "sourceProjectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+  "sourceWorkCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+  "sourceRevision": 30,
+  "sourceSnapshotSha256": "01d7e2ece3618abafb8e3311c48fc297c66b6733f32e412b24ec43bc91551d82",
+  "discussionIds": [
+    "r14-project-discussion",
+    "r14-graph-b-discussion",
+    "r14-annotation-a-discussion"
+  ],
+  "packageSha256": "efda1582a55fbc608f9d1e764f52b7e631b96e1ede58a8b7bdd95a718ff3ef30",
+  "assertions": {
+    "nativePackageDownloadExists": true,
+    "independentCopyCreated": true,
+    "sourceSnapshotExactlyUnchanged": true
+  },
+  "boundary": "已从正式历史面板下载并上传独立副本；副本内的实际讨论视图由下一探针检查。",
+  "status": "passed"
+}

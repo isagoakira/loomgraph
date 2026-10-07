@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-02T04:42:52.075Z",
+  "previousEvidence": "native-copy-macos-r12.json",
+  "boundary": "上一探针已通过业务表示复制且界面正常；自由复制点在fit完成前计算，未提交。本次仅继续自由图形实际原生复制",
+  "assertions": {
+    "distinctFreeAndNativeIdentity": true,
+    "originalGeometryUnchanged": true,
+    "duplicateRetainsShape": true,
+    "noEntityClone": true,
+    "existingAnnotationsUnchanged": true,
+    "onlyOneFreeCopyCommit": true,
+    "appSurvivesFreeCopy": true,
+    "noBrowserError": true
+  },
+  "beforeRevision": 15,
+  "point": {
+    "x": 970.3571428571428,
+    "y": 631.5714285714287
+  },
+  "duplicate": {
+    "id": "free-NBa-vBGIsriHoM0vkrh9B",
+    "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "element": {
+      "id": "NBa-vBGIsriHoM0vkrh9B",
+      "type": "ellipse",
+      "x": 907.8571428571429,
+      "y": 356.28571428571433,
+      "width": 262.8571428571429,
+      "height": 80,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aNV",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 796229009,
+      "version": 5,
+      "versionNonce": 1255645183,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1790916172413,
+      "link": null,
+      "locked": false,
+      "customData": {
+        "agentCanvas": {
+          "freeElementId": "free-NBa-vBGIsriHoM0vkrh9B",
+          "role": "free",
+          "copiedFromFreeElementId": "dA8N2CANJf9tCDi01mgRI"
+        }
+      }
+    }
+  },
+  "finalRevision": 16,
+  "browserErrors": [],
+  "status": "passed"
+}

@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-10-01T23:39:26.852Z",
+  "before": {
+    "revision": 28,
+    "status": "done",
+    "rep": {
+      "id": "fixture-rep-0-1",
+      "entityId": "fixture-entity-1",
+      "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+      "x": 605.714329310826,
+      "y": 269.7142421177455,
+      "width": 218,
+      "height": 78,
+      "pinned": true,
+      "subgraphIds": [],
+      "rotation": 0,
+      "style": {
+        "strokeColor": "#39705e",
+        "backgroundColor": "#dcebe2",
+        "fillStyle": "solid",
+        "strokeWidth": 1.5,
+        "strokeStyle": "solid",
+        "roughness": 0,
+        "opacity": 100
+      }
+    },
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 123.42857142857142,
+      "zoom": 0.7
+    },
+    "pixel": [
+      220,
+      235,
+      226,
+      255
+    ]
+  },
+  "after": {
+    "revision": 29,
+    "status": "doing",
+    "rep": {
+      "id": "fixture-rep-0-1",
+      "entityId": "fixture-entity-1",
+      "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+      "x": 605.714329310826,
+      "y": 269.7142421177455,
+      "width": 218,
+      "height": 78,
+      "pinned": true,
+      "subgraphIds": [],
+      "rotation": 0,
+      "style": {
+        "strokeColor": "#39705e",
+        "backgroundColor": "#dcebe2",
+        "fillStyle": "solid",
+        "strokeWidth": 1.5,
+        "strokeStyle": "solid",
+        "roughness": 0,
+        "opacity": 100
+      }
+    },
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": 42.142857142857224,
+      "scrollY": 123.42857142857142,
+      "zoom": 0.7
+    },
+    "pixel": [
+      245,
+      223,
+      199,
+      255
+    ]
+  },
+  "assertions": {
+    "statusChanged": true,
+    "greenToOrange": true,
+    "onlyAgentRevision": true,
+    "representationUnchanged": true,
+    "cameraUnchanged": true
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "before": {
+    "graph": "forecastcompass-architecture",
+    "revision": "43",
+    "camera": {
+      "offsetLeft": 0,
+      "offsetTop": 182,
+      "width": 1078,
+      "height": 507,
+      "scrollX": 178.33333333333337,
+      "scrollY": 119.39999999999998,
+      "zoom": 0.6
+    },
+    "point": {
+      "sceneX": 432,
+      "sceneY": 417,
+      "viewportX": 366.2,
+      "viewportY": 503.84
+    }
+  },
+  "entered": {
+    "breadcrumbs": "项目/ForecastCompass · 架构与原图/层级记忆 · 因子与推理",
+    "graph": "forecastcompass-memory"
+  },
+  "returned": {
+    "graph": "forecastcompass-architecture",
+    "revision": "43",
+    "camera": {
+      "offsetLeft": 0,
+      "offsetTop": 182,
+      "width": 1078,
+      "height": 507,
+      "scrollX": 178.33333333333337,
+      "scrollY": 119.39999999999998,
+      "zoom": 0.6
+    }
+  },
+  "cameraRestored": true,
+  "revisionUnchanged": true
+}

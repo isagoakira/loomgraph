@@ -1,0 +1,4 @@
+Agent Visual Canvas 批次 batch-cf63aa6b-0b20-4794-bdac-6e5ce0170920
+读取上下文：/api/feedback/batch-cf63aa6b-0b20-4794-bdac-6e5ce0170920/context
+批注数：2
+状态：已在本机保存，等待宿主交接。

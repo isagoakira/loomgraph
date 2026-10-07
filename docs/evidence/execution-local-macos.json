@@ -1,0 +1,197 @@
+{
+  "status": "passed",
+  "kind": "local_executor_control_chain",
+  "startedAt": "2026-10-01T21:54:17.965Z",
+  "finishedAt": "2026-10-01T21:54:18.391Z",
+  "environment": {
+    "node": "v26.8.1",
+    "platform": "darwin",
+    "release": "25.6.0",
+    "arch": "arm64"
+  },
+  "service": {
+    "builtServer": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/dist/server/index.mjs",
+    "version": "0.1.0",
+    "command": [
+      "/opt/homebrew/Cellar/node/26.8.1/bin/node",
+      "index.mjs",
+      "--stdio",
+      "--port",
+      "0",
+      "--data-root",
+      "<temporary-root>"
+    ],
+    "protocol": "MCP stdio via @modelcontextprotocol/client StdioClientTransport"
+  },
+  "mcpToolNames": [
+    "canvas_open",
+    "canvas_read",
+    "canvas_apply",
+    "canvas_feedback",
+    "canvas_present",
+    "canvas_history",
+    "canvas_restore",
+    "canvas_package",
+    "canvas_execution"
+  ],
+  "ids": {
+    "taskId": "execution-local-macos-task",
+    "runId": "execution-local-macos-run",
+    "executorId": "local-smoke-executor",
+    "requestId": "f68bb83b-6bce-4f40-957d-4f94edb65909"
+  },
+  "child": {
+    "pid": 31799,
+    "exitCode": 0,
+    "signal": null,
+    "scriptSha256": "741eecfb60b9fb4236ec5822f2e748aebdc20f7059eae317dbdfded30fca6bfd"
+  },
+  "events": [
+    {
+      "name": "request_queued",
+      "at": "2026-10-01T21:54:18.221Z",
+      "monotonicMs": 853818160.858,
+      "requestId": "f68bb83b-6bce-4f40-957d-4f94edb65909",
+      "taskId": "execution-local-macos-task",
+      "runId": "execution-local-macos-run",
+      "executorId": "local-smoke-executor",
+      "state": "awaiting_delivery"
+    },
+    {
+      "name": "pending_observed",
+      "at": "2026-10-01T21:54:18.246Z",
+      "monotonicMs": 853818186.198,
+      "requestId": "f68bb83b-6bce-4f40-957d-4f94edb65909",
+      "state": "awaiting_delivery",
+      "total": 1
+    },
+    {
+      "name": "receipt_received",
+      "at": "2026-10-01T21:54:18.249Z",
+      "monotonicMs": 853818188.737,
+      "requestId": "f68bb83b-6bce-4f40-957d-4f94edb65909",
+      "state": "received",
+      "verified": true
+    },
+    {
+      "name": "child_sigterm_sent",
+      "at": "2026-10-01T21:54:18.249Z",
+      "monotonicMs": 853818188.817,
+      "pid": 31799,
+      "signal": "SIGTERM"
+    },
+    {
+      "name": "child_exit_observed",
+      "at": "2026-10-01T21:54:18.250Z",
+      "monotonicMs": 853818190.254,
+      "pid": 31799,
+      "code": 0,
+      "signal": null
+    },
+    {
+      "name": "receipt_effective",
+      "at": "2026-10-01T21:54:18.252Z",
+      "monotonicMs": 853818192.018,
+      "requestId": "f68bb83b-6bce-4f40-957d-4f94edb65909",
+      "state": "effective",
+      "terminated": true
+    },
+    {
+      "name": "run_stopped_verified",
+      "at": "2026-10-01T21:54:18.253Z",
+      "monotonicMs": 853818192.833,
+      "runId": "execution-local-macos-run",
+      "status": "stopped",
+      "verified": true
+    },
+    {
+      "name": "pending_cleared",
+      "at": "2026-10-01T21:54:18.255Z",
+      "monotonicMs": 853818195.252,
+      "requestId": "f68bb83b-6bce-4f40-957d-4f94edb65909",
+      "total": 0
+    },
+    {
+      "name": "eof_http_available",
+      "at": "2026-10-01T21:54:18.386Z",
+      "monotonicMs": 853818326.167,
+      "endpoint": "http://127.0.0.1:54851",
+      "pid": 31800,
+      "lockPath": "/var/folders/66/4q5w7gb92yz6x01zlbnydyx00000gq/T/agent-visual-canvas-eof-smoke-Pql9wr/.canvas-server.lock"
+    },
+    {
+      "name": "eof_close_called",
+      "at": "2026-10-01T21:54:18.386Z",
+      "monotonicMs": 853818326.176,
+      "transport": "StdioClientTransport.close",
+      "behavior": "stdin.end then wait, then signal fallback"
+    },
+    {
+      "name": "eof_server_exited",
+      "at": "2026-10-01T21:54:18.390Z",
+      "monotonicMs": 853818330.197,
+      "pid": 31800,
+      "withinMs": 4.004,
+      "within3s": true
+    },
+    {
+      "name": "eof_http_released",
+      "at": "2026-10-01T21:54:18.391Z",
+      "monotonicMs": 853818331.3,
+      "withinMs": 5.11,
+      "within3s": true
+    },
+    {
+      "name": "eof_lock_released",
+      "at": "2026-10-01T21:54:18.391Z",
+      "monotonicMs": 853818331.346,
+      "withinMs": 5.167,
+      "within3s": true
+    }
+  ],
+  "assertions": {
+    "macos_platform": true,
+    "stdio_server_pid_observed": true,
+    "canvas_open_tool_listed": true,
+    "canvas_execution_tool_listed": true,
+    "mcp_handshake": true,
+    "canvas_open_read_project": true,
+    "canvas_open_read_work_copy": true,
+    "task_applied": true,
+    "executor_registered": true,
+    "run_created_running": true,
+    "request_id_created": true,
+    "request_queued_awaiting_delivery": true,
+    "pending_http_available": true,
+    "pending_observed_awaiting_delivery": true,
+    "receipt_received_state": true,
+    "child_sigterm_sent": true,
+    "child_exit_observed_after_sigterm": true,
+    "receipt_effective_state": true,
+    "effective_after_child_exit": true,
+    "run_stopped_verified": true,
+    "pending_after_effective_http_available": true,
+    "request_removed_from_pending": true,
+    "eof_canvas_open_handshake": true,
+    "eof_lock_created": true,
+    "eof_http_available_before_close": true,
+    "eof_transport_close_within_3s": true,
+    "eof_transport_close_succeeded": true,
+    "eof_server_exited_within_3s": true,
+    "eof_http_released_within_3s": true,
+    "eof_lock_released_within_3s": true
+  },
+  "eof": {
+    "endpoint": "http://127.0.0.1:54851",
+    "pid": 31800,
+    "lockPath": "/var/folders/66/4q5w7gb92yz6x01zlbnydyx00000gq/T/agent-visual-canvas-eof-smoke-Pql9wr/.canvas-server.lock",
+    "timeoutMs": 3000,
+    "closeBehavior": "StdioClientTransport.close() sends stdin.end() before its wait and signal fallback."
+  },
+  "limitations": [
+    "只验证显式登记的本地 macOS executor；",
+    "不代表可以中断现有 Codex/Claude 整轮；",
+    "不修改用户 MCP 配置；",
+    "不连接远程 executor。"
+  ]
+}

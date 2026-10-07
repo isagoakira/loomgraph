@@ -1,0 +1,44 @@
+{
+  "serverBeforeRetry": 22,
+  "agentRevision": 23,
+  "after": {
+    "revision": 24,
+    "annotation": [
+      {
+        "id": "annotation-0874346d-1b6a-4dab-a302-03132b27b682",
+        "text": "重连顺序验收：Agent 新状态先提交，旧基线批注后重试。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+          }
+        ],
+        "observedRevision": 22,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:07:21.659Z",
+        "updatedAt": "2026-10-01T23:07:21.659Z",
+        "responses": []
+      }
+    ],
+    "entity": {
+      "id": "fixture-entity-1",
+      "kind": "task",
+      "title": "任务 2 · 验证视口",
+      "parentId": "fixture-entity-0",
+      "status": "doing",
+      "source": "root-visible-acceptance",
+      "updatedAt": "2026-10-01T23:07:22.343Z",
+      "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+    }
+  },
+  "assertions": {
+    "retryAfterNewerRevision": true,
+    "observedOldRevisionRetained": true,
+    "committedOnce": true,
+    "newerAgentStatePreserved": true
+  },
+  "boundary": "实际服务停止与重启；网络阻断保持在同一次浏览器调用内，Agent 写入先完成，再放行浏览器重试。"
+}

@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-01T23:40:36.121Z",
+  "beforeRevision": 29,
+  "afterRevision": 30,
+  "visibleTarget": "本条目标使用当前选择区域 · 257×60",
+  "annotation": {
+    "id": "annotation-c849a413-87e7-4c07-81c9-c96539b11800",
+    "text": "区域验收：这块空白留给子图说明，保持现有节点位置。",
+    "targets": [
+      {
+        "type": "region",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 855,
+        "y": 423.7142857142858,
+        "width": 257.14285714285734,
+        "height": 60
+      }
+    ],
+    "observedRevision": 29,
+    "graphPath": [
+      "ec622545-9f75-462e-8bae-06827a13681a"
+    ],
+    "status": "draft",
+    "createdAt": "2026-10-01T23:40:35.984Z",
+    "updatedAt": "2026-10-01T23:40:35.984Z",
+    "responses": []
+  },
+  "assertions": {
+    "newIndependentId": true,
+    "priorAnnotationsUnchanged": true,
+    "regionTarget": true,
+    "graphCorrect": true,
+    "observationPreserved": true,
+    "oneContentRevision": true
+  }
+}

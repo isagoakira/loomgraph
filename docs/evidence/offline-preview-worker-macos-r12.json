@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-02T04:56:51.379Z",
+  "path": "外网阻断下按需完整SVG/PNG缩略图及真实浏览器字体Worker执行",
+  "assertions": {
+    "allGraphsHaveDecodedCompleteSvg": true,
+    "richSvgContainsActualTextAndImages": true
+  },
+  "svgPreviews": [
+    {
+      "status": "complete",
+      "width": 320,
+      "height": 180,
+      "type": "data:image/svg+xml;charset=utf-8,%3",
+      "textCount": 20,
+      "images": 3
+    },
+    {
+      "status": "complete",
+      "width": 320,
+      "height": 180,
+      "type": "data:image/svg+xml;charset=utf-8,%3",
+      "textCount": 4,
+      "images": 0
+    },
+    {
+      "status": "complete",
+      "width": 320,
+      "height": 180,
+      "type": "data:image/svg+xml;charset=utf-8,%3",
+      "textCount": 2,
+      "images": 0
+    }
+  ],
+  "failure": "Error: page.waitForFunction timed out after 20000ms on page p1; last URL was \"http://127.0.0.1:50785/\"; last title was \"Agent Visual Canvas · 本地工作台\".",
+  "status": "failed"
+}

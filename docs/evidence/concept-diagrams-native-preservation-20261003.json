@@ -1,0 +1,179 @@
+{
+  "date": "2026-10-03",
+  "fromRevision": 105,
+  "toRevision": 115,
+  "groups": [
+    {
+      "kind": "entities",
+      "before": 85,
+      "after": 85,
+      "preserved": true
+    },
+    {
+      "kind": "relations",
+      "before": 95,
+      "after": 95,
+      "preserved": true
+    },
+    {
+      "kind": "representations",
+      "before": 131,
+      "after": 131,
+      "preserved": true
+    },
+    {
+      "kind": "freeElements",
+      "before": 39,
+      "after": 47,
+      "preserved": true
+    },
+    {
+      "kind": "annotations",
+      "before": 10,
+      "after": 10,
+      "preserved": true
+    },
+    {
+      "kind": "batches",
+      "before": 4,
+      "after": 4,
+      "preserved": true
+    },
+    {
+      "kind": "discussions",
+      "before": 0,
+      "after": 0,
+      "preserved": true
+    },
+    {
+      "kind": "runs",
+      "before": 0,
+      "after": 0,
+      "preserved": true
+    },
+    {
+      "kind": "executors",
+      "before": 0,
+      "after": 0,
+      "preserved": true
+    },
+    {
+      "kind": "requests",
+      "before": 0,
+      "after": 0,
+      "preserved": true
+    },
+    {
+      "kind": "resources",
+      "before": 1,
+      "after": 10,
+      "preserved": true
+    }
+  ],
+  "graphs": [
+    {
+      "id": "bd5284c9-da1d-4741-a392-cfe9de1ca7b2",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "demo-structure",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "demo-flow",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "demo-feedback",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "demo-history",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "demo-native-check",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-architecture",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-memory",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-revision",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-original",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-demo-progress",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-reading",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "rich-controls-verification",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "expression-implementation-progress",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-learning-pilot",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-learning-pilot-evidence",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-learning-pilot-config",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-knowledge-structure-pilot",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-knowledge-structure-pilot-probability",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-knowledge-structure-pilot-signal-confidence",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-knowledge-structure-pilot-memory-problem",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-knowledge-structure-pilot-two-memories",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-knowledge-structure-pilot-inference",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-knowledge-structure-pilot-update",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-knowledge-structure-pilot-evidence",
+      "preservedExceptDeclaredVisualContext": true
+    },
+    {
+      "id": "forecastcompass-knowledge-structure-pilot-reproduction",
+      "preservedExceptDeclaredVisualContext": true
+    }
+  ]
+}

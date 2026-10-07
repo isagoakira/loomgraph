@@ -1,0 +1,330 @@
+{
+  "checkedAt": "2026-10-02T00:07:06.430Z",
+  "browserUploadPath": "原生HTML文件选择器兼容路径；暂时禁用File System Access后已恢复。原浏览器专用文件选择器的自动化工具不支持，未作为通过项。",
+  "before": {
+    "revision": 45,
+    "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+    "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+    "freeElements": [
+      {
+        "id": "dA8N2CANJf9tCDi01mgRI",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "dA8N2CANJf9tCDi01mgRI",
+          "type": "ellipse",
+          "x": 897.8571428571429,
+          "y": 346.28571428571433,
+          "width": 262.8571428571429,
+          "height": 80,
+          "angle": 0,
+          "strokeColor": "#1e1e1e",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aN",
+          "roundness": {
+            "type": 2
+          },
+          "seed": 2033889331,
+          "version": 4,
+          "versionNonce": 1163689843,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790898503932,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "dA8N2CANJf9tCDi01mgRI",
+              "role": "free"
+            }
+          }
+        }
+      },
+      {
+        "id": "65EdY7_2JK0xUSA6TuYqe",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "65EdY7_2JK0xUSA6TuYqe",
+          "type": "text",
+          "x": 860.7142857142857,
+          "y": 303.42857142857144,
+          "width": 280,
+          "height": 25,
+          "angle": 0,
+          "strokeColor": "#1e1e1e",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aO",
+          "roundness": null,
+          "seed": 2007854749,
+          "version": 3,
+          "versionNonce": 591561971,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790898506276,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "65EdY7_2JK0xUSA6TuYqe",
+              "role": "free"
+            }
+          },
+          "text": "自由文字验收 · 与业务身份独立",
+          "fontSize": 20,
+          "fontFamily": 5,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "originalText": "自由文字验收 · 与业务身份独立",
+          "autoResize": true,
+          "lineHeight": 1.25
+        }
+      },
+      {
+        "id": "GQKnPj-4TvTtVzB0U6N0A",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "GQKnPj-4TvTtVzB0U6N0A",
+          "type": "image",
+          "x": 666.4285714285714,
+          "y": 390.7142857142857,
+          "width": 160,
+          "height": 96,
+          "angle": 0,
+          "strokeColor": "transparent",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aP",
+          "roundness": null,
+          "seed": 1619144065,
+          "version": 5,
+          "versionNonce": 1936313327,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790899538943,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "resourceId": "canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+              "role": "free",
+              "freeElementId": "GQKnPj-4TvTtVzB0U6N0A"
+            }
+          },
+          "status": "pending",
+          "fileId": "9211392eeae7755900ae567a7bff31d649e6145b",
+          "scale": [
+            1,
+            1
+          ],
+          "crop": null
+        }
+      }
+    ],
+    "resources": [
+      {
+        "id": "canvas-resource-61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+        "name": "61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2.svg+xml",
+        "mimeType": "image/svg+xml",
+        "relativePath": "assets/canvas-resource-61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+        "sha256": "919bf50ad5f6f2f6ecbaaa5150f31135d1a5896e7e44178f22f8fa8523ee43c7",
+        "bytes": 271
+      },
+      {
+        "id": "canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+        "name": "9211392eeae7755900ae567a7bff31d649e6145b.svg+xml",
+        "mimeType": "image/svg+xml",
+        "relativePath": "assets/canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+        "sha256": "2a4ad4a3881ab849153eb92e770ef34f7a1e0c8dbcb967c59d55395c5df425a0",
+        "bytes": 271
+      }
+    ]
+  },
+  "after": {
+    "revision": 45,
+    "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+    "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+    "freeElements": [
+      {
+        "id": "dA8N2CANJf9tCDi01mgRI",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "dA8N2CANJf9tCDi01mgRI",
+          "type": "ellipse",
+          "x": 897.8571428571429,
+          "y": 346.28571428571433,
+          "width": 262.8571428571429,
+          "height": 80,
+          "angle": 0,
+          "strokeColor": "#1e1e1e",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aN",
+          "roundness": {
+            "type": 2
+          },
+          "seed": 2033889331,
+          "version": 4,
+          "versionNonce": 1163689843,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790898503932,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "dA8N2CANJf9tCDi01mgRI",
+              "role": "free"
+            }
+          }
+        }
+      },
+      {
+        "id": "65EdY7_2JK0xUSA6TuYqe",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "65EdY7_2JK0xUSA6TuYqe",
+          "type": "text",
+          "x": 860.7142857142857,
+          "y": 303.42857142857144,
+          "width": 280,
+          "height": 25,
+          "angle": 0,
+          "strokeColor": "#1e1e1e",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aO",
+          "roundness": null,
+          "seed": 2007854749,
+          "version": 3,
+          "versionNonce": 591561971,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790898506276,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "65EdY7_2JK0xUSA6TuYqe",
+              "role": "free"
+            }
+          },
+          "text": "自由文字验收 · 与业务身份独立",
+          "fontSize": 20,
+          "fontFamily": 5,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "originalText": "自由文字验收 · 与业务身份独立",
+          "autoResize": true,
+          "lineHeight": 1.25
+        }
+      },
+      {
+        "id": "GQKnPj-4TvTtVzB0U6N0A",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "GQKnPj-4TvTtVzB0U6N0A",
+          "type": "image",
+          "x": 666.4285714285714,
+          "y": 390.7142857142857,
+          "width": 160,
+          "height": 96,
+          "angle": 0,
+          "strokeColor": "transparent",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aP",
+          "roundness": null,
+          "seed": 1619144065,
+          "version": 5,
+          "versionNonce": 1936313327,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790899538943,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "resourceId": "canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+              "role": "free",
+              "freeElementId": "GQKnPj-4TvTtVzB0U6N0A"
+            }
+          },
+          "status": "pending",
+          "fileId": "9211392eeae7755900ae567a7bff31d649e6145b",
+          "scale": [
+            1,
+            1
+          ],
+          "crop": null
+        }
+      }
+    ],
+    "resources": [
+      {
+        "id": "canvas-resource-61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+        "name": "61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2.svg+xml",
+        "mimeType": "image/svg+xml",
+        "relativePath": "assets/canvas-resource-61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+        "sha256": "919bf50ad5f6f2f6ecbaaa5150f31135d1a5896e7e44178f22f8fa8523ee43c7",
+        "bytes": 271
+      },
+      {
+        "id": "canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+        "name": "9211392eeae7755900ae567a7bff31d649e6145b.svg+xml",
+        "mimeType": "image/svg+xml",
+        "relativePath": "assets/canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+        "sha256": "2a4ad4a3881ab849153eb92e770ef34f7a1e0c8dbcb967c59d55395c5df425a0",
+        "bytes": 271
+      }
+    ],
+    "resourceReadable": true,
+    "thumbnailStatus": "complete"
+  },
+  "assertions": {
+    "imageDimensionsSaved": true,
+    "allFreeElementsPersisted": true,
+    "resourceRecordsPersisted": true,
+    "resourceDataReadable": true,
+    "sameProjectAndWorkCopy": true,
+    "noReloadRevision": true
+  }
+}

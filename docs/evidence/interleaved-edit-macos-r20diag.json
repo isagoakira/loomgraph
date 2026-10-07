@@ -1,0 +1,1111 @@
+{
+  "previousAttempt": "interleaved-edit-macos-r19.json",
+  "checkedAt": "2026-10-02T07:32:42.143Z",
+  "path": "真实原生标题编辑产生的HTTP请求暂停，Agent提交不同 / 相同字段后放行旧基线请求",
+  "assertions": {
+    "same_oldNativeBaseCaptured": true,
+    "same_nativeCommitHeld": true,
+    "same_agentCommittedFirst": true,
+    "same_geometryUnchanged": true,
+    "same_annotationsUnchanged": true,
+    "same_freeElementsUnchanged": true,
+    "same_cameraPreserved": true,
+    "same_sameFieldConflict": true,
+    "same_noConflictingCommit": true,
+    "same_agentTitleRetained": true,
+    "same_noDelayedCommit": false,
+    "same_nativeEditorDisplaysFinalTitle": false,
+    "same_nativeTitleReadDoesNotCommit": false,
+    "noBrowserErrors": true
+  },
+  "cases": [
+    {
+      "kind": "same",
+      "entityId": "r9-shared",
+      "originalInput": "交错验收 · 用户标题 same · 53",
+      "beforeRevision": 55,
+      "whileHeldRevision": 55,
+      "agentRevision": 56,
+      "afterRevision": 56,
+      "captured": {
+        "baseRevision": 55,
+        "operationId": "operation-b168e433-d210-49a7-88ac-da740f921184",
+        "operations": [
+          {
+            "type": "entity.patch",
+            "id": "r9-shared",
+            "patch": {
+              "title": "交错验收 · 用户标题 same · 55"
+            }
+          }
+        ]
+      },
+      "response": {
+        "status": 409,
+        "body": {
+          "error": {
+            "code": "VERSION_CONFLICT",
+            "message": "基线之后的修改与本次请求写入同一字段",
+            "details": {
+              "conflicts": [
+                {
+                  "revision": 56,
+                  "changeId": "629e57f4-3096-479c-a3be-4e5a5e0b8d8b",
+                  "fields": [
+                    "entity.r9-shared.title"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "finalEntity": {
+        "id": "r9-shared",
+        "kind": "task",
+        "title": "交错验收 · Agent 保留标题 · 55",
+        "status": "doing",
+        "parentId": "r9-parent",
+        "updatedAt": "2026-10-02T07:32:47.009Z"
+      },
+      "history": [
+        {
+          "id": "629e57f4-3096-479c-a3be-4e5a5e0b8d8b",
+          "parentChangeId": "5586a661-1575-4d06-821d-42ada1816733",
+          "operationId": "r20diag-interleave-agent-683dbe29-54ae-465a-9c85-ad26e70ae19c",
+          "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+          "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+          "baseRevision": 55,
+          "revision": 56,
+          "actor": {
+            "id": "r20diag-interleave-agent",
+            "kind": "agent",
+            "label": "交错编辑验收"
+          },
+          "reason": "Isolated native UI interleaving acceptance",
+          "timestamp": "2026-10-02T07:32:47.009Z",
+          "operations": [
+            {
+              "type": "entity.patch",
+              "id": "r9-shared",
+              "patch": {
+                "title": "交错验收 · Agent 保留标题 · 55"
+              }
+            }
+          ],
+          "affectedIds": [
+            "r9-shared"
+          ],
+          "appliedOperations": [
+            {
+              "type": "entity.patch",
+              "id": "r9-shared",
+              "patch": {
+                "title": "交错验收 · Agent 保留标题 · 55",
+                "updatedAt": "2026-10-02T07:32:47.009Z"
+              }
+            }
+          ]
+        }
+      ],
+      "samples": [
+        56,
+        56,
+        56,
+        56,
+        56,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57
+      ],
+      "cameraBeforeNative": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 718,
+        "scrollX": 5.89285714285711,
+        "scrollY": 49.75,
+        "zoom": 0.8
+      },
+      "cameraBeforeAgent": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 718,
+        "scrollX": 5.89285714285711,
+        "scrollY": 49.75,
+        "zoom": 0.8
+      },
+      "cameraAfter": {
+        "offsetLeft": 72,
+        "offsetTop": 182,
+        "width": 1018,
+        "height": 718,
+        "scrollX": 5.89285714285711,
+        "scrollY": 49.75,
+        "zoom": 0.8
+      },
+      "assertions": {
+        "oldNativeBaseCaptured": true,
+        "nativeCommitHeld": true,
+        "agentCommittedFirst": true,
+        "geometryUnchanged": true,
+        "annotationsUnchanged": true,
+        "freeElementsUnchanged": true,
+        "cameraPreserved": true,
+        "sameFieldConflict": true,
+        "noConflictingCommit": true,
+        "agentTitleRetained": true,
+        "noDelayedCommit": false,
+        "nativeEditorDisplaysFinalTitle": false,
+        "nativeTitleReadDoesNotCommit": false
+      }
+    }
+  ],
+  "displayChecks": [
+    {
+      "kind": "same",
+      "expectedTitle": "交错验收 · Agent 保留标题 · 55",
+      "displayedFinalTitle": "交错验收 · 用户标题 same · 55",
+      "samples": [
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57
+      ]
+    }
+  ],
+  "browserErrors": [],
+  "stage": "same field",
+  "failure": "Error: Interleaving assertions failed",
+  "status": "failed",
+  "pendingDebug": [
+    {
+      "seq": 1,
+      "at": 1790926362811,
+      "phase": "projection-capture",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:55:42:::",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 55,
+      "pendingId": null,
+      "pendingBaseRevision": null,
+      "renderedCount": 42
+    },
+    {
+      "seq": 2,
+      "at": 1790926362818,
+      "phase": "projection-apply",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:55:42:::",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 55,
+      "capturedPendingId": null,
+      "currentPendingId": null,
+      "renderedCount": 42
+    },
+    {
+      "seq": 3,
+      "at": 1790926362913,
+      "phase": "projection-cleanup",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:55:42:::",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 55,
+      "capturedPendingId": null,
+      "currentPendingId": null,
+      "settled": false
+    },
+    {
+      "seq": 4,
+      "at": 1790926362919,
+      "phase": "projection-capture",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:55:42:::724dc7df9675439d8a84f0ac2f30b04319357a9a,9211392eeae7755900ae567a7bff31d649e6145b,faceaa68f0985ba680c9a0f4dd35b8a51b733e34",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 55,
+      "pendingId": null,
+      "pendingBaseRevision": null,
+      "renderedCount": 42
+    },
+    {
+      "seq": 5,
+      "at": 1790926362932,
+      "phase": "projection-cleanup",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:55:42:::724dc7df9675439d8a84f0ac2f30b04319357a9a,9211392eeae7755900ae567a7bff31d649e6145b,faceaa68f0985ba680c9a0f4dd35b8a51b733e34",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 55,
+      "capturedPendingId": null,
+      "currentPendingId": null,
+      "settled": false
+    },
+    {
+      "seq": 6,
+      "at": 1790926362932,
+      "phase": "projection-capture",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:55:42:::724dc7df9675439d8a84f0ac2f30b04319357a9a,9211392eeae7755900ae567a7bff31d649e6145b,faceaa68f0985ba680c9a0f4dd35b8a51b733e34",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 55,
+      "pendingId": null,
+      "pendingBaseRevision": null,
+      "renderedCount": 42
+    },
+    {
+      "seq": 7,
+      "at": 1790926363820,
+      "phase": "projection-apply",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:55:42:::724dc7df9675439d8a84f0ac2f30b04319357a9a,9211392eeae7755900ae567a7bff31d649e6145b,faceaa68f0985ba680c9a0f4dd35b8a51b733e34",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 55,
+      "capturedPendingId": null,
+      "currentPendingId": null,
+      "renderedCount": 42
+    },
+    {
+      "seq": 8,
+      "at": 1790926363882,
+      "phase": "pending-created",
+      "previousPendingId": null,
+      "nextPendingId": 1,
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 55,
+      "userEdit": false,
+      "wasApplying": false,
+      "activeUserTextEdit": false,
+      "previousElementCount": 42,
+      "nextElementCount": 42,
+      "managedTitles": [
+        {
+          "elementId": "rep-r9-entry-a-left-label",
+          "representationId": "r9-entry-a-left",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-r9-entry-a-right-label",
+          "representationId": "r9-entry-a-right",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-r9-shared-a-label",
+          "representationId": "r9-shared-a",
+          "title": "交错验收 · 用户标题 same · 53"
+        },
+        {
+          "elementId": "rep-r9-shared-a-second-label",
+          "representationId": "r9-shared-a-second",
+          "title": "交错验收 · 用户标题 same · 53"
+        },
+        {
+          "elementId": "rep-r9-parent-a-label",
+          "representationId": "r9-parent-a",
+          "title": "父任务 · 按叶子计数"
+        },
+        {
+          "elementId": "rep-r9-canceled-a-label",
+          "representationId": "r9-canceled-a",
+          "title": "取消叶子"
+        },
+        {
+          "elementId": "rep-r9-blocked-a-label",
+          "representationId": "r9-blocked-a",
+          "title": "阻塞叶子"
+        },
+        {
+          "elementId": "rep-representation-dfc46405-33c4-461b-8f86-542ab332d5f4-label",
+          "representationId": "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-428c1309-83dd-43f2-9c58-22f4d8d19e97-label",
+          "representationId": "representation-428c1309-83dd-43f2-9c58-22f4d8d19e97",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb-label",
+          "representationId": "representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-cd32cfbf-6714-4687-be5f-aae772112cca-label",
+          "representationId": "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0-label",
+          "representationId": "representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-449d66c0-324d-4dad-91a3-16ecfb03a89d-label",
+          "representationId": "representation-449d66c0-324d-4dad-91a3-16ecfb03a89d",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-eee605bf-e289-4fee-a190-fd46b6073d2f-label",
+          "representationId": "representation-eee605bf-e289-4fee-a190-fd46b6073d2f",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a-label",
+          "representationId": "representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a",
+          "title": "子图入口 · Structure / Flow"
+        }
+      ],
+      "operationSummary": []
+    },
+    {
+      "seq": 9,
+      "at": 1790926364204,
+      "phase": "flush-start",
+      "pendingId": 1,
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 55,
+      "currentPendingId": 1
+    },
+    {
+      "seq": 10,
+      "at": 1790926364210,
+      "phase": "flush-finally",
+      "submittedPendingId": 1,
+      "currentPendingId": null,
+      "willReschedule": false,
+      "timerBeforeReschedule": null
+    },
+    {
+      "seq": 11,
+      "at": 1790926366236,
+      "phase": "pending-created",
+      "previousPendingId": null,
+      "nextPendingId": 2,
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 55,
+      "userEdit": true,
+      "wasApplying": false,
+      "activeUserTextEdit": true,
+      "previousElementCount": 42,
+      "nextElementCount": 42,
+      "managedTitles": [
+        {
+          "elementId": "rep-r9-entry-a-left-label",
+          "representationId": "r9-entry-a-left",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-r9-entry-a-right-label",
+          "representationId": "r9-entry-a-right",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-r9-shared-a-label",
+          "representationId": "r9-shared-a",
+          "title": "交错验收 · 用户标题 same · 53"
+        },
+        {
+          "elementId": "rep-r9-shared-a-second-label",
+          "representationId": "r9-shared-a-second",
+          "title": "交错验收 · 用户标题 same · 53"
+        },
+        {
+          "elementId": "rep-r9-parent-a-label",
+          "representationId": "r9-parent-a",
+          "title": "父任务 · 按叶子计数"
+        },
+        {
+          "elementId": "rep-r9-canceled-a-label",
+          "representationId": "r9-canceled-a",
+          "title": "取消叶子"
+        },
+        {
+          "elementId": "rep-r9-blocked-a-label",
+          "representationId": "r9-blocked-a",
+          "title": "阻塞叶子"
+        },
+        {
+          "elementId": "rep-representation-dfc46405-33c4-461b-8f86-542ab332d5f4-label",
+          "representationId": "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-428c1309-83dd-43f2-9c58-22f4d8d19e97-label",
+          "representationId": "representation-428c1309-83dd-43f2-9c58-22f4d8d19e97",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb-label",
+          "representationId": "representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-cd32cfbf-6714-4687-be5f-aae772112cca-label",
+          "representationId": "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0-label",
+          "representationId": "representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-449d66c0-324d-4dad-91a3-16ecfb03a89d-label",
+          "representationId": "representation-449d66c0-324d-4dad-91a3-16ecfb03a89d",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-eee605bf-e289-4fee-a190-fd46b6073d2f-label",
+          "representationId": "representation-eee605bf-e289-4fee-a190-fd46b6073d2f",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a-label",
+          "representationId": "representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a",
+          "title": "子图入口 · Structure / Flow"
+        }
+      ],
+      "operationSummary": []
+    },
+    {
+      "seq": 12,
+      "at": 1790926366437,
+      "phase": "pending-created",
+      "previousPendingId": 2,
+      "nextPendingId": 3,
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 55,
+      "userEdit": true,
+      "wasApplying": false,
+      "activeUserTextEdit": true,
+      "previousElementCount": 42,
+      "nextElementCount": 42,
+      "managedTitles": [
+        {
+          "elementId": "rep-r9-entry-a-left-label",
+          "representationId": "r9-entry-a-left",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-r9-entry-a-right-label",
+          "representationId": "r9-entry-a-right",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-r9-shared-a-label",
+          "representationId": "r9-shared-a",
+          "title": "交错验收 · 用户标题 same · 55"
+        },
+        {
+          "elementId": "rep-r9-shared-a-second-label",
+          "representationId": "r9-shared-a-second",
+          "title": "交错验收 · 用户标题 same · 53"
+        },
+        {
+          "elementId": "rep-r9-parent-a-label",
+          "representationId": "r9-parent-a",
+          "title": "父任务 · 按叶子计数"
+        },
+        {
+          "elementId": "rep-r9-canceled-a-label",
+          "representationId": "r9-canceled-a",
+          "title": "取消叶子"
+        },
+        {
+          "elementId": "rep-r9-blocked-a-label",
+          "representationId": "r9-blocked-a",
+          "title": "阻塞叶子"
+        },
+        {
+          "elementId": "rep-representation-dfc46405-33c4-461b-8f86-542ab332d5f4-label",
+          "representationId": "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-428c1309-83dd-43f2-9c58-22f4d8d19e97-label",
+          "representationId": "representation-428c1309-83dd-43f2-9c58-22f4d8d19e97",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb-label",
+          "representationId": "representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-cd32cfbf-6714-4687-be5f-aae772112cca-label",
+          "representationId": "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0-label",
+          "representationId": "representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-449d66c0-324d-4dad-91a3-16ecfb03a89d-label",
+          "representationId": "representation-449d66c0-324d-4dad-91a3-16ecfb03a89d",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-eee605bf-e289-4fee-a190-fd46b6073d2f-label",
+          "representationId": "representation-eee605bf-e289-4fee-a190-fd46b6073d2f",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a-label",
+          "representationId": "representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a",
+          "title": "子图入口 · Structure / Flow"
+        }
+      ],
+      "operationSummary": [
+        {
+          "type": "entity.patch",
+          "id": "r9-shared",
+          "fields": [
+            "title"
+          ]
+        }
+      ]
+    },
+    {
+      "seq": 13,
+      "at": 1790926366470,
+      "phase": "pending-created",
+      "previousPendingId": 3,
+      "nextPendingId": 4,
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 55,
+      "userEdit": true,
+      "wasApplying": false,
+      "activeUserTextEdit": true,
+      "previousElementCount": 42,
+      "nextElementCount": 42,
+      "managedTitles": [
+        {
+          "elementId": "rep-r9-entry-a-left-label",
+          "representationId": "r9-entry-a-left",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-r9-entry-a-right-label",
+          "representationId": "r9-entry-a-right",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-r9-shared-a-label",
+          "representationId": "r9-shared-a",
+          "title": "交错验收 · 用户标题 same · 55"
+        },
+        {
+          "elementId": "rep-r9-shared-a-second-label",
+          "representationId": "r9-shared-a-second",
+          "title": "交错验收 · 用户标题 same · 53"
+        },
+        {
+          "elementId": "rep-r9-parent-a-label",
+          "representationId": "r9-parent-a",
+          "title": "父任务 · 按叶子计数"
+        },
+        {
+          "elementId": "rep-r9-canceled-a-label",
+          "representationId": "r9-canceled-a",
+          "title": "取消叶子"
+        },
+        {
+          "elementId": "rep-r9-blocked-a-label",
+          "representationId": "r9-blocked-a",
+          "title": "阻塞叶子"
+        },
+        {
+          "elementId": "rep-representation-dfc46405-33c4-461b-8f86-542ab332d5f4-label",
+          "representationId": "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-428c1309-83dd-43f2-9c58-22f4d8d19e97-label",
+          "representationId": "representation-428c1309-83dd-43f2-9c58-22f4d8d19e97",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb-label",
+          "representationId": "representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-cd32cfbf-6714-4687-be5f-aae772112cca-label",
+          "representationId": "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0-label",
+          "representationId": "representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-449d66c0-324d-4dad-91a3-16ecfb03a89d-label",
+          "representationId": "representation-449d66c0-324d-4dad-91a3-16ecfb03a89d",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-eee605bf-e289-4fee-a190-fd46b6073d2f-label",
+          "representationId": "representation-eee605bf-e289-4fee-a190-fd46b6073d2f",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a-label",
+          "representationId": "representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a",
+          "title": "子图入口 · Structure / Flow"
+        }
+      ],
+      "operationSummary": [
+        {
+          "type": "entity.patch",
+          "id": "r9-shared",
+          "fields": [
+            "title"
+          ]
+        }
+      ]
+    },
+    {
+      "seq": 14,
+      "at": 1790926366792,
+      "phase": "flush-start",
+      "pendingId": 4,
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 55,
+      "currentPendingId": 4
+    },
+    {
+      "seq": 15,
+      "at": 1790926366795,
+      "phase": "commit-start",
+      "pendingId": 4,
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 55,
+      "operationTypes": [
+        "entity.patch"
+      ],
+      "currentPendingId": 4
+    },
+    {
+      "seq": 16,
+      "at": 1790926367034,
+      "phase": "projection-cleanup",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:55:42:::724dc7df9675439d8a84f0ac2f30b04319357a9a,9211392eeae7755900ae567a7bff31d649e6145b,faceaa68f0985ba680c9a0f4dd35b8a51b733e34",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 55,
+      "capturedPendingId": null,
+      "currentPendingId": 4,
+      "settled": true
+    },
+    {
+      "seq": 17,
+      "at": 1790926367037,
+      "phase": "projection-capture",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:56:42:::724dc7df9675439d8a84f0ac2f30b04319357a9a,9211392eeae7755900ae567a7bff31d649e6145b,faceaa68f0985ba680c9a0f4dd35b8a51b733e34",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 56,
+      "pendingId": 4,
+      "pendingBaseRevision": 55,
+      "renderedCount": 42
+    },
+    {
+      "seq": 18,
+      "at": 1790926367051,
+      "phase": "commit-outcome",
+      "pendingId": 4,
+      "outcomeType": "string",
+      "outcome": "conflict",
+      "failed": true,
+      "currentPendingId": 4
+    },
+    {
+      "seq": 19,
+      "at": 1790926367054,
+      "phase": "conflict-ownership",
+      "rejectedPendingId": 4,
+      "currentPendingId": 4,
+      "sameObject": true,
+      "sameRejectedIntent": true,
+      "relation": {
+        "currentScopeEqual": true,
+        "currentGraphEqual": true,
+        "sceneEquivalent": true,
+        "rejectedTitles": [
+          {
+            "elementId": "rep-r9-entry-a-left-label",
+            "representationId": "r9-entry-a-left",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-r9-entry-a-right-label",
+            "representationId": "r9-entry-a-right",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-r9-shared-a-label",
+            "representationId": "r9-shared-a",
+            "title": "交错验收 · 用户标题 same · 55"
+          },
+          {
+            "elementId": "rep-r9-shared-a-second-label",
+            "representationId": "r9-shared-a-second",
+            "title": "交错验收 · 用户标题 same · 53"
+          },
+          {
+            "elementId": "rep-r9-parent-a-label",
+            "representationId": "r9-parent-a",
+            "title": "父任务 · 按叶子计数"
+          },
+          {
+            "elementId": "rep-r9-canceled-a-label",
+            "representationId": "r9-canceled-a",
+            "title": "取消叶子"
+          },
+          {
+            "elementId": "rep-r9-blocked-a-label",
+            "representationId": "r9-blocked-a",
+            "title": "阻塞叶子"
+          },
+          {
+            "elementId": "rep-representation-dfc46405-33c4-461b-8f86-542ab332d5f4-label",
+            "representationId": "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-428c1309-83dd-43f2-9c58-22f4d8d19e97-label",
+            "representationId": "representation-428c1309-83dd-43f2-9c58-22f4d8d19e97",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb-label",
+            "representationId": "representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-cd32cfbf-6714-4687-be5f-aae772112cca-label",
+            "representationId": "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0-label",
+            "representationId": "representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-449d66c0-324d-4dad-91a3-16ecfb03a89d-label",
+            "representationId": "representation-449d66c0-324d-4dad-91a3-16ecfb03a89d",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-eee605bf-e289-4fee-a190-fd46b6073d2f-label",
+            "representationId": "representation-eee605bf-e289-4fee-a190-fd46b6073d2f",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a-label",
+            "representationId": "representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a",
+            "title": "子图入口 · Structure / Flow"
+          }
+        ],
+        "currentTitles": [
+          {
+            "elementId": "rep-r9-entry-a-left-label",
+            "representationId": "r9-entry-a-left",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-r9-entry-a-right-label",
+            "representationId": "r9-entry-a-right",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-r9-shared-a-label",
+            "representationId": "r9-shared-a",
+            "title": "交错验收 · 用户标题 same · 55"
+          },
+          {
+            "elementId": "rep-r9-shared-a-second-label",
+            "representationId": "r9-shared-a-second",
+            "title": "交错验收 · 用户标题 same · 53"
+          },
+          {
+            "elementId": "rep-r9-parent-a-label",
+            "representationId": "r9-parent-a",
+            "title": "父任务 · 按叶子计数"
+          },
+          {
+            "elementId": "rep-r9-canceled-a-label",
+            "representationId": "r9-canceled-a",
+            "title": "取消叶子"
+          },
+          {
+            "elementId": "rep-r9-blocked-a-label",
+            "representationId": "r9-blocked-a",
+            "title": "阻塞叶子"
+          },
+          {
+            "elementId": "rep-representation-dfc46405-33c4-461b-8f86-542ab332d5f4-label",
+            "representationId": "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-428c1309-83dd-43f2-9c58-22f4d8d19e97-label",
+            "representationId": "representation-428c1309-83dd-43f2-9c58-22f4d8d19e97",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb-label",
+            "representationId": "representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-cd32cfbf-6714-4687-be5f-aae772112cca-label",
+            "representationId": "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0-label",
+            "representationId": "representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-449d66c0-324d-4dad-91a3-16ecfb03a89d-label",
+            "representationId": "representation-449d66c0-324d-4dad-91a3-16ecfb03a89d",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-eee605bf-e289-4fee-a190-fd46b6073d2f-label",
+            "representationId": "representation-eee605bf-e289-4fee-a190-fd46b6073d2f",
+            "title": "子图入口 · Structure / Flow"
+          },
+          {
+            "elementId": "rep-representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a-label",
+            "representationId": "representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a",
+            "title": "子图入口 · Structure / Flow"
+          }
+        ],
+        "forward": [],
+        "reverse": []
+      },
+      "requestedScopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "pendingScopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394"
+    },
+    {
+      "seq": 20,
+      "at": 1790926367057,
+      "phase": "conflict-cleared",
+      "rejectedPendingId": 4,
+      "pendingAfterClearId": null,
+      "timerAfterClear": null
+    },
+    {
+      "seq": 21,
+      "at": 1790926367057,
+      "phase": "flush-finally",
+      "submittedPendingId": 4,
+      "currentPendingId": null,
+      "willReschedule": false,
+      "timerBeforeReschedule": null
+    },
+    {
+      "seq": 22,
+      "at": 1790926367988,
+      "phase": "projection-apply",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:56:42:::724dc7df9675439d8a84f0ac2f30b04319357a9a,9211392eeae7755900ae567a7bff31d649e6145b,faceaa68f0985ba680c9a0f4dd35b8a51b733e34",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 56,
+      "capturedPendingId": 4,
+      "currentPendingId": null,
+      "renderedCount": 42
+    },
+    {
+      "seq": 23,
+      "at": 1790926368016,
+      "phase": "pending-created",
+      "previousPendingId": null,
+      "nextPendingId": 5,
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 56,
+      "userEdit": false,
+      "wasApplying": false,
+      "activeUserTextEdit": false,
+      "previousElementCount": 42,
+      "nextElementCount": 42,
+      "managedTitles": [
+        {
+          "elementId": "rep-r9-entry-a-left-label",
+          "representationId": "r9-entry-a-left",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-r9-entry-a-right-label",
+          "representationId": "r9-entry-a-right",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-r9-shared-a-label",
+          "representationId": "r9-shared-a",
+          "title": "交错验收 · 用户标题 same · 55"
+        },
+        {
+          "elementId": "rep-r9-shared-a-second-label",
+          "representationId": "r9-shared-a-second",
+          "title": "交错验收 · Agent 保留标题 · 55"
+        },
+        {
+          "elementId": "rep-r9-parent-a-label",
+          "representationId": "r9-parent-a",
+          "title": "父任务 · 按叶子计数"
+        },
+        {
+          "elementId": "rep-r9-canceled-a-label",
+          "representationId": "r9-canceled-a",
+          "title": "取消叶子"
+        },
+        {
+          "elementId": "rep-r9-blocked-a-label",
+          "representationId": "r9-blocked-a",
+          "title": "阻塞叶子"
+        },
+        {
+          "elementId": "rep-representation-dfc46405-33c4-461b-8f86-542ab332d5f4-label",
+          "representationId": "representation-dfc46405-33c4-461b-8f86-542ab332d5f4",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-428c1309-83dd-43f2-9c58-22f4d8d19e97-label",
+          "representationId": "representation-428c1309-83dd-43f2-9c58-22f4d8d19e97",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb-label",
+          "representationId": "representation-dc3d83a1-9c91-4a48-a89a-97cc476c92cb",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-cd32cfbf-6714-4687-be5f-aae772112cca-label",
+          "representationId": "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0-label",
+          "representationId": "representation-2c2721e5-b429-4bb3-8654-224a8b5a25d0",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-449d66c0-324d-4dad-91a3-16ecfb03a89d-label",
+          "representationId": "representation-449d66c0-324d-4dad-91a3-16ecfb03a89d",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-eee605bf-e289-4fee-a190-fd46b6073d2f-label",
+          "representationId": "representation-eee605bf-e289-4fee-a190-fd46b6073d2f",
+          "title": "子图入口 · Structure / Flow"
+        },
+        {
+          "elementId": "rep-representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a-label",
+          "representationId": "representation-328f16c5-e085-4eb4-8815-9ec4eb30a84a",
+          "title": "子图入口 · Structure / Flow"
+        }
+      ],
+      "operationSummary": [
+        {
+          "type": "entity.patch",
+          "id": "r9-shared",
+          "fields": [
+            "title"
+          ]
+        }
+      ]
+    },
+    {
+      "seq": 24,
+      "at": 1790926368338,
+      "phase": "flush-start",
+      "pendingId": 5,
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 56,
+      "currentPendingId": 5
+    },
+    {
+      "seq": 25,
+      "at": 1790926368343,
+      "phase": "commit-start",
+      "pendingId": 5,
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 56,
+      "operationTypes": [
+        "entity.patch"
+      ],
+      "currentPendingId": 5
+    },
+    {
+      "seq": 26,
+      "at": 1790926368368,
+      "phase": "projection-cleanup",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:56:42:::724dc7df9675439d8a84f0ac2f30b04319357a9a,9211392eeae7755900ae567a7bff31d649e6145b,faceaa68f0985ba680c9a0f4dd35b8a51b733e34",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 56,
+      "capturedPendingId": 4,
+      "currentPendingId": 5,
+      "settled": true
+    },
+    {
+      "seq": 27,
+      "at": 1790926368372,
+      "phase": "projection-capture",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:57:42:::724dc7df9675439d8a84f0ac2f30b04319357a9a,9211392eeae7755900ae567a7bff31d649e6145b,faceaa68f0985ba680c9a0f4dd35b8a51b733e34",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 57,
+      "pendingId": 5,
+      "pendingBaseRevision": 56,
+      "renderedCount": 42
+    },
+    {
+      "seq": 28,
+      "at": 1790926368393,
+      "phase": "commit-outcome",
+      "pendingId": 5,
+      "outcomeType": "string",
+      "outcome": "applied",
+      "failed": false,
+      "currentPendingId": 5
+    },
+    {
+      "seq": 29,
+      "at": 1790926368394,
+      "phase": "flush-finally",
+      "submittedPendingId": 5,
+      "currentPendingId": null,
+      "willReschedule": false,
+      "timerBeforeReschedule": null
+    },
+    {
+      "seq": 30,
+      "at": 1790926369087,
+      "phase": "projection-apply",
+      "projectionKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394:57:42:::724dc7df9675439d8a84f0ac2f30b04319357a9a,9211392eeae7755900ae567a7bff31d649e6145b,faceaa68f0985ba680c9a0f4dd35b8a51b733e34",
+      "scopeKey": "d0169057-e15a-4003-ad8c-083db0da7716:5c28ed48-f1c9-4673-9046-368f50940bd0:fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "snapshotRevision": 57,
+      "capturedPendingId": 5,
+      "currentPendingId": null,
+      "renderedCount": 42
+    }
+  ]
+}

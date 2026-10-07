@@ -1,0 +1,16 @@
+.agent-request-composer { position:absolute; z-index:68; left:12px; bottom:var(--selection-bottom,68px); width:390px; max-width:calc(100% - 24px); max-height:calc(100% - 88px); overflow:auto; padding:12px; color:#334a3d; background:#fffefafc; border:1px solid #aebeaa; border-radius:12px; box-shadow:0 8px 28px #263e2328; font-size:12px; }
+.agent-request-composer header,.agent-request-composer footer,.agent-request-actions { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.agent-request-composer header { margin-bottom:8px; font-size:14px; }
+.agent-request-composer button { padding:6px 9px; border:1px solid #ccd5c7; border-radius:6px; color:inherit; background:#f8faf5; cursor:pointer; font-size:12px; }
+.agent-request-composer button:disabled { opacity:.45; cursor:default; }
+.agent-request-scope { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:9px; }
+.agent-request-scope span { max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:3px 6px; background:#eef3e8; border-radius:4px; font-size:11px; }
+.agent-request-kind { display:flex; align-items:center; gap:8px; margin:6px 0; }
+.agent-request-kind select { padding:5px; border:1px solid #ccd5c7; border-radius:4px; background:#fffefa; color:inherit; }
+.agent-request-composer textarea { display:block; box-sizing:border-box; width:100%; min-height:76px; resize:vertical; padding:8px; margin:8px 0; color:inherit; border:1px solid #b9c9b1; border-radius:6px; background:#fff; font:13px/1.6 inherit; }
+.agent-request-actions { justify-content:flex-end; flex-wrap:wrap; }
+.agent-request-composer .agent-request-primary { background:#315d48; color:#fff; border-color:#315d48; }
+.agent-request-status { margin:9px 0 0; line-height:1.6; color:#446246; }
+.agent-request-composer footer { border-top:1px solid #e5e9e1; margin-top:10px; padding-top:8px; font-size:10px; color:#73836d; flex-wrap:wrap; }
+.agent-request-composer footer button { border:0; background:transparent; }
+@container (max-width:600px) { .agent-request-composer { left:8px; max-width:calc(100% - 16px); bottom:62px; max-height:calc(100% - 76px); padding:10px; } }

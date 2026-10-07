@@ -1,0 +1,115 @@
+{
+  "checkedAt": "2026-10-02T07:35:08.544Z",
+  "status": "confirmed",
+  "evidence": "interleaved-edit-macos-r20diag.json",
+  "case": "same field only",
+  "events": [
+    {
+      "seq": 17,
+      "at": 1790926367037,
+      "phase": "projection-capture",
+      "snapshotRevision": 56,
+      "pendingId": 4,
+      "pendingBaseRevision": 55,
+      "renderedCount": 42
+    },
+    {
+      "seq": 18,
+      "at": 1790926367051,
+      "phase": "commit-outcome",
+      "pendingId": 4,
+      "outcomeType": "string",
+      "outcome": "conflict",
+      "failed": true,
+      "currentPendingId": 4
+    },
+    {
+      "seq": 19,
+      "at": 1790926367054,
+      "phase": "conflict-ownership",
+      "rejectedPendingId": 4,
+      "currentPendingId": 4,
+      "sameObject": true,
+      "sameRejectedIntent": true
+    },
+    {
+      "seq": 20,
+      "at": 1790926367057,
+      "phase": "conflict-cleared",
+      "rejectedPendingId": 4,
+      "pendingAfterClearId": null,
+      "timerAfterClear": null
+    },
+    {
+      "seq": 21,
+      "at": 1790926367057,
+      "phase": "flush-finally",
+      "submittedPendingId": 4,
+      "currentPendingId": null,
+      "willReschedule": false,
+      "timerBeforeReschedule": null
+    },
+    {
+      "seq": 22,
+      "at": 1790926367988,
+      "phase": "projection-apply",
+      "snapshotRevision": 56,
+      "capturedPendingId": 4,
+      "currentPendingId": null,
+      "renderedCount": 42
+    },
+    {
+      "seq": 23,
+      "at": 1790926368016,
+      "phase": "pending-created",
+      "previousPendingId": null,
+      "nextPendingId": 5,
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 56,
+      "userEdit": false,
+      "wasApplying": false,
+      "activeUserTextEdit": false,
+      "previousElementCount": 42,
+      "nextElementCount": 42,
+      "operationSummary": [
+        {
+          "type": "entity.patch",
+          "id": "r9-shared",
+          "fields": [
+            "title"
+          ]
+        }
+      ]
+    },
+    {
+      "seq": 24,
+      "at": 1790926368338,
+      "phase": "flush-start",
+      "pendingId": 5,
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 56,
+      "currentPendingId": 5
+    },
+    {
+      "seq": 25,
+      "at": 1790926368343,
+      "phase": "commit-start",
+      "pendingId": 5,
+      "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+      "baseRevision": 56,
+      "operationTypes": [
+        "entity.patch"
+      ],
+      "currentPendingId": 5
+    }
+  ],
+  "findings": {
+    "conflictOutcomeDelivered": true,
+    "pendingClearedBeforeNextFrame": true,
+    "noImmediateReschedule": true,
+    "capturedPendingReappliedAfterClear": true,
+    "newPendingWasNotActiveUserEdit": true
+  },
+  "summary": "旧projection effect在409清理之后执行捕获pending4的合成scene，native callback再以base56创建pending5并提交旧标题。",
+  "boundary": "诊断构建不用于发行；时序原始记录保留，最终必须清除临时诊断并重新验证。"
+}

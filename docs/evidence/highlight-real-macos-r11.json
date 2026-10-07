@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-02T04:36:43.252Z",
+  "path": "正式呈现API、图限定、真实高亮像素、缩放平移与TTL",
+  "assertions": {
+    "offGraphDoesNotDraw": true,
+    "highlightDoesNotNavigate": true,
+    "highlightHasActualPixels": false
+  },
+  "samples": [
+    {
+      "phase": "initial",
+      "copperPixels": 0,
+      "visible": true,
+      "origin": {
+        "x": 328,
+        "y": 394
+      },
+      "camera": {
+        "offsetLeft": 64,
+        "offsetTop": 182,
+        "width": 576,
+        "height": 310,
+        "scrollX": 93,
+        "scrollY": -64,
+        "zoom": 1
+      }
+    }
+  ],
+  "beforeRevision": 14,
+  "initial": {
+    "graph": "r9-graph-b",
+    "sceneCount": 4,
+    "persistedCount": 4,
+    "projectionCount": 4,
+    "camera": {
+      "offsetLeft": 64,
+      "offsetTop": 182,
+      "width": 576,
+      "height": 310,
+      "scrollX": 93,
+      "scrollY": -64,
+      "zoom": 1
+    }
+  },
+  "presentHint": {
+    "persisted": false,
+    "contentRevisionChanged": false,
+    "userViewportPreserved": true,
+    "next": "canvas_read"
+  },
+  "failure": "ElementResolutionError: page.click timed out after 3000ms: Selector button[aria-label='放大'] matched 0 elements",
+  "status": "failed"
+}

@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-02T01:44:11.195Z",
+  "stage": "place new native image",
+  "failure": "Error: page.waitForFunction timed out after 15000ms on page p1; last URL was \"http://127.0.0.1:4317/\"; last title was \"Agent Visual Canvas · 本地工作台\".",
+  "browserUploadPath": "Excalidraw原生HTML文件选择器兼容路径；临时禁用File System Access后恢复，专用选择器未验收",
+  "fixture": {
+    "bytes": 353,
+    "sha256": "ff6b4b5cbb4b91593fa6870c5bd794ac2a5436914f299f766c235d01946d12cd"
+  },
+  "beforeRevision": 65,
+  "afterRevision": 67,
+  "imagePuts": 0,
+  "cameraBefore": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 485,
+    "scrollX": 94.33333333333337,
+    "scrollY": 40.166666666666686,
+    "zoom": 0.6
+  },
+  "assertions": {
+    "imageDimensionsSaved": false,
+    "newFileAndResourceIdentity": false,
+    "resourceDataExact": false,
+    "noNoopHistory": false,
+    "oneImagePlacement": false,
+    "allFreeElementsPersisted": false,
+    "resourceRecordsPersisted": false,
+    "sameProjectAndWorkCopy": true,
+    "noReloadRevision": false,
+    "entitiesUnchanged": true,
+    "representationsUnchanged": true,
+    "annotationsUnchanged": true,
+    "oldFreeElementsUnchanged": true,
+    "cameraDuringUploadUnchanged": false,
+    "noBrowserErrors": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-03T13:00:17.741Z",
+  "activeServerPid": 22479,
+  "activeServerVersion": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261003-r10",
+  "newInstalledVersion": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261003-r11",
+  "activeUiRoot": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261003-r11/dist/ui",
+  "previousUiBackup": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261003-r10/dist/ui-before-spatial-note-20261003-r11",
+  "uiIndexSha256": "fc8698a5b574a2673a8f1c02955ea918a4274728871f385ec003c738d647058c",
+  "entrypoint": "http://127.0.0.1:58363/?graph=forecastcompass-spatial-notebook",
+  "loadedServerPrompt": "r10 until host reconnect/restart",
+  "sourceDistUnchanged": true
+}

@@ -1,0 +1,134 @@
+{
+  "checks": [
+    {
+      "name": "top pointer resize",
+      "passed": true,
+      "details": {
+        "height": 180
+      }
+    },
+    {
+      "name": "top resize preserves center",
+      "passed": true,
+      "details": {
+        "before": {
+          "x": 810,
+          "y": 1565
+        },
+        "after": {
+          "x": 810,
+          "y": 1565
+        }
+      }
+    },
+    {
+      "name": "sidebar pointer resize",
+      "passed": true,
+      "details": {
+        "width": 481
+      }
+    },
+    {
+      "name": "sidebar resize preserves center",
+      "passed": true,
+      "details": {
+        "before": {
+          "x": 810,
+          "y": 1565
+        },
+        "after": {
+          "x": 810,
+          "y": 1565
+        }
+      }
+    },
+    {
+      "name": "independent top hide",
+      "passed": true
+    },
+    {
+      "name": "top hide preserves center",
+      "passed": true,
+      "details": {
+        "before": {
+          "x": 810,
+          "y": 1565
+        },
+        "after": {
+          "x": 810,
+          "y": 1565
+        }
+      }
+    },
+    {
+      "name": "both hidden, show controls reachable",
+      "passed": true
+    },
+    {
+      "name": "sidebar hide preserves center",
+      "passed": true,
+      "details": {
+        "before": {
+          "x": 810,
+          "y": 1565
+        },
+        "after": {
+          "x": 810,
+          "y": 1565
+        }
+      }
+    },
+    {
+      "name": "reload preserves independent visibility",
+      "passed": true
+    },
+    {
+      "name": "show restores remembered sizes",
+      "passed": true,
+      "details": {
+        "top": 180,
+        "sidebar": 481
+      }
+    }
+  ],
+  "state": {
+    "camera": {
+      "offsetLeft": 0,
+      "offsetTop": 180,
+      "width": 959,
+      "height": 487,
+      "scrollX": 3985,
+      "scrollY": 870,
+      "zoom": 0.1
+    },
+    "top": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 180,
+      "top": 0,
+      "right": 1440,
+      "bottom": 180,
+      "left": 0
+    },
+    "side": {
+      "x": 959,
+      "y": 180,
+      "width": 481,
+      "height": 487,
+      "top": 180,
+      "right": 1440,
+      "bottom": 667,
+      "left": 959
+    },
+    "topHidden": false,
+    "sidebarHidden": false,
+    "revision": "REV 101",
+    "preferences": {
+      "topHeight": 180,
+      "sidebarWidth": 481,
+      "topHidden": false,
+      "sidebarHidden": false
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-02T02:29:34.091716+00:00",
+  "platform": "darwin arm64",
+  "codexConfig": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/客户端配置验收 r2/codex-mcp.toml",
+  "claudeConfig": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/客户端配置验收 r2/claude-mcp.json",
+  "assertions": {
+    "sameExecutable": true,
+    "sameArguments": true,
+    "nodeExists": true,
+    "usesExtractedLauncher": true,
+    "launcherExists": true,
+    "absoluteProject": true,
+    "stdioClaude": true,
+    "randomPort": true,
+    "noUserConfigApplied": true
+  },
+  "boundary": "实际解析TOML与JSON、校验该机绝对Node/发行包入口/项目路径；没有应用用户配置，不证明宿主加载与对话交接。"
+}

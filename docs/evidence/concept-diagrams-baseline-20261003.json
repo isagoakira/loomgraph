@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-03",
+  "canonicalCounts": {
+    "atoms": 29,
+    "edges": 55,
+    "maps": 9
+  },
+  "canonicalResultsHash": "a8e49a665d8d184768de411e6c19bedfac264ffcf4b7b32def75142465b95bcc",
+  "files": [
+    {
+      "path": "scripts/knowledge-structure-runtime.js",
+      "sha256": "02759f7a379bbdeb7d269460a4e9ae9992e4a16129695c88c46bc5fad5003a66",
+      "bytes": 16953
+    },
+    {
+      "path": "scripts/knowledge-structure-pilot.css",
+      "sha256": "aeb01c5aa40e970c1d3f9627fe750b31599f1223af4136806eebb8de24bbf654",
+      "bytes": 10129
+    },
+    {
+      "path": "docs/examples/forecastcompass/knowledge-structure-pilot.html",
+      "sha256": "a29aba31a8f7d994688bab2417bd173818e01fd5e0d5d314666373c44c4eeff8",
+      "bytes": 786541
+    },
+    {
+      "path": "docs/examples/forecastcompass/knowledge-structure-pilot-bundle.json",
+      "sha256": "f15e129b944e588f2784d7a3897031ab30a98db1675c3d9d975a6fa8982c4d0f",
+      "bytes": 138031
+    }
+  ]
+}

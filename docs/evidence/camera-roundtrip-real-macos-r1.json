@@ -1,0 +1,357 @@
+{
+  "checkedAt": "2026-10-02T00:21:52.338Z",
+  "path": "实际原生缩放和平移后，画布选中入口、侧栏进入子图、返回按钮，十次循环；每步等待实际填充像素",
+  "parent": {
+    "camera": {
+      "offsetLeft": 72,
+      "offsetTop": 182,
+      "width": 1018,
+      "height": 485,
+      "scrollX": -19.444444444444457,
+      "scrollY": -22.5793650793651,
+      "zoom": 0.9
+    },
+    "graphId": "fixture-graph-1",
+    "revision": 49,
+    "breadcrumbs": "项目/结构与模块"
+  },
+  "cycles": [
+    {
+      "iteration": 1,
+      "child": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": 42.142857142857224,
+          "scrollY": 179.42857142857144,
+          "zoom": 0.7
+        },
+        "graphId": "fixture-graph-2",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块/实施流程"
+      },
+      "back": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": -19.444444444444457,
+          "scrollY": -22.5793650793651,
+          "zoom": 0.9
+        },
+        "graphId": "fixture-graph-1",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块"
+      },
+      "parentCameraRestored": true,
+      "childCameraRestored": true
+    },
+    {
+      "iteration": 2,
+      "child": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": 42.142857142857224,
+          "scrollY": 179.42857142857144,
+          "zoom": 0.7
+        },
+        "graphId": "fixture-graph-2",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块/实施流程"
+      },
+      "back": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": -19.444444444444457,
+          "scrollY": -22.5793650793651,
+          "zoom": 0.9
+        },
+        "graphId": "fixture-graph-1",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块"
+      },
+      "parentCameraRestored": true,
+      "childCameraRestored": true
+    },
+    {
+      "iteration": 3,
+      "child": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": 42.142857142857224,
+          "scrollY": 179.42857142857144,
+          "zoom": 0.7
+        },
+        "graphId": "fixture-graph-2",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块/实施流程"
+      },
+      "back": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": -19.444444444444457,
+          "scrollY": -22.5793650793651,
+          "zoom": 0.9
+        },
+        "graphId": "fixture-graph-1",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块"
+      },
+      "parentCameraRestored": true,
+      "childCameraRestored": true
+    },
+    {
+      "iteration": 4,
+      "child": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": 42.142857142857224,
+          "scrollY": 179.42857142857144,
+          "zoom": 0.7
+        },
+        "graphId": "fixture-graph-2",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块/实施流程"
+      },
+      "back": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": -19.444444444444457,
+          "scrollY": -22.5793650793651,
+          "zoom": 0.9
+        },
+        "graphId": "fixture-graph-1",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块"
+      },
+      "parentCameraRestored": true,
+      "childCameraRestored": true
+    },
+    {
+      "iteration": 5,
+      "child": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": 42.142857142857224,
+          "scrollY": 179.42857142857144,
+          "zoom": 0.7
+        },
+        "graphId": "fixture-graph-2",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块/实施流程"
+      },
+      "back": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": -19.444444444444457,
+          "scrollY": -22.5793650793651,
+          "zoom": 0.9
+        },
+        "graphId": "fixture-graph-1",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块"
+      },
+      "parentCameraRestored": true,
+      "childCameraRestored": true
+    },
+    {
+      "iteration": 6,
+      "child": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": 42.142857142857224,
+          "scrollY": 179.42857142857144,
+          "zoom": 0.7
+        },
+        "graphId": "fixture-graph-2",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块/实施流程"
+      },
+      "back": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": -19.444444444444457,
+          "scrollY": -22.5793650793651,
+          "zoom": 0.9
+        },
+        "graphId": "fixture-graph-1",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块"
+      },
+      "parentCameraRestored": true,
+      "childCameraRestored": true
+    },
+    {
+      "iteration": 7,
+      "child": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": 42.142857142857224,
+          "scrollY": 179.42857142857144,
+          "zoom": 0.7
+        },
+        "graphId": "fixture-graph-2",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块/实施流程"
+      },
+      "back": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": -19.444444444444457,
+          "scrollY": -22.5793650793651,
+          "zoom": 0.9
+        },
+        "graphId": "fixture-graph-1",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块"
+      },
+      "parentCameraRestored": true,
+      "childCameraRestored": true
+    },
+    {
+      "iteration": 8,
+      "child": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": 42.142857142857224,
+          "scrollY": 179.42857142857144,
+          "zoom": 0.7
+        },
+        "graphId": "fixture-graph-2",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块/实施流程"
+      },
+      "back": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": -19.444444444444457,
+          "scrollY": -22.5793650793651,
+          "zoom": 0.9
+        },
+        "graphId": "fixture-graph-1",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块"
+      },
+      "parentCameraRestored": true,
+      "childCameraRestored": true
+    },
+    {
+      "iteration": 9,
+      "child": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": 42.142857142857224,
+          "scrollY": 179.42857142857144,
+          "zoom": 0.7
+        },
+        "graphId": "fixture-graph-2",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块/实施流程"
+      },
+      "back": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": -19.444444444444457,
+          "scrollY": -22.5793650793651,
+          "zoom": 0.9
+        },
+        "graphId": "fixture-graph-1",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块"
+      },
+      "parentCameraRestored": true,
+      "childCameraRestored": true
+    },
+    {
+      "iteration": 10,
+      "child": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": 42.142857142857224,
+          "scrollY": 179.42857142857144,
+          "zoom": 0.7
+        },
+        "graphId": "fixture-graph-2",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块/实施流程"
+      },
+      "back": {
+        "camera": {
+          "offsetLeft": 72,
+          "offsetTop": 182,
+          "width": 1018,
+          "height": 485,
+          "scrollX": -19.444444444444457,
+          "scrollY": -22.5793650793651,
+          "zoom": 0.9
+        },
+        "graphId": "fixture-graph-1",
+        "revision": 49,
+        "breadcrumbs": "项目/结构与模块"
+      },
+      "parentCameraRestored": true,
+      "childCameraRestored": true
+    }
+  ],
+  "assertions": {
+    "tenCycles": true,
+    "allCamerasRestored": true,
+    "noContentRevision": true,
+    "annotationsUnchanged": true,
+    "freeElementsUnchanged": true
+  }
+}

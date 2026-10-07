@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-10-02T01:33:03.708Z",
+  "path": "真实原生输入并Escape后立即切图，不等待存储；旧图修改须保存、新图场景不受旧回调影响",
+  "stage": "complete",
+  "original": "模块 2 · Local canvas collaboration / 本地连接与跨图增量更新：WWW MMM 中文排版、视口保护、独立批注与冻结上下文，需要保留完整原文并在节点内显示可读的省略版本。\n第二段：维护原始身份、版本与真实来源；讨论和反馈跨图保持关联。\n第三段：这段完整输入必须仍可原地读取，不能把视觉折行或省略号写回业务标题。",
+  "beforeRevision": 61,
+  "afterRevision": 62,
+  "graph": "fixture-graph-2",
+  "history": [
+    {
+      "id": "b55370b3-de40-4143-8844-b426627521a5",
+      "parentChangeId": "6e81ee13-286a-4de2-98bc-cef58aac7d07",
+      "operationId": "operation-2a4c6c26-7dd2-4491-a07b-423977b82481",
+      "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+      "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+      "baseRevision": 61,
+      "revision": 62,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T01:33:03.210Z",
+      "operations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · 本地连接（快速切图保存验收）"
+          }
+        }
+      ],
+      "affectedIds": [
+        "fixture-entity-5"
+      ],
+      "appliedOperations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · 本地连接（快速切图保存验收）",
+            "updatedAt": "2026-10-02T01:33:03.210Z"
+          }
+        }
+      ]
+    }
+  ],
+  "assertions": {
+    "titleSavedToOriginalEntity": true,
+    "oneUserCommit": true,
+    "exactTitleOperation": true,
+    "newGraphVisible": true,
+    "geometryUnchanged": true,
+    "freeElementsUnchanged": true,
+    "annotationsUnchanged": true
+  }
+}

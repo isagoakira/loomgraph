@@ -1,0 +1,131 @@
+{
+  "checkedAt": "2026-10-02T01:05:43.642Z",
+  "stage": "complete",
+  "title": "模块 2 · Local canvas collaboration / 本地连接与跨图增量更新：WWW MMM 中文排版、视口保护、独立批注与冻结上下文，需要保留完整原文并在节点内显示可读的省略版本。\n第二段：维护原始身份、版本与真实来源；讨论和反馈跨图保持关联。\n第三段：这段完整输入必须仍可原地读取，不能把视觉折行或省略号写回业务标题。",
+  "original": "模块 2 · Local canvas collaboration / 本地连接与跨图增量更新：WWW MMM 中文排版、视口保护、独立批注与冻结上下文，需要保留完整原文并在节点内显示可读的省略版本。\n第二段：维护原始身份、版本与真实来源；讨论和反馈跨图保持关联。\n第三段：这段完整输入必须仍可原地读取，不能把视觉折行或省略号写回业务标题。",
+  "beforeRevision": 58,
+  "startRevision": 59,
+  "afterRevision": 60,
+  "cameraBefore": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 485,
+    "scrollX": 94.33333333333337,
+    "scrollY": 40.166666666666686,
+    "zoom": 0.6
+  },
+  "cameraAfter": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 485,
+    "scrollX": 94.33333333333337,
+    "scrollY": 40.166666666666686,
+    "zoom": 0.6
+  },
+  "history": [
+    {
+      "id": "e168fe8b-432c-4004-853e-46db7a9c6a5f",
+      "parentChangeId": "e2e732a3-1e4e-4bf8-97ca-b4149131b692",
+      "operationId": "long-label-c8a2b54d-70a8-4e63-8888-6f9172302bb6",
+      "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+      "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+      "baseRevision": 58,
+      "revision": 59,
+      "actor": {
+        "id": "acceptance-agent",
+        "kind": "agent",
+        "label": "验收 Agent"
+      },
+      "reason": "长标题：混合宽字符、中文及显式换行，完整输入和有界显示验收",
+      "timestamp": "2026-10-02T01:04:16.924Z",
+      "operations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · Local canvas collaboration / 本地连接与跨图增量更新：WWW MMM 中文排版、视口保护、独立批注与冻结上下文，需要保留完整原文并在节点内显示可读的省略版本。\n第二段：维护原始身份、版本与真实来源；讨论和反馈跨图保持关联。\n第三段：这段完整输入必须仍可原地读取，不能把视觉折行或省略号写回业务标题。"
+          }
+        }
+      ],
+      "affectedIds": [
+        "fixture-entity-5"
+      ],
+      "appliedOperations": [
+        {
+          "type": "entity.patch",
+          "id": "fixture-entity-5",
+          "patch": {
+            "title": "模块 2 · Local canvas collaboration / 本地连接与跨图增量更新：WWW MMM 中文排版、视口保护、独立批注与冻结上下文，需要保留完整原文并在节点内显示可读的省略版本。\n第二段：维护原始身份、版本与真实来源；讨论和反馈跨图保持关联。\n第三段：这段完整输入必须仍可原地读取，不能把视觉折行或省略号写回业务标题。",
+            "updatedAt": "2026-10-02T01:04:16.924Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "adb4661d-b568-459f-b784-82bf8b8fe165",
+      "parentChangeId": "e168fe8b-432c-4004-853e-46db7a9c6a5f",
+      "operationId": "operation-e642f99e-81c2-4002-99f5-b04f4f7d5f9f",
+      "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+      "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+      "baseRevision": 59,
+      "revision": 60,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T01:05:42.861Z",
+      "operations": [
+        {
+          "type": "representation.patch",
+          "id": "fixture-rep-1-1",
+          "patch": {
+            "x": 332,
+            "y": 174,
+            "width": 218,
+            "height": 218,
+            "rotation": 0,
+            "pinned": true
+          }
+        }
+      ],
+      "affectedIds": [
+        "fixture-rep-1-1",
+        "fixture-entity-5",
+        "fixture-graph-1"
+      ],
+      "appliedOperations": [
+        {
+          "type": "representation.patch",
+          "id": "fixture-rep-1-1",
+          "patch": {
+            "height": 218,
+            "pinned": true,
+            "rotation": 0
+          }
+        }
+      ]
+    }
+  ],
+  "svgBytes": 63858,
+  "pngBytes": 12777,
+  "assertions": {
+    "fullOriginalInput": true,
+    "storedTitleExact": true,
+    "onlyAgentRevision": false,
+    "geometryUnchanged": false,
+    "freeElementsUnchanged": true,
+    "annotationsUnchanged": true,
+    "cameraUnchanged": true,
+    "hoverFocusDoNotNavigate": true,
+    "svgHasEllipsis": true,
+    "svgHasFreeText": true,
+    "svgHasEmbeddedImage": true,
+    "svgHasPaths": true,
+    "pngGenerated": true
+  },
+  "boundary": "实际界面混合长标题有界显示、原生编辑器完整文本、公开SDK完整SVG/PNG预览；截图和导出图另行查看。"
+}

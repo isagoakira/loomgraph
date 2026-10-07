@@ -1,0 +1,544 @@
+{
+  "date": "2026-10-03",
+  "kind": "real-browser-pilot-acceptance",
+  "cases": [
+    {
+      "name": "Eight ordered understanding steps",
+      "pass": true
+    },
+    {
+      "name": "Research details default to collapsed",
+      "pass": true
+    },
+    {
+      "name": "No document horizontal overflow at 1440",
+      "pass": true
+    },
+    {
+      "name": "Mainline uses one reading scroll",
+      "pass": true
+    },
+    {
+      "name": "Content height varies with expression role",
+      "pass": true,
+      "details": [
+        {
+          "id": "probability",
+          "width": 913,
+          "height": 702,
+          "top": 426
+        },
+        {
+          "id": "signal-confidence",
+          "width": 913,
+          "height": 664,
+          "top": 1128
+        },
+        {
+          "id": "memory-problem",
+          "width": 913,
+          "height": 710,
+          "top": 1792
+        },
+        {
+          "id": "two-memories",
+          "width": 913,
+          "height": 846,
+          "top": 2502
+        },
+        {
+          "id": "inference",
+          "width": 913,
+          "height": 671,
+          "top": 3347
+        },
+        {
+          "id": "update",
+          "width": 913,
+          "height": 831,
+          "top": 4018
+        },
+        {
+          "id": "evidence",
+          "width": 913,
+          "height": 925,
+          "top": 4849
+        },
+        {
+          "id": "reproduction",
+          "width": 913,
+          "height": 680,
+          "top": 5774
+        }
+      ]
+    },
+    {
+      "name": "No modal reading surface",
+      "pass": true
+    },
+    {
+      "name": "Method name receives an explanation",
+      "pass": true
+    },
+    {
+      "name": "Nonessential s/M notation deferred",
+      "pass": true
+    },
+    {
+      "name": "Both F and R update objects visible",
+      "pass": true
+    },
+    {
+      "name": "BASE and Static defined before the table",
+      "pass": true
+    },
+    {
+      "name": "Research opens in place",
+      "pass": true
+    },
+    {
+      "name": "Disclosure pushes later steps down",
+      "pass": true,
+      "details": {
+        "before": 3347.4453125,
+        "after": 3552.140625
+      }
+    },
+    {
+      "name": "Collapse restores following position",
+      "pass": true
+    },
+    {
+      "name": "Independent branches can remain open",
+      "pass": true
+    },
+    {
+      "name": "Table 1 gpt-prophet renders matched values",
+      "pass": true,
+      "details": [
+        "FoCo",
+        "0.075",
+        "0.077",
+        "揭晓前预测"
+      ]
+    },
+    {
+      "name": "Retro remains diagnostic in gpt-prophet",
+      "pass": true
+    },
+    {
+      "name": "Table 1 gpt-futurex renders matched values",
+      "pass": true,
+      "details": [
+        "FoCo",
+        "0.187",
+        "0.195",
+        "揭晓前预测"
+      ]
+    },
+    {
+      "name": "Retro remains diagnostic in gpt-futurex",
+      "pass": true
+    },
+    {
+      "name": "Table 1 gemini-prophet renders matched values",
+      "pass": true,
+      "details": [
+        "FoCo",
+        "0.118",
+        "0.090",
+        "揭晓前预测"
+      ]
+    },
+    {
+      "name": "Retro remains diagnostic in gemini-prophet",
+      "pass": true
+    },
+    {
+      "name": "Table 1 gemini-futurex renders matched values",
+      "pass": true,
+      "details": [
+        "FoCo",
+        "0.216",
+        "0.198",
+        "揭晓前预测"
+      ]
+    },
+    {
+      "name": "Retro remains diagnostic in gemini-futurex",
+      "pass": true
+    },
+    {
+      "name": "Week 4 ECE reversal remains visible",
+      "pass": true,
+      "details": [
+        [
+          "BASE",
+          "0.220",
+          "0.263"
+        ],
+        [
+          "FoCo w/o factor",
+          "0.083",
+          "0.209"
+        ],
+        [
+          "FoCo w/o reasoning",
+          "0.133",
+          "0.220"
+        ],
+        [
+          "FoCo",
+          "0.091",
+          "0.195"
+        ]
+      ]
+    },
+    {
+      "name": "Average ECE distinction remains visible",
+      "pass": true
+    },
+    {
+      "name": "Brier switch retains aligned week columns",
+      "pass": true
+    },
+    {
+      "name": "Configuration distinguishes source and interpretation",
+      "pass": true
+    },
+    {
+      "name": "Missing reproduction parameters remain explicit",
+      "pass": true
+    },
+    {
+      "name": "Original paper image loads within the branch",
+      "pass": true
+    },
+    {
+      "name": "Comprehension controls give explanations",
+      "pass": true
+    },
+    {
+      "name": "User receives unanswered comprehension questions",
+      "pass": true
+    },
+    {
+      "name": "Overview uses the same eight content targets",
+      "pass": true
+    },
+    {
+      "name": "Mainline remains readable at 900",
+      "pass": true,
+      "details": {
+        "width": 900,
+        "overflow": false,
+        "steps": [
+          {
+            "id": "probability",
+            "width": 640,
+            "height": 702,
+            "top": 381
+          },
+          {
+            "id": "signal-confidence",
+            "width": 640,
+            "height": 664,
+            "top": 1083
+          },
+          {
+            "id": "memory-problem",
+            "width": 640,
+            "height": 743,
+            "top": 1747
+          },
+          {
+            "id": "two-memories",
+            "width": 640,
+            "height": 880,
+            "top": 2490
+          },
+          {
+            "id": "inference",
+            "width": 640,
+            "height": 671,
+            "top": 3370
+          },
+          {
+            "id": "update",
+            "width": 640,
+            "height": 865,
+            "top": 4041
+          },
+          {
+            "id": "evidence",
+            "width": 640,
+            "height": 959,
+            "top": 4906
+          },
+          {
+            "id": "reproduction",
+            "width": 640,
+            "height": 713,
+            "top": 5865
+          }
+        ],
+        "opened": [],
+        "nestedScroll": 0,
+        "modalCount": 0
+      }
+    },
+    {
+      "name": "Dense evidence stays within document at 900",
+      "pass": true
+    },
+    {
+      "name": "Mainline remains readable at 390",
+      "pass": true,
+      "details": {
+        "width": 390,
+        "overflow": false,
+        "steps": [
+          {
+            "id": "probability",
+            "width": 341,
+            "height": 799,
+            "top": 743
+          },
+          {
+            "id": "signal-confidence",
+            "width": 341,
+            "height": 853,
+            "top": 1542
+          },
+          {
+            "id": "memory-problem",
+            "width": 341,
+            "height": 929,
+            "top": 2395
+          },
+          {
+            "id": "two-memories",
+            "width": 341,
+            "height": 1076,
+            "top": 3324
+          },
+          {
+            "id": "inference",
+            "width": 341,
+            "height": 930,
+            "top": 4400
+          },
+          {
+            "id": "update",
+            "width": 341,
+            "height": 1092,
+            "top": 5329
+          },
+          {
+            "id": "evidence",
+            "width": 341,
+            "height": 1164,
+            "top": 6421
+          },
+          {
+            "id": "reproduction",
+            "width": 341,
+            "height": 927,
+            "top": 7585
+          }
+        ],
+        "opened": [],
+        "nestedScroll": 0,
+        "modalCount": 0
+      }
+    },
+    {
+      "name": "Dense evidence stays within document at 390",
+      "pass": true
+    }
+  ],
+  "measurements": [
+    {
+      "view": "desktop-collapsed",
+      "width": 1440,
+      "overflow": false,
+      "steps": [
+        {
+          "id": "probability",
+          "width": 913,
+          "height": 702,
+          "top": 426
+        },
+        {
+          "id": "signal-confidence",
+          "width": 913,
+          "height": 664,
+          "top": 1128
+        },
+        {
+          "id": "memory-problem",
+          "width": 913,
+          "height": 710,
+          "top": 1792
+        },
+        {
+          "id": "two-memories",
+          "width": 913,
+          "height": 846,
+          "top": 2502
+        },
+        {
+          "id": "inference",
+          "width": 913,
+          "height": 671,
+          "top": 3347
+        },
+        {
+          "id": "update",
+          "width": 913,
+          "height": 831,
+          "top": 4018
+        },
+        {
+          "id": "evidence",
+          "width": 913,
+          "height": 925,
+          "top": 4849
+        },
+        {
+          "id": "reproduction",
+          "width": 913,
+          "height": 680,
+          "top": 5774
+        }
+      ],
+      "opened": [],
+      "nestedScroll": 0,
+      "modalCount": 0
+    },
+    {
+      "view": "width-900",
+      "width": 900,
+      "overflow": false,
+      "steps": [
+        {
+          "id": "probability",
+          "width": 640,
+          "height": 702,
+          "top": 381
+        },
+        {
+          "id": "signal-confidence",
+          "width": 640,
+          "height": 664,
+          "top": 1083
+        },
+        {
+          "id": "memory-problem",
+          "width": 640,
+          "height": 743,
+          "top": 1747
+        },
+        {
+          "id": "two-memories",
+          "width": 640,
+          "height": 880,
+          "top": 2490
+        },
+        {
+          "id": "inference",
+          "width": 640,
+          "height": 671,
+          "top": 3370
+        },
+        {
+          "id": "update",
+          "width": 640,
+          "height": 865,
+          "top": 4041
+        },
+        {
+          "id": "evidence",
+          "width": 640,
+          "height": 959,
+          "top": 4906
+        },
+        {
+          "id": "reproduction",
+          "width": 640,
+          "height": 713,
+          "top": 5865
+        }
+      ],
+      "opened": [],
+      "nestedScroll": 0,
+      "modalCount": 0
+    },
+    {
+      "view": "width-390",
+      "width": 390,
+      "overflow": false,
+      "steps": [
+        {
+          "id": "probability",
+          "width": 341,
+          "height": 799,
+          "top": 743
+        },
+        {
+          "id": "signal-confidence",
+          "width": 341,
+          "height": 853,
+          "top": 1542
+        },
+        {
+          "id": "memory-problem",
+          "width": 341,
+          "height": 929,
+          "top": 2395
+        },
+        {
+          "id": "two-memories",
+          "width": 341,
+          "height": 1076,
+          "top": 3324
+        },
+        {
+          "id": "inference",
+          "width": 341,
+          "height": 930,
+          "top": 4400
+        },
+        {
+          "id": "update",
+          "width": 341,
+          "height": 1092,
+          "top": 5329
+        },
+        {
+          "id": "evidence",
+          "width": 341,
+          "height": 1164,
+          "top": 6421
+        },
+        {
+          "id": "reproduction",
+          "width": 341,
+          "height": 927,
+          "top": 7585
+        }
+      ],
+      "opened": [],
+      "nestedScroll": 0,
+      "modalCount": 0
+    }
+  ],
+  "passed": 35,
+  "total": 35,
+  "limitations": [
+    "浏览器断言验证呈现与操作，不证明真人理解。",
+    "Node 与界面没有复现论文模型实验。",
+    "自适应尺寸在派生阅读预览中验证；自由画布的通用尺寸/布局机制尚未实现。",
+    "这是样例，不是已安装阅读器的正式升级。"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-02T05:46:10.351Z",
+  "continues": "deleted-targets-ui-resumed-macos-r14.json",
+  "correction": "历史面板使用标明 overview 的概览预览，保留旧关系线但不显示连线文字；将结构化历史中的原关系说明与概览图像分别核对，不再要求未实现的概览标签。",
+  "observedRevision": 28,
+  "beforeRevision": 30,
+  "finalRevision": 30,
+  "assertions": {
+    "allThreeHistoryEntrypointsWork": true,
+    "originalFreeShapeVisible": true,
+    "viewsReadOnly": true,
+    "liveGraphAndCameraPreserved": true,
+    "liveContentExactlyUnchanged": true,
+    "annotationsUnchanged": true,
+    "originalEntityTextVisible": true,
+    "originalRelationLineVisible": true,
+    "historicalRelationLabelReadable": true
+  },
+  "historicalRelation": {
+    "id": "r14-historical-relation",
+    "kind": "data_flow",
+    "from": "r14-historical-entity",
+    "to": "r9-entry",
+    "label": "历史连线原说明",
+    "metadata": {
+      "graphId": "r9-graph-b"
+    }
+  },
+  "previewBoundary": "历史概览不提供连线文字；完整说明通过同一历史修订的结构化记录读取。",
+  "status": "passed"
+}

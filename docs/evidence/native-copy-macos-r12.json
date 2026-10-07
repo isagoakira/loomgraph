@@ -1,0 +1,93 @@
+{
+  "checkedAt": "2026-10-02T04:40:18.741Z",
+  "path": "实际原生 Cmd+D 复制业务表示与自由图形",
+  "assertions": {
+    "newRepresentationSameEntity": true,
+    "subgraphMetadataPreserved": true,
+    "originalRepresentationUnchanged": true,
+    "noImplicitEntityClone": true,
+    "representationCopyOneCommit": true,
+    "appSurvivesRepresentationCopy": true,
+    "noUncaughtBrowserError": true
+  },
+  "beforeRevision": 14,
+  "duplicatedRepresentation": {
+    "id": "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+    "entityId": "r9-entry",
+    "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+    "x": 100,
+    "y": 110,
+    "width": 230,
+    "height": 78,
+    "pinned": false,
+    "rotation": 0,
+    "subgraphIds": [
+      "r9-graph-b"
+    ]
+  },
+  "representationHistory": [
+    {
+      "id": "7fe0dcdc-5478-438c-88a2-ead6db5ca39a",
+      "parentChangeId": "1b1ac753-f300-48a5-905c-cd68631cbe21",
+      "operationId": "operation-413d8370-2ea0-4537-8032-1f720009e794",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 14,
+      "revision": 15,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T04:40:21.904Z",
+      "operations": [
+        {
+          "type": "representation.put",
+          "representation": {
+            "id": "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+            "entityId": "r9-entry",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "x": 100,
+            "y": 110,
+            "width": 230,
+            "height": 78,
+            "pinned": false,
+            "rotation": 0,
+            "subgraphIds": [
+              "r9-graph-b"
+            ]
+          }
+        }
+      ],
+      "affectedIds": [
+        "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+        "r9-entry",
+        "fa292dc4-258e-46f9-ba2a-561a2223c394"
+      ],
+      "appliedOperations": [
+        {
+          "type": "representation.put",
+          "representation": {
+            "id": "representation-cd32cfbf-6714-4687-be5f-aae772112cca",
+            "entityId": "r9-entry",
+            "graphId": "fa292dc4-258e-46f9-ba2a-561a2223c394",
+            "x": 100,
+            "y": 110,
+            "width": 230,
+            "height": 78,
+            "pinned": false,
+            "rotation": 0,
+            "subgraphIds": [
+              "r9-graph-b"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "browserErrors": [],
+  "stage": "free element",
+  "failure": "Error: page.waitForFunction timed out after 15000ms on page p1; last URL was \"http://127.0.0.1:64581/\"; last title was \"Agent Visual Canvas · 本地工作台\".",
+  "status": "failed"
+}

@@ -1,0 +1,439 @@
+{
+  "date": "2026-10-03",
+  "budget": 24000,
+  "passed": 8,
+  "total": 8,
+  "entries": [
+    {
+      "stepId": "probability",
+      "revision": 115,
+      "bytes": 21225,
+      "visualRetained": true,
+      "readingRetained": true,
+      "figureId": "figure-probability",
+      "partCount": 4,
+      "omissions": {
+        "nodes": [],
+        "relations": [],
+        "freeElements": [],
+        "fields": [],
+        "reasons": [],
+        "truncatedText": 0,
+        "budget": {
+          "maxBytes": 24000,
+          "maxItems": 50,
+          "maxNodes": 80,
+          "maxRelations": 120,
+          "maxFreeElements": 40,
+          "maxEvidence": 8,
+          "maxTextChars": 2400,
+          "maxNeighbors": 24
+        }
+      }
+    },
+    {
+      "stepId": "signal-confidence",
+      "revision": 115,
+      "bytes": 23895,
+      "visualRetained": true,
+      "readingRetained": true,
+      "figureId": "figure-signal-confidence",
+      "partCount": 4,
+      "omissions": {
+        "nodes": [],
+        "relations": [
+          "pilot-ks-map-signal-confidence-rel-e-probability-confidence",
+          "pilot-ks-map-signal-confidence-rel-e-protocol-signal",
+          "pilot-ks-map-signal-confidence-rel-e-signal-calibration"
+        ],
+        "freeElements": [
+          "pilot-ks-diagram-signal-confidence"
+        ],
+        "fields": [],
+        "reasons": [
+          "relation:pilot-ks-map-signal-confidence-rel-e-probability-confidence:byte-budget",
+          "relation:pilot-ks-map-signal-confidence-rel-e-protocol-signal:byte-budget",
+          "relation:pilot-ks-map-signal-confidence-rel-e-signal-calibration:byte-budget",
+          "element:pilot-ks-diagram-signal-confidence:byte-budget"
+        ],
+        "truncatedText": 0,
+        "budget": {
+          "maxBytes": 24000,
+          "maxItems": 50,
+          "maxNodes": 80,
+          "maxRelations": 120,
+          "maxFreeElements": 40,
+          "maxEvidence": 8,
+          "maxTextChars": 2400,
+          "maxNeighbors": 24
+        }
+      }
+    },
+    {
+      "stepId": "memory-problem",
+      "revision": 115,
+      "bytes": 23566,
+      "visualRetained": true,
+      "readingRetained": true,
+      "figureId": "figure-memory-problem",
+      "partCount": 6,
+      "omissions": {
+        "nodes": [],
+        "relations": [
+          "pilot-ks-map-memory-problem-rel-e-calibration-lesson",
+          "pilot-ks-map-memory-problem-rel-e-lesson-foco",
+          "pilot-ks-map-memory-problem-rel-e-protocol-lesson",
+          "pilot-ks-map-memory-problem-rel-e-signal-lesson"
+        ],
+        "freeElements": [
+          "pilot-ks-diagram-memory-problem"
+        ],
+        "fields": [
+          "fixedGeometry"
+        ],
+        "reasons": [
+          "relation:pilot-ks-map-memory-problem-rel-e-calibration-lesson:byte-budget",
+          "relation:pilot-ks-map-memory-problem-rel-e-lesson-foco:byte-budget",
+          "relation:pilot-ks-map-memory-problem-rel-e-protocol-lesson:byte-budget",
+          "relation:pilot-ks-map-memory-problem-rel-e-signal-lesson:byte-budget",
+          "element:pilot-ks-diagram-memory-problem:byte-budget"
+        ],
+        "truncatedText": 0,
+        "budget": {
+          "maxBytes": 24000,
+          "maxItems": 50,
+          "maxNodes": 80,
+          "maxRelations": 120,
+          "maxFreeElements": 40,
+          "maxEvidence": 8,
+          "maxTextChars": 2400,
+          "maxNeighbors": 24
+        }
+      }
+    },
+    {
+      "stepId": "two-memories",
+      "revision": 115,
+      "bytes": 23851,
+      "visualRetained": true,
+      "readingRetained": true,
+      "figureId": "figure-two-memories",
+      "partCount": 6,
+      "omissions": {
+        "nodes": [
+          "pilot-ks-map-two-memories-rep-factor",
+          "pilot-ks-map-two-memories-rep-reasoning",
+          "pilot-ks-atom-factor",
+          "pilot-ks-atom-reasoning"
+        ],
+        "relations": [
+          "pilot-ks-map-two-memories-rel-e-foco-taxonomy",
+          "pilot-ks-map-two-memories-rel-e-memory-factor",
+          "pilot-ks-map-two-memories-rel-e-memory-reasoning",
+          "pilot-ks-map-two-memories-rel-e-subcategory-memory",
+          "pilot-ks-map-two-memories-rel-e-taxonomy-subcategory"
+        ],
+        "freeElements": [
+          "pilot-ks-diagram-two-memories"
+        ],
+        "fields": [
+          "fixedGeometry"
+        ],
+        "reasons": [
+          "node:pilot-ks-map-two-memories-rep-factor:byte-budget",
+          "node:pilot-ks-map-two-memories-rep-reasoning:byte-budget",
+          "node:pilot-ks-atom-factor:byte-budget",
+          "node:pilot-ks-atom-reasoning:byte-budget",
+          "relation:pilot-ks-map-two-memories-rel-e-foco-taxonomy:byte-budget",
+          "relation:pilot-ks-map-two-memories-rel-e-memory-factor:byte-budget",
+          "relation:pilot-ks-map-two-memories-rel-e-memory-reasoning:byte-budget",
+          "relation:pilot-ks-map-two-memories-rel-e-subcategory-memory:byte-budget",
+          "relation:pilot-ks-map-two-memories-rel-e-taxonomy-subcategory:byte-budget",
+          "element:pilot-ks-diagram-two-memories:byte-budget"
+        ],
+        "truncatedText": 0,
+        "budget": {
+          "maxBytes": 24000,
+          "maxItems": 50,
+          "maxNodes": 80,
+          "maxRelations": 120,
+          "maxFreeElements": 40,
+          "maxEvidence": 8,
+          "maxTextChars": 2400,
+          "maxNeighbors": 24
+        }
+      }
+    },
+    {
+      "stepId": "inference",
+      "revision": 115,
+      "bytes": 22811,
+      "visualRetained": true,
+      "readingRetained": true,
+      "figureId": "figure-inference",
+      "partCount": 8,
+      "omissions": {
+        "nodes": [
+          "pilot-ks-map-inference-rep-factor",
+          "pilot-ks-map-inference-rep-reasoning",
+          "pilot-ks-map-inference-rep-trajectory",
+          "pilot-ks-map-inference-rep-probability",
+          "pilot-ks-atom-factor",
+          "pilot-ks-atom-probability",
+          "pilot-ks-atom-reasoning",
+          "pilot-ks-atom-trajectory",
+          "pilot-ks-map-inference-rep-memory"
+        ],
+        "relations": [
+          "pilot-ks-map-inference-rel-e-factor-trajectory",
+          "pilot-ks-map-inference-rel-e-memory-factor",
+          "pilot-ks-map-inference-rel-e-memory-reasoning",
+          "pilot-ks-map-inference-rel-e-protocol-trajectory",
+          "pilot-ks-map-inference-rel-e-question-trajectory",
+          "pilot-ks-map-inference-rel-e-reasoning-probability",
+          "pilot-ks-map-inference-rel-e-trajectory-probability"
+        ],
+        "freeElements": [
+          "pilot-ks-diagram-inference"
+        ],
+        "fields": [
+          "fixedGeometry",
+          "nodes"
+        ],
+        "reasons": [
+          "node:pilot-ks-map-inference-rep-factor:byte-budget",
+          "node:pilot-ks-map-inference-rep-reasoning:byte-budget",
+          "node:pilot-ks-map-inference-rep-trajectory:byte-budget",
+          "node:pilot-ks-map-inference-rep-probability:byte-budget",
+          "node:pilot-ks-atom-factor:byte-budget",
+          "node:pilot-ks-atom-probability:byte-budget",
+          "node:pilot-ks-atom-reasoning:byte-budget",
+          "node:pilot-ks-atom-trajectory:byte-budget",
+          "relation:pilot-ks-map-inference-rel-e-factor-trajectory:byte-budget",
+          "relation:pilot-ks-map-inference-rel-e-memory-factor:byte-budget",
+          "relation:pilot-ks-map-inference-rel-e-memory-reasoning:byte-budget",
+          "relation:pilot-ks-map-inference-rel-e-protocol-trajectory:byte-budget",
+          "relation:pilot-ks-map-inference-rel-e-question-trajectory:byte-budget",
+          "relation:pilot-ks-map-inference-rel-e-reasoning-probability:byte-budget",
+          "relation:pilot-ks-map-inference-rel-e-trajectory-probability:byte-budget",
+          "element:pilot-ks-diagram-inference:byte-budget",
+          "nodes:pilot-ks-map-inference-rep-memory:final-byte-budget"
+        ],
+        "truncatedText": 0,
+        "budget": {
+          "maxBytes": 24000,
+          "maxItems": 50,
+          "maxNodes": 80,
+          "maxRelations": 120,
+          "maxFreeElements": 40,
+          "maxEvidence": 8,
+          "maxTextChars": 2400,
+          "maxNeighbors": 24
+        }
+      }
+    },
+    {
+      "stepId": "update",
+      "revision": 115,
+      "bytes": 22235,
+      "visualRetained": true,
+      "readingRetained": true,
+      "figureId": "figure-update",
+      "partCount": 8,
+      "omissions": {
+        "nodes": [
+          "pilot-ks-map-update-rep-retrospective",
+          "pilot-ks-map-update-rep-diagnosis",
+          "pilot-ks-map-update-rep-aggregation",
+          "pilot-ks-map-update-rep-revision",
+          "pilot-ks-map-update-rep-memory",
+          "pilot-ks-atom-aggregation",
+          "pilot-ks-atom-diagnosis",
+          "pilot-ks-atom-memory",
+          "pilot-ks-atom-retrospective",
+          "pilot-ks-atom-revision",
+          "pilot-ks-map-update-rep-trajectory"
+        ],
+        "relations": [
+          "pilot-ks-map-update-rel-e-aggregation-revision",
+          "pilot-ks-map-update-rel-e-diagnosis-aggregation",
+          "pilot-ks-map-update-rel-e-outcome-retrospective",
+          "pilot-ks-map-update-rel-e-retrospective-diagnosis",
+          "pilot-ks-map-update-rel-e-revision-memory",
+          "pilot-ks-map-update-rel-e-trajectory-diagnosis",
+          "pilot-ks-map-update-rel-e-trajectory-retrospective"
+        ],
+        "freeElements": [
+          "pilot-ks-diagram-update"
+        ],
+        "fields": [
+          "fixedGeometry",
+          "nodes"
+        ],
+        "reasons": [
+          "node:pilot-ks-map-update-rep-retrospective:byte-budget",
+          "node:pilot-ks-map-update-rep-diagnosis:byte-budget",
+          "node:pilot-ks-map-update-rep-aggregation:byte-budget",
+          "node:pilot-ks-map-update-rep-revision:byte-budget",
+          "node:pilot-ks-map-update-rep-memory:byte-budget",
+          "node:pilot-ks-atom-aggregation:byte-budget",
+          "node:pilot-ks-atom-diagnosis:byte-budget",
+          "node:pilot-ks-atom-memory:byte-budget",
+          "node:pilot-ks-atom-retrospective:byte-budget",
+          "node:pilot-ks-atom-revision:byte-budget",
+          "relation:pilot-ks-map-update-rel-e-aggregation-revision:byte-budget",
+          "relation:pilot-ks-map-update-rel-e-diagnosis-aggregation:byte-budget",
+          "relation:pilot-ks-map-update-rel-e-outcome-retrospective:byte-budget",
+          "relation:pilot-ks-map-update-rel-e-retrospective-diagnosis:byte-budget",
+          "relation:pilot-ks-map-update-rel-e-revision-memory:byte-budget",
+          "relation:pilot-ks-map-update-rel-e-trajectory-diagnosis:byte-budget",
+          "relation:pilot-ks-map-update-rel-e-trajectory-retrospective:byte-budget",
+          "element:pilot-ks-diagram-update:byte-budget",
+          "nodes:pilot-ks-map-update-rep-trajectory:final-byte-budget"
+        ],
+        "truncatedText": 0,
+        "budget": {
+          "maxBytes": 24000,
+          "maxItems": 50,
+          "maxNodes": 80,
+          "maxRelations": 120,
+          "maxFreeElements": 40,
+          "maxEvidence": 8,
+          "maxTextChars": 2400,
+          "maxNeighbors": 24
+        }
+      }
+    },
+    {
+      "stepId": "evidence",
+      "revision": 115,
+      "bytes": 23888,
+      "visualRetained": true,
+      "readingRetained": true,
+      "figureId": "figure-evidence",
+      "partCount": 11,
+      "omissions": {
+        "nodes": [
+          "pilot-ks-map-evidence-rep-brier",
+          "pilot-ks-map-evidence-rep-ece",
+          "pilot-ks-map-evidence-rep-comparison",
+          "pilot-ks-map-evidence-rep-table1-result",
+          "pilot-ks-map-evidence-rep-table3-ablation",
+          "pilot-ks-atom-brier",
+          "pilot-ks-atom-comparison",
+          "pilot-ks-atom-ece",
+          "pilot-ks-atom-table1-result",
+          "pilot-ks-atom-table3-ablation"
+        ],
+        "relations": [
+          "pilot-ks-map-evidence-rel-e-brier-probability",
+          "pilot-ks-map-evidence-rel-e-comparison-table1",
+          "pilot-ks-map-evidence-rel-e-comparison-table3",
+          "pilot-ks-map-evidence-rel-e-ece-comparison",
+          "pilot-ks-map-evidence-rel-e-ece-confidence"
+        ],
+        "freeElements": [
+          "pilot-ks-diagram-evidence"
+        ],
+        "fields": [
+          "fixedGeometry"
+        ],
+        "reasons": [
+          "node:pilot-ks-map-evidence-rep-brier:byte-budget",
+          "node:pilot-ks-map-evidence-rep-ece:byte-budget",
+          "node:pilot-ks-map-evidence-rep-comparison:byte-budget",
+          "node:pilot-ks-map-evidence-rep-table1-result:byte-budget",
+          "node:pilot-ks-map-evidence-rep-table3-ablation:byte-budget",
+          "node:pilot-ks-atom-brier:byte-budget",
+          "node:pilot-ks-atom-comparison:byte-budget",
+          "node:pilot-ks-atom-ece:byte-budget",
+          "node:pilot-ks-atom-table1-result:byte-budget",
+          "node:pilot-ks-atom-table3-ablation:byte-budget",
+          "relation:pilot-ks-map-evidence-rel-e-brier-probability:byte-budget",
+          "relation:pilot-ks-map-evidence-rel-e-comparison-table1:byte-budget",
+          "relation:pilot-ks-map-evidence-rel-e-comparison-table3:byte-budget",
+          "relation:pilot-ks-map-evidence-rel-e-ece-comparison:byte-budget",
+          "relation:pilot-ks-map-evidence-rel-e-ece-confidence:byte-budget",
+          "element:pilot-ks-diagram-evidence:byte-budget"
+        ],
+        "truncatedText": 0,
+        "budget": {
+          "maxBytes": 24000,
+          "maxItems": 50,
+          "maxNodes": 80,
+          "maxRelations": 120,
+          "maxFreeElements": 40,
+          "maxEvidence": 8,
+          "maxTextChars": 2400,
+          "maxNeighbors": 24
+        }
+      }
+    },
+    {
+      "stepId": "reproduction",
+      "revision": 115,
+      "bytes": 22351,
+      "visualRetained": true,
+      "readingRetained": true,
+      "figureId": "figure-reproduction",
+      "partCount": 6,
+      "omissions": {
+        "nodes": [
+          "pilot-ks-map-reproduction-rep-comparison",
+          "pilot-ks-map-reproduction-rep-static",
+          "pilot-ks-map-reproduction-rep-ablation",
+          "pilot-ks-atom-ablation",
+          "pilot-ks-atom-comparison",
+          "pilot-ks-atom-static",
+          "pilot-ks-map-reproduction-rep-base"
+        ],
+        "relations": [
+          "pilot-ks-map-reproduction-rel-e-comparison-ablation",
+          "pilot-ks-map-reproduction-rel-e-comparison-base",
+          "pilot-ks-map-reproduction-rel-e-comparison-static",
+          "pilot-ks-map-reproduction-rel-e-config-comparison",
+          "pilot-ks-map-reproduction-rel-e-config-protocol",
+          "pilot-ks-map-reproduction-rel-e-static-base"
+        ],
+        "freeElements": [
+          "pilot-ks-diagram-reproduction"
+        ],
+        "fields": [
+          "fixedGeometry",
+          "nodes"
+        ],
+        "reasons": [
+          "node:pilot-ks-map-reproduction-rep-comparison:byte-budget",
+          "node:pilot-ks-map-reproduction-rep-static:byte-budget",
+          "node:pilot-ks-map-reproduction-rep-ablation:byte-budget",
+          "node:pilot-ks-atom-ablation:byte-budget",
+          "node:pilot-ks-atom-comparison:byte-budget",
+          "node:pilot-ks-atom-static:byte-budget",
+          "relation:pilot-ks-map-reproduction-rel-e-comparison-ablation:byte-budget",
+          "relation:pilot-ks-map-reproduction-rel-e-comparison-base:byte-budget",
+          "relation:pilot-ks-map-reproduction-rel-e-comparison-static:byte-budget",
+          "relation:pilot-ks-map-reproduction-rel-e-config-comparison:byte-budget",
+          "relation:pilot-ks-map-reproduction-rel-e-config-protocol:byte-budget",
+          "relation:pilot-ks-map-reproduction-rel-e-static-base:byte-budget",
+          "element:pilot-ks-diagram-reproduction:byte-budget",
+          "nodes:pilot-ks-map-reproduction-rep-base:final-byte-budget"
+        ],
+        "truncatedText": 0,
+        "budget": {
+          "maxBytes": 24000,
+          "maxItems": 50,
+          "maxNodes": 80,
+          "maxRelations": 120,
+          "maxFreeElements": 40,
+          "maxEvidence": 8,
+          "maxTextChars": 2400,
+          "maxNeighbors": 24
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "预算内保留当前阅读与图形部件语义；被省略的长细则、邻域与几何仍需按目标补读。",
+    "这不是SVG视觉理解或真人理解能力测试。"
+  ]
+}

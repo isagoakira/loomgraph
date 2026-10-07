@@ -1,0 +1,5 @@
+{
+  "name": "agent-visual-canvas",
+  "version": "0.1.0",
+  "description": "Local Excalidraw workspace for agent-maintained progress, subgraphs, annotations and versioned changes."
+}

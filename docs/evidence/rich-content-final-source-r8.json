@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-02T15:20:43.467Z",
+  "version": "/Users/Zhuanz1/.local/share/agent-visual-canvas/versions/0.1.0-local-20261002-r8",
+  "typecheckPassed": true,
+  "sourceTests": {
+    "files": 13,
+    "passed": 145,
+    "log": ".runtime/semantic-controls-r8-source-tests.log"
+  },
+  "sourceFilesMatched": 28,
+  "installedBuildFilesMatched": 370,
+  "originalSourceDistFilesUnchanged": 370,
+  "projectPackage": {
+    "revision": 73,
+    "bytes": 549449,
+    "sha256": "c6c0a4351834fc8da47902280adf93b08f97da94afdd89c26cdd644a464d6c19"
+  },
+  "installedServerSha256": "49bfa4ac6e52d53fced957697354de3856f1e591405c854ff955534ded4a0bb7"
+}

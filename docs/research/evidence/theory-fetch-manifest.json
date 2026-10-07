@@ -1,0 +1,44 @@
+[
+  {
+    "key": "shneiderman1996",
+    "url": "https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf",
+    "final": "https://www.cs.umd.edu/~ben/papers/Shneiderman1996eyes.pdf",
+    "type": "application/pdf",
+    "bytes": 893228,
+    "path": "plugins/agent-visual-canvas/docs/research/evidence/shneiderman1996.pdf"
+  },
+  {
+    "key": "viki",
+    "url": "https://www.csdl.tamu.edu/~shipman/viki.html",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)>"
+  },
+  {
+    "key": "pad1994",
+    "url": "https://www.cs.umd.edu/hcil/pad++/papers/uist94-pad/uist94-pad.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "wcag-text-spacing",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html",
+    "final": "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html",
+    "type": "text/html; charset=utf-8",
+    "bytes": 55290,
+    "path": "plugins/agent-visual-canvas/docs/research/evidence/wcag-text-spacing.html"
+  },
+  {
+    "key": "wcag-reflow",
+    "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+    "final": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+    "type": "text/html; charset=utf-8",
+    "bytes": 85770,
+    "path": "plugins/agent-visual-canvas/docs/research/evidence/wcag-reflow.html"
+  },
+  {
+    "key": "pad1994-recovered",
+    "url": "https://www.cs.umd.edu/hcil/pad++/papers/uist-94-pad/uist-94-pad.pdf",
+    "discoveredFrom": "https://www.cs.umd.edu/hcil/pad++/papers/",
+    "type": "application/pdf",
+    "bytes": 265662,
+    "path": "plugins/agent-visual-canvas/docs/research/evidence/pad1994.pdf"
+  }
+]

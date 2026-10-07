@@ -1,0 +1,226 @@
+{
+  "checkedAt": "2026-10-02T10:24:37.643Z",
+  "path": "原生受管分组，重载后只选一个成员解除组，再通过受保护撤销恢复",
+  "assertions": {
+    "reloadNoWrites": true,
+    "nativeReloadedGroupUngroupsBoth": true,
+    "ungroupOneRevision": true,
+    "undoOneRevision": true,
+    "undoRestoresExactGroup": true,
+    "entitiesUnchanged": true,
+    "annotationsUnchanged": true,
+    "freeElementsUnchanged": true
+  },
+  "beforeRevision": 69,
+  "groupId": "F-q9EyzKT9FJGleqmuQzi",
+  "reloadRevision": 69,
+  "ungroupedRevision": 70,
+  "ungrouped": [
+    {
+      "id": "r21-org-a",
+      "entityId": "r9-shared",
+      "graphId": "r21-native-org",
+      "x": 40,
+      "y": 40,
+      "width": 220,
+      "height": 80,
+      "pinned": false,
+      "canvas": {
+        "groupIds": [],
+        "frameId": null
+      }
+    },
+    {
+      "id": "r21-org-b",
+      "entityId": "r9-shared",
+      "graphId": "r21-native-org",
+      "x": 330,
+      "y": 40,
+      "width": 220,
+      "height": 80,
+      "pinned": false,
+      "canvas": {
+        "groupIds": [],
+        "frameId": null
+      }
+    }
+  ],
+  "afterRevision": 71,
+  "restored": [
+    {
+      "id": "r21-org-a",
+      "entityId": "r9-shared",
+      "graphId": "r21-native-org",
+      "x": 40,
+      "y": 40,
+      "width": 220,
+      "height": 80,
+      "pinned": false,
+      "canvas": {
+        "groupIds": [
+          "F-q9EyzKT9FJGleqmuQzi"
+        ],
+        "frameId": null
+      }
+    },
+    {
+      "id": "r21-org-b",
+      "entityId": "r9-shared",
+      "graphId": "r21-native-org",
+      "x": 330,
+      "y": 40,
+      "width": 220,
+      "height": 80,
+      "pinned": false,
+      "canvas": {
+        "groupIds": [
+          "F-q9EyzKT9FJGleqmuQzi"
+        ],
+        "frameId": null
+      }
+    }
+  ],
+  "history": [
+    {
+      "id": "c12b4eb4-fb4b-4f6e-80fb-1649ea404825",
+      "parentChangeId": "92c70dcf-db5f-4537-bf9d-758c9da98041",
+      "operationId": "operation-00e4d3d0-4bf4-4895-9a52-2066e5c4ffd8",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 69,
+      "revision": 70,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "用户编辑画布",
+      "timestamp": "2026-10-02T10:24:42.929Z",
+      "operations": [
+        {
+          "type": "representation.patch",
+          "id": "r21-org-a",
+          "patch": {
+            "canvas": {
+              "groupIds": [],
+              "frameId": null
+            }
+          }
+        },
+        {
+          "type": "representation.patch",
+          "id": "r21-org-b",
+          "patch": {
+            "canvas": {
+              "groupIds": [],
+              "frameId": null
+            }
+          }
+        }
+      ],
+      "affectedIds": [
+        "r21-org-a",
+        "r9-shared",
+        "r21-native-org",
+        "r21-org-b"
+      ],
+      "appliedOperations": [
+        {
+          "type": "representation.patch",
+          "id": "r21-org-a",
+          "patch": {
+            "canvas": {
+              "groupIds": [],
+              "frameId": null
+            }
+          }
+        },
+        {
+          "type": "representation.patch",
+          "id": "r21-org-b",
+          "patch": {
+            "canvas": {
+              "groupIds": [],
+              "frameId": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "cba36430-ec0d-48fa-b04c-bb61648644b7",
+      "parentChangeId": "c12b4eb4-fb4b-4f6e-80fb-1649ea404825",
+      "operationId": "operation-e5bc2e8e-1466-4761-bf7c-8f1edcc4637f",
+      "projectId": "d0169057-e15a-4003-ad8c-083db0da7716",
+      "workCopyId": "5c28ed48-f1c9-4673-9046-368f50940bd0",
+      "baseRevision": 70,
+      "revision": 71,
+      "actor": {
+        "id": "local-user",
+        "kind": "user",
+        "label": "本地用户"
+      },
+      "reason": "撤销：用户编辑画布",
+      "timestamp": "2026-10-02T10:24:43.670Z",
+      "operations": [
+        {
+          "type": "representation.patch",
+          "id": "r21-org-b",
+          "patch": {
+            "canvas": {
+              "groupIds": [
+                "F-q9EyzKT9FJGleqmuQzi"
+              ],
+              "frameId": null
+            }
+          }
+        },
+        {
+          "type": "representation.patch",
+          "id": "r21-org-a",
+          "patch": {
+            "canvas": {
+              "groupIds": [
+                "F-q9EyzKT9FJGleqmuQzi"
+              ],
+              "frameId": null
+            }
+          }
+        }
+      ],
+      "affectedIds": [
+        "r21-org-b",
+        "r9-shared",
+        "r21-native-org",
+        "r21-org-a"
+      ],
+      "appliedOperations": [
+        {
+          "type": "representation.patch",
+          "id": "r21-org-a",
+          "patch": {
+            "canvas": {
+              "groupIds": [
+                "F-q9EyzKT9FJGleqmuQzi"
+              ],
+              "frameId": null
+            }
+          }
+        },
+        {
+          "type": "representation.patch",
+          "id": "r21-org-b",
+          "patch": {
+            "canvas": {
+              "groupIds": [
+                "F-q9EyzKT9FJGleqmuQzi"
+              ],
+              "frameId": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "status": "passed"
+}

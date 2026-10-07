@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-02T02:11:34.372Z",
+  "status": 200,
+  "id": "canvas-resource-724dc7df9675439d8a84f0ac2f30b04319357a9a",
+  "bytes": 352,
+  "sha256": "eadbc4295be5e8fafea363ac7efdd683db0b7f1eea7b254335ae41ee017815a7",
+  "metadataBytes": 352,
+  "metadataSha256": "eadbc4295be5e8fafea363ac7efdd683db0b7f1eea7b254335ae41ee017815a7",
+  "assertions": {
+    "resourceBytesExact": true,
+    "resourceHashExact": true
+  },
+  "boundary": "r4原生上传已保存160x96；原probe错将JSON envelope当资源bytes，本记录按base64 data实测。原错误报告保留。"
+}

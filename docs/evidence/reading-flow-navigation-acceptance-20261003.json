@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-03",
+  "passed": 13,
+  "total": 13,
+  "cases": [
+    {
+      "name": "Outline follows jump to update",
+      "pass": true,
+      "details": {
+        "actual": "update"
+      }
+    },
+    {
+      "name": "Outline follows jump to two-memories",
+      "pass": true,
+      "details": {
+        "actual": "two-memories"
+      }
+    },
+    {
+      "name": "Outline follows jump to evidence",
+      "pass": true,
+      "details": {
+        "actual": "evidence"
+      }
+    },
+    {
+      "name": "Outline follows jump to probability",
+      "pass": true,
+      "details": {
+        "actual": "probability"
+      }
+    },
+    {
+      "name": "Outline follows jump to reproduction",
+      "pass": true,
+      "details": {
+        "actual": "reproduction"
+      }
+    },
+    {
+      "name": "Outline follows jump to inference",
+      "pass": true,
+      "details": {
+        "actual": "inference"
+      }
+    },
+    {
+      "name": "Outline follows jump to signal-confidence",
+      "pass": true,
+      "details": {
+        "actual": "signal-confidence"
+      }
+    },
+    {
+      "name": "Outline follows jump to memory-problem",
+      "pass": true,
+      "details": {
+        "actual": "memory-problem"
+      }
+    },
+    {
+      "name": "Deep expanded evidence retains its active step",
+      "pass": true,
+      "details": {
+        "actual": "evidence"
+      }
+    },
+    {
+      "name": "Collapsing evidence resynchronizes the outline",
+      "pass": true,
+      "details": {
+        "actual": "evidence"
+      }
+    },
+    {
+      "name": "Outline follows responsive jump at 900",
+      "pass": true,
+      "details": {
+        "actual": "update"
+      }
+    },
+    {
+      "name": "Outline follows responsive jump at 390",
+      "pass": true,
+      "details": {
+        "actual": "update"
+      }
+    },
+    {
+      "name": "Desktop restoration follows the visible memory step",
+      "pass": true,
+      "details": {
+        "actual": "two-memories"
+      }
+    }
+  ],
+  "limitation": "验证目录状态与浏览器操作，不证明真人理解。"
+}

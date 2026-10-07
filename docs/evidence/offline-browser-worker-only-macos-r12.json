@@ -1,0 +1,8 @@
+{
+  "checkedAt": "2026-10-02T05:01:25.608Z",
+  "previousEvidence": "offline-preview-worker-resumed-macos-r12.json",
+  "boundary": "SVG与PNG已通过；上一Worker探针在注册接收器前await字体请求可能丢失ready。本次先取字体再构造Worker，开始立即安装接收器，不改产品代码或画布数据。",
+  "assertions": {},
+  "failure": "Error: JavaScript evaluation failed at line 0, column 0: Error: browser font Worker timeout: [{\"type\":\"ready\"}]\n    at <anonymous>:8:32; expression: async({workerName,fontName})=>{\\n  const font=await(await fetch(\"/excalidraw-assets/fonts/Excalifont/\"+encodeURIComponent(fontName))).arrayBuffer();\\n  const...",
+  "status": "failed"
+}

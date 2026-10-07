@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-10-02T10:33:16.531Z",
+  "previousAttempt": "native-mixed-copy-macos-r22.json",
+  "beforeRevision": 71,
+  "afterRevision": 72,
+  "camera": {
+    "offsetLeft": 72,
+    "offsetTop": 182,
+    "width": 1018,
+    "height": 718,
+    "scrollX": 214,
+    "scrollY": 279,
+    "zoom": 1
+  },
+  "points": {
+    "start": {
+      "x": 356,
+      "y": 681
+    },
+    "end": {
+      "x": 576,
+      "y": 761
+    }
+  },
+  "hits": {
+    "start": "CANVAS excalidraw__canvas interactive",
+    "end": "CANVAS excalidraw__canvas interactive"
+  },
+  "free": {
+    "id": "BSitH1vQZMwXwHzXTU_yV",
+    "graphId": "r21-native-org",
+    "element": {
+      "id": "BSitH1vQZMwXwHzXTU_yV",
+      "type": "rectangle",
+      "x": 70,
+      "y": 220,
+      "width": 220,
+      "height": 80,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a4",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1980493440,
+      "version": 3,
+      "versionNonce": 277678464,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1790937196225,
+      "link": null,
+      "locked": false,
+      "customData": {
+        "agentCanvas": {
+          "freeElementId": "BSitH1vQZMwXwHzXTU_yV",
+          "role": "free"
+        }
+      }
+    }
+  },
+  "assertions": {
+    "oneRevision": true,
+    "entitiesUnchanged": true
+  }
+}

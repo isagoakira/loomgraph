@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-02T06:21:05.578Z",
+  "status": "passed",
+  "url": "http://127.0.0.1:4317/",
+  "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+  "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+  "beforeRevision": 76,
+  "afterRevision": 76,
+  "beforeSnapshotSha256": "17a1938c28e6f675689b994991f5b1544ac6d4f66234a56d707808b9b88ba14b",
+  "afterSnapshotSha256": "17a1938c28e6f675689b994991f5b1544ac6d4f66234a56d707808b9b88ba14b",
+  "assertions": {
+    "sameOriginalIdentity": true,
+    "expectedOriginalRevision": true,
+    "originalSnapshotUnchanged": true,
+    "browserReturned": true,
+    "canvasVisible": true
+  },
+  "boundary": "只读返回原有演示服务，清除测试设备尺寸覆盖，未恢复或写入原项目；隔离项目与证据另行保留。"
+}

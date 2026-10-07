@@ -1,0 +1,3340 @@
+{
+  "checkedAt": "2026-10-02T00:55:45.603Z",
+  "path": "实际历史侧栏下载和原生HTML文件输入上传；新副本不覆盖当前项目",
+  "before": {
+    "schemaVersion": 1,
+    "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+    "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+    "revision": 53,
+    "title": "Agent Visual Canvas · 协作演示",
+    "goal": "验证实时进度、多图引用、跨图独立批注、固定位置和可追溯的增量修改。",
+    "createdAt": "2026-10-01T20:47:32.744Z",
+    "updatedAt": "2026-10-02T00:54:38.990Z",
+    "entities": [
+      {
+        "id": "fixture-entity-0",
+        "kind": "module",
+        "title": "模块 1 · 项目内核",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-1",
+        "kind": "task",
+        "title": "任务 2 · 验证视口",
+        "parentId": "fixture-entity-0",
+        "status": "doing",
+        "source": "root-visible-acceptance",
+        "updatedAt": "2026-10-01T23:39:25.775Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-2",
+        "kind": "task",
+        "title": "任务 3 · 组装批注",
+        "parentId": "fixture-entity-0",
+        "status": "blocked",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-3",
+        "kind": "task",
+        "title": "任务 4 · 核对回执",
+        "parentId": "fixture-entity-0",
+        "status": "review",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-4",
+        "kind": "task",
+        "title": "任务 5 · 保存增量",
+        "parentId": "fixture-entity-0",
+        "status": "done",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-5",
+        "kind": "module",
+        "title": "模块 2 · 本地连接（Agent 后续更新）",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:15:12.606Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-6",
+        "kind": "task",
+        "title": "任务 7 · 组装批注",
+        "parentId": "fixture-entity-5",
+        "status": "canceled",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-7",
+        "kind": "task",
+        "title": "任务 8 · 核对回执",
+        "parentId": "fixture-entity-5",
+        "status": "todo",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-8",
+        "kind": "task",
+        "title": "任务 9 · 保存增量",
+        "parentId": "fixture-entity-5",
+        "status": "review",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:24:44.279Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-9",
+        "kind": "task",
+        "title": "任务 10 · 验证视口",
+        "parentId": "fixture-entity-5",
+        "status": "blocked",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-10",
+        "kind": "module",
+        "title": "模块 3 · 画布交互",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-11",
+        "kind": "task",
+        "title": "任务 12 · 核对回执",
+        "parentId": "fixture-entity-10",
+        "status": "done",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-12",
+        "kind": "task",
+        "title": "任务 13 · 保存增量",
+        "parentId": "fixture-entity-10",
+        "status": "failed",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-13",
+        "kind": "task",
+        "title": "任务 14 · 验证视口",
+        "parentId": "fixture-entity-10",
+        "status": "canceled",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-14",
+        "kind": "task",
+        "title": "任务 15 · 组装批注",
+        "parentId": "fixture-entity-10",
+        "status": "todo",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-15",
+        "kind": "module",
+        "title": "模块 4 · 反馈处理",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-16",
+        "kind": "task",
+        "title": "任务 17 · 保存增量",
+        "parentId": "fixture-entity-15",
+        "status": "blocked",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-17",
+        "kind": "task",
+        "title": "任务 18 · 验证视口",
+        "parentId": "fixture-entity-15",
+        "status": "review",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      }
+    ],
+    "relations": [
+      {
+        "id": "fixture-relation-0-0",
+        "kind": "data_flow",
+        "from": "fixture-entity-0",
+        "to": "fixture-entity-1",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-1",
+        "kind": "data_flow",
+        "from": "fixture-entity-1",
+        "to": "fixture-entity-2",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-2",
+        "kind": "data_flow",
+        "from": "fixture-entity-2",
+        "to": "fixture-entity-3",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-3",
+        "kind": "data_flow",
+        "from": "fixture-entity-3",
+        "to": "fixture-entity-4",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-4",
+        "kind": "data_flow",
+        "from": "fixture-entity-4",
+        "to": "fixture-entity-5",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-5",
+        "kind": "data_flow",
+        "from": "fixture-entity-5",
+        "to": "fixture-entity-6",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-6",
+        "kind": "data_flow",
+        "from": "fixture-entity-6",
+        "to": "fixture-entity-7",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-1-0",
+        "kind": "sequence",
+        "from": "fixture-entity-4",
+        "to": "fixture-entity-5",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-1",
+        "kind": "sequence",
+        "from": "fixture-entity-5",
+        "to": "fixture-entity-6",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-2",
+        "kind": "sequence",
+        "from": "fixture-entity-6",
+        "to": "fixture-entity-7",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-3",
+        "kind": "sequence",
+        "from": "fixture-entity-7",
+        "to": "fixture-entity-8",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-4",
+        "kind": "sequence",
+        "from": "fixture-entity-8",
+        "to": "fixture-entity-9",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-5",
+        "kind": "sequence",
+        "from": "fixture-entity-9",
+        "to": "fixture-entity-10",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-6",
+        "kind": "sequence",
+        "from": "fixture-entity-10",
+        "to": "fixture-entity-11",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-2-0",
+        "kind": "sequence",
+        "from": "fixture-entity-8",
+        "to": "fixture-entity-9",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-1",
+        "kind": "sequence",
+        "from": "fixture-entity-9",
+        "to": "fixture-entity-10",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-2",
+        "kind": "sequence",
+        "from": "fixture-entity-10",
+        "to": "fixture-entity-11",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-3",
+        "kind": "sequence",
+        "from": "fixture-entity-11",
+        "to": "fixture-entity-12",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-4",
+        "kind": "sequence",
+        "from": "fixture-entity-12",
+        "to": "fixture-entity-13",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-5",
+        "kind": "sequence",
+        "from": "fixture-entity-13",
+        "to": "fixture-entity-14",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-6",
+        "kind": "sequence",
+        "from": "fixture-entity-14",
+        "to": "fixture-entity-15",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-3-0",
+        "kind": "data_flow",
+        "from": "fixture-entity-12",
+        "to": "fixture-entity-13",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-1",
+        "kind": "data_flow",
+        "from": "fixture-entity-13",
+        "to": "fixture-entity-14",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-2",
+        "kind": "data_flow",
+        "from": "fixture-entity-14",
+        "to": "fixture-entity-15",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-3",
+        "kind": "data_flow",
+        "from": "fixture-entity-15",
+        "to": "fixture-entity-16",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-4",
+        "kind": "data_flow",
+        "from": "fixture-entity-16",
+        "to": "fixture-entity-17",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-5",
+        "kind": "data_flow",
+        "from": "fixture-entity-17",
+        "to": "fixture-entity-0",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-6",
+        "kind": "data_flow",
+        "from": "fixture-entity-0",
+        "to": "fixture-entity-1",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-4-0",
+        "kind": "sequence",
+        "from": "fixture-entity-16",
+        "to": "fixture-entity-17",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-1",
+        "kind": "sequence",
+        "from": "fixture-entity-17",
+        "to": "fixture-entity-0",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-2",
+        "kind": "sequence",
+        "from": "fixture-entity-0",
+        "to": "fixture-entity-1",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-3",
+        "kind": "sequence",
+        "from": "fixture-entity-1",
+        "to": "fixture-entity-2",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-4",
+        "kind": "sequence",
+        "from": "fixture-entity-2",
+        "to": "fixture-entity-3",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-5",
+        "kind": "sequence",
+        "from": "fixture-entity-3",
+        "to": "fixture-entity-4",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-6",
+        "kind": "sequence",
+        "from": "fixture-entity-4",
+        "to": "fixture-entity-5",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-5-0",
+        "kind": "sequence",
+        "from": "fixture-entity-2",
+        "to": "fixture-entity-3",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-1",
+        "kind": "sequence",
+        "from": "fixture-entity-3",
+        "to": "fixture-entity-4",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-2",
+        "kind": "sequence",
+        "from": "fixture-entity-4",
+        "to": "fixture-entity-5",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-3",
+        "kind": "sequence",
+        "from": "fixture-entity-5",
+        "to": "fixture-entity-6",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-4",
+        "kind": "sequence",
+        "from": "fixture-entity-6",
+        "to": "fixture-entity-7",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-5",
+        "kind": "sequence",
+        "from": "fixture-entity-7",
+        "to": "fixture-entity-8",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-6",
+        "kind": "sequence",
+        "from": "fixture-entity-8",
+        "to": "fixture-entity-9",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      }
+    ],
+    "graphs": [
+      {
+        "id": "ec622545-9f75-462e-8bae-06827a13681a",
+        "title": "项目总览",
+        "kind": "overview",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      },
+      {
+        "id": "fixture-graph-1",
+        "title": "结构与模块",
+        "kind": "structure",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      },
+      {
+        "id": "fixture-graph-2",
+        "title": "实施流程",
+        "kind": "flow",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      },
+      {
+        "id": "fixture-graph-3",
+        "title": "反馈与验收",
+        "kind": "mixed",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      },
+      {
+        "id": "fixture-graph-4",
+        "title": "子系统细节",
+        "kind": "structure",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      },
+      {
+        "id": "fixture-graph-5",
+        "title": "运行与交接",
+        "kind": "flow",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      }
+    ],
+    "representations": [
+      {
+        "id": "fixture-rep-0-0",
+        "entityId": "fixture-entity-0",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "fixture-graph-1"
+        ]
+      },
+      {
+        "id": "fixture-rep-0-1",
+        "entityId": "fixture-entity-1",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 605.714329310826,
+        "y": 269.7142421177455,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [],
+        "rotation": 0,
+        "style": {
+          "strokeColor": "#39705e",
+          "backgroundColor": "#dcebe2",
+          "fillStyle": "solid",
+          "strokeWidth": 1.5,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100
+        }
+      },
+      {
+        "id": "fixture-rep-0-2",
+        "entityId": "fixture-entity-2",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 576,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-0-3",
+        "entityId": "fixture-entity-3",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 832,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-0-4",
+        "entityId": "fixture-entity-4",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 1088,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-0-5",
+        "entityId": "fixture-entity-5",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-0-6",
+        "entityId": "fixture-entity-6",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 320,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-0-7",
+        "entityId": "fixture-entity-7",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 576,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-0",
+        "entityId": "fixture-entity-4",
+        "graphId": "fixture-graph-1",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "fixture-graph-2"
+        ]
+      },
+      {
+        "id": "fixture-rep-1-1",
+        "entityId": "fixture-entity-5",
+        "graphId": "fixture-graph-1",
+        "x": 332,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-2",
+        "entityId": "fixture-entity-6",
+        "graphId": "fixture-graph-1",
+        "x": 630,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-3",
+        "entityId": "fixture-entity-7",
+        "graphId": "fixture-graph-1",
+        "x": 928,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-4",
+        "entityId": "fixture-entity-8",
+        "graphId": "fixture-graph-1",
+        "x": 1226,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-5",
+        "entityId": "fixture-entity-9",
+        "graphId": "fixture-graph-1",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-6",
+        "entityId": "fixture-entity-10",
+        "graphId": "fixture-graph-1",
+        "x": 332,
+        "y": 280,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-7",
+        "entityId": "fixture-entity-11",
+        "graphId": "fixture-graph-1",
+        "x": 630,
+        "y": 586,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-0",
+        "entityId": "fixture-entity-8",
+        "graphId": "fixture-graph-2",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "fixture-graph-3"
+        ]
+      },
+      {
+        "id": "fixture-rep-2-1",
+        "entityId": "fixture-entity-9",
+        "graphId": "fixture-graph-2",
+        "x": 320,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-2",
+        "entityId": "fixture-entity-10",
+        "graphId": "fixture-graph-2",
+        "x": 576,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-3",
+        "entityId": "fixture-entity-11",
+        "graphId": "fixture-graph-2",
+        "x": 832,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-4",
+        "entityId": "fixture-entity-12",
+        "graphId": "fixture-graph-2",
+        "x": 1088,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-5",
+        "entityId": "fixture-entity-13",
+        "graphId": "fixture-graph-2",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-6",
+        "entityId": "fixture-entity-14",
+        "graphId": "fixture-graph-2",
+        "x": 320,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-7",
+        "entityId": "fixture-entity-15",
+        "graphId": "fixture-graph-2",
+        "x": 576,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-0",
+        "entityId": "fixture-entity-12",
+        "graphId": "fixture-graph-3",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "fixture-graph-4"
+        ]
+      },
+      {
+        "id": "fixture-rep-3-1",
+        "entityId": "fixture-entity-13",
+        "graphId": "fixture-graph-3",
+        "x": 320,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-2",
+        "entityId": "fixture-entity-14",
+        "graphId": "fixture-graph-3",
+        "x": 576,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-3",
+        "entityId": "fixture-entity-15",
+        "graphId": "fixture-graph-3",
+        "x": 832,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-4",
+        "entityId": "fixture-entity-16",
+        "graphId": "fixture-graph-3",
+        "x": 1088,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-5",
+        "entityId": "fixture-entity-17",
+        "graphId": "fixture-graph-3",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-6",
+        "entityId": "fixture-entity-0",
+        "graphId": "fixture-graph-3",
+        "x": 320,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-7",
+        "entityId": "fixture-entity-1",
+        "graphId": "fixture-graph-3",
+        "x": 576,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-0",
+        "entityId": "fixture-entity-16",
+        "graphId": "fixture-graph-4",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "fixture-graph-5"
+        ]
+      },
+      {
+        "id": "fixture-rep-4-1",
+        "entityId": "fixture-entity-17",
+        "graphId": "fixture-graph-4",
+        "x": 320,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-2",
+        "entityId": "fixture-entity-0",
+        "graphId": "fixture-graph-4",
+        "x": 576,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-3",
+        "entityId": "fixture-entity-1",
+        "graphId": "fixture-graph-4",
+        "x": 832,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-4",
+        "entityId": "fixture-entity-2",
+        "graphId": "fixture-graph-4",
+        "x": 1088,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-5",
+        "entityId": "fixture-entity-3",
+        "graphId": "fixture-graph-4",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-6",
+        "entityId": "fixture-entity-4",
+        "graphId": "fixture-graph-4",
+        "x": 320,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-7",
+        "entityId": "fixture-entity-5",
+        "graphId": "fixture-graph-4",
+        "x": 576,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-0",
+        "entityId": "fixture-entity-2",
+        "graphId": "fixture-graph-5",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-1",
+        "entityId": "fixture-entity-3",
+        "graphId": "fixture-graph-5",
+        "x": 320,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-2",
+        "entityId": "fixture-entity-4",
+        "graphId": "fixture-graph-5",
+        "x": 576,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-3",
+        "entityId": "fixture-entity-5",
+        "graphId": "fixture-graph-5",
+        "x": 832,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-4",
+        "entityId": "fixture-entity-6",
+        "graphId": "fixture-graph-5",
+        "x": 1088,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-5",
+        "entityId": "fixture-entity-7",
+        "graphId": "fixture-graph-5",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-6",
+        "entityId": "fixture-entity-8",
+        "graphId": "fixture-graph-5",
+        "x": 320,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-7",
+        "entityId": "fixture-entity-9",
+        "graphId": "fixture-graph-5",
+        "x": 576,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      }
+    ],
+    "freeElements": [
+      {
+        "id": "dA8N2CANJf9tCDi01mgRI",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "dA8N2CANJf9tCDi01mgRI",
+          "type": "ellipse",
+          "x": 897.8571428571429,
+          "y": 346.28571428571433,
+          "width": 262.8571428571429,
+          "height": 80,
+          "angle": 0,
+          "strokeColor": "#1e1e1e",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aN",
+          "roundness": {
+            "type": 2
+          },
+          "seed": 2033889331,
+          "version": 4,
+          "versionNonce": 1163689843,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790898503932,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "dA8N2CANJf9tCDi01mgRI",
+              "role": "free"
+            }
+          }
+        }
+      },
+      {
+        "id": "65EdY7_2JK0xUSA6TuYqe",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "65EdY7_2JK0xUSA6TuYqe",
+          "type": "text",
+          "x": 860.7142857142857,
+          "y": 303.42857142857144,
+          "width": 280,
+          "height": 25,
+          "angle": 0,
+          "strokeColor": "#1e1e1e",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aO",
+          "roundness": null,
+          "seed": 2007854749,
+          "version": 3,
+          "versionNonce": 591561971,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790898506276,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "65EdY7_2JK0xUSA6TuYqe",
+              "role": "free"
+            }
+          },
+          "text": "自由文字验收 · 与业务身份独立",
+          "fontSize": 20,
+          "fontFamily": 5,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "originalText": "自由文字验收 · 与业务身份独立",
+          "autoResize": true,
+          "lineHeight": 1.25
+        }
+      },
+      {
+        "id": "GQKnPj-4TvTtVzB0U6N0A",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "GQKnPj-4TvTtVzB0U6N0A",
+          "type": "image",
+          "x": 666.4285714285714,
+          "y": 390.7142857142857,
+          "width": 160,
+          "height": 96,
+          "angle": 0,
+          "strokeColor": "transparent",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aP",
+          "roundness": null,
+          "seed": 1619144065,
+          "version": 5,
+          "versionNonce": 1936313327,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790899538943,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "resourceId": "canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+              "role": "free",
+              "freeElementId": "GQKnPj-4TvTtVzB0U6N0A"
+            }
+          },
+          "status": "pending",
+          "fileId": "9211392eeae7755900ae567a7bff31d649e6145b",
+          "scale": [
+            1,
+            1
+          ],
+          "crop": null
+        }
+      }
+    ],
+    "annotations": [
+      {
+        "id": "annotation-1312fff3-fde6-46b4-80c1-ea8e0e79b15b",
+        "text": "真实验收 B：请说明本地连接模块和其他图中的同一对象是否一致。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "fixture-graph-1"
+          }
+        ],
+        "observedRevision": 3,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T22:17:49.361Z",
+        "updatedAt": "2026-10-01T22:19:32.740Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-2f303f05-6a31-4f7e-a882-5f0f9d5cad08",
+        "text": "真实批量 A：保留用户排版，并核对这个总览的状态来源。补充：优先核对最近更新时间。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+          }
+        ],
+        "observedRevision": 5,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "responded",
+        "createdAt": "2026-10-01T22:51:59.108Z",
+        "updatedAt": "2026-10-01T22:55:21.825Z",
+        "responses": [
+          {
+            "id": "123fd64d-67b3-4345-b993-04ee27ac03c9",
+            "annotationId": "annotation-2f303f05-6a31-4f7e-a882-5f0f9d5cad08",
+            "text": "验收回应 A：本条保留观察版本与原布局，状态来源和更新时间可独立核对。",
+            "status": "responded",
+            "revision": 13,
+            "createdAt": "2026-10-01T22:55:21.825Z",
+            "actor": {
+              "id": "root-real-feedback",
+              "kind": "agent",
+              "label": "本机验收 Agent"
+            }
+          }
+        ],
+        "batchId": "batch-00e6f183-0519-4e69-bd82-a591b3411750"
+      },
+      {
+        "id": "annotation-a733edb6-a9e8-4185-8c7c-11a64e8bd155",
+        "text": "真实批量 B：说明结构图与总览的同一对象引用。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "fixture-graph-1"
+          }
+        ],
+        "observedRevision": 6,
+        "graphPath": [
+          "fixture-graph-1"
+        ],
+        "status": "responded",
+        "createdAt": "2026-10-01T22:52:28.607Z",
+        "updatedAt": "2026-10-01T22:55:21.913Z",
+        "responses": [
+          {
+            "id": "3c2ec7e4-2436-4c05-9cfa-ef349366e91f",
+            "annotationId": "annotation-a733edb6-a9e8-4185-8c7c-11a64e8bd155",
+            "text": "验收回应 B：结构图与总览通过稳定对象身份引用，图上位置按表示独立保存。",
+            "status": "responded",
+            "revision": 15,
+            "createdAt": "2026-10-01T22:55:21.913Z",
+            "actor": {
+              "id": "root-real-feedback",
+              "kind": "agent",
+              "label": "本机验收 Agent"
+            }
+          }
+        ],
+        "batchId": "batch-00e6f183-0519-4e69-bd82-a591b3411750"
+      },
+      {
+        "id": "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144",
+        "text": "真实批量 C：拆清这张流程图的执行依赖与说明连线。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "fixture-graph-2"
+          }
+        ],
+        "observedRevision": 7,
+        "graphPath": [
+          "fixture-graph-2"
+        ],
+        "status": "needs_clarification",
+        "createdAt": "2026-10-01T22:52:30.745Z",
+        "updatedAt": "2026-10-01T22:55:21.970Z",
+        "responses": [
+          {
+            "id": "eb5e8cfd-0dde-4ed4-b510-7c33ec4118b1",
+            "annotationId": "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144",
+            "text": "验收回应 C：请明确需要变更的执行依赖；说明连线保留，其他两条已独立答复。",
+            "status": "needs_clarification",
+            "revision": 17,
+            "createdAt": "2026-10-01T22:55:21.970Z",
+            "actor": {
+              "id": "root-real-feedback",
+              "kind": "agent",
+              "label": "本机验收 Agent"
+            }
+          }
+        ],
+        "batchId": "batch-00e6f183-0519-4e69-bd82-a591b3411750"
+      },
+      {
+        "id": "annotation-46506fa7-39d7-4e60-8b34-36236545370a",
+        "text": "重连验收：保留本条观察版本、原话与待提交状态。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+          }
+        ],
+        "observedRevision": 20,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:05:06.204Z",
+        "updatedAt": "2026-10-01T23:05:06.204Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-0874346d-1b6a-4dab-a302-03132b27b682",
+        "text": "重连顺序验收：Agent 新状态先提交，旧基线批注后重试。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+          }
+        ],
+        "observedRevision": 22,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:07:21.659Z",
+        "updatedAt": "2026-10-01T23:07:21.659Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-c849a413-87e7-4c07-81c9-c96539b11800",
+        "text": "区域验收：这块空白留给子图说明，保持现有节点位置。",
+        "targets": [
+          {
+            "type": "region",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+            "x": 855,
+            "y": 423.7142857142858,
+            "width": 257.14285714285734,
+            "height": 60
+          }
+        ],
+        "observedRevision": 29,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:40:35.984Z",
+        "updatedAt": "2026-10-01T23:40:35.984Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-591f6e3c-7960-40c7-b8a6-0ca82022e55d",
+        "text": "多选验收：这两个任务的完成条件分别保留，共同调整显示间距。",
+        "targets": [
+          {
+            "type": "representation",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+            "representationId": "fixture-rep-0-2"
+          },
+          {
+            "type": "representation",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+            "representationId": "fixture-rep-0-3"
+          }
+        ],
+        "observedRevision": 30,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:41:31.818Z",
+        "updatedAt": "2026-10-01T23:41:31.818Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-fb8b9279-e57b-444a-bece-bcb65fe04bfc",
+        "text": "连线验收：这一条顺序关系保留身份，说明与执行依赖分开。",
+        "targets": [
+          {
+            "type": "relation",
+            "graphId": "fixture-graph-1",
+            "relationId": "fixture-relation-1-0"
+          }
+        ],
+        "observedRevision": 33,
+        "graphPath": [
+          "fixture-graph-1"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:47:03.146Z",
+        "updatedAt": "2026-10-01T23:47:03.146Z",
+        "responses": []
+      }
+    ],
+    "batches": [
+      {
+        "id": "batch-00e6f183-0519-4e69-bd82-a591b3411750",
+        "annotationIds": [
+          "annotation-2f303f05-6a31-4f7e-a882-5f0f9d5cad08",
+          "annotation-a733edb6-a9e8-4185-8c7c-11a64e8bd155",
+          "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144"
+        ],
+        "createdAt": "2026-10-01T22:53:39.980Z",
+        "submittedRevision": 9,
+        "contextRef": "/api/feedback/batch-00e6f183-0519-4e69-bd82-a591b3411750/context",
+        "state": "partial"
+      }
+    ],
+    "discussions": [
+      {
+        "id": "discussion-3f67efc4-0cf9-4341-a27b-b65a60821124",
+        "scope": {
+          "type": "annotation",
+          "annotationId": "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144"
+        },
+        "role": "user",
+        "text": "追问验收：先处理 C 的说明连线，执行依赖保留；请给出逐条回应。",
+        "createdAt": "2026-10-01T23:42:24.965Z",
+        "actor": {
+          "id": "local-user",
+          "kind": "user",
+          "label": "本地用户"
+        }
+      },
+      {
+        "id": "discussion-eb9b7594-215d-4851-8aa2-1d5445aa6a96",
+        "scope": {
+          "type": "annotation",
+          "annotationId": "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144"
+        },
+        "role": "agent",
+        "parentId": "discussion-3f67efc4-0cf9-4341-a27b-b65a60821124",
+        "text": "追问回应验收：已保留原批注及观察版本。这里记录明确的说明连线范围，执行依赖保持原样。",
+        "createdAt": "2026-10-01T23:42:25.098Z",
+        "actor": {
+          "id": "root-real-ui-acceptance",
+          "kind": "agent"
+        }
+      }
+    ],
+    "runs": [],
+    "executors": [],
+    "requests": [],
+    "resources": [
+      {
+        "id": "canvas-resource-61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+        "name": "61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2.svg+xml",
+        "mimeType": "image/svg+xml",
+        "relativePath": "assets/canvas-resource-61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+        "sha256": "919bf50ad5f6f2f6ecbaaa5150f31135d1a5896e7e44178f22f8fa8523ee43c7",
+        "bytes": 271
+      },
+      {
+        "id": "canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+        "name": "9211392eeae7755900ae567a7bff31d649e6145b.svg+xml",
+        "mimeType": "image/svg+xml",
+        "relativePath": "assets/canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+        "sha256": "2a4ad4a3881ab849153eb92e770ef34f7a1e0c8dbcb967c59d55395c5df425a0",
+        "bytes": 271
+      }
+    ]
+  },
+  "after": {
+    "schemaVersion": 1,
+    "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+    "workCopyId": "566a834b-35e2-491c-ab21-31d6768affcb",
+    "revision": 53,
+    "title": "Agent Visual Canvas · 协作演示",
+    "goal": "验证实时进度、多图引用、跨图独立批注、固定位置和可追溯的增量修改。",
+    "createdAt": "2026-10-01T20:47:32.744Z",
+    "updatedAt": "2026-10-02T00:54:38.990Z",
+    "entities": [
+      {
+        "id": "fixture-entity-0",
+        "kind": "module",
+        "title": "模块 1 · 项目内核",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-1",
+        "kind": "task",
+        "title": "任务 2 · 验证视口",
+        "parentId": "fixture-entity-0",
+        "status": "doing",
+        "source": "root-visible-acceptance",
+        "updatedAt": "2026-10-01T23:39:25.775Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-2",
+        "kind": "task",
+        "title": "任务 3 · 组装批注",
+        "parentId": "fixture-entity-0",
+        "status": "blocked",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-3",
+        "kind": "task",
+        "title": "任务 4 · 核对回执",
+        "parentId": "fixture-entity-0",
+        "status": "review",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-4",
+        "kind": "task",
+        "title": "任务 5 · 保存增量",
+        "parentId": "fixture-entity-0",
+        "status": "done",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-5",
+        "kind": "module",
+        "title": "模块 2 · 本地连接（Agent 后续更新）",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:15:12.606Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-6",
+        "kind": "task",
+        "title": "任务 7 · 组装批注",
+        "parentId": "fixture-entity-5",
+        "status": "canceled",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-7",
+        "kind": "task",
+        "title": "任务 8 · 核对回执",
+        "parentId": "fixture-entity-5",
+        "status": "todo",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-8",
+        "kind": "task",
+        "title": "任务 9 · 保存增量",
+        "parentId": "fixture-entity-5",
+        "status": "review",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:24:44.279Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-9",
+        "kind": "task",
+        "title": "任务 10 · 验证视口",
+        "parentId": "fixture-entity-5",
+        "status": "blocked",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-10",
+        "kind": "module",
+        "title": "模块 3 · 画布交互",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-11",
+        "kind": "task",
+        "title": "任务 12 · 核对回执",
+        "parentId": "fixture-entity-10",
+        "status": "done",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-12",
+        "kind": "task",
+        "title": "任务 13 · 保存增量",
+        "parentId": "fixture-entity-10",
+        "status": "failed",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-13",
+        "kind": "task",
+        "title": "任务 14 · 验证视口",
+        "parentId": "fixture-entity-10",
+        "status": "canceled",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-14",
+        "kind": "task",
+        "title": "任务 15 · 组装批注",
+        "parentId": "fixture-entity-10",
+        "status": "todo",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-15",
+        "kind": "module",
+        "title": "模块 4 · 反馈处理",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-16",
+        "kind": "task",
+        "title": "任务 17 · 保存增量",
+        "parentId": "fixture-entity-15",
+        "status": "blocked",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      },
+      {
+        "id": "fixture-entity-17",
+        "kind": "task",
+        "title": "任务 18 · 验证视口",
+        "parentId": "fixture-entity-15",
+        "status": "review",
+        "source": "fixed-fixture",
+        "updatedAt": "2026-10-02T00:00:00.000Z",
+        "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。"
+      }
+    ],
+    "relations": [
+      {
+        "id": "fixture-relation-0-0",
+        "kind": "data_flow",
+        "from": "fixture-entity-0",
+        "to": "fixture-entity-1",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-1",
+        "kind": "data_flow",
+        "from": "fixture-entity-1",
+        "to": "fixture-entity-2",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-2",
+        "kind": "data_flow",
+        "from": "fixture-entity-2",
+        "to": "fixture-entity-3",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-3",
+        "kind": "data_flow",
+        "from": "fixture-entity-3",
+        "to": "fixture-entity-4",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-4",
+        "kind": "data_flow",
+        "from": "fixture-entity-4",
+        "to": "fixture-entity-5",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-5",
+        "kind": "data_flow",
+        "from": "fixture-entity-5",
+        "to": "fixture-entity-6",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-0-6",
+        "kind": "data_flow",
+        "from": "fixture-entity-6",
+        "to": "fixture-entity-7",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+        }
+      },
+      {
+        "id": "fixture-relation-1-0",
+        "kind": "sequence",
+        "from": "fixture-entity-4",
+        "to": "fixture-entity-5",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-1",
+        "kind": "sequence",
+        "from": "fixture-entity-5",
+        "to": "fixture-entity-6",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-2",
+        "kind": "sequence",
+        "from": "fixture-entity-6",
+        "to": "fixture-entity-7",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-3",
+        "kind": "sequence",
+        "from": "fixture-entity-7",
+        "to": "fixture-entity-8",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-4",
+        "kind": "sequence",
+        "from": "fixture-entity-8",
+        "to": "fixture-entity-9",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-5",
+        "kind": "sequence",
+        "from": "fixture-entity-9",
+        "to": "fixture-entity-10",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-1-6",
+        "kind": "sequence",
+        "from": "fixture-entity-10",
+        "to": "fixture-entity-11",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-1"
+        }
+      },
+      {
+        "id": "fixture-relation-2-0",
+        "kind": "sequence",
+        "from": "fixture-entity-8",
+        "to": "fixture-entity-9",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-1",
+        "kind": "sequence",
+        "from": "fixture-entity-9",
+        "to": "fixture-entity-10",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-2",
+        "kind": "sequence",
+        "from": "fixture-entity-10",
+        "to": "fixture-entity-11",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-3",
+        "kind": "sequence",
+        "from": "fixture-entity-11",
+        "to": "fixture-entity-12",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-4",
+        "kind": "sequence",
+        "from": "fixture-entity-12",
+        "to": "fixture-entity-13",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-5",
+        "kind": "sequence",
+        "from": "fixture-entity-13",
+        "to": "fixture-entity-14",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-2-6",
+        "kind": "sequence",
+        "from": "fixture-entity-14",
+        "to": "fixture-entity-15",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-2"
+        }
+      },
+      {
+        "id": "fixture-relation-3-0",
+        "kind": "data_flow",
+        "from": "fixture-entity-12",
+        "to": "fixture-entity-13",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-1",
+        "kind": "data_flow",
+        "from": "fixture-entity-13",
+        "to": "fixture-entity-14",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-2",
+        "kind": "data_flow",
+        "from": "fixture-entity-14",
+        "to": "fixture-entity-15",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-3",
+        "kind": "data_flow",
+        "from": "fixture-entity-15",
+        "to": "fixture-entity-16",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-4",
+        "kind": "data_flow",
+        "from": "fixture-entity-16",
+        "to": "fixture-entity-17",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-5",
+        "kind": "data_flow",
+        "from": "fixture-entity-17",
+        "to": "fixture-entity-0",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-3-6",
+        "kind": "data_flow",
+        "from": "fixture-entity-0",
+        "to": "fixture-entity-1",
+        "label": "数据流",
+        "metadata": {
+          "graphId": "fixture-graph-3"
+        }
+      },
+      {
+        "id": "fixture-relation-4-0",
+        "kind": "sequence",
+        "from": "fixture-entity-16",
+        "to": "fixture-entity-17",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-1",
+        "kind": "sequence",
+        "from": "fixture-entity-17",
+        "to": "fixture-entity-0",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-2",
+        "kind": "sequence",
+        "from": "fixture-entity-0",
+        "to": "fixture-entity-1",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-3",
+        "kind": "sequence",
+        "from": "fixture-entity-1",
+        "to": "fixture-entity-2",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-4",
+        "kind": "sequence",
+        "from": "fixture-entity-2",
+        "to": "fixture-entity-3",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-5",
+        "kind": "sequence",
+        "from": "fixture-entity-3",
+        "to": "fixture-entity-4",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-4-6",
+        "kind": "sequence",
+        "from": "fixture-entity-4",
+        "to": "fixture-entity-5",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-4"
+        }
+      },
+      {
+        "id": "fixture-relation-5-0",
+        "kind": "sequence",
+        "from": "fixture-entity-2",
+        "to": "fixture-entity-3",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-1",
+        "kind": "sequence",
+        "from": "fixture-entity-3",
+        "to": "fixture-entity-4",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-2",
+        "kind": "sequence",
+        "from": "fixture-entity-4",
+        "to": "fixture-entity-5",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-3",
+        "kind": "sequence",
+        "from": "fixture-entity-5",
+        "to": "fixture-entity-6",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-4",
+        "kind": "sequence",
+        "from": "fixture-entity-6",
+        "to": "fixture-entity-7",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-5",
+        "kind": "sequence",
+        "from": "fixture-entity-7",
+        "to": "fixture-entity-8",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      },
+      {
+        "id": "fixture-relation-5-6",
+        "kind": "sequence",
+        "from": "fixture-entity-8",
+        "to": "fixture-entity-9",
+        "label": "顺序",
+        "metadata": {
+          "graphId": "fixture-graph-5"
+        }
+      }
+    ],
+    "graphs": [
+      {
+        "id": "ec622545-9f75-462e-8bae-06827a13681a",
+        "title": "项目总览",
+        "kind": "overview",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      },
+      {
+        "id": "fixture-graph-1",
+        "title": "结构与模块",
+        "kind": "structure",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      },
+      {
+        "id": "fixture-graph-2",
+        "title": "实施流程",
+        "kind": "flow",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      },
+      {
+        "id": "fixture-graph-3",
+        "title": "反馈与验收",
+        "kind": "mixed",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      },
+      {
+        "id": "fixture-graph-4",
+        "title": "子系统细节",
+        "kind": "structure",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      },
+      {
+        "id": "fixture-graph-5",
+        "title": "运行与交接",
+        "kind": "flow",
+        "description": "固定验收样例；状态来源为演示数据，不代表真实任务执行。"
+      }
+    ],
+    "representations": [
+      {
+        "id": "fixture-rep-0-0",
+        "entityId": "fixture-entity-0",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "fixture-graph-1"
+        ]
+      },
+      {
+        "id": "fixture-rep-0-1",
+        "entityId": "fixture-entity-1",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 605.714329310826,
+        "y": 269.7142421177455,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [],
+        "rotation": 0,
+        "style": {
+          "strokeColor": "#39705e",
+          "backgroundColor": "#dcebe2",
+          "fillStyle": "solid",
+          "strokeWidth": 1.5,
+          "strokeStyle": "solid",
+          "roughness": 0,
+          "opacity": 100
+        }
+      },
+      {
+        "id": "fixture-rep-0-2",
+        "entityId": "fixture-entity-2",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 576,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-0-3",
+        "entityId": "fixture-entity-3",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 832,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-0-4",
+        "entityId": "fixture-entity-4",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 1088,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-0-5",
+        "entityId": "fixture-entity-5",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-0-6",
+        "entityId": "fixture-entity-6",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 320,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-0-7",
+        "entityId": "fixture-entity-7",
+        "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+        "x": 576,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-0",
+        "entityId": "fixture-entity-4",
+        "graphId": "fixture-graph-1",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "fixture-graph-2"
+        ]
+      },
+      {
+        "id": "fixture-rep-1-1",
+        "entityId": "fixture-entity-5",
+        "graphId": "fixture-graph-1",
+        "x": 332,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-2",
+        "entityId": "fixture-entity-6",
+        "graphId": "fixture-graph-1",
+        "x": 630,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-3",
+        "entityId": "fixture-entity-7",
+        "graphId": "fixture-graph-1",
+        "x": 928,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-4",
+        "entityId": "fixture-entity-8",
+        "graphId": "fixture-graph-1",
+        "x": 1226,
+        "y": 174,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-5",
+        "entityId": "fixture-entity-9",
+        "graphId": "fixture-graph-1",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-6",
+        "entityId": "fixture-entity-10",
+        "graphId": "fixture-graph-1",
+        "x": 332,
+        "y": 280,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-1-7",
+        "entityId": "fixture-entity-11",
+        "graphId": "fixture-graph-1",
+        "x": 630,
+        "y": 586,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-0",
+        "entityId": "fixture-entity-8",
+        "graphId": "fixture-graph-2",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "fixture-graph-3"
+        ]
+      },
+      {
+        "id": "fixture-rep-2-1",
+        "entityId": "fixture-entity-9",
+        "graphId": "fixture-graph-2",
+        "x": 320,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-2",
+        "entityId": "fixture-entity-10",
+        "graphId": "fixture-graph-2",
+        "x": 576,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-3",
+        "entityId": "fixture-entity-11",
+        "graphId": "fixture-graph-2",
+        "x": 832,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-4",
+        "entityId": "fixture-entity-12",
+        "graphId": "fixture-graph-2",
+        "x": 1088,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-5",
+        "entityId": "fixture-entity-13",
+        "graphId": "fixture-graph-2",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-6",
+        "entityId": "fixture-entity-14",
+        "graphId": "fixture-graph-2",
+        "x": 320,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-2-7",
+        "entityId": "fixture-entity-15",
+        "graphId": "fixture-graph-2",
+        "x": 576,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-0",
+        "entityId": "fixture-entity-12",
+        "graphId": "fixture-graph-3",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "fixture-graph-4"
+        ]
+      },
+      {
+        "id": "fixture-rep-3-1",
+        "entityId": "fixture-entity-13",
+        "graphId": "fixture-graph-3",
+        "x": 320,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-2",
+        "entityId": "fixture-entity-14",
+        "graphId": "fixture-graph-3",
+        "x": 576,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-3",
+        "entityId": "fixture-entity-15",
+        "graphId": "fixture-graph-3",
+        "x": 832,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-4",
+        "entityId": "fixture-entity-16",
+        "graphId": "fixture-graph-3",
+        "x": 1088,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-5",
+        "entityId": "fixture-entity-17",
+        "graphId": "fixture-graph-3",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-6",
+        "entityId": "fixture-entity-0",
+        "graphId": "fixture-graph-3",
+        "x": 320,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-3-7",
+        "entityId": "fixture-entity-1",
+        "graphId": "fixture-graph-3",
+        "x": 576,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-0",
+        "entityId": "fixture-entity-16",
+        "graphId": "fixture-graph-4",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": [
+          "fixture-graph-5"
+        ]
+      },
+      {
+        "id": "fixture-rep-4-1",
+        "entityId": "fixture-entity-17",
+        "graphId": "fixture-graph-4",
+        "x": 320,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-2",
+        "entityId": "fixture-entity-0",
+        "graphId": "fixture-graph-4",
+        "x": 576,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-3",
+        "entityId": "fixture-entity-1",
+        "graphId": "fixture-graph-4",
+        "x": 832,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-4",
+        "entityId": "fixture-entity-2",
+        "graphId": "fixture-graph-4",
+        "x": 1088,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-5",
+        "entityId": "fixture-entity-3",
+        "graphId": "fixture-graph-4",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-6",
+        "entityId": "fixture-entity-4",
+        "graphId": "fixture-graph-4",
+        "x": 320,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-4-7",
+        "entityId": "fixture-entity-5",
+        "graphId": "fixture-graph-4",
+        "x": 576,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-0",
+        "entityId": "fixture-entity-2",
+        "graphId": "fixture-graph-5",
+        "x": 64,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-1",
+        "entityId": "fixture-entity-3",
+        "graphId": "fixture-graph-5",
+        "x": 320,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-2",
+        "entityId": "fixture-entity-4",
+        "graphId": "fixture-graph-5",
+        "x": 576,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-3",
+        "entityId": "fixture-entity-5",
+        "graphId": "fixture-graph-5",
+        "x": 832,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-4",
+        "entityId": "fixture-entity-6",
+        "graphId": "fixture-graph-5",
+        "x": 1088,
+        "y": 64,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-5",
+        "entityId": "fixture-entity-7",
+        "graphId": "fixture-graph-5",
+        "x": 64,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": true,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-6",
+        "entityId": "fixture-entity-8",
+        "graphId": "fixture-graph-5",
+        "x": 320,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      },
+      {
+        "id": "fixture-rep-5-7",
+        "entityId": "fixture-entity-9",
+        "graphId": "fixture-graph-5",
+        "x": 576,
+        "y": 192,
+        "width": 218,
+        "height": 78,
+        "pinned": false,
+        "subgraphIds": []
+      }
+    ],
+    "freeElements": [
+      {
+        "id": "dA8N2CANJf9tCDi01mgRI",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "dA8N2CANJf9tCDi01mgRI",
+          "type": "ellipse",
+          "x": 897.8571428571429,
+          "y": 346.28571428571433,
+          "width": 262.8571428571429,
+          "height": 80,
+          "angle": 0,
+          "strokeColor": "#1e1e1e",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aN",
+          "roundness": {
+            "type": 2
+          },
+          "seed": 2033889331,
+          "version": 4,
+          "versionNonce": 1163689843,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790898503932,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "dA8N2CANJf9tCDi01mgRI",
+              "role": "free"
+            }
+          }
+        }
+      },
+      {
+        "id": "65EdY7_2JK0xUSA6TuYqe",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "65EdY7_2JK0xUSA6TuYqe",
+          "type": "text",
+          "x": 860.7142857142857,
+          "y": 303.42857142857144,
+          "width": 280,
+          "height": 25,
+          "angle": 0,
+          "strokeColor": "#1e1e1e",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aO",
+          "roundness": null,
+          "seed": 2007854749,
+          "version": 3,
+          "versionNonce": 591561971,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790898506276,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "freeElementId": "65EdY7_2JK0xUSA6TuYqe",
+              "role": "free"
+            }
+          },
+          "text": "自由文字验收 · 与业务身份独立",
+          "fontSize": 20,
+          "fontFamily": 5,
+          "textAlign": "left",
+          "verticalAlign": "top",
+          "containerId": null,
+          "originalText": "自由文字验收 · 与业务身份独立",
+          "autoResize": true,
+          "lineHeight": 1.25
+        }
+      },
+      {
+        "id": "GQKnPj-4TvTtVzB0U6N0A",
+        "graphId": "fixture-graph-1",
+        "element": {
+          "id": "GQKnPj-4TvTtVzB0U6N0A",
+          "type": "image",
+          "x": 666.4285714285714,
+          "y": 390.7142857142857,
+          "width": 160,
+          "height": 96,
+          "angle": 0,
+          "strokeColor": "transparent",
+          "backgroundColor": "transparent",
+          "fillStyle": "solid",
+          "strokeWidth": 2,
+          "strokeStyle": "solid",
+          "roughness": 1,
+          "opacity": 100,
+          "groupIds": [],
+          "frameId": null,
+          "index": "aP",
+          "roundness": null,
+          "seed": 1619144065,
+          "version": 5,
+          "versionNonce": 1936313327,
+          "isDeleted": false,
+          "boundElements": null,
+          "updated": 1790899538943,
+          "link": null,
+          "locked": false,
+          "customData": {
+            "agentCanvas": {
+              "resourceId": "canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+              "role": "free",
+              "freeElementId": "GQKnPj-4TvTtVzB0U6N0A"
+            }
+          },
+          "status": "pending",
+          "fileId": "9211392eeae7755900ae567a7bff31d649e6145b",
+          "scale": [
+            1,
+            1
+          ],
+          "crop": null
+        }
+      }
+    ],
+    "annotations": [
+      {
+        "id": "annotation-1312fff3-fde6-46b4-80c1-ea8e0e79b15b",
+        "text": "真实验收 B：请说明本地连接模块和其他图中的同一对象是否一致。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "fixture-graph-1"
+          }
+        ],
+        "observedRevision": 3,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T22:17:49.361Z",
+        "updatedAt": "2026-10-01T22:19:32.740Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-2f303f05-6a31-4f7e-a882-5f0f9d5cad08",
+        "text": "真实批量 A：保留用户排版，并核对这个总览的状态来源。补充：优先核对最近更新时间。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+          }
+        ],
+        "observedRevision": 5,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "responded",
+        "createdAt": "2026-10-01T22:51:59.108Z",
+        "updatedAt": "2026-10-01T22:55:21.825Z",
+        "responses": [
+          {
+            "id": "123fd64d-67b3-4345-b993-04ee27ac03c9",
+            "annotationId": "annotation-2f303f05-6a31-4f7e-a882-5f0f9d5cad08",
+            "text": "验收回应 A：本条保留观察版本与原布局，状态来源和更新时间可独立核对。",
+            "status": "responded",
+            "revision": 13,
+            "createdAt": "2026-10-01T22:55:21.825Z",
+            "actor": {
+              "id": "root-real-feedback",
+              "kind": "agent",
+              "label": "本机验收 Agent"
+            }
+          }
+        ],
+        "batchId": "batch-00e6f183-0519-4e69-bd82-a591b3411750"
+      },
+      {
+        "id": "annotation-a733edb6-a9e8-4185-8c7c-11a64e8bd155",
+        "text": "真实批量 B：说明结构图与总览的同一对象引用。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "fixture-graph-1"
+          }
+        ],
+        "observedRevision": 6,
+        "graphPath": [
+          "fixture-graph-1"
+        ],
+        "status": "responded",
+        "createdAt": "2026-10-01T22:52:28.607Z",
+        "updatedAt": "2026-10-01T22:55:21.913Z",
+        "responses": [
+          {
+            "id": "3c2ec7e4-2436-4c05-9cfa-ef349366e91f",
+            "annotationId": "annotation-a733edb6-a9e8-4185-8c7c-11a64e8bd155",
+            "text": "验收回应 B：结构图与总览通过稳定对象身份引用，图上位置按表示独立保存。",
+            "status": "responded",
+            "revision": 15,
+            "createdAt": "2026-10-01T22:55:21.913Z",
+            "actor": {
+              "id": "root-real-feedback",
+              "kind": "agent",
+              "label": "本机验收 Agent"
+            }
+          }
+        ],
+        "batchId": "batch-00e6f183-0519-4e69-bd82-a591b3411750"
+      },
+      {
+        "id": "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144",
+        "text": "真实批量 C：拆清这张流程图的执行依赖与说明连线。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "fixture-graph-2"
+          }
+        ],
+        "observedRevision": 7,
+        "graphPath": [
+          "fixture-graph-2"
+        ],
+        "status": "needs_clarification",
+        "createdAt": "2026-10-01T22:52:30.745Z",
+        "updatedAt": "2026-10-01T22:55:21.970Z",
+        "responses": [
+          {
+            "id": "eb5e8cfd-0dde-4ed4-b510-7c33ec4118b1",
+            "annotationId": "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144",
+            "text": "验收回应 C：请明确需要变更的执行依赖；说明连线保留，其他两条已独立答复。",
+            "status": "needs_clarification",
+            "revision": 17,
+            "createdAt": "2026-10-01T22:55:21.970Z",
+            "actor": {
+              "id": "root-real-feedback",
+              "kind": "agent",
+              "label": "本机验收 Agent"
+            }
+          }
+        ],
+        "batchId": "batch-00e6f183-0519-4e69-bd82-a591b3411750"
+      },
+      {
+        "id": "annotation-46506fa7-39d7-4e60-8b34-36236545370a",
+        "text": "重连验收：保留本条观察版本、原话与待提交状态。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+          }
+        ],
+        "observedRevision": 20,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:05:06.204Z",
+        "updatedAt": "2026-10-01T23:05:06.204Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-0874346d-1b6a-4dab-a302-03132b27b682",
+        "text": "重连顺序验收：Agent 新状态先提交，旧基线批注后重试。",
+        "targets": [
+          {
+            "type": "graph",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a"
+          }
+        ],
+        "observedRevision": 22,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:07:21.659Z",
+        "updatedAt": "2026-10-01T23:07:21.659Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-c849a413-87e7-4c07-81c9-c96539b11800",
+        "text": "区域验收：这块空白留给子图说明，保持现有节点位置。",
+        "targets": [
+          {
+            "type": "region",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+            "x": 855,
+            "y": 423.7142857142858,
+            "width": 257.14285714285734,
+            "height": 60
+          }
+        ],
+        "observedRevision": 29,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:40:35.984Z",
+        "updatedAt": "2026-10-01T23:40:35.984Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-591f6e3c-7960-40c7-b8a6-0ca82022e55d",
+        "text": "多选验收：这两个任务的完成条件分别保留，共同调整显示间距。",
+        "targets": [
+          {
+            "type": "representation",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+            "representationId": "fixture-rep-0-2"
+          },
+          {
+            "type": "representation",
+            "graphId": "ec622545-9f75-462e-8bae-06827a13681a",
+            "representationId": "fixture-rep-0-3"
+          }
+        ],
+        "observedRevision": 30,
+        "graphPath": [
+          "ec622545-9f75-462e-8bae-06827a13681a"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:41:31.818Z",
+        "updatedAt": "2026-10-01T23:41:31.818Z",
+        "responses": []
+      },
+      {
+        "id": "annotation-fb8b9279-e57b-444a-bece-bcb65fe04bfc",
+        "text": "连线验收：这一条顺序关系保留身份，说明与执行依赖分开。",
+        "targets": [
+          {
+            "type": "relation",
+            "graphId": "fixture-graph-1",
+            "relationId": "fixture-relation-1-0"
+          }
+        ],
+        "observedRevision": 33,
+        "graphPath": [
+          "fixture-graph-1"
+        ],
+        "status": "draft",
+        "createdAt": "2026-10-01T23:47:03.146Z",
+        "updatedAt": "2026-10-01T23:47:03.146Z",
+        "responses": []
+      }
+    ],
+    "batches": [
+      {
+        "id": "batch-00e6f183-0519-4e69-bd82-a591b3411750",
+        "annotationIds": [
+          "annotation-2f303f05-6a31-4f7e-a882-5f0f9d5cad08",
+          "annotation-a733edb6-a9e8-4185-8c7c-11a64e8bd155",
+          "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144"
+        ],
+        "createdAt": "2026-10-01T22:53:39.980Z",
+        "submittedRevision": 9,
+        "contextRef": "/api/feedback/batch-00e6f183-0519-4e69-bd82-a591b3411750/context",
+        "state": "partial"
+      }
+    ],
+    "discussions": [
+      {
+        "id": "discussion-3f67efc4-0cf9-4341-a27b-b65a60821124",
+        "scope": {
+          "type": "annotation",
+          "annotationId": "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144"
+        },
+        "role": "user",
+        "text": "追问验收：先处理 C 的说明连线，执行依赖保留；请给出逐条回应。",
+        "createdAt": "2026-10-01T23:42:24.965Z",
+        "actor": {
+          "id": "local-user",
+          "kind": "user",
+          "label": "本地用户"
+        }
+      },
+      {
+        "id": "discussion-eb9b7594-215d-4851-8aa2-1d5445aa6a96",
+        "scope": {
+          "type": "annotation",
+          "annotationId": "annotation-a2e21e51-06dd-49ce-9d44-b48ae143a144"
+        },
+        "role": "agent",
+        "parentId": "discussion-3f67efc4-0cf9-4341-a27b-b65a60821124",
+        "text": "追问回应验收：已保留原批注及观察版本。这里记录明确的说明连线范围，执行依赖保持原样。",
+        "createdAt": "2026-10-01T23:42:25.098Z",
+        "actor": {
+          "id": "root-real-ui-acceptance",
+          "kind": "agent"
+        }
+      }
+    ],
+    "runs": [],
+    "executors": [],
+    "requests": [],
+    "resources": [
+      {
+        "id": "canvas-resource-61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+        "name": "61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2.svg+xml",
+        "mimeType": "image/svg+xml",
+        "relativePath": "assets/canvas-resource-61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+        "sha256": "919bf50ad5f6f2f6ecbaaa5150f31135d1a5896e7e44178f22f8fa8523ee43c7",
+        "bytes": 271
+      },
+      {
+        "id": "canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+        "name": "9211392eeae7755900ae567a7bff31d649e6145b.svg+xml",
+        "mimeType": "image/svg+xml",
+        "relativePath": "assets/canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+        "sha256": "2a4ad4a3881ab849153eb92e770ef34f7a1e0c8dbcb967c59d55395c5df425a0",
+        "bytes": 271
+      }
+    ]
+  },
+  "copyPath": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/ui-acceptance/agent-visual-canvas-import-23aad6ec-83f8-4862-8cc8-c594f254f67d",
+  "download": {
+    "path": "/Users/Zhuanz1/Desktop/file/AutoResearch/plugins/agent-visual-canvas/.runtime/ui-acceptance/project-free-assets-ui-r3.avcanvas",
+    "filename": "f5e539d9-2ecf-4337-a96a-ab7a499242c2-53.avcanvas",
+    "bytes": 60912,
+    "sha256": "bd5f449a9b7d8c212b351094be5a11dd23f42aaf20b2937138caf56ba254a8c1"
+  },
+  "assertions": {
+    "originalSnapshotUnchanged": true,
+    "newDirectory": true,
+    "independentIdentity": true,
+    "fullCurrentSnapshotPreserved": true,
+    "change_logExact": true,
+    "applied_operationsExact": true,
+    "batch_contextsExact": true,
+    "checkpointContentPreserved": true,
+    "resourceBytesExact": true,
+    "newChangeUsesNewWorkCopy": true,
+    "sourceUnchangedAfterIndependentWrite": true,
+    "importedServiceExited": true,
+    "importedLockReleased": true
+  },
+  "databaseAudit": {
+    "rows": {
+      "change_log": {
+        "source": 53,
+        "copy": 53,
+        "exactBytes": true
+      },
+      "applied_operations": {
+        "source": 53,
+        "copy": 53,
+        "exactBytes": true
+      },
+      "batch_contexts": {
+        "source": 1,
+        "copy": 1,
+        "exactBytes": true
+      }
+    },
+    "sourceCheckpointCount": 6,
+    "copyCheckpointCount": 7,
+    "importedWorkCopyId": "e1165ab5-44bb-4bae-971e-97c42ba201b5",
+    "resources": [
+      {
+        "id": "canvas-resource-61c2a000f51470c1ad95c34e8538bcd5cb4bfcb2",
+        "bytes": 271,
+        "sha256": "919bf50ad5f6f2f6ecbaaa5150f31135d1a5896e7e44178f22f8fa8523ee43c7",
+        "exact": true
+      },
+      {
+        "id": "canvas-resource-9211392eeae7755900ae567a7bff31d649e6145b",
+        "bytes": 271,
+        "sha256": "2a4ad4a3881ab849153eb92e770ef34f7a1e0c8dbcb967c59d55395c5df425a0",
+        "exact": true
+      }
+    ]
+  },
+  "newChange": {
+    "status": 200,
+    "revision": 54,
+    "workCopyId": "e1165ab5-44bb-4bae-971e-97c42ba201b5",
+    "history": [
+      {
+        "id": "c291467b-ce7f-4590-829f-8be7395aa1bb",
+        "parentChangeId": "28459d50-8ddc-455b-b834-0d9fb054c8ae",
+        "operationId": "import-new-lineage-48dc510d-7d63-48ac-b72a-f28c34c5a9b4",
+        "projectId": "f5e539d9-2ecf-4337-a96a-ab7a499242c2",
+        "workCopyId": "e1165ab5-44bb-4bae-971e-97c42ba201b5",
+        "baseRevision": 53,
+        "revision": 54,
+        "actor": {
+          "id": "acceptance-root",
+          "kind": "agent",
+          "label": "验收 Agent"
+        },
+        "reason": "新副本来源核对：独立增量写入",
+        "timestamp": "2026-10-02T00:57:05.996Z",
+        "operations": [
+          {
+            "type": "entity.patch",
+            "id": "fixture-entity-5",
+            "patch": {
+              "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。 · 独立副本验收"
+            }
+          }
+        ],
+        "affectedIds": [
+          "fixture-entity-5"
+        ],
+        "appliedOperations": [
+          {
+            "type": "entity.patch",
+            "id": "fixture-entity-5",
+            "patch": {
+              "updatedAt": "2026-10-02T00:57:05.996Z",
+              "description": "用于验证界面与数据机制；点击详情可查看稳定身份和来源。 · 独立副本验收"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "boundary": "同一macOS机器真实界面导出/导入与独立副本服务写入；历史/幂等记录/冻结上下文逐字段及原始JSON字节核对，原生Windows迁移另验收。"
+}
