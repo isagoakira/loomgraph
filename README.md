@@ -6,9 +6,8 @@ Loomgraph 是一张可以和 Agent 一起维护的空间笔记。把知识、流
 
 连接支持本地 stdio MCP 的 Agent，策划和更新画布；你也可以自己编辑、拖动、调整布局，再直接选中需要修改的地方，把意见交给 Agent。
 
-![Loomgraph 产品示意：在自己的项目中工作，通过共享画布组织结构、流程与反馈](docs/assets/loomgraph-overview.svg)
+![Loomgraph：在自己的项目中工作，通过共享画布组织结构、流程与反馈](docs/assets/loomgraph-overview.svg)
 
-*产品示意图，使用虚构内容，不是实际界面截图。*
 
 ## 用它做什么
 

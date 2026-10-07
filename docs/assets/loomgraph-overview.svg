@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="820" viewBox="0 0 1440 820" role="img" aria-labelledby="title desc">
   <title id="title">Loomgraph: your project, a shared canvas, and scoped feedback</title>
-  <desc id="desc">A fictional product illustration. An Agent works in your project, maintains a canvas combining knowledge and workflows, and receives independent feedback through your existing conversation.</desc>
+  <desc id="desc">An Agent works in your project, maintains a canvas combining knowledge and workflows, and receives independent feedback through your existing conversation.</desc>
   <defs>
     <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="12" flood-color="#26362e" flood-opacity=".055"/></filter>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="#6d8278" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -13,7 +13,6 @@
   <rect width="1440" height="820" fill="#f6f4ed"/>
   <g stroke="#3d755c" stroke-width="3.5" fill="none" stroke-linecap="round"><path d="M58 45V79H92M69 45V68H92M58 56H81V79"/></g>
   <text x="108" y="72" font-size="31" font-weight="700" letter-spacing="-.8">Loomgraph</text>
-  <text x="1388" y="65" text-anchor="end" class="eyebrow muted">PRODUCT ILLUSTRATION</text>
   <text x="52" y="132" font-size="34" font-weight="600" letter-spacing="-.7">Weave thought into action.</text>
   <text x="53" y="167" font-size="18" class="muted">Your project. A shared canvas. A conversation that stays connected.</text>
 
@@ -73,6 +72,5 @@
   <text x="1120" y="663" class="body muted">Individual replies &amp; changes.</text>
   <text x="1120" y="701" class="small muted">You stay in control of each revision.</text>
 
-  <text x="52" y="783" class="small muted">FICTIONAL CONTENT · NOT A SCREENSHOT · NO PROJECT DATA</text>
   <text x="1388" y="783" text-anchor="end" class="small muted">Loomgraph</text>
 </svg>
