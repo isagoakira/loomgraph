@@ -4,9 +4,11 @@
 
 Loomgraph 是一张可以和 Agent 一起维护的空间笔记。把知识、流程、文字和图解放在同一个平面上，让复杂内容有结构，让正在推进的工作有迹可循。
 
-用 Codex 或 Claude Code 策划和更新画布，也可以自己编辑、拖动、调整布局，再直接选中需要修改的地方，把意见交给 Agent。
+连接支持本地 stdio MCP 的 Agent，策划和更新画布；你也可以自己编辑、拖动、调整布局，再直接选中需要修改的地方，把意见交给 Agent。
 
-![论文阅读示例：概念图解与文字说明在同一画布上组织](docs/evidence/clustered-notebook-final-r19-20261003.png)
+![Loomgraph 产品示意：在自己的项目中工作，通过共享画布组织结构、流程与反馈](docs/assets/loomgraph-overview.svg)
+
+*产品示意图，使用虚构内容，不是实际界面截图。*
 
 ## 用它做什么
 
@@ -42,34 +44,54 @@ pnpm install --frozen-lockfile
 pnpm run build
 ```
 
-### 2. 连接 Codex 或 Claude Code
+### 2. 接入你正在使用的 Agent
 
-在 Loomgraph 目录中运行：
+在客户端添加一个 **本地 stdio MCP 服务**，指定 Node 可执行文件、Loomgraph 启动脚本，以及本项目的画布数据目录。支持常见 `mcpServers` 配置格式的客户端可以参考：
 
-```sh
-node scripts/configure-client.mjs "../loomgraph-data" ".runtime/client-config"
+```json
+{
+  "mcpServers": {
+    "loomgraph": {
+      "command": "/absolute/path/to/node",
+      "args": [
+        "/absolute/path/to/loomgraph/scripts/start-canvas.mjs",
+        "--data-root",
+        "/absolute/path/to/your-project-canvas-data",
+        "--port",
+        "0"
+      ]
+    }
+  }
+}
 ```
 
-这会生成适合本机的配置，画布数据保存在独立的 `loomgraph-data` 目录中。
+将三个路径替换为本机的绝对路径。Windows 使用对应的本机路径；JSON 中的反斜杠需要写成 `\\`。如果客户端使用其他配置格式，按其本地 MCP 设置填写同样的可执行文件和参数即可。
 
-- **Codex：** 将 `.runtime/client-config/codex-mcp.toml` 中的配置块合并到 `~/.codex/config.toml`。
-- **Claude Code：** 将 `.runtime/client-config/claude-mcp.json` 中的 `mcpServers` 配置合并到工作目录的 `.mcp.json`。
+为不同项目选择独立的数据目录。客户端支持项目级配置时，把连接配置放在**你实际工作的项目**中；配置完成后重新加载 MCP 服务。
 
-保留已有配置，然后重启客户端或重新加载 MCP 服务。Windows 的 Codex 配置位于用户目录下的 `.codex/config.toml`；生成器会自动使用本机的 Node 路径。
+也可以在 Loomgraph 安装目录运行下面的命令，生成带有本机 Node 和启动脚本路径的 JSON / TOML 配置，供合并到客户端设置：
 
-服务在客户端中显示为 `agent_visual_canvas`。这是沿用的接口名称，产品名称为 Loomgraph。
+```sh
+node scripts/configure-client.mjs "/absolute/path/to/your-project-canvas-data" ".runtime/client-config"
+```
 
-### 3. 创建第一张图
+为了让 Agent 按合适的粒度组织和维护画布，建议将安装目录中的 `skills/agent-visual-canvas/SKILL.md` 加入客户端的技能或项目指引。客户端不支持技能安装时，在首次使用中让 Agent 读取该文件的绝对路径即可。
 
-在 Loomgraph 目录中开始 Agent 会话，可以这样说：
+### 3. 在你的项目中启用画布协作
 
-> 请先阅读 `skills/agent-visual-canvas/SKILL.md`，然后使用 Loomgraph 把这份材料整理成一张可阅读的图文笔记：先交代背景，再展开核心问题、方法和证据。按小分组组织，必要概念配局部图解，细节在对应位置展开。完成后给我画布入口。
+打开**你正在研究、开发或推进的项目**，在原有 Agent 会话中发出指令：
 
-也可以把目标换成任务推进：
+> 在当前项目中使用 Loomgraph，作为我们组织工作和后续交流的共享画布。先读取 Loomgraph 的作图指引，再打开本项目的画布，围绕当前目标梳理必要背景、关键问题、方案、任务阶段与依赖。按易读的小分组组织，结合思维导图、流程、文字和图解。给我画布入口；后续随项目推进局部更新，保留我的手工编排，并逐条处理我在图上提出的意见。
 
-> 用 Loomgraph 展示这项任务的阶段、分支和依赖。随着工作推进更新对应节点；实际运行状态根据执行回执呈现。
+如果没有安装作图技能，将 `SKILL.md` 的本机绝对路径附在这条指令中。Agent 继续在当前项目里分析材料和执行任务，Loomgraph 承载双方共同查看的结构、进展和反馈。
 
-Loomgraph 会在本机提供浏览器画布入口。它复用当前 Agent 会话，不需要再启动一个模型服务。
+后续可以直接在原会话中说：
+
+> 把刚讨论的方案补到画布中，更新对应阶段的状态，并保留其余分组。
+
+或者在画布中选区、写意见，再将反馈交接到同一个会话。聊天与画布形成持续的协作过程；运行状态按实际执行回执更新。
+
+Loomgraph 在本机提供浏览器画布入口，复用你正在使用的 Agent，不另开模型服务。
 
 ### 只想先打开画布
 
