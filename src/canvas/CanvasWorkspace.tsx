@@ -1,4 +1,4 @@
-import { CaptureUpdateAction, Excalidraw, sceneCoordsToViewportCoords } from "@excalidraw/excalidraw";
+import { CaptureUpdateAction, Excalidraw, getCommonBounds, sceneCoordsToViewportCoords } from "@excalidraw/excalidraw";
 import type {
   BinaryFiles,
   AppState,
@@ -10,7 +10,9 @@ import type { ExcalidrawElement } from "@excalidraw/excalidraw/element/types";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { CanvasToolDock } from "./CanvasToolDock";
 import { CanvasZoomControl } from "./CanvasZoomControl";
+import { CanvasViewMenu } from "./CanvasViewMenu";
 import { canvasWheelOwner, resizeCamera, zoomCamera } from "./camera";
+import type { ContentSnapCandidate } from "./content-snapping";
 
 import type { Operation, ProjectSnapshot, TargetRef } from "../contracts";
 import type { ContentCommit, WorkspaceView } from "../content/model";
@@ -119,6 +121,46 @@ function nativeElementIdsForTargets(elements: readonly ExcalidrawElement[], targ
   const ids = new Set<string>();
   for (const target of targets) for (const id of nativeElementIdsForTarget(elements, target)) ids.add(id);
   return [...ids];
+}
+
+function sceneElementSnapCandidate(element: ExcalidrawElement): ContentSnapCandidate | null {
+  const data = readCanvasData(element);
+  // HTML content owns the visual card, labels and relation paths are guides
+  // rather than objects, and presentation/background elements are excluded.
+  if (element.isDeleted || element.opacity === 0 || !data || (data.role !== "body" && data.role !== "free")) return null;
+  let bounds: readonly number[];
+  try {
+    // getCommonBounds is a public Excalidraw export and handles rotated/free
+    // elements without reaching into the SDK's private snap implementation.
+    bounds = getCommonBounds([element]);
+  } catch {
+    return null;
+  }
+  const [x, y, right, bottom] = bounds;
+  const width = right - x;
+  const height = bottom - y;
+  if (![x, y, width, height].every(Number.isFinite) || width <= 0 || height <= 0) return null;
+  const id = data.representationId
+    ? `representation:${data.representationId}`
+    : data.freeElementId
+      ? `element:${data.freeElementId}`
+      : element.id;
+  return { id, x, y, width, height, visible: true };
+}
+
+function snapCandidatesEqual(
+  previous: readonly ContentSnapCandidate[],
+  next: readonly ContentSnapCandidate[],
+): boolean {
+  return previous.length === next.length && previous.every((candidate, index) => {
+    const other = next[index];
+    return candidate.id === other.id
+      && candidate.x === other.x
+      && candidate.y === other.y
+      && candidate.width === other.width
+      && candidate.height === other.height
+      && candidate.visible === other.visible;
+  });
 }
 
 function uniqueSelectionTargets(targets: readonly TargetRef[]): TargetRef[] {
@@ -413,6 +455,22 @@ export function shouldFitCanvasInitially(
     && !viewportHasRememberedCamera(viewport);
 }
 
+export interface CanvasModes {
+  gridModeEnabled: boolean;
+  objectsSnapModeEnabled: boolean;
+  zenModeEnabled: boolean;
+  gridSize: number;
+}
+
+function canvasModesFromAppState(appState: Pick<AppState, "gridModeEnabled" | "objectsSnapModeEnabled" | "zenModeEnabled" | "gridSize">): CanvasModes {
+  return {
+    gridModeEnabled: appState.gridModeEnabled === true,
+    objectsSnapModeEnabled: appState.objectsSnapModeEnabled === true,
+    zenModeEnabled: appState.zenModeEnabled === true,
+    gridSize: Number.isFinite(appState.gridSize) && appState.gridSize > 0 ? appState.gridSize : 20,
+  };
+}
+
 export interface CanvasWorkspaceProps {
   snapshot: ProjectSnapshot;
   graphId: string;
@@ -426,6 +484,8 @@ export interface CanvasWorkspaceProps {
   /** Called after a marquee or click has been applied (Escape is a cancel). */
   onAreaSelectionComplete?: () => void;
   onReady?: (api: ExcalidrawImperativeAPI) => void;
+  /** Mirrors public Excalidraw appState mode switches, including callbacks with unchanged scenes. */
+  onCanvasModesChange?: (modes: CanvasModes) => void;
   /** Called after the requested projection has been applied and the settle frame has run. */
   onSceneReady?: (scopeKey: string, renderedRevision: number, api: ExcalidrawImperativeAPI) => void;
   onOperations: (operations: Operation[], previousElements: readonly ExcalidrawElement[], nextElements: readonly ExcalidrawElement[], baseRevision?: number) => void | Promise<unknown>;
@@ -765,6 +825,7 @@ export function CanvasWorkspace({
   areaSelectionMode = false,
   onAreaSelectionComplete,
   onReady,
+  onCanvasModesChange,
   onSceneReady,
   onOperations,
   onSelection,
@@ -793,6 +854,14 @@ export function CanvasWorkspace({
   drawingToolsVisible = true,
 }: CanvasWorkspaceProps) {
   const apiRef = useRef<ExcalidrawImperativeAPI | null>(null);
+  const onCanvasModesChangeRef = useRef(onCanvasModesChange);
+  onCanvasModesChangeRef.current = onCanvasModesChange;
+  const canvasModesRef = useRef<CanvasModes>({
+    gridModeEnabled: false,
+    objectsSnapModeEnabled: false,
+    zenModeEnabled: false,
+    gridSize: 20,
+  });
   const baselineRef = useRef<readonly ExcalidrawElement[]>([]);
   const baselineNotebookContextRef = useRef<NotebookSceneContext | undefined>(undefined);
   const renderedNotebookContextRef = useRef<NotebookSceneContext | undefined>(undefined);
@@ -865,6 +934,7 @@ export function CanvasWorkspace({
   selectedTargetsRef.current = selectedTargets;
   const [areaSelectionRect, setAreaSelectionRect] = useState<AreaSelectionRect | null>(null);
   const [apiReady, setApiReady] = useState(false);
+  const [canvasModes, setCanvasModes] = useState<CanvasModes>(canvasModesRef.current);
   const [contentToolType, setContentToolType] = useState("selection");
   const [liveRelationGeometry, setLiveRelationGeometry] = useState<{ graphId: string; geometry: ContentGeometryPreview } | null>(null);
   const receiveGeometryPreview = useCallback((previewGraphId: string, geometry: ContentGeometryPreview | null) => {
@@ -882,6 +952,7 @@ export function CanvasWorkspace({
     canvasWidth: 0,
     canvasHeight: 0,
     viewport: DEFAULT_VIEWPORT,
+    gridSize: 20,
     camera: {
       offsetLeft: 0,
       offsetTop: 0,
@@ -892,6 +963,7 @@ export function CanvasWorkspace({
       zoom: DEFAULT_VIEWPORT.zoom,
     } satisfies SceneCameraDiagnostic,
     representationPoints: [] as RepresentationPointDiagnostic[],
+    snapCandidates: [] as ContentSnapCandidate[],
     renderedGraphId: graphId,
     renderedRevision: snapshot.revision,
     activeTool: "selection",
@@ -950,6 +1022,18 @@ export function CanvasWorkspace({
     canvasActions: { loadScene: false, saveToActiveFile: false },
     tools: { image: true },
   }), []);
+
+  const syncCanvasModes = useCallback((appState: Pick<AppState, "gridModeEnabled" | "objectsSnapModeEnabled" | "zenModeEnabled" | "gridSize">) => {
+    const next = canvasModesFromAppState(appState);
+    const previous = canvasModesRef.current;
+    canvasModesRef.current = next;
+    if (previous.gridModeEnabled === next.gridModeEnabled
+      && previous.objectsSnapModeEnabled === next.objectsSnapModeEnabled
+      && previous.zenModeEnabled === next.zenModeEnabled
+      && previous.gridSize === next.gridSize) return;
+    setCanvasModes(next);
+    onCanvasModesChangeRef.current?.(next);
+  }, []);
 
   useEffect(() => {
     snapshotRef.current = snapshot;
@@ -1265,6 +1349,9 @@ export function CanvasWorkspace({
           };
         })
       : [];
+    const snapCandidates = elements
+      .map(sceneElementSnapCandidate)
+      .filter((candidate): candidate is ContentSnapCandidate => Boolean(candidate));
     setSceneDiagnostic({
       sceneReady: Boolean(api) && !applyingRef.current,
       count: elements.length,
@@ -1274,8 +1361,10 @@ export function CanvasWorkspace({
       canvasWidth: canvas?.width ?? 0,
       canvasHeight: canvas?.height ?? 0,
       viewport: appState ? viewportFromAppState(appState) : DEFAULT_VIEWPORT,
+      gridSize: appState?.gridSize ?? 20,
       camera,
       representationPoints,
+      snapCandidates,
       activeTool: appState?.activeTool.type ?? "selection",
       renderedGraphId: renderedGraphIdRef.current,
       renderedRevision: renderedRevisionRef.current,
@@ -1524,6 +1613,19 @@ export function CanvasWorkspace({
         // accepting user changes again.
         return;
       }
+      // Mode fields live in appState and Excalidraw can emit them with an
+      // unchanged scene. Observe them before every semantic/no-op guard.
+      syncCanvasModes(appState);
+      const nextSnapCandidates = elements
+        .map(sceneElementSnapCandidate)
+        .filter((candidate): candidate is ContentSnapCandidate => Boolean(candidate));
+      setSceneDiagnostic(previous => {
+        const nextGridSize = appState.gridSize ?? previous.gridSize;
+        return snapCandidatesEqual(previous.snapCandidates, nextSnapCandidates)
+          && previous.gridSize === nextGridSize
+          ? previous
+          : { ...previous, gridSize: nextGridSize, snapCandidates: nextSnapCandidates };
+      });
       // Tool changes do not alter scene elements. Observe them before the
       // no-op/echo guards so HTML content yields input to native drawing.
       if (contentToolTypeRef.current !== appState.activeTool.type) {
@@ -1755,7 +1857,7 @@ export function CanvasWorkspace({
       if (flushTimerRef.current !== null) window.clearTimeout(flushTimerRef.current);
       flushTimerRef.current = window.setTimeout(flushDiff, 320);
     },
-    [emitSelection, flushDiff, graphId, hydratePendingImageDimensions, onBinaryFiles, restoreConflictProjection, snapshot.projectId, snapshot.workCopyId, notebookMaintenance, notebookViewLayout, organizationView],
+    [emitSelection, flushDiff, graphId, hydratePendingImageDimensions, onBinaryFiles, restoreConflictProjection, snapshot.projectId, snapshot.workCopyId, notebookMaintenance, notebookViewLayout, organizationView, syncCanvasModes],
   );
 
   const handlePointerDown = useCallback(
@@ -1832,6 +1934,10 @@ export function CanvasWorkspace({
 
   const handleExcalidrawApi = useCallback((api: ExcalidrawImperativeAPI) => {
     apiRef.current = api;
+    const initialModes = canvasModesFromAppState(api.getAppState());
+    canvasModesRef.current = initialModes;
+    setCanvasModes(initialModes);
+    onCanvasModesChangeRef.current?.(initialModes);
     if (renderedScopeKeyRef.current === null) {
       renderedScopeKeyRef.current = requestedScopeKeyRef.current;
       renderedViewportKeyRef.current = requestedScopeKeyRef.current;
@@ -1842,6 +1948,30 @@ export function CanvasWorkspace({
     setApiReady(true);
     onReadyRef.current?.(api);
   }, []);
+
+  const toggleCanvasMode = useCallback((mode: keyof CanvasModes) => {
+    const api = apiRef.current;
+    if (!api) return;
+    const state = api.getAppState();
+    let gridModeEnabled = state.gridModeEnabled;
+    let objectsSnapModeEnabled = state.objectsSnapModeEnabled;
+    let zenModeEnabled = state.zenModeEnabled;
+    if (mode === "gridModeEnabled") {
+      gridModeEnabled = !gridModeEnabled;
+      if (gridModeEnabled) objectsSnapModeEnabled = false;
+    } else if (mode === "objectsSnapModeEnabled") {
+      objectsSnapModeEnabled = !objectsSnapModeEnabled;
+      if (objectsSnapModeEnabled) gridModeEnabled = false;
+    } else {
+      zenModeEnabled = !zenModeEnabled;
+    }
+    const nextState = { gridModeEnabled, objectsSnapModeEnabled, zenModeEnabled, gridSize: state.gridSize };
+    // Keep all mode state in the SDK appState so its native menu and the
+    // application menu remain interchangeable. NEVER avoids a view preference
+    // becoming an undoable drawing revision.
+    api.updateScene({ appState: nextState, captureUpdate: CaptureUpdateAction.NEVER });
+    syncCanvasModes(nextState);
+  }, [syncCanvasModes]);
 
   // App-level batch controls can change the semantic selection without a
   // pointer gesture. Keep the SDK highlight in lockstep after a graph or
@@ -1971,6 +2101,14 @@ export function CanvasWorkspace({
   };
   const contentCallbacks = onContentCommit ? {
     snapshot, graphId, commit: onContentCommit, selectedTargets, highlights, onSelect: selectContentTarget,
+    contentSnapping: {
+      gridEnabled: canvasModes.gridModeEnabled,
+      objectsSnapEnabled: canvasModes.objectsSnapModeEnabled,
+      gridSize: canvasModes.gridSize,
+      zoom: sceneDiagnostic.camera.zoom,
+    },
+    snapCandidates: sceneDiagnostic.snapCandidates,
+    zenModeEnabled: canvasModes.zenModeEnabled,
     selectedClusterIds, onClusterSelect,
     onOrganizationDisclosureChange,
     onDetails: (target: TargetRef) => { selectContentTarget(target); onContentDetails?.(target); },
@@ -1992,7 +2130,7 @@ export function CanvasWorkspace({
   return (
     <div
       ref={workspaceRef}
-      className={`canvas-workspace${regionMode ? " is-region-mode" : ""}${areaSelectionMode ? " is-area-selection-mode" : ""}${contentView === "reading" ? " is-reading" : ""}${projection.persistedElements.some(element => readCanvasData(element)?.role === "content") ? " has-content-blocks" : ""}${!drawingToolsVisible ? " hide-drawing-tools" : ""}`}
+      className={`canvas-workspace${regionMode ? " is-region-mode" : ""}${areaSelectionMode ? " is-area-selection-mode" : ""}${contentView === "reading" ? " is-reading" : ""}${canvasModes.zenModeEnabled ? " is-zen-mode" : ""}${projection.persistedElements.some(element => readCanvasData(element)?.role === "content") ? " has-content-blocks" : ""}${!drawingToolsVisible ? " hide-drawing-tools" : ""}`}
       tabIndex={-1}
       data-projection-element-count={projection.elements.length}
       data-projection-persisted-count={projection.persistedElements.length}
@@ -2070,6 +2208,7 @@ export function CanvasWorkspace({
         UIOptions={uiOptions}
       />
       <CanvasToolDock workspace={workspaceRef} />
+      <CanvasViewMenu modes={canvasModes} onToggle={toggleCanvasMode} />
       {contentCallbacks && <NotebookRelations snapshot={relationViewSnapshot} graphId={graphId} camera={sceneDiagnostic.camera} visible={contentView === "layout" && sceneDiagnostic.renderedGraphId === graphId} interactive={!regionMode && !areaSelectionMode && contentToolType === "selection"} selectedTargets={selectedTargets} highlights={highlights} visibleRelationIds={organizationView?.visibleRelationIds} organizationView={organizationView} maintainedRoutes={notebookMaintenance?.routes} onSelect={selectContentTarget} onCommit={onContentCommit} onClearSelection={clearContentSelection} />}
       {contentCallbacks && <ContentLayoutLayer {...contentCallbacks} onGeometryPreview={receiveGeometryPreview} organizationView={organizationView} onClusterOpen={onClusterOpen} geometryOverrides={notebookView.geometries} notebookGroupBounds={notebookMaintenance?.groupBounds} onNotebookMeasure={onNotebookMeasure} camera={sceneDiagnostic.camera} interactive={!regionMode && !areaSelectionMode && contentToolType === "selection"} visible={contentView === "layout" && sceneDiagnostic.renderedGraphId === graphId} />}
       {contentCallbacks && contentView === "reading" && <ContentReader {...contentCallbacks} files={files} />}

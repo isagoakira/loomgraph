@@ -13,6 +13,9 @@ test-results/
 .env.*
 !.env.example
 .agent-canvas/
+.canvas-server.lock
+agent-chat/
+agent-config.json
 coverage/
 *.log
 *.pem

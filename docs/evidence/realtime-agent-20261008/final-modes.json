@@ -1,0 +1,195 @@
+{
+  "checkedAt": "2026-10-08T12:29:32.903Z",
+  "grid": {
+    "uiBuildId": "realtime-agent-20261008-r30",
+    "topHeight": 236,
+    "buttons": [
+      {
+        "text": "网格对齐",
+        "pressed": "true",
+        "rect": {
+          "x": 882,
+          "y": 298,
+          "width": 60,
+          "height": 25,
+          "top": 298,
+          "right": 942,
+          "bottom": 323,
+          "left": 882
+        }
+      },
+      {
+        "text": "对象吸附",
+        "pressed": "false",
+        "rect": {
+          "x": 946,
+          "y": 298,
+          "width": 60,
+          "height": 25,
+          "top": 298,
+          "right": 1006,
+          "bottom": 323,
+          "left": 946
+        }
+      },
+      {
+        "text": "专注模式",
+        "pressed": "false",
+        "rect": {
+          "x": 1010,
+          "y": 298,
+          "width": 60,
+          "height": 25,
+          "top": 298,
+          "right": 1070,
+          "bottom": 323,
+          "left": 1010
+        }
+      }
+    ]
+  },
+  "snap": {
+    "uiBuildId": "realtime-agent-20261008-r30",
+    "topHeight": 236,
+    "buttons": [
+      {
+        "text": "网格对齐",
+        "pressed": "false",
+        "rect": {
+          "x": 882,
+          "y": 298,
+          "width": 60,
+          "height": 25,
+          "top": 298,
+          "right": 942,
+          "bottom": 323,
+          "left": 882
+        }
+      },
+      {
+        "text": "对象吸附",
+        "pressed": "true",
+        "rect": {
+          "x": 946,
+          "y": 298,
+          "width": 60,
+          "height": 25,
+          "top": 298,
+          "right": 1006,
+          "bottom": 323,
+          "left": 946
+        }
+      },
+      {
+        "text": "专注模式",
+        "pressed": "false",
+        "rect": {
+          "x": 1010,
+          "y": 298,
+          "width": 60,
+          "height": 25,
+          "top": 298,
+          "right": 1070,
+          "bottom": 323,
+          "left": 1010
+        }
+      }
+    ]
+  },
+  "zen": {
+    "uiBuildId": "realtime-agent-20261008-r30",
+    "topHeight": 0,
+    "buttons": [
+      {
+        "text": "网格对齐",
+        "pressed": "false",
+        "rect": {
+          "x": 1232,
+          "y": 18,
+          "width": 60,
+          "height": 25,
+          "top": 18,
+          "right": 1292,
+          "bottom": 43,
+          "left": 1232
+        }
+      },
+      {
+        "text": "对象吸附",
+        "pressed": "true",
+        "rect": {
+          "x": 1296,
+          "y": 18,
+          "width": 60,
+          "height": 25,
+          "top": 18,
+          "right": 1356,
+          "bottom": 43,
+          "left": 1296
+        }
+      },
+      {
+        "text": "退出专注",
+        "pressed": "true",
+        "rect": {
+          "x": 1360,
+          "y": 18,
+          "width": 60,
+          "height": 25,
+          "top": 18,
+          "right": 1420,
+          "bottom": 43,
+          "left": 1360
+        }
+      }
+    ]
+  },
+  "restored": {
+    "uiBuildId": "realtime-agent-20261008-r30",
+    "topHeight": 236,
+    "buttons": [
+      {
+        "text": "网格对齐",
+        "pressed": "false",
+        "rect": {
+          "x": 882,
+          "y": 298,
+          "width": 60,
+          "height": 25,
+          "top": 298,
+          "right": 942,
+          "bottom": 323,
+          "left": 882
+        }
+      },
+      {
+        "text": "对象吸附",
+        "pressed": "true",
+        "rect": {
+          "x": 946,
+          "y": 298,
+          "width": 60,
+          "height": 25,
+          "top": 298,
+          "right": 1006,
+          "bottom": 323,
+          "left": 946
+        }
+      },
+      {
+        "text": "专注模式",
+        "pressed": "false",
+        "rect": {
+          "x": 1010,
+          "y": 298,
+          "width": 60,
+          "height": 25,
+          "top": 298,
+          "right": 1070,
+          "bottom": 323,
+          "left": 1010
+        }
+      }
+    ]
+  }
+}

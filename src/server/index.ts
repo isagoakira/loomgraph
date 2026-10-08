@@ -10,6 +10,9 @@ import { StdioServerTransport } from "@modelcontextprotocol/server/stdio";
 import { z } from "zod";
 import { displayFactsSchema } from "../contracts/display-facts.js";
 import { CANVAS_BUILD_ID } from "../contracts/build.js";
+import { AgentChatController } from "../agent/controller.js";
+import { createAgentProviders } from "../agent/providers.js";
+import type { AgentChatScope, AgentProvider, AgentProviderId } from "../contracts/agent-chat.js";
 import { buildOrganizationObservations } from "../core/organization-feedback.js";
 import {
   buildTextHandoff,
@@ -76,6 +79,7 @@ import type {
  */
 export interface CanvasStoreLike {
   getSnapshot(): ProjectSnapshot;
+  preview?: (operations: Operation[], source?: ProjectSnapshot) => ProjectSnapshot;
   apply(request: ChangeRequest): ApplyResult | Promise<ApplyResult>;
   history(options?: { afterRevision?: number; limit?: number }): ChangeRecord[] | Promise<ChangeRecord[]>;
   getRevision(revision: number): unknown | Promise<unknown>;
@@ -109,6 +113,8 @@ export interface CanvasServerOptions {
   uiRoot?: string;
   /** Internal seam for protocol tests; production callers should omit it. */
   store?: CanvasStoreLike;
+  /** Injectable provider seam; production uses local CLI/API adapters. */
+  agentProviders?: AgentProvider[];
   /** Bind address is intentionally fixed to loopback for V1. */
   host?: "127.0.0.1";
 }
@@ -1172,12 +1178,17 @@ export class CanvasProtocolService {
   private readonly browserReports = new Map<string, { report: DisplayFacts; receivedAt: string }>();
   private closed = false;
   private connectionPort = 0;
+  private readonly agentChat: AgentChatController;
 
-  constructor(options: { dataRoot: string; uiRoot: string; store: CanvasStoreLike; token: string }) {
+  constructor(options: { dataRoot: string; uiRoot: string; store: CanvasStoreLike; token: string; agentProviders?: AgentProvider[] }) {
     this.store = options.store;
     this.dataRoot = options.dataRoot;
     this.uiRoot = options.uiRoot;
     this.token = options.token;
+    this.agentChat = new AgentChatController({ dataRoot: options.dataRoot, providers: options.agentProviders ?? createAgentProviders({ dataRoot: options.dataRoot }), store: {
+      getSnapshot: () => this.snapshot(), apply: request => this.store.apply(request),
+      preview: (operations, source) => { if (!this.store.preview) throw new Error("此工作副本不支持候选投影"); return this.store.preview(operations, source); },
+    } });
     const unsubscribe = this.store.subscribe((event) => this.publishEvent(event));
     this.unsubscribeStore = typeof unsubscribe === "function" ? unsubscribe : undefined;
   }
@@ -2507,6 +2518,48 @@ export class CanvasProtocolService {
         okResponse(response, this.snapshot());
         return;
       }
+      if (requestUrl.pathname === "/api/agent-chat" && (method === "GET" || method === "POST")) {
+        const authProblem = checkWriteToken(request, this.token);
+        if (authProblem) { errorResponse(response, authProblem); return; }
+        if (method === "GET") {
+          const action = requestUrl.searchParams.get("action") ?? "capabilities";
+          if (action === "capabilities") { okResponse(response, { providers: await this.agentChat.providers() }); return; }
+          const id = z.string().min(1).max(100).parse(requestUrl.searchParams.get("sessionId"));
+          if (action === "session") { okResponse(response, await this.agentChat.get(id)); return; }
+          if (action !== "events") throw problem("INVALID_PARAMS", "Unknown agent-chat read action");
+          let ended = false;
+          let unsubscribe: (() => void) | undefined;
+          await this.agentChat.get(id);
+          response.writeHead(200, { "content-type": "application/x-ndjson; charset=utf-8", "cache-control": "no-store", "x-content-type-options": "nosniff" });
+          const write = (event: unknown) => { if (!ended && !response.destroyed) response.write(`${JSON.stringify(event)}\n`); };
+          const close = () => { if (ended) return; ended = true; unsubscribe?.(); clearInterval(heartbeat); };
+          const heartbeat = setInterval(() => { if (!ended) response.write("\n"); }, 15000);
+          heartbeat.unref();
+          response.once("close", close);
+          unsubscribe = await this.agentChat.subscribe(id, write);
+          if (ended) unsubscribe();
+          return;
+        }
+        const body = z.object({ action: z.enum(["open", "send", "stop", "discard", "preview", "apply"]), sessionId: z.string().max(100).optional(),
+          projectId: z.string(), workCopyId: z.string(), scope: z.unknown().optional(), provider: z.enum(["codex-cli", "claude-cli", "llm"]).optional(),
+          requestId: z.string().min(1).max(100).optional(), text: z.string().max(12000).optional(), mode: z.enum(["ask", "propose"]).optional(), proposalId: z.string().max(100).optional() }).parse(await readBody(request));
+        assertProjectIdentity(this.snapshot(), body.projectId, body.workCopyId);
+        if (body.action === "open") {
+          const scope = z.object({ graphId: z.string(), targets: z.array(z.record(z.string(), z.unknown())).min(1).max(40), labels: z.array(z.string().max(300)).max(40), observedRevision: z.number().int().nonnegative(), graphPath: z.array(z.string()).max(30).optional() }).parse(body.scope);
+          okResponse(response, await this.agentChat.open(scope as unknown as AgentChatScope, body.provider, body.sessionId)); return;
+        }
+        if (!body.sessionId) throw problem("INVALID_PARAMS", "sessionId is required");
+        if (body.action === "send") {
+          if (!body.requestId || !body.text || !body.provider || !body.mode) throw problem("INVALID_PARAMS", "requestId, text, mode and provider are required");
+          okResponse(response, await this.agentChat.send(body.sessionId, { requestId: body.requestId, text: body.text, mode: body.mode, provider: body.provider as AgentProviderId }));
+        } else if (body.action === "stop") okResponse(response, await this.agentChat.stop(body.sessionId));
+        else if (body.action === "discard") okResponse(response, await this.agentChat.discard(body.sessionId));
+        else {
+          if (!body.proposalId) throw problem("INVALID_PARAMS", "proposalId is required");
+          okResponse(response, body.action === "preview" ? { snapshot: await this.agentChat.preview(body.sessionId, body.proposalId) } : await this.agentChat.apply(body.sessionId, body.proposalId));
+        }
+        return;
+      }
       if (requestUrl.pathname === "/api/display-facts" && method === "POST") {
         const authProblem = checkWriteToken(request, this.token);
         if (authProblem) { errorResponse(response, authProblem); return; }
@@ -2742,6 +2795,7 @@ export class CanvasProtocolService {
   async close(): Promise<void> {
     if (this.closed) return;
     this.closed = true;
+    await this.agentChat.close();
     this.unsubscribeStore?.();
     for (const client of this.sseClients) {
       client.response.end();
@@ -3002,7 +3056,7 @@ export async function startCanvasServer(options: CanvasServerOptions): Promise<C
   let closed = false;
   try {
     store = options.store ?? (new CanvasStore(dataRoot, { title: options.title, goal: options.goal }) as unknown as CanvasStoreLike);
-    service = new CanvasProtocolService({ dataRoot, uiRoot, store, token: randomBytes(32).toString("base64url") });
+    service = new CanvasProtocolService({ dataRoot, uiRoot, store, token: randomBytes(32).toString("base64url"), agentProviders: options.agentProviders });
     httpServer = createServer((request, response) => {
       void service?.handleHttp(request, response);
     });
