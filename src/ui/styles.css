@@ -348,10 +348,3 @@ button:disabled { cursor: not-allowed; opacity: .42; }
 
 @container (max-width:620px) { .canvas-interaction-tools button span { display:none; } }
 @container (max-width:400px) { .canvas-interaction-tools { top:44px; bottom:auto; } }
-/* Viewing modes derive visibility; exiting restores each saved chrome preference. */
-.app-shell.is-focus-mode .canvas-toolbar,
-.app-shell.is-focus-mode .workspace-chrome-toggles,
-.app-shell.is-focus-mode .workspace-meta { display: none; }
-.app-shell.is-focus-mode .canvas-interaction-tools,
-.app-shell.is-focus-mode .canvas-meta { display: none; }
-.agent-preview-banner { position: absolute; left: 16px; bottom: 76px; z-index: 45; pointer-events: none; padding: 8px 12px; border: 1px solid #80a7a0; border-radius: 8px; background: #f0fbf6; box-shadow: 0 6px 24px #233f3022; font-size: 12px; }

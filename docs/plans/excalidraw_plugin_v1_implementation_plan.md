@@ -1,12 +1,12 @@
 # Excalidraw 元可视化插件 V1 实施计划
 
-日期：2026-10-03。计划版本：p1.3。新增独立调尺寸及收起的顶部/侧栏、保留中心的地图式缩放、正文滚动预览、手势归属与标题原位展开；实施和验收契约见[工作区交互修订](../WORKSPACE_CONTROLS_2026-10-03.md)。已完成的 p1.2 表达与 Harness 保留，D001–D017、M0–M6、跨平台及性能门槛继续分项验收。
+日期：2026-10-03。计划版本：p1.3。新增独立调尺寸及收起的顶部/侧栏、保留中心的地图式缩放、正文滚动预览、手势归属与标题原位展开；实施和验收契约见[工作区交互修订](../plugins/agent-visual-canvas/docs/WORKSPACE_CONTROLS_2026-10-03.md)。已完成的 p1.2 表达与 Harness 保留，D001–D017、M0–M6、跨平台及性能门槛继续分项验收。
 
-本轮交互修订与实际演示见[交互审计](../INTERACTION_REVISION_2026-10-02.md)及[当前会话验收](../CURRENT_SESSION_DEMO_2026-10-02.md)。完整 V1 的未通过项仍按原门槛验收。
+本轮交互修订与实际演示见[交互审计](../plugins/agent-visual-canvas/docs/INTERACTION_REVISION_2026-10-02.md)及[当前会话验收](../plugins/agent-visual-canvas/docs/CURRENT_SESSION_DEMO_2026-10-02.md)。完整 V1 的未通过项仍按原门槛验收。
 
-2026-10-02 元控件增量 p1.1：纳入 D013–D015，补齐对象摘要、有序分析分节、紧凑/卡片/全文呈现、可原位编辑的富文本框，以及同数据的文档阅读/自由排版视图。原标题节点演示未满足这部分需求。实施和验收门槛见[元控件修订](../SEMANTIC_CONTROLS_2026-10-02.md)；其他 M0–M6 和平台门槛保持。
+2026-10-02 元控件增量 p1.1：纳入 D013–D015，补齐对象摘要、有序分析分节、紧凑/卡片/全文呈现、可原位编辑的富文本框，以及同数据的文档阅读/自由排版视图。原标题节点演示未满足这部分需求。实施和验收门槛见[元控件修订](../plugins/agent-visual-canvas/docs/SEMANTIC_CONTROLS_2026-10-02.md)；其他 M0–M6 和平台门槛保持。
 
-固定需求入口：[需求审计](./excalidraw_plugin_requirements_audit.md)。术语入口：[Agent Visual Canvas 领域语言](../../CONTEXT.md)。架构记录：[项目状态与图上表示](../adr/0001-project-state-and-canvas-projection.md)。
+固定需求入口：[需求审计](./excalidraw_plugin_requirements_audit.md)。术语入口：[Agent Visual Canvas 领域语言](../plugins/agent-visual-canvas/CONTEXT.md)。架构记录：[项目状态与图上表示](../plugins/agent-visual-canvas/docs/adr/0001-project-state-and-canvas-projection.md)。
 
 ## 1. 实施结论
 
@@ -49,10 +49,10 @@ V1 以单人本地协作为主，支持 macOS 和原生 Windows；跨机器通�
 
 版本依据为 2026-10-02 官方 npm 发布元数据；SDK 与布局库精确版本写入独立锁文件。M0 若发现目标客户端兼容问题，选择已发布的兼容版本，并记录理由和影响；不从开发分支引入未验证接口。ELK.js 采用其 EPL-2.0 许可路径，发布时携带对应许可和第三方声明。
 
-工程根目录为 Loomgraph 仓库根目录，使用自己的依赖和构建配置。源码、检查结果与未通过项持续记录在阶段验收文件中；以下目录划分定义实施所有权。
+工程根目录为 `plugins/agent-visual-canvas/`，使用自己的依赖和构建配置。源码、检查结果与未通过项持续记录在阶段验收文件中；以下目录划分定义实施所有权。
 
 ```text
-.
+plugins/agent-visual-canvas/
   CONTEXT.md
   docs/adr/
   src/contracts/         项目、操作、事件、反馈、执行器契约

@@ -427,19 +427,6 @@ export class CanvasStore {
     return clone(this.current);
   }
 
-  /** Rehearse with the same operation and snapshot validators, without a write, event or revision. */
-  preview(operations: Operation[], source: ProjectSnapshot = this.current): ProjectSnapshot {
-    this.assertOpen();
-    this.assertIdentity(source.projectId, source.workCopyId);
-    const actor: Actor = { id: "canvas-preview", kind: "agent", label: "候选预览" };
-    this.validateChangeRequest({ operationId: "preview", projectId: source.projectId, workCopyId: source.workCopyId,
-      baseRevision: source.revision, actor, reason: "只读候选预览", operations });
-    const next = clone(source);
-    for (const operation of operations) this.applyOperation(next, operation, actor, isoNow(), new Set(), new Set());
-    this.validateSnapshot(next, { allowHistoricalTargets: true });
-    return next;
-  }
-
   apply(request: ChangeRequest): ApplyResult {
     this.assertOpen();
     const canonical = stableStringify(request);

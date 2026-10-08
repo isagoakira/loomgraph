@@ -21,33 +21,22 @@ try {
   await mkdir(stage);
   const files = ["dist", "skills", "licenses", "docs", "examples", "README.md", "CONTEXT.md", "plugin.json", "mcp.json", ".codex-plugin", ".claude-plugin", ".mcp.json"];
   for (const file of files) await cp(join(root, file), join(stage, file), { recursive: true });
-  const plans = join(root, "docs", "plans");
-  const planSource = await readFile(join(plans, "excalidraw_plugin_v1_implementation_plan.md"), "utf8");
-  const auditSource = await readFile(join(plans, "excalidraw_plugin_requirements_audit.md"), "utf8");
+  const research = resolve(root, "../../research");
+  const planSource = await readFile(join(research, "excalidraw_plugin_v1_implementation_plan.md"), "utf8");
+  const auditSource = await readFile(join(research, "excalidraw_plugin_requirements_audit.md"), "utf8");
   const implementationPlanVersion = /计划版本：([^。\s]+)/.exec(planSource)?.[1];
   if (!implementationPlanVersion) throw new Error("Implementation plan version is missing");
   const portableDocument = source => source
     .replaceAll("./excalidraw_plugin_requirements_audit.md", "REQUIREMENTS_AUDIT.md")
     .replaceAll("./excalidraw_plugin_v1_implementation_plan.md", "IMPLEMENTATION_PLAN.md")
-    .replaceAll("../WORKSPACE_CONTROLS_2026-10-03.md", "WORKSPACE_CONTROLS_2026-10-03.md")
-    .replaceAll("../INTERACTION_REVISION_2026-10-02.md", "INTERACTION_REVISION_2026-10-02.md")
-    .replaceAll("../CURRENT_SESSION_DEMO_2026-10-02.md", "CURRENT_SESSION_DEMO_2026-10-02.md")
-    .replaceAll("../SEMANTIC_CONTROLS_2026-10-02.md", "SEMANTIC_CONTROLS_2026-10-02.md")
-    .replaceAll("../EXPLANATION_CARD_AUDIT_2026-10-02.md", "EXPLANATION_CARD_AUDIT_2026-10-02.md")
-    .replaceAll("../EXPRESSION_HARNESS_DESIGN_2026-10-02.md", "EXPRESSION_HARNESS_DESIGN_2026-10-02.md")
-    .replaceAll("../IMPLEMENTATION_STATUS.md", "IMPLEMENTATION_STATUS.md")
-    .replaceAll("../adr/", "adr/")
-    .replaceAll("../../CONTEXT.md", "../CONTEXT.md");
+    .replaceAll("../plugins/agent-visual-canvas/docs/", "")
+    .replaceAll("../plugins/agent-visual-canvas/", "../");
   await writeFile(join(stage, "docs/IMPLEMENTATION_PLAN.md"), portableDocument(planSource), { flag: "wx" });
   await writeFile(join(stage, "docs/REQUIREMENTS_AUDIT.md"), portableDocument(auditSource), { flag: "wx" });
-  for (const document of ["docs/IMPLEMENTATION_STATUS.md", "docs/ACCEPTANCE_MATRIX.md", "docs/STRUCTURED_NOTEBOOK_RETROFIT_PLAN_2026-10-04.md"]) {
+  for (const document of ["docs/IMPLEMENTATION_STATUS.md", "docs/ACCEPTANCE_MATRIX.md"]) {
     const path = join(stage, document);
     const source = await readFile(path, "utf8");
-    await writeFile(path, source
-      .replaceAll("../../../research/excalidraw_plugin_v1_implementation_plan.md", "IMPLEMENTATION_PLAN.md")
-      .replaceAll("../../../research/excalidraw_plugin_requirements_audit.md", "REQUIREMENTS_AUDIT.md")
-      .replaceAll("../plans/excalidraw_plugin_v1_implementation_plan.md", "IMPLEMENTATION_PLAN.md")
-      .replaceAll("../plans/excalidraw_plugin_requirements_audit.md", "REQUIREMENTS_AUDIT.md"));
+    await writeFile(path, source.replaceAll("../../../research/excalidraw_plugin_v1_implementation_plan.md", "IMPLEMENTATION_PLAN.md"));
   }
   const readmePath = join(stage, "README.md");
   const readme = await readFile(readmePath, "utf8");

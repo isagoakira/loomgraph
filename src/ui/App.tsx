@@ -50,8 +50,6 @@ import { SelectionToolbar } from "./SelectionToolbar";
 import { loadAgentRequestDrafts, saveAgentRequestDrafts, agentRequestDraftKey, type AgentRequestDrafts } from "./agent-request-drafts";
 import { AgentRequestComposer, type AgentRequestResult } from "./AgentRequestComposer";
 import { agentRequestAnnotation, agentRequestHandoff, type AgentRequestKind, type AgentRequestScope } from "./agent-request";
-import { AgentChatPanel } from "./AgentChatPanel";
-import { useAgentChat } from "./useAgentChat";
 import { arrangeSelection, clusterSelectionRefs, dissolveSelectedClusters, placementKey, placementState, type ArrangeSelection } from "./selection-actions";
 import { planContentTransform } from "./content-geometry";
 import { OrganizationActivityPanel } from "./OrganizationActivityPanel";
@@ -149,9 +147,6 @@ type WorkspaceViewports = Record<string, Record<string, CanvasViewport>>;
 interface UndoEntry {
   operations: Operation[];
   label: string;
-  projectId: string;
-  workCopyId: string;
-  graphId: string;
   /** Revision produced by the original commit; undo uses this as its protected base. */
   appliedRevision?: number;
 }
@@ -554,9 +549,6 @@ export function App() {
   const [editTextId, setEditTextId] = useState<string | null>(null);
   const [drawingToolsExpanded, setDrawingToolsExpanded] = useState(false);
   const chrome = useWorkspaceChrome();
-  const [canvasModes, setCanvasModes] = useState({ gridModeEnabled: false, objectsSnapModeEnabled: false, zenModeEnabled: false, gridSize: 20 });
-  const topHidden = chrome.preferences.topHidden || canvasModes.zenModeEnabled;
-  const sidebarHidden = chrome.preferences.sidebarHidden || canvasModes.zenModeEnabled;
   const [path, setPath] = useState<CanvasPathEntry[]>([]);
   // Viewports belong to a project/work-copy identity as well as a graph. This
   // prevents a newly loaded workspace from inheriting the previous one's
@@ -620,7 +612,6 @@ export function App() {
   const resourceLoadingRef = useRef(new Set<string>());
   const loadedIdentityRef = useRef<string | null>(null);
   const restoredIdentityRef = useRef(false);
-  const chatUndoBaselineRef = useRef<{ proposalId: string; snapshot: ProjectSnapshot } | null>(null);
 
   const setSnapshot = useCallback((next: ProjectSnapshot | ((current: ProjectSnapshot) => ProjectSnapshot)) => {
     // Resolve against the ref before queueing React state. SSE change and
@@ -630,33 +621,6 @@ export function App() {
     snapshotRef.current = value;
     setSnapshotState(value);
   }, []);
-
-  const chat = useAgentChat({ client: clientRef.current, projectId: snapshot.projectId, workCopyId: snapshot.workCopyId, graphId, revision: snapshot.revision,
-    onApplied: async (session) => {
-      const candidate = session.proposal;
-      const baseline = chatUndoBaselineRef.current;
-      const before = baseline && baseline.proposalId === candidate?.id ? baseline.snapshot : undefined;
-      const loaded = await clientRef.current.load();
-      // The project history is authoritative; only a confirmed candidate creates an undo entry.
-      if (candidate?.status === "applied" && before) {
-        const inverse = candidate.operations.slice().reverse().map(operation => cloneOperationInverse(before, operation)).filter((operation): operation is Operation => Boolean(operation));
-        if (inverse.length && !undoStackRef.current.some(entry => entry.label === `画布 Agent ${candidate.id}`)) undoStackRef.current.push({ operations: inverse, label: `画布 Agent ${candidate.id}`, projectId: session.projectId, workCopyId: session.workCopyId, graphId: session.scope.graphId, appliedRevision: candidate.revision ?? loaded.snapshot.revision });
-      }
-      setSnapshot(loaded.snapshot); setConnection(loaded.connection);
-    } });
-  const canvasSnapshot = chat.preview ?? snapshot;
-  useEffect(() => {
-    const proposalId = chat.session?.proposal?.id;
-    if (chat.preview && proposalId && chatUndoBaselineRef.current?.proposalId !== proposalId) chatUndoBaselineRef.current = { proposalId, snapshot: structuredClone(snapshotRef.current) };
-  }, [chat.preview, chat.session?.proposal?.id]);
-
-  const chatContextLabel = (id: string) => {
-    const kind = id.slice(0, id.indexOf(":")), raw = id.slice(id.indexOf(":") + 1);
-    if (kind === "entity") return snapshot.entities.find(item => item.id === raw)?.title ?? "所选对象";
-    if (kind === "representation") { const rep = snapshot.representations.find(item => item.id === raw); return snapshot.entities.find(item => item.id === rep?.entityId)?.title ?? "所选模块"; }
-    if (kind === "relation") { const relation = snapshot.relations.find(item => item.id === raw); return relation?.label ?? "所选关系"; }
-    return kind === "element" ? "所选文本/图形" : "当前图谱";
-  };
 
   const advanceDisplayFactsEpoch = useCallback((): number => {
     const epochs = displayFactsEpochsRef.current ?? {};
@@ -1316,7 +1280,6 @@ export function App() {
   }, [activeCluster?.anchor, currentViewport.scrollX, currentViewport.scrollY, currentViewport.zoom, graphId, notebookMaintenance, notebookMeasureScope, notebookMeasures, notebookMode, notebookViewGeometries, organizationView, selectedTargets, viewEpoch, workspaceIdentityKey]);
 
   const reportDisplayFacts = useCallback(() => {
-    if (chat.preview) return;
     // The server orders facts by the stable viewId. A browser reload resets
     // React state, so advance the persisted scoped epoch before the first
     // report of a new page session instead of sending epoch 0 again.
@@ -1339,7 +1302,7 @@ export function App() {
     void clientRef.current.reportDisplayFacts(facts).catch(() => {
       // Display facts are transient; a failed report must not become a project change or queue item.
     });
-  }, [captureObservedCanvasView, ensureDisplayFactsEpoch, graphId, workspaceIdentityKey, chat.preview]);
+  }, [captureObservedCanvasView, ensureDisplayFactsEpoch, graphId, workspaceIdentityKey]);
 
   const queueDisplayFacts = useCallback(() => {
     if (displayFactsTimerRef.current !== null) window.clearTimeout(displayFactsTimerRef.current);
@@ -1555,7 +1518,6 @@ export function App() {
         undoStackRef.current.push({
           operations: inverse,
           label: reason,
-          projectId: before.projectId, workCopyId: before.workCopyId, graphId,
           appliedRevision: applied.result?.revision ?? applied.snapshot.revision,
         });
       }
@@ -1669,8 +1631,7 @@ export function App() {
   const undoInFlightRef = useRef(false);
   const handleUndo = useCallback(() => {
     if (undoInFlightRef.current) return;
-    const currentSnapshot = snapshotRef.current;
-    const entry = undoStackRef.current.slice().reverse().find(item => item.projectId === currentSnapshot.projectId && item.workCopyId === currentSnapshot.workCopyId && item.graphId === graphId);
+    const entry = undoStackRef.current[undoStackRef.current.length - 1];
     if (!entry) {
       toast("没有可撤销的本地变更");
       return;
@@ -1678,13 +1639,13 @@ export function App() {
     undoInFlightRef.current = true;
     void commitOperations(entry.operations, `撤销：${entry.label}`, { recordUndo: false, baseRevision: entry.appliedRevision }).then((status) => {
       if (status === "applied" || status === "pending") {
-        const index = undoStackRef.current.indexOf(entry);
-        if (index >= 0) undoStackRef.current.splice(index, 1);
+        const current = undoStackRef.current[undoStackRef.current.length - 1];
+        if (current === entry) undoStackRef.current.pop();
       }
     }).finally(() => {
       undoInFlightRef.current = false;
     });
-  }, [commitOperations, toast, graphId]);
+  }, [commitOperations, toast]);
 
   const handleViewportChange = useCallback((viewport: CanvasViewport) => {
     setViewports((current) => ({
@@ -2097,12 +2058,8 @@ export function App() {
     if (!frozen.targets.length) { toast("原选区已失效，请重新选择要处理的内容。 "); return; }
     const targets = frozen.targets;
     const scope = { targets: structuredClone(targets), observedRevision: snapshotRef.current.revision, graphPath: composerGraphPath(path, graphId), organizationAnchors: frozen.anchors, observedView: frozen.observedView, labels: targets.map(target => targetDisplay(snapshotRef.current, target).label) };
-    void chat.open({ ...scope, graphId }).catch(() => {});
+    setAgentRequestScope(agentRequestDrafts[agentRequestDraftKey(scope)]?.scope ?? scope);
   };
-  const currentAgentTargets = freezeFeedbackOrganization(selectedTargets).targets;
-  const latestAgentSelection = chat.activeScope && currentAgentTargets.length && (snapshot.revision !== chat.activeScope.observedRevision || JSON.stringify(currentAgentTargets) !== JSON.stringify(chat.activeScope.targets))
-    ? { observedRevision: snapshot.revision, targets: currentAgentTargets.map(target => ({ id: contentAnchorKey(target), label: targetDisplay(snapshot, target).label })) }
-    : undefined;
   const updateAgentRequestDraft = (kind: AgentRequestKind, text: string) => {
     if (!agentRequestScope) return;
     const key = agentRequestDraftKey(agentRequestScope);
@@ -2438,8 +2395,8 @@ export function App() {
   }
 
   return (
-    <main className={`app-shell${contentView === "reading" ? " is-reading-workspace" : ""}${chrome.resizing ? ` is-resizing-${chrome.resizing}` : ""}${canvasModes.zenModeEnabled ? " is-focus-mode" : ""}`} data-ui-build-id={CANVAS_BUILD_ID} data-organization-scope={organizationView?.scope} data-organization-cluster={organizationView?.clusterId} data-attention-intent={organizationOptions.intent}>
-      <section className="top-panel" id="workspace-top-panel" aria-label="顶部工具区" hidden={topHidden} style={{ height: chrome.topHeight }}>
+    <main className={`app-shell${contentView === "reading" ? " is-reading-workspace" : ""}${chrome.resizing ? ` is-resizing-${chrome.resizing}` : ""}`} data-ui-build-id={CANVAS_BUILD_ID} data-organization-scope={organizationView?.scope} data-organization-cluster={organizationView?.clusterId} data-attention-intent={organizationOptions.intent}>
+      <section className="top-panel" id="workspace-top-panel" aria-label="顶部工具区" hidden={chrome.preferences.topHidden} style={{ height: chrome.topHeight }}>
       <header className="topbar">
         <div className="brand-lockup"><div className="brand-mark">AV<span />C</div><div><div className="brand-name">Agent Visual Canvas</div><div className="brand-kicker">LOCAL WORKBENCH / 01</div></div></div>
         <div className="project-identity"><span className="eyebrow">当前项目</span><strong>{snapshot.title}</strong><span className="revision-chip">REV {snapshot.revision.toString().padStart(3, "0")}</span></div>
@@ -2492,7 +2449,7 @@ export function App() {
           </div>
           <div className="chrome-resize-handle top-resize-handle" {...chrome.separator("top")} title="拖动调整顶部高度；双击恢复默认"><span aria-hidden="true" /></div>
       </section>
-      <div className="app-grid" style={{ gridTemplateColumns: `minmax(0, 1fr) ${sidebarHidden ? 0 : chrome.sidebarWidth}px` }}>
+      <div className="app-grid" style={{ gridTemplateColumns: `minmax(0, 1fr) ${chrome.preferences.sidebarHidden ? 0 : chrome.sidebarWidth}px` }}>
         <section className="workspace-column">
           <div className="canvas-frame" onPointerDownCapture={event => {
             if (!selectedClusterIds.length || !(event.target instanceof Element)) return;
@@ -2507,11 +2464,11 @@ export function App() {
               <button aria-label="框选可见内容" aria-pressed={areaSelectionMode} onClick={() => { setRegionMode(false); setAreaSelectionMode(value => !value); setEditTextId(null); }}>▱ <span>框选</span></button>
               <button aria-label="平移画布" onClick={() => { setAreaSelectionMode(false); setRegionMode(false); apiRef.current?.setActiveTool({ type: "hand" }); }}>✋ <span>平移</span></button>
               <button aria-label="区域批注" aria-pressed={regionMode} onClick={() => { setAreaSelectionMode(false); setRegionMode(value => !value); apiRef.current?.setActiveTool({ type: "selection" }); }}>✎ <span>区域批注</span></button>
-              <button aria-label="撤销画布修改" disabled={busy || Boolean(chat.preview) || !undoStackRef.current.some(entry => entry.projectId === snapshot.projectId && entry.workCopyId === snapshot.workCopyId && entry.graphId === graphId)} onClick={handleUndo}>↶</button>
+              <button aria-label="撤销画布修改" disabled={busy || undoStackRef.current.length === 0} onClick={handleUndo}>↶</button>
             </div>
             {contentView === "layout" && <div className="canvas-meta"><span className="canvas-type">{organizationView ? activeCluster?.notation === "flow" ? "流程段" : activeCluster?.notation === "mindmap" ? "概念簇" : "图文混合" : graph?.kind?.toUpperCase() ?? "CANVAS"}</span><span className="canvas-meta-copy">{organizationView ? organizationOptions.intent === "monitor" ? organizationView.attention.totalTasks ? `进行中 ${organizationView.activitySummary.doing} · 阻塞 ${organizationView.activitySummary.blocked} · 失败 ${organizationView.activitySummary.failed}` : "方法示意 · 尚无实际任务运行" : activeCluster?.question ?? "文字、图解与分支在同一平面" : "正文、模块和图片可共同排版"}</span></div>}
             <CanvasWorkspace
-              snapshot={canvasSnapshot}
+              snapshot={snapshot}
               graphId={graphId}
               viewport={currentViewport}
               viewportRecorded={viewportRecorded}
@@ -2530,7 +2487,7 @@ export function App() {
               onAreaSelectionComplete={() => setAreaSelectionMode(false)}
               onReady={(api) => { apiRef.current = api; }}
               onSceneReady={handleSceneReady}
-              onOperations={chat.preview ? () => {} : handleCanvasOperations}
+              onOperations={handleCanvasOperations}
               onSelection={handleSelection}
               onViewportChange={handleViewportChange}
               onRegion={handleRegion}
@@ -2539,7 +2496,7 @@ export function App() {
               onBinaryFiles={handleBinaryFiles}
               contentView={contentView}
               selectedTargets={selectedTargets}
-              onContentCommit={chat.preview ? async () => { toast("当前是候选预览；应用或放弃后再直接编辑"); return "rejected"; } : commitContent}
+              onContentCommit={commitContent}
               onContentDetails={() => { chrome.showSidebar(); setPanel("details"); }}
               onContentAnnotate={(target) => {
                 chrome.showSidebar();
@@ -2553,9 +2510,8 @@ export function App() {
               editTextId={editTextId}
               onTextEditing={setEditTextId}
               drawingToolsVisible={!hasRichContent || drawingToolsExpanded}
-              onCanvasModesChange={setCanvasModes}
             />
-            {!agentRequestScope && !chat.preview && !canvasModes.zenModeEnabled && !selectionGesture && !areaSelectionMode && !regionMode && !editTextId && (selectedTargets.length > 0 || selectedClusterIds.length > 0) && <SelectionToolbar
+            {!agentRequestScope && !selectionGesture && !areaSelectionMode && !regionMode && !editTextId && (selectedTargets.length > 0 || selectedClusterIds.length > 0) && <SelectionToolbar
               count={selectedTargets.length} groupCount={selectedClusterIds.length} groupTitle={organizationView?.clusters.find(cluster => cluster.id === selectedClusterIds[0])?.title}
               protectedCount={selectedLockedCount} pinnedCount={selectedPinnedCount} busy={busy}
               selectionKey={`${selectedClusterIds.join("|")}:${selectedTargets.map(targetKey).join("|")}`}
@@ -2566,34 +2522,13 @@ export function App() {
               onDetails={() => { chrome.showSidebar(); setPanel("details"); }}
             />}
             {agentRequestScope && <AgentRequestComposer key={`${workspaceIdentityKey}:${graphId}:${agentRequestScope.observedRevision}:${agentRequestScope.targets.map(contentAnchorKey).join("|")}`} scope={agentRequestScope} initialText={agentRequestDrafts[agentRequestDraftKey(agentRequestScope)]?.text} initialKind={agentRequestDrafts[agentRequestDraftKey(agentRequestScope)]?.kind} storageError={agentRequestDraftStorageError} initialPending={Boolean(agentRequestDrafts[agentRequestDraftKey(agentRequestScope)]?.pendingAnnotationId)} onDraftChange={updateAgentRequestDraft} pendingCount={allDrafts.filter(item => item.status === "draft" && selectedAnnotationIds.includes(item.id)).length} onClose={() => setAgentRequestScope(null)} onQueue={() => { chrome.showSidebar(); setPanel("feedback"); setAgentRequestScope(null); }} onSubmit={submitAgentRequest} />}
-            {chat.activeScope && <AgentChatPanel
-              previewConfirmed={Boolean(chat.preview) && chat.previewProposalId === chat.session?.proposal?.id}
-              scope={{ observedRevision: chat.activeScope.observedRevision, graphPath: chat.activeScope.graphPath?.map(id => snapshot.graphs.find(graph => graph.id === id)?.title ?? id), targets: chat.activeScope.targets.map((target, index) => ({ id: contentAnchorKey(target), label: chat.activeScope!.labels[index] ?? targetDisplay(snapshot, target).label })) }}
-              providers={chat.providers} providerId={chat.selectedProvider} onProviderChange={id => chat.setSelectedProvider(id)}
-              session={{ id: chat.session?.id, providerId: chat.session?.provider, status: chat.session?.state === "running" ? "streaming" : chat.session?.state === "stopping" ? "stopping" : chat.session?.state === "failed" ? "error" : "idle", detail: chat.error ?? chat.session?.error }}
-              messages={chat.session?.messages.map(message => ({ ...message, status: message.status === "running" ? "streaming" : message.status === "completed" ? "complete" : message.status === "failed" ? "error" : "stopped" }))}
-              context={{ sourceRevision: chat.session?.context?.revision ?? chat.activeScope.observedRevision,
-                writableTargets: chat.session?.context?.writable.map(id => ({ id, kind: id.split(":")[0], label: chatContextLabel(id) })),
-                readOnlyNeighbors: chat.session?.context?.readonly.map(id => ({ id, kind: id.includes("relation:") ? "relation" : "entity", label: id.split(" · ")[0] })), omissions: chat.session?.context?.omissions.map(item => item === "ORGANIZATION_MISSING" ? "本图未设置组织分组" : /^[A-Z_]+(?::|$)/.test(item) ? "部分结构信息未进入本轮上下文" : item),
-                budget: { used: chat.session?.context?.bytes, limit: chat.session?.context?.budget, label: "本轮上下文" },
-                latestSelection: latestAgentSelection }}
-              proposal={chat.session?.proposal ? { status: chat.session.proposal.status === "ready" ? chat.preview ? "previewing" : "ready" : chat.session.proposal.status,
-                id: chat.session.proposal.id, parentId: chat.session.proposal.parentId, changeId: chat.session.proposal.changeId, appliedRevision: chat.session.proposal.revision,
-                baselineRevision: chat.session.proposal.baseRevision, currentRevision: snapshot.revision, canApply: chat.session.proposal.status === "ready" && chat.previewProposalId === chat.session.proposal.id && Boolean(chat.preview) && !chat.busy,
-                validation: { status: chat.session.proposal.status === "conflict" ? "failed" : "passed", message: chat.session.proposal.warnings.join("；") || "选区与内容校验通过" },
-                changes: chat.session.proposal.changes?.map((change, index) => ({ id: String(index), target: change.target, detail: `${change.field}\n原：${change.before || "空"}\n新：${change.after || "空"}` })) } : undefined}
-              disabled={!connection.connected} onSend={chat.send} onStop={chat.stop} onPreview={chat.showPreview} onApply={chat.apply} onDiscard={chat.discard}
-              onContextSwitch={() => beginAgentRequest()} onClose={chat.close}
-              onLegacy={text => { const scope: AgentRequestScope = { ...chat.activeScope!, graphPath: chat.activeScope!.graphPath ?? [graphId] }; setAgentRequestScope(scope); retainAgentRequestDrafts(workspaceIdentityKey, { ...agentRequestSessionDrafts.current[workspaceIdentityKey], [agentRequestDraftKey(scope)]: { scope, kind: "revise", text } }); chat.close(); }}
-            />}
-            {chat.preview && <div className="agent-preview-banner" role="status">候选预览 · 尚未写入</div>}
             {contentView === "layout" && currentStats.entities.length === 0 && !snapshot.freeElements.some(item => item.graphId === graphId && item.element.isDeleted !== true) && <div className="empty-canvas-card"><div className="empty-index">01 / START HERE</div><h2>这张图还没有对象</h2><p>从正文、模块或子图入口开始。新增内容会形成项目修订。</p><div className="empty-actions"><button className="primary-button" onClick={() => void insertTextBox()}>＋ 文本框</button><button className="quiet-button" onClick={() => addObject("module")}>添加模块</button><button className="quiet-button" onClick={() => addObject("subgraph")}>添加子图</button></div></div>}
             {notice && <div className="toast-message" role="status">{notice}</div>}
             {presentationPrompt && <div className="toast-message presentation-prompt" role="status"><span>{presentationPrompt.resolution.message}</span>{presentationPrompt.resolution.status === "resolved" && <button className="text-button" onClick={() => requestPresentationFocus(presentationPrompt.resolution)}>查看</button>}</div>}
           </div>
         </section>
 
-        <div className="sidebar-shell" id="workspace-sidebar" hidden={sidebarHidden}>
+        <div className="sidebar-shell" id="workspace-sidebar" hidden={chrome.preferences.sidebarHidden}>
           <div className="chrome-resize-handle sidebar-resize-handle" {...chrome.separator("sidebar")} title="拖动调整侧栏宽度；双击恢复默认"><span aria-hidden="true" /></div>
         <aside className="right-panel" aria-label="项目侧栏">
           {panelNavigation}
