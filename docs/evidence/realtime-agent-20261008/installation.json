@@ -1,0 +1,16 @@
+{
+  "installedAt": "2026-10-08T12:28:16.399Z",
+  "version": "0.1.0-local-20261008-r30",
+  "buildId": "realtime-agent-20261008-r30",
+  "target": "<local-install-root>/versions/0.1.0-local-20261008-r30",
+  "oldCurrent": "<local-install-root>/versions/0.1.0-local-20261007-r29.3",
+  "current": "<local-install-root>/versions/0.1.0-local-20261008-r30",
+  "skillBackup": "<source-checkout>/plugins/agent-visual-canvas/.runtime/realtime-agent-20261008/installed-skill-before-r30-b99fbfb8-0d2c-4f7b-b354-835503f7c548.md",
+  "archivePath": ".runtime/realtime-agent-20261008/release/agent-visual-canvas-0.1.0.zip",
+  "sha256": "05a892080eb73525baea8751aecca1ba17e3434c43e956ccd7f37236dd877bbf",
+  "verifiedFiles": 951,
+  "manifestFileSetVerified": true,
+  "sidecarVerified": true,
+  "liveProjectUntouched": true,
+  "activeMcpProcessReloaded": false
+}

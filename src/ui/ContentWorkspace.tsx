@@ -12,6 +12,11 @@ import { removeNotebookTargets } from "../layout/notebook-edit";
 import type { NotebookGroupBounds } from "../layout/notebook-maintainer";
 import type { OrganizationCluster, OrganizationViewPlan } from "../layout/organization";
 import { ExecutionBadge, useExecutionPresentation } from "./ExecutionPresentation";
+import {
+  snapContentGeometry,
+  type ContentSnapCandidate,
+  type ContentSnapOptions,
+} from "../canvas/content-snapping";
 
 interface ContentCallbacks {
   snapshot: ProjectSnapshot; graphId: string; commit: ContentCommit;
@@ -135,7 +140,22 @@ interface Camera { width: number; height: number; scrollX: number; scrollY: numb
 interface Geometry { x: number; y: number; width: number; height: number }
 interface LayoutItem { ref: ReadingRef; geo: Geometry; rep?: Representation; entity?: Entity; free?: FreeElement; notebook?: NotebookRepresentationMetadata | NotebookTextMetadata | null }
 export type ContentGestureKind = "move" | "resize";
-interface Gesture { ref: ReadingRef; baseRevision: number; origin: Geometry; current: Geometry; clientX: number; clientY: number; kind: ContentGestureKind; zoom: number; graphId: string; scope: string; previewToken: number; free?: FreeElement }
+interface Gesture {
+  ref: ReadingRef;
+  baseRevision: number;
+  origin: Geometry;
+  current: Geometry;
+  clientX: number;
+  clientY: number;
+  kind: ContentGestureKind;
+  zoom: number;
+  graphId: string;
+  scope: string;
+  previewToken: number;
+  /** Candidates are frozen at pointer-down so preview and commit agree. */
+  snapCandidates: readonly ContentSnapCandidate[];
+  free?: FreeElement;
+}
 
 export type GeometryPreviewOverrides = Readonly<Record<string, { x: number; y: number; width: number; height: number }>>;
 export interface GeometryPreviewContext { graphId: string; scope: string; token: number }
@@ -355,6 +375,11 @@ export function ContentLayoutLayer(props: ContentCallbacks & {
   /** A transient geometry stream for live relation routing; it never creates a revision. */
   onGeometryPreview?: (graphId: string, overrides: GeometryPreviewOverrides | null) => void;
   notebookGroupBounds?: ReadonlyMap<string, NotebookGroupBounds>;
+  /** Native mode state and public scene-derived candidates supplied by the canvas owner. */
+  contentSnapping?: Pick<ContentSnapOptions, "gridEnabled" | "objectsSnapEnabled" | "gridSize" | "zoom">;
+  snapCandidates?: readonly ContentSnapCandidate[];
+  /** Focus mode hides the custom content drag grip while leaving the exit control visible. */
+  zenModeEnabled?: boolean;
 }) {
   const { snapshot, graphId, camera, visible, selectedTargets, commit, onSelect, onDetails, onAnnotate, onSubgraph, editTextId, onTextEditing, onNotebookMeasure, geometryOverrides, onGeometryPreview } = props;
   const execution = useExecutionPresentation(snapshot);
@@ -484,21 +509,40 @@ export function ContentLayoutLayer(props: ContentCallbacks & {
     const override = geometryOverrides?.[readingKey(item.ref)];
     return pickGeometry(override ?? item.geo);
   };
+  const snapCandidatesFor = (selfKey: string): readonly ContentSnapCandidate[] => [
+    ...boxes
+      .filter(item => visibleKeys === null || visibleKeys.has(readingKey(item.ref)))
+      .map(item => {
+        const geo = visualGeometry(item);
+        return { ...geo, id: readingKey(item.ref), visible: true };
+      }),
+    ...(props.snapCandidates ?? []).filter(candidate => candidate.id !== selfKey),
+  ];
   const beginGesture = (event: React.PointerEvent, item: LayoutItem, kind: Gesture["kind"]) => {
     if (event.button !== 0 || !Number.isFinite(camera.zoom) || camera.zoom <= 0) return;
     event.stopPropagation(); event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId);
     onSelect(readingTarget(item.ref, graphId), event.shiftKey);
     const origin = visualGeometry(item);
+    const snapCandidates = snapCandidatesFor(readingKey(item.ref));
     const previewToken = ++geometryPreviewTokenRef.current;
     geometryPreviewRef.current = { graphId, scope: notebookIdentity, token: previewToken };
     geometryPreviewCallbackRef.current?.(graphId, geometryPreviewFor(item.ref, origin));
-    const next: Gesture = { ref: item.ref, baseRevision: snapshot.revision, origin: { ...origin }, current: { ...origin }, clientX: event.clientX, clientY: event.clientY, kind, zoom: camera.zoom, graphId, scope: notebookIdentity, previewToken, free: item.free ? structuredClone(item.free) : undefined };
+    const next: Gesture = { ref: item.ref, baseRevision: snapshot.revision, origin: { ...origin }, current: { ...origin }, clientX: event.clientX, clientY: event.clientY, kind, zoom: camera.zoom, graphId, scope: notebookIdentity, previewToken, snapCandidates, free: item.free ? structuredClone(item.free) : undefined };
     gestureRef.current = next; setGesture(next); setFailure("");
   };
   const moveGesture = (event: React.PointerEvent) => {
     const current = gestureRef.current; if (!current) return;
     event.stopPropagation(); const dx = (event.clientX - current.clientX) / current.zoom; const dy = (event.clientY - current.clientY) / current.zoom;
-    const geometry = current.kind === "move" ? { ...current.origin, x: current.origin.x + dx, y: current.origin.y + dy } : { ...current.origin, width: Math.max(220, current.origin.width + dx), height: Math.max(130, current.origin.height + dy) };
+    const rawGeometry = current.kind === "move"
+      ? { ...current.origin, x: current.origin.x + dx, y: current.origin.y + dy }
+      : { ...current.origin, width: Math.max(220, current.origin.width + dx), height: Math.max(130, current.origin.height + dy) };
+    const geometry = snapContentGeometry(current.kind, rawGeometry, {
+      ...(props.contentSnapping ?? {}),
+      zoom: current.zoom,
+      candidates: current.snapCandidates,
+      selfId: readingKey(current.ref),
+      temporaryModifier: event.ctrlKey || event.metaKey,
+    });
     const next = { ...current, current: geometry }; gestureRef.current = next;
     geometryPreviewCallbackRef.current?.(current.graphId, geometryPreviewFor(current.ref, geometry));
     setGesture(next);
@@ -646,7 +690,7 @@ export function ContentLayoutLayer(props: ContentCallbacks & {
           event.preventDefault(); event.stopPropagation(); onSelect(target, event.shiftKey);
         }}
         onClick={event => { event.stopPropagation(); if (!editing) onSelect(target, event.shiftKey); }} onDoubleClick={event => { event.stopPropagation(); if (box && item.free) { onSelect(target); onTextEditing(item.free.id); } }}>
-        <div className="layout-block-grip" data-notebook-order={isNotebook && notebookMeta && "order" in notebookMeta ? String(notebookMeta.order) : undefined}><button className="layout-drag-handle" aria-label={`拖动 ${box?.title ?? item.entity?.title ?? "内容块"}`} onPointerDown={event => beginGesture(event, item, "move")}><span aria-hidden="true">⠿</span></button>{item.entity && !box ? <button className="layout-block-title" onClick={event => { event.stopPropagation(); onSelect(target, event.shiftKey); }}>{item.entity.title}</button> : <strong>{box?.title ?? (notebookText.slice(0, 64) || "笔记")}</strong>}{item.entity && !box && <button type="button" className="layout-disclosure-toggle" aria-expanded={expanded} aria-label={`${expanded ? "收起细则" : "展开细则"}：${item.entity.title}`} title={`${expanded ? "收起" : "展开"}细则`} onPointerDown={event => event.stopPropagation()} onClick={event => { event.stopPropagation(); toggleCard(scopeKey); }}><span aria-hidden="true">{expanded ? "−" : "＋"}</span></button>}<span className="layout-grip-hint">{expanded ? "细则已展开" : isNotebook ? "" : "滚轮预览"}</span></div>
+        <div className="layout-block-grip" data-notebook-order={isNotebook && notebookMeta && "order" in notebookMeta ? String(notebookMeta.order) : undefined}>{!props.zenModeEnabled && <button className="layout-drag-handle" aria-label={`拖动 ${box?.title ?? item.entity?.title ?? "内容块"}`} onPointerDown={event => beginGesture(event, item, "move")}><span aria-hidden="true">⠿</span></button>}{item.entity && !box ? <button className="layout-block-title" onClick={event => { event.stopPropagation(); onSelect(target, event.shiftKey); }}>{item.entity.title}</button> : <strong>{box?.title ?? (notebookText.slice(0, 64) || "笔记")}</strong>}{item.entity && !box && <button type="button" className="layout-disclosure-toggle" aria-expanded={expanded} aria-label={`${expanded ? "收起细则" : "展开细则"}：${item.entity.title}`} title={`${expanded ? "收起" : "展开"}细则`} onPointerDown={event => event.stopPropagation()} onClick={event => { event.stopPropagation(); toggleCard(scopeKey); }}><span aria-hidden="true">{expanded ? "−" : "＋"}</span></button>}<span className="layout-grip-hint">{expanded ? "细则已展开" : isNotebook ? "" : "滚轮预览"}</span></div>
         {item.entity && (item.entity.kind === "task" || execution.entities[item.entity.id]?.runId) && <div className="execution-status-row"><ExecutionBadge display={execution.entities[item.entity.id]} entity={item.entity} motionVisible={execution.motionVisible} run={snapshot.runs.find(run => run.id === execution.entities[item.entity!.id]?.runId)} /></div>}
         {box && item.free ? editing ? <TextBoxEditor key={item.free.id} snapshot={snapshot} free={item.free} commit={commit} onClose={() => onTextEditing(null)} /> : <SelectedTextAnnotation baseTarget={target} view="layout" expanded={false} onAnnotate={onAnnotate}><div className="layout-block-content rich-prose" style={{ fontFamily: box.fontFamily, fontSize: box.fontSize, color: box.color }} dangerouslySetInnerHTML={{ __html: sanitizeRichHtml(box.html) }} /></SelectedTextAnnotation> : item.free && isNotebook && notebookText && <SelectedTextAnnotation baseTarget={target} view="layout" expanded={false} onAnnotate={onAnnotate}><div className="layout-block-content rich-prose notebook-native-text">{notebookText}</div></SelectedTextAnnotation>}
         {item.entity && item.rep && <div className="layout-block-content">{isNotebook ? <NotebookNode role={notebookRole} side={notebookSide} branchId={notebookBranchId} accent={accent}><ExplanationCard snapshot={snapshot} graphId={graphId} entity={item.entity} representation={item.rep} view="layout" expanded={expanded} showDetails={expanded} showHeader={false} onExpandedChange={next => toggleCard(scopeKey, next)} onActivate={() => { const additive = additiveExplanationKeyRef.current === notebookKey; if (additive) additiveExplanationKeyRef.current = null; else onSelect(target); }} onDetails={onDetails} onAnnotate={onAnnotate} onSubgraph={onSubgraph} /></NotebookNode> : <ExplanationCard snapshot={snapshot} graphId={graphId} entity={item.entity} representation={item.rep} view="layout" expanded={expanded} showDetails={expanded} showHeader={false} onExpandedChange={next => toggleCard(scopeKey, next)} onActivate={() => { const additive = additiveExplanationKeyRef.current === notebookKey; if (additive) additiveExplanationKeyRef.current = null; else onSelect(target); }} onDetails={onDetails} onAnnotate={onAnnotate} onSubgraph={onSubgraph} />}</div>}

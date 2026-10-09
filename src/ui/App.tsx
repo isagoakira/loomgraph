@@ -50,6 +50,11 @@ import { SelectionToolbar } from "./SelectionToolbar";
 import { loadAgentRequestDrafts, saveAgentRequestDrafts, agentRequestDraftKey, type AgentRequestDrafts } from "./agent-request-drafts";
 import { AgentRequestComposer, type AgentRequestResult } from "./AgentRequestComposer";
 import { agentRequestAnnotation, agentRequestHandoff, type AgentRequestKind, type AgentRequestScope } from "./agent-request";
+import { AgentChatPanel } from "./AgentChatPanel";
+import { useAgentChat } from "./useAgentChat";
+import { agentPageEntityRepresentations, agentPageVisibleElements, executeAgentPageControl, type PageControlResult } from "./agent-page-control";
+import { canvasOperationSourceMatchesWorkspace, type CanvasSceneVisit } from "../canvas/scene-visit";
+import type { AgentChatSession, AgentPageControl } from "../contracts/agent-chat";
 import { arrangeSelection, clusterSelectionRefs, dissolveSelectedClusters, placementKey, placementState, type ArrangeSelection } from "./selection-actions";
 import { planContentTransform } from "./content-geometry";
 import { OrganizationActivityPanel } from "./OrganizationActivityPanel";
@@ -147,6 +152,9 @@ type WorkspaceViewports = Record<string, Record<string, CanvasViewport>>;
 interface UndoEntry {
   operations: Operation[];
   label: string;
+  projectId: string;
+  workCopyId: string;
+  graphId: string;
   /** Revision produced by the original commit; undo uses this as its protected base. */
   appliedRevision?: number;
 }
@@ -528,11 +536,13 @@ export function App() {
   const apiRef = useRef<ExcalidrawImperativeAPI | null>(null);
   const snapshotRef = useRef<ProjectSnapshot>(emptySnapshot());
   const graphIdRef = useRef(DEFAULT_GRAPH_ID);
+  const pageNavigationEpochRef = useRef(0);
   const undoStackRef = useRef<UndoEntry[]>([]);
   const focusRef = useRef<FocusRequest | null>(null);
   const presentationFocusRef = useRef<PresentationFocusRequest | null>(null);
   const sceneReadyScopeRef = useRef<string | null>(null);
   const sceneReadyRevisionRef = useRef<number | null>(null);
+  const sceneReadyEpochRef = useRef<number | null>(null);
   const presentationPromptTimerRef = useRef<number | null>(null);
   const presentationIdentityRef = useRef<string | null>(null);
   const organizationInitialFocusRef = useRef<string | null>(null);
@@ -545,11 +555,19 @@ export function App() {
   const [connection, setConnection] = useState(clientRef.current.getConnection());
   const [loading, setLoading] = useState(true);
   const [graphId, setGraphIdState] = useState(DEFAULT_GRAPH_ID);
+  const [sceneNavigationEpoch, setSceneNavigationEpoch] = useState(0);
   const [contentViews, setContentViews] = useState<Record<string, WorkspaceView>>(() => { try { return JSON.parse(localStorage.getItem("avc.content-views.v1") ?? "{}"); } catch { return {}; } });
   const [editTextId, setEditTextId] = useState<string | null>(null);
   const [drawingToolsExpanded, setDrawingToolsExpanded] = useState(false);
   const chrome = useWorkspaceChrome();
+  const [canvasModes, setCanvasModes] = useState({ gridModeEnabled: false, objectsSnapModeEnabled: false, zenModeEnabled: false, gridSize: 20 });
+  const topHidden = chrome.preferences.topHidden || canvasModes.zenModeEnabled;
+  const sidebarHidden = chrome.preferences.sidebarHidden || canvasModes.zenModeEnabled;
   const [path, setPath] = useState<CanvasPathEntry[]>([]);
+  const pathRef = useRef(path);
+  pathRef.current = path;
+  const [agentPanelExpanded, setAgentPanelExpanded] = useState(false);
+  const agentPageExecutorRef = useRef<((control: AgentPageControl, session: AgentChatSession, isCurrent?: () => boolean) => Promise<PageControlResult>) | null>(null);
   // Viewports belong to a project/work-copy identity as well as a graph. This
   // prevents a newly loaded workspace from inheriting the previous one's
   // zoom/scroll state for a graph with the same id.
@@ -612,6 +630,7 @@ export function App() {
   const resourceLoadingRef = useRef(new Set<string>());
   const loadedIdentityRef = useRef<string | null>(null);
   const restoredIdentityRef = useRef(false);
+  const chatUndoBaselineRef = useRef<{ proposalId: string; snapshot: ProjectSnapshot } | null>(null);
 
   const setSnapshot = useCallback((next: ProjectSnapshot | ((current: ProjectSnapshot) => ProjectSnapshot)) => {
     // Resolve against the ref before queueing React state. SSE change and
@@ -621,6 +640,38 @@ export function App() {
     snapshotRef.current = value;
     setSnapshotState(value);
   }, []);
+
+  const chat = useAgentChat({ client: clientRef.current, projectId: snapshot.projectId, workCopyId: snapshot.workCopyId, graphId, revision: snapshot.revision,
+    selectedTargets,
+    getPageEpoch: () => pageNavigationEpochRef.current,
+    onPageControl: (control, session, epoch, isCurrent) => epoch !== undefined && epoch !== pageNavigationEpochRef.current
+      ? Promise.resolve({ status: "skipped", message: "请求发出后你已浏览其他图；迟到的页面控制已跳过。" })
+      : agentPageExecutorRef.current?.(control, session, isCurrent) ?? Promise.resolve({ status: "failed", message: "页面控制尚未就绪" }),
+    onApplied: async (session) => {
+      const candidate = session.proposal;
+      const baseline = chatUndoBaselineRef.current;
+      const before = baseline && baseline.proposalId === candidate?.id ? baseline.snapshot : undefined;
+      const loaded = await clientRef.current.load();
+      // The project history is authoritative; only a confirmed candidate creates an undo entry.
+      if (candidate?.status === "applied" && before) {
+        const inverse = candidate.operations.slice().reverse().map(operation => cloneOperationInverse(before, operation)).filter((operation): operation is Operation => Boolean(operation));
+        if (inverse.length && !undoStackRef.current.some(entry => entry.label === `画布 Agent ${candidate.id}`)) undoStackRef.current.push({ operations: inverse, label: `画布 Agent ${candidate.id}`, projectId: session.projectId, workCopyId: session.workCopyId, graphId: session.scope.graphId, appliedRevision: candidate.revision ?? loaded.snapshot.revision });
+      }
+      setSnapshot(loaded.snapshot); setConnection(loaded.connection);
+    } });
+  const canvasSnapshot = chat.preview ?? snapshot;
+  useEffect(() => {
+    const proposalId = chat.session?.proposal?.id;
+    if (chat.preview && proposalId && chatUndoBaselineRef.current?.proposalId !== proposalId) chatUndoBaselineRef.current = { proposalId, snapshot: structuredClone(snapshotRef.current) };
+  }, [chat.preview, chat.session?.proposal?.id]);
+
+  const chatContextLabel = (id: string) => {
+    const kind = id.slice(0, id.indexOf(":")), raw = id.slice(id.indexOf(":") + 1);
+    if (kind === "entity") return snapshot.entities.find(item => item.id === raw)?.title ?? "所选对象";
+    if (kind === "representation") { const rep = snapshot.representations.find(item => item.id === raw); return snapshot.entities.find(item => item.id === rep?.entityId)?.title ?? "所选模块"; }
+    if (kind === "relation") { const relation = snapshot.relations.find(item => item.id === raw); return relation?.label ?? "所选关系"; }
+    return kind === "element" ? "所选文本/图形" : "当前图谱";
+  };
 
   const advanceDisplayFactsEpoch = useCallback((): number => {
     const epochs = displayFactsEpochsRef.current ?? {};
@@ -657,8 +708,12 @@ export function App() {
     if (!options.preservePresentationFocus) presentationFocusRef.current = null;
     if (!options.preserveUserFocus) focusRef.current = null;
     if (graphIdRef.current !== next) {
+      pageNavigationEpochRef.current++;
+      setSceneNavigationEpoch(pageNavigationEpochRef.current);
       sceneReadyScopeRef.current = null;
       sceneReadyRevisionRef.current = null;
+      sceneReadyEpochRef.current = null;
+      apiRef.current = null;
     }
     graphIdRef.current = next;
     setGraphIdState(next);
@@ -727,6 +782,8 @@ export function App() {
       warnings: [...organizationProjection.warnings],
     };
   }, [organizationPlan, organizationProjection]);
+  const agentOrganizationViewRef = useRef(organizationView);
+  agentOrganizationViewRef.current = organizationView;
   const activeCluster = organizationView?.clusters.find(cluster => cluster.id === organizationView.clusterId) ?? organizationView?.clusters[0];
   useEffect(() => {
     const available = new Set(organizationView?.clusters.map(cluster => cluster.id) ?? []);
@@ -991,10 +1048,11 @@ export function App() {
     }
   }, [consumePresentationFocus, setGraphId]);
 
-  const handleSceneReady = useCallback((scopeKey: string, renderedRevision: number, api: ExcalidrawImperativeAPI) => {
+  const handleSceneReady = useCallback((scopeKey: string, renderedRevision: number, api: ExcalidrawImperativeAPI, sceneEpoch?: number) => {
     const currentScope = canvasSceneScopeKey(snapshotRef.current.projectId, snapshotRef.current.workCopyId, graphIdRef.current);
-    if (scopeKey !== currentScope) return;
+    if (scopeKey !== currentScope || sceneEpoch !== pageNavigationEpochRef.current || apiRef.current !== api) return;
     sceneReadyScopeRef.current = scopeKey;
+    sceneReadyEpochRef.current = sceneEpoch;
     sceneReadyRevisionRef.current = Math.max(sceneReadyRevisionRef.current ?? -1, renderedRevision);
     const presentationRequest = presentationFocusRef.current;
     if (presentationRequest
@@ -1280,6 +1338,7 @@ export function App() {
   }, [activeCluster?.anchor, currentViewport.scrollX, currentViewport.scrollY, currentViewport.zoom, graphId, notebookMaintenance, notebookMeasureScope, notebookMeasures, notebookMode, notebookViewGeometries, organizationView, selectedTargets, viewEpoch, workspaceIdentityKey]);
 
   const reportDisplayFacts = useCallback(() => {
+    if (chat.preview) return;
     // The server orders facts by the stable viewId. A browser reload resets
     // React state, so advance the persisted scoped epoch before the first
     // report of a new page session instead of sending epoch 0 again.
@@ -1302,7 +1361,7 @@ export function App() {
     void clientRef.current.reportDisplayFacts(facts).catch(() => {
       // Display facts are transient; a failed report must not become a project change or queue item.
     });
-  }, [captureObservedCanvasView, ensureDisplayFactsEpoch, graphId, workspaceIdentityKey]);
+  }, [captureObservedCanvasView, ensureDisplayFactsEpoch, graphId, workspaceIdentityKey, chat.preview]);
 
   const queueDisplayFacts = useCallback(() => {
     if (displayFactsTimerRef.current !== null) window.clearTimeout(displayFactsTimerRef.current);
@@ -1490,11 +1549,13 @@ export function App() {
     }
   }, [bumpViewEpoch]);
 
-  const commitOperations = useCallback(async (operations: Operation[], reason: string, options: { recordUndo?: boolean; annotationIds?: string[]; baseRevision?: number; operationId?: string; optimistic?: boolean } = {}): Promise<ApplyStatus | null> => {
+  const commitOperations = useCallback(async (operations: Operation[], reason: string, options: { recordUndo?: boolean; annotationIds?: string[]; baseRevision?: number; operationId?: string; optimistic?: boolean; sourceGraphId?: string; sourceSceneEpoch?: number } = {}): Promise<ApplyStatus | null> => {
     if (operations.length === 0) return null;
     const before = snapshotRef.current;
-    const preferred = selectedTargets[0] ?? (activeCluster ? { type: activeCluster.anchor.type, graphId,
-      ...(activeCluster.anchor.type === "representation" ? { representationId: activeCluster.anchor.id } : { elementId: activeCluster.anchor.id }) } as TargetRef : undefined);
+    const operationGraphId = options.sourceGraphId ?? graphId;
+    const preferred = operationGraphId === graphId && (options.sourceSceneEpoch === undefined || options.sourceSceneEpoch === pageNavigationEpochRef.current) ? selectedTargets[0] ?? (activeCluster ? { type: activeCluster.anchor.type, graphId,
+      ...(activeCluster.anchor.type === "representation" ? { representationId: activeCluster.anchor.id } : { elementId: activeCluster.anchor.id }) } as TargetRef : undefined)
+      : undefined;
     operations = attachNotebookInsertions(before, operations, preferred);
     const insertedOrganizationRefs = newlyInsertedOrganizationRefs(before, operations);
     const inverse = operations.slice().reverse().map((operation) => cloneOperationInverse(before, operation)).filter((operation): operation is Operation => Boolean(operation));
@@ -1518,6 +1579,7 @@ export function App() {
         undoStackRef.current.push({
           operations: inverse,
           label: reason,
+          projectId: before.projectId, workCopyId: before.workCopyId, graphId: operationGraphId,
           appliedRevision: applied.result?.revision ?? applied.snapshot.revision,
         });
       }
@@ -1535,11 +1597,13 @@ export function App() {
     return applied.status;
   }, [revealInsertedOrganizationOwners, setSnapshot, toast, selectedTargets, activeCluster?.id, graphId]);
 
-  const handleCanvasOperations = useCallback((operations: Operation[], previousElements: readonly ExcalidrawElement[], nextElements: readonly ExcalidrawElement[], baseRevision?: number) => {
+  const handleCanvasOperations = useCallback((operations: Operation[], previousElements: readonly ExcalidrawElement[], nextElements: readonly ExcalidrawElement[], baseRevision?: number, source?: CanvasSceneVisit) => {
     const current = snapshotRef.current;
+    if (source && !canvasOperationSourceMatchesWorkspace(source, current)) return Promise.resolve<ApplyStatus>("rejected");
+    const sourceGraphId = source?.graphId ?? graphIdRef.current;
     const removals = operations.flatMap<TargetRef>(operation => operation.type === "representation.remove"
-      ? [{ type: "representation" as const, graphId: current.representations.find(rep => rep.id === operation.id)?.graphId ?? graphIdRef.current, representationId: operation.id }]
-      : operation.type === "free.remove" ? [{ type: "element" as const, graphId: current.freeElements.find(free => free.id === operation.id)?.graphId ?? graphIdRef.current, elementId: operation.id }] : []);
+      ? [{ type: "representation" as const, graphId: current.representations.find(rep => rep.id === operation.id)?.graphId ?? sourceGraphId, representationId: operation.id }]
+      : operation.type === "free.remove" ? [{ type: "element" as const, graphId: current.freeElements.find(free => free.id === operation.id)?.graphId ?? sourceGraphId, elementId: operation.id }] : []);
     if (removals.length) {
       operations = [
         ...operations.filter(operation => operation.type !== "representation.remove" && operation.type !== "free.remove"),
@@ -1554,7 +1618,7 @@ export function App() {
       const customData = operation.freeElement.element.customData as Record<string, unknown> | undefined;
       return { ...operation, freeElement: { ...operation.freeElement, element: { ...operation.freeElement.element, customData: { ...customData, notebook: { ...(customData?.notebook as Record<string, unknown> ?? {}), pinned: true } } } } };
     });
-    return commitOperations(operations, "用户编辑画布", { recordUndo: true, baseRevision });
+    return commitOperations(operations, "用户编辑画布", { recordUndo: true, baseRevision, sourceGraphId, sourceSceneEpoch: source?.sceneEpoch });
   }, [commitOperations]);
   const commitContent = useCallback((operations: Operation[], reason: string, baseRevision: number) => commitOperations(operations, reason, { recordUndo: true, baseRevision }), [commitOperations]);
 
@@ -1631,7 +1695,8 @@ export function App() {
   const undoInFlightRef = useRef(false);
   const handleUndo = useCallback(() => {
     if (undoInFlightRef.current) return;
-    const entry = undoStackRef.current[undoStackRef.current.length - 1];
+    const currentSnapshot = snapshotRef.current;
+    const entry = undoStackRef.current.slice().reverse().find(item => item.projectId === currentSnapshot.projectId && item.workCopyId === currentSnapshot.workCopyId && item.graphId === graphId);
     if (!entry) {
       toast("没有可撤销的本地变更");
       return;
@@ -1639,15 +1704,16 @@ export function App() {
     undoInFlightRef.current = true;
     void commitOperations(entry.operations, `撤销：${entry.label}`, { recordUndo: false, baseRevision: entry.appliedRevision }).then((status) => {
       if (status === "applied" || status === "pending") {
-        const current = undoStackRef.current[undoStackRef.current.length - 1];
-        if (current === entry) undoStackRef.current.pop();
+        const index = undoStackRef.current.indexOf(entry);
+        if (index >= 0) undoStackRef.current.splice(index, 1);
       }
     }).finally(() => {
       undoInFlightRef.current = false;
     });
-  }, [commitOperations, toast]);
+  }, [commitOperations, toast, graphId]);
 
-  const handleViewportChange = useCallback((viewport: CanvasViewport) => {
+  const handleViewportChange = useCallback((viewport: CanvasViewport, source?: CanvasSceneVisit) => {
+    if (source && (!canvasOperationSourceMatchesWorkspace(source, snapshotRef.current) || source.graphId !== graphIdRef.current || source.sceneEpoch !== pageNavigationEpochRef.current)) return;
     setViewports((current) => ({
       ...current,
       [workspaceIdentityKey]: {
@@ -1902,6 +1968,118 @@ export function App() {
     });
   }, [setGraphId, workspaceIdentityKey]);
 
+  const waitForAgentPageScene = async (destination: string, workspace: string, epoch = pageNavigationEpochRef.current, isCurrent?: () => boolean) => {
+    const deadline = performance.now() + 6000;
+    while (performance.now() < deadline) {
+      if (isCurrent?.() === false || snapshotWorkspaceKey(snapshotRef.current) !== workspace || graphIdRef.current !== destination || pageNavigationEpochRef.current !== epoch) throw new Error("页面请求已取消或等待画布时页面已切换");
+      const scope = canvasSceneScopeKey(snapshotRef.current.projectId, snapshotRef.current.workCopyId, destination);
+      if (apiRef.current && sceneReadyScopeRef.current === scope && sceneReadyEpochRef.current === epoch && (sceneReadyRevisionRef.current ?? -1) >= snapshotRef.current.revision) {
+        await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+        if (isCurrent?.() === false || snapshotWorkspaceKey(snapshotRef.current) !== workspace || graphIdRef.current !== destination || pageNavigationEpochRef.current !== epoch) throw new Error("页面请求已取消或页面已切换");
+        return;
+      }
+      await new Promise<void>(resolve => window.setTimeout(resolve, 32));
+    }
+    throw new Error("目标画布尚未就绪，请稍后重试");
+  };
+  const navigateAgentPage = async (destination: string, isCurrent?: () => boolean) => {
+    if (isCurrent?.() === false) throw new Error("页面请求已取消");
+    const current = snapshotRef.current;
+    const workspace = snapshotWorkspaceKey(current);
+    if (!current.graphs.some(item => item.id === destination)) throw new Error("目标图已不存在");
+    if (graphIdRef.current !== destination) {
+      const nextPath = appendPathEntry(pathRef.current, findGraph(current, graphIdRef.current), restoreViewport(viewportsRef.current[workspace] ?? {}, graphIdRef.current));
+      pathRef.current = nextPath;
+      setPath(nextPath);
+      organizationInitialFocusRef.current = `${current.projectId}:${current.workCopyId}:${destination}`;
+      notebookFocusRef.current = null;
+      setGraphId(destination);
+    }
+    await waitForAgentPageScene(destination, workspace, pageNavigationEpochRef.current, isCurrent);
+  };
+  agentPageExecutorRef.current = (control, session, isCurrent) => executeAgentPageControl(control, session, {
+    authorized: isCurrent,
+    current: () => ({ snapshot: snapshotRef.current, graphId: graphIdRef.current, navigationEpoch: pageNavigationEpochRef.current }),
+    navigate: destination => navigateAgentPage(destination, isCurrent),
+    back: async () => {
+      if (isCurrent?.() === false) throw new Error("页面请求已取消");
+      const previous = pathRef.current.at(-1);
+      if (!previous) return null;
+      const workspace = snapshotWorkspaceKey(snapshotRef.current);
+      const nextPath = pathRef.current.slice(0, -1);
+      pathRef.current = nextPath;
+      setPath(nextPath);
+      setViewports(current => ({ ...current, [workspace]: { ...(current[workspace] ?? {}), [previous.graphId]: restoreViewport(current[workspace] ?? {}, previous) } }));
+      notebookFocusRef.current = null;
+      organizationInitialFocusRef.current = `${snapshotRef.current.projectId}:${snapshotRef.current.workCopyId}:${previous.graphId}`;
+      setGraphId(previous.graphId);
+      await waitForAgentPageScene(previous.graphId, workspace, pageNavigationEpochRef.current, isCurrent);
+      return previous.graphId;
+    },
+    perform: async action => {
+      const workspace = snapshotWorkspaceKey(snapshotRef.current);
+      const epoch = pageNavigationEpochRef.current;
+      await waitForAgentPageScene(action.graphId, workspace, epoch, isCurrent);
+      if (action.type === "focus" || action.type === "highlight") {
+        // Reveal hidden ancestors as browsing state, without changing layout/content.
+        const current = snapshotRef.current;
+        const ids = new Set(action.targets.flatMap(target => target.type === "representation" ? [`representation:${target.representationId}`]
+          : target.type === "element" ? [`element:${target.elementId}`]
+          : target.type === "entity" ? agentPageEntityRepresentations(current, action.graphId, target).map(rep => `representation:${rep.id}`)
+          : target.type === "relation" ? current.representations.filter(rep => rep.graphId === action.graphId && current.relations.some(relation => relation.id === target.relationId && (relation.from === rep.entityId || relation.to === rep.entityId))).map(rep => `representation:${rep.id}`) : []));
+        const structure = readOrganization(findGraph(current, action.graphId));
+        let changed = false;
+        for (const cluster of structure?.clusters ?? []) {
+          if (![cluster.anchor, ...cluster.members].some(ref => ids.has(organizationRefKey(ref)))) continue;
+          let ancestor: typeof cluster | undefined = cluster;
+          while (ancestor) {
+            const key = groupScopeKey(current, action.graphId, ancestor.id);
+            if (!groupDisclosure(key)) { setGroupDisclosure(key, true); changed = true; }
+            ancestor = ancestor.parentId ? structure?.clusters.find(item => item.id === ancestor!.parentId) : undefined;
+          }
+        }
+        if (changed) {
+          setOrganizationDisclosureTick(tick => tick + 1);
+          await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+          await waitForAgentPageScene(action.graphId, workspace, epoch, isCurrent);
+        }
+      }
+      const api = apiRef.current;
+      if (!api || isCurrent?.() === false || graphIdRef.current !== action.graphId || pageNavigationEpochRef.current !== epoch) throw new Error("页面请求已取消或目标页面已切换");
+      // Relations are painted by the SVG layer; their native SDK elements keep
+      // valid bounds even when opacity is zero to prevent duplicate strokes.
+      const visible = agentPageVisibleElements(api.getSceneElements(), agentOrganizationViewRef.current);
+      if (action.type === "fit") {
+        if (!visible.length) throw new Error("当前图没有可适配的可见内容");
+        notebookFocusRef.current = null;
+        api.scrollToContent(visible, { fitToViewport: true, viewportZoomFactor: 0.88, animate: false });
+      } else if (action.type === "zoom") {
+        const state = api.getAppState(), previous = state.zoom.value;
+        api.updateScene({ appState: { zoom: { value: action.zoom as NormalizedZoomValue }, scrollX: state.scrollX + state.width / (2 * action.zoom) - state.width / (2 * previous), scrollY: state.scrollY + state.height / (2 * action.zoom) - state.height / (2 * previous) } });
+      } else {
+        const matched = visible.filter(element => {
+          const data = readCanvasData(element);
+          return action.targets.some(target => target.type === "representation" ? data?.representationId === target.representationId
+            : target.type === "element" ? data?.freeElementId === target.elementId
+            : target.type === "relation" ? data?.relationId === target.relationId
+            : target.type === "entity" ? agentPageEntityRepresentations(snapshotRef.current, action.graphId, target).some(rep => rep.id === data?.representationId) : false);
+        });
+        if (!matched.length) throw new Error("目标尚无可见表示，定位未完成");
+        if (action.type === "focus") {
+          notebookFocusRef.current = null;
+          selectTargetsOnCanvas(api, action.targets, snapshotRef.current, action.graphId);
+          setSelectedTargets(action.targets);
+          api.scrollToContent(matched, { fitToViewport: true, viewportZoomFactor: 0.86, animate: false });
+        }
+        if (highlightTimerRef.current !== null) window.clearTimeout(highlightTimerRef.current);
+        setHighlights(action.targets);
+        highlightTimerRef.current = window.setTimeout(() => setHighlights([]), 4200);
+      }
+      const state = api.getAppState();
+      handleViewportChange({ scrollX: state.scrollX, scrollY: state.scrollY, zoom: state.zoom.value });
+    },
+  });
+
   const addObject = useCallback(async (kind: "task" | "module" | "subgraph") => {
     const now = new Date().toISOString();
     const entityId = createId("entity");
@@ -2058,8 +2236,15 @@ export function App() {
     if (!frozen.targets.length) { toast("原选区已失效，请重新选择要处理的内容。 "); return; }
     const targets = frozen.targets;
     const scope = { targets: structuredClone(targets), observedRevision: snapshotRef.current.revision, graphPath: composerGraphPath(path, graphId), organizationAnchors: frozen.anchors, observedView: frozen.observedView, labels: targets.map(target => targetDisplay(snapshotRef.current, target).label) };
-    setAgentRequestScope(agentRequestDrafts[agentRequestDraftKey(scope)]?.scope ?? scope);
+    setAgentPanelExpanded(true);
+    void chat.open({ ...scope, graphId, mode: "selection" }).catch(() => {});
   };
+  const agentChatScope = chat.activeScope ?? { mode: "page" as const, graphId, targets: [], labels: [], observedRevision: snapshot.revision };
+  const pageAssistant = agentChatScope.mode === "page";
+  const currentAgentTargets = freezeFeedbackOrganization(selectedTargets).targets;
+  const latestAgentSelection = chat.activeScope && currentAgentTargets.length && (snapshot.revision !== chat.activeScope.observedRevision || JSON.stringify(currentAgentTargets) !== JSON.stringify(chat.activeScope.targets))
+    ? { observedRevision: snapshot.revision, targets: currentAgentTargets.map(target => ({ id: contentAnchorKey(target), label: targetDisplay(snapshot, target).label })) }
+    : undefined;
   const updateAgentRequestDraft = (kind: AgentRequestKind, text: string) => {
     if (!agentRequestScope) return;
     const key = agentRequestDraftKey(agentRequestScope);
@@ -2267,7 +2452,8 @@ export function App() {
     }
   }, [setGraphId, setSnapshot]);
 
-  const handleSelection = useCallback((targets: TargetRef[], elementIds: string[]) => {
+  const handleSelection = useCallback((targets: TargetRef[], elementIds: string[], source?: CanvasSceneVisit) => {
+    if (source && (!canvasOperationSourceMatchesWorkspace(source, snapshotRef.current) || source.graphId !== graphIdRef.current || source.sceneEpoch !== pageNavigationEpochRef.current)) return;
     if (targets.length > 0) setSelectedClusterIds([]);
     setSelectedTargets((current) => current.length === targets.length && current.every((target, index) => contentSelectionKey(target) === contentSelectionKey(targets[index])) ? current : preserveContentSelection(current, targets));
     setSelectedElementIds((current) => current.length === elementIds.length && current.every((id, index) => id === elementIds[index]) ? current : elementIds);
@@ -2395,8 +2581,8 @@ export function App() {
   }
 
   return (
-    <main className={`app-shell${contentView === "reading" ? " is-reading-workspace" : ""}${chrome.resizing ? ` is-resizing-${chrome.resizing}` : ""}`} data-ui-build-id={CANVAS_BUILD_ID} data-organization-scope={organizationView?.scope} data-organization-cluster={organizationView?.clusterId} data-attention-intent={organizationOptions.intent}>
-      <section className="top-panel" id="workspace-top-panel" aria-label="顶部工具区" hidden={chrome.preferences.topHidden} style={{ height: chrome.topHeight }}>
+    <main className={`app-shell${contentView === "reading" ? " is-reading-workspace" : ""}${chrome.resizing ? ` is-resizing-${chrome.resizing}` : ""}${canvasModes.zenModeEnabled ? " is-focus-mode" : ""}`} data-ui-build-id={CANVAS_BUILD_ID} data-organization-scope={organizationView?.scope} data-organization-cluster={organizationView?.clusterId} data-attention-intent={organizationOptions.intent}>
+      <section className="top-panel" id="workspace-top-panel" aria-label="顶部工具区" hidden={topHidden} style={{ height: chrome.topHeight }}>
       <header className="topbar">
         <div className="brand-lockup"><div className="brand-mark">AV<span />C</div><div><div className="brand-name">Agent Visual Canvas</div><div className="brand-kicker">LOCAL WORKBENCH / 01</div></div></div>
         <div className="project-identity"><span className="eyebrow">当前项目</span><strong>{snapshot.title}</strong><span className="revision-chip">REV {snapshot.revision.toString().padStart(3, "0")}</span></div>
@@ -2449,7 +2635,7 @@ export function App() {
           </div>
           <div className="chrome-resize-handle top-resize-handle" {...chrome.separator("top")} title="拖动调整顶部高度；双击恢复默认"><span aria-hidden="true" /></div>
       </section>
-      <div className="app-grid" style={{ gridTemplateColumns: `minmax(0, 1fr) ${chrome.preferences.sidebarHidden ? 0 : chrome.sidebarWidth}px` }}>
+      <div className="app-grid" style={{ gridTemplateColumns: `minmax(0, 1fr) ${sidebarHidden ? 0 : chrome.sidebarWidth}px` }}>
         <section className="workspace-column">
           <div className="canvas-frame" onPointerDownCapture={event => {
             if (!selectedClusterIds.length || !(event.target instanceof Element)) return;
@@ -2464,12 +2650,13 @@ export function App() {
               <button aria-label="框选可见内容" aria-pressed={areaSelectionMode} onClick={() => { setRegionMode(false); setAreaSelectionMode(value => !value); setEditTextId(null); }}>▱ <span>框选</span></button>
               <button aria-label="平移画布" onClick={() => { setAreaSelectionMode(false); setRegionMode(false); apiRef.current?.setActiveTool({ type: "hand" }); }}>✋ <span>平移</span></button>
               <button aria-label="区域批注" aria-pressed={regionMode} onClick={() => { setAreaSelectionMode(false); setRegionMode(value => !value); apiRef.current?.setActiveTool({ type: "selection" }); }}>✎ <span>区域批注</span></button>
-              <button aria-label="撤销画布修改" disabled={busy || undoStackRef.current.length === 0} onClick={handleUndo}>↶</button>
+              <button aria-label="撤销画布修改" disabled={busy || Boolean(chat.preview) || !undoStackRef.current.some(entry => entry.projectId === snapshot.projectId && entry.workCopyId === snapshot.workCopyId && entry.graphId === graphId)} onClick={handleUndo}>↶</button>
             </div>
             {contentView === "layout" && <div className="canvas-meta"><span className="canvas-type">{organizationView ? activeCluster?.notation === "flow" ? "流程段" : activeCluster?.notation === "mindmap" ? "概念簇" : "图文混合" : graph?.kind?.toUpperCase() ?? "CANVAS"}</span><span className="canvas-meta-copy">{organizationView ? organizationOptions.intent === "monitor" ? organizationView.attention.totalTasks ? `进行中 ${organizationView.activitySummary.doing} · 阻塞 ${organizationView.activitySummary.blocked} · 失败 ${organizationView.activitySummary.failed}` : "方法示意 · 尚无实际任务运行" : activeCluster?.question ?? "文字、图解与分支在同一平面" : "正文、模块和图片可共同排版"}</span></div>}
             <CanvasWorkspace
-              snapshot={snapshot}
+              snapshot={canvasSnapshot}
               graphId={graphId}
+              sceneEpoch={sceneNavigationEpoch}
               viewport={currentViewport}
               viewportRecorded={viewportRecorded}
               highlights={highlights}
@@ -2487,7 +2674,7 @@ export function App() {
               onAreaSelectionComplete={() => setAreaSelectionMode(false)}
               onReady={(api) => { apiRef.current = api; }}
               onSceneReady={handleSceneReady}
-              onOperations={handleCanvasOperations}
+              onOperations={chat.preview ? () => {} : handleCanvasOperations}
               onSelection={handleSelection}
               onViewportChange={handleViewportChange}
               onRegion={handleRegion}
@@ -2496,7 +2683,7 @@ export function App() {
               onBinaryFiles={handleBinaryFiles}
               contentView={contentView}
               selectedTargets={selectedTargets}
-              onContentCommit={commitContent}
+              onContentCommit={chat.preview ? async () => { toast("当前是候选预览；应用或放弃后再直接编辑"); return "rejected"; } : commitContent}
               onContentDetails={() => { chrome.showSidebar(); setPanel("details"); }}
               onContentAnnotate={(target) => {
                 chrome.showSidebar();
@@ -2510,8 +2697,9 @@ export function App() {
               editTextId={editTextId}
               onTextEditing={setEditTextId}
               drawingToolsVisible={!hasRichContent || drawingToolsExpanded}
+              onCanvasModesChange={setCanvasModes}
             />
-            {!agentRequestScope && !selectionGesture && !areaSelectionMode && !regionMode && !editTextId && (selectedTargets.length > 0 || selectedClusterIds.length > 0) && <SelectionToolbar
+            {!agentRequestScope && !chat.preview && !canvasModes.zenModeEnabled && !selectionGesture && !areaSelectionMode && !regionMode && !editTextId && (selectedTargets.length > 0 || selectedClusterIds.length > 0) && <SelectionToolbar
               count={selectedTargets.length} groupCount={selectedClusterIds.length} groupTitle={organizationView?.clusters.find(cluster => cluster.id === selectedClusterIds[0])?.title}
               protectedCount={selectedLockedCount} pinnedCount={selectedPinnedCount} busy={busy}
               selectionKey={`${selectedClusterIds.join("|")}:${selectedTargets.map(targetKey).join("|")}`}
@@ -2522,13 +2710,41 @@ export function App() {
               onDetails={() => { chrome.showSidebar(); setPanel("details"); }}
             />}
             {agentRequestScope && <AgentRequestComposer key={`${workspaceIdentityKey}:${graphId}:${agentRequestScope.observedRevision}:${agentRequestScope.targets.map(contentAnchorKey).join("|")}`} scope={agentRequestScope} initialText={agentRequestDrafts[agentRequestDraftKey(agentRequestScope)]?.text} initialKind={agentRequestDrafts[agentRequestDraftKey(agentRequestScope)]?.kind} storageError={agentRequestDraftStorageError} initialPending={Boolean(agentRequestDrafts[agentRequestDraftKey(agentRequestScope)]?.pendingAnnotationId)} onDraftChange={updateAgentRequestDraft} pendingCount={allDrafts.filter(item => item.status === "draft" && selectedAnnotationIds.includes(item.id)).length} onClose={() => setAgentRequestScope(null)} onQueue={() => { chrome.showSidebar(); setPanel("feedback"); setAgentRequestScope(null); }} onSubmit={submitAgentRequest} />}
+            <AgentChatPanel
+              persistent expanded={agentPanelExpanded} workspaceKey={workspaceIdentityKey}
+              onExpandedChange={next => { setAgentPanelExpanded(next); if (next && !chat.activeScope) void chat.openCurrentPage(); }}
+              onUsePageContext={async () => { await chat.openCurrentPage(); setAgentPanelExpanded(true); }}
+              onScopeLocate={pageAssistant ? undefined : async () => { await navigateAgentPage(agentChatScope.graphId); }}
+              previewConfirmed={Boolean(chat.preview) && chat.previewProposalId === chat.session?.proposal?.id}
+              scope={{ mode: agentChatScope.mode, label: pageAssistant ? `当前图 · ${graph?.title ?? "画布"}` : "冻结选区", observedRevision: agentChatScope.observedRevision,
+                graphPath: pageAssistant ? [graph?.title ?? "当前图"] : agentChatScope.graphPath?.map(id => snapshot.graphs.find(graph => graph.id === id)?.title ?? id),
+                targets: agentChatScope.targets.map((target, index) => ({ id: contentAnchorKey(target), label: agentChatScope.labels[index] ?? targetDisplay(snapshot, target).label })) }}
+              providers={chat.providers} providerId={chat.selectedProvider} onProviderChange={id => chat.setSelectedProvider(id)}
+              session={{ id: chat.session?.id, providerId: chat.session?.provider, status: chat.session?.state === "running" ? "streaming" : chat.session?.state === "stopping" ? "stopping" : chat.session?.state === "failed" ? "error" : "idle", detail: chat.error ?? chat.session?.error }}
+              messages={[...(chat.session?.messages.map(message => ({ ...message, status: message.status === "running" ? "streaming" as const : message.status === "completed" ? "complete" as const : message.status === "failed" ? "error" as const : "stopped" as const })) ?? []),
+                ...(chat.session?.pageControl && chat.session.pageControl.status !== "pending" ? [{ id: `page-result-${chat.session.pageControl.id}`, role: "system" as const, text: chat.session.pageControl.message ?? "页面操作已处理", status: chat.session.pageControl.status === "failed" ? "error" as const : "complete" as const }] : [])]}
+              context={{ sourceRevision: chat.session?.context?.revision ?? agentChatScope.observedRevision,
+                writableTargets: chat.session?.context?.writable.map(id => ({ id, kind: id.split(":")[0], label: chatContextLabel(id) })),
+                readOnlyNeighbors: chat.session?.context?.readonly.map(id => ({ id, kind: id.includes("relation:") ? "relation" : "entity", label: id.split(" · ")[0] })), omissions: chat.session?.context?.omissions.map(item => item === "ORGANIZATION_MISSING" ? "本图未设置组织分组" : /^[A-Z_]+(?::|$)/.test(item) ? "部分结构信息未进入本轮上下文" : item),
+                budget: { used: chat.session?.context?.bytes, limit: chat.session?.context?.budget, label: "本轮上下文" },
+                latestSelection: latestAgentSelection }}
+              proposal={chat.session?.proposal ? { status: chat.session.proposal.status === "ready" ? chat.preview ? "previewing" : "ready" : chat.session.proposal.status,
+                id: chat.session.proposal.id, parentId: chat.session.proposal.parentId, changeId: chat.session.proposal.changeId, appliedRevision: chat.session.proposal.revision,
+                baselineRevision: chat.session.proposal.baseRevision, currentRevision: snapshot.revision, canApply: chat.session.proposal.status === "ready" && chat.previewProposalId === chat.session.proposal.id && Boolean(chat.preview) && !chat.busy,
+                validation: { status: chat.session.proposal.status === "conflict" ? "failed" : "passed", message: chat.session.proposal.warnings.join("；") || "选区与内容校验通过" },
+                changes: chat.session.proposal.changes?.map((change, index) => ({ id: String(index), target: change.target, detail: `${change.field}\n原：${change.before || "空"}\n新：${change.after || "空"}` })) } : undefined}
+              disabled={!connection.connected} onSend={async (text, mode, provider) => { if (!chat.activeScope) await chat.openCurrentPage(); await chat.send(text, mode, provider); }} onStop={chat.stop} onPreview={chat.showPreview} onApply={chat.apply} onDiscard={chat.discard}
+              onContextSwitch={() => beginAgentRequest()} onClose={chat.close}
+              onLegacy={pageAssistant ? undefined : text => { const scope: AgentRequestScope = { ...agentChatScope, graphPath: agentChatScope.graphPath ?? [agentChatScope.graphId] }; setAgentRequestScope(scope); retainAgentRequestDrafts(workspaceIdentityKey, { ...agentRequestSessionDrafts.current[workspaceIdentityKey], [agentRequestDraftKey(scope)]: { scope, kind: "revise", text } }); chat.close(); setAgentPanelExpanded(false); }}
+            />
+            {chat.preview && <div className="agent-preview-banner" role="status">候选预览 · 尚未写入</div>}
             {contentView === "layout" && currentStats.entities.length === 0 && !snapshot.freeElements.some(item => item.graphId === graphId && item.element.isDeleted !== true) && <div className="empty-canvas-card"><div className="empty-index">01 / START HERE</div><h2>这张图还没有对象</h2><p>从正文、模块或子图入口开始。新增内容会形成项目修订。</p><div className="empty-actions"><button className="primary-button" onClick={() => void insertTextBox()}>＋ 文本框</button><button className="quiet-button" onClick={() => addObject("module")}>添加模块</button><button className="quiet-button" onClick={() => addObject("subgraph")}>添加子图</button></div></div>}
             {notice && <div className="toast-message" role="status">{notice}</div>}
             {presentationPrompt && <div className="toast-message presentation-prompt" role="status"><span>{presentationPrompt.resolution.message}</span>{presentationPrompt.resolution.status === "resolved" && <button className="text-button" onClick={() => requestPresentationFocus(presentationPrompt.resolution)}>查看</button>}</div>}
           </div>
         </section>
 
-        <div className="sidebar-shell" id="workspace-sidebar" hidden={chrome.preferences.sidebarHidden}>
+        <div className="sidebar-shell" id="workspace-sidebar" hidden={sidebarHidden}>
           <div className="chrome-resize-handle sidebar-resize-handle" {...chrome.separator("sidebar")} title="拖动调整侧栏宽度；双击恢复默认"><span aria-hidden="true" /></div>
         <aside className="right-panel" aria-label="项目侧栏">
           {panelNavigation}

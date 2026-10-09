@@ -20,6 +20,7 @@ import { organizationAnchorSchema, observedCanvasViewSchema } from "../contracts
 import type { BinaryFileData, BinaryFiles } from "@excalidraw/excalidraw/types";
 import { objectContent, plainTextFromHtml, richTextBox } from "../content/model";
 import { graphExpression, nodeExpression, relationExpression } from "../content/expression";
+import type { AgentChatSession, AgentChatEvent, AgentProviderInfo } from "../contracts/agent-chat";
 
 const LOCAL_SNAPSHOT_KEY = "agent-visual-canvas.snapshot.v1";
 const LOCAL_DRAFTS_KEY = "agent-visual-canvas.feedback-drafts.v1";
@@ -555,6 +556,31 @@ export class CanvasApiClient {
       pendingDurable: pendingChanges ? this.pendingDurable : undefined,
       label: pendingChanges && this.pendingDurable === false ? `${this.connection.label} · 待确认仅当前页面保留` : this.connection.label,
     };
+  }
+
+  async agentChatProviders(): Promise<AgentProviderInfo[]> {
+    return (await this.request<{ providers: AgentProviderInfo[] }>("/api/agent-chat?action=capabilities")).providers;
+  }
+  async agentChatCommand<T = AgentChatSession>(body: Record<string, unknown>): Promise<T> {
+    if (!this.identity) throw new Error("尚未连接工作副本");
+    return this.request<T>("/api/agent-chat", { method: "POST", body: JSON.stringify({ ...body, ...this.identity }) });
+  }
+  async agentChatSession(id: string): Promise<AgentChatSession> {
+    return this.request(`/api/agent-chat?action=session&sessionId=${encodeURIComponent(id)}`);
+  }
+  async agentChatEvents(id: string, onEvent: (event: AgentChatEvent) => void, signal: AbortSignal): Promise<void> {
+    const response = await fetch(`/api/agent-chat?action=events&sessionId=${encodeURIComponent(id)}`, { headers: this.token ? { "X-Canvas-Token": this.token } : {}, signal });
+    if (!response.ok || !response.body) throw new Error("Agent 实时连接不可用");
+    const reader = response.body.getReader(), decoder = new TextDecoder(); let buffer = "";
+    try {
+      while (true) {
+        const result = await reader.read(); if (result.done) break;
+        buffer += decoder.decode(result.value, { stream: true });
+        if (buffer.length > 2_000_000) throw new Error("Agent 事件超过接收预算");
+        let index: number;
+        while ((index = buffer.indexOf("\n")) >= 0) { const line = buffer.slice(0, index); buffer = buffer.slice(index + 1); if (line.trim()) onEvent(JSON.parse(line) as AgentChatEvent); }
+      }
+    } finally { await reader.cancel().catch(() => {}); reader.releaseLock(); }
   }
 
   private async request<T>(path: string, init: RequestInit = {}): Promise<T> {

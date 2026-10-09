@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-08T12:25:24.427Z",
+  "panelDrag": {
+    "before": {
+      "x": 992,
+      "y": 18,
+      "width": 430,
+      "height": 631
+    },
+    "after": {
+      "x": 912,
+      "y": 18,
+      "width": 430,
+      "height": 631
+    }
+  },
+  "panelResize": {
+    "after": {
+      "x": 912,
+      "y": 18,
+      "width": 400,
+      "height": 611
+    }
+  },
+  "scopeSwitch": {
+    "explicit": true,
+    "to": "候选预览",
+    "newScopeDraft": "",
+    "back": "选区冻结",
+    "restoredDraft": "只属于第一个选区的未发送草稿",
+    "testDraftCleared": true
+  },
+  "current": {
+    "scope": "已冻结选区观察 R3目标表示 · 选区冻结 · 选区对话 → 候选 → 应用选区对话 → 候选 → 应用",
+    "draft": ""
+  }
+}

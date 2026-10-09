@@ -2,7 +2,7 @@
 
 日期：2026-10-04。状态：**已获实施授权，正在并行改造与隔离页面验收。方案规则仍为权威规格，实际通过项以验收记录为准。**
 
-依据：[产品逻辑复审](research/PRODUCT_LOGIC_REVIEW_2026-10-04.md)、[当前结构诊断](research/CURRENT_STRUCTURE_DIAGNOSIS_2026-10-04.md)、[固定 V1 计划](../../../research/excalidraw_plugin_v1_implementation_plan.md)、[需求审计](../../../research/excalidraw_plugin_requirements_audit.md)及 [领域语言](../CONTEXT.md)。本文是这次改造的权威入口，不覆盖原 V1 尚未通过的平台与宿主验收门槛。
+依据：[产品逻辑复审](research/PRODUCT_LOGIC_REVIEW_2026-10-04.md)、[当前结构诊断](research/CURRENT_STRUCTURE_DIAGNOSIS_2026-10-04.md)、[固定 V1 计划](plans/excalidraw_plugin_v1_implementation_plan.md)、[需求审计](plans/excalidraw_plugin_requirements_audit.md)及 [领域语言](../CONTEXT.md)。本文是这次改造的权威入口，不覆盖原 V1 尚未通过的平台与宿主验收门槛。
 
 ## 1. 改造目标与明确取舍
 
@@ -456,7 +456,7 @@ Agent 的一次更新按以下顺序完成：
 
 该阶段完成：并行细化布局、交互与内容/Harness 设计；核对关键源码；补充领域术语；形成此改造方案及静态组织示意。已检查示意图输出及文档本地引用，未做产品界面验收。没有修改源码、构建、安装、用户 MCP 配置或当前项目数据。
 
-并行草稿为 [布局细化](../.runtime/design-review-20261004/layout-retrofit.md)、[交互细化](../../../.runtime/design-review-20261004/surface-behavior.md)、[Harness 与迁移](../.runtime/design-review-20261004/harness-migration.md)。草稿不是三个并行实施规格；冲突以本文为准。root 合并时明确收敛：自然高度允许收缩；普通邻组平移属于局部维护；ELK 首期不进入自动局部闭环；预览滚轮到边界不带动画布；新字段先做 additive 扩展；分组批注采用持久 Annotation 锚点与观察快照。
+并行草稿是原开发工作区的本机记录，不随源码公开：布局细化 `.runtime/design-review-20261004/layout-retrofit.md`、交互细化 `.runtime/design-review-20261004/surface-behavior.md`、Harness 与迁移 `.runtime/design-review-20261004/harness-migration.md`。草稿不是三个并行实施规格；冲突以本文为准。root 合并时明确收敛：自然高度允许收缩；普通邻组平移属于局部维护；ELK 首期不进入自动局部闭环；预览滚轮到边界不带动画布；新字段先做 additive 扩展；分组批注采用持久 Annotation 锚点与观察快照。
 
 当时的首要验证目标是 P1 的完整局部闭环，而不是全量换样式。待实际验证的技术行为包括：多组展开的稳定性、旋转/固定组合避让、测量收敛、窄窗口可读性、跨组接口与读者理解效果。
 

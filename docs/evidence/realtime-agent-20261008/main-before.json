@@ -1,0 +1,9 @@
+{
+  "pid": 61804,
+  "entrypoint": "http://127.0.0.1:56915/",
+  "buildId": "agent-harness-20261007-r29.3",
+  "projectId": "cb904f16-a9ec-4a38-831c-d84d9a08df80",
+  "workCopyId": "bdc90254-57fe-4968-97a4-96473ca9868f",
+  "revision": 200,
+  "sha256": "c6e1e9e4cb422faebf40ec69a8fafd17ea741e14c4f9d0920b5423625c1980db"
+}

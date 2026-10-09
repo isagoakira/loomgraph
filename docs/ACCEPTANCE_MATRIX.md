@@ -1,8 +1,10 @@
 # V1 正确性与交付验收矩阵
 
-当前本机更新至 r10/p1.3：类型检查、179项源码、31项真实UI及18项r10正式stdio检查通过；栏位、缩放及平面阅读见[专项验收](WORKSPACE_CONTROLS_ACCEPTANCE_2026-10-03.md)。p1.2 的正式安装 Node 24 stdio 的18项表达/重开/迁移检查及实际页面记录保留。当前 Codex 已真实更新论文表达、读取冻结上下文、逐条修改并独立回应三条锚定批注；详见[表达增量验收](EXPRESSION_ACCEPTANCE_2026-10-03.md)。原元控件操作链与其他历史证据保留。
+2026-10-09 更新：当前源码构建为 `persistent-agent-20261009-r31.2`，常驻 Agent 与六类页面控制的源码、本机安装、stdio、实际 Codex 和浏览器证据见 [r31.2 验收](PERSISTENT_AGENT_ACCEPTANCE_2026-10-09.md)；选区候选预览、应用和撤销的前一轮实测见 [r30 验收](REALTIME_AGENT_ACCEPTANCE_2026-10-08.md)。这些增量不代表完整 V1 或 Windows 已通过。Loomgraph 副本的发布检查单独记录在 [发布检查](LOOMGRAPH_PUBLICATION_2026-10-09.md)。
 
-日期：2026-10-03。实施基线：[p1.3 完整计划](../../../research/excalidraw_plugin_v1_implementation_plan.md)。本表保留完整 V1 的18个场景；D013–D017 的本机增量由上述专项验收覆盖，过程见[实施记录](IMPLEMENTATION_STATUS.md)。
+以下保留 2026-10-03 的专项与完整 V1 门槛记录。r10/p1.3 当时通过类型检查、179项源码、31项真实UI及18项r10正式stdio检查；栏位、缩放及平面阅读见[专项验收](WORKSPACE_CONTROLS_ACCEPTANCE_2026-10-03.md)。p1.2 的正式安装 Node 24 stdio 的18项表达/重开/迁移检查及实际页面记录保留。当时 Codex 已真实更新论文表达、读取冻结上下文、逐条修改并独立回应三条锚定批注；详见[表达增量验收](EXPRESSION_ACCEPTANCE_2026-10-03.md)。原元控件操作链与其他历史证据保留。
+
+日期：2026-10-03。实施基线：[p1.3 完整计划](plans/excalidraw_plugin_v1_implementation_plan.md)。本表保留完整 V1 的18个场景；D013–D017 的本机增量由上述专项验收覆盖，过程见[实施记录](IMPLEMENTATION_STATUS.md)。
 
 **当前结论：p1.2 表达及 p1.3 工作区交互本机分项通过，完整 V1 尚未验收。** Windows、Claude 专用通道、Codex 原生标注、跨平台往返、原生层级和最终性能继续待验；源码、安装 stdio、实际页面和宿主层的证据分别记录，旧失败保留。
 

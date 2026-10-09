@@ -39,6 +39,34 @@ For progress, read actual scoped run/executor facts. The current UI only pulses 
 
 The selection toolbar opens a scoped request directly on the canvas. Each saved item keeps its targets, content anchors, membership and observed revision. Multiple items are queued transactionally and handed off as a short reference. Clipboard/save/queue is not Agent receipt: read the frozen batch, perform handoff and claim, then respond independently with actual change IDs. Host-native auto-send is capability-dependent and is currently unavailable.
 
+## In-canvas scoped assistant (r30)
+
+On r31, the same dialogue has a persistent collapsible entry and a read-only
+page mode. Each turn receives the current graph and a bounded actual graph
+catalog. Temporary navigate/back/focus/highlight/fit/zoom controls are separate
+from content operations; only the submitting browser claims the current result
+once and reports what happened. History/reconnect never replays navigation.
+Changing graphs preserves the dialogue but does not expand a frozen selection's
+write permissions. Return to that selection's graph to preview/apply, or switch
+explicitly to the read-only page assistant. See
+`docs/PERSISTENT_AGENT_PAGE_CONTROL_2026-10-09.md`.
+
+The selection entry can open a movable local Agent dialogue. This is a separate
+selection-bound session using an on-demand Codex CLI, Claude Code CLI or explicitly
+configured model API; it does not receive this host's complete conversation.
+Each turn assembles bounded selected material, read-only neighbors, recent messages
+and the current candidate. Switching selection is explicit. Paragraph anchors help
+locate material but do not provide paragraph-level write protection.
+
+Answers and temporary previews create no content revision. The panel applies only
+a confirmed current preview, then records the actual change receipt; conflicts
+remove stale previews. Continuing prompts refine the candidate with parent identity.
+Staged deletion keeps the original target available for discussion; restoring it
+withdraws that selected removal rather than creating a new object. New objects and
+business execution are outside the first assistant action set. Real provider events
+are chat activity, never evidence that a business task ran. See
+`docs/REALTIME_AGENT_USAGE_2026-10-08.md` and the peer reference record.
+
 ## Expression Harness / Prompt
 
 For graph-plus-rich-text explanation work, use the bounded expression reads before composing or editing content:

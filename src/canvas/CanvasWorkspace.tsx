@@ -1,4 +1,4 @@
-import { CaptureUpdateAction, Excalidraw, sceneCoordsToViewportCoords } from "@excalidraw/excalidraw";
+import { CaptureUpdateAction, Excalidraw, getCommonBounds, sceneCoordsToViewportCoords } from "@excalidraw/excalidraw";
 import type {
   BinaryFiles,
   AppState,
@@ -10,7 +10,10 @@ import type { ExcalidrawElement } from "@excalidraw/excalidraw/element/types";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { CanvasToolDock } from "./CanvasToolDock";
 import { CanvasZoomControl } from "./CanvasZoomControl";
+import { CanvasViewMenu } from "./CanvasViewMenu";
 import { canvasWheelOwner, resizeCamera, zoomCamera } from "./camera";
+import type { ContentSnapCandidate } from "./content-snapping";
+import { canvasSceneInstanceMatches, canvasSceneVisitKey, canvasSceneVisitMatches, type CanvasSceneVisit } from "./scene-visit";
 
 import type { Operation, ProjectSnapshot, TargetRef } from "../contracts";
 import type { ContentCommit, WorkspaceView } from "../content/model";
@@ -53,6 +56,7 @@ interface PendingSceneDiff {
   workCopyId: string;
   scopeKey: string;
   graphId: string;
+  sceneEpoch: number;
   userEdit: boolean;
   baseRevision: number;
   resourceGeneration: number;
@@ -94,6 +98,7 @@ interface RejectedNativeScene {
 
 interface DeferredTextEditRepair {
   scopeKey: string;
+  visitKey: string;
   elementId: string;
   elements: readonly ExcalidrawElement[];
   frame: number | null;
@@ -119,6 +124,46 @@ function nativeElementIdsForTargets(elements: readonly ExcalidrawElement[], targ
   const ids = new Set<string>();
   for (const target of targets) for (const id of nativeElementIdsForTarget(elements, target)) ids.add(id);
   return [...ids];
+}
+
+function sceneElementSnapCandidate(element: ExcalidrawElement): ContentSnapCandidate | null {
+  const data = readCanvasData(element);
+  // HTML content owns the visual card, labels and relation paths are guides
+  // rather than objects, and presentation/background elements are excluded.
+  if (element.isDeleted || element.opacity === 0 || !data || (data.role !== "body" && data.role !== "free")) return null;
+  let bounds: readonly number[];
+  try {
+    // getCommonBounds is a public Excalidraw export and handles rotated/free
+    // elements without reaching into the SDK's private snap implementation.
+    bounds = getCommonBounds([element]);
+  } catch {
+    return null;
+  }
+  const [x, y, right, bottom] = bounds;
+  const width = right - x;
+  const height = bottom - y;
+  if (![x, y, width, height].every(Number.isFinite) || width <= 0 || height <= 0) return null;
+  const id = data.representationId
+    ? `representation:${data.representationId}`
+    : data.freeElementId
+      ? `element:${data.freeElementId}`
+      : element.id;
+  return { id, x, y, width, height, visible: true };
+}
+
+function snapCandidatesEqual(
+  previous: readonly ContentSnapCandidate[],
+  next: readonly ContentSnapCandidate[],
+): boolean {
+  return previous.length === next.length && previous.every((candidate, index) => {
+    const other = next[index];
+    return candidate.id === other.id
+      && candidate.x === other.x
+      && candidate.y === other.y
+      && candidate.width === other.width
+      && candidate.height === other.height
+      && candidate.visible === other.visible;
+  });
 }
 
 function uniqueSelectionTargets(targets: readonly TargetRef[]): TargetRef[] {
@@ -162,6 +207,7 @@ export interface CanvasProjectionIdentity {
   highlightKey: string;
   layoutKey: string;
   fileKey: string;
+  sceneEpoch?: number;
 }
 
 /**
@@ -179,6 +225,7 @@ export function canvasProjectionKey(identity: CanvasProjectionIdentity): string 
     identity.highlightKey,
     identity.layoutKey,
     identity.fileKey,
+    identity.sceneEpoch ?? 0,
   ].join(":");
 }
 
@@ -413,9 +460,27 @@ export function shouldFitCanvasInitially(
     && !viewportHasRememberedCamera(viewport);
 }
 
+export interface CanvasModes {
+  gridModeEnabled: boolean;
+  objectsSnapModeEnabled: boolean;
+  zenModeEnabled: boolean;
+  gridSize: number;
+}
+
+function canvasModesFromAppState(appState: Pick<AppState, "gridModeEnabled" | "objectsSnapModeEnabled" | "zenModeEnabled" | "gridSize">): CanvasModes {
+  return {
+    gridModeEnabled: appState.gridModeEnabled === true,
+    objectsSnapModeEnabled: appState.objectsSnapModeEnabled === true,
+    zenModeEnabled: appState.zenModeEnabled === true,
+    gridSize: Number.isFinite(appState.gridSize) && appState.gridSize > 0 ? appState.gridSize : 20,
+  };
+}
+
 export interface CanvasWorkspaceProps {
   snapshot: ProjectSnapshot;
   graphId: string;
+  /** Every real graph visit receives a new epoch, including A → B → A. */
+  sceneEpoch?: number;
   viewport?: CanvasViewport;
   /** True when the parent has a persisted camera entry for this graph. */
   viewportRecorded?: boolean;
@@ -426,11 +491,13 @@ export interface CanvasWorkspaceProps {
   /** Called after a marquee or click has been applied (Escape is a cancel). */
   onAreaSelectionComplete?: () => void;
   onReady?: (api: ExcalidrawImperativeAPI) => void;
+  /** Mirrors public Excalidraw appState mode switches, including callbacks with unchanged scenes. */
+  onCanvasModesChange?: (modes: CanvasModes) => void;
   /** Called after the requested projection has been applied and the settle frame has run. */
-  onSceneReady?: (scopeKey: string, renderedRevision: number, api: ExcalidrawImperativeAPI) => void;
-  onOperations: (operations: Operation[], previousElements: readonly ExcalidrawElement[], nextElements: readonly ExcalidrawElement[], baseRevision?: number) => void | Promise<unknown>;
-  onSelection: (targets: TargetRef[], selectedElementIds: string[]) => void;
-  onViewportChange: (viewport: CanvasViewport) => void;
+  onSceneReady?: (scopeKey: string, renderedRevision: number, api: ExcalidrawImperativeAPI, sceneEpoch?: number) => void;
+  onOperations: (operations: Operation[], previousElements: readonly ExcalidrawElement[], nextElements: readonly ExcalidrawElement[], baseRevision?: number, source?: CanvasSceneVisit) => void | Promise<unknown>;
+  onSelection: (targets: TargetRef[], selectedElementIds: string[], source?: CanvasSceneVisit) => void;
+  onViewportChange: (viewport: CanvasViewport, source?: CanvasSceneVisit) => void;
   onRegion: (target: Extract<TargetRef, { type: "region" }>) => void;
   onUndoRequest?: () => void;
   files?: BinaryFiles;
@@ -758,6 +825,7 @@ function nativeImageDimensions(file: BinaryFiles[string]): Promise<NativeImageDi
 export function CanvasWorkspace({
   snapshot,
   graphId,
+  sceneEpoch = 0,
   viewport = DEFAULT_VIEWPORT,
   viewportRecorded = false,
   highlights = [],
@@ -765,6 +833,7 @@ export function CanvasWorkspace({
   areaSelectionMode = false,
   onAreaSelectionComplete,
   onReady,
+  onCanvasModesChange,
   onSceneReady,
   onOperations,
   onSelection,
@@ -792,7 +861,20 @@ export function CanvasWorkspace({
   onTextEditing,
   drawingToolsVisible = true,
 }: CanvasWorkspaceProps) {
+  const sceneVisit = useMemo<CanvasSceneVisit>(() => ({ projectId: snapshot.projectId, workCopyId: snapshot.workCopyId, graphId, sceneEpoch }), [snapshot.projectId, snapshot.workCopyId, graphId, sceneEpoch]);
+  const visitKey = canvasSceneVisitKey(sceneVisit);
+  const requestedVisitRef = useRef(sceneVisit);
+  requestedVisitRef.current = sceneVisit;
+  const renderedVisitRef = useRef<CanvasSceneVisit | null>(null);
   const apiRef = useRef<ExcalidrawImperativeAPI | null>(null);
+  const onCanvasModesChangeRef = useRef(onCanvasModesChange);
+  onCanvasModesChangeRef.current = onCanvasModesChange;
+  const canvasModesRef = useRef<CanvasModes>({
+    gridModeEnabled: false,
+    objectsSnapModeEnabled: false,
+    zenModeEnabled: false,
+    gridSize: 20,
+  });
   const baselineRef = useRef<readonly ExcalidrawElement[]>([]);
   const baselineNotebookContextRef = useRef<NotebookSceneContext | undefined>(undefined);
   const renderedNotebookContextRef = useRef<NotebookSceneContext | undefined>(undefined);
@@ -864,7 +946,9 @@ export function CanvasWorkspace({
   const selectedTargetsRef = useRef<readonly TargetRef[]>(selectedTargets);
   selectedTargetsRef.current = selectedTargets;
   const [areaSelectionRect, setAreaSelectionRect] = useState<AreaSelectionRect | null>(null);
-  const [apiReady, setApiReady] = useState(false);
+  const [apiVisitKey, setApiVisitKey] = useState<string | null>(null);
+  const apiReady = apiVisitKey === visitKey;
+  const [canvasModes, setCanvasModes] = useState<CanvasModes>(canvasModesRef.current);
   const [contentToolType, setContentToolType] = useState("selection");
   const [liveRelationGeometry, setLiveRelationGeometry] = useState<{ graphId: string; geometry: ContentGeometryPreview } | null>(null);
   const receiveGeometryPreview = useCallback((previewGraphId: string, geometry: ContentGeometryPreview | null) => {
@@ -882,6 +966,7 @@ export function CanvasWorkspace({
     canvasWidth: 0,
     canvasHeight: 0,
     viewport: DEFAULT_VIEWPORT,
+    gridSize: 20,
     camera: {
       offsetLeft: 0,
       offsetTop: 0,
@@ -892,6 +977,7 @@ export function CanvasWorkspace({
       zoom: DEFAULT_VIEWPORT.zoom,
     } satisfies SceneCameraDiagnostic,
     representationPoints: [] as RepresentationPointDiagnostic[],
+    snapCandidates: [] as ContentSnapCandidate[],
     renderedGraphId: graphId,
     renderedRevision: snapshot.revision,
     activeTool: "selection",
@@ -930,12 +1016,14 @@ export function CanvasWorkspace({
     organizationView,
   } : undefined;
   const initialDataRef = useRef<{
+    visitKey: string;
     elements: readonly CanvasElement[];
     files?: BinaryFiles;
-    appState: { scrollX: number; scrollY: number; zoom: { value: NormalizedZoomValue }; viewBackgroundColor: string };
+    appState: { scrollX: number; scrollY: number; zoom: { value: NormalizedZoomValue }; viewBackgroundColor: string } & CanvasModes;
   } | null>(null);
-  if (!initialDataRef.current) {
+  if (!initialDataRef.current || initialDataRef.current.visitKey !== visitKey) {
     initialDataRef.current = {
+      visitKey,
       elements: cloneCanvasElements(projection.elements),
       files,
       appState: {
@@ -943,6 +1031,7 @@ export function CanvasWorkspace({
         scrollY: viewport.scrollY,
         zoom: { value: viewport.zoom as NormalizedZoomValue },
         viewBackgroundColor: "#f4f0e8",
+        ...canvasModesRef.current,
       },
     };
   }
@@ -950,6 +1039,18 @@ export function CanvasWorkspace({
     canvasActions: { loadScene: false, saveToActiveFile: false },
     tools: { image: true },
   }), []);
+
+  const syncCanvasModes = useCallback((appState: Pick<AppState, "gridModeEnabled" | "objectsSnapModeEnabled" | "zenModeEnabled" | "gridSize">) => {
+    const next = canvasModesFromAppState(appState);
+    const previous = canvasModesRef.current;
+    canvasModesRef.current = next;
+    if (previous.gridModeEnabled === next.gridModeEnabled
+      && previous.objectsSnapModeEnabled === next.objectsSnapModeEnabled
+      && previous.zenModeEnabled === next.zenModeEnabled
+      && previous.gridSize === next.gridSize) return;
+    setCanvasModes(next);
+    onCanvasModesChangeRef.current?.(next);
+  }, []);
 
   useEffect(() => {
     snapshotRef.current = snapshot;
@@ -960,9 +1061,22 @@ export function CanvasWorkspace({
     }
   }, [snapshot, graphId]);
 
+  useEffect(() => {
+    // Navigation cancels the native gesture, not an edit already captured as
+    // a typed diff. Its immutable source graph remains eligible to flush.
+    pointerGestureRef.current = false;
+    nativeEditIntentRef.current = null;
+    htmlSelectionIntentRef.current = null;
+    userTextEditIntentRef.current = null;
+    regionOriginRef.current = null;
+    overlayPanRef.current = null;
+    void flushDiffRef.current?.();
+  }, [visitKey]);
+
   const restorePersistedScene = useCallback((elements: readonly ExcalidrawElement[]) => {
     const api = apiRef.current;
     if (!api) return;
+    const restoreVisitKey = canvasSceneVisitKey(requestedVisitRef.current);
     const current = api.getSceneElements();
     const presentation = current.filter((element) => isPresentationElement(element));
     const scopeKey = canvasSceneScopeKey(snapshotRef.current.projectId, snapshotRef.current.workCopyId, graphIdRef.current);
@@ -982,7 +1096,7 @@ export function CanvasWorkspace({
     baselineRef.current = cloneCanvasElements(elements);
     baselineNotebookContextRef.current = renderedNotebookContextRef.current;
     window.requestAnimationFrame(() => {
-      applyingRef.current = false;
+      if (apiRef.current === api && canvasSceneVisitKey(requestedVisitRef.current) === restoreVisitKey) applyingRef.current = false;
     });
   }, [files]);
 
@@ -1007,6 +1121,8 @@ export function CanvasWorkspace({
     sourceElements: readonly ExcalidrawElement[],
     availableFiles: BinaryFiles,
     scopeKey: string,
+    sourceVisit: CanvasSceneVisit,
+    sourceApi: ExcalidrawImperativeAPI | null,
   ): Promise<ExcalidrawElement[]> => {
     const pendingImageIds = new Set(uninitializedImageElementIds([], sourceElements));
     if (pendingImageIds.size === 0) return cloneCanvasElements(sourceElements);
@@ -1030,8 +1146,9 @@ export function CanvasWorkspace({
 
     const repairedSource = repairImageElementDimensions(sourceElements, dimensions);
     const pending = pendingDiffRef.current;
-    const currentPendingNext = pending?.scopeKey === scopeKey ? pending.next : null;
-    if (pending?.scopeKey === scopeKey) {
+    const pendingMatchesSource = pending?.scopeKey === scopeKey && pending.sceneEpoch === sourceVisit.sceneEpoch;
+    const currentPendingNext = pendingMatchesSource ? pending.next : null;
+    if (pendingMatchesSource) {
       const repairedPending = repairImageElementDimensions(pending.next, dimensions);
       if (!canvasElementsEqual(pending.next, repairedPending)) {
         pendingDiffRef.current = { ...pending, next: repairedPending };
@@ -1043,6 +1160,7 @@ export function CanvasWorkspace({
     // Excalidraw image cache or private element history is accessed.
     const api = apiRef.current;
     if (api
+      && canvasSceneInstanceMatches(sourceVisit, requestedVisitRef.current, renderedVisitRef.current, sourceApi, api)
       && requestedScopeKeyRef.current === scopeKey
       && renderedScopeKeyRef.current === scopeKey) {
       const live = api.getSceneElements();
@@ -1102,7 +1220,9 @@ export function CanvasWorkspace({
         ...(apiRef.current?.getFiles?.() ?? {}),
       };
       if (uninitializedImageElementIds(pending.previous, pending.next).length > 0) {
-        await hydratePendingImageDimensions(pending.next, availableFiles, pending.scopeKey);
+        await hydratePendingImageDimensions(pending.next, availableFiles, pending.scopeKey, {
+          projectId: pending.projectId, workCopyId: pending.workCopyId, graphId: pending.graphId, sceneEpoch: pending.sceneEpoch,
+        }, apiRef.current);
         const repairedPending = pendingDiffRef.current;
         if (repairedPending?.scopeKey === pending.scopeKey) pending = repairedPending;
         // A zero-sized fresh image is an SDK loading intermediate, never a
@@ -1122,8 +1242,8 @@ export function CanvasWorkspace({
       const next = annotateResourceIds(pending.next, resourceIdsRef.current);
       if (committedSceneMatches(lastCommittedSceneRef.current, pending.scopeKey, next, snapshotRef.current, pending.graphId, pending.userEdit)) {
         if (pendingDiffRef.current === pending) pendingDiffRef.current = null;
-        if (pending.scopeKey === requestedScopeKeyRef.current) baselineRef.current = cloneCanvasElements(next);
-        if (pending.scopeKey === requestedScopeKeyRef.current) baselineNotebookContextRef.current = pending.notebookContext;
+        if (pending.scopeKey === requestedScopeKeyRef.current && pending.sceneEpoch === requestedVisitRef.current.sceneEpoch) baselineRef.current = cloneCanvasElements(next);
+        if (pending.scopeKey === requestedScopeKeyRef.current && pending.sceneEpoch === requestedVisitRef.current.sceneEpoch) baselineNotebookContextRef.current = pending.notebookContext;
         return;
       }
       const normalized = pending.notebookContext
@@ -1139,20 +1259,22 @@ export function CanvasWorkspace({
       });
       if (operations.length === 0) {
         if (pendingDiffRef.current === pending) pendingDiffRef.current = null;
-        if (pending.scopeKey === requestedScopeKeyRef.current) baselineRef.current = cloneCanvasElements(next);
-        if (pending.scopeKey === requestedScopeKeyRef.current) baselineNotebookContextRef.current = pending.notebookContext;
+        if (pending.scopeKey === requestedScopeKeyRef.current && pending.sceneEpoch === requestedVisitRef.current.sceneEpoch) baselineRef.current = cloneCanvasElements(next);
+        if (pending.scopeKey === requestedScopeKeyRef.current && pending.sceneEpoch === requestedVisitRef.current.sceneEpoch) baselineNotebookContextRef.current = pending.notebookContext;
         return;
       }
       const baseRevision = pending.resourceGeneration !== resourceGenerationRef.current
         ? snapshotRef.current.revision
         : pending.baseRevision;
-      const outcome = await onOperations(operations, normalized.previous, normalized.next, baseRevision);
+      const outcome = await onOperations(operations, normalized.previous, normalized.next, baseRevision, {
+        projectId: pending.projectId, workCopyId: pending.workCopyId, graphId: pending.graphId, sceneEpoch: pending.sceneEpoch,
+      });
       const failed = typeof outcome === "string" && outcome !== "applied" && outcome !== "pending";
       // The old graph may have been submitted while a different graph was
       // rendered. Never apply its elements or baseline to that new graph. If
       // the pending slot still points at this exact diff, clear it; a newer
       // diff (for the newly rendered graph) owns the slot and must survive.
-      if (pending.scopeKey !== requestedScopeKeyRef.current) {
+      if (pending.scopeKey !== requestedScopeKeyRef.current || pending.sceneEpoch !== requestedVisitRef.current.sceneEpoch) {
         if (!failed) {
           lastCommittedSceneRef.current = { scopeKey: pending.scopeKey, elements: cloneCanvasElements(next) };
         }
@@ -1265,6 +1387,9 @@ export function CanvasWorkspace({
           };
         })
       : [];
+    const snapCandidates = elements
+      .map(sceneElementSnapCandidate)
+      .filter((candidate): candidate is ContentSnapCandidate => Boolean(candidate));
     setSceneDiagnostic({
       sceneReady: Boolean(api) && !applyingRef.current,
       count: elements.length,
@@ -1274,8 +1399,10 @@ export function CanvasWorkspace({
       canvasWidth: canvas?.width ?? 0,
       canvasHeight: canvas?.height ?? 0,
       viewport: appState ? viewportFromAppState(appState) : DEFAULT_VIEWPORT,
+      gridSize: appState?.gridSize ?? 20,
       camera,
       representationPoints,
+      snapCandidates,
       activeTool: appState?.activeTool.type ?? "selection",
       renderedGraphId: renderedGraphIdRef.current,
       renderedRevision: renderedRevisionRef.current,
@@ -1285,6 +1412,7 @@ export function CanvasWorkspace({
   useEffect(() => {
     const workspace = workspaceRef.current; const api = apiRef.current;
     if (!workspace || !api || !apiReady) return;
+    const resizeVisitKey = visitKey;
     let previous = { width: workspace.clientWidth, height: workspace.clientHeight };
     let next = previous; let frame = 0; let resizeScope = requestedScopeKeyRef.current;
     const observer = new ResizeObserver(() => {
@@ -1293,6 +1421,7 @@ export function CanvasWorkspace({
       resizeScope = requestedScopeKeyRef.current;
       frame = requestAnimationFrame(() => {
         frame = 0;
+        if (canvasSceneVisitKey(requestedVisitRef.current) !== resizeVisitKey || apiRef.current !== api) return;
         if (previous.width > 0 && previous.height > 0 && next.width > 0 && next.height > 0 && resizeScope === requestedScopeKeyRef.current && (previous.width !== next.width || previous.height !== next.height)) {
           const state = api.getAppState();
           const camera = resizeCamera(viewportFromAppState(state), previous, next);
@@ -1305,7 +1434,7 @@ export function CanvasWorkspace({
     });
     observer.observe(workspace);
     return () => { observer.disconnect(); if (frame) cancelAnimationFrame(frame); };
-  }, [apiReady, readSceneDiagnostic]);
+  }, [apiReady, visitKey, readSceneDiagnostic]);
 
   useEffect(() => {
     const workspace = workspaceRef.current;
@@ -1358,6 +1487,7 @@ export function CanvasWorkspace({
       highlightKey,
       layoutKey,
       fileKey,
+      sceneEpoch,
     });
     if (projectionKeyRef.current === projectionKey) return;
     projectionKeyRef.current = projectionKey;
@@ -1394,7 +1524,7 @@ export function CanvasWorkspace({
     let settled = false;
     const applyAfterFrame = () => {
       frame = window.requestAnimationFrame(() => {
-        if (cancelled || apiRef.current !== api) return;
+        if (cancelled || apiRef.current !== api || canvasSceneVisitKey(requestedVisitRef.current) !== visitKey) return;
         const sceneKey = `${snapshot.projectId}:${snapshot.workCopyId}:${graphId}`;
         // A conflict can clear the pending diff after this effect captured its
         // overlay but before the queued frame runs. It can also be replaced by
@@ -1422,6 +1552,7 @@ export function CanvasWorkspace({
         // callback from Excalidraw is associated with the new graph. A stale
         // callback from the previous graph is rejected by handleScrollChange.
         renderedScopeKeyRef.current = sceneKey;
+        renderedVisitRef.current = sceneVisit;
         renderedViewportKeyRef.current = sceneKey;
         renderedGraphIdRef.current = graphId;
         renderedRevisionRef.current = snapshotRef.current.revision;
@@ -1437,7 +1568,7 @@ export function CanvasWorkspace({
           return;
         }
         const settle = () => {
-          if (cancelled) return;
+          if (cancelled || apiRef.current !== api || canvasSceneVisitKey(requestedVisitRef.current) !== visitKey) return;
           // Excalidraw computes fit bounds from the mounted appState size. On
           // the first frame that size can still be zero even though the scene
           // has been accepted, so wait for a measured viewport before fitting.
@@ -1465,7 +1596,7 @@ export function CanvasWorkspace({
           applyingRef.current = false;
           settled = true;
           readSceneDiagnostic(api);
-          onSceneReadyRef.current?.(sceneKey, renderedRevisionRef.current, api);
+          onSceneReadyRef.current?.(sceneKey, renderedRevisionRef.current, api, sceneEpoch);
         };
         settleFrame = window.requestAnimationFrame(settle);
       });
@@ -1484,7 +1615,7 @@ export function CanvasWorkspace({
   // viewport update is already reflected by the live Excalidraw camera, so it
   // must not restart projection or initial-fit work.  Graph/workspace and
   // content changes still capture the current prop value in this effect.
-  }, [apiReady, files, graphId, layoutPreview, notebookMaintenance, notebookViewLayout, organizationView, projection, readSceneDiagnostic, snapshot.projectId, snapshot.revision, snapshot.workCopyId, highlights]);
+  }, [apiReady, files, graphId, sceneEpoch, sceneVisit, visitKey, layoutPreview, notebookMaintenance, notebookViewLayout, organizationView, projection, readSceneDiagnostic, snapshot.projectId, snapshot.revision, snapshot.workCopyId, highlights]);
 
   const emitSelection = useCallback((
     callbackGraphId: string,
@@ -1510,20 +1641,34 @@ export function CanvasWorkspace({
     const selectedIds = Object.entries(appState.selectedElementIds)
       .filter(([, selected]) => selected)
       .map(([id]) => id);
-    onSelection(targetsFromSelection(callbackGraphId, appState.selectedElementIds, elements), selectedIds);
-  }, [onSelection]);
+    onSelection(targetsFromSelection(callbackGraphId, appState.selectedElementIds, elements), selectedIds, sceneVisit);
+  }, [onSelection, sceneVisit]);
 
   const handleChange = useCallback(
     (elements: readonly CanvasElement[], appState: AppState, nextFiles: BinaryFiles) => {
       const callbackGraphId = graphId;
       const callbackScopeKey = canvasSceneScopeKey(snapshot.projectId, snapshot.workCopyId, callbackGraphId);
-      if (!canvasSceneCallbackMatchesRenderedScope(callbackScopeKey, requestedScopeKeyRef.current, renderedScopeKeyRef.current)) {
+      if (!canvasSceneVisitMatches(sceneVisit, requestedVisitRef.current, renderedVisitRef.current)
+        || !canvasSceneCallbackMatchesRenderedScope(callbackScopeKey, requestedScopeKeyRef.current, renderedScopeKeyRef.current)) {
         // Excalidraw may deliver one or more callbacks for the old scene after
         // the parent selected another graph. The old payload is not a delete
         // in the new graph; wait until the new projection is rendered before
         // accepting user changes again.
         return;
       }
+      // Mode fields live in appState and Excalidraw can emit them with an
+      // unchanged scene. Observe them before every semantic/no-op guard.
+      syncCanvasModes(appState);
+      const nextSnapCandidates = elements
+        .map(sceneElementSnapCandidate)
+        .filter((candidate): candidate is ContentSnapCandidate => Boolean(candidate));
+      setSceneDiagnostic(previous => {
+        const nextGridSize = appState.gridSize ?? previous.gridSize;
+        return snapCandidatesEqual(previous.snapCandidates, nextSnapCandidates)
+          && previous.gridSize === nextGridSize
+          ? previous
+          : { ...previous, gridSize: nextGridSize, snapCandidates: nextSnapCandidates };
+      });
       // Tool changes do not alter scene elements. Observe them before the
       // no-op/echo guards so HTML content yields input to native drawing.
       if (contentToolTypeRef.current !== appState.activeTool.type) {
@@ -1624,6 +1769,7 @@ export function CanvasWorkspace({
         if (existing?.frame !== null && existing) window.cancelAnimationFrame(existing.frame);
         const deferred: DeferredTextEditRepair = {
           scopeKey,
+          visitKey,
           elementId: textEditElementId,
           elements: cloneCanvasElements(synchronized),
           frame: null,
@@ -1635,7 +1781,8 @@ export function CanvasWorkspace({
           deferred.frame = null;
           deferred.completed = true;
           const api = apiRef.current;
-          if (!api || requestedScopeKeyRef.current !== deferred.scopeKey || renderedScopeKeyRef.current !== deferred.scopeKey) return;
+          if (!api || requestedScopeKeyRef.current !== deferred.scopeKey || renderedScopeKeyRef.current !== deferred.scopeKey
+            || canvasSceneVisitKey(requestedVisitRef.current) !== deferred.visitKey) return;
           const liveElements = api.getSceneElements();
           if (canvasElementsEqual(liveElements, deferred.elements)) return;
           const expectedPersisted = deferred.elements.filter((element) => !isPresentationElement(element));
@@ -1702,6 +1849,7 @@ export function CanvasWorkspace({
       // text and prevents the label from disappearing before the server ack.
       repairLiveScene();
       if (!wasApplying && onBinaryFiles) {
+        const uploadSourceApi = apiRef.current;
         const freshFiles = Object.fromEntries(Object.entries(nextFiles).filter(([fileId]) => !knownFileIdsRef.current.has(fileId)));
         if (Object.keys(freshFiles).length > 0) {
           fileSyncRef.current = fileSyncRef.current
@@ -1719,6 +1867,8 @@ export function CanvasWorkspace({
                 persisted,
                 { ...freshFiles, ...(apiRef.current?.getFiles?.() ?? {}) },
                 scopeKey,
+                sceneVisit,
+                uploadSourceApi,
               );
             });
         }
@@ -1742,6 +1892,7 @@ export function CanvasWorkspace({
         workCopyId: snapshot.workCopyId,
         scopeKey,
         graphId: currentGraphId,
+        sceneEpoch,
         userEdit: activeUserTextEdit || Boolean(currentPending?.userEdit),
         baseRevision: currentPending?.baseRevision ?? snapshotRef.current.revision,
         resourceGeneration: currentPending?.resourceGeneration ?? resourceGenerationRef.current,
@@ -1755,11 +1906,12 @@ export function CanvasWorkspace({
       if (flushTimerRef.current !== null) window.clearTimeout(flushTimerRef.current);
       flushTimerRef.current = window.setTimeout(flushDiff, 320);
     },
-    [emitSelection, flushDiff, graphId, hydratePendingImageDimensions, onBinaryFiles, restoreConflictProjection, snapshot.projectId, snapshot.workCopyId, notebookMaintenance, notebookViewLayout, organizationView],
+    [emitSelection, flushDiff, graphId, sceneEpoch, sceneVisit, hydratePendingImageDimensions, onBinaryFiles, restoreConflictProjection, snapshot.projectId, snapshot.workCopyId, notebookMaintenance, notebookViewLayout, organizationView, syncCanvasModes],
   );
 
   const handlePointerDown = useCallback(
     (_activeTool: AppState["activeTool"], pointerDownState: PointerDownState) => {
+      if (!canvasSceneVisitMatches(sceneVisit, requestedVisitRef.current, renderedVisitRef.current)) return;
       htmlSelectionIntentRef.current = null;
       pointerGestureRef.current = true;
       nativeEditIntentRef.current = { scopeKey: requestedScopeKeyRef.current, expiresAt: Date.now() + 2500 };
@@ -1780,11 +1932,12 @@ export function CanvasWorkspace({
       }
       if (regionMode) regionOriginRef.current = pointerDownState.origin;
     },
-    [regionMode],
+    [regionMode, sceneVisit],
   );
 
   const handlePointerUp = useCallback(
     (_activeTool: AppState["activeTool"], pointerDownState: PointerDownState) => {
+      if (!canvasSceneVisitMatches(sceneVisit, requestedVisitRef.current, renderedVisitRef.current)) return;
       const origin = regionOriginRef.current;
       regionOriginRef.current = null;
       if (regionMode && origin) {
@@ -1808,21 +1961,21 @@ export function CanvasWorkspace({
         void flushDiffRef.current?.();
       });
     },
-    [onRegion, regionMode],
+    [onRegion, regionMode, sceneVisit],
   );
 
   const handleScrollChange = useCallback(
     (scrollX: number, scrollY: number, zoom: { value: number }) => {
       const expectedSceneKey = `${snapshot.projectId}:${snapshot.workCopyId}:${graphId}`;
-      if (renderedViewportKeyRef.current !== expectedSceneKey) return;
-      onViewportChange({ scrollX, scrollY, zoom: zoom.value });
+      if (renderedViewportKeyRef.current !== expectedSceneKey || !canvasSceneVisitMatches(sceneVisit, requestedVisitRef.current, renderedVisitRef.current)) return;
+      onViewportChange({ scrollX, scrollY, zoom: zoom.value }, sceneVisit);
       if (diagnosticFrameRef.current !== null) window.cancelAnimationFrame(diagnosticFrameRef.current);
       diagnosticFrameRef.current = window.requestAnimationFrame(() => {
         diagnosticFrameRef.current = null;
         readSceneDiagnostic();
       });
     },
-    [graphId, onViewportChange, readSceneDiagnostic, snapshot.projectId, snapshot.workCopyId],
+    [graphId, sceneVisit, onViewportChange, readSceneDiagnostic, snapshot.projectId, snapshot.workCopyId],
   );
 
   const handleDuplicate = useCallback(
@@ -1831,17 +1984,45 @@ export function CanvasWorkspace({
   );
 
   const handleExcalidrawApi = useCallback((api: ExcalidrawImperativeAPI) => {
+    if (canvasSceneVisitKey(sceneVisit) !== canvasSceneVisitKey(requestedVisitRef.current)) return;
     apiRef.current = api;
-    if (renderedScopeKeyRef.current === null) {
-      renderedScopeKeyRef.current = requestedScopeKeyRef.current;
-      renderedViewportKeyRef.current = requestedScopeKeyRef.current;
-    }
+    const initialModes = canvasModesFromAppState(api.getAppState());
+    canvasModesRef.current = initialModes;
+    setCanvasModes(initialModes);
+    onCanvasModesChangeRef.current?.(initialModes);
+    renderedScopeKeyRef.current = requestedScopeKeyRef.current;
+    renderedViewportKeyRef.current = requestedScopeKeyRef.current;
+    renderedVisitRef.current = sceneVisit;
     baselineRef.current = cloneCanvasElements(projectionRef.current?.persistedElements ?? []);
     baselineNotebookContextRef.current = notebookContextRef.current;
     renderedNotebookContextRef.current = notebookContextRef.current;
-    setApiReady(true);
+    setApiVisitKey(visitKey);
     onReadyRef.current?.(api);
-  }, []);
+  }, [sceneVisit, visitKey]);
+
+  const toggleCanvasMode = useCallback((mode: keyof CanvasModes) => {
+    const api = apiRef.current;
+    if (!api) return;
+    const state = api.getAppState();
+    let gridModeEnabled = state.gridModeEnabled;
+    let objectsSnapModeEnabled = state.objectsSnapModeEnabled;
+    let zenModeEnabled = state.zenModeEnabled;
+    if (mode === "gridModeEnabled") {
+      gridModeEnabled = !gridModeEnabled;
+      if (gridModeEnabled) objectsSnapModeEnabled = false;
+    } else if (mode === "objectsSnapModeEnabled") {
+      objectsSnapModeEnabled = !objectsSnapModeEnabled;
+      if (objectsSnapModeEnabled) gridModeEnabled = false;
+    } else {
+      zenModeEnabled = !zenModeEnabled;
+    }
+    const nextState = { gridModeEnabled, objectsSnapModeEnabled, zenModeEnabled, gridSize: state.gridSize };
+    // Keep all mode state in the SDK appState so its native menu and the
+    // application menu remain interchangeable. NEVER avoids a view preference
+    // becoming an undoable drawing revision.
+    api.updateScene({ appState: nextState, captureUpdate: CaptureUpdateAction.NEVER });
+    syncCanvasModes(nextState);
+  }, [syncCanvasModes]);
 
   // App-level batch controls can change the semantic selection without a
   // pointer gesture. Keep the SDK highlight in lockstep after a graph or
@@ -1971,6 +2152,14 @@ export function CanvasWorkspace({
   };
   const contentCallbacks = onContentCommit ? {
     snapshot, graphId, commit: onContentCommit, selectedTargets, highlights, onSelect: selectContentTarget,
+    contentSnapping: {
+      gridEnabled: canvasModes.gridModeEnabled,
+      objectsSnapEnabled: canvasModes.objectsSnapModeEnabled,
+      gridSize: canvasModes.gridSize,
+      zoom: sceneDiagnostic.camera.zoom,
+    },
+    snapCandidates: sceneDiagnostic.snapCandidates,
+    zenModeEnabled: canvasModes.zenModeEnabled,
     selectedClusterIds, onClusterSelect,
     onOrganizationDisclosureChange,
     onDetails: (target: TargetRef) => { selectContentTarget(target); onContentDetails?.(target); },
@@ -1992,7 +2181,7 @@ export function CanvasWorkspace({
   return (
     <div
       ref={workspaceRef}
-      className={`canvas-workspace${regionMode ? " is-region-mode" : ""}${areaSelectionMode ? " is-area-selection-mode" : ""}${contentView === "reading" ? " is-reading" : ""}${projection.persistedElements.some(element => readCanvasData(element)?.role === "content") ? " has-content-blocks" : ""}${!drawingToolsVisible ? " hide-drawing-tools" : ""}`}
+      className={`canvas-workspace${regionMode ? " is-region-mode" : ""}${areaSelectionMode ? " is-area-selection-mode" : ""}${contentView === "reading" ? " is-reading" : ""}${canvasModes.zenModeEnabled ? " is-zen-mode" : ""}${projection.persistedElements.some(element => readCanvasData(element)?.role === "content") ? " has-content-blocks" : ""}${!drawingToolsVisible ? " hide-drawing-tools" : ""}`}
       tabIndex={-1}
       data-projection-element-count={projection.elements.length}
       data-projection-persisted-count={projection.persistedElements.length}
@@ -2058,6 +2247,7 @@ export function CanvasWorkspace({
         </div>
       )}
       <Excalidraw
+        key={visitKey}
         initialData={initialDataRef.current}
         langCode="zh-CN"
         onChange={handleChange}
@@ -2070,6 +2260,7 @@ export function CanvasWorkspace({
         UIOptions={uiOptions}
       />
       <CanvasToolDock workspace={workspaceRef} />
+      <CanvasViewMenu modes={canvasModes} onToggle={toggleCanvasMode} />
       {contentCallbacks && <NotebookRelations snapshot={relationViewSnapshot} graphId={graphId} camera={sceneDiagnostic.camera} visible={contentView === "layout" && sceneDiagnostic.renderedGraphId === graphId} interactive={!regionMode && !areaSelectionMode && contentToolType === "selection"} selectedTargets={selectedTargets} highlights={highlights} visibleRelationIds={organizationView?.visibleRelationIds} organizationView={organizationView} maintainedRoutes={notebookMaintenance?.routes} onSelect={selectContentTarget} onCommit={onContentCommit} onClearSelection={clearContentSelection} />}
       {contentCallbacks && <ContentLayoutLayer {...contentCallbacks} onGeometryPreview={receiveGeometryPreview} organizationView={organizationView} onClusterOpen={onClusterOpen} geometryOverrides={notebookView.geometries} notebookGroupBounds={notebookMaintenance?.groupBounds} onNotebookMeasure={onNotebookMeasure} camera={sceneDiagnostic.camera} interactive={!regionMode && !areaSelectionMode && contentToolType === "selection"} visible={contentView === "layout" && sceneDiagnostic.renderedGraphId === graphId} />}
       {contentCallbacks && contentView === "reading" && <ContentReader {...contentCallbacks} files={files} />}

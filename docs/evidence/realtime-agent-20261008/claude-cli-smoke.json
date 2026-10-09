@@ -1,0 +1,20 @@
+{
+  "id": "claude-cli",
+  "startedAt": "2026-10-08T11:55:55.823Z",
+  "endedAt": "2026-10-08T11:56:04.573Z",
+  "success": true,
+  "result": {
+    "answer": "画布选区用于约束讨论范围。",
+    "operations": []
+  },
+  "events": [
+    {
+      "type": "status",
+      "text": "已启动 Claude CLI（无工具、隔离工作区）"
+    },
+    {
+      "type": "text",
+      "text": "画布选区用于约束讨论范围。"
+    }
+  ]
+}

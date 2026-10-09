@@ -17,3 +17,8 @@ coverage/
 *.log
 *.pem
 *.key
+
+# Canvas Agent local session and model configuration
+.canvas-server.lock
+agent-chat/
+agent-config.json
